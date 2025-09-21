@@ -4390,11 +4390,17 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 }
                 break;
             case ABILITY_BALL_FETCH:
+                if (gLastUsedBall == 60) // Strange Ball comes in as 60 for some reason, this exception catches that
+                    gLastUsedBall = BALL_STRANGE;
+
                 if (gBattleMons[battler].item == ITEM_NONE
                     && gBattleResults.catchAttempts[gLastUsedBall] >= 1
                     && !gHasFetchedBall)
                 {
-                    gLastUsedItem = gLastUsedBall;
+                    if (gLastUsedBall != BALL_STRANGE) 
+                        gLastUsedItem = gLastUsedBall;
+                    else 
+                        gLastUsedItem = ITEM_STRANGE_BALL;
                     gBattleScripting.battler = battler;
                     gBattleMons[battler].item = gLastUsedItem;
                     BtlController_EmitSetMonData(battler, B_COMM_TO_CONTROLLER, REQUEST_HELDITEM_BATTLE, 0, 2, &gLastUsedItem);

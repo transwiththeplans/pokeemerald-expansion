@@ -4715,6 +4715,8 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, enum ItemHoldEffect h
     // other abilities
     if (ability == ABILITY_QUICK_FEET && gBattleMons[battler].status1 & STATUS1_ANY)
         speed = (speed * 150) / 100;
+    else if (ability == ABILITY_LIMBER)
+        speed = (speed * 110) / 100;
     else if (ability == ABILITY_SURGE_SURFER && gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
         speed *= 2;
     else if (ability == ABILITY_SLOW_START && gDisableStructs[battler].slowStartTimer != 0)
@@ -4811,6 +4813,9 @@ s32 GetBattleMovePriority(u32 battler, u32 ability, u32 move)
         priority++;
     }
     else if (ability == ABILITY_TRIAGE && IsHealingMove(move))
+        priority += 3;
+	
+    else if (ability == ABILITY_RAPID_FIRE && IsPulseMove(move))
         priority += 3;
 
     if (gProtectStructs[battler].quash)
@@ -5785,6 +5790,21 @@ u32 TrySetAteType(u32 move, u32 battlerAtk, u32 attackerAbility)
     case ABILITY_GALVANIZE:
         ateType = TYPE_ELECTRIC;
         break;
+	case ABILITY_VANTABLACK:
+		ateType = TYPE_DARK;
+		break;
+	case ABILITY_FOSSILIZE:
+		ateType = TYPE_ROCK;
+		break;
+	case ABILITY_EMANATE:
+		ateType = TYPE_PSYCHIC;
+		break;
+	case ABILITY_METAL_MORPH:
+		ateType = TYPE_STEEL;
+		break;
+	case ABILITY_IMMOLATE:
+		ateType = TYPE_FIRE;
+		break;
     default:
         ateType = TYPE_NONE;
         break;
@@ -6000,7 +6020,7 @@ u32 GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum MonState
     }
     else if (moveEffect == EFFECT_AURA_WHEEL && species == SPECIES_MORPEKO_HANGRY)
     {
-        return TYPE_DARK;
+        return TYPE_POISON;
     }
     else if (moveType == TYPE_NORMAL
           && ability != ABILITY_NORMALIZE

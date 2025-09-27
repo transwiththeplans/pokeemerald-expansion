@@ -21,10 +21,11 @@ gText_Birch_MainSpeech::
 	.string "and battle others like us.\p"
 	.string "But despite our closeness, we don't\n"
 	.string "know everything about POKéMON.\p"
-	.string "In fact, there are many, many\n"
-	.string "secrets surrounding POKéMON.\p"
-	.string "To unravel POKéMON mysteries,\n"
-	.string "I've been undertaking research.\l"
+	.string "More recently, after a strange meteor\n"
+	.string "shower, all Pokemon in Hoenn\l"
+	.string "mysteriously transformed...\p"
+	.string "To unravel this new mystery,\n"
+	.string "I've been deep in research.\l"
 	.string "That's what I do.\p"
 	.string "$"
 
@@ -32,8 +33,8 @@ gText_Birch_AndYouAre::
 	.string "And you are?$"
 
 gText_Birch_BoyOrGirl::
-	.string "Are you a boy?\n"
-	.string "Or are you a girl?$"
+	.string "Do you identify as male?\n"
+	.string "Or female?$"
 
 gText_Birch_WhatsYourName::
 	.string "All right.\n"

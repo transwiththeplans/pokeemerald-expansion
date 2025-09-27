@@ -115,7 +115,7 @@
       "id": "LAYOUT_DEWFORD_TOWN",
       "name": "DewfordTown_Layout",
       "width": 20,
-      "height": 20,
+      "height": 35,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/DewfordTown/border.bin",
@@ -175,7 +175,7 @@
       "id": "LAYOUT_ROUTE102",
       "name": "Route102_Layout",
       "width": 50,
-      "height": 20,
+      "height": 26,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Route102/border.bin",
@@ -3275,7 +3275,7 @@
       "id": "LAYOUT_SHOAL_CAVE_LOW_TIDE_ICE_ROOM",
       "name": "ShoalCave_LowTideIceRoom_Layout",
       "width": 20,
-      "height": 30,
+      "height": 26,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/ShoalCave_LowTideIceRoom/border.bin",
@@ -4410,6 +4410,56 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEW_RUSTURF_TUNNEL",
+      "name": "NewRusturfTunnel_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/NewRusturfTunnel/border.bin",
+      "blockdata_filepath": "data/layouts/NewRusturfTunnel/map.bin"
+    },
+    {
+      "id": "LAYOUT_DIGLETT_GROTTO",
+      "name": "DiglettGrotto_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/DiglettGrotto/border.bin",
+      "blockdata_filepath": "data/layouts/DiglettGrotto/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBERG_FIELDS",
+      "name": "PetalbergFields_Layout",
+      "width": 20,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/PetalbergFields/border.bin",
+      "blockdata_filepath": "data/layouts/PetalbergFields/map.bin"
+    },
+    {
+      "id": "LAYOUT_DEWFORD_GARDEN",
+      "name": "DewfordGarden_Layout",
+      "width": 31,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/DewfordGarden/border.bin",
+      "blockdata_filepath": "data/layouts/DewfordGarden/map.bin"
+    },
+    {
+      "id": "LAYOUT_TANDEMAUS_MEADOWS",
+      "name": "TandemausMeadows_Layout",
+      "width": 40,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/TandemausMeadows/border.bin",
+      "blockdata_filepath": "data/layouts/TandemausMeadows/map.bin"
     }
   ]
 }

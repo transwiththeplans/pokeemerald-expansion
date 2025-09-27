@@ -2408,4 +2408,248 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
     },
+	
+	[ABILITY_FOSSILIZE] =
+    {
+        .name = _("Fossilize"),
+        .description = COMPOUND_STRING("Normal moves become Rock."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_GRAVITY_WELL] =
+    {
+        .name = _("Gravity Well"),
+        .description = COMPOUND_STRING("Intensifies gravity."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_COUNTERPROOF] =
+    {
+        .name = _("Counterproof"),
+        .description = COMPOUND_STRING("Not hit by Fighting attacks."),
+        .aiRating = 9,
+    },
+
+    [ABILITY_EMANATE] =
+    {
+        .name = _("Emanate"),
+        .description = COMPOUND_STRING("Normal moves become Psychic."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_SNOW_SPEW] =
+    {
+        .name = _("Snow Spew"),
+        .description = COMPOUND_STRING("Creates a snowstorm if hit."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_SCARE] =
+    {
+        .name = _("Scare"),
+        .description = COMPOUND_STRING("Cuts foe's Special Attack."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_MIST_CALLER] =
+    {
+        .name = _("Mist Caller"),
+        .description = COMPOUND_STRING("Sets Misty Terrain when hit."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_WIND_BLOWER] =
+    {
+        .name = _("Wind Blower"),
+        .description = COMPOUND_STRING("Sets up Tailwind."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_LOOSE_ROCKS] =
+    {
+        .name = _("Loose Rocks"),
+        .description = COMPOUND_STRING("Throws Stealth Rocks if hit."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_FIREPOWER] =
+    {
+        .name = _("Firepower"),
+        .description = COMPOUND_STRING("Powers up Fire moves."),
+        .aiRating = 5,
+    },
+
+    [ABILITY_GARDENER] =
+    {
+        .name = _("Gardener"),
+        .description = COMPOUND_STRING("Powers up Grass moves."),
+        .aiRating = 5,
+    },
+
+    [ABILITY_WATERWORKER] =
+    {
+        .name = _("Waterworker"),
+        .description = COMPOUND_STRING("Powers up Water moves."),
+        .aiRating = 5,
+    },
+
+    [ABILITY_PERMAFROST] =
+    {
+        .name = _("Permafrost"),
+        .description = COMPOUND_STRING("Powers up Ice moves."),
+        .aiRating = 5,
+    },
+
+    [ABILITY_DRAGONHEART] =
+    {
+        .name = _("Dragonheart"),
+        .description = COMPOUND_STRING("Powers up Dragon moves."),
+        .aiRating = 5,
+    },
+
+    [ABILITY_PIXIECRAFT] =
+    {
+        .name = _("Pixiecraft"),
+        .description = COMPOUND_STRING("Powers up Fairy moves."),
+        .aiRating = 5,
+    },
+
+    [ABILITY_INSULATED] =
+    {
+        .name = _("Insulated"),
+        .description = COMPOUND_STRING("Halves Water and Electric damage."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_CURL_UP] =
+    {
+        .name = _("Curl Up"),
+        .description = COMPOUND_STRING("Adjusts defense favorably."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_MATTER_ABSORB] =
+    {
+        .name = _("Matter Absorb"),
+        .description = COMPOUND_STRING("Steel and Rock boost defense."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_CRYONICS] =
+    {
+        .name = _("Cryonics"),
+        .description = COMPOUND_STRING("May cause frostbite on contact."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_FILTH_FEEDER] =
+    {
+        .name = _("Filth Feeder"),
+        .description = COMPOUND_STRING("Drinks poison to heal HP."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_REFRACTION] =
+    {
+        .name = _("Refraction"),
+        .description = COMPOUND_STRING("Raises Special Attack."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_BLACK_HOLE] =
+    {
+        .name = _("Black Hole"),
+        .description = COMPOUND_STRING("Prevents the foe's escape."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_METAL_MUNCHER] =
+    {
+        .name = _("Metal Muncher"),
+        .description = COMPOUND_STRING("Eats steel to restore HP."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_VANTABLACK] =
+    {
+        .name = _("Vantablack"),
+        .description = COMPOUND_STRING("Normal moves become Dark."),
+        .aiRating = 8,
+    },
+	
+    [ABILITY_METAL_MORPH] =
+    {
+        .name = _("Metal Morph"),
+        .description = COMPOUND_STRING("Turns Normal moves to Steel."),
+        .aiRating = 8,
+    },
+	
+    [ABILITY_ENERGY_EATER] =
+    {
+        .name = _("Energy Muncher"),
+        .description = COMPOUND_STRING("Eats Electricity to restore HP."),
+        .aiRating = 7,
+    },
+	
+    [ABILITY_SOUL_FEED] =
+    {
+        .name = _("Soul Feed"),
+        .description = COMPOUND_STRING("Eats souls to restore HP."),
+        .aiRating = 7,
+    },
+	
+    [ABILITY_JUGGERNAUT] =
+    {
+        .name = _("Juggernaut"),
+        .description = COMPOUND_STRING("Size reduces damage."),
+        .aiRating = 7,
+    },
+	
+	[ABILITY_CHROME_COAT] =
+    {
+        .name = _("Chrome Coat"),
+        .description = COMPOUND_STRING("Halves special damage."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+	
+	[ABILITY_SELF_SUFFICIENT] =
+    {
+        .name = _("Self Sufficient"),
+        .description = COMPOUND_STRING("Heals damage overtime."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+	
+	[ABILITY_TIME_WARP] =
+    {
+        .name = _("Time Warp"),
+        .description = COMPOUND_STRING("Warps time on entry."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+	
+	[ABILITY_RAPID_FIRE] =
+    {
+        .name = _("Rapid Fire"),
+        .description = COMPOUND_STRING("Pulse moves have priority."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+	
+	[ABILITY_WEB_DOWN] =
+    {
+        .name = _("Web Down"),
+        .description = COMPOUND_STRING("Sets Sticky Web on Entry."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+	
+	[ABILITY_IMMOLATE] =
+    {
+        .name = _("Immolate"),
+        .description = COMPOUND_STRING("Normal moves become Fire."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
 };

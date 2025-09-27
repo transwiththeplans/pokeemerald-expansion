@@ -1,0 +1,2 @@
+TandemausMeadows_MapScripts::
+	.byte 0

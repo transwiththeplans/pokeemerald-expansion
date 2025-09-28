@@ -4210,7 +4210,7 @@ static void HandleTurnActionSelectionState(void)
             }
             break;
         case STATE_WAIT_ACTION_CHOSEN: // Try to perform an action.
-            if (!(gBattleControllerExecFlags & (((1u << battler)) | (0xF << 28) | ((1u << battler) << 4) | ((1u << battler) << 8) | ((1u << battler) << 12))))
+            if (!IsBattleControllerActiveOrPendingSyncAnywhere(battler))
             {
                 RecordedBattle_SetBattlerAction(battler, gBattleResources->bufferB[battler][1]);
                 gChosenActionByBattler[battler] = gBattleResources->bufferB[battler][1];
@@ -4414,7 +4414,7 @@ static void HandleTurnActionSelectionState(void)
             }
             break;
         case STATE_WAIT_ACTION_CASE_CHOSEN:
-            if (!(gBattleControllerExecFlags & (((1u << battler)) | (0xF << 28) | ((1u << battler) << 4) | ((1u << battler) << 8) | ((1u << battler) << 12))))
+            if (!IsBattleControllerActiveOrPendingSyncAnywhere(battler))
             {
                 switch (gChosenActionByBattler[battler])
                 {
@@ -4544,11 +4544,7 @@ static void HandleTurnActionSelectionState(void)
             }
             break;
         case STATE_WAIT_ACTION_CONFIRMED_STANDBY:
-            if (!(gBattleControllerExecFlags & ((1u << battler)
-                                                | (0xF << 28)
-                                                | (1u << (battler + 4))
-                                                | (1u << (battler + 8))
-                                                | (1u << (battler + 12)))))
+            if (!IsBattleControllerActiveOrPendingSyncAnywhere(battler))
             {
                 if (AllAtActionConfirmed())
                     i = TRUE;
@@ -4570,7 +4566,7 @@ static void HandleTurnActionSelectionState(void)
             }
             break;
         case STATE_WAIT_ACTION_CONFIRMED:
-            if (!(gBattleControllerExecFlags & ((1u << battler) | (0xF << 28) | (1u << (battler + 4)) | (1u << (battler + 8)) | (1u << (battler + 12)))))
+            if (!IsBattleControllerActiveOrPendingSyncAnywhere(battler))
             {
                 gBattleCommunication[ACTIONS_CONFIRMED_COUNT]++;
             }
@@ -4584,7 +4580,7 @@ static void HandleTurnActionSelectionState(void)
             {
                 gBattlerAttacker = battler;
                 gBattlescriptCurrInstr = gSelectionBattleScripts[battler];
-                if (!(gBattleControllerExecFlags & ((1u << battler) | (0xF << 28) | (1u << (battler + 4)) | (1u << (battler + 8)) | (1u << (battler + 12)))))
+                if (!IsBattleControllerActiveOrPendingSyncAnywhere(battler))
                 {
                     gBattleScriptingCommandsTable[gBattlescriptCurrInstr[0]]();
                 }
@@ -4592,7 +4588,7 @@ static void HandleTurnActionSelectionState(void)
             }
             break;
         case STATE_WAIT_SET_BEFORE_ACTION:
-                if (!(gBattleControllerExecFlags & ((1u << battler) | (0xF << 28) | (1u << (battler + 4)) | (1u << (battler + 8)) | (1u << (battler + 12)))))
+            if (!IsBattleControllerActiveOrPendingSyncAnywhere(battler))
             {
                 gBattleCommunication[battler] = STATE_BEFORE_ACTION_CHOSEN;
             }
@@ -4616,7 +4612,7 @@ static void HandleTurnActionSelectionState(void)
             {
                 gBattlerAttacker = battler;
                 gBattlescriptCurrInstr = gSelectionBattleScripts[battler];
-                if (!(gBattleControllerExecFlags & ((1u << battler) | (0xF << 28) | (1u << (battler + 4)) | (1u << (battler + 8)) | (1u << (battler + 12)))))
+                if (!IsBattleControllerActiveOrPendingSyncAnywhere(battler))
                 {
                     gBattleScriptingCommandsTable[gBattlescriptCurrInstr[0]]();
                 }
@@ -4651,7 +4647,7 @@ static void HandleTurnActionSelectionState(void)
             for (i = 0; i < gBattlersCount; i++)
             {
                 if (gChosenActionByBattler[i] == B_ACTION_SWITCH)
-                    SwitchPartyOrderInGameMulti(i, gBattleStruct->monToSwitchIntoId[battler]);
+                    SwitchPartyOrderInGameMulti(i, gBattleStruct->monToSwitchIntoId[i]);
             }
         }
     }
@@ -4719,6 +4715,8 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, enum ItemHoldEffect h
     // other abilities
     if (ability == ABILITY_QUICK_FEET && gBattleMons[battler].status1 & STATUS1_ANY)
         speed = (speed * 150) / 100;
+    else if (ability == ABILITY_LIMBER)
+        speed = (speed * 110) / 100;
     else if (ability == ABILITY_SURGE_SURFER && gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
         speed *= 2;
     else if (ability == ABILITY_SLOW_START && gDisableStructs[battler].slowStartTimer != 0)
@@ -4815,6 +4813,9 @@ s32 GetBattleMovePriority(u32 battler, u32 ability, u32 move)
         priority++;
     }
     else if (ability == ABILITY_TRIAGE && IsHealingMove(move))
+        priority += 3;
+	
+    else if (ability == ABILITY_RAPID_FIRE && IsPulseMove(move))
         priority += 3;
 
     if (gProtectStructs[battler].quash)
@@ -5789,6 +5790,21 @@ u32 TrySetAteType(u32 move, u32 battlerAtk, u32 attackerAbility)
     case ABILITY_GALVANIZE:
         ateType = TYPE_ELECTRIC;
         break;
+	case ABILITY_VANTABLACK:
+		ateType = TYPE_DARK;
+		break;
+	case ABILITY_FOSSILIZE:
+		ateType = TYPE_ROCK;
+		break;
+	case ABILITY_EMANATE:
+		ateType = TYPE_PSYCHIC;
+		break;
+	case ABILITY_METAL_MORPH:
+		ateType = TYPE_STEEL;
+		break;
+	case ABILITY_IMMOLATE:
+		ateType = TYPE_FIRE;
+		break;
     default:
         ateType = TYPE_NONE;
         break;
@@ -6004,7 +6020,7 @@ u32 GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum MonState
     }
     else if (moveEffect == EFFECT_AURA_WHEEL && species == SPECIES_MORPEKO_HANGRY)
     {
-        return TYPE_DARK;
+        return TYPE_POISON;
     }
     else if (moveType == TYPE_NORMAL
           && ability != ABILITY_NORMALIZE

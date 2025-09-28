@@ -6208,6 +6208,14 @@ BattleScript_ToxicDebrisRet:
 	copybyte gBattlerTarget, gBattlerAttacker
 	copybyte gBattlerAttacker, sBATTLER
 	return
+	
+BattleScript_LooseRocksActivates::
+	call BattleScript_AbilityPopUp
+	pause B_WAIT_TIME_SHORT
+	setstealthrock BattleScript_EffectStealthRock
+	printstring STRINGID_POINTEDSTONESFLOAT
+	waitmessage B_WAIT_TIME_LONG
+	return
 
 BattleScript_EarthEaterActivates::
 	call BattleScript_AbilityPopUp
@@ -7519,6 +7527,10 @@ BattleScript_AbilityHpHeal:
 BattleScript_RainDishActivates::
 	call BattleScript_AbilityHpHeal
 	end3
+	
+BattleScript_SelfSufficientHeal::
+	call BattleScript_AbilityHpHeal
+	end3
 
 BattleScript_CheekPouchActivates::
 	copybyte sSAVED_BATTLER, gBattlerAttacker
@@ -7582,6 +7594,15 @@ BattleScript_SandSpitActivates::
 	playanimation BS_BATTLER_0, B_ANIM_SANDSTORM_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
 	return
+	
+BattleScript_SnowSpewActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_SNOWWARNINGHAIL
+	waitstate
+	playanimation BS_BATTLER_0, B_ANIM_HAIL_CONTINUES
+	call BattleScript_ActivateWeatherAbilities
+	end3
 
 BattleScript_ShedSkinActivates::
 	call BattleScript_AbilityPopUp
@@ -7688,6 +7709,70 @@ BattleScript_IntimidateInReverse::
 	modifybattlerstatstage BS_TARGET, STAT_ATK, INCREASE, 1, BattleScript_IntimidateLoopIncrement, ANIM_ON
 	call BattleScript_TryIntimidateHoldEffects
 	goto BattleScript_IntimidateLoopIncrement
+
+BattleScript_ScareActivates::
+	savetarget
+.if B_ABILITY_POP_UP == TRUE
+	showabilitypopup BS_ATTACKER
+	pause B_WAIT_TIME_LONG
+	destroyabilitypopup
+.endif
+	setbyte gBattlerTarget, 0
+BattleScript_ScareLoop:
+	jumpifbyteequal gBattlerTarget, gBattlerAttacker, BattleScript_ScareLoopIncrement
+	jumpiftargetally BattleScript_ScareLoopIncrement
+	jumpifabsent BS_TARGET, BattleScript_ScareLoopIncrement
+	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_ScareLoopIncrement
+	jumpifintimidateabilityprevented
+
+BattleScript_ScareEffect:
+	copybyte sBATTLER, gBattlerAttacker
+	setstatchanger STAT_SPATK, 1, TRUE
+	statbuffchange STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_ScareLoopIncrement
+	setgraphicalstatchangevalues
+	jumpifability BS_TARGET, ABILITY_CONTRARY, BattleScript_ScareContrary
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_DECREASE, BattleScript_ScareWontDecrease
+	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	printstring STRINGID_PKMNCUTSSPATKWITH
+BattleScript_ScareEffect_WaitString:
+	waitmessage B_WAIT_TIME_LONG
+	saveattacker
+	savetarget
+	copybyte sBATTLER, gBattlerTarget
+	call BattleScript_TryIntimidateHoldEffects
+	restoreattacker
+	restoretarget
+
+BattleScript_ScareLoopIncrement:
+	addbyte gBattlerTarget, 1
+	jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_ScareLoop
+	copybyte sBATTLER, gBattlerAttacker
+	destroyabilitypopup
+	restoretarget
+	pause B_WAIT_TIME_MED
+	tryintimidatejectpack
+	end3
+
+BattleScript_ScarePrevented::
+	copybyte sBATTLER, gBattlerTarget
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PKMNPREVENTSSTATLOSSWITH
+	goto BattleScript_ScareEffect_WaitString
+
+BattleScript_ScareWontDecrease:
+	printstring STRINGID_STATSWONTDECREASE
+	goto BattleScript_ScareEffect_WaitString
+
+BattleScript_ScareContrary:
+	call BattleScript_AbilityPopUpTarget
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_ScareContrary_WontIncrease
+	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	printfromtable gStatUpStringIds
+	goto BattleScript_ScareEffect_WaitString
+
+BattleScript_ScareContrary_WontIncrease:
+	printstring STRINGID_TARGETSTATWONTGOHIGHER
+	goto BattleScript_ScareEffect_WaitString
 
 BattleScript_SupersweetSyrupActivates::
  	savetarget
@@ -7964,6 +8049,36 @@ BattleScript_PsychicSurgeActivates::
 	waitmessage B_WAIT_TIME_LONG
 	playanimation BS_SCRIPTING, B_ANIM_RESTORE_BG
 	call BattleScript_ActivateTerrainEffects
+	end3
+	
+BattleScript_GravityWellActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_GRAVITYINTENSIFIED
+	waitmessage B_WAIT_TIME_LONG
+	end3
+	
+BattleScript_WindBlowerActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_TAILWINDBLEW
+	waitmessage B_WAIT_TIME_LONG
+	call BattleScript_TryTailwindAbilitiesLoop
+	goto BattleScript_MoveEnd
+	end3
+	
+BattleScript_TimeDistortActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_DIMENSIONSWERETWISTED
+	waitmessage B_WAIT_TIME_LONG
+	end3
+	
+BattleScript_WebDownActivated::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_STICKYWEBUSED
+	waitmessage B_WAIT_TIME_LONG
 	end3
 
 BattleScript_BadDreamsActivates::

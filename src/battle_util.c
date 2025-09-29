@@ -3918,7 +3918,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             break;
         case ABILITY_WEB_DOWN:
             if (!gSpecialStatuses[battler].switchInAbilityDone
-             && gSideTimers[GetBattlerSide(gBattlerAttacker)].stickyWebAmount != 1)
+             && !(gSideStatuses[BATTLE_OPPOSITE(battler)] & SIDE_STATUS_STICKY_WEB))
                 {
 					gBattleScripting.savedBattler = gBattlerAttacker;
 					gBattlerAttacker = battler;

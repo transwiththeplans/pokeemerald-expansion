@@ -28481,6 +28481,9 @@ RainDrops:
 gBattleAnimGeneral_Sun::
 	goto gBattleAnimMove_SunnyDay
 
+gBattleAnimGeneral_StickyWeb::
+	goto gBattleAnimMove_StickyWeb
+
 gBattleAnimGeneral_Sandstorm::
 	goto gBattleAnimMove_Sandstorm
 

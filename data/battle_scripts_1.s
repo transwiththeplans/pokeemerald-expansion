@@ -8077,6 +8077,7 @@ BattleScript_TimeDistortActivates::
 BattleScript_WebDownActivated::
 	pause B_WAIT_TIME_SHORT
 	call BattleScript_AbilityPopUp
+	playanimation BS_BATTLER_0, B_ANIM_STICKY_WEB
 	printstring STRINGID_STICKYWEBUSED
 	waitmessage B_WAIT_TIME_LONG
 	end3

@@ -375,9 +375,9 @@
 #define ABILITY_RAPID_FIRE      343
 #define ABILITY_WEB_DOWN        344
 #define ABILITY_IMMOLATE        345
-#define ABILITY_UNUSED_346      346
-#define ABILITY_UNUSED_347      347
-#define ABILITY_UNUSED_348      348
+#define ABILITY_BELLICUS      346
+#define ABILITY_SERENA      347
+#define ABILITY_DEAD_SPACE      348
 #define ABILITY_UNUSED_349      349
 #define ABILITY_UNUSED_350      350
 #define ABILITY_UNUSED_351      351

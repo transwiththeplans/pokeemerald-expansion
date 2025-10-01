@@ -997,7 +997,34 @@
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 829
+//CUSTOM TMs/HM
+#define ITEM_TM_CURSE           829
+#define ITEM_TM_PIN_MISSILE     830
+#define ITEM_TM_DIFFUSE_RAY     831
+#define ITEM_TM_FLASH_VOLLEY    832
+#define ITEM_TM_MOONBLAST       833
+#define ITEM_TM_ELECTRO_BALL    834
+#define ITEM_TM_THUNDER_WAVE    835
+#define ITEM_TM_DRAGON_BREATH   836
+#define ITEM_TM_GLACIATE        837
+#define ITEM_TM_SOUL_SUCK       838
+#define ITEM_TM_LIFE_DEW        839
+#define ITEM_TM_AIR_BOMB        840
+#define ITEM_TM_TOXIC_SPIKES    841
+#define ITEM_TM_HEADLONG_RUSH   842
+#define ITEM_TM_VACUUM_WAVE     843
+#define ITEM_TM_BREAKING_SWIPE  844
+#define ITEM_TM_SMART_STRIKE    845
+#define ITEM_TM_SPIKES          846
+#define ITEM_TM_MUD_SHOT        847
+#define ITEM_TM_BATON_PASS      848
+#define ITEM_TM_SILVER_WIND     849
+#define ITEM_TM_TRICK_ROOM      850
+#define ITEM_TM_POWER_WHIP      851
+#define ITEM_TM_BARB_BARRAGE    852
+#define ITEM_TM_LAST_RESPECTS   853
+
+#define ITEMS_COUNT 854
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

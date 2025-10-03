@@ -1305,66 +1305,26 @@
   },
   "BEEDRILL": {
     "LevelMoves": [
-      {
-        "Level": 0,
-        "Move": "MOVE_TWINEEDLE"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_TWINEEDLE"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_FURY_ATTACK"
-      },
-      {
-        "Level": 11,
-        "Move": "MOVE_FURY_ATTACK"
-      },
-      {
-        "Level": 14,
-        "Move": "MOVE_RAGE"
-      },
-      {
-        "Level": 17,
-        "Move": "MOVE_PURSUIT"
-      },
-      {
-        "Level": 20,
-        "Move": "MOVE_FOCUS_ENERGY"
-      },
-      {
-        "Level": 23,
-        "Move": "MOVE_VENOSHOCK"
-      },
-      {
-        "Level": 26,
-        "Move": "MOVE_ASSURANCE"
-      },
-      {
-        "Level": 29,
-        "Move": "MOVE_TOXIC_SPIKES"
-      },
-      {
-        "Level": 32,
-        "Move": "MOVE_PIN_MISSILE"
-      },
-      {
-        "Level": 35,
-        "Move": "MOVE_POISON_JAB"
-      },
-      {
-        "Level": 38,
-        "Move": "MOVE_AGILITY"
-      },
-      {
-        "Level": 41,
-        "Move": "MOVE_ENDEAVOR"
-      },
-      {
-        "Level": 44,
-        "Move": "MOVE_FELL_STINGER"
-      }
+    { "Level": 0, "Move": "MOVE_FELL_STINGER" },
+    { "Level": 1, "Move": "MOVE_BUG_BITE" },
+    { "Level": 1, "Move": "MOVE_HIT_AND_RUN" },
+    { "Level": 1, "Move": "MOVE_THUNDER_SPEAR" },
+    { "Level": 1, "Move": "MOVE_POISON_STING" },
+    { "Level": 1, "Move": "MOVE_STRING_SHOT" },
+    { "Level": 1, "Move": "MOVE_HARDEN" },
+    { "Level": 11, "Move": "MOVE_FURY_CUTTER" },
+    { "Level": 14, "Move": "MOVE_LASER_FOCUS" },
+    { "Level": 17, "Move": "MOVE_POISON_STING" },
+    { "Level": 20, "Move": "MOVE_FOCUS_ENERGY" },
+    { "Level": 23, "Move": "MOVE_VENOSHOCK" },
+    { "Level": 26, "Move": "MOVE_ASSURANCE" },
+    { "Level": 29, "Move": "MOVE_TOXIC_SPIKES" },
+    { "Level": 32, "Move": "MOVE_PIN_MISSILE" },
+    { "Level": 35, "Move": "MOVE_POISON_JAB" },
+    { "Level": 38, "Move": "MOVE_AGILITY" },
+    { "Level": 41, "Move": "MOVE_ENDEAVOR" },
+    { "Level": 44, "Move": "MOVE_BARB_BARRAGE" },
+    { "Level": 52, "Move": "MOVE_FRENZY" }
     ],
     "PreEvoMoves": [
       "MOVE_BUG_BITE",
@@ -1374,39 +1334,50 @@
       "MOVE_HARDEN"
     ],
     "TMMoves": [
-      "MOVE_TOXIC",
-      "MOVE_VENOSHOCK",
-      "MOVE_HIDDEN_POWER",
-      "MOVE_SUNNY_DAY",
-      "MOVE_HYPER_BEAM",
-      "MOVE_PROTECT",
-      "MOVE_ROOST",
-      "MOVE_FRUSTRATION",
-      "MOVE_SOLAR_BEAM",
-      "MOVE_RETURN",
-      "MOVE_BRICK_BREAK",
-      "MOVE_DOUBLE_TEAM",
-      "MOVE_SLUDGE_BOMB",
-      "MOVE_AERIAL_ACE",
-      "MOVE_FACADE",
-      "MOVE_REST",
-      "MOVE_ATTRACT",
-      "MOVE_THIEF",
-      "MOVE_ROUND",
-      "MOVE_FALSE_SWIPE",
-      "MOVE_BRUTAL_SWING",
       "MOVE_ACROBATICS",
-      "MOVE_PAYBACK",
-      "MOVE_GIGA_IMPACT",
-      "MOVE_SWORDS_DANCE",
-      "MOVE_X_SCISSOR",
-      "MOVE_INFESTATION",
-      "MOVE_POISON_JAB",
-      "MOVE_SWAGGER",
+      "MOVE_AERIAL_ACE",
+	  "MOVE_BREAKING_SWIPE",
+      "MOVE_BRICK_BREAK",
+      "MOVE_CUT",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_ENDEAVOR",
+      "MOVE_ENDURE",
+      "MOVE_FACADE",
+      "MOVE_FLASH",
+      "MOVE_FURY_CUTTER",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_HYPER_BEAM",
+      "MOVE_KNOCK_OFF",
+      "MOVE_LEECH_LIFE",
+      "MOVE_LUNGE",
+      "MOVE_POISON_FANG",
+      "MOVE_PROTECT",
+      "MOVE_REFLECT",
+      "MOVE_REST",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_ROCK_SMASH",
+      "MOVE_ROCK_TOMB",
+      "MOVE_SANDSTORM",
       "MOVE_SLEEP_TALK",
-      "MOVE_U_TURN",
+      "MOVE_SLUDGE_BOMB",
+      "MOVE_SNORE",
+      "MOVE_SOLAR_BEAM",
+      "MOVE_STEALTH_ROCK",
       "MOVE_SUBSTITUTE",
-      "MOVE_CONFIDE"
+      "MOVE_SUNNY_DAY",
+      "MOVE_SWAGGER",
+      "MOVE_SWIFT",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_TAILWIND",
+      "MOVE_TAUNT",
+      "MOVE_THIEF",
+      "MOVE_TOXIC",
+      "MOVE_TOXIC_SPIKES",
+      "MOVE_U_TURN",
+      "MOVE_VOLT_SWITCH",
+      "MOVE_WILL_O_WISP",
+      "MOVE_X_SCISSOR"
     ],
     "EggMoves": [],
     "TutorMoves": []

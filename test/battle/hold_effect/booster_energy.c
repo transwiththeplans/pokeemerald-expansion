@@ -235,6 +235,56 @@ DOUBLE_BATTLE_TEST("Booster Energy triggers correctly for all battlers if multip
     }
 }
 
+DOUBLE_BATTLE_TEST("Booster Energy activates on any terrain")
+{
+    GIVEN {
+        PLAYER(SPECIES_IRON_MOTH) { Speed(110); Ability(ABILITY_QUARK_DRIVE); Item(ITEM_BOOSTER_ENERGY); }
+        PLAYER(SPECIES_WOBBUFFET) { Speed(80); }
+        OPPONENT(SPECIES_TAPU_BULU) { Speed(100); Ability(ABILITY_GRASSY_SURGE); }
+        OPPONENT(SPECIES_TAPU_KOKO) { Speed(10); Ability(ABILITY_ELECTRIC_SURGE); };
+    } WHEN {
+        TURN { }
+    } SCENE {
+        ABILITY_POPUP(opponentLeft, ABILITY_GRASSY_SURGE);
+        ABILITY_POPUP(playerLeft, ABILITY_QUARK_DRIVE);
+        ABILITY_POPUP(opponentRight, ABILITY_ELECTRIC_SURGE);
+    }
+}
+
+DOUBLE_BATTLE_TEST("Booster Energy activates on air locked sun")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_RAGING_BOLT) { Ability(ABILITY_PROTOSYNTHESIS); Item(ITEM_BOOSTER_ENERGY); }
+        OPPONENT(SPECIES_PSYDUCK) { Ability(ABILITY_CLOUD_NINE); }
+        OPPONENT(SPECIES_TORKOAL) { Ability(ABILITY_DROUGHT); };
+    } WHEN {
+        TURN { SWITCH(playerLeft, 2); }
+    } SCENE {
+        ABILITY_POPUP(opponentLeft, ABILITY_CLOUD_NINE);
+        ABILITY_POPUP(opponentRight, ABILITY_DROUGHT);
+        ABILITY_POPUP(playerLeft, ABILITY_PROTOSYNTHESIS);
+    }
+}
+
+DOUBLE_BATTLE_TEST("Booster Energy will not activate on terrain if user has Protosynthesis instead of Quark Drive")
+{
+    GIVEN {
+        PLAYER(SPECIES_RAGING_BOLT) { Speed(110); Ability(ABILITY_PROTOSYNTHESIS); Item(ITEM_BOOSTER_ENERGY); }
+        PLAYER(SPECIES_WOBBUFFET) { Speed(80); }
+        OPPONENT(SPECIES_TAPU_BULU) { Speed(100); Ability(ABILITY_GRASSY_SURGE); }
+        OPPONENT(SPECIES_TAPU_KOKO) { Speed(10); Ability(ABILITY_ELECTRIC_SURGE); };
+    } WHEN {
+        TURN { }
+    } SCENE {
+        ABILITY_POPUP(opponentLeft, ABILITY_GRASSY_SURGE);
+        NOT ABILITY_POPUP(playerLeft, ABILITY_PROTOSYNTHESIS);
+        ABILITY_POPUP(opponentRight, ABILITY_ELECTRIC_SURGE);
+        ABILITY_POPUP(playerLeft, ABILITY_PROTOSYNTHESIS); // Activation after all terrains
+    }
+}
+
 SINGLE_BATTLE_TEST("Booster Energy will activate Quark Drive after Electric Terrain ends (Trait)")
 {
     GIVEN {
@@ -408,5 +458,55 @@ SINGLE_BATTLE_TEST("Booster Energy increases special defense by 30% if it is the
         HP_BAR(player, captureDamage: &results[i].damage);
     } FINALLY {
         EXPECT_MUL_EQ(results[0].damage, Q_4_12(0.7), results[1].damage);
+    }
+}
+
+DOUBLE_BATTLE_TEST("Booster Energy activates on any terrain (Trait)")
+{
+    GIVEN {
+        PLAYER(SPECIES_IRON_MOTH) { Speed(110); Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_QUARK_DRIVE); Item(ITEM_BOOSTER_ENERGY); }
+        PLAYER(SPECIES_WOBBUFFET) { Speed(80); }
+        OPPONENT(SPECIES_TAPU_BULU) { Speed(100); Ability(ABILITY_GRASSY_SURGE); }
+        OPPONENT(SPECIES_TAPU_KOKO) { Speed(10); Ability(ABILITY_ELECTRIC_SURGE); };
+    } WHEN {
+        TURN { }
+    } SCENE {
+        ABILITY_POPUP(opponentLeft, ABILITY_GRASSY_SURGE);
+        ABILITY_POPUP(playerLeft, ABILITY_QUARK_DRIVE);
+        ABILITY_POPUP(opponentRight, ABILITY_ELECTRIC_SURGE);
+    }
+}
+
+DOUBLE_BATTLE_TEST("Booster Energy activates on air locked sun (Trait)")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_RAGING_BOLT) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_PROTOSYNTHESIS); Item(ITEM_BOOSTER_ENERGY); }
+        OPPONENT(SPECIES_PSYDUCK) { Ability(ABILITY_CLOUD_NINE); }
+        OPPONENT(SPECIES_TORKOAL) { Ability(ABILITY_DROUGHT); };
+    } WHEN {
+        TURN { SWITCH(playerLeft, 2); }
+    } SCENE {
+        ABILITY_POPUP(opponentLeft, ABILITY_CLOUD_NINE);
+        ABILITY_POPUP(opponentRight, ABILITY_DROUGHT);
+        ABILITY_POPUP(playerLeft, ABILITY_PROTOSYNTHESIS);
+    }
+}
+
+DOUBLE_BATTLE_TEST("Booster Energy will not activate on terrain if user has Protosynthesis instead of Quark Drive (Trait)")
+{
+    GIVEN {
+        PLAYER(SPECIES_RAGING_BOLT) { Speed(110); Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_PROTOSYNTHESIS); Item(ITEM_BOOSTER_ENERGY); }
+        PLAYER(SPECIES_WOBBUFFET) { Speed(80); }
+        OPPONENT(SPECIES_TAPU_BULU) { Speed(100); Ability(ABILITY_GRASSY_SURGE); }
+        OPPONENT(SPECIES_TAPU_KOKO) { Speed(10); Ability(ABILITY_ELECTRIC_SURGE); };
+    } WHEN {
+        TURN { }
+    } SCENE {
+        ABILITY_POPUP(opponentLeft, ABILITY_GRASSY_SURGE);
+        NOT ABILITY_POPUP(playerLeft, ABILITY_PROTOSYNTHESIS);
+        ABILITY_POPUP(opponentRight, ABILITY_ELECTRIC_SURGE);
+        ABILITY_POPUP(playerLeft, ABILITY_PROTOSYNTHESIS); // Activation after all terrains
     }
 }

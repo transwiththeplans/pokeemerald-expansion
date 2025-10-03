@@ -16,6 +16,14 @@ SINGLE_BATTLE_TEST("Cursed Body triggers 30% of the time")
     }
 }
 
+TO_DO_BATTLE_TEST("Cursed Body cannot disable Struggle")
+TO_DO_BATTLE_TEST("Cursed Body can trigger if the attacker is behind a Substitute")
+TO_DO_BATTLE_TEST("Cursed Body cannot trigger if the target is behind a Substitute")
+TO_DO_BATTLE_TEST("Cursed Body does not stop a multistrike move mid-execution")
+TO_DO_BATTLE_TEST("Cursed Body disables the move that called another move instead of the called move")
+TO_DO_BATTLE_TEST("Cursed Body disables damaging Z-Moves, but not the base move") // Rotom Powers can restore Z-Moves
+TO_DO_BATTLE_TEST("Cursed Body disables the base move of a status Z-Move")
+
 SINGLE_BATTLE_TEST("Cursed Body triggers 30% of the time (Trait)")
 {
     PASSES_RANDOMLY(3, 10, RNG_CURSED_BODY);

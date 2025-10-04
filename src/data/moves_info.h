@@ -2419,12 +2419,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Fissure"),
         .description = COMPOUND_STRING(
-            "A one-hit KO move that\n"
-            "drops the foe in a fissure."),
-        .effect = EFFECT_OHKO,
-        .power = 1,
+            "Drops the foe in a fissure.\n"
+            "Clears field."),
+        .effect = EFFECT_RAPID_SPIN,
+        .power = 120,
         .type = TYPE_GROUND,
-        .accuracy = 30,
+        .accuracy = 85,
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -8686,15 +8686,19 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Sheer Cold"),
         .description = COMPOUND_STRING(
             "A chilling attack that\n"
-            "causes fainting if it hits."),
+            "causes frostbite on impact."),
         .effect = EFFECT_OHKO,
-        .power = 1,
+        .power = 120,
         .type = TYPE_ICE,
-        .accuracy = 30,
+        .accuracy = 85,
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_FREEZE_OR_FROSTBITE,
+			.chance = 100,
+        }),
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_MONS_WITH_GOOD_APPEALS,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,

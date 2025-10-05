@@ -2404,12 +2404,12 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
 #if P_FAMILY_APPLIN
     [SPECIES_APPLIN] =
     {
-        .baseHP        = 40,
-        .baseAttack    = 40,
+        .baseHP        = 50,
+        .baseAttack    = 50,
         .baseDefense   = 80,
         .baseSpeed     = 20,
-        .baseSpAttack  = 40,
-        .baseSpDefense = 40,
+        .baseSpAttack  = 50,
+        .baseSpDefense = 80,
         .types = MON_TYPES(TYPE_GRASS, TYPE_NORMAL),
         .catchRate = 255,
         .expYield = 52,

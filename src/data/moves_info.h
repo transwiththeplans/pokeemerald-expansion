@@ -1613,6 +1613,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+		.pulseMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             // The following effect is also relevant in battle_Pike.c
             // If you cherry-pick this to use something other than the config, make sure to update it there too
@@ -11169,6 +11170,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .pulseMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_ACC_MINUS_1,
             .chance = 30,
@@ -14048,10 +14050,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Glaciate"),
         .description = COMPOUND_STRING(
-            "Blows very cold air at the\n"
-            "foes. It lowers their Speed."),
+            "Blows very bitter air at the\n"
+            "foes. May lower special defense."),
         .effect = EFFECT_HIT,
-        .power = 65,
+        .power = 75,
         .type = TYPE_ICE,
         .accuracy = 95,
         .pp = 10,
@@ -14059,8 +14061,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_SPD_MINUS_1,
-            .chance = 100,
+            .moveEffect = MOVE_EFFECT_SP_DEF_MINUS_1,
+            .chance = 40,
         }),
         .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
@@ -17599,6 +17601,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .pulseMove = TRUE,
         .contestEffect = CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
@@ -18420,6 +18423,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .metronomeBanned = TRUE,
+        .pulseMove = TRUE,
         .contestEffect = CONTEST_EFFECT_USER_MORE_EASILY_STARTLED,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
@@ -21159,7 +21163,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 		.target = MOVE_TARGET_SELECTED,
 		.priority = 0,
 		.category = DAMAGE_CATEGORY_SPECIAL,
-		.makesContact = FALSE,
+        .pulseMove = TRUE,
 		.metronomeBanned = TRUE,
 		.additionalEffects = ADDITIONAL_EFFECTS({
 			.moveEffect = MOVE_EFFECT_SP_DEF_MINUS_1,

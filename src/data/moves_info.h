@@ -3337,9 +3337,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Clubs the foe with a bone.\n"
             "May cause flinching."),
         .effect = EFFECT_HIT,
-        .power = 65,
+        .power = 75,
         .type = TYPE_GROUND,
-        .accuracy = 85,
+        .accuracy = 100,
         .pp = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -5104,20 +5104,20 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Zap Cannon"),
         .description = COMPOUND_STRING(
-            "Powerful and sure to cause\n"
-            "paralysis, but inaccurate."),
+            "Powerful burst of energy.\n"
+            "Drops SpA by 2 stages."),
         .effect = EFFECT_HIT,
         .power = B_UPDATED_MOVE_DATA >= GEN_4 ? 120 : 100,
         .type = TYPE_ELECTRIC,
-        .accuracy = 50,
+        .accuracy = 95,
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .ballisticMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_PARALYSIS,
-            .chance = 100,
+            .moveEffect = MOVE_EFFECT_SP_ATK_MINUS_2,
+            .self = TRUE,
         }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_COOL,
@@ -5901,11 +5901,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Dynamic Punch"),
         .description = COMPOUND_STRING(
             "Powerful and sure to cause\n"
-            "confusion, but inaccurate."),
+            "confusion."),
         .effect = EFFECT_HIT,
         .power = 100,
         .type = TYPE_FIGHTING,
-        .accuracy = 50,
+        .accuracy = 80,
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -8204,7 +8204,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "An attack that may shock\n"
             "the foe into flinching."),
         .effect = EFFECT_HIT,
-        .power = 30,
+        .power = 50,
         .type = TYPE_GHOST,
         .accuracy = 100,
         .pp = 15,
@@ -10175,7 +10175,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = B_UPDATED_MOVE_DATA >= GEN_7 ? 70 : 80,
         .type = TYPE_DARK,
         .accuracy = 100,
-        .pp = 5,
+        .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 1,
         .category = DAMAGE_CATEGORY_PHYSICAL,
@@ -13293,11 +13293,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Inferno"),
         .description = COMPOUND_STRING(
             "Powerful and sure to inflict\n"
-            "a burn, but inaccurate."),
+            "a burn."),
         .effect = EFFECT_HIT,
         .power = 100,
         .type = TYPE_FIRE,
-        .accuracy = 50,
+        .accuracy = 80,
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -20944,7 +20944,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 70,
         .type = TYPE_ELECTRIC,
         .accuracy = 100,
-        .pp = 5,
+        .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 1,
         .category = DAMAGE_CATEGORY_SPECIAL,
@@ -21936,7 +21936,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Thunder Cutter"),
         .description = COMPOUND_STRING(
             "A sharp electric slash.\n"
-            "Boosted by Sharpness."),
+            "Not used rn."),
         .effect = EFFECT_HIT,
         .power = 80,
         .type = TYPE_ELECTRIC,

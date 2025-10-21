@@ -719,7 +719,7 @@ SINGLE_BATTLE_TEST("Defiant doesn't display ability popup when already at Maximu
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_TICKLE) == EFFECT_TICKLE);
         ASSUME(GetMoveEffect(MOVE_BELLY_DRUM) == EFFECT_BELLY_DRUM);
-        PLAYER(SPECIES_MANKEY) { Ability(ABILITY_VITAL_SPIRIT); Innates(ABILITY_DEFIANT)}
+        PLAYER(SPECIES_MANKEY) { Ability(ABILITY_VITAL_SPIRIT); Innates(ABILITY_DEFIANT); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_BELLY_DRUM); MOVE(opponent, MOVE_TICKLE); }

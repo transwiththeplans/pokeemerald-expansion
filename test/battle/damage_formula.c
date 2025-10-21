@@ -300,9 +300,9 @@ DOUBLE_BATTLE_TEST("Transistor Damage calculation (Trait)", s16 damage)
     s16 expectedDamageTransistorSpec = 0, expectedDamageRegularPhys = 0, expectedDamageRegularSpec = 0, expectedDamageTransistorPhys = 0;
     s16 damagePlayerLeft, damagePlayerRight, damageOpponentLeft, damageOpponentRight;
     for (u32 spread = 0; spread < 16; ++spread) {
-        PARAMETRIZE { expectedDamageTransistorSpec = sThunderShockTransistorSpread[spread],
-                      expectedDamageRegularSpec = sThunderShockRegularSpread[spread],
-                      expectedDamageTransistorPhys = sWildChargeTransistorSpread[spread],
+        PARAMETRIZE { expectedDamageTransistorSpec = sThunderShockTransistorSpreadGen9[spread],
+                      expectedDamageRegularSpec = sThunderShockRegularSpread[spread];
+                      expectedDamageTransistorPhys = sWildChargeTransistorSpreadGen9[spread],
                       expectedDamageRegularPhys = sWildChargeRegularSpread[spread];
                     }
     }

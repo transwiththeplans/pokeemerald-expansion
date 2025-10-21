@@ -314,7 +314,6 @@ BattleScript_MoveSwitchOpenPartyScreen::
 	returntoball BS_ATTACKER, FALSE
 	getswitchedmondata BS_ATTACKER
 	switchindataupdate BS_ATTACKER
-	resetswitchinabilitybits BS_ATTACKER
 	hpthresholds BS_ATTACKER
 	trytoclearprimalweather
 	printstring STRINGID_EMPTYSTRING3

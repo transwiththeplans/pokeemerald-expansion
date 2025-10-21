@@ -345,66 +345,6 @@ bool32 ShouldRecordStatusMove(u32 move)
     return RandomPercentage(RNG_AI_ASSUME_ALL_STATUS, ASSUME_ALL_STATUS_ODDS) && IsBattleMoveStatus(move);
 }
 
-bool32 ShouldRecordStatusMove(u32 move)
-{
-    if (ASSUME_STATUS_MOVES_HAS_TUNING)
-    {
-        switch (GetMoveEffect(move))
-        {
-        // variable odds by additional effect
-        case EFFECT_NON_VOLATILE_STATUS:
-            if (GetMoveNonVolatileStatus(move) == MOVE_EFFECT_SLEEP && RandomPercentage(RNG_AI_ASSUME_STATUS_SLEEP, ASSUME_STATUS_HIGH_ODDS))
-                return TRUE;
-            else if (RandomPercentage(RNG_AI_ASSUME_STATUS_NONVOLATILE, ASSUME_STATUS_MEDIUM_ODDS))
-                return TRUE;
-            break;
-        // High odds
-        case EFFECT_AURORA_VEIL:
-        case EFFECT_CHILLY_RECEPTION:
-        case EFFECT_FIRST_TURN_ONLY:
-        case EFFECT_FOLLOW_ME:
-        case EFFECT_INSTRUCT:
-        case EFFECT_JUNGLE_HEALING:
-        case EFFECT_SHED_TAIL:
-            return RandomPercentage(RNG_AI_ASSUME_STATUS_HIGH_ODDS, ASSUME_STATUS_HIGH_ODDS);
-        // Medium odds
-        case EFFECT_AFTER_YOU:
-        case EFFECT_DOODLE:
-        case EFFECT_ENCORE:
-        case EFFECT_HAZE:
-        case EFFECT_PARTING_SHOT:
-        case EFFECT_PROTECT:
-        case EFFECT_REST:
-        case EFFECT_ROAR:
-        case EFFECT_ROOST:
-        case EFFECT_SLEEP_TALK:
-        case EFFECT_TAUNT:
-        case EFFECT_TAILWIND:
-        case EFFECT_TRICK:
-        case EFFECT_TRICK_ROOM:
-        // defoggables / screens and hazards
-        case EFFECT_LIGHT_SCREEN:
-        case EFFECT_REFLECT:
-        case EFFECT_SPIKES:
-        case EFFECT_STEALTH_ROCK:
-        case EFFECT_STICKY_WEB:
-        case EFFECT_TOXIC_SPIKES:
-            return RandomPercentage(RNG_AI_ASSUME_STATUS_MEDIUM_ODDS, ASSUME_STATUS_MEDIUM_ODDS);
-        // Low odds
-        case EFFECT_ENTRAINMENT:
-        case EFFECT_FIXED_PERCENT_DAMAGE:
-        case EFFECT_GASTRO_ACID:
-        case EFFECT_IMPRISON:
-        case EFFECT_TELEPORT:
-            return RandomPercentage(RNG_AI_ASSUME_STATUS_LOW_ODDS, ASSUME_STATUS_LOW_ODDS);
-        default:
-            break;
-        }
-    }
-
-    return RandomPercentage(RNG_AI_ASSUME_ALL_STATUS, ASSUME_ALL_STATUS_ODDS) && IsBattleMoveStatus(move);
-}
-
 static bool32 ShouldFallForIllusion(u32 illusionSpecies, u32 battlerId)
 {
     u32 i, j;
@@ -800,7 +740,7 @@ static inline void CalcDynamicMoveDamage(struct DamageContext *ctx, u16 *medianD
     u16 minimum = *minimumDamage;
     u16 maximum = *maximumDamage;
     u16 battlerTraits[MAX_MON_TRAITS];
-    STORE_BATTLER_TRAITS(damageCalcData->battlerAtk); //CTX battlerAtk???
+    STORE_BATTLER_TRAITS(ctx->battlerAtk);
 
     switch (effect)
     {
@@ -811,7 +751,7 @@ static inline void CalcDynamicMoveDamage(struct DamageContext *ctx, u16 *medianD
             minimum *= 3;
             maximum *= 3;
         }
-        else if (ctx->SearchTraits(battlerTraits, ABILITY_SKILL_LINK))
+        else if (SearchTraits(battlerTraits, ABILITY_SKILL_LINK))
         {
             median *= 5;
             minimum *= 5;
@@ -2086,7 +2026,7 @@ bool32 CanLowerStat(u32 battlerAtk, u32 battlerDef, struct AiLogicData *aiData, 
 {
     u16 battlerTraits[MAX_MON_TRAITS];
     STORE_BATTLER_TRAITS(battlerDef); //Normal storage used since the AI ability is set manually
-    battlerTraits[0] = abilityDef; //First trait set manually to deal with timing issue
+    battlerTraits[0] = aiData->abilities[battlerDef]; //First trait set manually to deal with timing issue
 
     if (gBattleMons[battlerDef].statStages[stat] == MIN_STAT_STAGE)
         return FALSE;
@@ -2125,9 +2065,6 @@ bool32 CanLowerStat(u32 battlerAtk, u32 battlerDef, struct AiLogicData *aiData, 
          || SearchTraits(battlerTraits, ABILITY_WHITE_SMOKE)
          || SearchTraits(battlerTraits, ABILITY_FULL_METAL_BODY))
             return FALSE;
-        default:
-            break;
-        }
     }
 
     if (stat == STAT_SPEED)

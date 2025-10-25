@@ -348,7 +348,6 @@ DOUBLE_BATTLE_TEST("Opportunist raises Attack only once when partner has Intimid
     } SCENE {
         ABILITY_POPUP(playerLeft, ABILITY_INTIMIDATE);
         if (abilityLeft == ABILITY_CONTRARY) {
-            ABILITY_POPUP(opponentLeft, ABILITY_CONTRARY);
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponentLeft);
             MESSAGE("The opposing Spinda's Attack rose!");
         } else {
@@ -356,23 +355,11 @@ DOUBLE_BATTLE_TEST("Opportunist raises Attack only once when partner has Intimid
             MESSAGE("Mightyena's Intimidate cuts the opposing Spinda's Attack!");
         }
         if (abilityRight == ABILITY_CONTRARY) {
-            ABILITY_POPUP(opponentRight, ABILITY_CONTRARY);
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponentRight);
             MESSAGE("The opposing Spinda's Attack rose!");
         } else {
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponentRight);
             MESSAGE("Mightyena's Intimidate cuts the opposing Spinda's Attack!");
-        }
-
-        if ((abilityLeft == ABILITY_CONTRARY && abilityRight != ABILITY_CONTRARY)
-                || (abilityLeft != ABILITY_CONTRARY && abilityRight == ABILITY_CONTRARY)) {
-            ABILITY_POPUP(playerRight, ABILITY_OPPORTUNIST);
-            ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, playerRight);
-            MESSAGE("Espathra's Attack rose!");
-        } else if (abilityLeft == ABILITY_CONTRARY && abilityRight == ABILITY_CONTRARY) {
-            ABILITY_POPUP(playerRight, ABILITY_OPPORTUNIST);
-            ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, playerRight);
-            MESSAGE("Espathra's Attack sharply rose!");
         }
 
         HP_BAR(playerLeft, captureDamage: &results[i].damageLeft);

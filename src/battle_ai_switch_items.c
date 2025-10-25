@@ -722,7 +722,7 @@ static bool32 ShouldSwitchIfBadlyStatused(u32 battler)
                 && !AISearchTraits(AIBattlerTraits, ABILITY_UNAWARE)
                 && !AISearchTraits(AIBattlerTraits, ABILITY_KEEN_EYE)
                 && !AISearchTraits(AIBattlerTraits, ABILITY_MINDS_EYE)
-                && (GetGenConfig(GEN_ILLUMINATE_EFFECT) >= GEN_9 && !AISearchTraits(AIBattlerTraits, ABILITY_ILLUMINATE))
+                && !(AISearchTraits(AIBattlerTraits, ABILITY_ILLUMINATE) && GetGenConfig(GEN_ILLUMINATE_EFFECT) >= GEN_9)
                 && !gBattleMons[battler].volatiles.foresight
                 && !gBattleMons[battler].volatiles.miracleEye)
                 switchMon = FALSE;

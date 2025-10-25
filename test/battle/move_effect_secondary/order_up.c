@@ -131,9 +131,9 @@ DOUBLE_BATTLE_TEST("Order Up is boosted by Sheer Force without removing the stat
     } WHEN {
         TURN { MOVE(opponentRight, MOVE_ENTRAINMENT, target: playerLeft); MOVE(playerLeft, MOVE_ORDER_UP, target: opponentLeft); }
     } SCENE {
-        MESSAGE("The opposing Tauros used Entrainment!");
-        MESSAGE("Dondozo acquired Sheer Force!");
-        MESSAGE("Dondozo used Order Up!");
+        //MESSAGE("The opposing Tauros used Entrainment!");
+        //MESSAGE("Dondozo acquired Sheer Force!");
+        //MESSAGE("Dondozo used Order Up!");
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, playerLeft);
     }
 }

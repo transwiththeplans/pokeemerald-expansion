@@ -59,9 +59,14 @@ enum {
 
 #define STORE_BATTLER_TRAITS(battler) \
 ({for (int traitLoop = 0; traitLoop < MAX_MON_TRAITS; traitLoop++)\
-{battlerTraits[traitLoop] = GetBattlerTrait(battler, traitLoop);\
+{battlerTraits[traitLoop] = GetBattlerTrait(battler, traitLoop, FALSE);\
 }}) 
 //DebugPrintf("%S - Battler[%d] - Trait[%d]: %S", GetSpeciesName(gBattleMons[battler].species), battler, traitLoop,  gAbilitiesInfo[battlerTraits[traitLoop]].name);\
+
+#define STORE_BATTLER_TRAITS_IGNORE_MOLDBREAKER(battler) \
+({for (int traitLoop = 0; traitLoop < MAX_MON_TRAITS; traitLoop++)\
+{battlerTraits[traitLoop] = GetBattlerTrait(battler, traitLoop, TRUE);\
+}}) 
 
 // For the first argument of ItemBattleEffects, to deteremine which block of item effects to try
 enum ItemCaseId
@@ -258,7 +263,7 @@ u32 GetBattlerAbilityNoAbilityShield(u32 battler);
 u32 GetBattlerAbilityInternal(u32 battler, u32 ignoreMoldBreaker, u32 noAbilityShield);
 bool32 CanBreakThroughAbility(u32 battlerAtk, u32 battlerDef, u32 ability, u32 hasAbilityShield, u32 ignoreMoldBreaker);
 u32 GetBattlerAbility(u32 battler);
-u32 GetBattlerTrait(u8 battler, u8 traitNum);
+u32 GetBattlerTrait(u8 battler, u8 traitNum, u32 ignoreMoldBreaker);
 u32 IsAbilityOnSide(u32 battler, u32 ability);
 u32 IsAbilityOnOpposingSide(u32 battler, u32 ability);
 u32 IsAbilityOnField(u32 ability);

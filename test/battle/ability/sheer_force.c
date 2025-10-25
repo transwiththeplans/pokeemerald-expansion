@@ -1615,14 +1615,14 @@ SINGLE_BATTLE_TEST("Sheer Force doesn't boost Synchronoise (Trait)", s16 damage)
 }
 SINGLE_BATTLE_TEST("Sheer Force doesn't boost Aura Wheel (Trait)", s16 damage)
 {
-    u16 ability = 0;
-    PARAMETRIZE { ability = ABILITY_SHEER_FORCE; }
-    PARAMETRIZE { ability = ABILITY_LIGHT_METAL; }
+    u16 move = 0;
+    PARAMETRIZE { move = MOVE_SKILL_SWAP; }
+    PARAMETRIZE { move = MOVE_CELEBRATE; }
     GIVEN {
-        PLAYER(SPECIES_MORPEKO) { Innates(ability); };
-        OPPONENT(SPECIES_TAUROS) { Ability(ABILITY_MINUS); };
+        PLAYER(SPECIES_MORPEKO){ Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_SHEER_FORCE); };
+        OPPONENT(SPECIES_TAUROS) { Ability(ABILITY_ANGER_POINT); };
     } WHEN {
-        TURN { MOVE(opponent, MOVE_CELEBRATE); MOVE(player, MOVE_AURA_WHEEL); }
+        TURN { MOVE(opponent, move); MOVE(player, MOVE_AURA_WHEEL); }
     } SCENE {
         HP_BAR(opponent, captureDamage: &results[i].damage);
     } FINALLY {

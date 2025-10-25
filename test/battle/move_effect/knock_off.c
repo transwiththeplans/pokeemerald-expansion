@@ -433,11 +433,11 @@ SINGLE_BATTLE_TEST("Knock Off triggers Unburden (Trait)")
     }
 }
 
-SINGLE_BATTLE_TEST("Knock Off doesn't remove item if it's prevented by Sticky Hold")
+SINGLE_BATTLE_TEST("Knock Off doesn't remove item if it's prevented by Sticky Hold (Trait)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_MUK) { MaxHP(100); HP(51); Item(ITEM_ORAN_BERRY); Innates(ABILITY_LIQUID_OOZE); Item(ABILITY_STICKY_HOLD); }
+        OPPONENT(SPECIES_MUK) { MaxHP(100); HP(51); Item(ITEM_ORAN_BERRY); Ability(ABILITY_LIQUID_OOZE); Innates(ABILITY_STICKY_HOLD); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_CELEBRATE); MOVE(player, MOVE_KNOCK_OFF); }
     } SCENE {

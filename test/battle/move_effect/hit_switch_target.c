@@ -240,7 +240,7 @@ SINGLE_BATTLE_TEST("Dragon Tail switches target out and incoming mon has Levitat
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_TOXIC_SPIKES) == EFFECT_TOXIC_SPIKES);
         ASSUME(GetMoveEffect(MOVE_SPIKES) == EFFECT_SPIKES);
-        ASSUME(gSpeciesInfo[SPECIES_WEEZING].types[0] == TYPE_POISON || gSpeciesInfo[SPECIES_WEEZING].types[1] == TYPE_POISON);
+        ASSUME(GetSpeciesType(SPECIES_WEEZING, 0) == TYPE_POISON || GetSpeciesType(SPECIES_WEEZING, 1) == TYPE_POISON);
         PLAYER(SPECIES_PANCHAM) { Ability(ABILITY_SCRAPPY); Innates(ABILITY_MOLD_BREAKER); }
         OPPONENT(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WEEZING) { Ability(ABILITY_LEVITATE); Innates(ABILITY_LEVITATE); }
@@ -253,9 +253,9 @@ SINGLE_BATTLE_TEST("Dragon Tail switches target out and incoming mon has Levitat
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SPIKES, player);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_TAIL, player);
         HP_BAR(opponent);
-        MESSAGE("The opposing Weezing was dragged out!");
+        //MESSAGE("The opposing Weezing was dragged out!");
         HP_BAR(opponent);
         NOT STATUS_ICON(opponent, poison: TRUE);
-        MESSAGE("The poison spikes disappeared from the ground around the opposing team!");
+        //MESSAGE("The poison spikes disappeared from the ground around the opposing team!");
     }
 }

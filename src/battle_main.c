@@ -3261,6 +3261,10 @@ void SwitchInClearSetData(u32 battler, struct Volatiles *volatilesCopy)
     // Restore struct member so replacement does not miss timing
     gSpecialStatuses[battler].switchInAbilityDone = FALSE;
 
+    // Restore struct member so replacement does not miss timing (Traits)
+    for(int j=0; j<=MAX_MON_INNATES; j++)
+        gSpecialStatuses[battler].switchInTraitDone[j] = FALSE;
+
     // Reset damage to prevent things like red card activating if the switched-in mon is holding it
     gSpecialStatuses[battler].physicalDmg = 0;
     gSpecialStatuses[battler].specialDmg = 0;
@@ -4770,7 +4774,9 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, enum ItemHoldEffect h
         speed += (GetHighestStatId(battler) == STAT_SPEED) ? baseSpeed / 2 : 0;
     if (SearchTraits(battlerTraits, ABILITY_QUARK_DRIVE) && !(gBattleMons[battler].volatiles.transformed) && (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN || gDisableStructs[battler].boosterEnergyActivated))
         speed += (GetHighestStatId(battler) == STAT_SPEED) ? baseSpeed / 2 : 0;
-    if (SearchTraits(battlerTraits, ABILITY_SLOW_START) && gDisableStructs[battler].unburdenActive)
+    if (SearchTraits(battlerTraits, ABILITY_UNBURDEN) && gDisableStructs[battler].unburdenActive)
+        speed *= 2;
+    if (SearchTraits(battlerTraits, ABILITY_SLOW_START)  && gDisableStructs[battler].slowStartTimer != 0)
         speed /= 2;
 
     // player's badge boost

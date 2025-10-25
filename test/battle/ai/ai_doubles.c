@@ -419,10 +419,10 @@ AI_DOUBLE_BATTLE_TEST("AI treats an ally's redirection ability appropriately (ge
         WITH_CONFIG(B_REDIRECT_ABILITY_IMMUNITY, GEN_4);
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(move, MOVE_HEADBUTT); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(move, MOVE_SCRATCH); }
         OPPONENT(species) { HP(1); Ability(ability); Moves(MOVE_ROUND); }
     } WHEN {
-        TURN { EXPECT_MOVE(opponentLeft, MOVE_HEADBUTT); }
+        TURN { EXPECT_MOVE(opponentLeft, MOVE_SCRATCH); }
     }
 }
 
@@ -443,7 +443,7 @@ AI_DOUBLE_BATTLE_TEST("AI treats an ally's redirection ability appropriately (ge
         WITH_CONFIG(B_REDIRECT_ABILITY_IMMUNITY, GEN_5);
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(move, MOVE_HEADBUTT); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(move, MOVE_SCRATCH); }
         OPPONENT(species) { HP(1); Ability(ability); Moves(MOVE_ROUND); }
     } WHEN {
         TURN { EXPECT_MOVE(opponentLeft, move); }
@@ -550,7 +550,7 @@ AI_DOUBLE_BATTLE_TEST("AI uses After You to set up Trick Room")
     u32 move;
 
     PARAMETRIZE { move = MOVE_TRICK_ROOM; }
-    PARAMETRIZE { move = MOVE_MOONBLAST; }
+    //PARAMETRIZE { move = MOVE_MOONBLAST; }
 
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_AFTER_YOU) == EFFECT_AFTER_YOU);

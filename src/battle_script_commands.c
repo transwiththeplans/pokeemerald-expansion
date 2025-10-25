@@ -1632,8 +1632,8 @@ s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordA
     s32 critChance = 0;
     u16 battlerTraits[MAX_MON_TRAITS];
     u16 AIBattlerTraits[MAX_MON_TRAITS];
-    STORE_BATTLER_TRAITS(battlerDef);
-    AI_STORE_BATTLER_TRAITS(battlerDef);
+    STORE_BATTLER_TRAITS(battlerAtk);
+    AI_STORE_BATTLER_TRAITS(battlerAtk);
 
     if (gSideStatuses[battlerDef] & SIDE_STATUS_LUCKY_CHANT)
     {
@@ -1641,7 +1641,7 @@ s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordA
     }
     else if (gBattleMons[battlerAtk].volatiles.laserFocus
           || MoveAlwaysCrits(move)
-          || (BattlerHasTrait(gBattlerAttacker, ABILITY_MERCILESS) && gBattleMons[battlerDef].status1 & STATUS1_PSN_ANY))
+          || (BattlerHasTrait(battlerAtk, ABILITY_MERCILESS) && gBattleMons[battlerDef].status1 & STATUS1_PSN_ANY))
     {
         critChance = CRITICAL_HIT_ALWAYS;
     }
@@ -1652,11 +1652,14 @@ s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordA
                     + GetMoveCriticalHitStage(move)
                     + GetHoldEffectCritChanceIncrease(battlerAtk, holdEffectAtk)
                     + ((B_AFFECTION_MECHANICS == TRUE && GetBattlerAffectionHearts(battlerAtk) == AFFECTION_FIVE_HEARTS) ? 2 : 0)
-                    + (abilityAtk == ABILITY_SUPER_LUCK ? 1 : 0)
+                    + ((gAiLogicData->aiCalcInProgress ? AISearchTraits(AIBattlerTraits, ABILITY_SUPER_LUCK) : SearchTraits(battlerTraits, ABILITY_SUPER_LUCK)) ? 1 : 0)
                     + gBattleStruct->bonusCritStages[gBattlerAttacker];
         if (critChance >= ARRAY_COUNT(sCriticalHitOdds))
             critChance = ARRAY_COUNT(sCriticalHitOdds) - 1;
     }
+
+    STORE_BATTLER_TRAITS(battlerDef);
+    AI_STORE_BATTLER_TRAITS(battlerDef);
 
     abilityDef = ABILITY_NONE;
     if (gAiLogicData->aiCalcInProgress ? AISearchTraits(AIBattlerTraits, ABILITY_BATTLE_ARMOR) : SearchTraits(battlerTraits, ABILITY_BATTLE_ARMOR))
@@ -5805,8 +5808,9 @@ static bool32 HandleMoveEndMoveBlock(u32 moveEffect)
         {
             effect = FALSE;
         }
-        else if (GetBattlerAbility(gBattlerTarget) == ABILITY_STICKY_HOLD)
+        else if (BattlerHasTrait(gBattlerTarget, ABILITY_STICKY_HOLD))
         {
+            PushTraitStack(gBattlerTarget, ABILITY_STICKY_HOLD);
             BattleScriptCall(BattleScript_NoItemSteal);
             gLastUsedAbility = gBattleMons[gBattlerTarget].ability;
             RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
@@ -5832,12 +5836,12 @@ static bool32 HandleMoveEndMoveBlock(u32 moveEffect)
          && IsBattlerAlive(gBattlerAttacker)
          && gBattleMons[BATTLE_PARTNER(gBattlerTarget)].volatiles.semiInvulnerable != STATE_COMMANDER)
         {
-            u32 targetAbility = GetBattlerAbility(gBattlerTarget);
-            if (targetAbility == ABILITY_GUARD_DOG)
+            if (BattlerHasTrait(gBattlerTarget, ABILITY_GUARD_DOG))
                 return FALSE;
 
-            if (targetAbility == ABILITY_SUCTION_CUPS)
+            if (BattlerHasTrait(gBattlerTarget, ABILITY_SUCTION_CUPS))
             {
+                PushTraitStack(gBattlerTarget, ABILITY_SUCTION_CUPS);
                 BattleScriptCall(BattleScript_AbilityPreventsPhasingOutRet);
             }
             else if (gBattleMons[gBattlerTarget].volatiles.root)
@@ -5908,7 +5912,7 @@ static bool32 HandleMoveEndMoveBlock(u32 moveEffect)
     case EFFECT_MAX_HP_50_RECOIL:
         if (IsBattlerAlive(gBattlerAttacker)
          && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_FAILED)
-         && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD)
+         && !BattlerHasTrait(gBattlerAttacker, ABILITY_MAGIC_GUARD))
         {
             gBattleStruct->moveDamage[gBattlerAttacker] = (GetNonDynamaxMaxHP(gBattlerAttacker) + 1) / 2; // Half of Max HP Rounded UP
             BattleScriptCall(BattleScript_MaxHp50Recoil);
@@ -6213,6 +6217,7 @@ static void Cmd_moveend(void)
                 {
                     BestowItem(BATTLE_PARTNER(i), i);
                     gLastUsedAbility = ABILITY_SYMBIOSIS;
+                    PushTraitStack(BATTLE_PARTNER(i), ABILITY_SYMBIOSIS);
                     gEffectBattler = i;
                     gBattleScripting.battler = gBattlerAbility = BATTLE_PARTNER(i);
                     gBattlerAttacker = i;
@@ -7849,6 +7854,7 @@ static bool32 DoSwitchInEffectsForBattler(u32 battler)
         gSpecialStatuses[battler].announceNeutralizingGas = TRUE;
         gDisableStructs[battler].neutralizingGas = TRUE;
         gBattlerAbility = battler;
+        PushTraitStack(battler, ABILITY_NEUTRALIZING_GAS);
         BattleScriptCall(BattleScript_SwitchInAbilityMsgRet);
     }
     // Healing Wish activates before hazards.
@@ -10175,6 +10181,8 @@ static void TryPlayStatChangeAnimation(u32 battler, u32 ability, u32 stats, s32 
     u32 changeableStatsCount = 1; // current stat is counted automatically
     u32 statAnimId = statId;
     bool32 statChangeByTwo = statValue > 1 || statValue < -1;
+    u16 battlerTraits[MAX_MON_TRAITS];
+    STORE_BATTLER_TRAITS(battler);
 
     if (statValue <= -1) // goes down
     {
@@ -10195,10 +10203,10 @@ static void TryPlayStatChangeAnimation(u32 battler, u32 ability, u32 stats, s32 
                         break;
                     }
                 }
-                else if (!((ability == ABILITY_KEEN_EYE || ability == ABILITY_MINDS_EYE) && currStat == STAT_ACC)
-                        && !(GetGenConfig(GEN_ILLUMINATE_EFFECT) >= GEN_9 && ability == ABILITY_ILLUMINATE && currStat == STAT_ACC)
-                        && !(ability == ABILITY_HYPER_CUTTER && currStat == STAT_ATK)
-                        && !(ability == ABILITY_BIG_PECKS && currStat == STAT_DEF))
+                else if (!((SearchTraits(battlerTraits, ABILITY_KEEN_EYE) || SearchTraits(battlerTraits, ABILITY_MINDS_EYE)) && currStat == STAT_ACC)
+                        && !(GetGenConfig(GEN_ILLUMINATE_EFFECT) >= GEN_9 && SearchTraits(battlerTraits, ABILITY_ILLUMINATE) && currStat == STAT_ACC)
+                        && !(SearchTraits(battlerTraits, ABILITY_HYPER_CUTTER) && currStat == STAT_ATK)
+                        && !(SearchTraits(battlerTraits, ABILITY_BIG_PECKS) && currStat == STAT_DEF))
                 {
                     if (gBattleMons[battler].statStages[currStat] > MIN_STAT_STAGE)
                     {
@@ -10278,7 +10286,7 @@ static u32 ChangeStatBuffs(u32 battler, s8 statValue, u32 statId, union StatChan
                 gBattleScripting.moveEffect = ReverseStatChangeMoveEffect(gBattleScripting.moveEffect);
         }
     }
-    else if (SearchTraits(battlerTraits, ABILITY_SIMPLE && !flags.onlyChecking))
+    else if (SearchTraits(battlerTraits, ABILITY_SIMPLE) && !flags.onlyChecking)
     {
         statValue = (SET_STAT_BUFF_VALUE(GET_STAT_BUFF_VALUE(statValue) * 2)) | ((statValue <= -1) ? STAT_BUFF_NEGATIVE : 0);
         RecordAbilityBattle(battler, battlerAbility);
@@ -16823,9 +16831,8 @@ void BS_TryBoosterEnergy(void)
         if (GetBattlerHoldEffect(battlerByTurnOrder, TRUE) != HOLD_EFFECT_BOOSTER_ENERGY)
             continue;
 
-        u32 ability = GetBattlerAbility(battlerByTurnOrder);
-        if (!(ability == ABILITY_PROTOSYNTHESIS && cmd->onFieldStatus != ON_TERRAIN)
-         && !(ability == ABILITY_QUARK_DRIVE && cmd->onFieldStatus != ON_WEATHER))
+        if (!(BattlerHasTrait(battlerByTurnOrder, ABILITY_PROTOSYNTHESIS) && cmd->onFieldStatus != ON_TERRAIN)
+         && !(BattlerHasTrait(battlerByTurnOrder, ABILITY_QUARK_DRIVE) && cmd->onFieldStatus != ON_WEATHER))
             continue;
 
         if (TryBoosterEnergy(battlerByTurnOrder, ITEMEFFECT_NONE))
@@ -17490,13 +17497,14 @@ void BS_TryActivateSoulheart(void)
     while (gBattleStruct->soulheartBattlerId < gBattlersCount)
     {
         gBattleScripting.battler = gBattleStruct->soulheartBattlerId++;
-        if (GetBattlerAbility(gBattleScripting.battler) == ABILITY_SOUL_HEART
+        if (BattlerHasTrait(gBattleScripting.battler, ABILITY_SOUL_HEART)
             && IsBattlerAlive(gBattleScripting.battler)
             && !NoAliveMonsForEitherParty()
             && CompareStat(gBattleScripting.battler, STAT_SPATK, MAX_STAT_STAGE, CMP_LESS_THAN))
         {
             SET_STATCHANGER(STAT_SPATK, 1, FALSE);
             PREPARE_STAT_BUFFER(gBattleTextBuff1, STAT_SPATK);
+            PushTraitStack(gBattleScripting.battler, ABILITY_SOUL_HEART);
             BattleScriptCall(BattleScript_ScriptingAbilityStatRaise);
             return;
         }
@@ -17570,6 +17578,7 @@ void BS_SetSimpleBeam(void)
         if (gBattleMons[gBattlerTarget].ability == ABILITY_NEUTRALIZING_GAS)
             gSpecialStatuses[gBattlerTarget].neutralizingGasRemoved = TRUE;
 
+        PushTraitStack(gBattlerTarget, ABILITY_SIMPLE);
         gBattleScripting.abilityPopupOverwrite = gBattleMons[gBattlerTarget].ability;
         gBattleMons[gBattlerTarget].ability = gDisableStructs[gBattlerTarget].overwrittenAbility = ABILITY_SIMPLE;
         gBattlescriptCurrInstr = cmd->nextInstr;
@@ -17599,7 +17608,7 @@ void BS_TryEntrainment(void)
         }
         else
         {
-            gBattleMons[gBattlerTarget].ability = gDisableStructs[gBattlerTarget].overwrittenAbility = gBattleMons[gBattlerAttacker].ability;
+            gBattleMons[gBattlerTarget].ability = gDisableStructs[gBattlerTarget].overwrittenAbility = gDisplayAbility = gBattleMons[gBattlerAttacker].ability;
             gBattlescriptCurrInstr = cmd->nextInstr;
         }
     }
@@ -17773,7 +17782,16 @@ void BS_TryInstruct(void)
 void BS_ShowAbilityPopup(void)
 {
     NATIVE_ARGS();
-    CreateAbilityPopUp(gBattlerAbility, gBattleMons[gBattlerAbility].ability, (IsDoubleBattle()) != 0);
+
+    gDisplayBattler = PullTraitStackBattler();
+    gDisplayAbility = PullTraitStackAbility();
+
+    if (gDisplayBattler != MAX_BATTLERS_COUNT)
+        gBattleScripting.battler = gDisplayBattler;
+
+    PopTraitStack();
+
+    CreateAbilityPopUp(gDisplayBattler, gDisplayAbility, (IsDoubleBattle()) != 0);
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 

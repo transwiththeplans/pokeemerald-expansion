@@ -1626,7 +1626,6 @@ static bool8 CanEncounterWildMon(u8 enemyMonLevel)
 {
     if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
     {
-        //u16 monAbility = GetMonAbility(&gPlayerParty[0]);
         if (MonHasTrait(&gPlayerParty[0], ABILITY_SOUNDPROOF, TRUE)
          || MonHasTrait(&gPlayerParty[0], ABILITY_INTIMIDATE, TRUE))
         {

@@ -3349,10 +3349,11 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                     isMoveAffectedByPartnerAbility = FALSE;
                 }
             }
-                if (moveType == TYPE_WATER
-                 && (AISearchTraits(AIBattlerTraits, ABILITY_DRY_SKIN)
-                 || AISearchTraits(AIBattlerTraits, ABILITY_WATER_ABSORB)
-                 || AISearchTraits(AIBattlerTraits, ABILITY_STORM_DRAIN)))
+            if (AISearchTraits(AIBattlerTraits, ABILITY_DRY_SKIN)
+             || AISearchTraits(AIBattlerTraits, ABILITY_WATER_ABSORB)
+             || AISearchTraits(AIBattlerTraits, ABILITY_STORM_DRAIN))
+            {
+                if (moveType == TYPE_WATER)
                 {
                     if (B_REDIRECT_ABILITY_IMMUNITY < GEN_5 && BattlerHasTrait(battlerAtkPartner, ABILITY_STORM_DRAIN))
                     {
@@ -3373,9 +3374,10 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                     }
                 }
                 else
-                {
+                {   
                     isMoveAffectedByPartnerAbility = FALSE;
                 }
+            }
             if (AISearchTraits(AIBattlerTraits, ABILITY_WATER_COMPACTION))
             {
                 if (moveType == TYPE_WATER && isFriendlyFireOK
@@ -3435,6 +3437,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                     isMoveAffectedByPartnerAbility = FALSE;
                 }
             }
+
             if (AISearchTraits(AIBattlerTraits, ABILITY_FLASH_FIRE)
              || AISearchTraits(AIBattlerTraits, ABILITY_WELL_BAKED_BODY))
             {
@@ -3626,6 +3629,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 }
                 break;
             case EFFECT_AFTER_YOU:
+
                 if (!(gFieldStatuses & STATUS_FIELD_TRICK_ROOM) && HasMoveWithEffect(battlerAtkPartner, EFFECT_TRICK_ROOM))
                     ADJUST_SCORE(DECENT_EFFECT);
 
@@ -3693,8 +3697,9 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 ADJUST_SCORE(WORST_EFFECT);
                 break;
             }
-            default:
-                break;
+            default:{          
+
+                break;}
             } // attacker move effects
         } // check partner protecting
 
@@ -5902,6 +5907,7 @@ static s32 AI_TryTo2HKO(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
 // Adds score bonus to targeting "partner"
 static s32 AI_AttacksPartner(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
 {
+            DebugPrintf("MoveH: %S, Score: %d", gMovesInfo[move].name, score);
     if (battlerDef == BATTLE_PARTNER(battlerAtk)
        // natural enemies in wild battles try to kill each other
        && ((IsNaturalEnemy(gBattleMons[battlerAtk].species, gBattleMons[battlerDef].species) && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_TRAINER)))
@@ -6181,7 +6187,7 @@ static s32 AI_HPAware(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
 }
 
 static s32 AI_PowerfulStatus(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
-{
+{DebugPrintf("Move3: %S, Score: %d", gMovesInfo[move].name, score);
     enum BattleMoveEffects moveEffect = GetMoveEffect(move);
 
     if (GetMoveCategory(move) != DAMAGE_CATEGORY_STATUS || GetMoveEffect(gAiLogicData->partnerMove) == moveEffect)

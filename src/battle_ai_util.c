@@ -631,7 +631,7 @@ bool32 IsDamageMoveUnusable(struct DamageContext *ctx)
         return TRUE;
 
     // Limited to Lighning Rod and Storm Drain because otherwise the AI would consider Water Absorb, etc...
-    if (partnerDefAbility == ABILITY_LIGHTNING_ROD || partnerDefAbility == ABILITY_STORM_DRAIN)
+    if (BattlerHasTrait(BATTLE_PARTNER(ctx->battlerDef), ABILITY_LIGHTNING_ROD) || BattlerHasTrait(BATTLE_PARTNER(ctx->battlerDef), ABILITY_STORM_DRAIN))
     {
         if (CanAbilityAbsorbMove(ctx->battlerAtk, BATTLE_PARTNER(ctx->battlerDef), partnerDefAbility, ctx->move, ctx->moveType, AI_CHECK))
             return TRUE;
@@ -2054,8 +2054,7 @@ bool32 CanLowerStat(u32 battlerAtk, u32 battlerDef, struct AiLogicData *aiData, 
         if (SearchTraits(battlerTraits, ABILITY_BIG_PECKS))
             if (stat == STAT_DEF)
                 return FALSE;
-        if ((SearchTraits(battlerTraits, ABILITY_ILLUMINATE)
-         && GetGenConfig(GEN_ILLUMINATE_EFFECT) < GEN_9)
+        if ((SearchTraits(battlerTraits, ABILITY_ILLUMINATE) && GetGenConfig(GEN_ILLUMINATE_EFFECT) >= GEN_9)
          || SearchTraits(battlerTraits, ABILITY_KEEN_EYE)
          || SearchTraits(battlerTraits, ABILITY_MINDS_EYE))
             if (stat == STAT_ACC)
@@ -5200,15 +5199,14 @@ void IncreaseTidyUpScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score)
 bool32 AI_ShouldSpicyExtract(u32 battlerAtk, u32 battlerAtkPartner, u32 move, struct AiLogicData *aiData)
 {
     u32 preventsStatLoss;
-    u32 partnerAbility = aiData->abilities[battlerAtkPartner];
     u32 opposingPosition = BATTLE_OPPOSITE(GetBattlerPosition(battlerAtk));
     u32 opposingBattler = GetBattlerAtPosition(opposingPosition);
 
     if (gBattleMons[battlerAtkPartner].statStages[STAT_ATK] == MAX_STAT_STAGE
-     || (AI_BATTLER_HAS_TRAIT(partnerAbility,ABILITY_CONTRARY))
-     || (AI_BATTLER_HAS_TRAIT(partnerAbility,ABILITY_GOOD_AS_GOLD))
+     || (AI_BATTLER_HAS_TRAIT(battlerAtkPartner, ABILITY_CONTRARY))
+     || (AI_BATTLER_HAS_TRAIT(battlerAtkPartner, ABILITY_GOOD_AS_GOLD))
      || HasBattlerSideMoveWithEffect(FOE(battlerAtk), EFFECT_FOUL_PLAY))
-        return FALSE;
+            return FALSE;
 
     preventsStatLoss = !CanLowerStat(battlerAtk, battlerAtkPartner, aiData, STAT_DEF);
 
@@ -5365,48 +5363,58 @@ bool32 ShouldTriggerAbility(u32 battlerAtk, u32 battlerDef, u32 ability)
 {
     if (IsTargetingPartner(battlerAtk, battlerDef))
     {
-        switch (ability)
+        if ((BattlerHasTrait(battlerDef, ABILITY_LIGHTNING_ROD)
+         || BattlerHasTrait(battlerDef, ABILITY_STORM_DRAIN))
+         && B_REDIRECT_ABILITY_IMMUNITY < GEN_5)
         {
-        case ABILITY_LIGHTNING_ROD:
-        case ABILITY_STORM_DRAIN:
-            if (B_REDIRECT_ABILITY_IMMUNITY < GEN_5)
-                return FALSE;
-            else
-                return (BattlerStatCanRise(battlerDef, ability, STAT_SPATK) && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL));
-
-        case ABILITY_DEFIANT:
-        case ABILITY_JUSTIFIED:
-        case ABILITY_MOXIE:
-        case ABILITY_SAP_SIPPER:
-        case ABILITY_THERMAL_EXCHANGE:
-            return (BattlerStatCanRise(battlerDef, ability, STAT_ATK) && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL));
-
-        case ABILITY_COMPETITIVE:
             return (BattlerStatCanRise(battlerDef, ability, STAT_SPATK) && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL));
-
-        // TODO: logic for when to trigger Contrary
-        case ABILITY_CONTRARY:
-            return TRUE;
-
-        case ABILITY_DRY_SKIN:
-        case ABILITY_VOLT_ABSORB:
-        case ABILITY_WATER_ABSORB:
-            return (gAiThinkingStruct->aiFlags[battlerDef] & AI_FLAG_HP_AWARE);
-
-        case ABILITY_RATTLED:
-        case ABILITY_STEAM_ENGINE:
-            return BattlerStatCanRise(battlerDef, ability, STAT_SPEED);
-
-        case ABILITY_FLASH_FIRE:
-            return (HasMoveWithType(battlerDef, TYPE_FIRE) && !gDisableStructs[battlerDef].flashFireBoosted);
-
-        case ABILITY_WATER_COMPACTION:
-        case ABILITY_WELL_BAKED_BODY:
-            return (BattlerStatCanRise(battlerDef, ability, STAT_DEF));
-
-        default:
-            return FALSE;
         }
+        
+        if (BattlerHasTrait(battlerDef, ABILITY_DEFIANT)
+         || BattlerHasTrait(battlerDef, ABILITY_JUSTIFIED)
+         || BattlerHasTrait(battlerDef, ABILITY_MOXIE)
+         || BattlerHasTrait(battlerDef, ABILITY_SAP_SIPPER)
+         || BattlerHasTrait(battlerDef, ABILITY_THERMAL_EXCHANGE))
+        {
+            return (BattlerStatCanRise(battlerDef, ability, STAT_ATK) && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL));
+        }
+        
+        if (BattlerHasTrait(battlerDef, ABILITY_COMPETITIVE))
+        {
+            return (BattlerStatCanRise(battlerDef, ability, STAT_SPATK) && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL));
+        }
+        
+        // TODO: logic for when to trigger Contrary
+        if (BattlerHasTrait(battlerDef, ABILITY_CONTRARY))
+        {
+            return TRUE;
+        }
+
+        if (BattlerHasTrait(battlerDef, ABILITY_DRY_SKIN)
+         || BattlerHasTrait(battlerDef, ABILITY_VOLT_ABSORB)
+         || BattlerHasTrait(battlerDef, ABILITY_WATER_ABSORB))
+        {
+            return (gAiThinkingStruct->aiFlags[battlerDef] & AI_FLAG_HP_AWARE);
+        }
+
+        if (BattlerHasTrait(battlerDef, ABILITY_RATTLED)
+         || BattlerHasTrait(battlerDef, ABILITY_STEAM_ENGINE))
+        {
+            return BattlerStatCanRise(battlerDef, ability, STAT_SPEED);
+        }
+
+        if (BattlerHasTrait(battlerDef, ABILITY_FLASH_FIRE))
+        {
+            return (HasMoveWithType(battlerDef, TYPE_FIRE) && !gDisableStructs[battlerDef].flashFireBoosted);
+        }
+
+        if (BattlerHasTrait(battlerDef, ABILITY_WATER_COMPACTION)
+         || BattlerHasTrait(battlerDef, ABILITY_WELL_BAKED_BODY))
+        {
+            return (BattlerStatCanRise(battlerDef, ability, STAT_DEF));
+        }
+
+        return FALSE;
     }
     else
     {

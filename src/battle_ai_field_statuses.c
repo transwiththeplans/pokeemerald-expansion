@@ -24,8 +24,8 @@
 #include "constants/moves.h"
 #include "constants/items.h"
 
-static bool32 DoesAbilityBenefitFromWeather(u32 ability, u32 weather);
-static bool32 DoesAbilityBenefitFromFieldStatus(u32 ability, u32 fieldStatus);
+static bool32 DoesBattlerBenefitFromWeather(u32 battler, u32 weather);
+static bool32 DoesBattlerBenefitFromFieldStatus(u32 battler, u32 fieldStatus);
 // A move is light sensitive if it is boosted by Sunny Day and weakened by low light weathers.
 static bool32 IsLightSensitiveMove(u32 move);
 static bool32 HasLightSensitiveMove(u32 battler);
@@ -125,62 +125,60 @@ bool32 FieldStatusChecker(u32 battler, u32 fieldStatus, enum FieldEffectOutcome 
     return (result == desiredResult);
 }
 
-static bool32 DoesAbilityBenefitFromWeather(u32 ability, u32 weather)
+static bool32 DoesBattlerBenefitFromWeather(u32 battler, u32 weather)
 {
-    switch (ability)
-    {
-    case ABILITY_FORECAST:
+    u16 AIBattlerTraits[MAX_MON_TRAITS];
+    AI_STORE_BATTLER_TRAITS(battler);
+
+    if (AISearchTraits(AIBattlerTraits, ABILITY_FORECAST))
         return (weather & (B_WEATHER_RAIN | B_WEATHER_SUN | B_WEATHER_ICY_ANY));
-    case ABILITY_MAGIC_GUARD:
-    case ABILITY_OVERCOAT:
+    if (AISearchTraits(AIBattlerTraits, ABILITY_MAGIC_GUARD)
+     || AISearchTraits(AIBattlerTraits, ABILITY_OVERCOAT))
         return (weather & B_WEATHER_DAMAGING_ANY);
-    case ABILITY_SAND_FORCE:
-    case ABILITY_SAND_RUSH:
-    case ABILITY_SAND_VEIL:
+    if (AISearchTraits(AIBattlerTraits, ABILITY_SAND_FORCE)
+     || AISearchTraits(AIBattlerTraits, ABILITY_SAND_RUSH)
+     || AISearchTraits(AIBattlerTraits, ABILITY_SAND_VEIL))
         return (weather & B_WEATHER_SANDSTORM);
-    case ABILITY_ICE_BODY:
-    case ABILITY_ICE_FACE:
-    case ABILITY_SNOW_CLOAK:
+    if (AISearchTraits(AIBattlerTraits, ABILITY_ICE_BODY)
+     || AISearchTraits(AIBattlerTraits, ABILITY_ICE_FACE)
+     || AISearchTraits(AIBattlerTraits, ABILITY_SNOW_CLOAK))
         return (weather & B_WEATHER_ICY_ANY);
-    case ABILITY_SLUSH_RUSH:
+    if (AISearchTraits(AIBattlerTraits, ABILITY_SLUSH_RUSH))
         return (weather & B_WEATHER_SNOW);
-    case ABILITY_DRY_SKIN:
-    case ABILITY_HYDRATION:
-    case ABILITY_RAIN_DISH:
-    case ABILITY_SWIFT_SWIM:
+    if (AISearchTraits(AIBattlerTraits, ABILITY_DRY_SKIN)
+     || AISearchTraits(AIBattlerTraits, ABILITY_HYDRATION)
+     || AISearchTraits(AIBattlerTraits, ABILITY_RAIN_DISH)
+     || AISearchTraits(AIBattlerTraits, ABILITY_SWIFT_SWIM))
         return (weather & B_WEATHER_RAIN);
-    case ABILITY_CHLOROPHYLL:
-    case ABILITY_FLOWER_GIFT:
-    case ABILITY_HARVEST:
-    case ABILITY_LEAF_GUARD:
-    case ABILITY_ORICHALCUM_PULSE:
-    case ABILITY_PROTOSYNTHESIS:
-    case ABILITY_SOLAR_POWER:
+    if (AISearchTraits(AIBattlerTraits, ABILITY_CHLOROPHYLL)
+     || AISearchTraits(AIBattlerTraits, ABILITY_FLOWER_GIFT)
+     || AISearchTraits(AIBattlerTraits, ABILITY_HARVEST)
+     || AISearchTraits(AIBattlerTraits, ABILITY_LEAF_GUARD)
+     || AISearchTraits(AIBattlerTraits, ABILITY_ORICHALCUM_PULSE)
+     || AISearchTraits(AIBattlerTraits, ABILITY_PROTOSYNTHESIS)
+     || AISearchTraits(AIBattlerTraits, ABILITY_SOLAR_POWER))
         return (weather & B_WEATHER_SUN);
-    default:
-        break;
-    }
+
     return FALSE;
 }
 
-static bool32 DoesAbilityBenefitFromFieldStatus(u32 ability, u32 fieldStatus)
+static bool32 DoesBattlerBenefitFromFieldStatus(u32 battler, u32 fieldStatus)
 {
-    switch (ability)
-    {
-    case ABILITY_MIMICRY:
+    u16 AIBattlerTraits[MAX_MON_TRAITS];
+    AI_STORE_BATTLER_TRAITS(battler);
+
+    if (AISearchTraits(AIBattlerTraits, ABILITY_MIMICRY))
         return (fieldStatus & STATUS_FIELD_TERRAIN_ANY);
-    case ABILITY_HADRON_ENGINE:
-    case ABILITY_QUARK_DRIVE:
-    case ABILITY_SURGE_SURFER:
+    if (AISearchTraits(AIBattlerTraits, ABILITY_HADRON_ENGINE)
+     || AISearchTraits(AIBattlerTraits, ABILITY_QUARK_DRIVE)
+     || AISearchTraits(AIBattlerTraits, ABILITY_SURGE_SURFER))
         return (fieldStatus & STATUS_FIELD_ELECTRIC_TERRAIN);
-    case ABILITY_GRASS_PELT:
+    if (AISearchTraits(AIBattlerTraits, ABILITY_GRASS_PELT))
         return (fieldStatus & STATUS_FIELD_GRASSY_TERRAIN);
     // no abilities inherently benefit from Misty or Psychic Terrains
     // return (fieldStatus & STATUS_FIELD_MISTY_TERRAIN);
     // return (fieldStatus & STATUS_FIELD_PSYCHIC_TERRAIN);
-    default:
-        break;
-    }
+
     return FALSE;
 }
 
@@ -217,23 +215,24 @@ static bool32 HasLightSensitiveMove(u32 battler)
 // Utility Umbrella does NOT block Ancient Pokemon from their stat boosts.
 static enum FieldEffectOutcome BenefitsFromSun(u32 battler)
 {
-    u32 ability = gAiLogicData->abilities[battler];
+    u16 AIBattlerTraits[MAX_MON_TRAITS];
+    AI_STORE_BATTLER_TRAITS(battler);
 
     if (gAiLogicData->holdEffects[battler] == HOLD_EFFECT_UTILITY_UMBRELLA)
     {
-        if (ability == ABILITY_ORICHALCUM_PULSE || ability == ABILITY_PROTOSYNTHESIS)
+        if (AISearchTraits(AIBattlerTraits, ABILITY_ORICHALCUM_PULSE) || AISearchTraits(AIBattlerTraits, ABILITY_PROTOSYNTHESIS))
             return FIELD_EFFECT_POSITIVE;
         else
             return FIELD_EFFECT_NEUTRAL;
     }
 
-    if (DoesAbilityBenefitFromWeather(ability, B_WEATHER_SUN)
+    if (DoesBattlerBenefitFromWeather(battler, B_WEATHER_SUN)
     || HasLightSensitiveMove(battler)
     || HasDamagingMoveOfType(battler, TYPE_FIRE)
     || HasMoveWithEffect(battler, EFFECT_HYDRO_STEAM))
         return FIELD_EFFECT_POSITIVE;
 
-    if (HasMoveWithFlag(battler, MoveHas50AccuracyInSun) || HasDamagingMoveOfType(battler, TYPE_WATER) || gAiLogicData->abilities[battler] == ABILITY_DRY_SKIN)
+    if (HasMoveWithFlag(battler, MoveHas50AccuracyInSun) || HasDamagingMoveOfType(battler, TYPE_WATER) || AISearchTraits(AIBattlerTraits, ABILITY_DRY_SKIN))
         return FIELD_EFFECT_NEGATIVE;
 
     return FIELD_EFFECT_NEUTRAL;
@@ -242,7 +241,7 @@ static enum FieldEffectOutcome BenefitsFromSun(u32 battler)
 // Sandstorm
 static enum FieldEffectOutcome BenefitsFromSandstorm(u32 battler)
 {
-    if (DoesAbilityBenefitFromWeather(gAiLogicData->abilities[battler], B_WEATHER_SANDSTORM)
+    if (DoesBattlerBenefitFromWeather(battler, B_WEATHER_SANDSTORM)
      || IS_BATTLER_OF_TYPE(battler, TYPE_ROCK))
         return FIELD_EFFECT_POSITIVE;
 
@@ -250,7 +249,7 @@ static enum FieldEffectOutcome BenefitsFromSandstorm(u32 battler)
     {
         if (!(IS_BATTLER_ANY_TYPE(FOE(battler), TYPE_ROCK, TYPE_GROUND, TYPE_STEEL))
          || gAiLogicData->holdEffects[FOE(battler)] == HOLD_EFFECT_SAFETY_GOGGLES
-         || DoesAbilityBenefitFromWeather(gAiLogicData->abilities[FOE(battler)], B_WEATHER_SANDSTORM))
+         || DoesBattlerBenefitFromWeather(FOE(battler), B_WEATHER_SANDSTORM))
             return FIELD_EFFECT_POSITIVE;
         else
             return FIELD_EFFECT_NEUTRAL;
@@ -262,7 +261,7 @@ static enum FieldEffectOutcome BenefitsFromSandstorm(u32 battler)
 // Hail or Snow
 static enum FieldEffectOutcome BenefitsFromHailOrSnow(u32 battler, u32 weather)
 {
-    if (DoesAbilityBenefitFromWeather(gAiLogicData->abilities[battler], weather)
+    if (DoesBattlerBenefitFromWeather(battler, weather)
      || IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
      || HasMoveWithFlag(battler, MoveAlwaysHitsInHailSnow)
      || HasBattlerSideMoveWithEffect(battler, EFFECT_AURORA_VEIL))
@@ -286,7 +285,7 @@ static enum FieldEffectOutcome BenefitsFromRain(u32 battler)
     if (gAiLogicData->holdEffects[battler] == HOLD_EFFECT_UTILITY_UMBRELLA)
         return FIELD_EFFECT_NEUTRAL;
 
-    if (DoesAbilityBenefitFromWeather(gAiLogicData->abilities[battler], B_WEATHER_RAIN)
+    if (DoesBattlerBenefitFromWeather(battler, B_WEATHER_RAIN)
       || HasMoveWithFlag(battler, MoveAlwaysHitsInRain)
       || HasDamagingMoveOfType(battler, TYPE_WATER))
         return FIELD_EFFECT_POSITIVE;
@@ -303,7 +302,7 @@ static enum FieldEffectOutcome BenefitsFromRain(u32 battler)
 //TODO: when is electric terrain bad?
 static enum FieldEffectOutcome BenefitsFromElectricTerrain(u32 battler)
 {
-    if (DoesAbilityBenefitFromFieldStatus(gAiLogicData->abilities[battler], STATUS_FIELD_ELECTRIC_TERRAIN))
+    if (DoesBattlerBenefitFromFieldStatus(battler, STATUS_FIELD_ELECTRIC_TERRAIN))
         return FIELD_EFFECT_POSITIVE;
 
     if (HasMoveWithEffect(battler, EFFECT_RISING_VOLTAGE))
@@ -331,7 +330,7 @@ static enum FieldEffectOutcome BenefitsFromElectricTerrain(u32 battler)
 //TODO: when is grassy terrain bad?
 static enum FieldEffectOutcome BenefitsFromGrassyTerrain(u32 battler)
 {
-    if (DoesAbilityBenefitFromFieldStatus(gAiLogicData->abilities[battler], STATUS_FIELD_GRASSY_TERRAIN))
+    if (DoesBattlerBenefitFromFieldStatus(battler, STATUS_FIELD_GRASSY_TERRAIN))
         return FIELD_EFFECT_POSITIVE;
 
     if (HasMoveWithEffect(battler, EFFECT_GRASSY_GLIDE))
@@ -359,7 +358,7 @@ static enum FieldEffectOutcome BenefitsFromGrassyTerrain(u32 battler)
 //TODO: when is misty terrain bad?
 static enum FieldEffectOutcome BenefitsFromMistyTerrain(u32 battler)
 {
-    if (DoesAbilityBenefitFromFieldStatus(gAiLogicData->abilities[battler], STATUS_FIELD_MISTY_TERRAIN))
+    if (DoesBattlerBenefitFromFieldStatus(battler, STATUS_FIELD_MISTY_TERRAIN))
         return FIELD_EFFECT_POSITIVE;
 
     if (HasBattlerSideMoveWithEffect(battler, EFFECT_MISTY_EXPLOSION))
@@ -391,7 +390,7 @@ static enum FieldEffectOutcome BenefitsFromMistyTerrain(u32 battler)
 //TODO: when is Psychic Terrain negative?
 static enum FieldEffectOutcome BenefitsFromPsychicTerrain(u32 battler)
 {
-    if (DoesAbilityBenefitFromFieldStatus(gAiLogicData->abilities[battler], STATUS_FIELD_PSYCHIC_TERRAIN))
+    if (DoesBattlerBenefitFromFieldStatus(battler, STATUS_FIELD_PSYCHIC_TERRAIN))
         return FIELD_EFFECT_POSITIVE;
 
     if (HasMoveWithEffect(battler, EFFECT_EXPANDING_FORCE))

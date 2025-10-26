@@ -1970,7 +1970,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         case EFFECT_FILLET_AWAY:
             if (HasBattlerSideAbility(battlerDef, ABILITY_UNAWARE, aiData))
                 ADJUST_SCORE(-10);
-            if (aiData->abilities[battlerAtk] == ABILITY_CONTRARY || BattlerHasInnate(battlerAtk, ABILITY_CONTRARY))
+            if (AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_CONTRARY))
                 ADJUST_SCORE(-10);
             else if (aiData->hpPercents[battlerAtk] <= 60)
                 ADJUST_SCORE(-10);
@@ -2280,7 +2280,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                  && protectMethod != PROTECT_CRAFTY_SHIELD) //These moves have infinite usage
                 {
                     if (GetBattlerSecondaryDamage(battlerAtk) >= gBattleMons[battlerAtk].hp
-                      && !(IsMoxieTypeAbility(aiData->abilities[battlerDef])))
+                      && !(IsMoxieTypeAbility(battlerDef, aiData->abilities[battlerDef])))
                     {
                         ADJUST_SCORE(-10); //Don't protect if you're going to faint after protecting
                     }
@@ -3212,7 +3212,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 }
 
                 // Alternatively, it benefits from the ally's death, and it will probably die anyway.
-                if (IsMoxieTypeAbility(aiData->abilities[battlerAtk]))
+                if (IsMoxieTypeAbility(battlerAtk, aiData->abilities[battlerAtk]))
                 {
                     ADJUST_SCORE(GOOD_EFFECT);
                 }
@@ -3339,7 +3339,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                     {
                         ADJUST_SCORE(DECENT_EFFECT);
                     }
-                    else if ((atkPartnerAbility == ABILITY_EARTH_EATER || BattlerHasInnate(battlerAtkPartner, ABILITY_EARTH_EATER)) && !(gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_HP_AWARE))
+                    else if ((AI_BATTLER_HAS_TRAIT(BATTLE_PARTNER(battlerAtk), ABILITY_EARTH_EATER)) && !(gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_HP_AWARE))
                     {
                         RETURN_SCORE_MINUS(10);
                     }
@@ -5907,7 +5907,6 @@ static s32 AI_TryTo2HKO(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
 // Adds score bonus to targeting "partner"
 static s32 AI_AttacksPartner(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
 {
-            DebugPrintf("MoveH: %S, Score: %d", gMovesInfo[move].name, score);
     if (battlerDef == BATTLE_PARTNER(battlerAtk)
        // natural enemies in wild battles try to kill each other
        && ((IsNaturalEnemy(gBattleMons[battlerAtk].species, gBattleMons[battlerDef].species) && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_TRAINER)))
@@ -6187,7 +6186,7 @@ static s32 AI_HPAware(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
 }
 
 static s32 AI_PowerfulStatus(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
-{DebugPrintf("Move3: %S, Score: %d", gMovesInfo[move].name, score);
+{
     enum BattleMoveEffects moveEffect = GetMoveEffect(move);
 
     if (GetMoveCategory(move) != DAMAGE_CATEGORY_STATUS || GetMoveEffect(gAiLogicData->partnerMove) == moveEffect)
@@ -6325,7 +6324,7 @@ static s32 AI_PredictSwitch(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         ADJUST_SCORE(DECENT_EFFECT);
         if (gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_CHECK_BAD_MOVE)
         {
-            if ((aiData->abilities[battlerDef] == ABILITY_WONDER_GUARD || BattlerHasInnate(battlerDef, ABILITY_WONDER_GUARD)) && effectiveness < UQ_4_12(2.0))
+            if ((AI_BATTLER_HAS_TRAIT(battlerDef, ABILITY_WONDER_GUARD)) && effectiveness < UQ_4_12(2.0))
                 ADJUST_SCORE(10);
             if (HasDamagingMove(battlerDef) && !(gBattleMons[battlerAtk].volatiles.substitute
              || IsBattlerIncapacitated(battlerDef, aiData->abilities[battlerDef])
@@ -6475,7 +6474,7 @@ static s32 AI_Roaming(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
 
     if (AI_CanBattlerEscape(battlerAtk))
         roamerCanFlee = TRUE;
-    else if (gAiLogicData->abilities[battlerAtk] == ABILITY_RUN_AWAY || BattlerHasInnate(battlerAtk, ABILITY_RUN_AWAY))
+    else if (AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_RUN_AWAY))
         roamerCanFlee = TRUE;
     else if (gAiLogicData->holdEffects[battlerAtk] == HOLD_EFFECT_CAN_ALWAYS_RUN)
         roamerCanFlee = TRUE;

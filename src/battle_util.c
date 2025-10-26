@@ -5575,16 +5575,19 @@ bool32 IsNeutralizingGasOnField(void)
 bool32 IsMoldBreakerTypeAbility(u32 battler, u32 ability)
 {
     u32 foundAbility = ABILITY_NONE;
+    u16 battlerTraits[MAX_MON_TRAITS];
+    STORE_BATTLER_ABILITYINNATES(battler, ability);
+
     if (gBattleMons[battler].volatiles.gastroAcid)
         return FALSE;
 
-    if (ability == ABILITY_TERAVOLT || BattlerHasInnate(battler, ABILITY_TERAVOLT))
+    if (SearchTraits(battlerTraits, ABILITY_TERAVOLT))
         foundAbility = ABILITY_TERAVOLT;
-    else if (ability == ABILITY_TURBOBLAZE || BattlerHasInnate(battler, ABILITY_TURBOBLAZE))
+    else if (SearchTraits(battlerTraits, ABILITY_TURBOBLAZE))
         foundAbility = ABILITY_TURBOBLAZE;
-    else if (ability == ABILITY_MOLD_BREAKER || BattlerHasInnate(battler, ABILITY_MOLD_BREAKER))
+    else if (SearchTraits(battlerTraits, ABILITY_MOLD_BREAKER))
         foundAbility = ABILITY_MOLD_BREAKER;
-    else if ((ability == ABILITY_MYCELIUM_MIGHT || BattlerHasInnate(battler, ABILITY_MYCELIUM_MIGHT)) && IsBattleMoveStatus(gCurrentMove))
+    else if ((SearchTraits(battlerTraits, ABILITY_MYCELIUM_MIGHT)) && IsBattleMoveStatus(gCurrentMove))
         foundAbility = ABILITY_MYCELIUM_MIGHT;
     
     if (foundAbility != ABILITY_NONE)

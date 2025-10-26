@@ -7222,7 +7222,8 @@ u8 SpeciesHasInnate(u16 species, u16 ability, u32 personality, bool8 disablerand
         return innateNum;
 }
 
-bool8 BoxMonHasInnate(struct BoxPokemon *boxmon, u16 ability, bool8 disableRandomizer) {
+bool8 BoxMonHasInnate(struct BoxPokemon *boxmon, u16 ability, bool8 disableRandomizer)
+{
     u16 species = GetBoxMonData(boxmon, MON_DATA_SPECIES, NULL);
     u32 personality = GetBoxMonData(boxmon, MON_DATA_PERSONALITY, NULL);
 
@@ -7236,7 +7237,8 @@ bool8 MonHasTrait(struct Pokemon *mon, u16 ability, bool8 disableRandomizer)
     return (GetMonAbility(mon) == ability || SpeciesHasInnate(species, ability, personality, disableRandomizer));
 } 
 
-u16 GetSpeciesInnate(u16 species, u8 traitNum, u32 personality, bool8 disablerandomizer) {
+u16 GetSpeciesInnate(u16 species, u8 traitNum, u32 personality, bool8 disablerandomizer)
+{
     //u8 i;
 
     //if (!disablerandomizer) {

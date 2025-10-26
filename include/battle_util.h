@@ -68,6 +68,12 @@ enum {
 {battlerTraits[traitLoop] = GetBattlerTrait(battler, traitLoop, TRUE);\
 }}) 
 
+// For functions that might pass an AI Logic Ability to check
+#define STORE_BATTLER_ABILITYINNATES(battler, ability) \
+({for (int traitLoop = 0; traitLoop < MAX_MON_TRAITS; traitLoop++)\
+{if (traitLoop == 0){battlerTraits[traitLoop] = ability;}else{battlerTraits[traitLoop] = GetBattlerTrait(battler, traitLoop, FALSE);\
+}}}) 
+
 // For the first argument of ItemBattleEffects, to deteremine which block of item effects to try
 enum ItemCaseId
 {

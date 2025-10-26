@@ -1713,28 +1713,27 @@ u32 AI_GetWeather(void)
 u32 AI_GetSwitchinWeather(struct BattlePokemon battleMon)
 {
     u32 ability = battleMon.ability;
+
     // Forced weather behaviour
     if (!AI_WeatherHasEffect())
         return B_WEATHER_NONE;
-    if (ability == ABILITY_CLOUD_NINE || ability == ABILITY_AIR_LOCK)
+    if ((ability == ABILITY_CLOUD_NINE || SpeciesHasInnate(battleMon.species, ABILITY_CLOUD_NINE, battleMon.personality, FALSE))
+     || (ability == ABILITY_AIR_LOCK || SpeciesHasInnate(battleMon.species, ABILITY_AIR_LOCK, battleMon.personality, FALSE)))
         return B_WEATHER_NONE;
     if (gBattleWeather & B_WEATHER_PRIMAL_ANY)
         return gBattleWeather;
 
     // Switchin will introduce new weather
-    switch(ability)
-    {
-    case ABILITY_DRIZZLE:
+    if (ability == ABILITY_DRIZZLE || SpeciesHasInnate(battleMon.species, ABILITY_DRIZZLE, battleMon.personality, FALSE))
         return B_WEATHER_RAIN_NORMAL;
-    case ABILITY_DROUGHT:
+    if (ability == ABILITY_DROUGHT || SpeciesHasInnate(battleMon.species, ABILITY_DROUGHT, battleMon.personality, FALSE))
         return B_WEATHER_SUN_NORMAL;
-    case ABILITY_SAND_STREAM:
+    if (ability == ABILITY_SAND_STREAM || SpeciesHasInnate(battleMon.species, ABILITY_SAND_STREAM, battleMon.personality, FALSE))
         return B_WEATHER_SANDSTORM;
-    case ABILITY_SNOW_WARNING:
+    if (ability == ABILITY_SNOW_WARNING || SpeciesHasInnate(battleMon.species, ABILITY_SNOW_WARNING, battleMon.personality, FALSE))
         return B_SNOW_WARNING >= GEN_9 ? B_WEATHER_SNOW : B_WEATHER_HAIL;
-    default:
-        return gBattleWeather;
-    }
+
+    return gBattleWeather;
 }
 
 enum WeatherState IsWeatherActive(u32 flags)
@@ -2094,7 +2093,7 @@ u32 IncreaseStatDownScore(u32 battlerAtk, u32 battlerDef, u32 stat)
     if (HasBattlerSideMoveWithEffect(battlerDef, EFFECT_ENCORE))
         return NO_INCREASE;
 
-    if (DoesAbilityRaiseStatsWhenLowered(gAiLogicData->abilities[battlerDef]))
+    if (DoesAbilityRaiseStatsWhenLowered(battlerDef,gAiLogicData->abilities[battlerDef]))
         return NO_INCREASE;
 
     // TODO: Avoid decreasing stat if
@@ -5314,102 +5313,105 @@ u32 GetFriendlyFireKOThreshold(u32 battler)
     return FRIENDLY_FIRE_NORMAL_THRESHOLD;
 }
 
-bool32 IsMoxieTypeAbility(u32 ability)
+bool32 IsMoxieTypeAbility(u32 battler, u32 ability)
 {
-    switch (ability)
-    {
-    case ABILITY_MOXIE:
-    case ABILITY_BEAST_BOOST:
-    case ABILITY_CHILLING_NEIGH:
-    case ABILITY_AS_ONE_ICE_RIDER:
-    case ABILITY_GRIM_NEIGH:
-    case ABILITY_AS_ONE_SHADOW_RIDER:
+    u16 battlerTraits[MAX_MON_TRAITS];
+    STORE_BATTLER_ABILITYINNATES(battler, ability);
+
+    if ((SearchTraits(battlerTraits, ABILITY_MOXIE))
+     || (SearchTraits(battlerTraits, ABILITY_BEAST_BOOST))
+     || (SearchTraits(battlerTraits, ABILITY_CHILLING_NEIGH))
+     || (SearchTraits(battlerTraits, ABILITY_AS_ONE_ICE_RIDER))
+     || (SearchTraits(battlerTraits, ABILITY_GRIM_NEIGH))
+     || (SearchTraits(battlerTraits, ABILITY_AS_ONE_SHADOW_RIDER)))
         return TRUE;
-    default:
-        return FALSE;
-    }
+
+    return FALSE;
 }
 
-bool32 DoesAbilityRaiseStatsWhenLowered(u32 ability)
+bool32 DoesAbilityRaiseStatsWhenLowered(u32 battler, u32 ability)
 {
-    switch (ability)
-    {
-    case ABILITY_CONTRARY:
-    case ABILITY_COMPETITIVE:
-    case ABILITY_DEFIANT:
+    u16 battlerTraits[MAX_MON_TRAITS];
+    STORE_BATTLER_ABILITYINNATES(battler, ability);
+
+    if ((SearchTraits(battlerTraits, ABILITY_CONTRARY))
+     || (SearchTraits(battlerTraits, ABILITY_COMPETITIVE))
+     || (SearchTraits(battlerTraits, ABILITY_DEFIANT)))
         return TRUE;
-    default:
-        return FALSE;
-    }
+
+    return FALSE;
 }
 
-bool32 DoesIntimidateRaiseStats(u32 ability)
+bool32 DoesIntimidateRaiseStats(u32 battler, u32 ability)
 {
-    switch (ability)
-    {
-    case ABILITY_COMPETITIVE:
-    case ABILITY_CONTRARY:
-    case ABILITY_DEFIANT:
-    case ABILITY_GUARD_DOG:
-    case ABILITY_RATTLED:
+    u16 battlerTraits[MAX_MON_TRAITS];
+    STORE_BATTLER_ABILITYINNATES(battler, ability);
+
+    if ((SearchTraits(battlerTraits, ABILITY_COMPETITIVE))
+     || (SearchTraits(battlerTraits, ABILITY_CONTRARY))
+     || (SearchTraits(battlerTraits, ABILITY_DEFIANT))
+     || (SearchTraits(battlerTraits, ABILITY_GUARD_DOG))
+     || (SearchTraits(battlerTraits, ABILITY_RATTLED)))
         return TRUE;
-    default:
-        return FALSE;
-    }
+
+    return FALSE;
 }
 
 // TODO: work out when to attack into the player's contextually 'beneficial' ability
 bool32 ShouldTriggerAbility(u32 battlerAtk, u32 battlerDef, u32 ability)
 {
+    u16 battlerTraits[MAX_MON_TRAITS];
+    STORE_BATTLER_TRAITS(battlerDef);
+
     if (IsTargetingPartner(battlerAtk, battlerDef))
     {
-        if ((BattlerHasTrait(battlerDef, ABILITY_LIGHTNING_ROD)
-         || BattlerHasTrait(battlerDef, ABILITY_STORM_DRAIN))
+        if ((SearchTraits(battlerTraits, ABILITY_LIGHTNING_ROD)
+         || SearchTraits(battlerTraits, ABILITY_STORM_DRAIN))
          && B_REDIRECT_ABILITY_IMMUNITY < GEN_5)
         {
             return (BattlerStatCanRise(battlerDef, ability, STAT_SPATK) && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL));
         }
         
-        if (BattlerHasTrait(battlerDef, ABILITY_DEFIANT)
-         || BattlerHasTrait(battlerDef, ABILITY_JUSTIFIED)
-         || BattlerHasTrait(battlerDef, ABILITY_MOXIE)
-         || BattlerHasTrait(battlerDef, ABILITY_SAP_SIPPER)
-         || BattlerHasTrait(battlerDef, ABILITY_THERMAL_EXCHANGE))
+        if (SearchTraits(battlerTraits, ABILITY_DEFIANT)
+         || SearchTraits(battlerTraits, ABILITY_JUSTIFIED)
+         || SearchTraits(battlerTraits, ABILITY_MOXIE)
+         || SearchTraits(battlerTraits, ABILITY_SAP_SIPPER)
+         || SearchTraits(battlerTraits, ABILITY_THERMAL_EXCHANGE))
         {
             return (BattlerStatCanRise(battlerDef, ability, STAT_ATK) && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL));
         }
         
-        if (BattlerHasTrait(battlerDef, ABILITY_COMPETITIVE))
+        if (SearchTraits(battlerTraits, ABILITY_COMPETITIVE))
         {
             return (BattlerStatCanRise(battlerDef, ability, STAT_SPATK) && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL));
         }
         
         // TODO: logic for when to trigger Contrary
-        if (BattlerHasTrait(battlerDef, ABILITY_CONTRARY))
+        if (SearchTraits(battlerTraits, ABILITY_CONTRARY))
         {
             return TRUE;
         }
 
-        if (BattlerHasTrait(battlerDef, ABILITY_DRY_SKIN)
-         || BattlerHasTrait(battlerDef, ABILITY_VOLT_ABSORB)
-         || BattlerHasTrait(battlerDef, ABILITY_WATER_ABSORB))
+        if (SearchTraits(battlerTraits, ABILITY_DRY_SKIN)
+         || SearchTraits(battlerTraits, ABILITY_VOLT_ABSORB)
+         || SearchTraits(battlerTraits, ABILITY_WATER_ABSORB))
         {
             return (gAiThinkingStruct->aiFlags[battlerDef] & AI_FLAG_HP_AWARE);
         }
 
-        if (BattlerHasTrait(battlerDef, ABILITY_RATTLED)
-         || BattlerHasTrait(battlerDef, ABILITY_STEAM_ENGINE))
+        if (SearchTraits(battlerTraits, ABILITY_RATTLED)
+         || SearchTraits(battlerTraits, ABILITY_STEAM_ENGINE))
         {
             return BattlerStatCanRise(battlerDef, ability, STAT_SPEED);
         }
 
-        if (BattlerHasTrait(battlerDef, ABILITY_FLASH_FIRE))
+        if (SearchTraits(battlerTraits, ABILITY_FLASH_FIRE))
         {
             return (HasMoveWithType(battlerDef, TYPE_FIRE) && !gDisableStructs[battlerDef].flashFireBoosted);
         }
 
-        if (BattlerHasTrait(battlerDef, ABILITY_WATER_COMPACTION)
-         || BattlerHasTrait(battlerDef, ABILITY_WELL_BAKED_BODY))
+        if (SearchTraits(battlerTraits, ABILITY_WATER_COMPACTION)
+         || SearchTraits(battlerTraits, ABILITY_WELL_BAKED_BODY))
         {
             return (BattlerStatCanRise(battlerDef, ability, STAT_DEF));
         }
@@ -5687,7 +5689,7 @@ s32 BattlerBenefitsFromAbilityScore(u32 battler, u32 ability, struct AiLogicData
     case ABILITY_INTIMIDATE:
     {
         u32 abilityDef = aiData->abilities[FOE(battler)];
-        if (DoesIntimidateRaiseStats(abilityDef))
+        if (DoesIntimidateRaiseStats(FOE(battler), abilityDef))
         {
             return AWFUL_EFFECT;
         }
@@ -5696,7 +5698,7 @@ s32 BattlerBenefitsFromAbilityScore(u32 battler, u32 ability, struct AiLogicData
             if (HasTwoOpponents(battler))
             {
                 abilityDef = aiData->abilities[BATTLE_PARTNER(FOE(battler))];
-                if (DoesIntimidateRaiseStats(abilityDef))
+                if (DoesIntimidateRaiseStats(FOE(battler), abilityDef))
                 {
                     return AWFUL_EFFECT;
                 }

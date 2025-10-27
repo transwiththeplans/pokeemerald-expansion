@@ -4177,8 +4177,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
             gOverworldPalette_Polteageist,
             gShinyOverworldPalette_Polteageist
         )
-        .levelUpLearnset = sPolteageistLevelUpLearnset,
-        .teachableLearnset = sPolteageistTeachableLearnset,
+        .levelUpLearnset = sPolteageistStrawberryLevelUpLearnset,
+        .teachableLearnset = sPolteageistStrawberryTeachableLearnset,
         .formSpeciesIdTable = sPolteageistFormSpeciesIdTable,
     },
 	
@@ -4242,8 +4242,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
             gOverworldPalette_Polteageist,
             gShinyOverworldPalette_Polteageist
         )
-        .levelUpLearnset = sPolteageistLevelUpLearnset,
-        .teachableLearnset = sPolteageistTeachableLearnset,
+        .levelUpLearnset = sPolteageistBerryLevelUpLearnset,
+        .teachableLearnset = sPolteageistBerryTeachableLearnset,
         .formSpeciesIdTable = sPolteageistFormSpeciesIdTable,
     },
 	
@@ -4307,8 +4307,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
             gOverworldPalette_Polteageist,
             gShinyOverworldPalette_Polteageist
         )
-        .levelUpLearnset = sPolteageistLevelUpLearnset,
-        .teachableLearnset = sPolteageistTeachableLearnset,
+        .levelUpLearnset = sPolteageistStarLevelUpLearnset,
+        .teachableLearnset = sPolteageistStarTeachableLearnset,
         .formSpeciesIdTable = sPolteageistFormSpeciesIdTable,
     },
     [SPECIES_POLTEAGEIST_CLOVER] =
@@ -4371,8 +4371,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
             gOverworldPalette_Polteageist,
             gShinyOverworldPalette_Polteageist
         )
-        .levelUpLearnset = sPolteageistLevelUpLearnset,
-        .teachableLearnset = sPolteageistTeachableLearnset,
+        .levelUpLearnset = sPolteageistCloverLevelUpLearnset,
+        .teachableLearnset = sPolteageistCloverTeachableLearnset,
         .formSpeciesIdTable = sPolteageistFormSpeciesIdTable,
     },
 	
@@ -4436,8 +4436,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
             gOverworldPalette_Polteageist,
             gShinyOverworldPalette_Polteageist
         )
-        .levelUpLearnset = sPolteageistLevelUpLearnset,
-        .teachableLearnset = sPolteageistTeachableLearnset,
+        .levelUpLearnset = sPolteageistRibbonLevelUpLearnset,
+        .teachableLearnset = sPolteageistRibbonTeachableLearnset,
         .formSpeciesIdTable = sPolteageistFormSpeciesIdTable,
     },
 	
@@ -4501,8 +4501,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
             gOverworldPalette_Polteageist,
             gShinyOverworldPalette_Polteageist
         )
-        .levelUpLearnset = sPolteageistLevelUpLearnset,
-        .teachableLearnset = sPolteageistTeachableLearnset,
+        .levelUpLearnset = sPolteageistFlowerLevelUpLearnset,
+        .teachableLearnset = sPolteageistFlowerTeachableLearnset,
         .formSpeciesIdTable = sPolteageistFormSpeciesIdTable,
     },
 	
@@ -4566,8 +4566,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
             gOverworldPalette_Polteageist,
             gShinyOverworldPalette_Polteageist
         )
-        .levelUpLearnset = sPolteageistLevelUpLearnset,
-        .teachableLearnset = sPolteageistTeachableLearnset,
+        .levelUpLearnset = sPolteageistLoveLevelUpLearnset,
+        .teachableLearnset = sPolteageistLoveTeachableLearnset,
         .formSpeciesIdTable = sPolteageistFormSpeciesIdTable,
     },
 #endif //P_FAMILY_SINISTEA

@@ -2652,4 +2652,19 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 7,
         .breakable = TRUE,
     },
+	
+	[ABILITY_NTH_METAL] =
+    {
+        .name = _("Nth Metal"),
+        .description = COMPOUND_STRING("4x weight and 1.5x defense."),
+        .aiRating = -1,
+        .breakable = TRUE,
+    },
+	
+	[ABILITY_STAR_POWER] =
+    {
+        .name = _("Star Power"),
+        .description = COMPOUND_STRING("Raises Attack."),
+        .aiRating = 10,
+    },
 };

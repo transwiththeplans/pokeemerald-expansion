@@ -1671,7 +1671,7 @@
 #define SPECIES_TANDEMAUS_NECROFRIGGIAN                 1553
 #define SPECIES_MAUSCOLD                                1554
 #define SPECIES_TINKATON_MEGA                           1555
-#define SPECIES_CUSTOM_4                                1556
+#define SPECIES_STARMIE_MEGA                            1556
 #define SPECIES_CUSTOM_5                                1557
 #define SPECIES_CUSTOM_6                                1558
 #define SPECIES_CUSTOM_7                                1559

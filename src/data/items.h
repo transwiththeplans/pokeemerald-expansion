@@ -4851,6 +4851,26 @@ const struct Item gItemsInfo[] = {
 
 // Memories
 
+    [ITEM_NORMAL_MEMORY] =
+    {
+        .name = _("Normal Memory"),
+        .pluralName = _("Normal Memories"),
+        .price = 1000,
+        .holdEffect = HOLD_EFFECT_MEMORY,
+        .holdEffectParam = 0,
+        .description = COMPOUND_STRING(
+            "A disc with Normal\n"
+            "type data. It swaps\n"
+            "Silvally's type."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_FormChange,
+        .secondaryId = TYPE_NORMAL,
+        .flingPower = 50,
+        .iconPic = gItemIcon_FireMemory,
+        .iconPalette = gItemIconPalette_FireMemory,
+    },
+	
     [ITEM_FIRE_MEMORY] =
     {
         .name = _("Fire Memory"),
@@ -4863,8 +4883,8 @@ const struct Item gItemsInfo[] = {
             "type data. It swaps\n"
             "Silvally's type."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_FormChange,
         .secondaryId = TYPE_FIRE,
         .flingPower = 50,
         .iconPic = gItemIcon_FireMemory,
@@ -4883,8 +4903,8 @@ const struct Item gItemsInfo[] = {
             "type data. It swaps\n"
             "Silvally's type."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_FormChange,
         .secondaryId = TYPE_WATER,
         .flingPower = 50,
         .iconPic = gItemIcon_WaterMemory,
@@ -4903,8 +4923,8 @@ const struct Item gItemsInfo[] = {
             "type data. It swaps\n"
             "Silvally's type."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_FormChange,
         .secondaryId = TYPE_ELECTRIC,
         .flingPower = 50,
         .iconPic = gItemIcon_ElectricMemory,
@@ -4923,8 +4943,8 @@ const struct Item gItemsInfo[] = {
             "type data. It swaps\n"
             "Silvally's type."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_FormChange,
         .secondaryId = TYPE_GRASS,
         .flingPower = 50,
         .iconPic = gItemIcon_GrassMemory,
@@ -4943,8 +4963,8 @@ const struct Item gItemsInfo[] = {
             "type data. It swaps\n"
             "Silvally's type."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_FormChange,
         .secondaryId = TYPE_ICE,
         .flingPower = 50,
         .iconPic = gItemIcon_IceMemory,
@@ -4963,8 +4983,8 @@ const struct Item gItemsInfo[] = {
             "type data. It swaps\n"
             "Silvally's type."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_FormChange,
         .secondaryId = TYPE_FIGHTING,
         .flingPower = 50,
         .iconPic = gItemIcon_FightingMemory,
@@ -4983,8 +5003,8 @@ const struct Item gItemsInfo[] = {
             "type data. It swaps\n"
             "Silvally's type."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_FormChange,
         .secondaryId = TYPE_POISON,
         .flingPower = 50,
         .iconPic = gItemIcon_PoisonMemory,
@@ -5003,8 +5023,8 @@ const struct Item gItemsInfo[] = {
             "type data. It swaps\n"
             "Silvally's type."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_FormChange,
         .secondaryId = TYPE_GROUND,
         .flingPower = 50,
         .iconPic = gItemIcon_GroundMemory,
@@ -5023,8 +5043,8 @@ const struct Item gItemsInfo[] = {
             "type data. It swaps\n"
             "Silvally's type."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_FormChange,
         .secondaryId = TYPE_FLYING,
         .flingPower = 50,
         .iconPic = gItemIcon_FlyingMemory,
@@ -5043,8 +5063,8 @@ const struct Item gItemsInfo[] = {
             "type data. It swaps\n"
             "Silvally's type."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_FormChange,
         .secondaryId = TYPE_PSYCHIC,
         .flingPower = 50,
         .iconPic = gItemIcon_PsychicMemory,
@@ -5063,8 +5083,8 @@ const struct Item gItemsInfo[] = {
             "type data. It swaps\n"
             "Silvally's type."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_FormChange,
         .secondaryId = TYPE_BUG,
         .flingPower = 50,
         .iconPic = gItemIcon_BugMemory,
@@ -5083,8 +5103,8 @@ const struct Item gItemsInfo[] = {
             "type data. It swaps\n"
             "Silvally's type."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_FormChange,
         .secondaryId = TYPE_ROCK,
         .flingPower = 50,
         .iconPic = gItemIcon_RockMemory,
@@ -5103,8 +5123,8 @@ const struct Item gItemsInfo[] = {
             "type data. It swaps\n"
             "Silvally's type."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_FormChange,
         .secondaryId = TYPE_GHOST,
         .flingPower = 50,
         .iconPic = gItemIcon_GhostMemory,
@@ -5123,8 +5143,8 @@ const struct Item gItemsInfo[] = {
             "type data. It swaps\n"
             "Silvally's type."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_FormChange,
         .secondaryId = TYPE_DRAGON,
         .flingPower = 50,
         .iconPic = gItemIcon_DragonMemory,
@@ -5143,8 +5163,8 @@ const struct Item gItemsInfo[] = {
             "type data. It swaps\n"
             "Silvally's type."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_FormChange,
         .secondaryId = TYPE_DARK,
         .flingPower = 50,
         .iconPic = gItemIcon_DarkMemory,
@@ -5163,8 +5183,8 @@ const struct Item gItemsInfo[] = {
             "type data. It swaps\n"
             "Silvally's type."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_FormChange,
         .secondaryId = TYPE_STEEL,
         .flingPower = 50,
         .iconPic = gItemIcon_SteelMemory,
@@ -5183,8 +5203,8 @@ const struct Item gItemsInfo[] = {
             "type data. It swaps\n"
             "Silvally's type."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_FormChange,
         .secondaryId = TYPE_FAIRY,
         .flingPower = 50,
         .iconPic = gItemIcon_FairyMemory,

@@ -67668,6 +67668,763 @@
     ],
     "TutorMoves": []
   },
+  "POLTEAGEIST_STRAWBERRY": {
+    "LevelMoves": [
+      {
+        "Level": 0,
+        "Move": "MOVE_TEATIME"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_MEGA_DRAIN"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_WITHDRAW"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_ASTONISH"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_AROMATIC_MIST"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_STRENGTH_SAP"
+      },
+      {
+        "Level": 18,
+        "Move": "MOVE_PROTECT"
+      },
+      {
+        "Level": 24,
+        "Move": "MOVE_SUCKER_PUNCH"
+      },
+      {
+        "Level": 30,
+        "Move": "MOVE_SWEET_SCENT"
+      },
+      {
+        "Level": 36,
+        "Move": "MOVE_GIGA_DRAIN"
+      },
+      {
+        "Level": 42,
+        "Move": "MOVE_NASTY_PLOT"
+      },
+      {
+        "Level": 48,
+        "Move": "MOVE_SHADOW_BALL"
+      },
+      {
+        "Level": 54,
+        "Move": "MOVE_MEMENTO"
+      },
+      {
+        "Level": 60,
+        "Move": "MOVE_SHELL_SMASH"
+      },
+      {
+        "Level": 66,
+        "Move": "MOVE_CURSE"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_PROTECT",
+      "MOVE_PSYBEAM",
+      "MOVE_CONFUSE_RAY",
+      "MOVE_FACADE",
+      "MOVE_HEX",
+      "MOVE_MAGICAL_LEAF",
+      "MOVE_STORED_POWER",
+      "MOVE_NIGHT_SHADE",
+      "MOVE_ENDURE",
+      "MOVE_PSYSHOCK",
+      "MOVE_FOUL_PLAY",
+      "MOVE_SLEEP_TALK",
+      "MOVE_REFLECT",
+      "MOVE_LIGHT_SCREEN",
+      "MOVE_METRONOME",
+      "MOVE_REST",
+      "MOVE_IMPRISON",
+      "MOVE_DARK_PULSE",
+      "MOVE_SKILL_SWAP",
+      "MOVE_SUBSTITUTE",
+      "MOVE_WILL_O_WISP",
+      "MOVE_TRICK",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_SHADOW_BALL",
+      "MOVE_PSYCHIC",
+      "MOVE_CALM_MIND",
+      "MOVE_BATON_PASS",
+      "MOVE_NASTY_PLOT",
+      "MOVE_PHANTOM_FORCE",
+      "MOVE_GIGA_IMPACT",
+      "MOVE_TRICK_ROOM",
+      "MOVE_HYPER_BEAM",
+      "MOVE_TERA_BLAST",
+      "MOVE_SPITE",
+      "MOVE_POLTERGEIST",
+      "MOVE_PAIN_SPLIT",
+      "MOVE_CURSE"
+    ],
+    "EggMoves": [
+      "MOVE_ALLY_SWITCH"
+    ],
+    "TutorMoves": []
+  },  
+  "POLTEAGEIST_BERRY": {
+    "LevelMoves": [
+      {
+        "Level": 0,
+        "Move": "MOVE_TEATIME"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_MEGA_DRAIN"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_WITHDRAW"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_ASTONISH"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_AROMATIC_MIST"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_STRENGTH_SAP"
+      },
+      {
+        "Level": 18,
+        "Move": "MOVE_PROTECT"
+      },
+      {
+        "Level": 24,
+        "Move": "MOVE_SUCKER_PUNCH"
+      },
+      {
+        "Level": 30,
+        "Move": "MOVE_SWEET_SCENT"
+      },
+      {
+        "Level": 36,
+        "Move": "MOVE_GIGA_DRAIN"
+      },
+      {
+        "Level": 42,
+        "Move": "MOVE_NASTY_PLOT"
+      },
+      {
+        "Level": 48,
+        "Move": "MOVE_SHADOW_BALL"
+      },
+      {
+        "Level": 54,
+        "Move": "MOVE_MEMENTO"
+      },
+      {
+        "Level": 60,
+        "Move": "MOVE_SHELL_SMASH"
+      },
+      {
+        "Level": 66,
+        "Move": "MOVE_CURSE"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_PROTECT",
+      "MOVE_PSYBEAM",
+      "MOVE_CONFUSE_RAY",
+      "MOVE_FACADE",
+      "MOVE_HEX",
+      "MOVE_MAGICAL_LEAF",
+      "MOVE_STORED_POWER",
+      "MOVE_NIGHT_SHADE",
+      "MOVE_ENDURE",
+      "MOVE_PSYSHOCK",
+      "MOVE_FOUL_PLAY",
+      "MOVE_SLEEP_TALK",
+      "MOVE_REFLECT",
+      "MOVE_LIGHT_SCREEN",
+      "MOVE_METRONOME",
+      "MOVE_REST",
+      "MOVE_IMPRISON",
+      "MOVE_DARK_PULSE",
+      "MOVE_SKILL_SWAP",
+      "MOVE_SUBSTITUTE",
+      "MOVE_WILL_O_WISP",
+      "MOVE_TRICK",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_SHADOW_BALL",
+      "MOVE_PSYCHIC",
+      "MOVE_CALM_MIND",
+      "MOVE_BATON_PASS",
+      "MOVE_NASTY_PLOT",
+      "MOVE_PHANTOM_FORCE",
+      "MOVE_GIGA_IMPACT",
+      "MOVE_TRICK_ROOM",
+      "MOVE_HYPER_BEAM",
+      "MOVE_TERA_BLAST",
+      "MOVE_SPITE",
+      "MOVE_POLTERGEIST",
+      "MOVE_PAIN_SPLIT",
+      "MOVE_CURSE"
+    ],
+    "EggMoves": [
+      "MOVE_ALLY_SWITCH"
+    ],
+    "TutorMoves": []
+  },
+  "POLTEAGEIST_STAR": {
+    "LevelMoves": [
+      {
+        "Level": 0,
+        "Move": "MOVE_TEATIME"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_MEGA_DRAIN"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_WITHDRAW"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_ASTONISH"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_AROMATIC_MIST"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_STRENGTH_SAP"
+      },
+      {
+        "Level": 18,
+        "Move": "MOVE_PROTECT"
+      },
+      {
+        "Level": 24,
+        "Move": "MOVE_SUCKER_PUNCH"
+      },
+      {
+        "Level": 30,
+        "Move": "MOVE_SWEET_SCENT"
+      },
+      {
+        "Level": 36,
+        "Move": "MOVE_GIGA_DRAIN"
+      },
+      {
+        "Level": 42,
+        "Move": "MOVE_NASTY_PLOT"
+      },
+      {
+        "Level": 48,
+        "Move": "MOVE_SHADOW_BALL"
+      },
+      {
+        "Level": 54,
+        "Move": "MOVE_MEMENTO"
+      },
+      {
+        "Level": 60,
+        "Move": "MOVE_SHELL_SMASH"
+      },
+      {
+        "Level": 66,
+        "Move": "MOVE_CURSE"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_PROTECT",
+      "MOVE_PSYBEAM",
+      "MOVE_CONFUSE_RAY",
+      "MOVE_FACADE",
+      "MOVE_HEX",
+      "MOVE_MAGICAL_LEAF",
+      "MOVE_STORED_POWER",
+      "MOVE_NIGHT_SHADE",
+      "MOVE_ENDURE",
+      "MOVE_PSYSHOCK",
+      "MOVE_FOUL_PLAY",
+      "MOVE_SLEEP_TALK",
+      "MOVE_REFLECT",
+      "MOVE_LIGHT_SCREEN",
+      "MOVE_METRONOME",
+      "MOVE_REST",
+      "MOVE_IMPRISON",
+      "MOVE_DARK_PULSE",
+      "MOVE_SKILL_SWAP",
+      "MOVE_SUBSTITUTE",
+      "MOVE_WILL_O_WISP",
+      "MOVE_TRICK",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_SHADOW_BALL",
+      "MOVE_PSYCHIC",
+      "MOVE_CALM_MIND",
+      "MOVE_BATON_PASS",
+      "MOVE_NASTY_PLOT",
+      "MOVE_PHANTOM_FORCE",
+      "MOVE_GIGA_IMPACT",
+      "MOVE_TRICK_ROOM",
+      "MOVE_HYPER_BEAM",
+      "MOVE_TERA_BLAST",
+      "MOVE_SPITE",
+      "MOVE_POLTERGEIST",
+      "MOVE_PAIN_SPLIT",
+      "MOVE_CURSE"
+    ],
+    "EggMoves": [
+      "MOVE_ALLY_SWITCH"
+    ],
+    "TutorMoves": []
+  },
+  "POLTEAGEIST_CLOVER": {
+    "LevelMoves": [
+      {
+        "Level": 0,
+        "Move": "MOVE_TEATIME"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_MEGA_DRAIN"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_WITHDRAW"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_ASTONISH"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_AROMATIC_MIST"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_STRENGTH_SAP"
+      },
+      {
+        "Level": 18,
+        "Move": "MOVE_PROTECT"
+      },
+      {
+        "Level": 24,
+        "Move": "MOVE_SUCKER_PUNCH"
+      },
+      {
+        "Level": 30,
+        "Move": "MOVE_SWEET_SCENT"
+      },
+      {
+        "Level": 36,
+        "Move": "MOVE_GIGA_DRAIN"
+      },
+      {
+        "Level": 42,
+        "Move": "MOVE_NASTY_PLOT"
+      },
+      {
+        "Level": 48,
+        "Move": "MOVE_SHADOW_BALL"
+      },
+      {
+        "Level": 54,
+        "Move": "MOVE_MEMENTO"
+      },
+      {
+        "Level": 60,
+        "Move": "MOVE_SHELL_SMASH"
+      },
+      {
+        "Level": 66,
+        "Move": "MOVE_CURSE"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_PROTECT",
+      "MOVE_PSYBEAM",
+      "MOVE_CONFUSE_RAY",
+      "MOVE_FACADE",
+      "MOVE_HEX",
+      "MOVE_MAGICAL_LEAF",
+      "MOVE_STORED_POWER",
+      "MOVE_NIGHT_SHADE",
+      "MOVE_ENDURE",
+      "MOVE_PSYSHOCK",
+      "MOVE_FOUL_PLAY",
+      "MOVE_SLEEP_TALK",
+      "MOVE_REFLECT",
+      "MOVE_LIGHT_SCREEN",
+      "MOVE_METRONOME",
+      "MOVE_REST",
+      "MOVE_IMPRISON",
+      "MOVE_DARK_PULSE",
+      "MOVE_SKILL_SWAP",
+      "MOVE_SUBSTITUTE",
+      "MOVE_WILL_O_WISP",
+      "MOVE_TRICK",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_SHADOW_BALL",
+      "MOVE_PSYCHIC",
+      "MOVE_CALM_MIND",
+      "MOVE_BATON_PASS",
+      "MOVE_NASTY_PLOT",
+      "MOVE_PHANTOM_FORCE",
+      "MOVE_GIGA_IMPACT",
+      "MOVE_TRICK_ROOM",
+      "MOVE_HYPER_BEAM",
+      "MOVE_TERA_BLAST",
+      "MOVE_SPITE",
+      "MOVE_POLTERGEIST",
+      "MOVE_PAIN_SPLIT",
+      "MOVE_CURSE"
+    ],
+    "EggMoves": [
+      "MOVE_ALLY_SWITCH"
+    ],
+    "TutorMoves": []
+  },
+  "POLTEAGEIST_RIBBON": {
+    "LevelMoves": [
+      {
+        "Level": 0,
+        "Move": "MOVE_TEATIME"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_MEGA_DRAIN"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_WITHDRAW"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_ASTONISH"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_AROMATIC_MIST"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_STRENGTH_SAP"
+      },
+      {
+        "Level": 18,
+        "Move": "MOVE_PROTECT"
+      },
+      {
+        "Level": 24,
+        "Move": "MOVE_SUCKER_PUNCH"
+      },
+      {
+        "Level": 30,
+        "Move": "MOVE_SWEET_SCENT"
+      },
+      {
+        "Level": 36,
+        "Move": "MOVE_GIGA_DRAIN"
+      },
+      {
+        "Level": 42,
+        "Move": "MOVE_NASTY_PLOT"
+      },
+      {
+        "Level": 48,
+        "Move": "MOVE_SHADOW_BALL"
+      },
+      {
+        "Level": 54,
+        "Move": "MOVE_MEMENTO"
+      },
+      {
+        "Level": 60,
+        "Move": "MOVE_SHELL_SMASH"
+      },
+      {
+        "Level": 66,
+        "Move": "MOVE_CURSE"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_PROTECT",
+      "MOVE_PSYBEAM",
+      "MOVE_CONFUSE_RAY",
+      "MOVE_FACADE",
+      "MOVE_HEX",
+      "MOVE_MAGICAL_LEAF",
+      "MOVE_STORED_POWER",
+      "MOVE_NIGHT_SHADE",
+      "MOVE_ENDURE",
+      "MOVE_PSYSHOCK",
+      "MOVE_FOUL_PLAY",
+      "MOVE_SLEEP_TALK",
+      "MOVE_REFLECT",
+      "MOVE_LIGHT_SCREEN",
+      "MOVE_METRONOME",
+      "MOVE_REST",
+      "MOVE_IMPRISON",
+      "MOVE_DARK_PULSE",
+      "MOVE_SKILL_SWAP",
+      "MOVE_SUBSTITUTE",
+      "MOVE_WILL_O_WISP",
+      "MOVE_TRICK",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_SHADOW_BALL",
+      "MOVE_PSYCHIC",
+      "MOVE_CALM_MIND",
+      "MOVE_BATON_PASS",
+      "MOVE_NASTY_PLOT",
+      "MOVE_PHANTOM_FORCE",
+      "MOVE_GIGA_IMPACT",
+      "MOVE_TRICK_ROOM",
+      "MOVE_HYPER_BEAM",
+      "MOVE_TERA_BLAST",
+      "MOVE_SPITE",
+      "MOVE_POLTERGEIST",
+      "MOVE_PAIN_SPLIT",
+      "MOVE_CURSE"
+    ],
+    "EggMoves": [
+      "MOVE_ALLY_SWITCH"
+    ],
+    "TutorMoves": []
+  },
+  "POLTEAGEIST_FLOWER": {
+    "LevelMoves": [
+      {
+        "Level": 0,
+        "Move": "MOVE_TEATIME"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_MEGA_DRAIN"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_WITHDRAW"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_ASTONISH"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_AROMATIC_MIST"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_STRENGTH_SAP"
+      },
+      {
+        "Level": 18,
+        "Move": "MOVE_PROTECT"
+      },
+      {
+        "Level": 24,
+        "Move": "MOVE_SUCKER_PUNCH"
+      },
+      {
+        "Level": 30,
+        "Move": "MOVE_SWEET_SCENT"
+      },
+      {
+        "Level": 36,
+        "Move": "MOVE_GIGA_DRAIN"
+      },
+      {
+        "Level": 42,
+        "Move": "MOVE_NASTY_PLOT"
+      },
+      {
+        "Level": 48,
+        "Move": "MOVE_SHADOW_BALL"
+      },
+      {
+        "Level": 54,
+        "Move": "MOVE_MEMENTO"
+      },
+      {
+        "Level": 60,
+        "Move": "MOVE_SHELL_SMASH"
+      },
+      {
+        "Level": 66,
+        "Move": "MOVE_CURSE"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_PROTECT",
+      "MOVE_PSYBEAM",
+      "MOVE_CONFUSE_RAY",
+      "MOVE_FACADE",
+      "MOVE_HEX",
+      "MOVE_MAGICAL_LEAF",
+      "MOVE_STORED_POWER",
+      "MOVE_NIGHT_SHADE",
+      "MOVE_ENDURE",
+      "MOVE_PSYSHOCK",
+      "MOVE_FOUL_PLAY",
+      "MOVE_SLEEP_TALK",
+      "MOVE_REFLECT",
+      "MOVE_LIGHT_SCREEN",
+      "MOVE_METRONOME",
+      "MOVE_REST",
+      "MOVE_IMPRISON",
+      "MOVE_DARK_PULSE",
+      "MOVE_SKILL_SWAP",
+      "MOVE_SUBSTITUTE",
+      "MOVE_WILL_O_WISP",
+      "MOVE_TRICK",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_SHADOW_BALL",
+      "MOVE_PSYCHIC",
+      "MOVE_CALM_MIND",
+      "MOVE_BATON_PASS",
+      "MOVE_NASTY_PLOT",
+      "MOVE_PHANTOM_FORCE",
+      "MOVE_GIGA_IMPACT",
+      "MOVE_TRICK_ROOM",
+      "MOVE_HYPER_BEAM",
+      "MOVE_TERA_BLAST",
+      "MOVE_SPITE",
+      "MOVE_POLTERGEIST",
+      "MOVE_PAIN_SPLIT",
+      "MOVE_CURSE"
+    ],
+    "EggMoves": [
+      "MOVE_ALLY_SWITCH"
+    ],
+    "TutorMoves": []
+  },
+  "POLTEAGEIST_LOVE": {
+    "LevelMoves": [
+      {
+        "Level": 0,
+        "Move": "MOVE_TEATIME"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_MEGA_DRAIN"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_WITHDRAW"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_ASTONISH"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_AROMATIC_MIST"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_STRENGTH_SAP"
+      },
+      {
+        "Level": 18,
+        "Move": "MOVE_PROTECT"
+      },
+      {
+        "Level": 24,
+        "Move": "MOVE_SUCKER_PUNCH"
+      },
+      {
+        "Level": 30,
+        "Move": "MOVE_SWEET_SCENT"
+      },
+      {
+        "Level": 36,
+        "Move": "MOVE_GIGA_DRAIN"
+      },
+      {
+        "Level": 42,
+        "Move": "MOVE_NASTY_PLOT"
+      },
+      {
+        "Level": 48,
+        "Move": "MOVE_SHADOW_BALL"
+      },
+      {
+        "Level": 54,
+        "Move": "MOVE_MEMENTO"
+      },
+      {
+        "Level": 60,
+        "Move": "MOVE_SHELL_SMASH"
+      },
+      {
+        "Level": 66,
+        "Move": "MOVE_CURSE"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_PROTECT",
+      "MOVE_PSYBEAM",
+      "MOVE_CONFUSE_RAY",
+      "MOVE_FACADE",
+      "MOVE_HEX",
+      "MOVE_MAGICAL_LEAF",
+      "MOVE_STORED_POWER",
+      "MOVE_NIGHT_SHADE",
+      "MOVE_ENDURE",
+      "MOVE_PSYSHOCK",
+      "MOVE_FOUL_PLAY",
+      "MOVE_SLEEP_TALK",
+      "MOVE_REFLECT",
+      "MOVE_LIGHT_SCREEN",
+      "MOVE_METRONOME",
+      "MOVE_REST",
+      "MOVE_IMPRISON",
+      "MOVE_DARK_PULSE",
+      "MOVE_SKILL_SWAP",
+      "MOVE_SUBSTITUTE",
+      "MOVE_WILL_O_WISP",
+      "MOVE_SLUDGE_BOMB",
+      "MOVE_TRICK",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_SHADOW_BALL",
+      "MOVE_PSYCHIC",
+      "MOVE_CALM_MIND",
+      "MOVE_BATON_PASS",
+      "MOVE_NASTY_PLOT",
+      "MOVE_PHANTOM_FORCE",
+      "MOVE_GIGA_IMPACT",
+      "MOVE_TRICK_ROOM",
+      "MOVE_HYPER_BEAM",
+      "MOVE_TERA_BLAST",
+      "MOVE_SPITE",
+      "MOVE_POLTERGEIST",
+      "MOVE_PAIN_SPLIT",
+      "MOVE_CURSE"
+    ],
+    "EggMoves": [
+      "MOVE_ALLY_SWITCH"
+    ],
+    "TutorMoves": []
+  },
   "HATENNA": {
     "LevelMoves": [
       {

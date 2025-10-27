@@ -263,7 +263,6 @@ static u32 CalcBeatUpPower(void)
 static bool32 ShouldTeraShellDistortTypeMatchups(u32 move, u32 battlerDef, u32 abilityDef)
 {
     if (!gSpecialStatuses[battlerDef].distortedTypeMatchups
-     && gBattleMons[battlerDef].species == SPECIES_TERAPAGOS_TERASTAL
      && gBattleMons[battlerDef].hp == gBattleMons[battlerDef].maxHP
      && !IsBattleMoveStatus(move)
      && abilityDef == ABILITY_TERA_SHELL)
@@ -8029,6 +8028,8 @@ u32 GetBattlerWeight(u32 battler)
         weight *= 2;
     else if (ability == ABILITY_LIGHT_METAL)
         weight /= 2;
+    else if (ability == ABILITY_NTH_METAL)
+        weight *= 4;
 
     if (holdEffect == HOLD_EFFECT_FLOAT_STONE)
         weight /= 2;
@@ -8914,6 +8915,7 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
     {
     case ABILITY_HUGE_POWER:
     case ABILITY_PURE_POWER:
+    case ABILITY_STAR_POWER:
         if (IsBattleMovePhysical(move))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
@@ -9209,6 +9211,14 @@ static inline u32 CalcDefenseStat(struct DamageCalculationData *damageCalcData, 
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
             if (damageCalcData->updateFlags)
                 RecordAbilityBattle(battlerDef, ABILITY_FUR_COAT);
+        }
+        break;    
+	case ABILITY_NTH_METAL:
+        if (usesDefStat)
+        {
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+            if (damageCalcData->updateFlags)
+                RecordAbilityBattle(battlerDef, ABILITY_NTH_METAL);
         }
         break;
     case ABILITY_BIG_PECKS:

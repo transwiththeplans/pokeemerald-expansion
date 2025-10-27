@@ -5843,11 +5843,11 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
     [SPECIES_COSMOG] =
     {
         .baseHP        = 43,
-        .baseAttack    = 29,
-        .baseDefense   = 31,
+        .baseAttack    = 37,
+        .baseDefense   = 53,
         .baseSpeed     = 37,
-        .baseSpAttack  = 29,
-        .baseSpDefense = 31,
+        .baseSpAttack  = 37,
+        .baseSpDefense = 53,
         .types = MON_TYPES(TYPE_DARK),
         .catchRate = 45,
         .expYield = 40,
@@ -5911,10 +5911,10 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
 
     [SPECIES_COSMOEM] =
     {
-        .baseHP        = 83,
-        .baseAttack    = 29,
+        .baseHP        = 59,
+        .baseAttack    = 73,
         .baseDefense   = 131,
-        .baseSpeed     = 37,
+        .baseSpeed     = 13,
         .baseSpAttack  = 29,
         .baseSpDefense = 131,
         .types = MON_TYPES(TYPE_DARK),

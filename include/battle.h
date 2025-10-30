@@ -870,17 +870,19 @@ static inline bool32 IsBattleMoveStatus(u32 move)
 #define SET_STAT_BUFF_VALUE(n) ((((n) << 3) & 0xF8))
 
 #define SET_STATCHANGER(statId, stage, goesDown) (gBattleScripting.statChanger = (statId) + ((stage) << 3) + (goesDown << 7))
+#define SET_STATCHANGER_SECOND(statId, stage, goesDown) (gBattleScripting.statChanger2 = (statId) + ((stage) << 3) + (goesDown << 7))
+#define SET_STATCHANGER_THIRD(statId, stage, goesDown) (gBattleScripting.statChanger3 = (statId) + ((stage) << 3) + (goesDown << 7))
 #define SET_STATCHANGER2(dst, statId, stage, goesDown)(dst = (statId) + ((stage) << 3) + (goesDown << 7))
 
 // NOTE: The members of this struct have hard-coded offsets
 //       in include/constants/battle_script_commands.h
 struct BattleScripting
 {
-    s32 unused1;
+    s32 statChanger2;
     s32 bideDmg;
     u8 multihitString[6];
     bool8 expOnCatch;
-    u8 unused2;
+    u8 statChanger3;
     u8 animArg1;
     u8 animArg2;
     u16 savedStringId;

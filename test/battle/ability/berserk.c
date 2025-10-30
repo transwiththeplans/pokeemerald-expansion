@@ -146,3 +146,58 @@ SINGLE_BATTLE_TEST("Berserk activates after all hits from a multi-hit move (Trai
         EXPECT_EQ(player->statStages[STAT_SPATK], DEFAULT_STAT_STAGE + 1);
     }
 }
+
+SINGLE_BATTLE_TEST("On hit stat boosting abilities do not conflict with each other (Trait)")
+{
+    u16 maxHp = 500;
+    u16 move, innate1, innate2;
+
+    PARAMETRIZE { move = MOVE_BITE; innate1 = ABILITY_JUSTIFIED; innate2 = ABILITY_RATTLED; }
+    PARAMETRIZE { move = MOVE_WATER_GUN; innate1 = ABILITY_WATER_COMPACTION; innate2 = ABILITY_STEAM_ENGINE; }
+    PARAMETRIZE { move = MOVE_EMBER; innate1 = ABILITY_THERMAL_EXCHANGE; innate2 = ABILITY_STEAM_ENGINE; }
+
+    GIVEN {
+        ASSUME(!IsBattleMoveStatus(move));
+        PLAYER(SPECIES_DRAMPA) { Ability(ABILITY_BERSERK); Innates(ABILITY_STAMINA, innate1, innate2); MaxHP(maxHp); HP(maxHp / 2 + 1); }
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { MOVE(opponent, move); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, move, opponent);
+        if (move == MOVE_EMBER)
+            ABILITY_POPUP(player, ABILITY_THERMAL_EXCHANGE);
+        if (move == MOVE_WATER_GUN || move == MOVE_EMBER)
+            ABILITY_POPUP(player, ABILITY_STEAM_ENGINE);
+        ABILITY_POPUP(player, ABILITY_BERSERK);
+        ABILITY_POPUP(player, ABILITY_STAMINA);
+        if (move == MOVE_WATER_GUN)
+            ABILITY_POPUP(player, ABILITY_WATER_COMPACTION);
+        if (move == MOVE_BITE)
+        {
+            ABILITY_POPUP(player, ABILITY_RATTLED);
+            ABILITY_POPUP(player, ABILITY_JUSTIFIED);
+        }
+    } THEN {
+        if (move == MOVE_BITE)
+            EXPECT_EQ(player->statStages[STAT_SPATK], DEFAULT_STAT_STAGE + 2);
+        else
+            EXPECT_EQ(player->statStages[STAT_SPATK], DEFAULT_STAT_STAGE + 1);
+
+        if (move == MOVE_BITE)
+            EXPECT_EQ(player->statStages[STAT_SPEED], DEFAULT_STAT_STAGE + 1);
+
+        if (move == MOVE_WATER_GUN)
+        {
+            EXPECT_EQ(player->statStages[STAT_SPEED], DEFAULT_STAT_STAGE + 6);
+            EXPECT_EQ(player->statStages[STAT_DEF], DEFAULT_STAT_STAGE + 3);
+        }
+        else
+            EXPECT_EQ(player->statStages[STAT_DEF], DEFAULT_STAT_STAGE + 1);
+
+        if (move == MOVE_EMBER)
+        {
+            EXPECT_EQ(player->statStages[STAT_ATK], DEFAULT_STAT_STAGE + 1);
+            EXPECT_EQ(player->statStages[STAT_SPEED], DEFAULT_STAT_STAGE + 6);
+        }
+    }
+}

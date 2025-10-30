@@ -287,3 +287,26 @@ DOUBLE_BATTLE_TEST("Moxie/Chilling Neigh does not increase damage done by the sa
         EXPECT_EQ(damage[0], damage[1]);
     }
 }
+
+SINGLE_BATTLE_TEST("Moxie type traits don't conflict with each other (Trait)")
+{
+    GIVEN {
+        ASSUME(GetMoveTarget(MOVE_EARTHQUAKE) == MOVE_TARGET_FOES_AND_ALLY);
+        PLAYER(SPECIES_SALAMENCE) { Defense(999); Ability(ABILITY_MOXIE); Innates(ABILITY_CHILLING_NEIGH, ABILITY_GRIM_NEIGH, ABILITY_BEAST_BOOST); }
+        OPPONENT(SPECIES_GLALIE) { HP(1); }
+        OPPONENT(SPECIES_PIDGEOT) { HP(1); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_EARTHQUAKE); SEND_OUT(opponent, 1);  }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_EARTHQUAKE, player);
+        MESSAGE("The opposing Glalie fainted!");
+        ABILITY_POPUP(player, ABILITY_BEAST_BOOST);
+        ABILITY_POPUP(player, ABILITY_GRIM_NEIGH);
+        ABILITY_POPUP(player, ABILITY_CHILLING_NEIGH);
+        ABILITY_POPUP(player, ABILITY_MOXIE);
+    } THEN {
+        EXPECT_EQ(player->statStages[STAT_ATK], DEFAULT_STAT_STAGE + 2);
+        EXPECT_EQ(player->statStages[STAT_SPATK], DEFAULT_STAT_STAGE + 1);
+        EXPECT_EQ(player->statStages[STAT_DEF], DEFAULT_STAT_STAGE + 1);
+    }
+}

@@ -5342,7 +5342,7 @@ static void CheckChangingTurnOrderEffects(void)
                     gLastUsedAbility = ABILITY_QUICK_DRAW;
                     PushTraitStack(battler, ABILITY_QUICK_DRAW);
                     PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
-                    RecordAbilityBattle(battler, gLastUsedAbility);
+                    RecordAbilityBattle(battler, ABILITY_QUICK_DRAW);
                     BattleScriptExecute(BattleScript_QuickDrawActivation);
                 }
                 return;

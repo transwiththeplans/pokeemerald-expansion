@@ -881,12 +881,20 @@
 	.byte 0x9e
 	.endm
 
-	.macro unused_0x9f
+	.macro statbuffchange2 battler:req, flags:req, failInstr:req, stats=0
 	.byte 0x9f
+	.byte \battler
+	.2byte \flags
+	.4byte \failInstr
+	.byte \stats
 	.endm
 
-	.macro unused_0xA0
+	.macro statbuffchange3 battler:req, flags:req, failInstr:req, stats=0
 	.byte 0xa0
+	.byte \battler
+	.2byte \flags
+	.4byte \failInstr
+	.byte \stats
 	.endm
 
 	.macro counterdamagecalculator failInstr:req

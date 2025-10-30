@@ -1,4 +1,4 @@
-# Trait System (Full Release)
+# Trait System (Full Release 1.13.1)
 
 This is the full release of the Multi-Ability function I'm calling the Trait System!
 Currently updated to Pokeemerald Expansion 1.12.1

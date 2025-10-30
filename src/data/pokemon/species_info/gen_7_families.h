@@ -4307,7 +4307,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .baseSpeed     = 59,
         .baseSpAttack  = 95,
         .baseSpDefense = 95,
-        .types = MON_TYPES(TYPE_DARK),
+        .types = MON_TYPES(TYPE_NORMAL),
         .catchRate = 3,
         .expYield = 107,
         .evYield_HP = 2,
@@ -4358,8 +4358,6 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
             gOverworldPalette_TypeNull,
             gShinyOverworldPalette_TypeNull
         )
-        .isLegendary = TRUE,
-        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sTypeNullLevelUpLearnset,
         .teachableLearnset = sTypeNullTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_SILVALLY_NORMAL, CONDITIONS({IF_MIN_FRIENDSHIP, FRIENDSHIP_EVO_THRESHOLD})}),
@@ -4382,7 +4380,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .friendship = 0,                                                            \
         .growthRate = GROWTH_SLOW,                                                  \
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),                  \
-        .abilities = { ABILITY_RKS_SYSTEM, ABILITY_NONE, ABILITY_NONE },            \
+        .abilities = { ABILITY_ADAPTABILITY, ABILITY_NONE, ABILITY_NONE },          \
         .bodyColor = BODY_COLOR_GRAY,                                               \
         .speciesName = _("Silvally"),                                               \
         .cryId = CRY_SILVALLY,                                                      \
@@ -4422,8 +4420,6 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
             gOverworldPalette_Silvally,                                             \
             gShinyOverworldPalette_Silvally                                         \
         )                                                                           \
-        .isLegendary = TRUE,                                                        \
-        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,                               \
         .levelUpLearnset = sSilvallyLevelUpLearnset,                                \
         .teachableLearnset = sSilvallyTeachableLearnset,                            \
         .formSpeciesIdTable = sSilvallyFormSpeciesIdTable,                          \
@@ -4431,23 +4427,23 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
     }
 
     [SPECIES_SILVALLY_NORMAL]   = SILVALLY_SPECIES_INFO(TYPE_NORMAL,   Normal),
-    [SPECIES_SILVALLY_FIGHTING] = SILVALLY_SPECIES_INFO(TYPE_FIGHTING, Fighting),
-    [SPECIES_SILVALLY_FLYING]   = SILVALLY_SPECIES_INFO(TYPE_FLYING,   Flying),
-    [SPECIES_SILVALLY_POISON]   = SILVALLY_SPECIES_INFO(TYPE_POISON,   Poison),
-    [SPECIES_SILVALLY_GROUND]   = SILVALLY_SPECIES_INFO(TYPE_GROUND,   Ground),
-    [SPECIES_SILVALLY_ROCK]     = SILVALLY_SPECIES_INFO(TYPE_ROCK,     Rock),
-    [SPECIES_SILVALLY_BUG]      = SILVALLY_SPECIES_INFO(TYPE_BUG,      Bug),
-    [SPECIES_SILVALLY_GHOST]    = SILVALLY_SPECIES_INFO(TYPE_GHOST,    Ghost),
-    [SPECIES_SILVALLY_STEEL]    = SILVALLY_SPECIES_INFO(TYPE_STEEL,    Steel),
-    [SPECIES_SILVALLY_FIRE]     = SILVALLY_SPECIES_INFO(TYPE_FIRE,     Fire),
-    [SPECIES_SILVALLY_WATER]    = SILVALLY_SPECIES_INFO(TYPE_WATER,    Water),
-    [SPECIES_SILVALLY_GRASS]    = SILVALLY_SPECIES_INFO(TYPE_GRASS,    Grass),
-    [SPECIES_SILVALLY_ELECTRIC] = SILVALLY_SPECIES_INFO(TYPE_ELECTRIC, Electric),
-    [SPECIES_SILVALLY_PSYCHIC]  = SILVALLY_SPECIES_INFO(TYPE_PSYCHIC,  Psychic),
-    [SPECIES_SILVALLY_ICE]      = SILVALLY_SPECIES_INFO(TYPE_ICE,      Ice),
-    [SPECIES_SILVALLY_DRAGON]   = SILVALLY_SPECIES_INFO(TYPE_DRAGON,   Dragon),
-    [SPECIES_SILVALLY_DARK]     = SILVALLY_SPECIES_INFO(TYPE_DARK,     Dark),
-    [SPECIES_SILVALLY_FAIRY]    = SILVALLY_SPECIES_INFO(TYPE_FAIRY,    Fairy),
+    [SPECIES_SILVALLY_FIGHTING] = SILVALLY_SPECIES_INFO(TYPE_FIGHTING, Normal),
+    [SPECIES_SILVALLY_FLYING]   = SILVALLY_SPECIES_INFO(TYPE_FLYING,   Normal),
+    [SPECIES_SILVALLY_POISON]   = SILVALLY_SPECIES_INFO(TYPE_POISON,   Normal),
+    [SPECIES_SILVALLY_GROUND]   = SILVALLY_SPECIES_INFO(TYPE_GROUND,   Normal),
+    [SPECIES_SILVALLY_ROCK]     = SILVALLY_SPECIES_INFO(TYPE_ROCK,     Normal),
+    [SPECIES_SILVALLY_BUG]      = SILVALLY_SPECIES_INFO(TYPE_BUG,      Normal),
+    [SPECIES_SILVALLY_GHOST]    = SILVALLY_SPECIES_INFO(TYPE_GHOST,    Normal),
+    [SPECIES_SILVALLY_STEEL]    = SILVALLY_SPECIES_INFO(TYPE_STEEL,    Normal),
+    [SPECIES_SILVALLY_FIRE]     = SILVALLY_SPECIES_INFO(TYPE_FIRE,     Normal),
+    [SPECIES_SILVALLY_WATER]    = SILVALLY_SPECIES_INFO(TYPE_WATER,    Normal),
+    [SPECIES_SILVALLY_GRASS]    = SILVALLY_SPECIES_INFO(TYPE_GRASS,    Normal),
+    [SPECIES_SILVALLY_ELECTRIC] = SILVALLY_SPECIES_INFO(TYPE_ELECTRIC, Normal),
+    [SPECIES_SILVALLY_PSYCHIC]  = SILVALLY_SPECIES_INFO(TYPE_PSYCHIC,  Normal),
+    [SPECIES_SILVALLY_ICE]      = SILVALLY_SPECIES_INFO(TYPE_ICE,      Normal),
+    [SPECIES_SILVALLY_DRAGON]   = SILVALLY_SPECIES_INFO(TYPE_DRAGON,   Normal),
+    [SPECIES_SILVALLY_DARK]     = SILVALLY_SPECIES_INFO(TYPE_DARK,     Normal),
+    [SPECIES_SILVALLY_FAIRY]    = SILVALLY_SPECIES_INFO(TYPE_FAIRY,    Normal),
 #endif //P_FAMILY_TYPE_NULL
 
 #if P_FAMILY_MINIOR

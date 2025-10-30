@@ -21299,7 +21299,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Dust Devil"),
         .description = COMPOUND_STRING(
             "Kicks up stinging winds.\n"
-            "Always lowers the target's Attack."),
+            "Lowers target's Attack."),
         .effect = EFFECT_HIT,
         .power = 50,
         .type = TYPE_GROUND,
@@ -21335,7 +21335,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .metronomeBanned = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_TRI_ATTACK,
-            .chance = 30,
+            .chance = 20,
         }),
         .battleAnimScript = gBattleAnimMove_TriAttack,
     },

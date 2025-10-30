@@ -1378,10 +1378,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
     [SPECIES_MAUSHOLD_THREE] =
     {
         .baseHP        = 74,
-        .baseAttack    = 85,
+        .baseAttack    = 80,
         .baseDefense   = 70,
-        .baseSpeed     = 111,
-        .baseSpAttack  = 65,
+        .baseSpeed     = 116,
+        .baseSpAttack  = 55,
         .baseSpDefense = 75,
         .types = MON_TYPES(TYPE_NORMAL, TYPE_GROUND),
         .catchRate = 75,
@@ -1441,10 +1441,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
     [SPECIES_MAUSHOLD_FOUR] =
     {
         .baseHP        = 74,
-        .baseAttack    = 85,
+        .baseAttack    = 80,
         .baseDefense   = 70,
-        .baseSpeed     = 111,
-        .baseSpAttack  = 65,
+        .baseSpeed     = 116,
+        .baseSpAttack  = 55,
         .baseSpDefense = 75,
         .types = MON_TYPES(TYPE_NORMAL, TYPE_GROUND),
         .catchRate = 75,
@@ -1507,10 +1507,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
     [SPECIES_MAUSHOLD_MEGA] =
     {
         .baseHP        = 74,
-        .baseAttack    = 110,
-        .baseDefense   = 95,
-        .baseSpeed     = 141,
-        .baseSpAttack  = 65,
+        .baseAttack    = 95,
+        .baseDefense   = 85,
+        .baseSpeed     = 136,
+        .baseSpAttack  = 95,
         .baseSpDefense = 85,
         .types = MON_TYPES(TYPE_NORMAL, TYPE_GROUND),
         .catchRate = 75,
@@ -1521,7 +1521,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_FAIRY),
-        .abilities = { ABILITY_TECHNICIAN, ABILITY_TECHNICIAN, ABILITY_TECHNICIAN },
+        .abilities = { ABILITY_SPECIALIST, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Maushold"),
         .cryId = CRY_MAUSHOLD_FOUR,
@@ -1540,18 +1540,18 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_MausholdMega,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 15,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         .backPic = gMonBackPic_MausholdMega,
         .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicYOffset = 15,
+        .backPicYOffset = 1,
         .backAnimId = BACK_ANIM_GROW_STUTTER,
         .palette = gMonPalette_MausholdMega,
         .shinyPalette = gMonShinyPalette_MausholdMega,
         .iconSprite = gMonIcon_MausholdMega,
         .iconPalIndex = 1,
         .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
-        SHADOW(0, -1, SHADOW_SIZE_L)
+        SHADOW(-1, 13, SHADOW_SIZE_L)
         FOOTPRINT(MausholdFour)
     #if OW_BATTLE_ONLY_FORMS
         OVERWORLD(

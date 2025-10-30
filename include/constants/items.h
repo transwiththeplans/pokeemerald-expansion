@@ -1045,12 +1045,15 @@
 
 #define ITEM_STRANGE_BALL     878
 #define ITEM_NORMAL_MEMORY    879
+#define ITEM_ULTIMATRIX_SYMBOL 880
+#define ITEM_ULTIMATRIX_SYMBOL_MK2 881
+#define ITEM_ULTIMATRIX_SYMBOL_Z 882
 
 // Misc.
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 880
+#define ITEMS_COUNT 883
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

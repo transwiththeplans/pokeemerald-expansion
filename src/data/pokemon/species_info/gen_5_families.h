@@ -9829,7 +9829,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sLitwickLevelUpLearnset,
         .teachableLearnset = sLitwickTeachableLearnset,
         .eggMoveLearnset = sLitwickEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_LAMPENT}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_LAMPENT}),
     },
 
     [SPECIES_LAMPENT] =
@@ -9947,11 +9947,6 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .frontPic = gMonFrontPic_Chandelure,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 4,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(0, 30),
-            ANIMCMD_FRAME(1, 30),
-            ANIMCMD_FRAME(0, 1),
-        ),
         .frontAnimId = ANIM_H_SLIDE_WOBBLE,
         .enemyMonElevation = 6,
         .backPic = gMonBackPic_Chandelure,

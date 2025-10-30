@@ -667,7 +667,10 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchAwayOnFieldwork:
 	.string "The PROF isn't one for doing desk work.\n"
 	.string "He's the type of person who would\l"
 	.string "rather go outside and experience\l"
-	.string "things than read about them here.$"
+	.string "things than read about them here./p"
+	.string "He rarely gets the chance nowadays.\n"
+	.string "I think hiring that new {RIVAL} kid lit a fire\l"
+	.string "under him or something...$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchIsntOneForDeskWork:
 	.string "The PROF isn't one for doing desk work.\n"

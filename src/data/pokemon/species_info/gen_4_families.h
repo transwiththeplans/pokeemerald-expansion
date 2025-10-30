@@ -638,11 +638,6 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .frontPic = gMonFrontPic_Empoleon,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(0, 1),
-            ANIMCMD_FRAME(1, 36),
-            ANIMCMD_FRAME(0, 10),
-        ),
         .frontAnimId = ANIM_V_STRETCH,
         .backPic = gMonBackPic_Empoleon,
         .backPicSize = MON_COORDS_SIZE(64, 64),

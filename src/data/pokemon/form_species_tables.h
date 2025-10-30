@@ -1946,6 +1946,16 @@ static const u16 sSandacondaFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_SILICOBRA
 
+#if P_FAMILY_FALINKS
+static const u16 sFalinksFormSpeciesIdTable[] = {
+    SPECIES_FALINKS,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_FALINKS_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_FALINKS
+
 #if P_FAMILY_CRAMORANT
 static const u16 sCramorantFormSpeciesIdTable[] = {
     SPECIES_CRAMORANT,

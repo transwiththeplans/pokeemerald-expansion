@@ -14150,7 +14150,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-    const u32 gMonFrontPic_Empoleon[] = INCBIN_U32("graphics/pokemon/empoleon/anim_front.4bpp.lz");
+    const u32 gMonFrontPic_Empoleon[] = INCBIN_U32("graphics/pokemon/empoleon/front.4bpp.lz");
     const u16 gMonPalette_Empoleon[] = INCBIN_U16("graphics/pokemon/empoleon/normal.gbapal");
     const u32 gMonBackPic_Empoleon[] = INCBIN_U32("graphics/pokemon/empoleon/back.4bpp.lz");
     const u16 gMonShinyPalette_Empoleon[] = INCBIN_U16("graphics/pokemon/empoleon/shiny.gbapal");
@@ -18226,7 +18226,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-    const u32 gMonFrontPic_Chandelure[] = INCBIN_U32("graphics/pokemon/chandelure/anim_front.4bpp.lz");
+    const u32 gMonFrontPic_Chandelure[] = INCBIN_U32("graphics/pokemon/chandelure/front.4bpp.lz");
     const u16 gMonPalette_Chandelure[] = INCBIN_U16("graphics/pokemon/chandelure/normal.gbapal");
     const u32 gMonBackPic_Chandelure[] = INCBIN_U32("graphics/pokemon/chandelure/back.4bpp.lz");
     const u16 gMonShinyPalette_Chandelure[] = INCBIN_U16("graphics/pokemon/chandelure/shiny.gbapal");

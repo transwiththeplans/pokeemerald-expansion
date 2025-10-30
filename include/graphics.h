@@ -846,6 +846,8 @@ extern const u16 gItemIconPalette_BurnDrive[];
 extern const u32 gItemIcon_ChillDrive[];
 extern const u16 gItemIconPalette_ChillDrive[];
 // Memories
+extern const u32 gItemIcon_NormalMemory[];
+extern const u16 gItemIconPalette_NormalMemory[];
 extern const u32 gItemIcon_FireMemory[];
 extern const u16 gItemIconPalette_FireMemory[];
 extern const u32 gItemIcon_WaterMemory[];

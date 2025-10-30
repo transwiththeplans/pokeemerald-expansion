@@ -17551,6 +17551,7 @@ static const struct LevelUpMove sLycanrocMiddayLevelUpLearnset[] = {
 
 static const struct LevelUpMove sLycanrocMidnightLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_SHADOW_BONE),
+    LEVEL_UP_MOVE( 1, MOVE_COUNTER),
     LEVEL_UP_MOVE( 1, MOVE_SAND_ATTACK),
     LEVEL_UP_MOVE( 1, MOVE_STEALTH_ROCK),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),

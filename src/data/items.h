@@ -4270,10 +4270,11 @@ const struct Item gItemsInfo[] = {
         .description = COMPOUND_STRING(
             "Strawberry-shaped\n"
             "sweet loved by\n"
-            "Milcery."),
+            "Pokemon."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 10,
         .iconPic = gItemIcon_StrawberrySweet,
         .iconPalette = gItemIconPalette_StrawberrySweet,
@@ -4286,10 +4287,11 @@ const struct Item gItemsInfo[] = {
         .description = COMPOUND_STRING(
             "A heart-shaped\n"
             "sweet loved by\n"
-            "Milcery."),
+            "Pokemon."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 10,
         .iconPic = gItemIcon_LoveSweet,
         .iconPalette = gItemIconPalette_LoveSweet,
@@ -4302,10 +4304,11 @@ const struct Item gItemsInfo[] = {
         .description = COMPOUND_STRING(
             "A berry-shaped\n"
             "sweet loved by\n"
-            "Milcery."),
+            "Pokemon."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 10,
         .iconPic = gItemIcon_BerrySweet,
         .iconPalette = gItemIconPalette_BerrySweet,
@@ -4318,10 +4321,11 @@ const struct Item gItemsInfo[] = {
         .description = COMPOUND_STRING(
             "A clover-shaped\n"
             "sweet loved by\n"
-            "Milcery."),
+            "Pokemon."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 10,
         .iconPic = gItemIcon_CloverSweet,
         .iconPalette = gItemIconPalette_CloverSweet,
@@ -4334,10 +4338,11 @@ const struct Item gItemsInfo[] = {
         .description = COMPOUND_STRING(
             "A flower-shaped\n"
             "sweet loved by\n"
-            "Milcery."),
+            "Pokemon."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 10,
         .iconPic = gItemIcon_FlowerSweet,
         .iconPalette = gItemIconPalette_FlowerSweet,
@@ -4350,10 +4355,11 @@ const struct Item gItemsInfo[] = {
         .description = COMPOUND_STRING(
             "A star-shaped\n"
             "sweet loved by\n"
-            "Milcery."),
+            "Pokemon."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 10,
         .iconPic = gItemIcon_StarSweet,
         .iconPalette = gItemIconPalette_StarSweet,
@@ -4366,10 +4372,11 @@ const struct Item gItemsInfo[] = {
         .description = COMPOUND_STRING(
             "A ribbon-shaped\n"
             "sweet loved by\n"
-            "Milcery."),
+            "Pokemon."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 10,
         .iconPic = gItemIcon_RibbonSweet,
         .iconPalette = gItemIconPalette_RibbonSweet,
@@ -4867,8 +4874,8 @@ const struct Item gItemsInfo[] = {
         .fieldUseFunc = ItemUseOutOfBattle_FormChange,
         .secondaryId = TYPE_NORMAL,
         .flingPower = 50,
-        .iconPic = gItemIcon_FireMemory,
-        .iconPalette = gItemIconPalette_FireMemory,
+        .iconPic = gItemIcon_NormalMemory,
+        .iconPalette = gItemIconPalette_NormalMemory,
     },
 	
     [ITEM_FIRE_MEMORY] =
@@ -5276,6 +5283,57 @@ const struct Item gItemsInfo[] = {
     },
 
 // Mega Stones
+
+    [ITEM_ULTIMATRIX_SYMBOL] =
+    {
+        .name = _("Ultimatrix Symbol"),
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "This device enables\n"
+            "Pokemon to Mega\n"
+            "Evolve in battle."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_Venusaurite,
+        .iconPalette = gItemIconPalette_Venusaurite,
+    },
+
+    [ITEM_ULTIMATRIX_SYMBOL_MK2] =
+    {
+        .name = _("Ultimatrix Symbol 2"),
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "This device enables\n"
+            "specific Pokemon to\n"
+            "Mega Evolve."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_CharizarditeY,
+        .iconPalette = gItemIconPalette_CharizarditeY,
+    },
+
+    [ITEM_ULTIMATRIX_SYMBOL_Z] =
+    {
+        .name = _("Ultimatrix Symbol Z"),
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = COMPOUND_STRING(
+            "This device enables\n"
+            "few Pokemon to\n"
+            "Mega Evolve."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_Blastoisinite,
+        .iconPalette = gItemIconPalette_Blastoisinite,
+    },
 
     [ITEM_VENUSAURITE] =
     {

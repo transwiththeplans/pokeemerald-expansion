@@ -8028,8 +8028,6 @@ u32 GetBattlerWeight(u32 battler)
         weight *= 2;
     else if (ability == ABILITY_LIGHT_METAL)
         weight /= 2;
-    else if (ability == ABILITY_NTH_METAL)
-        weight *= 4;
 
     if (holdEffect == HOLD_EFFECT_FLOAT_STONE)
         weight /= 2;
@@ -8562,6 +8560,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         if (basePower <= 60)
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
+    case ABILITY_SPECIALIST:
+        if (basePower <= 60)
+           modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
+        break;
     case ABILITY_FLARE_BOOST:
         if (gBattleMons[battlerAtk].status1 & STATUS1_BURN && IsBattleMoveSpecial(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
@@ -8683,6 +8685,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
     case ABILITY_PUNK_ROCK:
         if (IsSoundMove(move))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        break;
+    case ABILITY_POWER_METAL:
+        if (IsSoundMove(move))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
     case ABILITY_STEELY_SPIRIT:
         if (moveType == TYPE_STEEL)
@@ -9213,14 +9219,6 @@ static inline u32 CalcDefenseStat(struct DamageCalculationData *damageCalcData, 
                 RecordAbilityBattle(battlerDef, ABILITY_FUR_COAT);
         }
         break;    
-	case ABILITY_NTH_METAL:
-        if (usesDefStat)
-        {
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
-            if (damageCalcData->updateFlags)
-                RecordAbilityBattle(battlerDef, ABILITY_NTH_METAL);
-        }
-        break;
     case ABILITY_BIG_PECKS:
         if (usesDefStat)
         {
@@ -10122,7 +10120,7 @@ uq4_12_t GetOverworldTypeEffectiveness(struct Pokemon *mon, u8 moveType)
 		if ((modifier <= UQ_4_12(1.0) && abilityDef == ABILITY_WONDER_GUARD)
 			|| (moveType == TYPE_FIRE     && abilityDef == ABILITY_FLASH_FIRE)
 			|| (moveType == TYPE_GRASS    && abilityDef == ABILITY_SAP_SIPPER)
-			|| (moveType == TYPE_GROUND   && (abilityDef == ABILITY_LEVITATE || abilityDef == ABILITY_EARTH_EATER))
+			|| (moveType == TYPE_GROUND   && (abilityDef == ABILITY_LEVITATE || abilityDef == ABILITY_EARTH_EATER || abilityDef == ABILITY_POWER_METAL))
 			|| (moveType == TYPE_WATER    && (abilityDef == ABILITY_WATER_ABSORB || abilityDef == ABILITY_DRY_SKIN || abilityDef == ABILITY_STORM_DRAIN))
 			|| (moveType == TYPE_ELECTRIC && (abilityDef == ABILITY_LIGHTNING_ROD || abilityDef == ABILITY_VOLT_ABSORB || abilityDef == ABILITY_MOTOR_DRIVE))
 			|| (moveType == TYPE_FIGHTING && abilityDef == ABILITY_COUNTERPROOF)

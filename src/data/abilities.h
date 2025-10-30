@@ -2653,10 +2653,10 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .breakable = TRUE,
     },
 	
-	[ABILITY_NTH_METAL] =
+	[ABILITY_POWER_METAL] =
     {
-        .name = _("Nth Metal"),
-        .description = COMPOUND_STRING("4x weight and 1.5x defense."),
+        .name = _("Power Metal"),
+        .description = COMPOUND_STRING("Punk Rock + Levitate."),
         .aiRating = -1,
         .breakable = TRUE,
     },
@@ -2666,5 +2666,12 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Star Power"),
         .description = COMPOUND_STRING("Raises Attack."),
         .aiRating = 10,
+    },
+	
+	[ABILITY_SPECIALIST] =
+    {
+        .name = _("Specialist"),
+        .description = COMPOUND_STRING("Doubles weaker moves."),
+        .aiRating = 8,
     },
 };

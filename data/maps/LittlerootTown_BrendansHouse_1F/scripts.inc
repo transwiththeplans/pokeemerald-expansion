@@ -290,6 +290,9 @@ PlayersHouse_1F_Text_IsntItNiceInHere:
 PlayersHouse_1F_Text_MoversPokemonGoSetClock:
 	.string "The mover's POKéMON do all the work\n"
 	.string "of moving us in and cleaning up after.\l"
+	.string "Thank goodness they aren't those\l"
+	.string "'mutated' Pokemon that sprouted\l"
+	.string "up earlier...\l"
 	.string "This is so convenient!\p"
 	.string "{PLAYER}, your room is upstairs.\n"
 	.string "Go check it out, dear!\p"
@@ -324,11 +327,21 @@ PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor:
 	.string "Oh, yes.\n"
 	.string "One of Grandpa's friends lives in town.\p"
 	.string "PROF. BIRCH is his name.\p"
-	.string "He lives right next door, so you should\n"
-	.string "go over and introduce yourself.$"
+	.string "He lives right around here,\n"
+	.string "so you should introduce yourself.\p"
+	.string "....\p"
+	.string "Oh, right...honey, please.\n"
+	.string "I know you don't have the best\l"
+	.string "of relationships with them, but...\p"
+	.string "Can you go over and say hi\n"
+	.string "to your cousin, {RIVAL}?$"
 
 PlayersHouse_1F_Text_SeeYouHoney:
-	.string "MOM: See you, honey!$"
+	.string "MOM: You and your cousin {RIVAL}...\n"
+	.string "You two were always so petty\l"
+	.string "to one and other.\p"
+	.string "I hope that distance has\n"
+	.string "smoothed things out...$"
 
 PlayersHouse_1F_Text_DidYouMeetProfBirch:
 	.string "MOM: Did you introduce yourself to\n"

@@ -7071,23 +7071,6 @@ gBattleAnimMove_IceBurn::
 	loadspritegfx ANIM_TAG_ICE_CHUNK @white color
 	loadspritegfx ANIM_TAG_ICE_CRYSTALS @ice
 	loadspritegfx ANIM_TAG_SMALL_EMBER
-	choosetwoturnanim IceBurnCharge, IceBurnUnleash
-	waitforvisualfinish
-	end
-IceBurnCharge:
-	createvisualtask AnimTask_BlendBattleAnimPal, 0xa, F_PAL_BG, 0x1, 0x0, 0xC, 0x0
-	waitforvisualfinish
-	loopsewithpan SE_M_ICY_WIND, SOUND_PAN_TARGET, 0x4, 0x3
-	createvisualtask AnimTask_BlendBattleAnimPal, 0xa, F_PAL_ATTACKER, 0x1, 0x8, 0x0, 0x0
-	createvisualtask AnimTask_HorizontalShake, 5, ANIM_ATTACKER, 2, 16
-	createvisualtask AnimTask_BlendBattleAnimPal, 0xa, F_PAL_ATTACKER, 0x1, 0x0, 0xf, 0x7fff
-	delay 0x14
-	createvisualtask AnimTask_BlendBattleAnimPal, 0xa, F_PAL_ATTACKER, 0x1, 0xf, 0x0, 0x7fff
-	waitforvisualfinish
-	createvisualtask AnimTask_BlendBattleAnimPal, 0xa, F_PAL_BG, 0x1, 0xC, 0x0, 0x0
-	waitforvisualfinish
-	end
-IceBurnUnleash:
 	monbg ANIM_TARGET
 	fadetobg BG_ICE
 	waitbgfadeout

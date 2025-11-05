@@ -2001,7 +2001,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .frontPic = gMonFrontPic_Rockruff,
         .frontPicSize = MON_COORDS_SIZE(37, 39),
         .frontPicYOffset = 11,
-        .frontAnimFrames = sAnims_Rockruff,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,  
         .frontAnimId = ANIM_V_STRETCH,
         .backPic = gMonBackPic_Rockruff,
         .backPicSize = MON_COORDS_SIZE(64, 56),
@@ -2131,10 +2131,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .frontPic = gMonFrontPic_LycanrocMidday,
         .frontPicSize = MON_COORDS_SIZE(57, 53),
         .frontPicYOffset = 5,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(1, 40),
-            ANIMCMD_FRAME(0, 5),
-        ),
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,  
         .frontAnimId = ANIM_V_SHAKE,
         .backPic = gMonBackPic_LycanrocMidday,
         .backPicSize = MON_COORDS_SIZE(64, 56),
@@ -2198,10 +2195,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .frontPic = gMonFrontPic_LycanrocMidnight,
         .frontPicSize = MON_COORDS_SIZE(56, 61),
         .frontPicYOffset = 0,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(1, 30),
-            ANIMCMD_FRAME(0, 5),
-        ),
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,  
         .frontAnimId = ANIM_SHRINK_GROW_VIBRATE_SLOW,
         .backPic = gMonBackPic_LycanrocMidnight,
         .backPicSize = MON_COORDS_SIZE(64, 56),
@@ -2265,10 +2259,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .frontPic = gMonFrontPic_LycanrocDusk,
         .frontPicSize = MON_COORDS_SIZE(57, 58),
         .frontPicYOffset = 6,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(1, 40),
-            ANIMCMD_FRAME(0, 5),
-        ),
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,  
         .frontAnimId = ANIM_V_SHAKE,
         .backPic = gMonBackPic_LycanrocDusk,
         .backPicSize = MON_COORDS_SIZE(64, 56),
@@ -2460,7 +2451,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Mareanie,
         .frontPicSize = MON_COORDS_SIZE(48, 40),
-        .frontPicYOffset = 14,
+        .frontPicYOffset = 4,
         .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         .frontAnimId = ANIM_GLOW_PURPLE,
         .backPic = gMonBackPic_Mareanie,
@@ -2472,7 +2463,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .iconSprite = gMonIcon_Mareanie,
         .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_SLOW,
-        SHADOW(0, -1, SHADOW_SIZE_M)
+        SHADOW(0, 5, SHADOW_SIZE_M)
         FOOTPRINT(Mareanie)
         OVERWORLD(
             sPicTable_Mareanie,
@@ -2531,14 +2522,14 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .frontAnimId = ANIM_SHAKE_GLOW_PURPLE_SLOW,
         .backPic = gMonBackPic_Toxapex,
         .backPicSize = MON_COORDS_SIZE(64, 56),
-        .backPicYOffset = 8,
+        .backPicYOffset = 2,
         //.backAnimId = BACK_ANIM_NONE,
         .palette = gMonPalette_Toxapex,
         .shinyPalette = gMonShinyPalette_Toxapex,
         .iconSprite = gMonIcon_Toxapex,
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(0, 6, SHADOW_SIZE_XL_BATTLE_ONLY)
+        SHADOW(0, 8, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Toxapex)
         OVERWORLD(
             sPicTable_Toxapex,

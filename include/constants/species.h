@@ -1672,8 +1672,8 @@
 #define SPECIES_MAUSCOLD                                1554
 #define SPECIES_TINKATON_MEGA                           1555
 #define SPECIES_STARMIE_MEGA                            1556
-#define SPECIES_CUSTOM_5                                1557
-#define SPECIES_CUSTOM_6                                1558
+#define SPECIES_BARBARACLE_MEGA                         1557
+#define SPECIES_HOUNDSTONE_MEGA                         1558
 #define SPECIES_CUSTOM_7                                1559
 #define SPECIES_CUSTOM_8                                1560
 #define SPECIES_CUSTOM_9                                1561

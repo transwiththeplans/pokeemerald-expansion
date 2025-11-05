@@ -1813,9 +1813,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "A reckless body slam that\n"
             "also hurts the user."),
         .effect = EFFECT_RECOIL,
-        .power = 80,
+        .power = 100,
         .type = TYPE_FIGHTING,
-        .accuracy = 80,
+        .accuracy = 100,
         .pp = B_UPDATED_MOVE_DATA >= GEN_6 ? 20 : 25,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -11163,9 +11163,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Emits a flash of energy to\n"
             "damage and cut accuracy."),
         .effect = EFFECT_HIT,
-        .power = 65,
+        .power = 70,
         .type = TYPE_STEEL,
-        .accuracy = 85,
+        .accuracy = 100,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -14182,20 +14182,20 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Ice Burn"),
         .description = COMPOUND_STRING(
-            "A powerful 2-turn move that\n"
-            "may inflict a burn."),
-        .effect = EFFECT_TWO_TURNS_ATTACK,
-        .power = 140,
+            "A ultracold move that\n"
+            "is also Fire Type."),
+        .effect = EFFECT_TWO_TYPED_MOVE,
+        .power = 100,
         .type = TYPE_ICE,
         .accuracy = 90,
-        .pp = 5,
+        .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .metronomeBanned = TRUE,
         .sleepTalkBanned = TRUE,
         .instructBanned = TRUE,
-        .argument.twoTurnAttack = { .stringId = STRINGID_CLOAKEDINAFREEZINGLIGHT },
+        .argument = { .type = TYPE_FIRE },
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_BURN,
             .chance = 30,
@@ -22105,6 +22105,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_FLINCH,
+            .chance = 30,
+	        }),
         .category = DAMAGE_CATEGORY_SPECIAL,
         .soundMove = TRUE,
         .metronomeBanned = TRUE,
@@ -22227,6 +22231,24 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_SparklingAria,
+    },
+	
+	[MOVE_PRISMATIC_SHOT] =
+    {
+        .name = COMPOUND_STRING("Prismatic Shot"),
+        .description = COMPOUND_STRING(
+            "Fires a massive laser. Can't\n"
+            "be used twice in a row."),
+        .effect = EFFECT_HIT,
+        .power = 160,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .cantUseTwice = TRUE,
+        .battleAnimScript = gBattleAnimMove_PrismaticLaser,
     },
 
     // Z-Moves

@@ -6583,7 +6583,82 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sZoroarkLevelUpLearnset,
         .teachableLearnset = sZoroarkTeachableLearnset,
         .formSpeciesIdTable = sZoroarkFormSpeciesIdTable,
+        .formChangeTable = sZoroarkFormChangeTable,
     },
+
+#if P_MEGA_EVOLUTIONS
+    [SPECIES_ZOROARK_MEGA] =
+    {
+        .baseHP        = 60,
+        .baseAttack    = 140,
+        .baseDefense   = 65,
+        .baseSpeed     = 135,
+        .baseSpAttack  = 145,
+        .baseSpDefense = 65,
+        .types = MON_TYPES(TYPE_DARK),
+        .catchRate = 45,
+        .expYield = 179,
+        .evYield_SpAttack = 2,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_DRAGONHEART, ABILITY_DRAGONHEART, ABILITY_DRAGONHEART },
+        .bodyColor = BODY_COLOR_GRAY,
+        .speciesName = _("Zoroark"),
+        .cryId = CRY_ZOROARK,
+        .natDexNum = NATIONAL_DEX_ZOROARK,
+        .categoryName = _("Illusion Fox"),
+        .height = 16,
+        .weight = 811,
+        .description = COMPOUND_STRING(
+            "Bonds between these Pokémon are very\n"
+            "strong. It protects the safety of its\n"
+            "pack by tricking its opponents. They\n"
+            "defend their lair with illusory scenery."),
+        .pokemonScale = 259,
+        .pokemonOffset = 1,
+        .trainerScale = 296,
+        .trainerOffset = 1,
+        .frontPic = gMonFrontPic_Zoroark,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 2,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 18),
+            ANIMCMD_FRAME(0, 8),
+            ANIMCMD_FRAME(1, 8),
+            ANIMCMD_FRAME(0, 15),
+        ),
+        .frontAnimId = ANIM_FLICKER_INCREASING,
+        .backPic = gMonBackPic_Zoroark,
+        .backPicSize = MON_COORDS_SIZE(64, 56),
+        .backPicYOffset = 10,
+        .backAnimId = BACK_ANIM_JOLT_RIGHT,
+        .palette = gMonPalette_Zoroark,
+        .shinyPalette = gMonShinyPalette_Zoroark,
+        .iconSprite = gMonIcon_Zoroark,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(1, 8, SHADOW_SIZE_L)
+        FOOTPRINT(Zoroark)
+        OVERWORLD(
+            sPicTable_Zoroark,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Zoroark,
+            gShinyOverworldPalette_Zoroark
+        )
+		.isMegaEvolution = TRUE,
+        .levelUpLearnset = sZoroarkLevelUpLearnset,
+        .teachableLearnset = sZoroarkTeachableLearnset,
+        .formSpeciesIdTable = sZoroarkFormSpeciesIdTable,
+        .formChangeTable = sZoroarkFormChangeTable,
+    },
+#endif//P_MEGA_EVOLUTIONS
 
 #if P_HISUIAN_FORMS
     [SPECIES_ZORUA_HISUI] =

@@ -4908,7 +4908,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .baseSpeed     = 34,
         .baseSpAttack  = 30,
         .baseSpDefense = 55,
-        .types = MON_TYPES(TYPE_GHOST),
+        .types = MON_TYPES(TYPE_GHOST, TYPE_GROUND),
         .catchRate = 120,
         .expYield = 58,
         .evYield_Attack = 1,
@@ -4917,7 +4917,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_PICKUP, ABILITY_NONE, ABILITY_FLUFFY },
+        .abilities = { ABILITY_SCARE, ABILITY_NONE, ABILITY_SAND_STREAM },
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Greavard"),
         .cryId = CRY_GREAVARD,
@@ -4962,7 +4962,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .levelUpLearnset = sGreavardLevelUpLearnset,
         .teachableLearnset = sGreavardTeachableLearnset,
         .eggMoveLearnset = sGreavardEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_HOUNDSTONE, CONDITIONS({IF_TIME, TIME_NIGHT})}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_HOUNDSTONE}),
     },
 
     [SPECIES_HOUNDSTONE] =
@@ -4973,7 +4973,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .baseSpeed     = 68,
         .baseSpAttack  = 50,
         .baseSpDefense = 97,
-        .types = MON_TYPES(TYPE_GHOST),
+        .types = MON_TYPES(TYPE_GHOST, TYPE_GROUND),
         .catchRate = 60,
         .expYield = 171,
         .evYield_Attack = 2,
@@ -4982,7 +4982,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_SAND_RUSH, ABILITY_NONE, ABILITY_FLUFFY },
+        .abilities = { ABILITY_SCARE, ABILITY_NONE, ABILITY_SAND_STREAM },
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Houndstone"),
         .cryId = CRY_HOUNDSTONE,
@@ -5026,7 +5026,77 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sHoundstoneLevelUpLearnset,
         .teachableLearnset = sHoundstoneTeachableLearnset,
+        .formSpeciesIdTable = sHoundstoneFormSpeciesIdTable,
+        .formChangeTable = sHoundstoneFormChangeTable,
     },
+
+#if P_MEGA_EVOLUTIONS
+    [SPECIES_HOUNDSTONE_MEGA] =
+    {
+        .baseHP        = 72,
+        .baseAttack    = 131,
+        .baseDefense   = 140,
+        .baseSpeed     = 88,
+        .baseSpAttack  = 50,
+        .baseSpDefense = 107,
+        .types = MON_TYPES(TYPE_GHOST, TYPE_GROUND),
+        .catchRate = 60,
+        .expYield = 171,
+        .evYield_Attack = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_STRONG_JAW, ABILITY_STRONG_JAW, ABILITY_STRONG_JAW },
+        .bodyColor = BODY_COLOR_WHITE,
+        .speciesName = _("Houndstone"),
+        .cryId = CRY_HOUNDSTONE,
+        .natDexNum = NATIONAL_DEX_HOUNDSTONE,
+        .categoryName = _("Ghost Dog"),
+        .height = 20,
+        .weight = 150,
+        .description = COMPOUND_STRING(
+            "Houndstone spends most of its\n"
+            "time sleeping in graveyards. Among all\n"
+            "the dog Pokémon, this one is most\n"
+            "loyal to its master."),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Houndstone,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 5,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Houndstone,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 7,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Houndstone,
+        .shinyPalette = gMonShinyPalette_Houndstone,
+        .iconSprite = gMonIcon_Houndstone,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(4, 6, SHADOW_SIZE_L)
+        FOOTPRINT(Houndstone)
+        OVERWORLD(
+            sPicTable_Houndstone,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Houndstone,
+            gShinyOverworldPalette_Houndstone
+        )
+		.isMegaEvolution = TRUE,
+        .levelUpLearnset = sHoundstoneLevelUpLearnset,
+        .teachableLearnset = sHoundstoneTeachableLearnset,
+        .formSpeciesIdTable = sHoundstoneFormSpeciesIdTable,
+        .formChangeTable = sHoundstoneFormChangeTable,
+    },
+#endif//P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_GREAVARD
 
 #if P_FAMILY_FLAMIGO

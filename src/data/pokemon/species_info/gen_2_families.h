@@ -442,7 +442,79 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sTyphlosionLevelUpLearnset,
         .teachableLearnset = sTyphlosionTeachableLearnset,
         .formSpeciesIdTable = sTyphlosionFormSpeciesIdTable,
+        .formChangeTable = sTyphlosionFormChangeTable,
     },
+	
+#if P_MEGA_EVOLUTIONS
+    [SPECIES_TYPHLOSION_MEGA] =
+    {
+        .baseHP        = 73,
+        .baseAttack    = 93,
+        .baseDefense   = 110,
+        .baseSpeed     = 95,
+        .baseSpAttack  = 149,
+        .baseSpDefense = 110,
+        .types = MON_TYPES(TYPE_FIRE, TYPE_ELECTRIC),
+        .catchRate = 45,
+        .expYield = TYPHLOSION_EXP_YIELD,
+        .evYield_SpAttack = 3,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_DROUGHT, ABILITY_DROUGHT, ABILITY_DROUGHT },
+        .bodyColor = BODY_COLOR_YELLOW,
+        .speciesName = _("Typhlosion"),
+        .cryId = CRY_TYPHLOSION,
+        .natDexNum = NATIONAL_DEX_TYPHLOSION,
+        .categoryName = _("Volcano"),
+        .height = 17,
+        .weight = 795,
+        .description = COMPOUND_STRING(
+            "It can hide behind a shimmering heat haze\n"
+            "that it creates using its intense flames.\n"
+            "Typhlosion create blazing explosive\n"
+            "blasts that burn everything to cinders."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 268,
+        .trainerOffset = 1,
+        .frontPic = gMonFrontPic_Typhlosion,
+        .frontPicSize = MON_COORDS_SIZE(56, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(1, 40),
+            ANIMCMD_FRAME(0, 5),
+        ),
+        .frontAnimId = ANIM_V_SHAKE,
+        .frontAnimDelay = 20,
+        .backPic = gMonBackPic_Typhlosion,
+        .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 56) : MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 4 : 3,
+        .backAnimId = BACK_ANIM_SHAKE_GLOW_RED,
+        .palette = gMonPalette_Typhlosion,
+        .shinyPalette = gMonShinyPalette_Typhlosion,
+        .iconSprite = gMonIcon_Typhlosion,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 3,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(4, 14, SHADOW_SIZE_L)
+        FOOTPRINT(Typhlosion)
+        OVERWORLD(
+            sPicTable_Typhlosion,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Typhlosion,
+            gShinyOverworldPalette_Typhlosion
+        )
+        .levelUpLearnset = sTyphlosionLevelUpLearnset,
+        .teachableLearnset = sTyphlosionTeachableLearnset,
+        .formSpeciesIdTable = sTyphlosionFormSpeciesIdTable,
+        .formChangeTable = sTyphlosionFormChangeTable,
+    },
+#endif //P_MEGA_EVOLUTIONS
 
 #if P_HISUIAN_FORMS
     [SPECIES_TYPHLOSION_HISUI] =
@@ -507,8 +579,78 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .isHisuianForm = TRUE,
         .levelUpLearnset = sTyphlosionHisuiLevelUpLearnset,
         .teachableLearnset = sTyphlosionHisuiTeachableLearnset,
-        .formSpeciesIdTable = sTyphlosionFormSpeciesIdTable,
+        .formSpeciesIdTable = sTyphlosionHisuianFormSpeciesIdTable,
+        .formChangeTable = sTyphlosionHisuianFormChangeTable,
     },
+	
+#if P_MEGA_EVOLUTIONS
+    [SPECIES_TYPHLOSION_HISUI_MEGA] =
+    {
+        .baseHP        = 68,
+        .baseAttack    = 135,
+        .baseDefense   = 84,
+        .baseSpeed     = 120,
+        .baseSpAttack  = 139,
+        .baseSpDefense = 84,
+        .types = MON_TYPES(TYPE_GHOST, TYPE_ELECTRIC),
+        .catchRate = 45,
+        .expYield = TYPHLOSION_EXP_YIELD,
+        .evYield_SpAttack = 3,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_ELECTRIC_SURGE, ABILITY_ELECTRIC_SURGE, ABILITY_ELECTRIC_SURGE },
+        .bodyColor = BODY_COLOR_YELLOW,
+        .speciesName = _("Typhlosion"),
+        .cryId = CRY_TYPHLOSION,
+        .natDexNum = NATIONAL_DEX_TYPHLOSION,
+        .categoryName = _("Ghost Flame"),
+        .height = 16,
+        .weight = 698,
+        .description = COMPOUND_STRING(
+            "Said to purify lost, forsaken souls with\n"
+            "its flames and guide them to the afterlife.\n"
+            "It's believed its form was influenced by\n"
+            "the energy of Mt. Coronet in ancient times."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 268,
+        .trainerOffset = 1,
+        .frontPic = gMonFrontPic_TyphlosionHisui,
+        .frontPicSize = MON_COORDS_SIZE(48, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_TyphlosionHisui,
+        .backPicSize = MON_COORDS_SIZE(64, 56),
+        .backPicYOffset = 2,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_TyphlosionHisui,
+        .shinyPalette = gMonShinyPalette_TyphlosionHisui,
+        .iconSprite = gMonIcon_TyphlosionHisui,
+        .iconPalIndex = 1,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(2, 14, SHADOW_SIZE_L)
+        FOOTPRINT(Typhlosion)
+        OVERWORLD(
+            sPicTable_TyphlosionHisui,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_TyphlosionHisui,
+            gShinyOverworldPalette_TyphlosionHisui
+        )
+        .isHisuianForm = TRUE,
+		.isMegaEvolution = TRUE,
+        .levelUpLearnset = sTyphlosionHisuiLevelUpLearnset,
+        .teachableLearnset = sTyphlosionHisuiTeachableLearnset,
+        .formSpeciesIdTable = sTyphlosionHisuianFormSpeciesIdTable,
+        .formChangeTable = sTyphlosionHisuianFormChangeTable,
+    },
+#endif //P_MEGA_EVOLUTIONS
 #endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_CYNDAQUIL
 
@@ -3905,8 +4047,8 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         )                                                                                               \
         .levelUpLearnset = sUnownLevelUpLearnset,                                                       \
         .teachableLearnset = sUnownTeachableLearnset,                                                   \
-        .tmIlliterate = TRUE,                                                                           \
         .formSpeciesIdTable = sUnownFormSpeciesIdTable,                                                 \
+        .formChangeTable = sUnownXFormChangeTable,                                                      \
     }
 
     [SPECIES_UNOWN]             = UNOWN_MISC_INFO(A,           FALSE, 24, 40, 24, 48,  8 ),
@@ -3937,6 +4079,68 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
     [SPECIES_UNOWN_Z]           = UNOWN_MISC_INFO(Z,           TRUE,  24, 32, 32, 48, 10 ),
     [SPECIES_UNOWN_EXCLAMATION] = UNOWN_MISC_INFO(Exclamation, FALSE, 24, 40, 24, 56,  6 ),
     [SPECIES_UNOWN_QUESTION]    = UNOWN_MISC_INFO(Question,    TRUE,  24, 40, 32, 56,  6 ),
+
+    [SPECIES_UNOWN_XERGE] =
+    {
+        .baseHP        = 76,
+        .baseAttack    = 144,
+        .baseDefense   = 96,
+        .baseSpeed     = 144,
+        .baseSpAttack  = 144,
+        .baseSpDefense = 96,
+        .types = MON_TYPES(TYPE_FAIRY),
+        .catchRate = 60,
+        .expYield = 217,
+        .evYield_HP = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_SCHOOLING, ABILITY_NONE, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_BLACK,
+        .speciesName = _("Unown"),                                                                      
+        .cryId = CRY_UNOWN,                                                                             
+        .natDexNum = NATIONAL_DEX_UNOWN,                                                                
+        .categoryName = _("Symbol"),                                                                    
+        .height = 5,                                                                                    
+        .weight = 50,                                                                                   
+        .description = gUnownPokedexText,                                                               
+        .pokemonScale = 411,                                                                            
+        .pokemonOffset = 2,                                                                             
+        .trainerScale = 256,                                                                            
+        .trainerOffset = 0,                                                                             
+        .frontPic = gMonFrontPic_UnownX,                                                        
+        .frontPicSize = MON_COORDS_SIZE(64, 64),                                     
+        .frontPicYOffset = 16,                                                                          
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,                                               
+        .frontAnimId = ANIM_ZIGZAG_FAST,                                                                
+        .enemyMonElevation = 8,                                                                         
+        .backPic = gMonBackPic_UnownX,                                                          
+        .backPicSize = MON_COORDS_SIZE(64, 56),                                        
+        .backPicYOffset = 5,                                                                  
+        .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,                                                    
+        .palette = gMonPalette_Unown,                                                                   
+        .shinyPalette = gMonShinyPalette_Unown,                                                         
+        .iconSprite = gMonIcon_UnownX,                                                          
+        .iconPalIndex = 0,                                                                              
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,                                                         
+        SHADOW(0, 3, SHADOW_SIZE_S)                                                                     
+        FOOTPRINT(Unown)                                                                                
+        OVERWORLD(                                                                                      
+            sPicTable_UnownX,                                                                   
+            SIZE_32x32,                                                                                 
+            SHADOW_SIZE_M,                                                                              
+            TRACKS_NONE,                                                                                
+            sAnimTable_Following,                                                                       
+            gOverworldPalette_Unown,                                                                    
+            gShinyOverworldPalette_Unown,                                                               
+        )                                                                                               
+        .levelUpLearnset = sUnownLevelUpLearnset,                                                       
+        .teachableLearnset = sUnownTeachableLearnset,                                                   
+        .formSpeciesIdTable = sUnownFormSpeciesIdTable,                                                 
+        .formChangeTable = sUnownXFormChangeTable,                                               
+    },
 #endif //P_FAMILY_UNOWN
 
 #if P_FAMILY_WOBBUFFET

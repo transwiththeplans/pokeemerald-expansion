@@ -71,6 +71,26 @@ static const u16 sPidgeotFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_PIDGEY
 
+#if P_FAMILY_LITWICK
+static const u16 sChandelureFormSpeciesIdTable[] = {
+    SPECIES_CHANDELURE,
+#if P_MEGA_EVOLUTIONS
+	SPECIES_CHANDELURE_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_LITWICK
+
+#if P_FAMILY_TINKATINK
+static const u16 sTinkatonFormSpeciesIdTable[] = {
+    SPECIES_TINKATON,
+#if P_MEGA_EVOLUTIONS
+	SPECIES_TINKATON_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_TINKATINK
+
 #if P_FAMILY_ELGYEM
 static const u16 sBeheeyemFormSpeciesIdTable[] = {
     SPECIES_BEHEEYEM,
@@ -337,6 +357,9 @@ static const u16 sSlowbroFormSpeciesIdTable[] = {
 #if P_GEN_2_CROSS_EVOS
 static const u16 sSlowkingFormSpeciesIdTable[] = {
     SPECIES_SLOWKING,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_SLOWKING_MEGA,
+#endif
 #if P_GALARIAN_FORMS
     SPECIES_SLOWKING_GALAR,
 #endif
@@ -385,6 +408,56 @@ static const u16 sGengarFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_GASTLY
+
+#if P_FAMILY_DREEPY
+static const u16 sDragapultFormSpeciesIdTable[] = {
+    SPECIES_DRAGAPULT,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_DRAGAPULT_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_DREEPY
+
+#if P_FAMILY_INKAY
+static const u16 sMalamarFormSpeciesIdTable[] = {
+    SPECIES_MALAMAR,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_MALAMAR_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_INKAY
+
+#if P_FAMILY_DRAMPA
+static const u16 sDrampaFormSpeciesIdTable[] = {
+    SPECIES_DRAMPA,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_DRAMPA_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_DRAMPA
+
+#if P_FAMILY_PAWNIARD
+static const u16 sKingambitFormSpeciesIdTable[] = {
+    SPECIES_KINGAMBIT,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_KINGAMBIT_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_PAWNIARD
+
+#if P_FAMILY_TRAPINCH
+static const u16 sFlygonFormSpeciesIdTable[] = {
+    SPECIES_FLYGON,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_FLYGON_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_TRAPINCH
 
 #if P_FAMILY_ONIX
 #if P_GEN_2_CROSS_EVOS
@@ -472,6 +545,7 @@ static const u16 sStarmieFormSpeciesIdTable[] = {
     SPECIES_STARMIE,
 #if P_MEGA_EVOLUTIONS
     SPECIES_STARMIE_MEGA,
+    SPECIES_STARMIE_MEGA_Y,
 #endif
     FORM_SPECIES_END,
 };
@@ -2379,7 +2453,7 @@ static const u16 sTerapagosFormSpeciesIdTable[] = {
 static const u16 sDratiniFormSpeciesIdTable[] = {
     SPECIES_DRATINI,
 #if P_GALARIAN_FORMS
-    SPECIES_DRATINI_BIGCHILL,
+    SPECIES_DRATINI_BIG_CHILL,
 #endif
     FORM_SPECIES_END,
 };
@@ -2387,7 +2461,7 @@ static const u16 sDratiniFormSpeciesIdTable[] = {
 static const u16 sDragonairFormSpeciesIdTable[] = {
     SPECIES_DRAGONAIR,
 #if P_GALARIAN_FORMS
-    SPECIES_DRAGONAIR_BIGCHILL,
+    SPECIES_DRAGONAIR_BIG_CHILL,
 #endif
     FORM_SPECIES_END,
 };
@@ -2398,9 +2472,9 @@ static const u16 sDragoniteFormSpeciesIdTable[] = {
     SPECIES_DRAGONITE_MEGA,
 #endif
 #if P_GALARIAN_FORMS
-    SPECIES_DRAGONITE_BIGCHILL,
+    SPECIES_DRAGONITE_BIG_CHILL,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_DRAGONITE_BIGCHILL_MEGA,
+    SPECIES_DRAGONITE_BIG_CHILL_MEGA,
 #endif
 #endif
     FORM_SPECIES_END,

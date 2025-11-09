@@ -4110,7 +4110,77 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sTinkatonLevelUpLearnset,
         .teachableLearnset = sTinkatonTeachableLearnset,
+        .formSpeciesIdTable = sTinkatonFormSpeciesIdTable,
+        .formChangeTable = sTinkatonFormChangeTable,
     },
+	
+#if P_MEGA_EVOLUTIONS
+    [SPECIES_TINKATON_MEGA] =
+    {
+        .baseHP        = 85,
+        .baseAttack    = 85,
+        .baseDefense   = 100,
+        .baseSpeed     = 104,
+        .baseSpAttack  = 132,
+        .baseSpDefense = 100,
+        .types = MON_TYPES(TYPE_FAIRY, TYPE_PSYCHIC),
+        .catchRate = 45,
+        .expYield = 253,
+        .evYield_SpDefense = 3,
+        .genderRatio = MON_FEMALE,
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY),
+        .abilities = { ABILITY_NO_GUARD, ABILITY_NO_GUARD, ABILITY_NO_GUARD },
+        .bodyColor = BODY_COLOR_PINK,
+        .speciesName = _("Tinkaton"),
+        .cryId = CRY_TINKATON,
+        .natDexNum = NATIONAL_DEX_TINKATON,
+        .categoryName = _("Hammer"),
+        .height = 7,
+        .weight = 1128,
+        .description = COMPOUND_STRING(
+            "The hammer tops 220 pounds, yet it\n"
+            "gets swung around easily by\n"
+            "Tinkaton as it steals whatever it pleases\n"
+            "and carries its plunder back home."),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Tinkaton,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Tinkaton,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 3,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Tinkaton,
+        .shinyPalette = gMonShinyPalette_Tinkaton,
+        .iconSprite = gMonIcon_Tinkaton,
+        .iconPalIndex = 1,
+        .pokemonJumpType = PKMN_JUMP_TYPE_SLOW,
+        SHADOW(-5, 15, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Tinkaton)
+        OVERWORLD(
+            sPicTable_Tinkaton,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following_Asym,
+            gOverworldPalette_Tinkaton,
+            gShinyOverworldPalette_Tinkaton
+        )
+		.isMegaEvolution = TRUE,
+        .levelUpLearnset = sTinkatonLevelUpLearnset,
+        .teachableLearnset = sTinkatonTeachableLearnset,
+        .formSpeciesIdTable = sTinkatonFormSpeciesIdTable,
+        .formChangeTable = sTinkatonFormChangeTable,
+    },
+#endif //P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_TINKATINK
 
 #if P_FAMILY_WIGLETT

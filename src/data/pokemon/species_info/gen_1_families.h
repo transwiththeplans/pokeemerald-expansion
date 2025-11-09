@@ -10403,10 +10403,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     {
         .baseHP        = 95,
         .baseAttack    = 110,
-        .baseDefense   = 110,
+        .baseDefense   = 80,
         .baseSpeed     = 30,
         .baseSpAttack  = 65,
-        .baseSpDefense = 80,
+        .baseSpDefense = 110,
         .types = MON_TYPES(TYPE_DRAGON, TYPE_POISON),
         .catchRate = 70,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 172 : 164,
@@ -10466,6 +10466,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sSlowkingLevelUpLearnset,
         .teachableLearnset = sSlowkingTeachableLearnset,
         .formSpeciesIdTable = sSlowkingFormSpeciesIdTable,
+        .formChangeTable = sSlowkingFormChangeTable,
     },
 #endif //P_GEN_2_CROSS_EVOS
 
@@ -10537,6 +10538,77 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sSlowbroTeachableLearnset,
         .formSpeciesIdTable = sSlowbroFormSpeciesIdTable,
         .formChangeTable = sSlowbroFormChangeTable,
+    },
+	
+    [SPECIES_SLOWKING_MEGA] =
+    {
+        .baseHP        = 95,
+        .baseAttack    = 120,
+        .baseDefense   = 100,
+        .baseSpeed     = 30,
+        .baseSpAttack  = 65,
+        .baseSpDefense = 180,
+        .types = MON_TYPES(TYPE_DRAGON, TYPE_POISON),
+        .catchRate = 70,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 172 : 164,
+        .evYield_SpDefense = 3,
+        .itemRare = ITEM_KINGS_ROCK,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_WATER_1),
+        .abilities = { ABILITY_UNAWARE, ABILITY_UNAWARE, ABILITY_UNAWARE },
+        .bodyColor = BODY_COLOR_PINK,
+        .speciesName = _("Slowking"),
+        .cryId = CRY_SLOWKING,
+        .natDexNum = NATIONAL_DEX_SLOWKING,
+        .categoryName = _("Royal"),
+        .height = 20,
+        .weight = 795,
+        .description = COMPOUND_STRING(
+            "It undertakes research every day to\n"
+            "solve the mysteries of the world.\n"
+            "However, it apparently forgets everything\n"
+            "if the Shellder on its head comes off."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 309,
+        .trainerOffset = 5,
+        .frontPic = gMonFrontPic_Slowking,
+        .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(40, 64) : MON_COORDS_SIZE(48, 64),
+        .frontPicYOffset = 1,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 20),
+            ANIMCMD_FRAME(0, 15),
+        ),
+        .frontAnimId = ANIM_SHRINK_GROW,
+        .backPic = gMonBackPic_Slowking,
+        .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 48) : MON_COORDS_SIZE(56, 64),
+        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 8 : 3,
+        .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
+        .palette = gMonPalette_Slowking,
+        .shinyPalette = gMonShinyPalette_Slowking,
+        .iconSprite = gMonIcon_Slowking,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 11, SHADOW_SIZE_M)
+        FOOTPRINT(Slowking)
+        OVERWORLD(
+            sPicTable_Slowking,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Slowking,
+            gShinyOverworldPalette_Slowking
+        )
+		.isMegaEvolution = TRUE,
+        .levelUpLearnset = sSlowkingLevelUpLearnset,
+        .teachableLearnset = sSlowkingTeachableLearnset,
+        .formSpeciesIdTable = sSlowkingFormSpeciesIdTable,
+        .formChangeTable = sSlowkingFormChangeTable,
     },
 #endif //P_MEGA_EVOLUTIONS
 
@@ -15776,6 +15848,71 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sStarmieLevelUpLearnset,
         .formSpeciesIdTable = sStarmieFormSpeciesIdTable,
         .teachableLearnset = sStarmieTeachableLearnset,
+    },    
+	
+	[SPECIES_STARMIE_MEGA_Y] =
+    {
+        .baseHP        = 60,
+        .baseAttack    = 50,
+        .baseDefense   = 115,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 160,
+        .baseSpDefense = 140,
+        .types = MON_TYPES(TYPE_NORMAL),
+        .catchRate = 60,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 182 : 207,
+        .evYield_Speed = 2,
+        .genderRatio = MON_GENDERLESS,
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_3),
+        .abilities = { ABILITY_REFRACTION, ABILITY_NONE, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_PURPLE,
+        .speciesName = _("Starmie"),
+        .cryId = CRY_STARMIE,
+        .natDexNum = NATIONAL_DEX_STARMIE,
+        .categoryName = _("Mysterious"),
+        .height = 11,
+        .weight = 800,
+        .description = COMPOUND_STRING(
+            "People in ancient times imagined that\n"
+            "Starmie were transformed from the\n"
+            "reflections of stars that twinkled on\n"
+            "gentle waves at night."),
+        .pokemonScale = 301,
+        .pokemonOffset = 3,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_StarmieMega,
+        .frontPicSize = MON_COORDS_SIZE(56, 56),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_SHRINK_GROW_VIBRATE_SLOW,
+        .backPic = gMonBackPic_StarmieMega,
+        .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 40) : MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 14 : 4,
+        .backAnimId = BACK_ANIM_SHAKE_GLOW_BLUE,
+        .palette = gMonPalette_Starmie,
+        .shinyPalette = gMonShinyPalette_Starmie,
+        .iconSprite = gMonIcon_StarmieMega,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-3, 16, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Starmie)
+        OVERWORLD(
+            sPicTable_Starmie,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Starmie,
+            gShinyOverworldPalette_Starmie
+        )
+		.isMegaEvolution = TRUE,
+        .levelUpLearnset = sStarmieLevelUpLearnset,
+        .formSpeciesIdTable = sStarmieFormSpeciesIdTable,
+        .teachableLearnset = sStarmieTeachableLearnset,
     },
 #endif //P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_STARYU
@@ -20290,7 +20427,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 #endif //P_MEGA_EVOLUTIONS
 #if P_GALARIAN_FORMS
-    [SPECIES_DRATINI_BIGCHILL] =
+    [SPECIES_DRATINI_BIG_CHILL] =
     {
         .baseHP        = 41,
         .baseAttack    = 64,
@@ -20354,13 +20491,13 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             gOverworldPalette_Dratini,
             gShinyOverworldPalette_Dratini
         )
-        .levelUpLearnset = sDratiniLevelUpLearnset,
-        .teachableLearnset = sDratiniTeachableLearnset,
+        .levelUpLearnset = sDratiniBigChillLevelUpLearnset,
+        .teachableLearnset = sDratiniBigChillTeachableLearnset,
         .eggMoveLearnset = sDratiniEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_DRAGONAIR}),
     },
 
-    [SPECIES_DRAGONAIR_BIGCHILL] =
+    [SPECIES_DRAGONAIR_BIG_CHILL] =
     {
         .baseHP        = 61,
         .baseAttack    = 84,
@@ -20425,12 +20562,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             gOverworldPalette_Dragonair,
             gShinyOverworldPalette_Dragonair
         )
-        .levelUpLearnset = sDragonairLevelUpLearnset,
-        .teachableLearnset = sDragonairTeachableLearnset,
+        .levelUpLearnset = sDragonairBigChillLevelUpLearnset,
+        .teachableLearnset = sDragonairBigChillTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 55, SPECIES_DRAGONITE}),
     },
 
-    [SPECIES_DRAGONITE_BIGCHILL] =
+    [SPECIES_DRAGONITE_BIG_CHILL] =
     {
         .baseHP        = 91,
         .baseAttack    = 134,
@@ -20501,13 +20638,13 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             gOverworldPalette_Dragonite,
             gShinyOverworldPalette_Dragonite
         )
-        .levelUpLearnset = sDragoniteLevelUpLearnset,
-        .teachableLearnset = sDragoniteTeachableLearnset,
+        .levelUpLearnset = sDragoniteBigChillLevelUpLearnset,
+        .teachableLearnset = sDragoniteBigChillTeachableLearnset,
 	    .formSpeciesIdTable = sDragoniteFormSpeciesIdTable,
         .formChangeTable = sDragoniteBigChillFormChangeTable,
     },
 #if P_MEGA_EVOLUTIONS
-    [SPECIES_DRAGONITE_BIGCHILL_MEGA] =
+    [SPECIES_DRAGONITE_BIG_CHILL_MEGA] =
     {
         .baseHP        = 91,
         .baseAttack    = 145,
@@ -20574,8 +20711,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             gShinyOverworldPalette_Dragonite
         )
 		.isMegaEvolution = TRUE,
-        .levelUpLearnset = sDragoniteLevelUpLearnset,
-        .teachableLearnset = sDragoniteTeachableLearnset,
+        .levelUpLearnset = sDragoniteBigChillLevelUpLearnset,
+        .teachableLearnset = sDragoniteBigChillTeachableLearnset,
 		.formSpeciesIdTable = sDragoniteFormSpeciesIdTable,
         .formChangeTable = sDragoniteBigChillFormChangeTable,
     },

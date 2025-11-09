@@ -1675,17 +1675,17 @@
 #define SPECIES_BARBARACLE_MEGA                         1557
 #define SPECIES_HOUNDSTONE_MEGA                         1558
 #define SPECIES_DRAGONITE_MEGA                          1559
-#define SPECIES_DRATINI_BIGCHILL                        1560
-#define SPECIES_DRAGONAIR_BIGCHILL                      1561
-#define SPECIES_DRAGONITE_BIGCHILL                      1562
-#define SPECIES_DRAGONITE_BIGCHILL_MEGA                 1563
+#define SPECIES_DRATINI_BIG_CHILL                        1560
+#define SPECIES_DRAGONAIR_BIG_CHILL                      1561
+#define SPECIES_DRAGONITE_BIG_CHILL                      1562
+#define SPECIES_DRAGONITE_BIG_CHILL_MEGA                 1563
 #define SPECIES_HATTERENE_MEGA                          1564
 #define SPECIES_CINDERACE_MEGA                          1565
 #define SPECIES_UNOWN_XERGE                             1566
-#define SPECIES_CUSTOM_15                               1567
-#define SPECIES_CUSTOM_16                               1568
-#define SPECIES_CUSTOM_17                               1569
-#define SPECIES_CUSTOM_18                               1570
+#define SPECIES_CHANDELURE_MEGA                         1567
+#define SPECIES_DRAMPA_MEGA                             1568
+#define SPECIES_STARMIE_MEGA_Y                          1569
+#define SPECIES_MALAMAR_MEGA                            1570
 #define SPECIES_RAICHU_MEGA                             1571
 #define SPECIES_RAICHU_COLD_MEGA                        1572
 #define SPECIES_MAUSHOLD_MEGA_Y                         1573
@@ -1702,15 +1702,23 @@
 #define SPECIES_FLYGON_MEGA                             1584
 #define SPECIES_KINGAMBIT_MEGA                          1585
 #define SPECIES_CACTURNE_MEGA                           1586
-#define SPECIES_MALAMAR_MEGA                            1587
+#define SPECIES_MALAMAR_MEGA_Y                          1587
 #define SPECIES_VENUSAUR_MEGA_Y                         1588
 #define SPECIES_CHARIZARD_MEGA_Z                        1589
 #define SPECIES_BLASTOISE_MEGA_Y                        1590
 #define SPECIES_RILLABOOM_MEGA                          1591
-#define SPECIES_MAUSCOLD_MEGA                           1592
+#define SPECIES_CUSTOM_0                                1592
+#define SPECIES_CUSTOM_1                                1593
+#define SPECIES_CUSTOM_2                                1594
+#define SPECIES_CUSTOM_3                                1595
+#define SPECIES_CUSTOM_4                                1596
+#define SPECIES_CUSTOM_5                                1597
+#define SPECIES_CUSTOM_6                                1598
+#define SPECIES_CUSTOM_7                                1599
+#define SPECIES_CUSTOM_8                                1600
 
 // Must always be last
-#define SPECIES_EGG                                     (SPECIES_MAUSCOLD_MEGA + 1)
+#define SPECIES_EGG                                     (SPECIES_CUSTOM_8 + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

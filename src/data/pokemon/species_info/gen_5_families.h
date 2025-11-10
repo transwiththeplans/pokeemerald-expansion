@@ -2236,7 +2236,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
     #if P_UPDATED_ABILITIES >= GEN_7
-        .abilities = { ABILITY_POWER_SPOT, ABILITY_WEAK_ARMOR, ABILITY_PURIFYING_SALT },
+        .abilities = { ABILITY_POWER_SPOT, ABILITY_WEAK_ARMOR, ABILITY_SOLAR_POWER },
     #else
         .abilities = { ABILITY_STURDY, ABILITY_NONE, ABILITY_SAND_FORCE },
     #endif
@@ -2312,7 +2312,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
     #if P_UPDATED_ABILITIES >= GEN_7
-        .abilities = { ABILITY_POWER_SPOT, ABILITY_WEAK_ARMOR, ABILITY_PURIFYING_SALT },
+        .abilities = { ABILITY_POWER_SPOT, ABILITY_WEAK_ARMOR, ABILITY_SOLAR_POWER },
     #else
         .abilities = { ABILITY_STURDY, ABILITY_NONE, ABILITY_SAND_FORCE },
     #endif
@@ -2395,7 +2395,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
     #if P_UPDATED_ABILITIES >= GEN_7
-        .abilities = { ABILITY_POWER_SPOT, ABILITY_SAND_STREAM, ABILITY_PURIFYING_SALT },
+        .abilities = { ABILITY_POWER_SPOT, ABILITY_WEAK_ARMOR, ABILITY_SOLAR_POWER },
     #else
         .abilities = { ABILITY_STURDY, ABILITY_NONE, ABILITY_SAND_FORCE },
     #endif
@@ -3037,7 +3037,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sGurdurrLevelUpLearnset,
         .teachableLearnset = sGurdurrTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_GURDURR}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_CONKELDURR}),
     },
 
     [SPECIES_CONKELDURR] =
@@ -3125,7 +3125,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1),
-        .abilities = { ABILITY_MAGIC_BOUNCE, ABILITY_ANALYTIC, ABILITY_WATER_ABSORB },
+        .abilities = { ABILITY_RAIN_DISH, ABILITY_ANALYTIC, ABILITY_WATER_ABSORB },
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Tympole"),
         .cryId = CRY_TYMPOLE,
@@ -3193,7 +3193,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1),
-        .abilities = { ABILITY_MAGIC_BOUNCE, ABILITY_ANALYTIC, ABILITY_WATER_ABSORB },
+        .abilities = { ABILITY_RAIN_DISH, ABILITY_ANALYTIC, ABILITY_WATER_ABSORB },
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Palpitoad"),
         .cryId = CRY_PALPITOAD,
@@ -3269,7 +3269,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1),
-        .abilities = { ABILITY_MAGIC_BOUNCE, ABILITY_ANALYTIC, ABILITY_WATER_ABSORB },
+        .abilities = { ABILITY_RAIN_DISH, ABILITY_ANALYTIC, ABILITY_WATER_ABSORB },
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Seismitoad"),
         .cryId = CRY_SEISMITOAD,
@@ -5471,7 +5471,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = 35,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_DRAGON),
-        .abilities = { ABILITY_SNOW_SPEW, ABILITY_NONE, ABILITY_INTIMIDATE },
+        .abilities = { ABILITY_SNOW_CLOAK, ABILITY_NONE, ABILITY_INTIMIDATE },
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Scraggy"),
         .cryId = CRY_SCRAGGY,
@@ -5542,7 +5542,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_DRAGON),
-        .abilities = { ABILITY_SNOW_SPEW, ABILITY_NONE, ABILITY_INTIMIDATE },
+        .abilities = { ABILITY_SNOW_CLOAK, ABILITY_NONE, ABILITY_INTIMIDATE },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Scrafty"),
         .cryId = CRY_SCRAFTY,

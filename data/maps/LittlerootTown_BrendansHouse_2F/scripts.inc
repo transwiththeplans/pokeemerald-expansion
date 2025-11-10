@@ -282,15 +282,22 @@ PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
 	.string "downstairs, too.\p"
 	.string "POKéMON movers are so convenient!\p"
 	.string "Oh, you should make sure that\n"
-	.string "everything's all there on your desk.$"
+	.string "everything's all there on your desk.\p"
+	.string "Oh! I think Grandpa left a note for\n"
+	.string "you on the desk...$"
 
 PlayersHouse_2F_Text_Notebook:
-	.string "{PLAYER} flipped open the notebook.\p"
-	.string "ADVENTURE RULE NO. 1\n"
-	.string "Open the MENU with START.\p"
-	.string "ADVENTURE RULE NO. 2\n"
-	.string "Record your progress with SAVE.\p"
-	.string "The remaining pages are blank…$"
+	.string "{PLAYER} open the letter from Grandpa.\p"
+	.string "Dear {PLAYER},\n"
+	.string "Welcome to the Hoenn region!\p"
+	.string "As a little house warming gift,\n"
+	.string "I've given you some items you can use\l"
+	.string "around the area. I hope you enjoy.\p"
+	.string "Love, Grandpa\p"
+	.string "....\n"
+	.string "....\p"
+	.string "PS: Don't let your cousin\n"
+	.string "drive you too crazy.$"
 
 Common_Text_LookCloserAtMap:
 	.string "{PLAYER} took a closer look at the\n"
@@ -298,5 +305,5 @@ Common_Text_LookCloserAtMap:
 
 PlayersHouse_2F_Text_ItsAGameCube:
 	.string "It's a Nintendo GameCube.\p"
-	.string "A Game Boy Advance is connected to\n"
-	.string "serve as the Controller.$"
+	.string "You got Super Monkey Ball?\n"
+	.string "Dude, that's sick.$"

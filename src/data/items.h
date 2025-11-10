@@ -1915,7 +1915,7 @@ const struct Item gItemsInfo[] = {
     {
         .name = _("Rare Candy"),
         .pluralName = _("Rare Candies"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 4800,
+        .price = 10,
         .description = COMPOUND_STRING(
             "Raises the level\n"
             "of a Pokémon by\n"
@@ -12022,7 +12022,8 @@ const struct Item gItemsInfo[] = {
         .name = _("TM100"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Spins to remove hazards\n"
+            "Spins to\n"
+			"remove hazards\n"
             "and raises Speed."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,

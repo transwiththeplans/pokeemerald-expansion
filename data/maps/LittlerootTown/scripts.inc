@@ -953,21 +953,16 @@ LittlerootTown_Text_ComeHomeIfAnythingHappens:
 	.string "Go on, go get them, honey!$"
 
 LittlerootTown_Text_CanUsePCToStoreItems:
-	.string "...\n"
-	.string "...\n"
-	.string "...\p"
-	.string "I'm not gonna say it.$"
+	.string "If you use a PC, you can store items\n"
+	.string "and POKéMON.\p"
+	.string "The power of science is staggering!$"
 
 LittlerootTown_Text_BirchSpendsDaysInLab:
-	.string "PROF. BIRCH holed up in his LAB\n"
-	.string "ever since that meteorite passed over.\p"
-	.string "The whole region's counting on him\n"
-	.string "to study the ins and outs of all the \l"
-	.string "Pokemon affected....\p"
-	.string "He's probably really stressed.\p"
-	.string "I don't blame him. My poor Pichu\n"
-	.string "caught on fire and I want to know\l"
-	.string "how I can care for it now...$"
+	.string "PROF. BIRCH spends days in his LAB\n"
+	.string "studying, then he'll suddenly go out in\l"
+	.string "the wild to do more research…\p"
+	.string "When does PROF. BIRCH spend time\n"
+	.string "at home?$"
 
 LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut:
 	.string "Um, um, um!\p"
@@ -1003,10 +998,10 @@ LittlerootTown_Text_ProfBirchsLab:
 	.string "PROF. BIRCH'S POKéMON LAB$"
 
 LittlerootTown_Text_PlayersHouse:
-	.string "Tennyson Residence$"
+	.string "{PLAYER}'s HOUSE$"
 
 LittlerootTown_Text_ProfBirchsHouse:
-	.string "Tennyson Residence$"
+	.string "PROF. BIRCH'S HOUSE$"
 
 LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "PROF. BIRCH: Well, well, {PLAYER}{KUN}!\n"

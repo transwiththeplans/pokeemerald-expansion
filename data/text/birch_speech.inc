@@ -25,10 +25,9 @@ gText_Birch_MainSpeech::
 	.string "shower, all Pokemon in Hoenn\l"
 	.string "mysteriously transformed...\p"
 	.string "To unravel this new mystery,\n"
-	.string "I've been deep in research.\l"
-	.string "That's what I do.\p"
+	.string "I've been deep in research.\p"
 	.string "$"
-
+	
 gText_Birch_AndYouAre::
 	.string "And you are?$"
 

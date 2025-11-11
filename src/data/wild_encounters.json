@@ -12002,12 +12002,12 @@
               {
                 "min_level": 13,
                 "max_level": 13,
-                "species": "SPECIES_CHARMANDER"
+                "species": "SPECIES_TANDEMAUS_NECROFRIGGIAN"
               },
               {
                 "min_level": 13,
                 "max_level": 13,
-                "species": "SPECIES_CHARMANDER"
+                "species": "SPECIES_TANDEMAUS_NECROFRIGGIAN"
               }
             ]
           }
@@ -12146,6 +12146,75 @@
                 "min_level": 20,
                 "max_level": 20,
                 "species": "SPECIES_TANDEMAUS_NECROFRIGGIAN"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_GRANITE_CAVE_ICE_ROOM",
+          "base_label": "gGraniteCaveIceRoom",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_SNOM"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_SNOM"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_TEDDIURSA"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_TEDDIURSA"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_SCRAGGY"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_SCRAGGY"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_SCRAGGY"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_SCRAGGY"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_TANDEMAUS_NECROFRIGGIAN"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_TANDEMAUS_NECROFRIGGIAN"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_CHARMANDER"
+              },
+              {
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_CHARMANDER"
               }
             ]
           }

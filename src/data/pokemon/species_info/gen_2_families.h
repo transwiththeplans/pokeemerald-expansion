@@ -3689,7 +3689,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_MOXIE, ABILITY_SUPER_LUCK, ABILITY_BAD_DREAMS },
+        .abilities = { ABILITY_MOXIE, ABILITY_BAD_DREAMS, ABILITY_DARK_AURA },
     #else
         .abilities = { ABILITY_INSOMNIA, ABILITY_NONE, ABILITY_PRANKSTER },
     #endif
@@ -3775,7 +3775,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = 35,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
-        .abilities = { ABILITY_MOXIE, ABILITY_SUPER_LUCK, ABILITY_BAD_DREAMS },
+        .abilities = { ABILITY_MOXIE, ABILITY_BAD_DREAMS, ABILITY_DARK_AURA },
         .bodyColor = BODY_COLOR_BLACK,
         .speciesName = _("Honchkrow"),
         .cryId = CRY_HONCHKROW,
@@ -3847,7 +3847,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = 35,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_PRANKSTER, ABILITY_LEVITATE, ABILITY_MIST_CALLER },
+        .abilities = { ABILITY_PRANKSTER, ABILITY_COMATOSE, ABILITY_FAIRY_AURA },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Misdreavus"),
         .cryId = CRY_MISDREAVUS,
@@ -3903,6 +3903,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         )
         .levelUpLearnset = sMisdreavusLevelUpLearnset,
         .teachableLearnset = sMisdreavusTeachableLearnset,
+        .formSpeciesIdTable = sMisdreavusFormSpeciesIdTable,
         .eggMoveLearnset = sMisdreavusEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_DUSK_STONE, SPECIES_MISMAGIUS}),
     },
@@ -3926,7 +3927,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = 35,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_PRANKSTER, ABILITY_LEVITATE, ABILITY_MIST_CALLER },
+        .abilities = { ABILITY_PRANKSTER, ABILITY_COMATOSE, ABILITY_FAIRY_AURA },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Mismagius"),
         .cryId = CRY_MISMAGIUS,
@@ -3982,8 +3983,168 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         )
         .levelUpLearnset = sMismagiusLevelUpLearnset,
         .teachableLearnset = sMismagiusTeachableLearnset,
+        .formSpeciesIdTable = sMismagiusFormSpeciesIdTable,
     },
 #endif //P_GEN_4_CROSS_EVOS
+#if P_HISUIAN_FORMS
+    [SPECIES_MISDREAVUS_PYRONITE] =
+    {
+        .baseHP        = 60,
+        .baseAttack    = 50,
+        .baseDefense   = 60,
+        .baseSpeed     = 85,
+        .baseSpAttack  = 105,
+        .baseSpDefense = 75,
+        .types = MON_TYPES(TYPE_GHOST, TYPE_FIRE),
+        .catchRate = 45,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 87 : 147,
+        .evYield_SpAttack = (P_UPDATED_EVS >= GEN_4) ? 0 : 1,
+        .evYield_SpDefense = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 25,
+        .friendship = 35,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_GRAY,
+        .speciesName = _("Misdreavus"),
+        .cryId = CRY_MISDREAVUS,
+        .natDexNum = NATIONAL_DEX_MISDREAVUS,
+        .categoryName = _("Screech"),
+        .height = 7,
+        .weight = 10,
+        .description = COMPOUND_STRING(
+            "A Misdreavus frightens people with a\n"
+            "creepy, sobbing cry. It apparently uses\n"
+            "its red spheres to absorb the fear of foes\n"
+            "as its nutrition."),
+        .pokemonScale = 407,
+        .pokemonOffset = -8,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_MisdreavusPyronite,
+        .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(40, 40) : MON_COORDS_SIZE(48, 48),
+        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 12 : 13,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(1, 10),
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 10),
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 10),
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 10),
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 10),
+            ANIMCMD_FRAME(0, 10),
+        ),
+        .frontAnimId = ANIM_V_SLIDE_WOBBLE,
+        .enemyMonElevation = P_GBA_STYLE_SPECIES_GFX ? 8 : 12,
+        .backPic = gMonBackPic_MisdreavusPyronite,
+        .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 48) : MON_COORDS_SIZE(56, 48),
+        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 10 : 9,
+        .backAnimId = BACK_ANIM_H_VIBRATE,
+        .palette = gMonPalette_MisdreavusPyronite,
+        .shinyPalette = gMonShinyPalette_MisdreavusPyronite,
+        .iconSprite = gMonIcon_MisdreavusPyronite,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(0, 10, SHADOW_SIZE_S)
+        FOOTPRINT(Misdreavus)
+        OVERWORLD(
+            sPicTable_Misdreavus,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_NONE,
+            sAnimTable_Following,
+            gOverworldPalette_Misdreavus,
+            gShinyOverworldPalette_Misdreavus
+        )
+        .isHisuianForm = TRUE,
+        .levelUpLearnset = sMisdreavusPyroniteLevelUpLearnset,
+        .teachableLearnset = sMisdreavusPyroniteTeachableLearnset,
+        .formSpeciesIdTable = sMisdreavusFormSpeciesIdTable,
+        .eggMoveLearnset = sMisdreavusEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_FIRE_STONE, SPECIES_MISMAGIUS_PYRONITE}),
+    },
+	
+    [SPECIES_MISMAGIUS_PYRONITE] =
+    {
+        .baseHP        = 60,
+        .baseAttack    = 50,
+        .baseDefense   = 60,
+        .baseSpeed     = 105,
+        .baseSpAttack  = 135,
+        .baseSpDefense = 95,
+        .types = MON_TYPES(TYPE_GHOST, TYPE_FAIRY),
+        .catchRate = 45,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 173 : 187,
+        .evYield_SpAttack = 1,
+        .evYield_SpDefense = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 25,
+        .friendship = 35,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_PURPLE,
+        .speciesName = _("Mismagius"),
+        .cryId = CRY_MISMAGIUS,
+        .natDexNum = NATIONAL_DEX_MISMAGIUS,
+        .categoryName = _("Magical"),
+        .height = 9,
+        .weight = 44,
+        .description = COMPOUND_STRING(
+            "Its cries sound like incantations.\n"
+            "Those hearing it are tormented by\n"
+            "headaches and hallucinations.\n"
+            "It appears where you least expect it."),
+        .pokemonScale = 338,
+        .pokemonOffset = 8,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_MismagiusPyronite,
+        .frontPicSize = MON_COORDS_SIZE(56, 64),
+        .frontPicYOffset = 3,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(1, 10),
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 10),
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 10),
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 10),
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 10),
+            ANIMCMD_FRAME(0, 10),
+        ),
+        .frontAnimId = ANIM_H_SLIDE_WOBBLE,
+        .enemyMonElevation = 3,
+        .backPic = gMonBackPic_MismagiusPyronite,
+        .backPicSize = MON_COORDS_SIZE(56, 64),
+        .backPicYOffset = 3,
+        .backAnimId = BACK_ANIM_CONVEX_DOUBLE_ARC,
+        .palette = gMonPalette_MismagiusPyronite,
+        .shinyPalette = gMonShinyPalette_MismagiusPyronite,
+        .iconSprite = gMonIcon_Mismagius,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(1, 11, SHADOW_SIZE_M)
+        FOOTPRINT(Mismagius)
+        OVERWORLD(
+            sPicTable_Mismagius,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Mismagius,
+            gShinyOverworldPalette_Mismagius
+        )
+        .isHisuianForm = TRUE,
+        .levelUpLearnset = sMismagiusPyroniteLevelUpLearnset,
+        .teachableLearnset = sMismagiusPyroniteTeachableLearnset,
+        .formSpeciesIdTable = sMismagiusFormSpeciesIdTable,
+    },
+#endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_MISDREAVUS
 
 #if P_FAMILY_UNOWN

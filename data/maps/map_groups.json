@@ -434,8 +434,7 @@
     "AlteringCave",
     "MeteorFalls_StevensCave",
     "NewRusturfTunnel",
-    "DiglettGrotto",
-    "GraniteCaveIceRoom"
+    "DiglettGrotto"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

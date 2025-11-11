@@ -1707,8 +1707,8 @@
 #define SPECIES_CHARIZARD_MEGA_Z                        1589
 #define SPECIES_BLASTOISE_MEGA_Y                        1590
 #define SPECIES_RILLABOOM_MEGA                          1591
-#define SPECIES_CUSTOM_0                                1592
-#define SPECIES_CUSTOM_1                                1593
+#define SPECIES_MISDREAVUS_PYRONITE                     1592
+#define SPECIES_MISMAGIUS_PYRONITE                      1593
 #define SPECIES_CUSTOM_2                                1594
 #define SPECIES_CUSTOM_3                                1595
 #define SPECIES_CUSTOM_4                                1596
@@ -1716,9 +1716,14 @@
 #define SPECIES_CUSTOM_6                                1598
 #define SPECIES_CUSTOM_7                                1599
 #define SPECIES_CUSTOM_8                                1600
+#define SPECIES_CUSTOM_9                                1601
+#define SPECIES_CUSTOM_10                               1602
+#define SPECIES_CUSTOM_11                               1603
+#define SPECIES_CUSTOM_12                               1604
+#define SPECIES_CUSTOM_13                               1605
 
 // Must always be last
-#define SPECIES_EGG                                     (SPECIES_CUSTOM_8 + 1)
+#define SPECIES_EGG                                     (SPECIES_CUSTOM_13 + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

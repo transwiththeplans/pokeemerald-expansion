@@ -780,6 +780,24 @@ static const u16 sQwilfishFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_QWILFISH
 
+#if P_FAMILY_MISDREAVUS
+static const u16 sMisdreavusFormSpeciesIdTable[] = {
+    SPECIES_MISDREAVUS,
+#if P_HISUIAN_FORMS
+    SPECIES_MISDREAVUS_PYRONITE,
+#endif
+    FORM_SPECIES_END,
+};
+
+static const u16 sMismagiusFormSpeciesIdTable[] = {
+    SPECIES_MISMAGIUS,
+#if P_HISUIAN_FORMS
+    SPECIES_MISMAGIUS_PYRONITE,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_MISDREAVUS
+
 #if P_FAMILY_HERACROSS
 static const u16 sHeracrossFormSpeciesIdTable[] = {
     SPECIES_HERACROSS,

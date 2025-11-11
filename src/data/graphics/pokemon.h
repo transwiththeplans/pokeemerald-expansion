@@ -7785,50 +7785,94 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 
 #if P_FAMILY_MISDREAVUS
 #if !P_GBA_STYLE_SPECIES_GFX
-    const u32 gMonFrontPic_Misdreavus[] = INCBIN_U32("graphics/pokemon/misdreavus/anim_front.4bpp.lz");
-    const u16 gMonPalette_Misdreavus[] = INCBIN_U16("graphics/pokemon/misdreavus/normal.gbapal");
-    const u32 gMonBackPic_Misdreavus[] = INCBIN_U32("graphics/pokemon/misdreavus/back.4bpp.lz");
-    const u16 gMonShinyPalette_Misdreavus[] = INCBIN_U16("graphics/pokemon/misdreavus/shiny.gbapal");
+const u32 gMonFrontPic_Misdreavus[]      = INCBIN_U32("graphics/pokemon/misdreavus/anim_front.4bpp.lz");
+const u16 gMonPalette_Misdreavus[]       = INCBIN_U16("graphics/pokemon/misdreavus/normal.gbapal");
+const u32 gMonBackPic_Misdreavus[]       = INCBIN_U32("graphics/pokemon/misdreavus/back.4bpp.lz");
+const u16 gMonShinyPalette_Misdreavus[]  = INCBIN_U16("graphics/pokemon/misdreavus/shiny.gbapal");
 #else
-    const u32 gMonFrontPic_Misdreavus[] = INCBIN_U32("graphics/pokemon/misdreavus/anim_front_gba.4bpp.lz");
-    const u16 gMonPalette_Misdreavus[] = INCBIN_U16("graphics/pokemon/misdreavus/normal_gba.gbapal");
-    const u32 gMonBackPic_Misdreavus[] = INCBIN_U32("graphics/pokemon/misdreavus/back_gba.4bpp.lz");
-    const u16 gMonShinyPalette_Misdreavus[] = INCBIN_U16("graphics/pokemon/misdreavus/shiny_gba.gbapal");
-#endif //P_GBA_STYLE_SPECIES_GFX
+const u32 gMonFrontPic_Misdreavus[]      = INCBIN_U32("graphics/pokemon/misdreavus/anim_front_gba.4bpp.lz");
+const u16 gMonPalette_Misdreavus[]       = INCBIN_U16("graphics/pokemon/misdreavus/normal_gba.gbapal");
+const u32 gMonBackPic_Misdreavus[]       = INCBIN_U32("graphics/pokemon/misdreavus/back_gba.4bpp.lz");
+const u16 gMonShinyPalette_Misdreavus[]  = INCBIN_U16("graphics/pokemon/misdreavus/shiny_gba.gbapal");
+#endif // P_GBA_STYLE_SPECIES_GFX
+
 #if !P_GBA_STYLE_SPECIES_ICONS
-    const u8 gMonIcon_Misdreavus[] = INCBIN_U8("graphics/pokemon/misdreavus/icon.4bpp");
+const u8  gMonIcon_Misdreavus[]          = INCBIN_U8("graphics/pokemon/misdreavus/icon.4bpp");
 #else
-    const u8 gMonIcon_Misdreavus[] = INCBIN_U8("graphics/pokemon/misdreavus/icon_gba.4bpp");
-#endif //P_GBA_STYLE_SPECIES_ICONS
+const u8  gMonIcon_Misdreavus[]          = INCBIN_U8("graphics/pokemon/misdreavus/icon_gba.4bpp");
+#endif // P_GBA_STYLE_SPECIES_ICONS
+
 #if P_FOOTPRINTS
-    const u8 gMonFootprint_Misdreavus[] = INCBIN_U8("graphics/pokemon/misdreavus/footprint.1bpp");
-#endif //P_FOOTPRINTS
+const u8  gMonFootprint_Misdreavus[]     = INCBIN_U8("graphics/pokemon/misdreavus/footprint.1bpp");
+#endif // P_FOOTPRINTS
+
 #if OW_POKEMON_OBJECT_EVENTS
-    const u32 gObjectEventPic_Misdreavus[] = INCBIN_COMP("graphics/pokemon/misdreavus/overworld.4bpp");
+const u32 gObjectEventPic_Misdreavus[]   = INCBIN_COMP("graphics/pokemon/misdreavus/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
-    const u16 gOverworldPalette_Misdreavus[] = INCBIN_U16("graphics/pokemon/misdreavus/overworld_normal.gbapal");
-    const u16 gShinyOverworldPalette_Misdreavus[] = INCBIN_U16("graphics/pokemon/misdreavus/overworld_shiny.gbapal");
-#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
-#endif //OW_POKEMON_OBJECT_EVENTS
+const u16 gOverworldPalette_Misdreavus[]      = INCBIN_U16("graphics/pokemon/misdreavus/overworld_normal.gbapal");
+const u16 gShinyOverworldPalette_Misdreavus[] = INCBIN_U16("graphics/pokemon/misdreavus/overworld_shiny.gbapal");
+#endif // OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif // OW_POKEMON_OBJECT_EVENTS
+
+
+#if P_HISUIAN_FORMS
+const u32 gMonFrontPic_MisdreavusPyronite[]     = INCBIN_U32("graphics/pokemon/misdreavus/pyronite/anim_front.4bpp.lz");
+const u16 gMonPalette_MisdreavusPyronite[]      = INCBIN_U16("graphics/pokemon/misdreavus/pyronite/normal.gbapal");
+const u32 gMonBackPic_MisdreavusPyronite[]      = INCBIN_U32("graphics/pokemon/misdreavus/pyronite/back.4bpp.lz");
+const u16 gMonShinyPalette_MisdreavusPyronite[] = INCBIN_U16("graphics/pokemon/misdreavus/pyronite/shiny.gbapal");
+const u8  gMonIcon_MisdreavusPyronite[]         = INCBIN_U8("graphics/pokemon/misdreavus/pyronite/icon.4bpp");
+#if P_FOOTPRINTS
+const u8  gMonFootprint_MisdreavusPyronite[]    = INCBIN_U8("graphics/pokemon/misdreavus/pyronite/footprint.1bpp");
+#endif // P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+const u32 gObjectEventPic_MisdreavusPyronite[]  = INCBIN_COMP("graphics/pokemon/misdreavus/pyronite/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+const u16 gOverworldPalette_MisdreavusPyronite[]      = INCBIN_U16("graphics/pokemon/misdreavus/pyronite/overworld_normal.gbapal");
+const u16 gShinyOverworldPalette_MisdreavusPyronite[] = INCBIN_U16("graphics/pokemon/misdreavus/pyronite/overworld_shiny.gbapal");
+#endif // OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif // OW_POKEMON_OBJECT_EVENTS
+#endif // P_HISUIAN_FORMS
+
 
 #if P_GEN_4_CROSS_EVOS
-    const u32 gMonFrontPic_Mismagius[] = INCBIN_U32("graphics/pokemon/mismagius/anim_front.4bpp.lz");
-    const u16 gMonPalette_Mismagius[] = INCBIN_U16("graphics/pokemon/mismagius/normal.gbapal");
-    const u32 gMonBackPic_Mismagius[] = INCBIN_U32("graphics/pokemon/mismagius/back.4bpp.lz");
-    const u16 gMonShinyPalette_Mismagius[] = INCBIN_U16("graphics/pokemon/mismagius/shiny.gbapal");
-    const u8 gMonIcon_Mismagius[] = INCBIN_U8("graphics/pokemon/mismagius/icon.4bpp");
+const u32 gMonFrontPic_Mismagius[]       = INCBIN_U32("graphics/pokemon/mismagius/anim_front.4bpp.lz");
+const u16 gMonPalette_Mismagius[]        = INCBIN_U16("graphics/pokemon/mismagius/normal.gbapal");
+const u32 gMonBackPic_Mismagius[]        = INCBIN_U32("graphics/pokemon/mismagius/back.4bpp.lz");
+const u16 gMonShinyPalette_Mismagius[]   = INCBIN_U16("graphics/pokemon/mismagius/shiny.gbapal");
+const u8  gMonIcon_Mismagius[]           = INCBIN_U8("graphics/pokemon/mismagius/icon.4bpp");
 #if P_FOOTPRINTS
-    const u8 gMonFootprint_Mismagius[] = INCBIN_U8("graphics/pokemon/mismagius/footprint.1bpp");
-#endif //P_FOOTPRINTS
+const u8  gMonFootprint_Mismagius[]      = INCBIN_U8("graphics/pokemon/mismagius/footprint.1bpp");
+#endif // P_FOOTPRINTS
 #if OW_POKEMON_OBJECT_EVENTS
-    const u32 gObjectEventPic_Mismagius[] = INCBIN_COMP("graphics/pokemon/mismagius/overworld.4bpp");
+const u32 gObjectEventPic_Mismagius[]    = INCBIN_COMP("graphics/pokemon/mismagius/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
-    const u16 gOverworldPalette_Mismagius[] = INCBIN_U16("graphics/pokemon/mismagius/overworld_normal.gbapal");
-    const u16 gShinyOverworldPalette_Mismagius[] = INCBIN_U16("graphics/pokemon/mismagius/overworld_shiny.gbapal");
-#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
-#endif //OW_POKEMON_OBJECT_EVENTS
-#endif //P_GEN_4_CROSS_EVOS
-#endif //P_FAMILY_MISDREAVUS
+const u16 gOverworldPalette_Mismagius[]      = INCBIN_U16("graphics/pokemon/mismagius/overworld_normal.gbapal");
+const u16 gShinyOverworldPalette_Mismagius[] = INCBIN_U16("graphics/pokemon/mismagius/overworld_shiny.gbapal");
+#endif // OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif // OW_POKEMON_OBJECT_EVENTS
+
+#if P_HISUIAN_FORMS
+const u32 gMonFrontPic_MismagiusPyronite[]     = INCBIN_U32("graphics/pokemon/mismagius/pyronite/anim_front.4bpp.lz");
+const u16 gMonPalette_MismagiusPyronite[]      = INCBIN_U16("graphics/pokemon/mismagius/pyronite/normal.gbapal");
+const u32 gMonBackPic_MismagiusPyronite[]      = INCBIN_U32("graphics/pokemon/mismagius/pyronite/back.4bpp.lz");
+const u16 gMonShinyPalette_MismagiusPyronite[] = INCBIN_U16("graphics/pokemon/mismagius/pyronite/shiny.gbapal");
+const u8  gMonIcon_MismagiusPyronite[]         = INCBIN_U8("graphics/pokemon/mismagius/pyronite/icon.4bpp");
+#if P_FOOTPRINTS
+const u8  gMonFootprint_MismagiusPyronite[]    = INCBIN_U8("graphics/pokemon/mismagius/pyronite/footprint.1bpp");
+#endif // P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+const u32 gObjectEventPic_MismagiusPyronite[]  = INCBIN_COMP("graphics/pokemon/mismagius/pyronite/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+const u16 gOverworldPalette_MismagiusPyronite[]      = INCBIN_U16("graphics/pokemon/mismagius/pyronite/overworld_normal.gbapal");
+const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/pokemon/mismagius/pyronite/overworld_shiny.gbapal");
+#endif // OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif // OW_POKEMON_OBJECT_EVENTS
+#endif // P_HISUIAN_FORMS
+
+#endif // P_GEN_4_CROSS_EVOS
+
+#endif // P_FAMILY_MISDREAVUS
+
 
 #if P_FAMILY_UNOWN
     const u16 gMonPalette_Unown[] = INCBIN_U16("graphics/pokemon/unown/normal.gbapal");

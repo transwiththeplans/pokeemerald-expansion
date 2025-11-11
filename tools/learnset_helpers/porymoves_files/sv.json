@@ -17457,6 +17457,130 @@
       "MOVE_WONDER_ROOM"
     ],
     "TutorMoves": []
+  },  
+  "MISDREAVUS_PYRONITE": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_GROWL"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_CONFUSION"
+      },
+      {
+        "Level": 10,
+        "Move": "MOVE_ASTONISH"
+      },
+      {
+        "Level": 14,
+        "Move": "MOVE_CONFUSE_RAY"
+      },
+      {
+        "Level": 19,
+        "Move": "MOVE_MEAN_LOOK"
+      },
+      {
+        "Level": 23,
+        "Move": "MOVE_HEX"
+      },
+      {
+        "Level": 28,
+        "Move": "MOVE_PSYBEAM"
+      },
+      {
+        "Level": 32,
+        "Move": "MOVE_PAIN_SPLIT"
+      },
+      {
+        "Level": 37,
+        "Move": "MOVE_PAYBACK"
+      },
+      {
+        "Level": 41,
+        "Move": "MOVE_SHADOW_BALL"
+      },
+      {
+        "Level": 46,
+        "Move": "MOVE_PERISH_SONG"
+      },
+      {
+        "Level": 50,
+        "Move": "MOVE_POWER_GEM"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_CHARM",
+      "MOVE_FAKE_TEARS",
+      "MOVE_SCARY_FACE",
+      "MOVE_PROTECT",
+      "MOVE_PSYBEAM",
+      "MOVE_CONFUSE_RAY",
+      "MOVE_THIEF",
+      "MOVE_CHARGE_BEAM",
+      "MOVE_FACADE",
+      "MOVE_HEX",
+      "MOVE_SWIFT",
+      "MOVE_MAGICAL_LEAF",
+      "MOVE_ICY_WIND",
+      "MOVE_DRAINING_KISS",
+      "MOVE_STORED_POWER",
+      "MOVE_NIGHT_SHADE",
+      "MOVE_ENDURE",
+      "MOVE_SUNNY_DAY",
+      "MOVE_RAIN_DANCE",
+      "MOVE_SNOWSCAPE",
+      "MOVE_PSYSHOCK",
+      "MOVE_FOUL_PLAY",
+      "MOVE_SLEEP_TALK",
+      "MOVE_DAZZLING_GLEAM",
+      "MOVE_GRASS_KNOT",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_REST",
+      "MOVE_TAUNT",
+      "MOVE_IMPRISON",
+      "MOVE_DARK_PULSE",
+      "MOVE_SKILL_SWAP",
+      "MOVE_POWER_GEM",
+      "MOVE_SUBSTITUTE",
+      "MOVE_WILL_O_WISP",
+      "MOVE_TRICK",
+      "MOVE_SHADOW_BALL",
+      "MOVE_HYPER_VOICE",
+      "MOVE_ENERGY_BALL",
+      "MOVE_PSYCHIC",
+      "MOVE_THUNDERBOLT",
+      "MOVE_CALM_MIND",
+      "MOVE_HELPING_HAND",
+      "MOVE_NASTY_PLOT",
+      "MOVE_PHANTOM_FORCE",
+      "MOVE_GIGA_IMPACT",
+      "MOVE_TRICK_ROOM",
+      "MOVE_HYPER_BEAM",
+      "MOVE_THUNDER",
+      "MOVE_TERA_BLAST",
+      "MOVE_BURNING_JEALOUSY",
+      "MOVE_POLTERGEIST",
+      "MOVE_SPITE",
+      "MOVE_PAIN_SPLIT",
+      "MOVE_PSYCH_UP",
+      "MOVE_FUTURE_SIGHT",
+      "MOVE_CURSE",
+      "MOVE_PSYCHIC_NOISE"
+    ],
+    "EggMoves": [
+      "MOVE_CURSE",
+      "MOVE_DESTINY_BOND",
+      "MOVE_IMPRISON",
+      "MOVE_MEMENTO",
+      "MOVE_SCREECH",
+      "MOVE_SHADOW_SNEAK",
+      "MOVE_SPITE",
+      "MOVE_SUCKER_PUNCH",
+      "MOVE_WONDER_ROOM"
+    ],
+    "TutorMoves": []
   },
   "UNOWN": {
     "LevelMoves": [],
@@ -36363,6 +36487,111 @@
     "TutorMoves": []
   },
   "MISMAGIUS": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_GROWL"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_SPITE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_ASTONISH"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_MAGICAL_LEAF"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_POWER_GEM"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_PHANTOM_FORCE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_MYSTICAL_FIRE"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_CHARM",
+      "MOVE_FAKE_TEARS",
+      "MOVE_SCARY_FACE",
+      "MOVE_PROTECT",
+      "MOVE_PSYBEAM",
+      "MOVE_CONFUSE_RAY",
+      "MOVE_THIEF",
+      "MOVE_CHARGE_BEAM",
+      "MOVE_FACADE",
+      "MOVE_HEX",
+      "MOVE_SWIFT",
+      "MOVE_MAGICAL_LEAF",
+      "MOVE_ICY_WIND",
+      "MOVE_DRAINING_KISS",
+      "MOVE_STORED_POWER",
+      "MOVE_NIGHT_SHADE",
+      "MOVE_ENDURE",
+      "MOVE_SUNNY_DAY",
+      "MOVE_RAIN_DANCE",
+      "MOVE_SNOWSCAPE",
+      "MOVE_PSYSHOCK",
+      "MOVE_FOUL_PLAY",
+      "MOVE_SLEEP_TALK",
+      "MOVE_DAZZLING_GLEAM",
+      "MOVE_GRASS_KNOT",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_REST",
+      "MOVE_TAUNT",
+      "MOVE_IMPRISON",
+      "MOVE_DARK_PULSE",
+      "MOVE_SKILL_SWAP",
+      "MOVE_POWER_GEM",
+      "MOVE_SUBSTITUTE",
+      "MOVE_WILL_O_WISP",
+      "MOVE_TRICK",
+      "MOVE_SHADOW_BALL",
+      "MOVE_HYPER_VOICE",
+      "MOVE_ENERGY_BALL",
+      "MOVE_PSYCHIC",
+      "MOVE_THUNDERBOLT",
+      "MOVE_CALM_MIND",
+      "MOVE_HELPING_HAND",
+      "MOVE_NASTY_PLOT",
+      "MOVE_PHANTOM_FORCE",
+      "MOVE_GIGA_IMPACT",
+      "MOVE_TRICK_ROOM",
+      "MOVE_HYPER_BEAM",
+      "MOVE_THUNDER",
+      "MOVE_TERA_BLAST",
+      "MOVE_SPITE",
+      "MOVE_BURNING_JEALOUSY",
+      "MOVE_POLTERGEIST",
+      "MOVE_LASH_OUT",
+      "MOVE_PAIN_SPLIT",
+      "MOVE_PSYCH_UP",
+      "MOVE_FUTURE_SIGHT",
+      "MOVE_CURSE",
+      "MOVE_PSYCHIC_NOISE"
+    ],
+    "EggMoves": [
+      "MOVE_CURSE",
+      "MOVE_DESTINY_BOND",
+      "MOVE_IMPRISON",
+      "MOVE_MEMENTO",
+      "MOVE_SCREECH",
+      "MOVE_SHADOW_SNEAK",
+      "MOVE_SPITE",
+      "MOVE_SUCKER_PUNCH",
+      "MOVE_WONDER_ROOM"
+    ],
+    "TutorMoves": []
+  },  
+  "MISMAGIUS_PYRONITE": {
     "LevelMoves": [
       {
         "Level": 1,

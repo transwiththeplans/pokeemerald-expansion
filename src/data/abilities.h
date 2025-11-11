@@ -2603,6 +2603,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Juggernaut"),
         .description = COMPOUND_STRING("Size reduces damage."),
         .aiRating = 7,
+        .breakable = TRUE,
     },
 	
 	[ABILITY_CHROME_COAT] =
@@ -2618,7 +2619,6 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Self Sufficient"),
         .description = COMPOUND_STRING("Heals damage overtime."),
         .aiRating = 7,
-        .breakable = TRUE,
     },
 	
 	[ABILITY_TIME_WARP] =
@@ -2626,7 +2626,6 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Time Warp"),
         .description = COMPOUND_STRING("Warps time on entry."),
         .aiRating = 7,
-        .breakable = TRUE,
     },
 	
 	[ABILITY_RAPID_FIRE] =
@@ -2634,7 +2633,6 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Rapid Fire"),
         .description = COMPOUND_STRING("Pulse moves have priority."),
         .aiRating = 7,
-        .breakable = TRUE,
     },
 	
 	[ABILITY_WEB_DOWN] =
@@ -2642,7 +2640,6 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Web Down"),
         .description = COMPOUND_STRING("Sets Sticky Web on Entry."),
         .aiRating = 7,
-        .breakable = TRUE,
     },
 	
 	[ABILITY_IMMOLATE] =
@@ -2650,7 +2647,6 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Immolate"),
         .description = COMPOUND_STRING("Normal moves become Fire."),
         .aiRating = 7,
-        .breakable = TRUE,
     },
 	
 	[ABILITY_POWER_METAL] =
@@ -2673,5 +2669,13 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Specialist"),
         .description = COMPOUND_STRING("Doubles weaker moves."),
         .aiRating = 8,
+    },
+	
+	[ABILITY_SHADOW_POWER] =
+    {
+        .name = _("Shadow Power"),
+        .description = COMPOUND_STRING("Tougher but light sensitive."),
+        .aiRating = 5,
+        .breakable = TRUE,
     },
 };

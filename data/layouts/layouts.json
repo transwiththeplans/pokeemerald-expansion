@@ -4460,6 +4460,16 @@
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/TandemausMeadows/border.bin",
       "blockdata_filepath": "data/layouts/TandemausMeadows/map.bin"
+    },
+    {
+      "id": "LAYOUT_GRANITE_CAVE_ICE_ROOM",
+      "name": "GraniteCaveIceRoom_Layout",
+      "width": 20,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/GraniteCaveIceRoom/border.bin",
+      "blockdata_filepath": "data/layouts/GraniteCaveIceRoom/map.bin"
     }
   ]
 }

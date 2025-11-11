@@ -1163,3 +1163,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/dexnav.inc"
 
 	.include "data/maps/TandemausMeadows/scripts.inc"
+
+	.include "data/maps/GraniteCaveIceRoom/scripts.inc"

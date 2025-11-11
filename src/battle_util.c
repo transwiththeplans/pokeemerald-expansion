@@ -9514,6 +9514,12 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(u32 move, u32 moveType, u32 
             return UQ_4_12(2.0);
         if (IsMoveMakingContact(move, battlerAtk) && moveType != TYPE_FIRE)
             return UQ_4_12(0.5);
+        break;    
+	case ABILITY_SHADOW_POWER:
+        if (!IsBattleMoveSpecial(move) && moveType == TYPE_FIRE)
+            return UQ_4_12(2.0);
+        if (IsBattleMoveSpecial(move) && moveType != TYPE_FIRE)
+            return UQ_4_12(0.5);
         break;
     case ABILITY_PUNK_ROCK:
         if (IsSoundMove(move))

@@ -12127,70 +12127,70 @@ F_TRAINER_FEMALE |
             .moves = {
 #line 4907
                 MOVE_MACH_PUNCH,
-                MOVE_ARM_THRUST,
+                MOVE_BRUTAL_SWING,
                 MOVE_POWER_UP_PUNCH,
                 MOVE_BATON_PASS,
             },
             },
             {
 #line 4912
-            .species = SPECIES_MEOWTH,
+            .species = SPECIES_TAILLOW,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4915
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 4914
-            .ability = ABILITY_SCRAPPY,
+            .ability = ABILITY_GUTS,
 #line 4913
             .lvl = 20,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 4916
-                MOVE_FAKE_OUT,
-                MOVE_BITE,
-                MOVE_ROCK_TOMB,
-                MOVE_FORCE_PALM,
+                MOVE_DOUBLE_KICK,
+                MOVE_WING_ATTACK,
+                MOVE_BULK_UP,
+                MOVE_KNOCK_OFF,
             },
             },
             {
 #line 4921
-            .species = SPECIES_LOKIX,
+            .species = SPECIES_TORRACAT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4924
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 4923
-            .ability = ABILITY_TINTED_LENS,
+            .ability = ABILITY_SCARE,
 #line 4922
             .lvl = 21,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 4925
-                MOVE_LUNGE,
-                MOVE_TRIPLE_AXEL,
-                MOVE_BUG_BITE,
-                MOVE_BULK_UP,
+                MOVE_TAG_OUT,
+                MOVE_FIRE_FANG,
+                MOVE_BITE,
+                MOVE_GROWL,
             },
             },
             {
 #line 4930
-            .species = SPECIES_LUXIO,
+            .species = SPECIES_GURDURR,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4930
             .heldItem = ITEM_SITRUS_BERRY,
 #line 4933
             .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
 #line 4932
-            .ability = ABILITY_INTIMIDATE,
+            .ability = ABILITY_IRON_FIST,
 #line 4931
             .lvl = 22,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 4934
-                MOVE_THUNDER_FANG,
-                MOVE_FIRE_FANG,
-                MOVE_ICE_FANG,
+                MOVE_THUNDER_PUNCH,
+                MOVE_BULK_UP,
+                MOVE_ICE_PUNCH,
                 MOVE_MACH_PUNCH,
             },
             },

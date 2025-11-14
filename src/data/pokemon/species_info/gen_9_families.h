@@ -2502,7 +2502,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
-        .abilities = { ABILITY_POISON_TOUCH, ABILITY_NONE, ABILITY_RATTLED },
+        .abilities = { ABILITY_TRACE, ABILITY_NONE, ABILITY_RATTLED },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Charcadet"),
         .cryId = CRY_CHARCADET,
@@ -4439,7 +4439,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .levelUpLearnset = sFinizenLevelUpLearnset,
         .teachableLearnset = sFinizenTeachableLearnset,
         .eggMoveLearnset = sFinizenEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_PALAFIN_ZERO}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 45, SPECIES_PALAFIN_ZERO}),
     },
 
     [SPECIES_PALAFIN_ZERO] =
@@ -4450,7 +4450,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .baseSpeed     = 100,
         .baseSpAttack  = 106,
         .baseSpDefense = 87,
-        .types = MON_TYPES(TYPE_WATER),
+        .types = MON_TYPES(TYPE_WATER, TYPE_FIGHTING),
         .catchRate = 45,
         .expYield = 160,
         .evYield_HP = 2,

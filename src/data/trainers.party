@@ -4905,35 +4905,35 @@ Level: 20
 Ability: Iron Fist
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Mach Punch
-- Arm Thrust
+- Brutal Swing
 - Power Up Punch
 - Baton Pass
 
-Meowth
+Taillow
 Level: 20
-Ability: Scrappy
+Ability: Guts
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Fake Out
-- Bite
-- Rock Tomb
-- Force Palm
-
-Lokix
-Level: 21
-Ability: Tinted Lens
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Lunge
-- Triple Axel
-- Bug Bite
+- Double Kick
+- Wing Attack
 - Bulk Up
+- Knock Off
 
-Luxio @ Sitrus Berry
-Level: 22
-Ability: Intimidate
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Thunder Fang
+Torracat
+Level: 21
+Ability: Scare
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Tag Out
 - Fire Fang
-- Ice Fang
+- Bite
+- Growl
+
+Gurdurr @ Sitrus Berry
+Level: 22
+Ability: Iron Fist
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Thunder Punch
+- Bulk Up
+- Ice Punch
 - Mach Punch
 
 === TRAINER_WATTSON_1 ===

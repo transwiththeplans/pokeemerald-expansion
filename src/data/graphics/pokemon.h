@@ -17539,6 +17539,13 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
     const u16 gShinyOverworldPalette_Zoroark[] = INCBIN_U16("graphics/pokemon/zoroark/overworld_shiny.gbapal");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_ZoroarkMega[] = INCBIN_U32("graphics/pokemon/zoroark/mega/front.4bpp.lz");
+    const u16 gMonPalette_ZoroarkMega[] = INCBIN_U16("graphics/pokemon/zoroark/mega/normal.gbapal");
+    const u32 gMonBackPic_ZoroarkMega[] = INCBIN_U32("graphics/pokemon/zoroark/mega/back.4bpp.lz");
+    const u16 gMonShinyPalette_ZoroarkMega[] = INCBIN_U16("graphics/pokemon/zoroark/mega/shiny.gbapal");
+    const u8 gMonIcon_ZoroarkMega[] = INCBIN_U8("graphics/pokemon/zoroark/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
 
 #if P_HISUIAN_FORMS
     const u32 gMonFrontPic_ZoruaHisui[] = INCBIN_U32("graphics/pokemon/zorua/hisui/front.4bpp.lz");

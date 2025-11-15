@@ -4632,10 +4632,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     [SPECIES_SABLEYE] =
     {
         .baseHP        = 50,
-        .baseAttack    = 95,
+        .baseAttack    = 65,
         .baseDefense   = 75,
         .baseSpeed     = 50,
-        .baseSpAttack  = 65,
+        .baseSpAttack  = 95,
         .baseSpDefense = 65,
         .types = MON_TYPES(TYPE_NORMAL),
         .catchRate = 45,
@@ -4705,10 +4705,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     [SPECIES_SABLEYE_MEGA] =
     {
         .baseHP        = 50,
-        .baseAttack    = 125,
+        .baseAttack    = 75,
         .baseDefense   = 85,
         .baseSpeed     = 90,
-        .baseSpAttack  = 75,
+        .baseSpAttack  = 125,
         .baseSpDefense = 75,
         .types = MON_TYPES(TYPE_ELECTRIC),
         .catchRate = 45,

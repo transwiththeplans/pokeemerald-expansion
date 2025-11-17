@@ -987,10 +987,28 @@ static const struct FormChange sChesnaughtFormChangeTable[] = {
 };
 #endif //P_FAMILY_CHESPIN
 
+#if P_FAMILY_FENNEKIN
+static const struct FormChange sDelphoxFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_CHESNAUGHT_MEGA, ITEM_ULTIMATRIX_SYMBOL},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_FAMILY_FENNEKIN
+
 #if P_FAMILY_FROAKIE
 static const struct FormChange sGreninjaBattleBondFormChangeTable[] = {
     {FORM_CHANGE_FAINT,         SPECIES_GRENINJA_BATTLE_BOND},
     {FORM_CHANGE_END_BATTLE,    SPECIES_GRENINJA_BATTLE_BOND},
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_FAMILY_FROAKIE
+
+#if P_FAMILY_FROAKIE
+static const struct FormChange sGreninjaFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_GRENINJA_MEGA, ITEM_ULTIMATRIX_SYMBOL},
+#endif
     {FORM_CHANGE_TERMINATOR},
 };
 #endif //P_FAMILY_FROAKIE

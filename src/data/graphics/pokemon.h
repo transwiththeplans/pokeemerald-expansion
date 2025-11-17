@@ -19234,6 +19234,13 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u16 gOverworldPalette_Chesnaught[] = INCBIN_U16("graphics/pokemon/chesnaught/overworld_normal.gbapal");
     const u16 gShinyOverworldPalette_Chesnaught[] = INCBIN_U16("graphics/pokemon/chesnaught/overworld_shiny.gbapal");
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_ChesnaughtMega[] = INCBIN_U32("graphics/pokemon/chesnaught/mega/front.4bpp.lz");
+    const u16 gMonPalette_ChesnaughtMega[] = INCBIN_U16("graphics/pokemon/chesnaught/mega/normal.gbapal");
+    const u32 gMonBackPic_ChesnaughtMega[] = INCBIN_U32("graphics/pokemon/chesnaught/mega/back.4bpp.lz");
+    const u16 gMonShinyPalette_ChesnaughtMega[] = INCBIN_U16("graphics/pokemon/chesnaught/mega/shiny.gbapal");
+    const u8 gMonIcon_ChesnaughtMega[] = INCBIN_U8("graphics/pokemon/chesnaught/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_CHESPIN
@@ -19284,6 +19291,13 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u16 gOverworldPalette_Delphox[] = INCBIN_U16("graphics/pokemon/delphox/overworld_normal.gbapal");
     const u16 gShinyOverworldPalette_Delphox[] = INCBIN_U16("graphics/pokemon/delphox/overworld_shiny.gbapal");
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_DelphoxMega[] = INCBIN_U32("graphics/pokemon/delphox/mega/front.4bpp.lz");
+    const u16 gMonPalette_DelphoxMega[] = INCBIN_U16("graphics/pokemon/delphox/mega/normal.gbapal");
+    const u32 gMonBackPic_DelphoxMega[] = INCBIN_U32("graphics/pokemon/delphox/mega/back.4bpp.lz");
+    const u16 gMonShinyPalette_DelphoxMega[] = INCBIN_U16("graphics/pokemon/delphox/mega/shiny.gbapal");
+    const u8 gMonIcon_DelphoxMega[] = INCBIN_U8("graphics/pokemon/delphox/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_FENNEKIN
@@ -19347,6 +19361,13 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     // const u16 gOverworldPalette_GreninjaAsh[] = INCBIN_U16("graphics/pokemon/greninja/ash/overworld_normal.gbapal");
     // const u16 gShinyOverworldPalette_GreninjaAsh[] = INCBIN_U16("graphics/pokemon/greninja/ash/overworld_shiny.gbapal");
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_GreninjaMega[] = INCBIN_U32("graphics/pokemon/greninja/mega/front.4bpp.lz");
+    const u16 gMonPalette_GreninjaMega[] = INCBIN_U16("graphics/pokemon/greninja/mega/normal.gbapal");
+    const u32 gMonBackPic_GreninjaMega[] = INCBIN_U32("graphics/pokemon/greninja/mega/back.4bpp.lz");
+    const u16 gMonShinyPalette_GreninjaMega[] = INCBIN_U16("graphics/pokemon/greninja/mega/shiny.gbapal");
+    const u8 gMonIcon_GreninjaMega[] = INCBIN_U8("graphics/pokemon/greninja/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_FROAKIE

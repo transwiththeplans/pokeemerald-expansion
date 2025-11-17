@@ -19964,7 +19964,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Hits target with splashes\n"
             "of water 3 times in a row."),
         .effect = EFFECT_HIT,
-        .power = 30,
+        .power = 40,
         .type = TYPE_WATER,
         .accuracy = 95,
         .pp = 10,
@@ -22242,6 +22242,59 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .cantUseTwice = TRUE,
         .battleAnimScript = gBattleAnimMove_PrismaticLaser,
+    },
+	
+	[MOVE_TIME_BEAM] =
+    {
+        .name = COMPOUND_STRING("Time Beam"),
+        .description = COMPOUND_STRING(
+            "Fires a time blast that\n"
+            "lowers target's Sp. Def."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SP_DEF_MINUS_2,
+            .chance = 30,
+        }),
+        .contestEffect = CONTEST_EFFECT_SCRAMBLE_NEXT_TURN_ORDER,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_CALM_MIND},
+        .battleAnimScript = gBattleAnimMove_Psybeam,
+        .validApprenticeMove = TRUE,
+    },
+	
+	[MOVE_TIME_SLASH] =
+    {
+        .name = COMPOUND_STRING("Time Slash"),
+        .description = COMPOUND_STRING(
+            "Tears with chrono blades.\n"
+            "Harshly lowers target's speed."),
+        .effect = EFFECT_HIT,
+        .power = 70,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .criticalHitStage = 1,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SPD_MINUS_2,
+            .chance = 30,
+        }),
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .slicingMove = TRUE,
+        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_PsychoCut,
     },
 
     // Z-Moves

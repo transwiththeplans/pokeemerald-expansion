@@ -1542,11 +1542,24 @@ static const u16 sChesnaughtFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_CHESPIN
 
+#if P_FAMILY_FENNEKIN
+static const u16 sDelphoxFormSpeciesIdTable[] = {
+    SPECIES_DELPHOX,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_DELPHOX_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_FENNEKIN
+
 #if P_FAMILY_FROAKIE
 static const u16 sGreninjaFormSpeciesIdTable[] = {
     SPECIES_GRENINJA,
     SPECIES_GRENINJA_BATTLE_BOND,
     SPECIES_GRENINJA_ASH,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_GRENINJA_MEGA,
+#endif
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_FROAKIE

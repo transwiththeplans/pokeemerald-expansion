@@ -1709,8 +1709,8 @@
 #define SPECIES_RILLABOOM_MEGA                          1591
 #define SPECIES_MISDREAVUS_PYRONITE                     1592
 #define SPECIES_MISMAGIUS_PYRONITE                      1593
-#define SPECIES_CUSTOM_2                                1594
-#define SPECIES_CUSTOM_3                                1595
+#define SPECIES_DELPHOX_MEGA                            1594
+#define SPECIES_GRENINJA_MEGA                           1595
 #define SPECIES_CUSTOM_4                                1596
 #define SPECIES_CUSTOM_5                                1597
 #define SPECIES_CUSTOM_6                                1598

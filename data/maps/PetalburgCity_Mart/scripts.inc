@@ -49,6 +49,30 @@ PetalburgCity_Mart_Pokemart_Expanded:
 	.2byte ITEM_X_DEFENSE
 	.2byte ITEM_ORANGE_MAIL
 	pokemartlistend
+	
+PetalburgCity_EventScript_ClerkTMs::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart PetalburgCity_Mart_Pokemart_TMs
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+	
+	.align 2
+PetalburgCity_Mart_Pokemart_TMs:
+	.2byte ITEM_TM_FIRE_FANG
+	.2byte ITEM_TM_ICE_FANG
+	.2byte ITEM_TM_THUNDER_FANG
+	.2byte ITEM_TM_POISON_FANG
+	.2byte ITEM_TM_FLIP_TURN
+	.2byte ITEM_TM_SMART_STRIKE
+	.2byte ITEM_TM_DUAL_WINGBEAT
+	.2byte ITEM_TM_PIN_MISSILE
+	.2byte ITEM_TM_KNOCK_OFF
+	.2byte ITEM_TM_BREAKING_SWIPE
+	pokemartlistend
 
 PetalburgCity_Mart_EventScript_Woman::
 	msgbox PetalburgCity_Mart_Text_WeakWillGrowStronger, MSGBOX_NPC

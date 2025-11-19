@@ -1120,7 +1120,7 @@ const u32 gBattleAnimSpriteGfx_TriAttackTriangle[] = INCBIN_U32("graphics/battle
 const u16 gBattleAnimSpritePal_LetterZ[] = INCBIN_U16("graphics/battle_anims/sprites/letter_z.gbapal");
 const u32 gBattleAnimSpriteGfx_LetterZ[] = INCBIN_U32("graphics/battle_anims/sprites/letter_z.4bpp.lz");
 
-const u16 gBattleAnimBgPalette_Impact[] = INCBIN_U16("graphics/battle_anims/backgrounds/impact.gbapal");
+const u32 gBattleAnimBgPalette_Impact[] = INCBIN_U32("graphics/battle_anims/backgrounds/impact.gbapal.lz");
 const u32 gBattleAnimBgImage_Impact[] = INCBIN_U32("graphics/battle_anims/backgrounds/impact.4bpp.lz");
 const u32 gBattleAnimBgTilemap_ImpactOpponent[] = INCBIN_U32("graphics/battle_anims/backgrounds/impact_opponent.bin.lz");
 
@@ -1755,7 +1755,7 @@ const u32 gPokeblockFeedBg_Tilemap[] = INCBIN_U32("graphics/pokeblock/feeding_bg
 #include "data/graphics/berries.h"
 #include "data/graphics/rayquaza_scene.h"
 #include "data/graphics/items.h"
-#include "data/graphics/decorations.h"
+#include "data/graphics/decorations.h" 
 
 const u16 gBattleAnimSpritePal_Shock3[] = INCBIN_U16("graphics/battle_anims/sprites/shock_3.gbapal");
 const u32 gBattleAnimSpriteGfx_Shock3[] = INCBIN_U32("graphics/battle_anims/sprites/shock_3.4bpp.lz");

@@ -6701,6 +6701,13 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u16 gOverworldPalette_Feraligatr[] = INCBIN_U16("graphics/pokemon/feraligatr/overworld_normal.gbapal");
     const u16 gShinyOverworldPalette_Feraligatr[] = INCBIN_U16("graphics/pokemon/feraligatr/overworld_shiny.gbapal");
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_FeraligatrMega[] = INCBIN_U32("graphics/pokemon/feraligatr/mega/front.4bpp.lz");
+    const u16 gMonPalette_FeraligatrMega[] = INCBIN_U16("graphics/pokemon/feraligatr/mega/normal.gbapal");
+    const u32 gMonBackPic_FeraligatrMega[] = INCBIN_U32("graphics/pokemon/feraligatr/mega/back.4bpp.lz");
+    const u16 gMonShinyPalette_FeraligatrMega[] = INCBIN_U16("graphics/pokemon/feraligatr/mega/shiny.gbapal");
+    const u8 gMonIcon_FeraligatrMega[] = INCBIN_U8("graphics/pokemon/feraligatr/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_TOTODILE

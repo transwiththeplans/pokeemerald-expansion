@@ -69,13 +69,6 @@
       "elevation": 3,
       "dest_map": "MAP_GRANITE_CAVE_STEVENS_ROOM",
       "dest_warp_id": "0"
-    },
-    {
-      "x": 22,
-      "y": 2,
-      "elevation": 3,
-      "dest_map": "MAP_GRANITE_CAVE_ICE_ROOM",
-      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],

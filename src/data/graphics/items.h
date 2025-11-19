@@ -752,9 +752,6 @@ const u16 gItemIconPalette_ChillDrive[] = INCBIN_U16("graphics/items/icon_palett
 
 // Memories
 
-const u32 gItemIcon_NormalMemory[] = INCBIN_U32("graphics/items/icons/normal_memory.4bpp.lz");
-const u16 gItemIconPalette_NormalMemory[] = INCBIN_U16("graphics/items/icon_palettes/normal_memory.gbapal");
-
 const u32 gItemIcon_FireMemory[] = INCBIN_U32("graphics/items/icons/fire_memory.4bpp.lz");
 const u16 gItemIconPalette_FireMemory[] = INCBIN_U16("graphics/items/icon_palettes/fire_memory.gbapal");
 

@@ -1341,7 +1341,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_CONFUSE,
         .power = 0,
         .type = TYPE_NORMAL,
-        .accuracy = 55,
+        .accuracy = 85,
         .pp = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -1716,7 +1716,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Aurora Beam"),
         .description = COMPOUND_STRING(
             "Fires a rainbow-colored\n"
-            "beam that may lower Attack."),
+            "beam that lowers Attack."),
         .effect = EFFECT_HIT,
         .power = 65,
         .type = TYPE_ICE,
@@ -1727,7 +1727,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_ATK_MINUS_1,
-            .chance = 10,
+            .chance = 100,
         }),
         .contestEffect = CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
@@ -22295,6 +22295,60 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_PsychoCut,
+    },
+	
+    [MOVE_DECIMATION] =
+    {
+        .name = COMPOUND_STRING("Decimation"),
+        .description = COMPOUND_STRING(
+            "Unleashes powerful burst,\n"
+            "but lowers Special Attack."),
+        .effect = EFFECT_HIT,
+        .power = 100,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SP_ATK_MINUS_2,
+            .self = TRUE,
+        }),
+        .contestEffect = CONTEST_EFFECT_USER_MORE_EASILY_STARTLED,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_LOCK_ON, COMBO_STARTER_MIND_READER},
+        .battleAnimScript = gBattleAnimMove_HyperspaceFury,
+        .validApprenticeMove = TRUE,
+    },    
+	
+	[MOVE_MUMMYS_WRATH] =
+    {
+        .name = COMPOUND_STRING("Mummy's Wrath"),
+        .description = COMPOUND_STRING(
+            "Powerful Egyptian curse,\n"
+            "but lowers user's stats."),
+        .effect = EFFECT_HIT,
+        .power = 120,
+        .type = TYPE_GROUND,
+        .accuracy = 95,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_V_CREATE,
+            .self = TRUE,
+        }),
+        .contestEffect = CONTEST_EFFECT_USER_MORE_EASILY_STARTLED,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_LOCK_ON, COMBO_STARTER_MIND_READER},
+        .battleAnimScript = gBattleAnimMove_SandsearStorm,
+        .validApprenticeMove = TRUE,
     },
 
     // Z-Moves

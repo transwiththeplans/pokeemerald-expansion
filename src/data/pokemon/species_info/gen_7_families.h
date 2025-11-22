@@ -137,8 +137,8 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         )
         .levelUpLearnset = sDartrixLevelUpLearnset,
         .teachableLearnset = sDartrixTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_DECIDUEYE},
-                                {EVO_NONE, 0, SPECIES_DECIDUEYE_HISUI}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_DECIDUEYE},
+                                {EVO_LEVEL, 36, SPECIES_DECIDUEYE_HISUI, CONDITIONS({IF_TIME, TIME_NIGHT})}),
     },
 
     [SPECIES_DECIDUEYE] =
@@ -214,8 +214,8 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .baseHP        = 88,
         .baseAttack    = 112,
         .baseDefense   = 70,
-        .baseSpeed     = 100,
-        .baseSpAttack  = 105,
+        .baseSpeed     = 110,
+        .baseSpAttack  = 95,
         .baseSpDefense = 60,
         .types = MON_TYPES(TYPE_ICE, TYPE_FIGHTING),
         .catchRate = 45,

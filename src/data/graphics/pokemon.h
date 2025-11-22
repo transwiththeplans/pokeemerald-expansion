@@ -6343,6 +6343,34 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u16 gMonShinyPalette_DragoniteMega[] = INCBIN_U16("graphics/pokemon/dragonite/mega/shiny.gbapal");
     const u8 gMonIcon_DragoniteMega[] = INCBIN_U8("graphics/pokemon/dragonite/mega/icon.4bpp");
 #endif //P_MEGA_EVOLUTIONS
+
+#if P_GALARIAN_FORMS
+    const u32 gMonFrontPic_DratiniBigChill[] = INCBIN_U32("graphics/pokemon/dratini/bigchill/anim_front.4bpp.lz");
+    const u16 gMonPalette_DratiniBigChill[] = INCBIN_U16("graphics/pokemon/dratini/bigchill/normal.gbapal");
+    const u32 gMonBackPic_DratiniBigChill[] = INCBIN_U32("graphics/pokemon/dratini/bigchill/back.4bpp.lz");
+    const u16 gMonShinyPalette_DratiniBigChill[] = INCBIN_U16("graphics/pokemon/dratini/bigchill/shiny.gbapal");
+    const u8 gMonIcon_DratiniBigChill[] = INCBIN_U8("graphics/pokemon/dratini/bigchill/icon.4bpp");
+	
+    const u32 gMonFrontPic_DragonairBigChill[] = INCBIN_U32("graphics/pokemon/dragonair/bigchill/anim_front.4bpp.lz");
+    const u16 gMonPalette_DragonairBigChill[] = INCBIN_U16("graphics/pokemon/dragonair/bigchill/normal.gbapal");
+    const u32 gMonBackPic_DragonairBigChill[] = INCBIN_U32("graphics/pokemon/dragonair/bigchill/back.4bpp.lz");
+    const u16 gMonShinyPalette_DragonairBigChill[] = INCBIN_U16("graphics/pokemon/dragonair/bigchill/shiny.gbapal");
+    const u8 gMonIcon_DragonairBigChill[] = INCBIN_U8("graphics/pokemon/dragonair/bigchill/icon.4bpp");
+
+	const u32 gMonFrontPic_DragoniteBigChill[] = INCBIN_U32("graphics/pokemon/dragonite/bigchill/anim_front.4bpp.lz");
+    const u16 gMonPalette_DragoniteBigChill[] = INCBIN_U16("graphics/pokemon/dragonite/bigchill/normal.gbapal");
+    const u32 gMonBackPic_DragoniteBigChill[] = INCBIN_U32("graphics/pokemon/dragonite/bigchill/back.4bpp.lz");
+    const u16 gMonShinyPalette_DragoniteBigChill[] = INCBIN_U16("graphics/pokemon/dragonite/bigchill/shiny.gbapal");
+    const u8 gMonIcon_DragoniteBigChill[] = INCBIN_U8("graphics/pokemon/dragonite/bigchill/icon.4bpp");
+	
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_DragoniteBigChillMega[] = INCBIN_U32("graphics/pokemon/dragonite/bigchill/mega/front.4bpp.lz");
+    const u16 gMonPalette_DragoniteBigChillMega[] = INCBIN_U16("graphics/pokemon/dragonite/bigchill/mega/normal.gbapal");
+    const u32 gMonBackPic_DragoniteBigChillMega[] = INCBIN_U32("graphics/pokemon/dragonite/bigchill/mega/back.4bpp.lz");
+    const u16 gMonShinyPalette_DragoniteBigChillMega[] = INCBIN_U16("graphics/pokemon/dragonite/bigchill/mega/shiny.gbapal");
+    const u8 gMonIcon_DragoniteBigChillMega[] = INCBIN_U8("graphics/pokemon/dragonite/bigchill/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
+#endif //P_GALARIAN_FORMS
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_DRATINI
@@ -20253,6 +20281,19 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u16 gOverworldPalette_Malamar[] = INCBIN_U16("graphics/pokemon/malamar/overworld_normal.gbapal");
     const u16 gShinyOverworldPalette_Malamar[] = INCBIN_U16("graphics/pokemon/malamar/overworld_shiny.gbapal");
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_MalamarMegaX[] = INCBIN_U32("graphics/pokemon/malamar/mega_x/front.4bpp.lz");
+    const u16 gMonPalette_MalamarMegaX[] = INCBIN_U16("graphics/pokemon/malamar/mega_x/normal.gbapal");
+    const u32 gMonBackPic_MalamarMegaX[] = INCBIN_U32("graphics/pokemon/malamar/mega_x/back.4bpp.lz");
+    const u16 gMonShinyPalette_MalamarMegaX[] = INCBIN_U16("graphics/pokemon/malamar/mega_x/shiny.gbapal");
+    const u8 gMonIcon_MalamarMegaX[] = INCBIN_U8("graphics/pokemon/malamar/mega_x/icon.4bpp");
+
+    const u32 gMonFrontPic_MalamarMegaY[] = INCBIN_U32("graphics/pokemon/malamar/mega_y/front.4bpp.lz");
+    const u16 gMonPalette_MalamarMegaY[] = INCBIN_U16("graphics/pokemon/malamar/mega_y/normal.gbapal");
+    const u32 gMonBackPic_MalamarMegaY[] = INCBIN_U32("graphics/pokemon/malamar/mega_y/back.4bpp.lz");
+    const u16 gMonShinyPalette_MalamarMegaY[] = INCBIN_U16("graphics/pokemon/malamar/mega_y/shiny.gbapal");
+    const u8 gMonIcon_MalamarMegaY[] = INCBIN_U8("graphics/pokemon/malamar/mega_y/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_INKAY

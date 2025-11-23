@@ -13,16 +13,16 @@ const u8 gRaticateAlolaPokedexText[] = _(
     "over food happen often.");
 
 const u8 gPichuPokedexText[] = _(
-    "It is still inept at retaining electricity.\n"
-    "When it is startled, it discharges power\n"
-    "accidentally. It gets better at holding\n"
-    "power as it grows older.");
+	"Unlike other Pichu forms, this variant\n"
+	"exothermically releases stored energy as\n"
+	"flames. Its body is warm to the touch,\n"
+	"even when calm.");
 
 const u8 gPikachuPokedexText[] = _(
-    "It stores electricity in the electric sacs\n"
-    "on its cheeks. When it releases pent-up\n"
-    "energy in a burst, the electric power is\n"
-    "equal to a lightning bolt.");
+	"Pikachu must be cautious in the wild. A\n"
+	"large gathering can accidentally ignite a\n"
+	"forest fire. Because of this, most prefer\n"
+	"to live alone.");
 
 const u8 gMarowakAlolaPokedexText[] = _(
     "The cursed flames that light up the bone\n"
@@ -115,10 +115,10 @@ const u8 gZygarde10PokedexText[] = _(
 
 // Gen 7 families
 const u8 gGumshoosPokedexText[] = _(
-    "When it finds a trace of its prey, it\n"
-    "patiently stakes out the location...\n"
-    "but as it's diurnal, it's always snoozing\n"
-    "by nightfall.");
+	"It is said to possess a brilliant mind, but\n"
+	"this has yet to be observed in nature. Most\n"
+	"of its 'leadership' is just well timed\n"
+	"cowardice.");
 
 const u8 gVikavoltPokedexText[] = _(
     "It concentrates electrical energy within\n"
@@ -133,10 +133,10 @@ const u8 gRibombeePokedexText[] = _(
     "They are sometimes sold as supplements.");
 
 const u8 gRockruffPokedexText[] = _(
-    "This Pokémon has lived with people since\n"
-    "times long ago. It can sense when its\n"
-    "Trainer is in the dumps and will stick\n"
-    "close by its Trainer's side.");
+	"The collar around its neck reacts strongly\n"
+	"to elemental stones. Three reactions are\n"
+	"documented: Sun, Moon, and Thunder Stones\n"
+	"cause dramatic transformations.");
 
 const u8 gAraquanidPokedexText[] = _(
     "Despite what its appearance suggests,\n"

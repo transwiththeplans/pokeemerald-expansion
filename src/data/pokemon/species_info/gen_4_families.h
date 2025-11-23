@@ -682,10 +682,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .height = 3,
         .weight = 20,
         .description = COMPOUND_STRING(
-            "They flock around mountains and fields,\n"
-            "chasing after bug Pokémon. However,\n"
-            "they bicker if the group grows too big.\n"
-            "Their singing is noisy and annoying."),
+            "Starly is believed to have an odd link to\n"
+            "Mudkip. This baffling paraphyletic\n"
+            "relationship has left scientists puzzled\n"
+            "and divided."),
         .pokemonScale = 530,
         .pokemonOffset = 13,
         .trainerScale = 256,
@@ -766,10 +766,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .height = 6,
         .weight = 155,
         .description = COMPOUND_STRING(
-            "Recognizing their own weakness, they\n"
-            "maintain huge flocks. Fierce scuffles\n"
-            "break out between various flocks.\n"
-            "When alone, a Staravia cries noisily."),
+            "It flies through forests and fields in\n"
+            "search of prey. DNA studies reveal a\n"
+            "surprising relation to Minior, deepening\n"
+            "scientific confusion."),
         .pokemonScale = 422,
         .pokemonOffset = 12,
         .trainerScale = 256,
@@ -854,10 +854,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .height = 12,
         .weight = 249,
         .description = COMPOUND_STRING(
-            "When Staravia evolve into Staraptor,\n"
-            "they leave the flock to live alone. It has\n"
-            "a savage nature. It will courageously\n"
-            "challenge foes that are much larger."),
+            "The mix of traits found in this Pokémon\n"
+            "has driven scientists to frustration. It\n"
+            "fights using energy similar to that\n"
+            "produced by cosmic rays."),
         .pokemonScale = 282,
         .pokemonOffset = 4,
         .trainerScale = 256,
@@ -2520,10 +2520,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .height = 7,
         .weight = 295,
         .description = COMPOUND_STRING(
-            "It inflates its flotation sac, keeping its\n"
-            "face above water in order to watch for\n"
-            "prey movement. It swims by rotating its\n"
-            "two tails like a screw."),
+            "By inflating its flotation sac, it reveals\n"
+            "sensitive gills used to detect movement.\n"
+            "Even without eyes, it can locate prey\n"
+            "with precision."),
         .pokemonScale = 365,
         .pokemonOffset = 12,
         .trainerScale = 256,
@@ -2600,10 +2600,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .height = 11,
         .weight = 335,
         .description = COMPOUND_STRING(
-            "Its flotation sac developed as a result\n"
-            "of pursuing aquatic prey. It can double\n"
-            "as a rubber raft. It assists in the rescues\n"
-            "of drowning people."),
+            "Its senses far surpass its prevolution’s.\n"
+            "Its crushing bite is powerful enough to\n"
+            "tear straight through solid steel with\n"
+            "ease."),
         .pokemonScale = 320,
         .pokemonOffset = 7,
         .trainerScale = 256,
@@ -3379,10 +3379,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .height = 4,
         .weight = 55,
         .description = COMPOUND_STRING(
-            "You can tell how it feels by the way\n"
-            "it rolls its ears. When it's scared,\n"
-            "both ears are rolled up. When it senses\n"
-            "danger, it perks them up."),
+            "Its ears are always tightly rolled up.\n"
+            "When snapped open, they create a sound\n"
+            "resembling a distant howl, startling\n"
+            "nearby Pokémon."),
         .pokemonScale = 491,
         .pokemonOffset = 16,
         .trainerScale = 256,
@@ -3447,10 +3447,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .height = 12,
         .weight = 333,
         .description = COMPOUND_STRING(
-            "An extremely cautious Pokémon.\n"
-            "It is very conscious of its looks and\n"
-            "never fails to groom its ears.\n"
-            "It runs with sprightly jumps."),
+            "The fur on its long ears appears soft but\n"
+            "is extremely sensitive. When handled too\n"
+            "roughly, they unleash sonic bursts that\n"
+            "can deafen attackers instantly."),
         .pokemonScale = 282,
         .pokemonOffset = 4,
         .trainerScale = 256,

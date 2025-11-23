@@ -3018,7 +3018,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .baseSpAttack  = 40,
         .baseSpDefense = 55,
         .types = MON_TYPES(TYPE_FIGHTING),
-        .catchRate = 45,
+        .catchRate = 190,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 72 : 94,
         .evYield_Speed = 1,
         .genderRatio = PERCENT_FEMALE(50),
@@ -3035,10 +3035,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .height = 8,
         .weight = 115,
         .description = COMPOUND_STRING(
-            "Its tail ends with a dexterous, handlike\n"
-            "appendage. However, because it uses the\n"
-            "tail so much, Aipom's real hands have\n"
-            "become rather clumsy."),
+            "Its two new tails move with greater skill\n"
+            "than its hands. Using these tails, Aipom\n"
+            "has grown far more aggressive toward\n"
+            "trespassers."),
         .pokemonScale = 363,
         .pokemonOffset = 6,
         .trainerScale = 256,
@@ -3117,10 +3117,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .height = 12,
         .weight = 203,
         .description = COMPOUND_STRING(
-            "They live on large trees. Split into two,\n"
-            "the tails are so adept at handling and\n"
-            "doing things, Ambipom rarely uses\n"
-            "its hands now."),
+            "Split into four, its tails are so adept\n"
+            "at handling tasks that it rarely uses its\n"
+            "hands. A punch from all four tails can\n"
+            "send foes straight to the hospital."),
         .pokemonScale = 282,
         .pokemonOffset = 3,
         .trainerScale = 256,
@@ -3485,10 +3485,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .height = 4,
         .weight = 85,
         .description = COMPOUND_STRING(
-            "Wooper usually live in water but come\n"
-            "out onto land seeking food occasionally.\n"
-            "On land, they coat their bodies with a\n"
-            "gooey, toxic film."),
+            "After undergoing rapid mutation, Wooper\n"
+            "began living on land. The Pokemon changed\n"
+            "rapidly, developing a thick, rocky skin.\n"
+            "It is far more resilient than before."),
         .pokemonScale = 479,
         .pokemonOffset = 21,
         .trainerScale = 256,
@@ -3564,10 +3564,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .height = 14,
         .weight = 750,
         .description = COMPOUND_STRING(
-            "A Quagsire hunts by leaving its mouth wide\n"
-            "open in water and waiting for its prey to\n"
-            "blunder in. Because it doesn't move, it\n"
-            "does not get very hungry."),
+            "When attacked, this Pokemon retaliates by\n"
+            "flexing its painfully sharp, rocky skin.\n"
+            "It's a risky defense that often leaves it\n"
+            "injured in the process."),
         .pokemonScale = 256,
         .pokemonOffset = 4,
         .trainerScale = 256,
@@ -7712,10 +7712,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .height = 5,
         .weight = 335,
         .description = COMPOUND_STRING(
-            "Phanpy's big ears serve as broad fans.\n"
-            "When it becomes hot, it flaps the ears\n"
-            "busily to cool down. Even the young are\n"
-            "very strong."),
+            "It is far stronger than it looks. Trying\n"
+            "to stop a Phanpy mid-roll is a mistake.\n"
+            "Its momentum can shatter bone with a\n"
+            "single impact."),
         .pokemonScale = 465,
         .pokemonOffset = 21,
         .trainerScale = 256,
@@ -7786,10 +7786,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .height = 11,
         .weight = 1200,
         .description = COMPOUND_STRING(
-            "A Donphan is so strong it can easily haul\n"
-            "a dump truck. Its hide has toughened to a\n"
-            "rock-hard state. An ordinary sort of\n"
-            "attack won't even leave a scratch."),
+            "Donphan curls into a ball and charges at\n"
+            "incredible speeds. Once rolling, it shifts\n"
+            "direction by ricocheting off whatever\n"
+            "unfortunate foe it hits."),
         .pokemonScale = 313,
         .pokemonOffset = 9,
         .trainerScale = 256,

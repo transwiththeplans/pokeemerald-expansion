@@ -792,9 +792,10 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .height = 3,
         .weight = 25,
         .description = COMPOUND_STRING(
-            "Found throughout the Galar region, this\n"
-            "Pokémon becomes uneasy if its cheeks are\n"
-            "ever completely empty of berries."),
+            "Its hunger is truly endless. One incident in\n"
+            "Mossdeep involved a Skwovet eating parts of\n"
+            "a rocket powered by 'sub-energy' before it\n"
+            "could be launched."),
         .pokemonScale = 530,
         .pokemonOffset = 13,
         .trainerScale = 256,
@@ -857,10 +858,10 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .height = 6,
         .weight = 60,
         .description = COMPOUND_STRING(
-            "It stashes berries in its tail--so many\n"
-            "berries that they fall out constantly.\n"
-            "But this Pokémon is a bit slow-witted,\n"
-            "so it doesn't notice the loss."),
+            "Having tasted sub-energy fuel, it now seeks\n"
+            "out any machinery or power source it can\n"
+            "find. Its expanded stomach can store enough\n"
+            "energy to light a small city."),
         .pokemonScale = 422,
         .pokemonOffset = 12,
         .trainerScale = 256,

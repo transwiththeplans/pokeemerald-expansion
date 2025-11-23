@@ -805,10 +805,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .height = 5,
         .weight = 116,
         .description = COMPOUND_STRING(
-            "Extremely cautious, they take shifts to\n"
-            "maintain a constant watch of their nest.\n"
-            "Using food stored in cheek pouches,\n"
-            "they can keep watch for days."),
+            "Extremely cautious, it maintains constant\n"
+            "watch over its nest with its many eyes.\n"
+            "Because blinking leaves it vulnerable, it\n" 
+            "feels insecure whenever it must do so."),
         .pokemonScale = 432,
         .pokemonOffset = 14,
         .trainerScale = 256,
@@ -873,10 +873,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .height = 11,
         .weight = 270,
         .description = COMPOUND_STRING(
-            "Using luminescent matter, it makes its\n"
-            "eyes and body glow and stuns attacking\n"
-            "opponents. Keen eyesight lets them see\n"
-            "in the dark."),
+            "Using its many luminescent eyes, it stuns\n"
+            "opponents with a variety of ocular-based\n"
+            "attacks. The glow intensifies moments\n"
+            "before it strikes."),
         .pokemonScale = 320,
         .pokemonOffset = 7,
         .trainerScale = 256,
@@ -2476,10 +2476,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .height = 4,
         .weight = 21,
         .description = COMPOUND_STRING(
-            "Its habitat is dark forests and caves.\n"
-            "Suction from its nostrils enables it\n"
-            "to stick to cave walls during sleep.\n"
-            "It leaves a heart-shaped mark behind."),
+            "Woobat cannot tolerate direct sunlight.\n"
+            "Instead, it produces tiny parasites that\n"
+            "attach to other Pokémon, commanding them\n"
+            "from the shadows."),
         .pokemonScale = 491,
         .pokemonOffset = 12,
         .trainerScale = 256,
@@ -2562,10 +2562,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .height = 9,
         .weight = 105,
         .description = COMPOUND_STRING(
-            "Anyone who comes into contact with\n"
-            "the ultrasonic waves emitted by a\n"
-            "courting male experiences a positive\n"
-            "mood shift."),
+            "It can control entire swarms of its\n"
+            "parasites at once. A whole town was once\n"
+            "overrun by a Swoobat craving nothing more\n"
+            "than berries. Better that than blood!"),
         .pokemonScale = 338,
         .pokemonOffset = 8,
         .trainerScale = 256,
@@ -7545,10 +7545,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .height = 4,
         .weight = 57,
         .description = COMPOUND_STRING(
-            "The temperature of their breath is -58ºF.\n"
-            "They create snow crystals and make snow\n"
-            "fall in the areas around them. Vanillite is\n"
-            "treasured by households in warm regions."),
+            "Though it resembles ice cream, its body\n"
+            "is more like stretchy marshmallow. Long\n"
+            "ago, it was offered in rituals meant to\n"
+            "bring peace between clans."),
         .pokemonScale = 491,
         .pokemonOffset = 12,
         .trainerScale = 256,
@@ -7621,10 +7621,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .height = 11,
         .weight = 410,
         .description = COMPOUND_STRING(
-            "Vanillish has existed since the Ice Age.\n"
-            "It controls particles of ice, freezes its\n"
-            "opponents, and then shatters them with\n"
-            "a headbutt."),
+            "It releases twinkling, sugar-scented\n"
+            "mist that soothes tension. It remains\n"
+            "afloat by generating faint pulses of\n"
+            "electromagnetism."),
         .pokemonScale = 320,
         .pokemonOffset = 7,
         .trainerScale = 256,
@@ -7694,10 +7694,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .height = 13,
         .weight = 575,
         .description = COMPOUND_STRING(
-            "Each of its two heads has a brain, and\n"
-            "when they are in agreement, it attacks\n"
-            "its enemies by exhaling a violent blizzard.\n"
-            "It makes snow clouds inside its body."),
+            "Fully matured, it is flexible and able to\n"
+            "absorb blows with ease. The mist it\n"
+            "exhales calms those around it, making it\n"
+            "popular among healers."),
         .pokemonScale = 272,
         .pokemonOffset = 3,
         .trainerScale = 256,

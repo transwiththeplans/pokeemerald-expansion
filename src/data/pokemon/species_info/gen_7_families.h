@@ -901,10 +901,10 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .height = 4,
         .weight = 60,
         .description = COMPOUND_STRING(
-            "With its sharp fangs, it will bite anything.\n"
-            "It wanders around in a never-ending\n"
-            "search for food. At dusk, it collapses\n"
-            "and falls asleep on the spot."),
+            "Its back holds nearly 30,000 quills. At the\n"
+            "lightest danger it fires them all at once,\n"
+            "leaving it completely bare. The process is\n"
+            "as embarrassing as it is painful."),
         .pokemonScale = 491,
         .pokemonOffset = 12,
         .trainerScale = 256,
@@ -1985,7 +1985,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_KEEN_EYE, ABILITY_SIMPLE, ABILITY_ROCKY_PAYLOAD },
+        .abilities = { ABILITY_KEEN_EYE, ABILITY_SIMPLE, ABILITY_GUARD_DOG },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Rockruff"),
         .cryId = CRY_ROCKRUFF,
@@ -2111,7 +2111,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_SAND_FORCE, ABILITY_INTIMIDATE, ABILITY_ROCKY_PAYLOAD },
+        .abilities = { ABILITY_SAND_FORCE, ABILITY_INTIMIDATE, ABILITY_GUARD_DOG },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Lycanroc"),
         .cryId = CRY_LYCANROC_MIDDAY,
@@ -2120,10 +2120,10 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .height = 8,
         .weight = 250,
         .description = COMPOUND_STRING(
-            "It has a calm and collected\n"
-            "demeanor. It swiftly closes in on its prey,\n"
-            "then slices them with the rocks in\n"
-            "its mane."),
+            "Though eyeless, its senses are unmatched.\n"
+            "It detects invisible prey with ease and\n"
+            "strikes with terrifying, pinpoint\n"
+            "accuracy."),
         .pokemonScale = 366,
         .pokemonOffset = 7,
         .trainerScale = 257,
@@ -2175,7 +2175,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_STRONG_JAW, ABILITY_SCARE, ABILITY_ROCKY_PAYLOAD },
+        .abilities = { ABILITY_STRONG_JAW, ABILITY_SCARE, ABILITY_GUARD_DOG },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Lycanroc"),
         .cryId = CRY_LYCANROC_MIDNIGHT,
@@ -2184,10 +2184,10 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .height = 11,
         .weight = 250,
         .description = COMPOUND_STRING(
-            "This Pokémon uses its rocky mane\n"
-            "to slash any who approach. It will\n"
-            "even disobey its Trainer if it dislikes\n"
-            "the orders it was given."),
+            "Its snout splits open to amplify its\n"
+            "nightmarish howls. These solitary hunters\n"
+            "rarely form packs, preferring to roam the\n"
+            "wilds alone."),
         .pokemonScale = 366,
         .pokemonOffset = 7,
         .trainerScale = 257,
@@ -2239,7 +2239,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_CLEAR_BODY, ABILITY_MOTOR_DRIVE, ABILITY_ROCKY_PAYLOAD },
+        .abilities = { ABILITY_CLEAR_BODY, ABILITY_MOTOR_DRIVE, ABILITY_LIGHTNING_ROD },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Lycanroc"),
         .cryId = CRY_LYCANROC_DUSK,
@@ -2248,10 +2248,10 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .height = 8,
         .weight = 250,
         .description = COMPOUND_STRING(
-            "These Pokémon have both calm and\n"
-            "ferocious qualities. It's said that\n"
-            "this form of Lycanroc is the most\n"
-            "troublesome to raise."),
+            "Its body has dissolved into countless\n"
+            "nanites. It envelops machinery to break it\n"
+            "down and consume it, adding the pieces to\n"
+            "its shifting form."),
         .pokemonScale = 366,
         .pokemonOffset = 7,
         .trainerScale = 257,

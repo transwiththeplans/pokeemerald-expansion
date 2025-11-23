@@ -224,10 +224,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 4,
         .weight = 98,
         .description = COMPOUND_STRING(
-            "Its flame sac is small, so energy is\n"
-            "always leaking out. This energy is\n"
-            "released from the dent atop\n"
-            "Fuecoco's head and flickers to and fro."),
+            "Its vocal sac is too large, so sonic energy\n"
+            "is always leaking out. This energy is\n"
+            "released as sonic screams, painful to all\n"
+            "those around it."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -289,10 +289,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 10,
         .weight = 307,
         .description = COMPOUND_STRING(
-            "The combination of Crocalor's fire\n"
-            "energy and overflowing vitality has\n"
-            "caused an egg-shaped fireball to\n"
-            "appear on the Pokémon's head."),
+            "The disc atop Crocalor's head is closely\n"
+            "connected to its vocal cords. It releases\n"
+            "sonic wails constantly, spewing echoes in\n"
+            "every direction."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -353,10 +353,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 16,
         .weight = 3265,
         .description = COMPOUND_STRING(
-            "Skeledirge's gentle singing\n"
-            "soothes the souls of all that hear it. It\n"
-            "burns its enemies to a crisp with\n"
-            "flames of over 5,400 degrees Fahrenheit."),
+            "The strange bird seems to multiply when\n"
+            "Skeledirge sings. Entire flocks of disc-\n"
+            "shaped birds gather, descending to\n"
+            "overwhelm any nearby foe."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -880,10 +880,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 3,
         .weight = 40,
         .description = COMPOUND_STRING(
-            "The thread it secretes from its\n"
-            "rear is as strong as wire. The secret\n"
-            "behind the thread's strength is the\n"
-            "topic of ongoing research."),
+            "The threads it produces from its rear are\n"
+            "as strong as metal wire. Some wonder if\n"
+            "this ability comes from the comet or from\n"
+            "a deeper, unknown influence."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -945,10 +945,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 10,
         .weight = 165,
         .description = COMPOUND_STRING(
-            "It clings to branches and ceilings\n"
-            "using its threads and moves without\n"
-            "a sound. It takes out its prey\n"
-            "before the prey even notices it."),
+            "Female Spidops rule their nests as\n"
+            "powerful queens. With precision, they\n"
+            "can disguise their silk as structures\n"
+            "found in their environment."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -1010,10 +1010,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 2,
         .weight = 10,
         .description = COMPOUND_STRING(
-            "It has its third set of legs folded\n"
-            "up. When it's in a tough spot, this\n"
-            "Pokémon jumps over 30 feet using the\n"
-            "strength of its legs."),
+            "It excels at a parkour-like movement\n"
+            "style, leaping nimbly to avoid attacks.\n"
+            "It often counterattacks by smashing its\n"
+            "head straight into foes."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -1075,10 +1075,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 10,
         .weight = 175,
         .description = COMPOUND_STRING(
-            "When it decides to fight all out, it\n"
-            "stands on its previously folded\n"
-            "legs to enter Showdown Mode. It\n"
-            "neutralizes its enemies in short order."),
+            "Its normally folded extra legs have grown\n"
+            "massive in size. This puts great strain\n"
+            "on its body, forcing it to train\n"
+            "constantly to remain mobile."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -1334,10 +1334,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 3,
         .weight = 18,
         .description = COMPOUND_STRING(
-            "Exhibiting great teamwork, they\n"
-            "use their incisors to cut pieces out\n"
-            "of any material that might be useful\n"
-            "for a nest, then make off with them."),
+            "Exhibiting strong teamwork, they burrow\n"
+            "into the ground to hide from predators.\n"
+            "Their bodies are formed from a curious,\n"
+            "malleable material."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -1401,10 +1401,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 3,
         .weight = 23,
         .description = COMPOUND_STRING(
-            "The little one just appeared one\n"
-            "day. They all live together like a\n"
-            "family, but the relationship between\n"
-            "the three is still unclear."),
+            "Some claim to have witnessed the smaller\n"
+            "mice ‘split’ off from the main body.\n"
+            "Researchers dismiss this as delusion,\n"
+            "calling the witness crazy. Seek the truth."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -1464,10 +1464,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 3,
         .weight = 28,
         .description = COMPOUND_STRING(
-            "The larger pair protects the little\n"
-            "ones during battles. When facing\n"
-            "strong opponents, the whole group\n"
-            "will join the fight."),
+            "Some claim to have witnessed the smaller\n"
+            "mice ‘split’ off from the main body.\n"
+            "Researchers dismiss this as delusion,\n"
+            "calling the witness crazy. Seek the truth."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -2317,10 +2317,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 4,
         .weight = 160,
         .description = COMPOUND_STRING(
-            "The ground scrapes its body as it\n"
-            "travels, causing it to leave salt\n"
-            "behind. Salt is constantly being created\n"
-            "and replenished inside Nacli's body."),
+            "Exposure to the comet hardened its body to\n"
+            "diamond toughness. Its salt remains\n"
+            "unchanged. If anything, it tastes better\n"
+            "than ever."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -2382,10 +2382,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 6,
         .weight = 1050,
         .description = COMPOUND_STRING(
-            "It compresses rock salt inside its\n"
-            "body and shoots out hardened salt\n"
-            "pellets with enough force to\n"
-            "perforate an iron sheet."),
+            "The crystals on its back extend suddenly to\n"
+            "catch or skewer prey. Its control over its\n"
+            "elongating salt structures is incredibly\n"
+            "precise."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -2446,10 +2446,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 23,
         .weight = 2400,
         .description = COMPOUND_STRING(
-            "Garganacl will rub its fingertips\n"
-            "together and sprinkle injured\n"
-            "Pokémon with salt. Even severe wounds will\n"
-            "promptly heal afterward."),
+            "Garganacl sightings are rare. A possible\n"
+            "connection to Gigalith has been proposed,\n"
+            "but research is sparse beyond their shared\n"
+            "physical features."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -3226,10 +3226,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 6,
         .weight = 6,
         .description = COMPOUND_STRING(
-            "A soul unable to move on to the\n"
-            "afterlife was blown around by the wind\n"
-            "until it got tangled up with dried\n"
-            "grass and became a Pokémon."),
+            "It is said to have sprouted from nowhere.\n"
+            "Seeds grow inside its body and are fired\n"
+            "at predators with surprising force when\n"
+            "it is forced to flee."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -3291,10 +3291,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 12,
         .weight = 60,
         .description = COMPOUND_STRING(
-            "It will open the branches of its\n"
-            "head to envelop its prey. Once it\n"
-            "absorbs all the life energy it needs, it\n"
-            "expels the prey and discards it."),
+            "It opens the branches atop its head to\n"
+            "ensnare prey. Once trapped, victims find\n"
+            "themselves unable to escape the tangle of\n"
+            "brambles and roots."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,

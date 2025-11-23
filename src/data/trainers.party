@@ -3417,20 +3417,13 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Electrike
-Level: 17
+Drakloak
+Level: 27
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Quick Attack
-- Thunder Wave
-- Spark
-- Leer
 
-Voltorb
-Level: 17
+Brionne
+Level: 27
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Charge
-- Shock Wave
-- Screech
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_7 ===
 Name: GRUNT
@@ -3471,13 +3464,21 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Voltorb
-Level: 17
+Monferno @ Loaded Dice
+Level: 27
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Chain Lightning
+- Flash Volley
+- Nasty Plot
+- Bullet Punch
 
-Magnemite
-Level: 17
+Jolteon
+Level: 27
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Buzzy Buzz
+- Mud Shot
+- Power Gem
+- Dragon Breath
 
 === TRAINER_FERNANDO_1 ===
 Name: FERNANDO
@@ -4048,12 +4049,12 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Dustox
-Level: 16
+Primeape
+Level: 25
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Beautifly
-Level: 16
+Yanma
+Level: 25
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_JEFFREY_2 ===
@@ -4942,41 +4943,43 @@ Class: Leader
 Pic: Leader Wattson
 Gender: Male
 Music: Male
-Items: Super Potion / Super Potion
+Items: Super Potion / Super Potion / Full Heal
 Double Battle: No
 AI: Basic Trainer
 
-Voltorb
-Level: 20
+Pikachu @ Air Balloon
+Level: 28
+Ability: Static
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Rollout
-- Spark
-- Self Destruct
-- Shock Wave
+- Thunderclap
+- Flame Charge
+- Fire Spin
+- Volt Switch
 
-Electrike
-Level: 20
+Skarmory
+Level: 28
+Ability: Keen Eye
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Shock Wave
-- Leer
-- Quick Attack
-- Howl
+- Volt Switch
+- Air Cutter
+- Flash Cannon
+- Light Screen
 
-Magneton
-Level: 22
+Drakloak
+Level: 29
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
-- Supersonic
-- Shock Wave
-- Thunder Wave
-- Sonic Boom
+- Volt Switch
+- Dragon Breath
+- Charge
+- Work Up
 
-Manectric @ Sitrus Berry
-Level: 24
+Abomasnow @ Ultimatrix Symbol
+Level: 30
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Quick Attack
-- Thunder Wave
-- Shock Wave
-- Howl
+- Thunder Punch
+- Giga Drain
+- Water Pulse
+- Bulldoze
 
 === TRAINER_FLANNERY_1 ===
 Name: FLANNERY
@@ -5455,20 +5458,13 @@ Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
 
-Zigzagoon
-Level: 15
+Linoone
+Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Growl
-- Tail Whip
-- Headbutt
-- Odor Sleuth
 
-Makuhita
-Level: 17
+Komala
+Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Focus Energy
-- Arm Thrust
 
 === TRAINER_ANNA_AND_MEG_2 ===
 Name: ANNA & MEG
@@ -6103,21 +6099,21 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Zigzagoon
-Level: 17
+Raboot
+Level: 27
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Headbutt
-- Sand Attack
-- Growl
-- Thunderbolt
+- Flame Charge
+- Spark
+- Smart Strike
+- Bulk Up
 
-Gulpin
-Level: 17
+Grovyle
+Level: 27
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Amnesia
-- Sludge
-- Yawn
-- Pound
+- Volt Switch
+- Dragon Breath
+- Charge
+- Snarl
 
 === TRAINER_QUINCY ===
 Name: QUINCY
@@ -6888,8 +6884,8 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Doduo
-Level: 17
+Skarmory
+Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DYLAN_2 ===
@@ -6953,8 +6949,8 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Doduo
-Level: 17
+Delibird
+Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MARIA_2 ===
@@ -10200,27 +10196,27 @@ Double Battle: No
 AI: Check Bad Move
 
 Whismur
-Level: 11
+Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Zigzagoon
-Level: 11
+Teddiursa
+Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Aron
-Level: 11
+Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Poochyena
-Level: 11
+Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Taillow
-Level: 11
+Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Makuhita
-Level: 11
+Bagon
+Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DAVIS ===
@@ -10402,28 +10398,28 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Wingull
-Level: 11
+Salandit
+Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Shroomish
-Level: 11
+Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Marill
-Level: 11
+Sandshrew
+Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Roselia
-Level: 11
+Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Skitty
-Level: 11
+Greavard
+Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Goldeen
-Level: 11
+Charcadet
+Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_HALLE ===
@@ -12373,21 +12369,21 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Meditite
-Level: 17
+Gurdurr @ Quick Claw
+Level: 27
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Bide
-- Detect
-- Confusion
+- Magnet Rise
+- Brick Break
+- Bulk Up
 - Thunder Punch
 
-Meditite
-Level: 17
+Tadbulb
+Level: 27
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Thunder Punch
+- Arm Thrust
 - Detect
-- Confusion
-- Meditate
+- Mud Shot
 
 === TRAINER_DANIELLE ===
 Name: DANIELLE
@@ -12528,9 +12524,39 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Ralts
-Level: 16
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Riolu
+Level: 28
+Ability: Matter Absorb
+IVs: 15 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 15 Spe
+- Vacuum Wave
+- Brutal Swing
+- Rock Smash
+- Work Up
+
+Gumshoos
+Level: 28
+Ability: Stakeout
+IVs: 15 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 15 Spe
+- Crunch
+- Body Slam
+- Ice Fang
+- Work Up
+
+Whirlipede
+Level: 28
+IVs: 15 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 15 Spe
+- Spark
+- Bug Bite 
+- Agility 
+- Rock Smash
+
+Kirlia
+Level: 28
+IVs: 15 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 15 Spe
+- Shadow Ball
+- Mud Shot
+- Charm
+- Hypnosis
 
 === TRAINER_WALLY_VR_2 ===
 Name: WALLY
@@ -14416,8 +14442,8 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Doduo
-Level: 17
+Swoobat
+Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BRANDI ===
@@ -14429,8 +14455,12 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Ralts
-Level: 17
+Elgyem
+Level: 27
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Palpitoad
+Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_AISHA ===
@@ -14442,8 +14472,8 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Meditite
-Level: 17
+Ribombee
+Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MAKAYLA ===
@@ -16405,19 +16435,13 @@ Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
 
-Illumise
-Level: 17
+Yanma
+Level: 27
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Shock Wave
-- Quick Attack
-- Charm
 
-Volbeat
-Level: 17
+Whirlipede
+Level: 27
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Shock Wave
-- Quick Attack
-- Confuse Ray
 
 === TRAINER_DARIUS ===
 Name: DARIUS

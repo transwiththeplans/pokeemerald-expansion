@@ -1131,10 +1131,10 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .height = 3,
         .weight = 17,
         .description = COMPOUND_STRING(
-            "This amiable Pokémon is easy to train.\n"
-            "But when battle is joined, it shows its\n"
-            "ferocious side. It's merciless to\n"
-            "intruders that enter its territory."),
+            "Its entire body burns like a small comet.\n"
+            "When it flies across the sky, it leaves a\n"
+            "streak of lingering flame in its blazing\n"
+            "wake."),
         .pokemonScale = 530,
         .pokemonOffset = 13,
         .trainerScale = 256,
@@ -1196,10 +1196,10 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .height = 7,
         .weight = 160,
         .description = COMPOUND_STRING(
-            "From its beak, it expels embers that set\n"
-            "the tall grass on fire. Then it pounces on\n"
-            "any bewildered Pokémon that pop out of\n"
-            "the grass."),
+            "It scatters embers through tall grass. The\n"
+            "panicked Bug-type Pokémon fleeing the fire\n"
+            "are quickly snatched up and devoured by\n"
+            "this predator."),
         .pokemonScale = 365,
         .pokemonOffset = 12,
         .trainerScale = 256,
@@ -1261,10 +1261,10 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .height = 12,
         .weight = 245,
         .description = COMPOUND_STRING(
-            "In the fever of an exciting battle, it\n"
-            "showers embers from the gaps between its\n"
-            "feathers and takes to the air. It finishes\n"
-            "its prey off with a colossal kick."),
+            "Its body flames cannot be extinguished.\n"
+            "Even when submerged underwater, it reignites\n"
+            "itself instantly with a powerful burst of\n"
+            "heat."),
         .pokemonScale = 282,
         .pokemonOffset = 4,
         .trainerScale = 256,
@@ -4809,10 +4809,10 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .height = 3,
         .weight = 28,
         .description = COMPOUND_STRING(
-            "Its source of protection is its slimy,\n"
-            "germ-laden mucous membrane. Anyone\n"
-            "who touches it will need some thorough\n"
-            "hand-washing."),
+            "Its body can barely hold itself upright.\n"
+            "Though it looks fragile, it is far\n"
+            "heavier than it appears and can melt\n"
+            "through solid steel with ease."),
         .pokemonScale = 530,
         .pokemonOffset = 13,
         .trainerScale = 256,
@@ -4880,10 +4880,10 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .height = 8,
         .weight = 175,
         .description = COMPOUND_STRING(
-            "This Pokémon's mucous can dissolve\n"
-            "anything. Toothless, it sprays mucous\n"
-            "on its prey. Once they're nicely dissolved,\n"
-            "it slurps them up."),
+            "Its body is contained within a tough,\n"
+            "self-produced shell. Despite its weight,\n"
+            "Sliggoo can float mysteriously, a trait\n"
+            "scientists cannot explain."),
         .pokemonScale = 366,
         .pokemonOffset = 7,
         .trainerScale = 257,
@@ -4950,10 +4950,10 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .height = 20,
         .weight = 1505,
         .description = COMPOUND_STRING(
-            "It gets picked on because it's meek.\n"
-            "But then, whoever teased it gets to feel\n"
-            "the full force of its horns and a good\n"
-            "swatting from its thick tail."),
+            "It freely adjusts the viscosity of its\n"
+            "body at will. Goodra hates being alone,\n"
+            "and will throw furious tantrums when the\n"
+            "ones it loves leave its side."),
         .pokemonScale = 261,
         .pokemonOffset = 1,
         .trainerScale = 334,
@@ -5091,7 +5091,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .weight = 3341,
         .description = COMPOUND_STRING(
             "It loathes solitude and is extremely\n"
-            "clingy--it will fume and run riot if\n"
+            "clingy. It will fume and run riot if\n"
             "those dearest to it ever leave its\n"
             "side."),
         .pokemonScale = 261,

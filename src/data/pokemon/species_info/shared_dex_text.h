@@ -31,10 +31,10 @@ const u8 gMarowakAlolaPokedexText[] = _(
     "pain that will never fade.");
 
 const u8 gEeveePokedexText[] = _(
-    "An Eevee has an unstable genetic makeup\n"
-    "that suddenly mutates due to its\n"
-    "environment. Radiation from various\n"
-    "Stones causes this Pokémon to evolve.");
+	"Eevee adapts to any threat it faces.\n"
+	"Its body holds traits of many apex\n"
+	"predators, shifting its instincts to\n"
+	"overcome whatever hunts it.");
 
 // Gen 2 families
 const u8 gUnownPokedexText[] = _(
@@ -127,10 +127,10 @@ const u8 gVikavoltPokedexText[] = _(
     "beams of electrical energy.");
 
 const u8 gRibombeePokedexText[] = _(
-    "Ribombee rolls up pollen into puffs.\n"
-    "It makes many different varieties, some\n"
-    "used as food and others used in battle.\n"
-    "They are sometimes sold as supplements.");
+	"Its advanced cognition helps it solve any\n"
+	"problem where strength fails. Even when\n"
+	"faced with the unknown, it learns at an\n"
+	"astonishing speed.");
 
 const u8 gRockruffPokedexText[] = _(
 	"The collar around its neck reacts strongly\n"

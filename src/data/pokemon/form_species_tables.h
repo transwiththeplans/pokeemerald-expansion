@@ -2027,8 +2027,8 @@ static const u16 sInteleonFormSpeciesIdTable[] = {
 #if P_FAMILY_ROOKIDEE
 static const u16 sCorviknightFormSpeciesIdTable[] = {
     SPECIES_CORVIKNIGHT,
-#if P_GIGANTAMAX_FORMS
-    SPECIES_CORVIKNIGHT_GMAX,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_CORVIKNIGHT_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -2047,7 +2047,7 @@ static const u16 sOrbeetleFormSpeciesIdTable[] = {
 #if P_FAMILY_CHEWTLE
 static const u16 sDrednawFormSpeciesIdTable[] = {
     SPECIES_DREDNAW,
-#if P_GIGANTAMAX_FORMS
+#if P_MEGA_EVOLUTIONS
     SPECIES_DREDNAW_MEGA,
 #endif
     FORM_SPECIES_END,

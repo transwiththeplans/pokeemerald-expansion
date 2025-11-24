@@ -1284,10 +1284,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .height = 5,
         .weight = 95,
         .description = COMPOUND_STRING(
-            "It rapidly contracts and relaxes its\n"
-            "muscles to generate electricity. Its\n"
-            "body shines if endangered. It flees\n"
-            "while the foe is momentarily blinded."),
+            "Shinx are aggressive predators but also\n"
+            "upbeat and energetic. They leap between\n"
+            "trees to surprise even their friends just\n"
+            "for fun."),
         .pokemonScale = 432,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -1362,10 +1362,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .height = 9,
         .weight = 305,
         .description = COMPOUND_STRING(
-            "Strong electricity courses through the\n"
-            "tips of its sharp claws. A light scratch\n"
-            "has enough amperage to cause fainting\n"
-            "in foes."),
+            "Luxio display animalistic behaviors such\n"
+            "as growling, roaring, and relentless\n"
+            "hunting when hungry. Their ferocity is\n"
+            "matched only by their stamina."),
         .pokemonScale = 338,
         .pokemonOffset = 10,
         .trainerScale = 256,
@@ -1445,10 +1445,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .height = 14,
         .weight = 420,
         .description = COMPOUND_STRING(
-            "It has eyes which can see through\n"
-            "anything. Luxray's ability to see\n"
-            "through objects comes in handy when\n"
-            "it's scouting for danger."),
+            "Luxray are hardwired for aggression. Their\n"
+            "greatest weakness is their low\n"
+            "intelligence, which causes them to attack\n"
+            "without thinking."),
         .pokemonScale = 265,
         .pokemonOffset = 2,
         .trainerScale = 262,
@@ -2520,10 +2520,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .height = 7,
         .weight = 295,
         .description = COMPOUND_STRING(
-            "By inflating its flotation sac, it reveals\n"
-            "sensitive gills used to detect movement.\n"
-            "Even without eyes, it can locate prey\n"
-            "with precision."),
+			"By inflating its flotation sac, it reveals\n"
+			"sensitive gills used to detect movement. \n"
+			"Even without eyes, it can locate prey\n"
+			"with precision."),
         .pokemonScale = 365,
         .pokemonOffset = 12,
         .trainerScale = 256,
@@ -4498,10 +4498,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .height = 7,
         .weight = 202,
         .description = COMPOUND_STRING(
-            "It can discern the physical and emotional\n"
-            "states of people, Pokémon, and other\n"
-            "natural things from the shape of their\n"
-            "aura waves."),
+            "Riolu can absorb the energy stored in\n"
+            "other individuals. It prefers metals and\n"
+            "rocks, avoiding organic energy so it does\n"
+            "not spiral out of control."),
         .pokemonScale = 365,
         .pokemonOffset = 13,
         .trainerScale = 256,
@@ -4569,10 +4569,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .height = 12,
         .weight = 540,
         .description = COMPOUND_STRING(
-            "It understands human speech.\n"
-            "It is said that no foe can remain invisible\n"
-            "to Lucario, since it can detect Auras.\n"
-            "Even foes it could not otherwise see."),
+            "Lucario can absorb DNA and convert it into\n"
+            "usable force. It discharges stored energy\n"
+            "by projecting it from its hands in the\n"
+            "form of focused blasts."),
         .pokemonScale = 282,
         .pokemonOffset = 4,
         .trainerScale = 256,

@@ -644,7 +644,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .natDexNum = NATIONAL_DEX_MUDKIP,
         .categoryName = _("Mud Fish"),
         .height = 4,
-        .weight = 76,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "Despite its small size, Mudkip has the\n"
             "strength to heft boulders. Even the\n"
@@ -715,7 +715,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .natDexNum = NATIONAL_DEX_MARSHTOMP,
         .categoryName = _("Mud Fish"),
         .height = 7,
-        .weight = 280,
+        .weight = 15000,
         .description = COMPOUND_STRING(
             "Marshstomp travels far faster on land\n"
             "than in water. Its powerful tail can\n"
@@ -795,7 +795,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .natDexNum = NATIONAL_DEX_SWAMPERT,
         .categoryName = _("Mud Fish"),
         .height = 15,
-        .weight = 819,
+        .weight = 20000,
         .description = COMPOUND_STRING(
             "Swampert's greatest strength is not its\n"
             "bulk but its mighty tail. With one swing,\n"
@@ -867,7 +867,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .natDexNum = NATIONAL_DEX_SWAMPERT,
         .categoryName = _("Mud Fish"),
         .height = 19,
-        .weight = 1020,
+        .weight = 40000,
         .description = COMPOUND_STRING(
             "When it Mega Evolves, the strength that it\n"
             "needs to act in the water is increased.\n"
@@ -3908,10 +3908,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .height = 6,
         .weight = 163,
         .description = COMPOUND_STRING(
-            "Its cries equal a jet plane in volume.\n"
-            "It inhales through its ear canals. Because\n"
-            "of this system, it can cry continually\n"
-            "without having to catch its breath."),
+            "If frightened, it shrieks as loud as a\n"
+            "jet plane. At the same time it releases\n"
+            "huge clouds of nitrous oxide, which it\n"
+            "stores inside its small body."),
         .pokemonScale = 373,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -3984,10 +3984,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .height = 10,
         .weight = 405,
         .description = COMPOUND_STRING(
-            "It positions the round speakers on its\n"
-            "head to assail foes with ultrasonic waves\n"
-            "at massive volume. It builds power by\n"
-            "stomping the ground."),
+            "It inhales deeply and shouts with its\n"
+            "well trained stomach muscles. These\n"
+            "bursts carry gas farther, spreading a\n"
+            "powerful scent across the area."),
         .pokemonScale = 356,
         .pokemonOffset = 10,
         .trainerScale = 256,
@@ -4062,10 +4062,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .height = 15,
         .weight = 840,
         .description = COMPOUND_STRING(
-            "It has sound-generating organs all over\n"
-            "its body. It communicates with others by\n"
-            "adjusting the tone and volume of the cries\n"
-            "it emits."),
+            "It uses many sound holes on its body to\n"
+            "communicate in a complex code. It knows\n"
+            "a great deal about chemicals and can\n"
+            "produce compounds to neutralize foes."),
         .pokemonScale = 284,
         .pokemonOffset = 1,
         .trainerScale = 256,
@@ -4957,10 +4957,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .height = 4,
         .weight = 600,
         .description = COMPOUND_STRING(
-            "A Pokémon that is clad in steel armor.\n"
-            "A new suit of armor is made when it evolves.\n"
-            "The old, discarded armor is salvaged as\n"
-            "metal for making iron products."),
+            "To build up its steel body, it devours\n"
+            "iron ore wherever it can find it. This\n"
+            "pesky Pokemon is known to eat railroad\n"
+            "tracks when left unsupervised."),
         .pokemonScale = 419,
         .pokemonOffset = 23,
         .trainerScale = 256,
@@ -5023,10 +5023,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .height = 9,
         .weight = 1200,
         .description = COMPOUND_STRING(
-            "When two Lairon meet in the wild, they\n"
-            "fight for territory by bashing into each\n"
-            "other with their steel bodies. The sound\n"
-            "of their collision carries for miles."),
+            "Lairon generate power through their\n"
+            "forearms, which house biomechanical\n"
+            "pneumatic pistons. They quake the earth\n"
+            "with devastating vibrations."),
         .pokemonScale = 275,
         .pokemonOffset = 12,
         .trainerScale = 256,
@@ -5094,10 +5094,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .height = 21,
         .weight = 3600,
         .description = COMPOUND_STRING(
-            "Its iron horns grow longer a little at\n"
-            "a time. They are used to determine the\n"
-            "Aggron's age. The gouges in its armor are\n"
-            "worn with pride as mementos from battles."),
+            "Aggron can fire its pistons forward to\n"
+            "boost the force of its punches. It can\n"
+            "also launch itself skyward by firing the\n"
+            "pistons downward in a pinch."),
         .pokemonScale = 256,
         .pokemonOffset = -1,
         .trainerScale = 350,
@@ -7835,10 +7835,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .height = 4,
         .weight = 12,
         .description = COMPOUND_STRING(
-            "A Pokémon that has wings like cottony\n"
-            "clouds. After enduring winter, in which\n"
-            "little food is available, Swablu flocks\n"
-            "move closer to towns in the spring."),
+            "By manipulating its protoplasm, Swablu can\n"
+            "become intangible. It can also render\n"
+            "itself invisible, avoiding attacks with\n"
+            "remarkable ease."),
         .pokemonScale = 422,
         .pokemonOffset = -8,
         .trainerScale = 256,
@@ -7909,10 +7909,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .height = 11,
         .weight = 206,
         .description = COMPOUND_STRING(
-            "It hums in a beautiful soprano voice.\n"
-            "It flies among white clouds in the blue\n"
-            "sky. It launches intensely hot fireballs\n"
-            "from its mouth."),
+            "Altaria alters its shape to become a grey,\n"
+            "wispy, cloudlike form. In this state, it\n"
+            "moves like drifting mist and evades\n"
+            "nearly all strikes."),
         .pokemonScale = 327,
         .pokemonOffset = 0,
         .trainerScale = 256,
@@ -8534,10 +8534,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .height = 6,
         .weight = 115,
         .description = COMPOUND_STRING(
-            "Once it grips prey with its large pincers,\n"
-            "it will never let go, no matter what.\n"
-            "It is a hardy Pokémon that can thrive\n"
-            "in any environment."),
+            "Corphish are filter feeders that generate\n"
+            "pulses from their brains. These pulses can\n"
+            "block attacks and knock away enemies with\n"
+            "unexpected force."),
         .pokemonScale = 484,
         .pokemonOffset = 19,
         .trainerScale = 256,
@@ -8607,10 +8607,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .height = 11,
         .weight = 328,
         .description = COMPOUND_STRING(
-            "A brutish Pokémon that loves to battle.\n"
-            "A veteran Crawdaunt that has prevailed in\n"
-            "hundreds of battles has giant pincers\n"
-            "marked with countless scars."),
+            "Crawdaunt can create electrical storms\n"
+            "simply by concentrating. It shapes this\n"
+            "electricity into solid constructs to\n"
+            "overpower its foes."),
         .pokemonScale = 365,
         .pokemonOffset = 9,
         .trainerScale = 256,

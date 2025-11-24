@@ -1766,10 +1766,10 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .height = 1,
         .weight = 2,
         .description = COMPOUND_STRING(
-            "Myriads of Cutiefly flutter above the\n"
-            "heads of people who have auras resembling\n"
-            "those of flowers. It can identify which\n"
-            "flowers are about to bloom."),
+            "Though tiny, this Pokémon has a sharp and\n"
+            "calculative mind. It can instantly read\n"
+            "the structure of anything it sees,\n"
+            "from machines to living creatures."),
         .pokemonScale = 682,
         .pokemonOffset = 24,
         .trainerScale = 256,

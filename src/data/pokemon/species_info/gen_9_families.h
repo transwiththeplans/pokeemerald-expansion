@@ -4721,7 +4721,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_QUICK_DRAW, ABILITY_WIND_RIDER, ABILITY_REGENERATOR },
+        .abilities = { ABILITY_RATTLED, ABILITY_WIND_RIDER, ABILITY_REGENERATOR },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Cyclizar"),
         .cryId = CRY_CYCLIZAR,
@@ -4730,10 +4730,10 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 16,
         .weight = 630,
         .description = COMPOUND_STRING(
-            "It can sprint at over 70 mph while\n"
-            "carrying a human. The rider's body\n"
-            "heat warms Cyclizar's back and lifts\n"
-            "the Pokémon's spirit."),
+            "Cyclizar races at breakneck speed, always\n"
+            "accelerating as if chased by time itself.\n"
+            "It reacts strangely to two specific\n"
+            "objects, triggering a bizarre evolution."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,

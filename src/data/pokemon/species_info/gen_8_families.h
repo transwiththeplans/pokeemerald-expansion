@@ -923,10 +923,10 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .height = 2,
         .weight = 18,
         .description = COMPOUND_STRING(
-            "It will bravely challenge any opponent,\n"
-            "no matter how powerful. This Pokémon\n"
-            "benefits from every battle--even a\n"
-            "defeat increases its strength a bit."),
+            "This Rookidee form stores rainbow energy\n"
+            "within its crystalline feathers. It can fire\n"
+            "tiny beams of condensed light that it guides\n"
+            "with uncanny precision."),
         .pokemonScale = 682,
         .pokemonOffset = 24,
         .trainerScale = 256,
@@ -996,10 +996,10 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .height = 8,
         .weight = 160,
         .description = COMPOUND_STRING(
-            "Smart enough to use tools in battle,\n"
-            "these Pokémon have been seen picking up\n"
-            "rocks and flinging them or using ropes\n"
-            "to wrap up enemies."),
+            "It absorbs nearly any kind of energy, from\n"
+            "sunlight to electric shocks, converting it\n"
+            "into multicolored power. When supercharged,\n"
+            "its blasts can melt solid metal."),
         .pokemonScale = 366,
         .pokemonOffset = 7,
         .trainerScale = 257,
@@ -1069,10 +1069,10 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .height = 22,
         .weight = 750,
         .description = COMPOUND_STRING(
-            "This Pokémon reigns supreme in the skies\n"
-            "of the Galar region. The black luster of\n"
-            "its steel body could drive terror into\n"
-            "the heart of any foe."),
+            "Its body is made of dense crystal plates,\n"
+            "granting incredible durability. It redirects\n"
+            "attacks by refracting energy through its\n"
+            "wings, unleashing devastating beams."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 348,
@@ -1112,16 +1112,16 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .formChangeTable = sCorviknightFormChangeTable,
     },
 
-#if P_GIGANTAMAX_FORMS
-    [SPECIES_CORVIKNIGHT_GMAX] =
+#if P_MEGA_EVOLUTION
+    [SPECIES_CORVIKNIGHT_MEGA] =
     {
         .baseHP        = 98,
-        .baseAttack    = 87,
-        .baseDefense   = 105,
+        .baseAttack    = 68,
+        .baseDefense   = 112,
         .baseSpeed     = 67,
-        .baseSpAttack  = 53,
-        .baseSpDefense = 85,
-        .types = MON_TYPES(TYPE_FLYING, TYPE_STEEL),
+        .baseSpAttack  = 123,
+        .baseSpDefense = 145,
+        .types = MON_TYPES(TYPE_FLYING, TYPE_PSYCHIC),
         .catchRate = 45,
         .expYield = 248,
         .evYield_Defense = 3,
@@ -1130,7 +1130,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
-        .abilities = { ABILITY_PRESSURE, ABILITY_UNNERVE, ABILITY_MIRROR_ARMOR },
+        .abilities = { ABILITY_MIRROR_ARMOR, ABILITY_MIRROR_ARMOR, ABILITY_MIRROR_ARMOR },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Corviknight"),
         .cryId = CRY_CORVIKNIGHT,
@@ -1163,7 +1163,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(2, 8, SHADOW_SIZE_L)
         FOOTPRINT(Corviknight)
-        .isGigantamax = TRUE,
+        .isMegaEvolution = TRUE,
         .levelUpLearnset = sCorviknightLevelUpLearnset,
         .teachableLearnset = sCorviknightTeachableLearnset,
         .formSpeciesIdTable = sCorviknightFormSpeciesIdTable,
@@ -2429,10 +2429,10 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .height = 2,
         .weight = 5,
         .description = COMPOUND_STRING(
-            "It spends its entire life inside an\n"
-            "apple. It hides from its natural enemies,\n"
-            "bird Pokémon, by pretending it's just an\n"
-            "apple and nothing more."),
+            "Applin spends nearly all its time eating,\n"
+            "drawing nutrients straight from its apple\n"
+            "shell. Its stomach has multiple chambers,\n"
+            "allowing it to digest endlessly."),
         .pokemonScale = 682,
         .pokemonOffset = 24,
         .trainerScale = 256,
@@ -2497,9 +2497,10 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .height = 3,
         .weight = 10,
         .description = COMPOUND_STRING(
-            "It ate a sour apple, and that induced its\n"
-            "evolution. In its cheeks, it stores an acid\n"
-            "capable of causing chemical burns."),
+            "This form is leaner and more agile, using\n"
+            "its acidic spit to break down anything it\n"
+            "can swallow. It stuffs itself constantly,\n"
+            "claiming hunger is its true strength."),
         .pokemonScale = 530,
         .pokemonOffset = 13,
         .trainerScale = 256,
@@ -2621,9 +2622,10 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .height = 4,
         .weight = 130,
         .description = COMPOUND_STRING(
-            "Eating a sweet apple caused its evolution.\n"
-            "A nectarous scent wafts from its body,\n"
-            "luring in the bug Pokémon it preys on."),
+            "An Appletun's body produces layers of\n"
+            "soft, syrupy armor. It expands its gut to\n"
+            "swallow foes whole, dissolving threats\n"
+            "with heat and sweet fumes."),
         .pokemonScale = 491,
         .pokemonOffset = 12,
         .trainerScale = 256,
@@ -2745,9 +2747,10 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .height = 4,
         .weight = 44,
         .description = COMPOUND_STRING(
-            "Dipplin is two creatures in one Pokémon.\n"
-            "Its evolution was triggered by a special\n"
-            "apple grown only in one place."),
+            "Its twin stomachs churn nonstop as it\n"
+            "takes in sugar from its shell. When\n"
+            "agitated, Dipplin unleashes burning\n"
+            "steam that smells oddly delicious."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -2808,10 +2811,10 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .height = 18,
         .weight = 930,
         .description = COMPOUND_STRING(
-            "These capricious syrpents have\n"
-            "banded together. On the rare\n"
-            "occasion that their moods align,\n"
-            "their true power is unleashed."),
+            "The queen. Hydrapple's heads act as separate\n"
+            "digestive units, processing food at\n"
+            "different rates. When starving, it goes\n"
+            "berserk and devours everything nearby."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -4601,9 +4604,9 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .weight = 34,
         .description = COMPOUND_STRING(
             "Via the protrusion on its head, it senses\n"
-            "other creatures' emotions. If you don't\n"
-            "have a calm disposition, it will never\n"
-            "warm up to you."),
+            "electromagnetic waves. It is drawn to\n"
+            "powerful energies and reacts strongly\n"
+            "when the waves fluctuate."),
         .pokemonScale = 491,
         .pokemonOffset = 12,
         .trainerScale = 256,
@@ -4665,9 +4668,10 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .height = 6,
         .weight = 48,
         .description = COMPOUND_STRING(
-            "No matter who you are, if you bring strong\n"
-            "emotions near this Pokémon, it will silence\n"
-            "you violently."),
+            "Using the tendrils on its head, it shocks\n"
+            "attackers violently. Despite its small\n"
+            "size, its temper is fierce and it strikes\n"
+            "before foes can react."),
         .pokemonScale = 422,
         .pokemonOffset = 12,
         .trainerScale = 256,
@@ -4728,9 +4732,10 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .height = 21,
         .weight = 51,
         .description = COMPOUND_STRING(
-            "It emits psychic power strong enough to\n"
-            "cause headaches as a deterrent to the\n"
-            "approach of others."),
+            "Using specific waves of energy, it can\n"
+            "read the thoughts of anyone nearby.\n"
+            "If it detects impure thinking, it reacts\n"
+            "with lethal precision and fury."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 365,
@@ -5733,10 +5738,10 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .height = 3,
         .weight = 38,
         .description = COMPOUND_STRING(
-            "It spits out thread imbued with a frigid\n"
-            "sort of energy and uses it to tie its body\n"
-            "to branches, disguising itself as an\n"
-            "icicle while it sleeps."),
+            "Within its body, Snom amplifies frigid air\n"
+            "from the snow it eats. This lets it turn\n"
+            "almost intangible, like the thin morning\n"
+            "frost atop a mountain."),
         .pokemonScale = 530,
         .pokemonOffset = 13,
         .trainerScale = 256,
@@ -5798,10 +5803,10 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .height = 13,
         .weight = 420,
         .description = COMPOUND_STRING(
-            "Icy scales fall from its wings like snow\n"
-            "as it flies over fields and mountains.\n"
-            "The temperature of its wings is less than\n"
-            "-290 degrees Fahrenheit."),
+            "Frosmoth causes blizzards as it flies with\n"
+            "its massive, chill-filled wings. It fades\n"
+            "into these storms, becoming untouchable\n"
+            "as long as the snowfall persists."),
         .pokemonScale = 272,
         .pokemonOffset = 3,
         .trainerScale = 256,

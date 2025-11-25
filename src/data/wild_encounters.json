@@ -12070,7 +12070,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_BUIZEL"
+                "species": "SPECIES_PIKACHU_STARTER"
               }
             ]
           }
@@ -12578,7 +12578,7 @@
               {
                 "min_level": 11,
                 "max_level": 15,
-                "species": "SPECIES_SHINX"
+                "species": "SPECIES_CYCLIZAR"
               },
               {
                 "min_level": 11,
@@ -12603,12 +12603,12 @@
               {
                 "min_level": 11,
                 "max_level": 15,
-                "species": "SPECIES_CYCLIZAR"
+                "species": "SPECIES_LARVITAR"
               },
               {
                 "min_level": 11,
                 "max_level": 15,
-                "species": "SPECIES_CYCLIZAR"
+                "species": "SPECIES_EEVEE_STARTER"
               }
             ]
           }

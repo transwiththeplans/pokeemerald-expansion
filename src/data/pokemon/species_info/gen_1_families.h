@@ -3945,8 +3945,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_PIKACHU_STARTER] =
     {
-        .baseHP        = 60,
-        .baseAttack    = 60,
+        .baseHP        = 80,
+        .baseAttack    = 40,
         .baseDefense   = 60,
         .baseSpeed     = 150,
         .baseSpAttack  = 80,
@@ -3955,7 +3955,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .catchRate = 190,
         .expYield = PIKACHU_EXP_YIELD,
         .evYield_Speed = 2,
-        .itemRare = ITEM_LIGHT_BALL,
+        .itemCommon = ITEM_LIGHT_BALL,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 10,
         .friendship = STANDARD_FRIENDSHIP,
@@ -3967,44 +3967,44 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .cryId = CRY_PIKACHU,
         .natDexNum = NATIONAL_DEX_PIKACHU,
         .categoryName = _("Mouse"),
-        .height = 4,
-        .weight = 60,
-        .description = gPikachuPokedexText,
+        .height = 24,
+        .weight = 240,
+        .description = COMPOUND_STRING(
+            "An abnormally large Pikachu, said to have\n"
+            "already reached its peak potential. It uses\n"
+            "the flames on its tail to forge weapons,\n"
+            "and boosts its speed by igniting them."),
         .pokemonScale = 479,
         .pokemonOffset = 19,
         .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Pikachu,
+        .trainerOffset = 4,
+        .enemyMonElevation = 4,
+        .frontPic = gMonFrontPic_PikachuGmax,
         .frontPicSize = MON_COORDS_SIZE(48, 48),
-        .frontPicYOffset = 9,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(0, 15),
-            ANIMCMD_FRAME(1, 60),
-            ANIMCMD_FRAME(1, 20),
-            ANIMCMD_FRAME(0, 1),
-        ),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         .frontAnimId = ANIM_FLASH_YELLOW,
         .frontAnimDelay = 25,
-        .backPic = gMonBackPic_Pikachu,
+        .backPic = gMonBackPic_PikachuGmax,
         .backPicSize = MON_COORDS_SIZE(64, 56),
         .backPicYOffset = 4,
         .backAnimId = BACK_ANIM_SHAKE_FLASH_YELLOW,
-        .palette = gMonPalette_Pikachu,
-        .shinyPalette = gMonShinyPalette_Pikachu,
-        .iconSprite = gMonIcon_PikachuStarter,
+        .palette = gMonPalette_PikachuGmax,
+        .shinyPalette = gMonShinyPalette_PikachuGmax,
+        .iconSprite = gMonIcon_PikachuGmax,
         .iconPalIndex = 2,
 #if P_GENDER_DIFFERENCES
-        .frontPicFemale = gMonFrontPic_PikachuF,
+        .frontPicFemale = gMonFrontPic_PikachuGmax,
         .frontPicSizeFemale = MON_COORDS_SIZE(48, 48),
-        .backPicFemale = gMonBackPic_PikachuF,
+        .backPicFemale = gMonBackPic_PikachuGmax,
         .backPicSizeFemale = MON_COORDS_SIZE(64, 56),
     #if P_CUSTOM_GENDER_DIFF_ICONS == TRUE
-        .iconSpriteFemale = gMonIcon_PikachuStarterF,
+        .iconSpriteFemale = gMonIcon_PikachuGmax,
         .iconPalIndexFemale = 2,
     #endif
 #endif //P_GENDER_DIFFERENCES
         .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
-        SHADOW(-3, 5, SHADOW_SIZE_M)
+        SHADOW(-3, 13, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Pikachu)
         OVERWORLD(
             sPicTable_Pikachu,

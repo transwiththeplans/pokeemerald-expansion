@@ -1211,7 +1211,7 @@ Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Trubbish
+Gible
 Level: 22
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2165,11 +2165,11 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Vanillite @ Nugget
+Eevee @ Nugget
 Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Vanillite @ Nugget
+Eevee @ Nugget
 Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2831,11 +2831,11 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Finizen
+Lumineon
 Level: 44
 IVs: 11 HP / 11 Atk / 11 Def / 11 SpA / 11 SpD / 11 Spe
 
-Prinplup
+Wailord
 Level: 44
 IVs: 11 HP / 11 Atk / 11 Def / 11 SpA / 11 SpD / 11 Spe
 
@@ -4956,13 +4956,13 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Fire Spin
 - Volt Switch
 
-Skarmory
+Hattrem
 Level: 28
-Ability: Keen Eye
+Ability: Illuminate
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Volt Switch
-- Air Cutter
-- Flash Cannon
+- Draining Kiss
+- Water Pulse
 - Light Screen
 
 Drakloak
@@ -6025,10 +6025,10 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Poochyena
+Meowth
 Level: 5
-Ability: Steely Spirit
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Unaware
+IVs: 0 HP / 31 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BILLY ===
 Name: BILLY
@@ -6884,7 +6884,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Skarmory
+Swellow
 Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6949,7 +6949,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Delibird
+Fletchinder
 Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -9627,7 +9627,7 @@ AI: Basic Trainer
 
 Machoke @ Red Card
 Level: 27
-Ability: Stamina
+Ability: Iron Fist
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Dust Devil
 - Power Up Punch
@@ -10414,7 +10414,7 @@ Roselia
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Greavard
+Deino
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11685,7 +11685,7 @@ Gligar
 Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Pineco
+Lopunny
 Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11774,7 +11774,7 @@ Nymble
 Level: 8
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Cutiefly
+Bagon
 Level: 8
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -12377,13 +12377,13 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Bulk Up
 - Thunder Punch
 
-Tadbulb
+Komala
 Level: 27
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Thunder Punch
-- Arm Thrust
-- Detect
-- Mud Shot
+- Buzzy Buzz
+- Swift
+- Charge
+- Chain Lightning
 
 === TRAINER_DANIELLE ===
 Name: DANIELLE
@@ -13600,7 +13600,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Tadbulb
+Pawniard
 Level: 25
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 

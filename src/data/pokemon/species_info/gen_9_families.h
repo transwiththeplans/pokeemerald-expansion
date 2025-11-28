@@ -860,7 +860,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .baseAttack    = 41,
         .baseDefense   = 45,
         .baseSpeed     = 20,
-        .baseSpAttack  = 29,
+        .baseSpAttack  = 49,
         .baseSpDefense = 40,
         .types = MON_TYPES(TYPE_BUG, TYPE_NORMAL),
         .catchRate = 255,
@@ -921,11 +921,11 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 
     [SPECIES_SPIDOPS] =
     {
-        .baseHP        = 85,
+        .baseHP        = 75,
         .baseAttack    = 94,
         .baseDefense   = 102,
         .baseSpeed     = 35,
-        .baseSpAttack  = 42,
+        .baseSpAttack  = 94,
         .baseSpDefense = 96,
         .types = MON_TYPES(TYPE_BUG, TYPE_STEEL),
         .catchRate = 120,

@@ -11,17 +11,7 @@
 
 static void ParametrizeMovesAndSpecies(u32 j, u32 *pMove, u32 *pSpecies)
 {
-    if (gMovesInfo[j].effect == EFFECT_DARK_VOID) // User needs to be Darkrai
-    {
-        *pMove = j;
-        *pSpecies = SPECIES_DARKRAI;
-    }
-    else if (gMovesInfo[j].effect == EFFECT_HYPERSPACE_FURY) // User needs to be Hoopa Unbound
-    {
-        *pMove = j;
-        *pSpecies = SPECIES_HOOPA_UNBOUND;
-    }
-    else if (gMovesInfo[j].effect == EFFECT_AURA_WHEEL) // User needs to be Morpeko
+    if (gMovesInfo[j].effect == EFFECT_AURA_WHEEL) // User needs to be Morpeko
     {
         *pMove = j;
         *pSpecies = SPECIES_MORPEKO_FULL_BELLY;

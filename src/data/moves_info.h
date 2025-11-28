@@ -1133,7 +1133,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "A toxic attack with barbs,\n"
             "etc., that may poison."),
         .effect = EFFECT_HIT,
-        .power = 15,
+        .power = 40,
         .type = TYPE_POISON,
         .accuracy = 100,
         .pp = 35,
@@ -10587,8 +10587,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Dragon Pulse"),
         .description = COMPOUND_STRING(
-            "Generates a shock wave to\n"
-            "damage the foe."),
+            "Generates a shock wave.\n"
+            "May lower foe's SpDef."),
         .effect = EFFECT_HIT,
         .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 85 : 90,
         .type = TYPE_DRAGON,
@@ -10598,6 +10598,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .pulseMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SP_DEF_MINUS_1,
+            .chance = 20,
+        }),
         .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_SMART,
         .contestComboStarterId = 0,
@@ -13124,10 +13128,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Incinerate"),
         .description = COMPOUND_STRING(
-            "Burns up Berries and Gems\n"
+            "Burns up items, \n"
             "preventing their use."),
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 60 : 30,
+        .power = 60,
         .type = TYPE_FIRE,
         .accuracy = 100,
         .pp = 15,
@@ -13135,7 +13139,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_INCINERATE,
+            .moveEffect = EFFECT_KNOCK_OFF,
         }),
         .contestEffect = CONTEST_EFFECT_WORSEN_CONDITION_OF_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
@@ -18017,8 +18021,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Behemoth Blade"),
         .description = COMPOUND_STRING(
-            "Strikes as a sword. Deals 2x\n"
-            "damage to Dynamaxed foes."),
+            "Strikes as a sword. Ignores\n"
+            "stat changes."),
         .effect = EFFECT_DYNAMAX_DOUBLE_DMG,
         .power = 100,
         .type = TYPE_STEEL,
@@ -18029,6 +18033,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
         .slicingMove = TRUE,
+        .ignoresTargetDefenseEvasionStages = TRUE,
         .metronomeBanned = TRUE,
         .copycatBanned = TRUE,
         .mimicBanned = TRUE,
@@ -18044,8 +18049,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Behemoth Bash"),
         .description = COMPOUND_STRING(
-            "Attacks as a shield. Deals 2x\n"
-            "damage to Dynamaxed foes."),
+            "Attacks as a shield. Ignores\n"
+            "stat changes."),
         .effect = EFFECT_DYNAMAX_DOUBLE_DMG,
         .power = 100,
         .type = TYPE_STEEL,
@@ -18055,6 +18060,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
+        .ignoresTargetDefenseEvasionStages = TRUE,
         .metronomeBanned = TRUE,
         .copycatBanned = TRUE,
         .mimicBanned = TRUE,
@@ -21724,7 +21730,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 70,
         .type = TYPE_FAIRY,
         .accuracy = 100,
-        .pp = 30,
+        .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
@@ -22370,6 +22376,96 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .chance = 100,
         }),
         .battleAnimScript = gBattleAnimMove_LuminaCrash,
+    },
+	
+    [MOVE_REALITY_WARP] =
+    {
+        .name = COMPOUND_STRING("Reality Warp"),
+        .description = COMPOUND_STRING(
+            "Warps reality to attack.\n"
+            "Breaks through Protect."),
+        .effect = EFFECT_HIT,
+        .power = 120,
+        .type = TYPE_DARK,
+        .accuracy = 0,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .ignoresProtect = TRUE,
+        .ignoresSubstitute = TRUE,
+        .metronomeBanned = TRUE,
+        .sketchBanned = (B_SKETCH_BANS >= GEN_9),
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_FEINT,
+        }),
+        .battleAnimScript = gBattleAnimMove_HyperspaceFury,
+    },
+
+    [MOVE_SPACE_WARP] =
+    {
+        .name = COMPOUND_STRING("Space Warp"),
+        .description = COMPOUND_STRING(
+            "Warps space to attack.\n"
+            "Breaks through Protect."),
+        .effect = EFFECT_HIT,
+        .power = 120,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 0,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .ignoresProtect = TRUE,
+        .ignoresSubstitute = TRUE,
+        .metronomeBanned = TRUE,
+        .sketchBanned = (B_SKETCH_BANS >= GEN_9),
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_FEINT,
+        }),
+        .battleAnimScript = gBattleAnimMove_HyperspaceHole,
+    },
+	
+	[MOVE_HOLY_FLAME] =
+    {
+        .name = COMPOUND_STRING("Holy Flame"),
+        .description = COMPOUND_STRING(
+            "Attacks with a pure flame.\n"
+            "Drains half the damage dealt."),
+        .effect = EFFECT_ABSORB,
+        .power = 70,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .argument = { .absorbPercentage = 50 },
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .healingMove = TRUE,
+        .metronomeBanned = TRUE,
+        .battleAnimScript = gBattleAnimMove_FirePledge,
+    },
+	
+    [MOVE_CRYOSLEEP] =
+    {
+        .name = COMPOUND_STRING("Cryosleep"),
+        .description = COMPOUND_STRING(
+			"User freezes the target into a deep\n"
+			"sleep."),
+        .effect = EFFECT_HIT,
+        .power = 65,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .metronomeBanned = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SLEEP,
+            .chance = 30,
+        }),
+        .battleAnimScript = gBattleAnimMove_IcyWind,
     },
 
     // Z-Moves

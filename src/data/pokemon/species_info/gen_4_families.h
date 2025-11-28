@@ -655,9 +655,9 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     [SPECIES_STARLY] =
     {
         .baseHP        = 40,
-        .baseAttack    = 55,
-        .baseDefense   = 30,
-        .baseSpeed     = 60,
+        .baseAttack    = 60,
+        .baseDefense   = 55,
+        .baseSpeed     = 30,
         .baseSpAttack  = 30,
         .baseSpDefense = 30,
         .types = MON_TYPES(TYPE_NORMAL, TYPE_FLYING),
@@ -670,7 +670,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
     #if P_UPDATED_ABILITIES >= GEN_6
-        .abilities = { ABILITY_INTIMIDATE, ABILITY_KEEN_EYE, ABILITY_LONG_REACH },
+        .abilities = { ABILITY_INTIMIDATE, ABILITY_STEADFAST, ABILITY_STAMINA },
     #else
         .abilities = { ABILITY_KEEN_EYE, ABILITY_NONE, ABILITY_NONE },
     #endif
@@ -679,13 +679,13 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .cryId = CRY_STARLY,
         .natDexNum = NATIONAL_DEX_STARLY,
         .categoryName = _("Starling"),
-        .height = 3,
-        .weight = 20,
+        .height = 15,
+        .weight = 100,
         .description = COMPOUND_STRING(
-            "Starly is believed to have an odd link to\n"
-            "Mudkip. This baffling paraphyletic\n"
-            "relationship has left scientists puzzled\n"
-            "and divided."),
+			"The meteorite's energy quintupled this\n"
+			"Pokémon's size compared to normal. It\n"
+			"continues to grow rapidly and shows no\n"
+			"signs of stopping as it evolves."),
         .pokemonScale = 530,
         .pokemonOffset = 13,
         .trainerScale = 256,
@@ -743,9 +743,9 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     [SPECIES_STARAVIA] =
     {
         .baseHP        = 55,
-        .baseAttack    = 75,
-        .baseDefense   = 50,
-        .baseSpeed     = 80,
+        .baseAttack    = 80,
+        .baseDefense   = 75,
+        .baseSpeed     = 50,
         .baseSpAttack  = 40,
         .baseSpDefense = 40,
         .types = MON_TYPES(TYPE_NORMAL, TYPE_FLYING),
@@ -757,19 +757,19 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
-        .abilities = { ABILITY_INTIMIDATE, ABILITY_KEEN_EYE, ABILITY_LONG_REACH },
+        .abilities = { ABILITY_INTIMIDATE, ABILITY_STEADFAST, ABILITY_STAMINA },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Staravia"),
         .cryId = CRY_STARAVIA,
         .natDexNum = NATIONAL_DEX_STARAVIA,
         .categoryName = _("Starling"),
-        .height = 6,
-        .weight = 155,
+        .height = 30,
+        .weight = 775,
         .description = COMPOUND_STRING(
-            "It flies through forests and fields in\n"
-            "search of prey. DNA studies reveal a\n"
-            "surprising relation to Minior, deepening\n"
-            "scientific confusion."),
+			"A single flap of its wings creates fierce\n"
+			"squalls. Its enormous wingspan lets it\n"
+			"cross great distances far faster than\n"
+			"most other Pokémon."),
         .pokemonScale = 422,
         .pokemonOffset = 12,
         .trainerScale = 256,
@@ -823,12 +823,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     [SPECIES_STARAPTOR] =
     {
         .baseHP        = 85,
-        .baseAttack    = 120,
-        .baseDefense   = 70,
-        .baseSpeed     = 100,
+        .baseAttack    = 100,
+        .baseDefense   = 120,
+        .baseSpeed     = 70,
         .baseSpAttack  = 50,
         .baseSpDefense = P_UPDATED_STATS >= GEN_6 ? 60 : 50,
-        .types = MON_TYPES(TYPE_ELECTRIC, TYPE_FLYING),
+        .types = MON_TYPES(TYPE_NORMAL, TYPE_FLYING),
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
         .expYield = 243,
@@ -845,19 +845,19 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
-        .abilities = { ABILITY_INTIMIDATE, ABILITY_KEEN_EYE, ABILITY_LONG_REACH },
+        .abilities = { ABILITY_INTIMIDATE, ABILITY_STEADFAST, ABILITY_STAMINA },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Staraptor"),
         .cryId = CRY_STARAPTOR,
         .natDexNum = NATIONAL_DEX_STARAPTOR,
         .categoryName = _("Predator"),
-        .height = 12,
-        .weight = 249,
+        .height = 60,
+        .weight = 1245,
         .description = COMPOUND_STRING(
-            "The mix of traits found in this Pokémon\n"
-            "has driven scientists to frustration. It\n"
-            "fights using energy similar to that\n"
-            "produced by cosmic rays."),
+			"The frill atop its head is its greatest\n"
+			"weakness. Striking it causes intense\n"
+			"pain and leaves Starraptor briefly\n"
+			"stunned in midair."),
         .pokemonScale = 282,
         .pokemonOffset = 4,
         .trainerScale = 256,

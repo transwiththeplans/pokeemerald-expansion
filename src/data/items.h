@@ -12413,8 +12413,8 @@ const struct Item gItemsInfo[] = {
         .price = 0,
         .description = COMPOUND_STRING(
             "Attacks the foe\n"
-            "with sharp blades\n"
-            "or claws."),
+            "with sharp blades.\n"
+            "Lowers Defense."),
         .importance = 1,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12458,8 +12458,8 @@ const struct Item gItemsInfo[] = {
         .price = 0,
         .description = COMPOUND_STRING(
             "Builds enormous\n"
-            "power, then slams\n"
-            "the foe."),
+            "power. May raise\n"
+            "Attack."),
         .importance = 1,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

@@ -460,6 +460,76 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .teachableLearnset = sSkeledirgeTeachableLearnset,
         .formSpeciesIdTable = sSkeledirgeFormSpeciesIdTable,
         .formChangeTable = sSkeledirgeFormChangeTable,
+    },    
+	
+	[SPECIES_SKELEDIRGE_MEGA_Z] =
+    {
+        .baseHP        = 104,
+        .baseAttack    = 130,
+        .baseDefense   = 75,
+        .baseSpeed     = 121,
+        .baseSpAttack  = 125,
+        .baseSpDefense = 75,
+        .types = MON_TYPES(TYPE_FIRE, TYPE_DARK),
+        .catchRate = 45,
+        .expYield = 265,
+        .evYield_SpAttack = 3,
+        .itemCommon = ITEM_NONE,
+        .itemRare = ITEM_NONE,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_GRASS),
+        .abilities = { ABILITY_VANTABLACK, ABILITY_VANTABLACK, ABILITY_VANTABLACK },
+        .bodyColor = BODY_COLOR_WHITE,
+        .speciesName = _("Skeledirge"),
+        .cryId = CRY_SKELEDIRGE,
+        .natDexNum = NATIONAL_DEX_SKELEDIRGE,
+        .categoryName = _("Singer"),
+        .height = 16,
+        .weight = 3265,
+        .description = COMPOUND_STRING(
+            "Skeledirge's gentle singing\n"
+            "soothes the souls of all that hear it. It\n"
+            "burns its enemies to a crisp with\n"
+            "flames of over 5,400 degrees Fahrenheit."),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_SkeledirgeMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 5,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_SkeledirgeMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 8,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_SkeledirgeMega,
+        .shinyPalette = gMonShinyPalette_SkeledirgeMega,
+        .iconSprite = gMonIcon_SkeledirgeMega,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(6, 7, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Skeledirge)
+    #if OW_BATTLE_ONLY_FORMS
+        OVERWORLD(
+            sPicTable_Skeledirge,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Skeledirge,
+            gShinyOverworldPalette_Skeledirge
+        )
+    #endif //OW_BATTLE_ONLY_FORMS
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sSkeledirgeLevelUpLearnset,
+        .teachableLearnset = sSkeledirgeTeachableLearnset,
+        .formSpeciesIdTable = sSkeledirgeFormSpeciesIdTable,
+        .formChangeTable = sSkeledirgeFormChangeTable,
     },
 #endif //P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_FUECOCO
@@ -1522,6 +1592,73 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_FAIRY),
         .abilities = { ABILITY_SPECIALIST, ABILITY_NONE, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_WHITE,
+        .speciesName = _("Maushold"),
+        .cryId = CRY_MAUSHOLD_FOUR,
+        .natDexNum = NATIONAL_DEX_MAUSHOLD,
+        .categoryName = _("Family"),
+        .height = 30,
+        .weight = 280,
+        .description = COMPOUND_STRING(
+            "Mega Evolution sharpens their teamwork.\n"
+            "The family now moves as a flawless unit,\n"
+            "executing rapid strikes with perfect timing\n"
+            "and unrivaled precision."),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_MausholdMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .backPic = gMonBackPic_MausholdMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 1,
+        .backAnimId = BACK_ANIM_GROW_STUTTER,
+        .palette = gMonPalette_MausholdMega,
+        .shinyPalette = gMonShinyPalette_MausholdMega,
+        .iconSprite = gMonIcon_MausholdMega,
+        .iconPalIndex = 1,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
+        SHADOW(-1, 13, SHADOW_SIZE_L)
+        FOOTPRINT(MausholdFour)
+    #if OW_BATTLE_ONLY_FORMS
+        OVERWORLD(
+            sPicTable_MausholdFour,
+            SIZE_32x32,
+            SHADOW_SIZE_S,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_MausholdFour,
+            gShinyOverworldPalette_MausholdFour
+        )
+    #endif // OW_BATTLE_ONLY_FORMS
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sMausholdLevelUpLearnset,
+        .teachableLearnset = sMausholdTeachableLearnset,
+        .formSpeciesIdTable = sMausholdFormSpeciesIdTable,
+        .formChangeTable = sMausholdFormChangeTable,
+    },
+
+    [SPECIES_MAUSHOLD_MEGA_Z] =
+    {
+        .baseHP        = 74,
+        .baseAttack    = 130,
+        .baseDefense   = 75,
+        .baseSpeed     = 146,
+        .baseSpAttack  = 55,
+        .baseSpDefense = 90,
+        .types = MON_TYPES(TYPE_FAIRY, TYPE_GROUND),
+        .catchRate = 75,
+        .expYield = 265,
+        .evYield_Speed = 3,
+        .genderRatio = MON_GENDERLESS,
+        .eggCycles = 10,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_FAIRY),
+        .abilities = { ABILITY_ADAPTABILITY, ABILITY_ADAPTABILITY, ABILITY_ADAPTABILITY },
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Maushold"),
         .cryId = CRY_MAUSHOLD_FOUR,

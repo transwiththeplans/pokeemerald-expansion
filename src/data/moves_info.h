@@ -21441,10 +21441,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Sugar Crunch"),
         .description = COMPOUND_STRING(
-            "Gets stronger the more\n"
-            "the user was hit."),
-        .effect = EFFECT_REVENGE,
-        .power = 50,
+            "Bites with sugary fangs.\n"
+            "May cause confusion."),
+        .effect = EFFECT_HIT,
+        .power = 80,
         .type = TYPE_FAIRY,
         .accuracy = 100,
         .pp = 10,
@@ -21454,6 +21454,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .makesContact = TRUE,
         .metronomeBanned = TRUE,
 		.bitingMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .chance = 20,
+        }),
         .battleAnimScript = gBattleAnimMove_PsychicFangs,
     },
 
@@ -22332,7 +22336,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_LOCK_ON, COMBO_STARTER_MIND_READER},
-        .battleAnimScript = gBattleAnimMove_HyperspaceFury,
+        .battleAnimScript = gBattleAnimMove_NightDaze,
         .validApprenticeMove = TRUE,
     },    
 	

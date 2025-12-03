@@ -3,7 +3,7 @@ static const u16 sVenusaurFormSpeciesIdTable[] = {
     SPECIES_VENUSAUR,
 #if P_MEGA_EVOLUTIONS
     SPECIES_VENUSAUR_MEGA,
-    SPECIES_VENUSAUR_MEGA_Y,
+    SPECIES_VENUSAUR_MEGA_Z,
 #endif
 #if P_GIGANTAMAX_FORMS
     SPECIES_VENUSAUR_GMAX,
@@ -573,6 +573,18 @@ static const u16 sScizorFormSpeciesIdTable[] = {
 #endif //P_GEN_2_CROSS_EVOS
 #endif //P_FAMILY_SCYTHER
 
+#if P_FAMILY_SCYTHER
+#if P_GEN_8_CROSS_EVOS
+static const u16 sKleavorFormSpeciesIdTable[] = {
+    SPECIES_KLEAVOR,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_KLEAVOR_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_GEN_8_CROSS_EVOS
+#endif //P_FAMILY_SCYTHER
+
 #if P_FAMILY_PINSIR
 static const u16 sPinsirFormSpeciesIdTable[] = {
     SPECIES_PINSIR,
@@ -901,6 +913,7 @@ static const u16 sSwampertFormSpeciesIdTable[] = {
     SPECIES_SWAMPERT,
 #if P_MEGA_EVOLUTIONS
     SPECIES_SWAMPERT_MEGA,
+    SPECIES_SWAMPERT_MEGA_Z,
 #endif
     FORM_SPECIES_END,
 };
@@ -2361,10 +2374,51 @@ static const u16 sSkeledirgeFormSpeciesIdTable[] = {
     SPECIES_SKELEDIRGE,
 #if P_MEGA_EVOLUTIONS
     SPECIES_SKELEDIRGE_MEGA,
+    SPECIES_SKELEDIRGE_MEGA_Z,
 #endif
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_FUECOCO
+
+#if P_FAMILY_CHIKORITA
+static const u16 sMeganiumFormSpeciesIdTable[] = {
+    SPECIES_MEGANIUM,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_MEGANIUM_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_CHIKORITA
+
+#if P_FAMILY_TEPIG
+static const u16 sEmboarFormSpeciesIdTable[] = {
+    SPECIES_EMBOAR,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_EMBOAR_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_TEPIG
+
+#if P_FAMILY_POPPLIO
+static const u16 sPrimarinaFormSpeciesIdTable[] = {
+    SPECIES_PRIMARINA,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_PRIMARINA_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_POPPLIO
+
+#if P_FAMILY_TURTWIG
+static const u16 sTorterraFormSpeciesIdTable[] = {
+    SPECIES_TORTERRA,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_TORTERRA_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_TURTWIG
 
 #if P_FAMILY_LECHONK
 static const u16 sOinkologneFormSpeciesIdTable[] = {
@@ -2389,6 +2443,7 @@ static const u16 sMausholdFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 #if P_MEGA_EVOLUTIONS
     SPECIES_MAUSHOLD_MEGA,
+    SPECIES_MAUSHOLD_MEGA_Z,
 #endif
     FORM_SPECIES_END,
 };

@@ -910,6 +910,74 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .formSpeciesIdTable = sSwampertFormSpeciesIdTable,
         .formChangeTable = sSwampertFormChangeTable,
     },
+
+    [SPECIES_SWAMPERT_MEGA_Z] =
+    {
+        .baseHP        = 100,
+        .baseAttack    = 100,
+        .baseDefense   = 130,
+        .baseSpeed     = 45,
+        .baseSpAttack  = 135,
+        .baseSpDefense = 120,
+        .types = MON_TYPES(TYPE_WATER, TYPE_DRAGON),
+        .catchRate = 45,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 318 : 286,
+        .evYield_Attack = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_WATER_1),
+        .abilities = { ABILITY_JUGGERNAUT, ABILITY_JUGGERNAUT, ABILITY_JUGGERNAUT },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Swampert"),
+        .cryId = CRY_SWAMPERT_MEGA,
+        .natDexNum = NATIONAL_DEX_SWAMPERT,
+        .categoryName = _("Mud Fish"),
+        .height = 19,
+        .weight = 40000,
+        .description = COMPOUND_STRING(
+            "When it Mega Evolves, the strength that it\n"
+            "needs to act in the water is increased.\n"
+            "It can use its tenacious power\n"
+            "both on land and in the water."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_SwampertMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 6,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_SwampertMega,
+        .backPicSize = MON_COORDS_SIZE(64, 56),
+        .backPicYOffset = 6,
+        .backAnimId = BACK_ANIM_SHAKE_GLOW_BLUE,
+        .palette = gMonPalette_SwampertMega,
+        .shinyPalette = gMonShinyPalette_SwampertMega,
+        .iconSprite = gMonIcon_SwampertMega,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(6, 8, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Swampert)
+    #if OW_BATTLE_ONLY_FORMS
+        OVERWORLD(
+            sPicTable_SwampertMega,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_SwampertMega,
+            gShinyOverworldPalette_SwampertMega
+        )
+    #endif //OW_BATTLE_ONLY_FORMS
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sSwampertLevelUpLearnset,
+        .teachableLearnset = sSwampertTeachableLearnset,
+        .formSpeciesIdTable = sSwampertFormSpeciesIdTable,
+        .formChangeTable = sSwampertFormChangeTable,
+    },
 #endif //P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_MUDKIP
 

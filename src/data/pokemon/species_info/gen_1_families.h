@@ -300,7 +300,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formChangeTable = sVenusaurFormChangeTable,
     },
 	
-    [SPECIES_VENUSAUR_MEGA_Y] =
+    [SPECIES_VENUSAUR_MEGA_Z] =
     {
         .baseHP        = 70,
         .baseAttack    = 140,
@@ -16395,7 +16395,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseSpeed     = 75,
         .baseSpAttack  = 65,
         .baseSpDefense = 100,
-        .types = MON_TYPES(TYPE_BUG, TYPE_STEEL),
+        .types = MON_TYPES(TYPE_FIGHTING, TYPE_DRAGON),
         .catchRate = 25,
         .expYield = 210,
         .evYield_Attack = 2,
@@ -16519,7 +16519,77 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sKleavorLevelUpLearnset,
         .teachableLearnset = sKleavorTeachableLearnset,
+        .formSpeciesIdTable = sKleavorFormSpeciesIdTable,
+        .formChangeTable = sKleavorFormChangeTable,
     },
+	
+#if P_MEGA_EVOLUTIONS
+    [SPECIES_KLEAVOR_MEGA] =
+    {
+        .baseHP        = 70,
+        .baseAttack    = 155,
+        .baseDefense   = 135,
+        .baseSpeed     = 95,
+        .baseSpAttack  = 45,
+        .baseSpDefense = 80,
+        .types = MON_TYPES(TYPE_FIGHTING, TYPE_ROCK),
+        .catchRate = 15,
+        .expYield = 175,
+        .evYield_Attack = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
+        .abilities = { ABILITY_SHEER_FORCE, ABILITY_SHARPNESS, ABILITY_SOLID_ROCK },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("Kleavor"),
+        .cryId = CRY_KLEAVOR,
+        .natDexNum = NATIONAL_DEX_KLEAVOR,
+        .categoryName = _("Axe"),
+        .height = 18,
+        .weight = 890,
+        .description = COMPOUND_STRING(
+            "A violent creature that fells trees with\n"
+            "its crude axes and shields itself with hard\n"
+            "stone. Should one encounter this Pokémon\n"
+            "in the wild, one's only recourse is to flee."),
+        .pokemonScale = 267,
+        .pokemonOffset = 2,
+        .trainerScale = 286,
+        .trainerOffset = 1,
+        .frontPic = gMonFrontPic_Kleavor,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Kleavor,
+        .backPicSize = MON_COORDS_SIZE(64, 56),
+        .backPicYOffset = 4,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Kleavor,
+        .shinyPalette = gMonShinyPalette_Kleavor,
+        .iconSprite = gMonIcon_Kleavor,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(2, 12, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Kleavor)
+        OVERWORLD(
+            sPicTable_Kleavor,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Kleavor,
+            gShinyOverworldPalette_Kleavor
+        )
+        .isMegaEvolution = TRUE,
+		.levelUpLearnset = sKleavorLevelUpLearnset,
+        .teachableLearnset = sKleavorTeachableLearnset,
+        .formSpeciesIdTable = sKleavorFormSpeciesIdTable,
+        .formChangeTable = sKleavorFormChangeTable,
+    },
+#endif //P_MEGA_EVOLUTIONS
 #endif //P_GEN_8_CROSS_EVOS
 #endif //P_FAMILY_SCYTHER
 

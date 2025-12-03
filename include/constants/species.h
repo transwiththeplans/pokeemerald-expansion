@@ -1688,7 +1688,7 @@
 #define SPECIES_MALAMAR_MEGA                            1570
 #define SPECIES_RAICHU_MEGA                             1571
 #define SPECIES_RAICHU_COLD_MEGA                        1572
-#define SPECIES_MAUSHOLD_MEGA_Y                         1573
+#define SPECIES_MAUSHOLD_MEGA_Z                         1573
 #define SPECIES_TORTERRA_MEGA                           1574
 #define SPECIES_CHESNAUGHT_MEGA                         1575
 #define SPECIES_TYPHLOSION_MEGA                         1576
@@ -1703,7 +1703,7 @@
 #define SPECIES_KINGAMBIT_MEGA                          1585
 #define SPECIES_CACTURNE_MEGA                           1586
 #define SPECIES_MALAMAR_MEGA_Y                          1587
-#define SPECIES_VENUSAUR_MEGA_Y                         1588
+#define SPECIES_VENUSAUR_MEGA_Z                         1588
 #define SPECIES_CHARIZARD_MEGA_Z                        1589
 #define SPECIES_BLASTOISE_MEGA_Y                        1590
 #define SPECIES_RILLABOOM_MEGA                          1591
@@ -1712,12 +1712,12 @@
 #define SPECIES_DELPHOX_MEGA                            1594
 #define SPECIES_GRENINJA_MEGA                           1595
 #define SPECIES_FERALIGATR_MEGA                         1596
-#define SPECIES_CUSTOM_5                                1597
-#define SPECIES_CUSTOM_6                                1598
-#define SPECIES_CUSTOM_7                                1599
-#define SPECIES_CUSTOM_8                                1600
-#define SPECIES_CUSTOM_9                                1601
-#define SPECIES_CUSTOM_10                               1602
+#define SPECIES_SKELEDIRGE_MEGA_Z                       1597
+#define SPECIES_SWAMPERT_MEGA_Z                         1598
+#define SPECIES_MEGANIUM_MEGA                           1599
+#define SPECIES_EMBOAR_MEGA                             1600
+#define SPECIES_PRIMARINA_MEGA                          1601
+#define SPECIES_KLEAVOR_MEGA                            1602
 #define SPECIES_CUSTOM_11                               1603
 #define SPECIES_CUSTOM_12                               1604
 #define SPECIES_CUSTOM_13                               1605

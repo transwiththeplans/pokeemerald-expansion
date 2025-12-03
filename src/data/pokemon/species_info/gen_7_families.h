@@ -661,7 +661,76 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         )
         .levelUpLearnset = sPrimarinaLevelUpLearnset,
         .teachableLearnset = sPrimarinaTeachableLearnset,
+        .formSpeciesIdTable = sPrimarinaFormSpeciesIdTable,
+        .formChangeTable = sPrimarinaFormChangeTable,
     },
+#if P_MEGA_EVOLUTION
+    [SPECIES_PRIMARINA_MEGA] =
+    {
+        .baseHP        = 80,
+        .baseAttack    = 90,
+        .baseDefense   = 104,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 145,
+        .baseSpDefense = 141,
+        .types = MON_TYPES(TYPE_WATER, TYPE_ELECTRIC),
+        .catchRate = 45,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 265 : 239,
+        .evYield_SpAttack = 3,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_FIELD),
+        .abilities = { ABILITY_WATER_BUBBLE, ABILITY_WATER_BUBBLE, ABILITY_WATER_BUBBLE },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Primarina"),
+        .cryId = CRY_PRIMARINA,
+        .natDexNum = NATIONAL_DEX_PRIMARINA,
+        .categoryName = _("Soloist"),
+        .height = 18,
+        .weight = 440,
+        .description = COMPOUND_STRING(
+            "It controls its water balloons with song.\n"
+            "The melody is learned from others of\n"
+            "its kind and is passed down from one\n"
+            "generation to the next."),
+        .pokemonScale = 267,
+        .pokemonOffset = 2,
+        .trainerScale = 286,
+        .trainerOffset = 1,
+        .frontPic = gMonFrontPic_Primarina,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_SHAKE_GLOW_BLUE_SLOW,
+        .backPic = gMonBackPic_Primarina,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Primarina,
+        .shinyPalette = gMonShinyPalette_Primarina,
+        .iconSprite = gMonIcon_Primarina,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-6, 11, SHADOW_SIZE_L)
+        FOOTPRINT(Primarina)
+        OVERWORLD(
+            sPicTable_Primarina,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Primarina,
+            gShinyOverworldPalette_Primarina
+        )
+		.isMegaEvolution = TRUE,
+        .levelUpLearnset = sPrimarinaLevelUpLearnset,
+        .teachableLearnset = sPrimarinaTeachableLearnset,
+        .formSpeciesIdTable = sPrimarinaFormSpeciesIdTable,
+        .formChangeTable = sPrimarinaFormChangeTable,
+    },
+#endif //P_MEGA_EVOLUTION
 #endif //P_FAMILY_POPPLIO
 
 #if P_FAMILY_PIKIPEK

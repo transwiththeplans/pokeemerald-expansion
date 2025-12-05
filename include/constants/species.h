@@ -1684,7 +1684,7 @@
 #define SPECIES_UNOWN_XERGE                             1566
 #define SPECIES_CHANDELURE_MEGA                         1567
 #define SPECIES_DRAMPA_MEGA                             1568
-#define SPECIES_STARMIE_MEGA_Y                          1569
+#define SPECIES_STARMIE_MEGA_Z                          1569
 #define SPECIES_MALAMAR_MEGA                            1570
 #define SPECIES_RAICHU_MEGA                             1571
 #define SPECIES_RAICHU_COLD_MEGA                        1572
@@ -1718,12 +1718,29 @@
 #define SPECIES_EMBOAR_MEGA                             1600
 #define SPECIES_PRIMARINA_MEGA                          1601
 #define SPECIES_KLEAVOR_MEGA                            1602
-#define SPECIES_CUSTOM_11                               1603
-#define SPECIES_CUSTOM_12                               1604
-#define SPECIES_CUSTOM_13                               1605
+#define SPECIES_CHANDELURE_MEGA_Z                       1603
+#define SPECIES_GARCHOMP_MEGA_Z                         1604
+#define SPECIES_KINGAMBIT_MEGA_Z                        1605
+#define SPECIES_DRAGONITE_MEGA_Z                        1606
+#define SPECIES_DRAGONITE_BIG_CHILL_MEGA_Z              1607
+#define SPECIES_MALAMAR_MEGA_Z                          1608
+#define SPECIES_TALONFLAME_MEGA                         1609
+#define SPECIES_TALONFLAME_MEGA_Z                       1610
+#define SPECIES_LUCARIO_MEGA_Z                          1611
+#define SPECIES_MACHAMP_MEGA_Z                          1612
+#define SPECIES_SKARMORY_MEGA                           1613
+#define SPECIES_SKARMORY_MEGA_Z                         1614
+#define SPECIES_INTELEON_MEGA_Z                         1615
+#define SPECIES_CINDERACE_MEGA_Z                        1616
+#define SPECIES_RILLABOOM_MEGA_Z                        1617
+#define SPECIES_MELMETAL_MEGA                           1618
+#define SPECIES_MELMETAL_MEGA_Z                         1619
+#define SPECIES_ALTARIA_MEGA_Z                          1620
+#define SPECIES_CUSTOM_29                               1621
+#define SPECIES_CUSTOM_30                               1622
 
 // Must always be last
-#define SPECIES_EGG                                     (SPECIES_CUSTOM_13 + 1)
+#define SPECIES_EGG                                     (SPECIES_CUSTOM_30 + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

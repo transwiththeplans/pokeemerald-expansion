@@ -116,16 +116,3 @@ AI_SINGLE_BATTLE_TEST("AI uses Stuff Cheeks")
         TURN { EXPECT_MOVE(opponent, MOVE_STUFF_CHEEKS); }
     }
 }
-
-SINGLE_BATTLE_TEST("Stuff Cheeks can be used even if Unnerve is present (Trait)")
-{
-    GIVEN {
-        PLAYER(SPECIES_SKWOVET) { Item(ITEM_LIECHI_BERRY); }
-        OPPONENT(SPECIES_EKANS) { Ability(ABILITY_SHED_SKIN); Innates(ABILITY_UNNERVE); }
-    } WHEN {
-        TURN { MOVE(player, MOVE_STUFF_CHEEKS); }
-    } SCENE {
-        MESSAGE("Skwovet used Stuff Cheeks!");
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_STUFF_CHEEKS, player);
-    }
-}

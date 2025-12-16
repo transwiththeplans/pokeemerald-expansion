@@ -133,20 +133,18 @@ SINGLE_BATTLE_TEST("If Salt Cure faints the target, messages will be applied in 
     }
 }
 
-SINGLE_BATTLE_TEST("Salt Cure residual damage does not inflict any damage against Magic Guard (Trait)")
+DOUBLE_BATTLE_TEST("Salt Cure works in double battles")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_CLEFABLE) { Ability(ABILITY_UNAWARE); Innates(ABILITY_MAGIC_GUARD); };
+        PLAYER(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WYNAUT);
     } WHEN {
-        TURN { MOVE(player, MOVE_SALT_CURE); }
+        TURN { MOVE(playerLeft, MOVE_SALT_CURE, target: opponentLeft); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_SALT_CURE, player);
-        HP_BAR(opponent);
-        NONE_OF {
-            ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_SALT_CURE_DAMAGE, opponent);
-            HP_BAR(opponent);
-            MESSAGE("The opposing Clefable is hurt by Salt Cure!");
-        }
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SALT_CURE, playerLeft);
+        HP_BAR(opponentLeft);
+        HP_BAR(opponentLeft);
     }
 }

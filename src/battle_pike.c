@@ -812,7 +812,6 @@ static void HealMon(struct Pokemon *mon)
 
 static bool8 DoesAbilityPreventStatus(struct Pokemon *mon, u32 status)
 {
-    //u16 ability = GetMonAbility(mon);
     bool8 ret = FALSE;
     u16 battlerTraits[MAX_MON_TRAITS];
     STORE_BATTLER_TRAITS(gBattlerTarget);
@@ -865,7 +864,7 @@ static bool8 DoesTypePreventStatus(u16 species, u32 status)
         break;
     case STATUS1_PARALYSIS:
         if (GetSpeciesType(species, 0) == TYPE_GROUND || GetSpeciesType(species, 1) == TYPE_GROUND
-            || (B_PARALYZE_ELECTRIC >= GEN_6 && (GetSpeciesType(species, 0) == TYPE_ELECTRIC || GetSpeciesType(species, 1) == TYPE_ELECTRIC)))
+            || (GetGenConfig(GEN_CONFIG_PARALYZE_ELECTRIC) >= GEN_6 && (GetSpeciesType(species, 0) == TYPE_ELECTRIC || GetSpeciesType(species, 1) == TYPE_ELECTRIC)))
             ret = TRUE;
         break;
     case STATUS1_BURN:
@@ -1626,7 +1625,7 @@ static bool8 CanEncounterWildMon(u8 enemyMonLevel)
 {
     if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
     {
-        if (MonHasTrait(&gPlayerParty[0], ABILITY_SOUNDPROOF, TRUE)
+        if (MonHasTrait(&gPlayerParty[0], ABILITY_KEEN_EYE, TRUE)
          || MonHasTrait(&gPlayerParty[0], ABILITY_INTIMIDATE, TRUE))
         {
             u8 playerMonLevel = GetMonData(&gPlayerParty[0], MON_DATA_LEVEL);

@@ -1066,7 +1066,7 @@ extern enum Ability gLastUsedAbility;
 extern enum Ability gDisplayAbility;
 extern enum Ability gDisplayAbility2;
 extern u8 gDisplayBattler;
-extern u16 gTraitStack[MAX_BATTLERS_COUNT * MAX_MON_TRAITS][2];
+extern enum Ability gTraitStack[MAX_BATTLERS_COUNT * MAX_MON_TRAITS][2];
 extern u8 gBattlerAttacker;
 extern u8 gBattlerTarget;
 extern u8 gBattlerFainted;

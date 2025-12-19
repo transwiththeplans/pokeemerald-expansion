@@ -66,7 +66,8 @@ static bool32 AI_IsDoubleSpreadMove(u32 battlerAtk, u32 move)
 
 bool32 AI_IsBattlerGrounded(u32 battler)
 {
-    return IsBattlerGrounded(battler, gAiLogicData->abilities[battler], gAiLogicData->holdEffects[battler]);
+    DebugPrintf("AI_IsBattlerGrounded: %d", battler);
+    return IsBattlerGrounded(battler, gAiLogicData->holdEffects[battler]);
 }
 
 u32 AI_GetDamage(u32 battlerAtk, u32 battlerDef, u32 moveIndex, enum DamageCalcContext calcContext, struct AiLogicData *aiData)
@@ -550,10 +551,10 @@ bool32 Ai_IsPriorityBlocked(u32 battlerAtk, u32 battlerDef, u32 move, struct AiL
     if (IsMoldBreakerTypeAbility(battlerAtk, aiData->abilities[battlerAtk]) || MoveIgnoresTargetAbility(move))
         return FALSE;
 
-    if (IsDazzlingAbility(aiData->abilities[battlerDef]))
+    if (HasDazzlingAbility(battlerDef))
         return TRUE;
 
-    if (IsDoubleBattle() && IsDazzlingAbility(aiData->abilities[BATTLE_PARTNER(battlerDef)]))
+    if (IsDoubleBattle() && HasDazzlingAbility(BATTLE_PARTNER(battlerDef)))
         return TRUE;
 
     return FALSE;
@@ -4466,23 +4467,17 @@ void FreeRestoreBattleMons(struct BattlePokemon *savedBattleMons)
 // Set potential field effect from ability for switch in
 static void SetBattlerFieldStatusForSwitchin(u32 battler)
 {
-    switch (gAiLogicData->abilities[battler])
-    {
-    case ABILITY_VESSEL_OF_RUIN:
+    u16 AIBattlerTraits[MAX_MON_TRAITS];
+    AI_STORE_BATTLER_TRAITS(battler);
+
+    if (AISearchTraits(AIBattlerTraits, ABILITY_VESSEL_OF_RUIN))
         gBattleMons[battler].volatiles.vesselOfRuin = TRUE;
-        break;
-    case ABILITY_SWORD_OF_RUIN:
+    if (AISearchTraits(AIBattlerTraits, ABILITY_SWORD_OF_RUIN))
         gBattleMons[battler].volatiles.swordOfRuin = TRUE;
-        break;
-    case ABILITY_TABLETS_OF_RUIN:
+    if (AISearchTraits(AIBattlerTraits, ABILITY_TABLETS_OF_RUIN))
         gBattleMons[battler].volatiles.tabletsOfRuin = TRUE;
-        break;
-    case ABILITY_BEADS_OF_RUIN:
+    if (AISearchTraits(AIBattlerTraits, ABILITY_BEADS_OF_RUIN))
         gBattleMons[battler].volatiles.beadsOfRuin = TRUE;
-        break;
-    default:
-        break;
-    }
 }
 
 // party logic
@@ -6081,7 +6076,7 @@ s32 BattlerBenefitsFromAbilityScore(u32 battler, enum Ability ability, struct Ai
     case ABILITY_INTIMIDATE:
     {
         enum Ability abilityDef = aiData->abilities[LEFT_FOE(battler)];
-        if (DoesIntimidateRaiseStats(FOE(battler), abilityDef))
+        if (DoesIntimidateRaiseStats(LEFT_FOE(battler), abilityDef))
         {
             return AWFUL_EFFECT;
         }

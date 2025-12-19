@@ -1954,7 +1954,7 @@ void Ability_(u32 sourceLine, enum Ability ability)
     }
 }
 
-void Innates_(u32 sourceLine, u32 innates[MAX_MON_INNATES])
+void Innates_(u32 sourceLine, enum Ability innates[MAX_MON_INNATES])
 {
     s32 i;
     INVALID_IF(!DATA.currentMon, "Innates outside of PLAYER/OPPONENT");
@@ -1964,21 +1964,7 @@ void Innates_(u32 sourceLine, u32 innates[MAX_MON_INNATES])
     for (i = 0; i < MAX_MON_INNATES; i++)
     {
         INVALID_IF(innates[i] >= ABILITIES_COUNT, "Illegal ability id: %d", innates[i]);
-        DATA.forcedInnates[DATA.currentSide][DATA.currentPartyIndex][i] = innates[i];
-    }
-}
-
-void Innates_(u32 sourceLine, u32 innates[MAX_MON_INNATES])
-{
-    s32 i;
-    INVALID_IF(!DATA.currentMon, "Innates outside of PLAYER/OPPONENT");
-
-    // Overwrites the target pokemon with the given Innate list.
-    // If the list is empty, the pokemon will have no Innates to remain compatible with vanilla tests.
-    for (i = 0; i < MAX_MON_INNATES; i++)
-    {
-        INVALID_IF(innates[i] >= ABILITIES_COUNT, "Illegal ability id: %d", innates[i]);
-        DATA.forcedInnates[DATA.currentSide][DATA.currentPartyIndex][i] = innates[i];
+        DATA.forcedInnates[DATA.currentPosition][DATA.currentPartyIndex][i] = innates[i];
     }
 }
 

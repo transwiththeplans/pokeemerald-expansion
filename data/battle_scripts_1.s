@@ -517,7 +517,7 @@ BattleScript_Teatimevul:
 	moveendcase MOVEEND_CLEAR_BITS
 	goto BattleScript_MoveEnd
 BattleScript_Teatimesorb:
-	pushtraitstack BS_TARGET ABILITY_VOLT_ABSORB
+	pushtraitstack BS_TARGET ABILITY_VOLT_ABSORB @ Generates placeholder popup entry
 	call BattleScript_AbilityPopUpTarget
 	tryhealquarterhealth BS_TARGET, BattleScript_Teatimesorb_end
 	healthbarupdate BS_TARGET, PASSIVE_HP_UPDATE
@@ -4188,11 +4188,12 @@ BattleScript_EffectSkillSwap::
 	attackanimation
 	waitanimation
 	jumpiftargetally BattleScript_EffectSkillSwap_AfterAbilityPopUp
+	pushtraitstack BS_ATTACKER ABILITY_VOLT_ABSORB @ Generates placeholder popup entry
 	copybyte gBattlerAbility, gBattlerAttacker
 	call BattleScript_AbilityPopUpOverwriteThenNormal
 	copybyte gBattlerAbility, gBattlerTarget
 	copyhword sABILITY_OVERWRITE, gLastUsedAbility
-	pushtraitstack BS_TARGET ABILITY_VOLT_ABSORB
+	pushtraitstack BS_TARGET ABILITY_VOLT_ABSORB @ Generates placeholder popup entry
 	call BattleScript_AbilityPopUpOverwriteThenNormal
 BattleScript_EffectSkillSwap_AfterAbilityPopUp:
 	recordability BS_ATTACKER
@@ -7284,7 +7285,7 @@ BattleScript_BattlerAbilityStatRaiseOnSwitchInDauntless::
 	setstatchanger STAT_DEF, 1, FALSE
 	statbuffchange BS_SCRIPTING, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_CERTAIN, BattleScript_BattlerAbilityStatRaiseOnSwitchInDauntlessRet
 	waitanimation
-	printstring STRINGID_BATTLERABILITYRAISEDSTAT
+	printstring STRINGID_SCRIPTINGABILITYSTATRAISE
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_BattlerAbilityStatRaiseOnSwitchInDauntlessRet:
 	end3
@@ -7294,7 +7295,7 @@ BattleScript_BattlerAbilityStatRaiseOnSwitchInWindRider::
 	setstatchanger STAT_ATK, 1, FALSE
 	statbuffchange BS_SCRIPTING, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_CERTAIN, BattleScript_BattlerAbilityStatRaiseOnSwitchInWindRiderRet
 	waitanimation
-	printstring STRINGID_BATTLERABILITYRAISEDSTAT
+	printstring STRINGID_SCRIPTINGABILITYSTATRAISE
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_BattlerAbilityStatRaiseOnSwitchInWindRiderRet:
 	end3
@@ -7304,7 +7305,7 @@ BattleScript_BattlerAbilityStatRaiseOnSwitchInEmbodyAspectTeal::
 	setstatchanger STAT_SPEED, 1, FALSE
 	statbuffchange BS_SCRIPTING, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_CERTAIN, BattleScript_BattlerAbilityStatRaiseOnSwitchInEmbodyAspectTealRet
 	waitanimation
-	printstring STRINGID_BATTLERABILITYRAISEDSTAT
+	printstring STRINGID_SCRIPTINGABILITYSTATRAISE
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_BattlerAbilityStatRaiseOnSwitchInEmbodyAspectTealRet:
 	end3
@@ -7314,7 +7315,7 @@ BattleScript_BattlerAbilityStatRaiseOnSwitchInEmbodyAspectHearthFlame::
 	setstatchanger STAT_ATK, 1, FALSE
 	statbuffchange BS_SCRIPTING, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_CERTAIN, BattleScript_BattlerAbilityStatRaiseOnSwitchInEmbodyAspectHearthFlameRet
 	waitanimation
-	printstring STRINGID_BATTLERABILITYRAISEDSTAT
+	printstring STRINGID_SCRIPTINGABILITYSTATRAISE
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_BattlerAbilityStatRaiseOnSwitchInEmbodyAspectHearthFlameRet:
 	end3
@@ -7324,7 +7325,7 @@ BattleScript_BattlerAbilityStatRaiseOnSwitchInEmbodyAspectWellSpring::
 	setstatchanger STAT_SPDEF, 1, FALSE
 	statbuffchange BS_SCRIPTING, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_CERTAIN, BattleScript_BattlerAbilityStatRaiseOnSwitchInEmbodyAspectWellSpringRet
 	waitanimation
-	printstring STRINGID_BATTLERABILITYRAISEDSTAT
+	printstring STRINGID_SCRIPTINGABILITYSTATRAISE
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_BattlerAbilityStatRaiseOnSwitchInEmbodyAspectWellSpringRet:
 	end3
@@ -7334,7 +7335,7 @@ BattleScript_BattlerAbilityStatRaiseOnSwitchInEmbodyAspectCornerStone::
 	setstatchanger STAT_DEF, 1, FALSE
 	statbuffchange BS_SCRIPTING, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_CERTAIN, BattleScript_BattlerAbilityStatRaiseOnSwitchInEmbodyAspectCornerStoneRet
 	waitanimation
-	printstring STRINGID_BATTLERABILITYRAISEDSTAT
+	printstring STRINGID_SCRIPTINGABILITYSTATRAISE
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_BattlerAbilityStatRaiseOnSwitchInEmbodyAspectCornerStoneRet:
 	end3
@@ -7395,7 +7396,6 @@ BattleScript_RaiseStatOnFaintingTargetMoxie::
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_RaiseStatOnFaintingTargetMoxie_End:
 	return
-
 
 BattleScript_RaiseStatOnFaintingTargetChilling::
 	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR | STAT_CHANGE_ONLY_CHECKING, BattleScript_RaiseStatOnFaintingTargetChilling_End
@@ -8545,7 +8545,7 @@ BattleScript_TargetAbilityStatRaiseRetJustified::
 	statbuffchange BS_ATTACKER, STAT_CHANGE_CERTAIN, BattleScript_TargetAbilityStatRaiseRetJustified_End
 	call BattleScript_StatUp
 BattleScript_TargetAbilityStatRaiseRetJustified_End:
-	copybyte gBattlerAttacker, sSAVED_BATTLER
+	restoreattacker
 	return
 
 BattleScript_TargetAbilityStatRaiseRetRattled::
@@ -8556,7 +8556,7 @@ BattleScript_TargetAbilityStatRaiseRetRattled::
 	statbuffchange BS_ATTACKER, STAT_CHANGE_CERTAIN, BattleScript_TargetAbilityStatRaiseRetRattled_End
 	call BattleScript_StatUp
 BattleScript_TargetAbilityStatRaiseRetRattled_End:
-	copybyte gBattlerAttacker, sSAVED_BATTLER
+	restoreattacker
 	return
 
 BattleScript_TargetAbilityStatRaiseRetWaterCompaction::
@@ -8567,7 +8567,7 @@ BattleScript_TargetAbilityStatRaiseRetWaterCompaction::
 	statbuffchange BS_ATTACKER, STAT_CHANGE_CERTAIN, BattleScript_TargetAbilityStatRaiseRetWaterCompaction_End
 	call BattleScript_StatUp
 BattleScript_TargetAbilityStatRaiseRetWaterCompaction_End:
-	copybyte gBattlerAttacker, sSAVED_BATTLER
+	restoreattacker
 	return
 
 BattleScript_TargetAbilityStatRaiseRetStamina::
@@ -8578,7 +8578,7 @@ BattleScript_TargetAbilityStatRaiseRetStamina::
 	statbuffchange BS_ATTACKER, STAT_CHANGE_CERTAIN, BattleScript_TargetAbilityStatRaiseRetStamina_End
 	call BattleScript_StatUp
 BattleScript_TargetAbilityStatRaiseRetStamina_End:
-	copybyte gBattlerAttacker, sSAVED_BATTLER
+	restoreattacker
 	return
 
 BattleScript_TargetAbilityStatRaiseRetBerserk::
@@ -8589,7 +8589,7 @@ BattleScript_TargetAbilityStatRaiseRetBerserk::
 	statbuffchange BS_ATTACKER, STAT_CHANGE_CERTAIN, BattleScript_TargetAbilityStatRaiseRetBerserk_End
 	call BattleScript_StatUp
 BattleScript_TargetAbilityStatRaiseRetBerserk_End:
-	copybyte gBattlerAttacker, sSAVED_BATTLER
+	restoreattacker
 	return
 
 BattleScript_TargetAbilityStatRaiseRetSteam::
@@ -8600,7 +8600,7 @@ BattleScript_TargetAbilityStatRaiseRetSteam::
 	statbuffchange BS_ATTACKER, STAT_CHANGE_CERTAIN, BattleScript_TargetAbilityStatRaiseRetSteam_End
 	call BattleScript_StatUp
 BattleScript_TargetAbilityStatRaiseRetSteam_End:
-	copybyte gBattlerAttacker, sSAVED_BATTLER
+	restoreattacker
 	return
 
 BattleScript_TargetAbilityStatRaiseRetThermal::
@@ -8611,7 +8611,7 @@ BattleScript_TargetAbilityStatRaiseRetThermal::
 	statbuffchange BS_ATTACKER, STAT_CHANGE_CERTAIN, BattleScript_TargetAbilityStatRaiseRetThermal_End
 	call BattleScript_StatUp
 BattleScript_TargetAbilityStatRaiseRetThermal_End:
-	copybyte gBattlerAttacker, sSAVED_BATTLER
+	restoreattacker
 	return
 
 @@@ MAX MOVES @@@

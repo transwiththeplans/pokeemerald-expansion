@@ -1096,7 +1096,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
     SetTypeBeforeUsingMove(move, battlerAtk);
     moveType = GetBattleMoveType(move);
 
-    if (IsPowderMove(move) && !IsAffectedByPowderMove(battlerDef, aiData->abilities[battlerDef], aiData->holdEffects[battlerDef]))
+    if (IsPowderMove(move) && !IsAffectedByPowderMove(battlerDef, aiData->holdEffects[battlerDef]))
         RETURN_SCORE_MINUS(10);
 
     if (!BreaksThroughSemiInvulnerablity(battlerDef, move) && moveEffect != EFFECT_SEMI_INVULNERABLE && AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, CONSIDER_PRIORITY))
@@ -1254,19 +1254,19 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             RETURN_SCORE_MINUS(10);
 
         // terrain & effect checks
-        if (IsBattlerTerrainAffected(battlerDef, abilityDef, aiData->holdEffects[battlerDef], STATUS_FIELD_ELECTRIC_TERRAIN))
+        if (IsBattlerTerrainAffected(battlerDef, aiData->holdEffects[battlerDef], STATUS_FIELD_ELECTRIC_TERRAIN))
         {
             if (nonVolatileStatus == MOVE_EFFECT_SLEEP)
                 RETURN_SCORE_MINUS(20);
         }
 
-        if (IsBattlerTerrainAffected(battlerDef, abilityDef, aiData->holdEffects[battlerDef], STATUS_FIELD_MISTY_TERRAIN))
+        if (IsBattlerTerrainAffected(battlerDef, aiData->holdEffects[battlerDef], STATUS_FIELD_MISTY_TERRAIN))
         {
             if (IsNonVolatileStatusMove(move) || IsConfusionMoveEffect(moveEffect))
                 RETURN_SCORE_MINUS(20);
         }
 
-        if (IsBattlerTerrainAffected(battlerAtk, abilityAtk, aiData->holdEffects[battlerAtk], STATUS_FIELD_PSYCHIC_TERRAIN) && atkPriority > 0)
+        if (IsBattlerTerrainAffected(battlerAtk, aiData->holdEffects[battlerAtk], STATUS_FIELD_PSYCHIC_TERRAIN) && atkPriority > 0)
         {
             RETURN_SCORE_MINUS(20);
         }
@@ -4091,7 +4091,6 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
          || aiData->abilities[BATTLE_PARTNER(battlerDef)] == ABILITY_MYCELIUM_MIGHT)
             return score;
      }
-
     // check thawing moves
     if (gBattleMons[battlerAtk].status1 & STATUS1_ICY_ANY && MoveThawsUser(move))
         ADJUST_SCORE(10);
@@ -4869,7 +4868,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_SAFEGUARD:
-        if (!IsBattlerTerrainAffected(battlerAtk, aiData->abilities[battlerAtk], aiData->holdEffects[battlerAtk], STATUS_FIELD_MISTY_TERRAIN) || !AI_IsBattlerGrounded(battlerAtk))
+        if (!IsBattlerTerrainAffected(battlerAtk, aiData->holdEffects[battlerAtk], STATUS_FIELD_MISTY_TERRAIN) || !AI_IsBattlerGrounded(battlerAtk))
             ADJUST_SCORE(DECENT_EFFECT); // TODO: check if opp has status move?
         //if (CountUsablePartyMons(battlerDef) != 0)
             //ADJUST_SCORE(8);
@@ -4918,7 +4917,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         if (hasPartner
           && GetMoveTarget(move) == MOVE_TARGET_USER
           && !IsBattlerIncapacitated(battlerDef, aiData->abilities[battlerDef])
-          && (!IsPowderMove(move) || IsAffectedByPowderMove(battlerDef, aiData->abilities[battlerDef], aiData->holdEffects[battlerDef])))
+          && (!IsPowderMove(move) || IsAffectedByPowderMove(battlerDef, aiData->holdEffects[battlerDef])))
           // Rage Powder doesn't affect powder immunities
         {
             u32 predictedMoveOnPartner = aiData->lastUsedMove[BATTLE_PARTNER(battlerAtk)];
@@ -5680,7 +5679,7 @@ static s32 AI_CalcAdditionalEffectScore(u32 battlerAtk, u32 battlerDef, u32 move
         {
             enum StatChange StageStatId;
 
-            if (!AISearchTraits(AIBattlerTraits, ABILITY_CONTRARY))
+            if (!AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_CONTRARY))
             {
                 switch (additionalEffect->moveEffect)
                 {
@@ -5847,7 +5846,7 @@ static s32 AI_CalcAdditionalEffectScore(u32 battlerAtk, u32 battlerDef, u32 move
             case MOVE_EFFECT_INCINERATE:
                 if (gBattleMons[battlerDef].volatiles.substitute || AI_BATTLER_HAS_TRAIT(battlerDef, ABILITY_STICKY_HOLD))
                     break;
-                else if (GetItemPocket(aiData->items[battlerDef]) == POCKET_BERRIES || AI_BATTLER_HAS_TRAIT(battlerDef, HOLD_EFFECT_GEMS))
+                else if (GetItemPocket(aiData->items[battlerDef]) == POCKET_BERRIES || aiData->holdEffects[battlerDef] == HOLD_EFFECT_GEMS)
                     ADJUST_SCORE(DECENT_EFFECT);
                 break;
             case MOVE_EFFECT_STEALTH_ROCK:
@@ -6852,118 +6851,4 @@ void ScriptSetDynamicAiFunc(struct ScriptContext *ctx)
 void ResetDynamicAiFunc(void)
 {
     sDynamicAiFunc = NULL;
-}
-
-//Returns the slot the Innate is found in accouting for randomization and ability disabling. Assumes the Ability is already slot 1.  Returns 0 if not found.
-u8 BattlerHasInnate(u8 battlerId, u16 ability)
-{
-    bool8 isEnemyMon = GetBattlerSide(battlerId) == B_SIDE_OPPONENT;
-
-    /*if (BattlerIgnoresAbility(gBattlerAttacker, battlerId, ability) && B_MOLD_BREAKER_WORKS_ON_INNATES == TRUE)
-        return 0;
-    else if (BattlerAbilityWasRemoved(battlerId, ability) && B_NEUTRALIZING_GAS_WORKS_ON_INNATES == TRUE)
-        return 0;
-    else*/
-
-    //Check for Mold Breaker type negation
-    if (battlerId != gBattlerAttacker
-     && CanBreakThroughAbility(gBattlerAttacker, battlerId, ability, FALSE, FALSE))
-        return 0;
-
-    for (u8 i = 0; i < MAX_MON_INNATES; i++)
-    {
-        if (gBattleMons[battlerId].innates[i] == ability)
-            return i + 2;
-    }
-
-    return SpeciesHasInnate(gBattleMons[battlerId].species, ability, gBattleMons[battlerId].personality, isEnemyMon); 
-}
-
-//Returns the trait slot number of the given ability. Starts at 1 for the primary Ability and returns 0 if the ability is not found. Use for individual checks.
-u8 BattlerHasTrait(u8 battlerId, u16 ability) 
-{
-    u8 traitNum = 0;
-
-    if (GetBattlerAbility(battlerId) == ability)
-        traitNum = 1;
-    else 
-        traitNum = BattlerHasInnate(battlerId, ability);
-
-    return traitNum;
-}
-
-//Used to search abilities for functions already under GetBattlerAbility to avoid infinite loops.
-u8 BattlerHasTraitPlain(u8 battlerId, u16 ability)
-{
-    if (gBattleMons[battlerId].ability == ability)
-        return 1;
-    else 
-        return BattlerHasInnate(battlerId, ability);
-}
-
-void PushTraitStack(u8 battlerId, u16 ability)
-{
-
-    for (int i = 0; i < (MAX_BATTLERS_COUNT * MAX_MON_TRAITS); i++)
-    {
-        if (gTraitStack[i][1] == ABILITY_NONE)
-        {
-            gTraitStack[i][0] = battlerId;
-            gTraitStack[i][1] = ability;
-            //DebugPrintf("TRAIT STACK: [%d] - %S", i, gAbilitiesInfo[gTraitStack[i][1]].name);
-            break;
-        }
-    }
-}
-
-u8 PullTraitStackBattler()
-{
-    u8 battlerId = MAX_BATTLERS_COUNT;
-
-    for (int i = 0; i < (MAX_BATTLERS_COUNT * MAX_MON_TRAITS); i++)
-    {
-        if (gTraitStack[i][1] == ABILITY_NONE)
-        {
-            if (i == 0)
-                break; //Do nothing if first slot is already empty
-            battlerId = gTraitStack[i-1][0];
-            break;
-        }
-    }
-    return battlerId;
-}
-
-u16 PullTraitStackAbility()
-{
-    u16 ability = ABILITY_NONE;
-
-    for (int i = 0; i < (MAX_BATTLERS_COUNT * MAX_MON_TRAITS); i++)
-    {
-        if (gTraitStack[i][1] == ABILITY_NONE)
-        {
-            if (i == 0)
-                break; //Do nothing if first slot is already empty
-            ability = gTraitStack[i-1][1]; //Return the ability in the slot before the most recent empty slot
-            break;
-        }
-        // else
-        //     DebugPrintf("TRAIT STACK: [%d] - %S", i, gAbilitiesInfo[gTraitStack[i][1]].name);
-    }
-    return ability;
-}
-// Clears the latest ability popup slot.  Searches from the bottom to the top since the stack should generally be small.
-void PopTraitStack()
-{
-    //u16 ability = ABILITY_NONE;
-
-    for (int i =0; i < (MAX_BATTLERS_COUNT * MAX_MON_TRAITS); i++)
-    {
-        if (gTraitStack[i][1] == ABILITY_NONE)
-        {
-            if (i == 0)
-                break; //Do nothing if first slot is already empty
-            gTraitStack[i-1][0] = gTraitStack[i-1][1] = 0; //Clear the slot
-            break;
-        }
-    }
 }

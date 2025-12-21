@@ -8989,9 +8989,9 @@ uq4_12_t CalcPartyMonTypeEffectivenessMultiplier(u16 move, u16 speciesDef, enum 
         }
         else
         {
-            if (ctx.moveType == TYPE_GROUND && MonHasTrait(mon, ABILITY_LEVITATE, TRUE) && !(gFieldStatuses & STATUS_FIELD_GRAVITY))
+            if (ctx.moveType == TYPE_GROUND && MonHasTrait(mon, ABILITY_LEVITATE) && !(gFieldStatuses & STATUS_FIELD_GRAVITY))
                 modifier = UQ_4_12(0.0);
-            if (MonHasTrait(mon, ABILITY_WONDER_GUARD, TRUE) && modifier <= UQ_4_12(1.0) && GetMovePower(move) != 0)
+            if (MonHasTrait(mon, ABILITY_WONDER_GUARD) && modifier <= UQ_4_12(1.0) && GetMovePower(move) != 0)
                 modifier = UQ_4_12(0.0);
         }
     }
@@ -9033,7 +9033,7 @@ uq4_12_t GetOverworldTypeEffectiveness(struct Pokemon *mon, enum Type moveType)
     if (type2 != type1)
         MulByTypeEffectiveness(&ctx, &modifier, type2);
 
-    if ((modifier <= UQ_4_12(1.0) && MonHasTrait(mon, ABILITY_WONDER_GUARD, FALSE))
+    if ((modifier <= UQ_4_12(1.0) && MonHasTrait(mon, ABILITY_WONDER_GUARD))
      || CanAbilityAbsorbMove(0, ctx.battlerDef, ABILITY_NONE, MOVE_NONE, moveType, CHECK_TRIGGER))
         modifier = UQ_4_12(0.0);
 
@@ -9607,7 +9607,7 @@ bool32 SetIllusionMon(struct Pokemon *mon, u32 battler)
     u32 id;
 
     gBattleStruct->illusion[battler].state = ILLUSION_OFF;
-    if (!MonHasTrait(mon, ABILITY_ILLUSION, TRUE))
+    if (!MonHasTrait(mon, ABILITY_ILLUSION))
         return FALSE;
 
     party = GetBattlerParty(battler);
@@ -10409,7 +10409,7 @@ bool8 CanMonParticipateInSkyBattle(struct Pokemon *mon)
 {
     u16 species = GetMonData(mon, MON_DATA_SPECIES);
 
-    bool8 hasLevitateAbility = (MonHasTrait(mon, ABILITY_LEVITATE, TRUE));
+    bool8 hasLevitateAbility = (MonHasTrait(mon, ABILITY_LEVITATE));
     bool8 isFlyingType = GetSpeciesType(species, 0) == TYPE_FLYING || GetSpeciesType(species, 1) == TYPE_FLYING;
     bool8 monIsValidAndNotEgg = GetMonData(mon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(mon, MON_DATA_IS_EGG);
 
@@ -11418,11 +11418,11 @@ bool32 IsMimikyuDisguised(u32 battler)
 }
 
 //Returns the Ability or Innate of the battler at the given trait number, used to build out trait arrays
-u32 GetBattlerTrait(u8 battlerId, u8 traitNum, u32 ignoreMoldBreaker)
+enum Ability GetBattlerTrait(u8 battlerId, u8 traitNum, u32 ignoreMoldBreaker)
 {
     bool32 hasAbilityShield = GetBattlerHoldEffectIgnoreAbility(battlerId) == HOLD_EFFECT_ABILITY_SHIELD;
-    bool8 isEnemyMon = GetBattlerSide(battlerId) == B_SIDE_OPPONENT; //needed for Randomizer
-    u32 ability = -1;
+
+    enum Ability ability = ABILITIES_COUNT;
 
     #if TESTING
     if (gTestRunnerEnabled)
@@ -11430,7 +11430,7 @@ u32 GetBattlerTrait(u8 battlerId, u8 traitNum, u32 ignoreMoldBreaker)
         u32 side = GetBattlerSide(battlerId);
         u32 partyIndex = gBattlerPartyIndexes[battlerId];
 
-        if (traitNum > 0 && TestRunner_Battle_GetForcedInnates(side, partyIndex, traitNum - 1) != 0)
+        if (traitNum > 0 && TestRunner_Battle_GetForcedInnates(side, partyIndex, traitNum - 1) != ABILITY_NONE)
         {
             ability = TestRunner_Battle_GetForcedInnates(side, partyIndex, traitNum - 1);
         }
@@ -11449,8 +11449,8 @@ u32 GetBattlerTrait(u8 battlerId, u8 traitNum, u32 ignoreMoldBreaker)
     else
     {
         // Load natural Innate if not a Test
-        if (ability == -1)
-            ability = GetSpeciesInnate(gBattleMons[battlerId].species, traitNum, gBattleMons[battlerId].personality, isEnemyMon);
+        if (ability == ABILITIES_COUNT)
+            ability = GetSpeciesInnate(gBattleMons[battlerId].species, traitNum);
         
         //DebugPrintf("Trait %d: %S", traitNum, gAbilitiesInfo[ability].name);
         
@@ -11467,8 +11467,6 @@ u32 GetBattlerTrait(u8 battlerId, u8 traitNum, u32 ignoreMoldBreaker)
 //Returns the slot the Innate is found in accouting for randomization and ability disabling. Assumes the Ability is already slot 1.  Returns 0 if not found.
 u8 BattlerHasInnate(u8 battlerId, enum Ability ability)
 {
-    bool8 isEnemyMon = GetBattlerSide(battlerId) == B_SIDE_OPPONENT;
-
     /*if (BattlerIgnoresAbility(gBattlerAttacker, battlerId, ability) && B_MOLD_BREAKER_WORKS_ON_INNATES == TRUE)
         return 0;
     else if (BattlerAbilityWasRemoved(battlerId, ability) && B_NEUTRALIZING_GAS_WORKS_ON_INNATES == TRUE)
@@ -11486,7 +11484,7 @@ u8 BattlerHasInnate(u8 battlerId, enum Ability ability)
             return i + 2;
     }
 
-    return SpeciesHasInnate(gBattleMons[battlerId].species, ability, gBattleMons[battlerId].personality, isEnemyMon); 
+    return SpeciesHasInnate(gBattleMons[battlerId].species, ability); 
 }
 
 //Returns the trait slot number of the given ability. Starts at 1 for the primary Ability and returns 0 if the ability is not found. Use for individual checks.

@@ -1809,20 +1809,20 @@ u32 AI_GetSwitchinWeather(struct BattlePokemon battleMon)
     // Forced weather behaviour
     if (!AI_WeatherHasEffect())
         return B_WEATHER_NONE;
-    if ((ability == ABILITY_CLOUD_NINE || SpeciesHasInnate(battleMon.species, ABILITY_CLOUD_NINE, battleMon.personality, FALSE))
-     || (ability == ABILITY_AIR_LOCK || SpeciesHasInnate(battleMon.species, ABILITY_AIR_LOCK, battleMon.personality, FALSE)))
+    if ((ability == ABILITY_CLOUD_NINE || SpeciesHasInnate(battleMon.species, ABILITY_CLOUD_NINE))
+     || (ability == ABILITY_AIR_LOCK || SpeciesHasInnate(battleMon.species, ABILITY_AIR_LOCK)))
         return B_WEATHER_NONE;
     if (gBattleWeather & B_WEATHER_PRIMAL_ANY)
         return gBattleWeather;
 
     // Switchin will introduce new weather
-    if (ability == ABILITY_DRIZZLE || SpeciesHasInnate(battleMon.species, ABILITY_DRIZZLE, battleMon.personality, FALSE))
+    if (ability == ABILITY_DRIZZLE || SpeciesHasInnate(battleMon.species, ABILITY_DRIZZLE))
         return B_WEATHER_RAIN_NORMAL;
-    if (ability == ABILITY_DROUGHT || SpeciesHasInnate(battleMon.species, ABILITY_DROUGHT, battleMon.personality, FALSE))
+    if (ability == ABILITY_DROUGHT || SpeciesHasInnate(battleMon.species, ABILITY_DROUGHT))
         return B_WEATHER_SUN_NORMAL;
-    if (ability == ABILITY_SAND_STREAM || SpeciesHasInnate(battleMon.species, ABILITY_SAND_STREAM, battleMon.personality, FALSE))
+    if (ability == ABILITY_SAND_STREAM || SpeciesHasInnate(battleMon.species, ABILITY_SAND_STREAM))
         return B_WEATHER_SANDSTORM;
-    if (ability == ABILITY_SNOW_WARNING || SpeciesHasInnate(battleMon.species, ABILITY_SNOW_WARNING, battleMon.personality, FALSE))
+    if (ability == ABILITY_SNOW_WARNING || SpeciesHasInnate(battleMon.species, ABILITY_SNOW_WARNING))
         return B_SNOW_WARNING >= GEN_9 ? B_WEATHER_SNOW : B_WEATHER_HAIL;
 
     return gBattleWeather;
@@ -3875,7 +3875,7 @@ bool32 AnyPartyMemberStatused(u32 battlerId, bool32 checkSoundproof)
             continue;
         if (GetGenConfig(GEN_CONFIG_HEAL_BELL_SOUNDPROOF) < GEN_5
          && checkSoundproof
-         && MonHasTrait(&party[i], ABILITY_SOUNDPROOF, TRUE))
+         && MonHasTrait(&party[i], ABILITY_SOUNDPROOF))
             continue;
         if (GetMonData(&party[i], MON_DATA_STATUS) != STATUS1_NONE)
             return TRUE;

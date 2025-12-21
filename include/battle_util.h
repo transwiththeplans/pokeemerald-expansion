@@ -456,7 +456,7 @@ bool32 IsAllowedToUseBag(void);
 bool32 IsAnyTargetTurnDamaged(u32 battlerAtk);
 bool32 IsMimikyuDisguised(u32 battler);
 
-u32 GetBattlerTrait(u8 battler, u8 traitNum, u32 ignoreMoldBreaker);
+enum Ability GetBattlerTrait(u8 battler, u8 traitNum, u32 ignoreMoldBreaker);
 u8 BattlerHasInnate(u8 battlerId, enum Ability ability);
 u8 BattlerHasTrait(u8 battlerId, enum Ability ability); //Returns the trait slot number of the given ability. Starts at 1 for the primary Ability and returns 0 if the ability is not found. 
 u8 BattlerHasTraitPlain(u8 battlerId, enum Ability ability); //BattlerHasTrait for functions already under GetBattlerAbility to avoid infinite loops.

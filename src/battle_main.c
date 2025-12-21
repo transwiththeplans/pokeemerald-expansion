@@ -3298,7 +3298,7 @@ void SwitchInClearSetData(u32 battler, struct Volatiles *volatilesCopy)
         u32 side = GetBattlerSide(battler);
         u32 partyIndex = gBattlerPartyIndexes[battler];
         if (TestRunner_Battle_GetForcedAbility(side, partyIndex))
-            gBattleMons[i].ability = TestRunner_Battle_GetForcedAbility(side, partyIndex);
+            gBattleMons[battler].ability = TestRunner_Battle_GetForcedAbility(side, partyIndex);
     }
     #endif // TESTING
 

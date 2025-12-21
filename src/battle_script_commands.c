@@ -7393,6 +7393,7 @@ static void Cmd_switchindataupdate(void)
     gBattleMons[battler].types[1] = GetSpeciesType(gBattleMons[battler].species, 1);
     gBattleMons[battler].types[2] = TYPE_MYSTERY;
     gBattleMons[battler].ability = GetAbilityBySpecies(gBattleMons[battler].species, gBattleMons[battler].abilityNum);
+    
     #if TESTING
     if (gTestRunnerEnabled)
     {
@@ -12012,7 +12013,6 @@ static void Cmd_healpartystatus(void)
     for (i = 0; i < PARTY_SIZE; i++)
     {
         u16 species = GetMonData(&party[i], MON_DATA_SPECIES_OR_EGG);
-        //u8 abilityNum = GetMonData(&party[i], MON_DATA_ABILITY_NUM);
 
         if (species != SPECIES_NONE && species != SPECIES_EGG)
         {
@@ -12031,7 +12031,7 @@ static void Cmd_healpartystatus(void)
                 ability = ABILITY_SOUNDPROOF;
             else
             {
-                if (MonHasTrait(&party[i], ABILITY_SOUNDPROOF, TRUE))
+                if (MonHasTrait(&party[i], ABILITY_SOUNDPROOF))
                     ability = ABILITY_SOUNDPROOF;
 
                 #if TESTING
@@ -13411,7 +13411,7 @@ static void Cmd_pickup(void)
             if (lvlDivBy10 > 9)
                 lvlDivBy10 = 9;
 
-            if (MonHasTrait(&gPlayerParty[i], ABILITY_PICKUP, TRUE)
+            if (MonHasTrait(&gPlayerParty[i], ABILITY_PICKUP)
                 && species != SPECIES_NONE
                 && species != SPECIES_EGG
                 && heldItem == ITEM_NONE
@@ -13438,7 +13438,7 @@ static void Cmd_pickup(void)
                     }
                 }
             }
-            else if (MonHasTrait(&gPlayerParty[i], ABILITY_HONEY_GATHER, TRUE)
+            else if (MonHasTrait(&gPlayerParty[i], ABILITY_HONEY_GATHER)
                 && species != 0
                 && species != SPECIES_EGG
                 && heldItem == ITEM_NONE)
@@ -16131,7 +16131,7 @@ static void UpdatePokeFlutePartyStatus(struct Pokemon* party, u8 position)
         if (species != SPECIES_NONE
             && species != SPECIES_EGG
             && status & AILMENT_FNT
-            && !MonHasTrait(&party[i], ABILITY_SOUNDPROOF, TRUE))
+            && !MonHasTrait(&party[i], ABILITY_SOUNDPROOF))
             monToCheck |= (1 << i);
     }
     if (monToCheck)

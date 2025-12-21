@@ -973,7 +973,7 @@ struct moveWithPP {
 #define Gender(gender) Gender_(__LINE__, gender)
 #define Nature(nature) Nature_(__LINE__, nature)
 #define Ability(ability) Ability_(__LINE__, ability)
-#define Innates(innate1, ... ) do { u32 innates_[MAX_MON_INNATES] = {innate1, __VA_ARGS__}; Innates_(__LINE__, innates_); } while(0)
+#define Innates(innate1, ... ) do { enum Ability innates_[MAX_MON_INNATES] = {innate1, __VA_ARGS__}; Innates_(__LINE__, innates_); } while(0)
 #define Level(level) Level_(__LINE__, level)
 #define MaxHP(maxHP) MaxHP_(__LINE__, maxHP)
 #define HP(hp) HP_(__LINE__, hp)

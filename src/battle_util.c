@@ -11427,12 +11427,12 @@ enum Ability GetBattlerTrait(u8 battlerId, u8 traitNum, u32 ignoreMoldBreaker)
     #if TESTING
     if (gTestRunnerEnabled)
     {
-        u32 side = GetBattlerSide(battlerId);
-        u32 partyIndex = gBattlerPartyIndexes[battlerId];
-
-        if (traitNum > 0 && TestRunner_Battle_GetForcedInnates(side, partyIndex, traitNum - 1) != ABILITY_NONE)
-        {
-            ability = TestRunner_Battle_GetForcedInnates(side, partyIndex, traitNum - 1);
+         u32 array = (!IsPartnerMonFromSameTrainer(battlerId)) ? battlerId : GetBattlerSide(battlerId);
+         u32 partyIndex = gBattlerPartyIndexes[battlerId];
+ 
+         if (traitNum > 0 && TestRunner_Battle_GetForcedInnates(array, partyIndex, traitNum - 1) != ABILITY_NONE)
+         {
+             ability = TestRunner_Battle_GetForcedInnates(array, partyIndex, traitNum - 1);
         }
     }
     #endif

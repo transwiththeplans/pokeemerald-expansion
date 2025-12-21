@@ -1404,19 +1404,19 @@ static u32 GetBattlerMonData(u32 battler, struct Pokemon *party, u32 monId, u8 *
         StringCopy_Nickname(battleMon.nickname, nickname);
         GetMonData(&party[monId], MON_DATA_OT_NAME, battleMon.otName);
 
-        u32 side = GetBattlerSide(battler);
-        for (i = 0; i < MAX_MON_INNATES; i++)
-        {
-            if (TESTING)
-            {
-                battleMon.innates[i] = TestRunner_Battle_GetForcedInnates(side, monId, i);
-                gBattleMons[battler].innates[i] = TestRunner_Battle_GetForcedInnates(side, monId, i);
-            }
-            else
-            {
-                battleMon.innates[i] = GetSpeciesInnate(battleMon.species, i + 1);
-            }
-        }
+         for (i = 0; i < MAX_MON_INNATES; i++)
+         {
+             #if TESTING
+             if (gTestRunnerEnabled)
+             {
+                 u32 array = (!IsPartnerMonFromSameTrainer(battler)) ? battler : GetBattlerSide(battler);
+                 battleMon.innates[i] = TestRunner_Battle_GetForcedInnates(array, monId, i);
+                 gBattleMons[battler].innates[i] = TestRunner_Battle_GetForcedInnates(array, monId, i);
+             }
+             #else
+                 battleMon.innates[i] = GetSpeciesInnate(battleMon.species, i + 1);
+             #endif
+         }
 
         src = (u8 *)&battleMon;
         for (size = 0; size < sizeof(battleMon); size++)
@@ -1424,9 +1424,10 @@ static u32 GetBattlerMonData(u32 battler, struct Pokemon *party, u32 monId, u8 *
         #if TESTING
         if (gTestRunnerEnabled)
         {
-            u32 partyIndex = gBattlerPartyIndexes[battler];
-            if (TestRunner_Battle_GetForcedAbility(side, partyIndex))
-                gBattleMons[battler].ability = TestRunner_Battle_GetForcedAbility(side, partyIndex);
+             u32 partyIndex = gBattlerPartyIndexes[battler];
+             u32 array = (!IsPartnerMonFromSameTrainer(battler)) ? battler : GetBattlerSide(battler);
+             if (TestRunner_Battle_GetForcedAbility(array, partyIndex))
+                gBattleMons[battler].ability = TestRunner_Battle_GetForcedAbility(array, partyIndex);
         }
         #endif
         break;

@@ -7397,10 +7397,10 @@ static void Cmd_switchindataupdate(void)
     #if TESTING
     if (gTestRunnerEnabled)
     {
-        u32 side = GetBattlerSide(battler);
-        u32 partyIndex = gBattlerPartyIndexes[battler];
-        if (TestRunner_Battle_GetForcedAbility(side, partyIndex))
-            gBattleMons[battler].ability = TestRunner_Battle_GetForcedAbility(side, partyIndex);
+         u32 array = (!IsPartnerMonFromSameTrainer(battler)) ? battler : GetBattlerSide(battler);
+         u32 partyIndex = gBattlerPartyIndexes[battler];
+         if (TestRunner_Battle_GetForcedAbility(array, partyIndex))
+             gBattleMons[battler].ability = TestRunner_Battle_GetForcedAbility(array, partyIndex);
     }
     #endif
 
@@ -11961,7 +11961,6 @@ static void Cmd_healpartystatus(void)
     CMD_ARGS();
 
     u32 i = 0;
-    u32 j = 0;
     u32 zero = 0;
     u32 toHeal = 0;
     u32 partner = GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(gBattlerAttacker)));
@@ -12037,13 +12036,13 @@ static void Cmd_healpartystatus(void)
                 #if TESTING
                 if (gTestRunnerEnabled)
                 {
-                    u32 side = GetBattlerSide(gBattlerAttacker);
+                    u32 array = (!IsPartnerMonFromSameTrainer(gBattlerAttacker)) ? gBattlerAttacker : GetBattlerSide(gBattlerAttacker);
 
-                    for (j = 0; j < MAX_MON_TRAITS; j++)
+                    for (u32 j = 0; j < MAX_MON_TRAITS; j++)
                     {
                         if ( j == 0 )
                         {
-                            if (TestRunner_Battle_GetForcedAbility(side, i) == ABILITY_SOUNDPROOF)
+                            if (TestRunner_Battle_GetForcedAbility(array, i) == ABILITY_SOUNDPROOF)
                             {
                                 ability = ABILITY_SOUNDPROOF;
                                 break;
@@ -12051,7 +12050,7 @@ static void Cmd_healpartystatus(void)
                         }
                         else
                         {
-                            if (TestRunner_Battle_GetForcedInnates(side, i, j - 1) == ABILITY_SOUNDPROOF)
+                            if (TestRunner_Battle_GetForcedInnates(array, i, j - 1) == ABILITY_SOUNDPROOF)
                             {
                                 ability = ABILITY_SOUNDPROOF;
                                 break;

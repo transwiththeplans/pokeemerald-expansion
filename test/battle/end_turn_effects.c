@@ -6,6 +6,11 @@ DOUBLE_BATTLE_TEST("End Turn Effects: First Event Block is executed correctly (d
     s16 healed;
     s16 damage;
 
+    if (B_ABILITY_TRIGGER_CHANCE == GEN_4)
+        PASSES_RANDOMLY(30, 100, RNG_SHED_SKIN);
+    else
+        PASSES_RANDOMLY(33, 100, RNG_SHED_SKIN);
+
     GIVEN {
         PLAYER(SPECIES_WYNAUT) { HP(100); Speed(1); }
         PLAYER(SPECIES_EKANS) { HP(100); Ability(ABILITY_SHED_SKIN); Status1(STATUS1_BURN); Speed(2); }
@@ -59,6 +64,11 @@ MULTI_BATTLE_TEST("End Turn Effects: First Event Block is executed correctly (mu
     s16 healed;
     s16 damage;
 
+    if (B_ABILITY_TRIGGER_CHANCE == GEN_4)
+        PASSES_RANDOMLY(30, 100, RNG_SHED_SKIN);
+    else
+        PASSES_RANDOMLY(33, 100, RNG_SHED_SKIN);
+
     GIVEN {
         MULTI_PLAYER(SPECIES_WYNAUT) { HP(100); Speed(1); }
         MULTI_PARTNER(SPECIES_EKANS) { HP(100); Ability(ABILITY_SHED_SKIN); Status1(STATUS1_BURN); Speed(2); }
@@ -87,6 +97,11 @@ TWO_VS_ONE_BATTLE_TEST("End Turn Effects: First Event Block is executed correctl
 {
     s16 healed;
     s16 damage;
+
+    if (B_ABILITY_TRIGGER_CHANCE == GEN_4)
+        PASSES_RANDOMLY(30, 100, RNG_SHED_SKIN);
+    else
+        PASSES_RANDOMLY(33, 100, RNG_SHED_SKIN);
 
     GIVEN {
         MULTI_PLAYER(SPECIES_WYNAUT) { HP(100); Speed(1);}
@@ -117,6 +132,11 @@ ONE_VS_TWO_BATTLE_TEST("End Turn Effects: First Event Block is executed correctl
     s16 healed;
     s16 damage;
 
+    if (B_ABILITY_TRIGGER_CHANCE == GEN_4)
+        PASSES_RANDOMLY(30, 100, RNG_SHED_SKIN);
+    else
+        PASSES_RANDOMLY(33, 100, RNG_SHED_SKIN);
+
     GIVEN {
         MULTI_PLAYER(SPECIES_WYNAUT) { HP(100); Speed(1);}
         MULTI_PLAYER(SPECIES_EKANS) { HP(100); Ability(ABILITY_SHED_SKIN); Status1(STATUS1_BURN); Speed(2); }
@@ -144,6 +164,11 @@ DOUBLE_BATTLE_TEST("End Turn Effects: First Event Block is executed correctly (d
 {
     s16 healed;
     s16 damage;
+
+    if (B_ABILITY_TRIGGER_CHANCE == GEN_4)
+        PASSES_RANDOMLY(30, 100, RNG_SHED_SKIN);
+    else
+        PASSES_RANDOMLY(33, 100, RNG_SHED_SKIN);
 
     GIVEN {
         PLAYER(SPECIES_WYNAUT) { HP(100); Speed(1); }
@@ -198,6 +223,11 @@ MULTI_BATTLE_TEST("End Turn Effects: First Event Block is executed correctly (mu
     s16 healed;
     s16 damage;
 
+    if (B_ABILITY_TRIGGER_CHANCE == GEN_4)
+        PASSES_RANDOMLY(30, 100, RNG_SHED_SKIN);
+    else
+        PASSES_RANDOMLY(33, 100, RNG_SHED_SKIN);
+
     GIVEN {
         MULTI_PLAYER(SPECIES_WYNAUT) { HP(100); Speed(1); }
         MULTI_PARTNER(SPECIES_EKANS) { HP(100); Ability(ABILITY_INTIMIDATE); Innates(ABILITY_SHED_SKIN); Status1(STATUS1_BURN); Speed(2); }
@@ -227,6 +257,11 @@ TWO_VS_ONE_BATTLE_TEST("End Turn Effects: First Event Block is executed correctl
     s16 healed;
     s16 damage;
 
+    if (B_ABILITY_TRIGGER_CHANCE == GEN_4)
+        PASSES_RANDOMLY(30, 100, RNG_SHED_SKIN);
+    else
+        PASSES_RANDOMLY(33, 100, RNG_SHED_SKIN);
+
     GIVEN {
         MULTI_PLAYER(SPECIES_WYNAUT) { HP(100); Speed(1);}
         MULTI_PARTNER(SPECIES_EKANS) { HP(100); Ability(ABILITY_INTIMIDATE); Innates(ABILITY_SHED_SKIN); Status1(STATUS1_BURN); Speed(2); }
@@ -254,6 +289,11 @@ ONE_VS_TWO_BATTLE_TEST("End Turn Effects: First Event Block is executed correctl
 {
     s16 healed;
     s16 damage;
+
+    if (B_ABILITY_TRIGGER_CHANCE == GEN_4)
+        PASSES_RANDOMLY(30, 100, RNG_SHED_SKIN);
+    else
+        PASSES_RANDOMLY(33, 100, RNG_SHED_SKIN);
 
     GIVEN {
         MULTI_PLAYER(SPECIES_WYNAUT) { HP(100); Speed(1);}

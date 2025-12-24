@@ -4140,43 +4140,50 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
         gBattleScripting.battler = battler;
         u8 traitCheck = ABILITY_NONE;
 
-        // Trace replaces your main Ability, so it generally should not be an Innate.
         if ((traitCheck = SearchTraits(battlerTraits, ABILITY_TRACE)) && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1] )
         {
-            u32 chosenTarget;
-            u32 target1;
-            u32 target2;
-
-            if (GetBattlerHoldEffectIgnoreAbility(battler) == HOLD_EFFECT_ABILITY_SHIELD)
-                break;
-
-            side = (BATTLE_OPPOSITE(GetBattlerPosition(battler))) & BIT_SIDE;
-            target1 = GetBattlerAtPosition(side);
-            target2 = GetBattlerAtPosition(side + BIT_FLANK);
-            if (IsDoubleBattle())
+            if (traitCheck != 1)
             {
-                if (!gAbilitiesInfo[gBattleMons[target1].ability].cantBeTraced && gBattleMons[target1].hp != 0
-                 && !gAbilitiesInfo[gBattleMons[target2].ability].cantBeTraced && gBattleMons[target2].hp != 0)
-                    chosenTarget = GetBattlerAtPosition((RandomPercentage(RNG_TRACE, 50) * 2) | side), effect++;
-                else if (!gAbilitiesInfo[gBattleMons[target1].ability].cantBeTraced && gBattleMons[target1].hp != 0)
-                    chosenTarget = target1, effect++;
-                else if (!gAbilitiesInfo[gBattleMons[target2].ability].cantBeTraced && gBattleMons[target2].hp != 0)
-                    chosenTarget = target2, effect++;
+                // Trace replaces your main Ability, so it generally should not be an Innate.
+                DebugPrintf("Trace not set as main Ability");
             }
             else
             {
-                if (!gAbilitiesInfo[gBattleMons[target1].ability].cantBeTraced && gBattleMons[target1].hp != 0)
-                    chosenTarget = target1, effect++;
-            }
-             if (effect != 0)
-            {
-                //SwitchinTraitDone not set to True so that Traced switchin abilities like Intimidate can still activate
-                PushTraitStack(battler, ABILITY_TRACE);
-                BattleScriptPushCursorAndCallback(BattleScript_TraceActivates);
-                gBattleStruct->tracedAbility[battler] = gLastUsedAbility = gBattleMons[chosenTarget].ability;
-                RecordAbilityBattle(chosenTarget, gLastUsedAbility); // Record the opposing battler has this ability
-                PREPARE_MON_NICK_WITH_PREFIX_LOWER_BUFFER(gBattleTextBuff1, chosenTarget, gBattlerPartyIndexes[chosenTarget])
-                PREPARE_ABILITY_BUFFER(gBattleTextBuff2, gLastUsedAbility)
+                u32 chosenTarget;
+                u32 target1;
+                u32 target2;
+
+                if (GetBattlerHoldEffectIgnoreAbility(battler) == HOLD_EFFECT_ABILITY_SHIELD)
+                    break;
+
+                side = (BATTLE_OPPOSITE(GetBattlerPosition(battler))) & BIT_SIDE;
+                target1 = GetBattlerAtPosition(side);
+                target2 = GetBattlerAtPosition(side + BIT_FLANK);
+                if (IsDoubleBattle())
+                {
+                    if (!gAbilitiesInfo[gBattleMons[target1].ability].cantBeTraced && gBattleMons[target1].hp != 0
+                    && !gAbilitiesInfo[gBattleMons[target2].ability].cantBeTraced && gBattleMons[target2].hp != 0)
+                        chosenTarget = GetBattlerAtPosition((RandomPercentage(RNG_TRACE, 50) * 2) | side), effect++;
+                    else if (!gAbilitiesInfo[gBattleMons[target1].ability].cantBeTraced && gBattleMons[target1].hp != 0)
+                        chosenTarget = target1, effect++;
+                    else if (!gAbilitiesInfo[gBattleMons[target2].ability].cantBeTraced && gBattleMons[target2].hp != 0)
+                        chosenTarget = target2, effect++;
+                }
+                else
+                {
+                    if (!gAbilitiesInfo[gBattleMons[target1].ability].cantBeTraced && gBattleMons[target1].hp != 0)
+                        chosenTarget = target1, effect++;
+                }
+                if (effect != 0)
+                {
+                    //SwitchinTraitDone not set to True so that Traced switchin abilities like Intimidate can still activate
+                    PushTraitStack(battler, ABILITY_TRACE);
+                    BattleScriptPushCursorAndCallback(BattleScript_TraceActivates);
+                    gBattleStruct->tracedAbility[battler] = gLastUsedAbility = gBattleMons[chosenTarget].ability;
+                    RecordAbilityBattle(chosenTarget, gLastUsedAbility); // Record the opposing battler has this ability
+                    PREPARE_MON_NICK_WITH_PREFIX_LOWER_BUFFER(gBattleTextBuff1, chosenTarget, gBattlerPartyIndexes[chosenTarget])
+                    PREPARE_ABILITY_BUFFER(gBattleTextBuff2, gLastUsedAbility)
+                }
             }
         }
         if ((traitCheck = SearchTraits(battlerTraits, ABILITY_IMPOSTER)) && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1])
@@ -5688,17 +5695,25 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
     case ABILITYEFFECT_NEUTRALIZINGGAS:
     case ABILITYEFFECT_NEUTRALIZINGGAS_FIRST_TURN:
         // Prints message only. separate from ABILITYEFFECT_ON_SWITCHIN bc activates before entry hazards
-        if (BattlerHasTrait(battler, ABILITY_NEUTRALIZING_GAS) && !gDisableStructs[battler].neutralizingGas)
+        if (SearchTraits(battlerTraits, ABILITY_NEUTRALIZING_GAS) && !gDisableStructs[battler].neutralizingGas)
         {
-            gDisableStructs[battler].neutralizingGas = TRUE;
-            gBattlerAbility = battler;
-            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_NEUTRALIZING_GAS;
-            PushTraitStack(battler, ABILITY_NEUTRALIZING_GAS);
-            if (caseID == ABILITYEFFECT_NEUTRALIZINGGAS_FIRST_TURN)
-                BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
+            if (SearchTraits(battlerTraits, ABILITY_NEUTRALIZING_GAS) != 1)
+            {
+                // Neutralizing Gas negates all Main Abilities so not much point in having it as an Innate.
+                DebugPrintf("Neutralizing Gas not set as main Ability");
+            }
             else
-                BattleScriptCall(BattleScript_SwitchInAbilityMsgRet);
-            effect++;
+            {
+                gDisableStructs[battler].neutralizingGas = TRUE;
+                gBattlerAbility = battler;
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_NEUTRALIZING_GAS;
+                PushTraitStack(battler, ABILITY_NEUTRALIZING_GAS);
+                if (caseID == ABILITYEFFECT_NEUTRALIZINGGAS_FIRST_TURN)
+                    BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
+                else
+                    BattleScriptCall(BattleScript_SwitchInAbilityMsgRet);
+                effect++;
+            }
         }
         break;
     case ABILITYEFFECT_ON_WEATHER: // For ability effects that activate when the battle weather changes.
@@ -8883,7 +8898,8 @@ static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(struct DamageCont
         if (B_GLARE_GHOST < GEN_4 && ctx->move == MOVE_GLARE && IS_BATTLER_OF_TYPE(ctx->battlerDef, TYPE_GHOST))
             modifier = UQ_4_12(0.0);
     }
-    else if (ctx->moveType == TYPE_GROUND && !IsBattlerGroundedInverseCheck(ctx->battlerDef, ctx->holdEffectDef, INVERSE_BATTLE, ctx->isAnticipation, ctx->abilityDef == ABILITY_LEVITATE) && !(MoveIgnoresTypeIfFlyingAndUngrounded(ctx->move)))
+    else if (ctx->moveType == TYPE_GROUND && !IsBattlerGroundedInverseCheck(ctx->battlerDef, ctx->holdEffectDef, INVERSE_BATTLE, ctx->isAnticipation, SearchTraits(battlerTraits, ABILITY_LEVITATE)
+     && !MoveIgnoresTypeIfFlyingAndUngrounded(ctx->move) && ctx->abilityDef != ABILITY_NONE)) // abilityDef == NONE for AI checks
     {
         modifier = UQ_4_12(0.0);
         if (ctx->updateFlags && SearchTraits(battlerTraits, ABILITY_LEVITATE))
@@ -8982,7 +8998,7 @@ uq4_12_t CalcPartyMonTypeEffectivenessMultiplier(u16 move, u16 speciesDef, enum 
 
         if (mon == 0) //catch for non Pokemon struct entries, only checks Ability
         {
-            if (ctx.moveType == TYPE_GROUND && abilityDef == ABILITY_LEVITATE && !(gFieldStatuses & STATUS_FIELD_GRAVITY))
+            if (ctx.moveType == TYPE_GROUND && MonHasTrait(mon, ABILITY_LEVITATE) && !(gFieldStatuses & STATUS_FIELD_GRAVITY))
                 modifier = UQ_4_12(0.0);
             if (abilityDef == ABILITY_WONDER_GUARD && modifier <= UQ_4_12(1.0) && GetMovePower(move) != 0)
                 modifier = UQ_4_12(0.0);

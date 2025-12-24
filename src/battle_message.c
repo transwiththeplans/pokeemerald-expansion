@@ -2838,7 +2838,7 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
                 toCpy = gAbilitiesInfo[gDisplayAbility].name;
                 break;
             case B_TXT_EFF_ABILITY: // effect battler ability
-                toCpy = gAbilitiesInfo[sBattlerAbilities[gEffectBattler]].name;
+                toCpy = gAbilitiesInfo[gDisplayAbility].name;
                 break;
             case B_TXT_TRAINER1_CLASS: // trainer class name
                 toCpy = BattleStringGetOpponentClassByTrainerId(TRAINER_BATTLE_PARAM.opponentA);

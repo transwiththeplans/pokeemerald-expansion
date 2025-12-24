@@ -66,7 +66,6 @@ static bool32 AI_IsDoubleSpreadMove(u32 battlerAtk, u32 move)
 
 bool32 AI_IsBattlerGrounded(u32 battler)
 {
-    DebugPrintf("AI_IsBattlerGrounded: %d", battler);
     return IsBattlerGrounded(battler, gAiLogicData->holdEffects[battler]);
 }
 
@@ -1039,7 +1038,7 @@ static bool32 AI_IsMoveEffectInPlus(u32 battlerAtk, u32 battlerDef, u32 move, s3
             return TRUE;
         break;
     case EFFECT_FELL_STINGER:
-        if (BattlerStatCanRise(battlerAtk, abilityAtk, STAT_ATK) && noOfHitsToKo == 1)
+        if (BattlerStatCanRise(battlerAtk, STAT_ATK) && noOfHitsToKo == 1)
             return TRUE;
         break;
     case EFFECT_PURSUIT:
@@ -1062,81 +1061,81 @@ static bool32 AI_IsMoveEffectInPlus(u32 battlerAtk, u32 battlerDef, u32 move, s3
             {
                 case MOVE_EFFECT_ATK_MINUS_1:
                 case MOVE_EFFECT_ATK_MINUS_2:
-                    if (abilityAtk == ABILITY_CONTRARY && BattlerStatCanRise(battlerAtk, abilityAtk, STAT_ATK))
+                    if (AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_CONTRARY) && BattlerStatCanRise(battlerAtk, STAT_ATK))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_DEF_MINUS_1:
                 case MOVE_EFFECT_DEF_MINUS_2:
-                    if (abilityAtk == ABILITY_CONTRARY && BattlerStatCanRise(battlerAtk, abilityAtk, STAT_ATK))
+                    if (AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_CONTRARY) && BattlerStatCanRise(battlerAtk, STAT_ATK))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_SPD_MINUS_1:
                 case MOVE_EFFECT_SPD_MINUS_2:
-                    if (abilityAtk == ABILITY_CONTRARY && BattlerStatCanRise(battlerAtk, abilityAtk, STAT_DEF))
+                    if (AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_CONTRARY) && BattlerStatCanRise(battlerAtk, STAT_DEF))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_SP_ATK_MINUS_1:
                 case MOVE_EFFECT_SP_ATK_MINUS_2:
-                    if (abilityAtk == ABILITY_CONTRARY && BattlerStatCanRise(battlerAtk, abilityAtk, STAT_SPATK))
+                    if (AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_CONTRARY) && BattlerStatCanRise(battlerAtk, STAT_SPATK))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_SP_DEF_MINUS_1:
                 case MOVE_EFFECT_SP_DEF_MINUS_2:
-                    if (abilityAtk == ABILITY_CONTRARY && BattlerStatCanRise(battlerAtk, abilityAtk, STAT_SPDEF))
+                    if (AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_CONTRARY) && BattlerStatCanRise(battlerAtk, STAT_SPDEF))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_EVS_MINUS_1:
                 case MOVE_EFFECT_EVS_MINUS_2:
-                    if (abilityAtk == ABILITY_CONTRARY && BattlerStatCanRise(battlerAtk, abilityAtk, STAT_EVASION))
+                    if (AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_CONTRARY) && BattlerStatCanRise(battlerAtk, STAT_EVASION))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_ACC_MINUS_1:
                 case MOVE_EFFECT_ACC_MINUS_2:
-                    if (abilityAtk == ABILITY_CONTRARY && BattlerStatCanRise(battlerAtk, abilityAtk, STAT_ACC))
+                    if (AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_CONTRARY) && BattlerStatCanRise(battlerAtk, STAT_ACC))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_ATK_DEF_DOWN:
-                    if (abilityAtk == ABILITY_CONTRARY && (BattlerStatCanRise(battlerAtk, abilityAtk, STAT_ATK) || BattlerStatCanRise(battlerAtk, abilityAtk, STAT_DEF)))
+                    if (AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_CONTRARY) && (BattlerStatCanRise(battlerAtk, STAT_ATK) || BattlerStatCanRise(battlerAtk, STAT_DEF)))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_DEF_SPDEF_DOWN:
-                    if (abilityAtk == ABILITY_CONTRARY && (BattlerStatCanRise(battlerAtk, abilityAtk, STAT_DEF) || BattlerStatCanRise(battlerAtk, abilityAtk, STAT_SPDEF)))
+                    if (AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_CONTRARY) && (BattlerStatCanRise(battlerAtk, STAT_DEF) || BattlerStatCanRise(battlerAtk, STAT_SPDEF)))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_ATK_PLUS_1:
                 case MOVE_EFFECT_ATK_PLUS_2:
-                    if (BattlerStatCanRise(battlerAtk, abilityAtk, STAT_ATK))
+                    if (BattlerStatCanRise(battlerAtk, STAT_ATK))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_DEF_PLUS_1:
                 case MOVE_EFFECT_DEF_PLUS_2:
-                    if (BattlerStatCanRise(battlerAtk, abilityAtk, STAT_DEF))
+                    if (BattlerStatCanRise(battlerAtk, STAT_DEF))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_SPD_PLUS_1:
                 case MOVE_EFFECT_SPD_PLUS_2:
-                    if (BattlerStatCanRise(battlerAtk, abilityAtk, STAT_SPEED))
+                    if (BattlerStatCanRise(battlerAtk, STAT_SPEED))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_SP_ATK_PLUS_1:
                 case MOVE_EFFECT_SP_ATK_PLUS_2:
-                    if (BattlerStatCanRise(battlerAtk, abilityAtk, STAT_SPATK))
+                    if (BattlerStatCanRise(battlerAtk, STAT_SPATK))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_EVS_PLUS_1:
                 case MOVE_EFFECT_EVS_PLUS_2:
-                    if (BattlerStatCanRise(battlerAtk, abilityAtk, STAT_EVASION))
+                    if (BattlerStatCanRise(battlerAtk, STAT_EVASION))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_ACC_PLUS_1:
                 case MOVE_EFFECT_ACC_PLUS_2:
-                    if (BattlerStatCanRise(battlerAtk, abilityAtk, STAT_ACC))
+                    if (BattlerStatCanRise(battlerAtk, STAT_ACC))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_ALL_STATS_UP:
                     for (i = STAT_ATK; i <= NUM_STATS; i++)
                     {
-                        if (BattlerStatCanRise(battlerAtk, abilityAtk, i))
+                        if (BattlerStatCanRise(battlerAtk, i))
                             return TRUE;
                     }
                     break;
@@ -2288,7 +2287,7 @@ u32 IncreaseStatDownScore(u32 battlerAtk, u32 battlerDef, enum Stat stat)
     return (tempScore > BEST_EFFECT) ? BEST_EFFECT : tempScore; // don't inflate score so only max +4
 }
 
-bool32 BattlerStatCanRise(u32 battler, enum Ability battlerAbility, enum Stat stat)
+bool32 BattlerStatCanRise(u32 battler, enum Stat stat)
 {
     if ((gBattleMons[battler].statStages[stat] < MAX_STAT_STAGE && !AI_BATTLER_HAS_TRAIT(battler, ABILITY_CONTRARY))
       || (AI_BATTLER_HAS_TRAIT(battler, ABILITY_CONTRARY) && gBattleMons[battler].statStages[stat] > MIN_STAT_STAGE))
@@ -5761,7 +5760,7 @@ bool32 ShouldTriggerAbility(u32 battlerAtk, u32 battlerDef, enum Ability ability
          || SearchTraits(battlerTraits, ABILITY_STORM_DRAIN))
          && B_REDIRECT_ABILITY_IMMUNITY < GEN_5)
         {
-            return (BattlerStatCanRise(battlerDef, ability, STAT_SPATK) && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL));
+            return (BattlerStatCanRise(battlerDef, STAT_SPATK) && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL));
         }
         
         if (SearchTraits(battlerTraits, ABILITY_DEFIANT)
@@ -5770,12 +5769,12 @@ bool32 ShouldTriggerAbility(u32 battlerAtk, u32 battlerDef, enum Ability ability
          || SearchTraits(battlerTraits, ABILITY_SAP_SIPPER)
          || SearchTraits(battlerTraits, ABILITY_THERMAL_EXCHANGE))
         {
-            return (BattlerStatCanRise(battlerDef, ability, STAT_ATK) && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL));
+            return (BattlerStatCanRise(battlerDef, STAT_ATK) && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL));
         }
         
         if (SearchTraits(battlerTraits, ABILITY_COMPETITIVE))
         {
-            return (BattlerStatCanRise(battlerDef, ability, STAT_SPATK) && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL));
+            return (BattlerStatCanRise(battlerDef, STAT_SPATK) && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL));
         }
         
         // TODO: logic for when to trigger Contrary
@@ -5794,7 +5793,7 @@ bool32 ShouldTriggerAbility(u32 battlerAtk, u32 battlerDef, enum Ability ability
         if (SearchTraits(battlerTraits, ABILITY_RATTLED)
          || SearchTraits(battlerTraits, ABILITY_STEAM_ENGINE))
         {
-            return BattlerStatCanRise(battlerDef, ability, STAT_SPEED);
+            return BattlerStatCanRise(battlerDef, STAT_SPEED);
         }
 
         if (SearchTraits(battlerTraits, ABILITY_FLASH_FIRE))
@@ -5805,7 +5804,7 @@ bool32 ShouldTriggerAbility(u32 battlerAtk, u32 battlerDef, enum Ability ability
         if (SearchTraits(battlerTraits, ABILITY_WATER_COMPACTION)
          || SearchTraits(battlerTraits, ABILITY_WELL_BAKED_BODY))
         {
-            return (BattlerStatCanRise(battlerDef, ability, STAT_DEF));
+            return (BattlerStatCanRise(battlerDef, STAT_DEF));
         }
 
         return FALSE;

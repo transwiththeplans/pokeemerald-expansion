@@ -372,6 +372,26 @@ SINGLE_BATTLE_TEST("Parental Bond does not trigger Scale Shot effect on Drain Pu
 
 TO_DO_BATTLE_TEST("Parental Bond tests");
 
+SINGLE_BATTLE_TEST("Parental Bond converts Scratch into a two-strike move (Multi)")
+{
+    GIVEN {
+        ASSUME(GetMoveCategory(MOVE_SCRATCH) != DAMAGE_CATEGORY_STATUS);
+        ASSUME(GetMoveStrikeCount(MOVE_SCRATCH) < 2);
+        ASSUME(GetMoveEffect(MOVE_SCRATCH) == EFFECT_HIT);
+        PLAYER(SPECIES_KANGASKHAN) { Ability(ABILITY_EARLY_BIRD); Innates(ABILITY_PARENTAL_BOND); }
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { MOVE(player, MOVE_SCRATCH); MOVE(opponent, MOVE_CELEBRATE); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, player);
+        HP_BAR(opponent);
+        HP_BAR(opponent);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, opponent);
+    } THEN {
+        EXPECT_EQ(player->species, SPECIES_KANGASKHAN_MEGA);
+    }
+}
+
 // Temporary TODO: Convert Bulbapedia description into tests.
 /*
 In battle

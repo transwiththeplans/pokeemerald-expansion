@@ -1812,6 +1812,14 @@
 	setbyte sSTATCHANGER, \stat | \stages << 3 | \down << 7
 	.endm
 
+	.macro setstatchanger2 stat:req, stages:req, down:req
+	setbyte sSTATCHANGER2, \stat | \stages << 3 | \down << 7
+	.endm
+
+	.macro setstatchanger3 stat:req, stages:req, down:req
+	setbyte sSTATCHANGER3, \stat | \stages << 3 | \down << 7
+	.endm
+
 	.macro setmoveeffect effect:req
 	sethword sMOVE_EFFECT, \effect
 	.endm

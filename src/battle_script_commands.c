@@ -310,7 +310,7 @@ enum GiveCaughtMonStates
 
 #define TAG_LVLUP_BANNER_MON_ICON 55130
 
-static u32 ChangeStatBuffs(u32 battler, s8 statValue, enum Stat statId, union StatChangeFlags flags, u32 stats, const u8 *BS_ptr);
+static u32 ChangeStatBuffs(u32 battler, s8 statValue, enum Stat statId, union StatChangeFlags flags, u32 stats, const u8 *BS_ptr, u32 changerIndex);
 static bool32 IsMonGettingExpSentOut(void);
 static void InitLevelUpBanner(void);
 static bool8 SlideInLevelUpBanner(void);
@@ -3280,7 +3280,7 @@ void SetMoveEffect(u32 battler, u32 effectBattler, enum MoveEffect moveEffect, c
                 SET_STAT_BUFF_VALUE(1),
                 moveEffect - MOVE_EFFECT_ATK_PLUS_1 + 1,
                 STAT_CHANGE_UPDATE_MOVE_EFFECT,
-                0, 0) == STAT_CHANGE_DIDNT_WORK)
+                0, 0, 1) == STAT_CHANGE_DIDNT_WORK)
         {
             gBattlescriptCurrInstr = battleScript;
         }
@@ -3310,7 +3310,7 @@ void SetMoveEffect(u32 battler, u32 effectBattler, enum MoveEffect moveEffect, c
                 SET_STAT_BUFF_VALUE(1) | STAT_BUFF_NEGATIVE,
                 moveEffect - MOVE_EFFECT_ATK_MINUS_1 + 1,
                 flags,
-                0, battleScript) == STAT_CHANGE_DIDNT_WORK)
+                0, battleScript, 1) == STAT_CHANGE_DIDNT_WORK)
         {
             if (!mirrorArmorReflected)
                 gBattlescriptCurrInstr = battleScript;
@@ -3336,7 +3336,7 @@ void SetMoveEffect(u32 battler, u32 effectBattler, enum MoveEffect moveEffect, c
                 SET_STAT_BUFF_VALUE(2),
                 moveEffect - MOVE_EFFECT_ATK_PLUS_2 + 1,
                 STAT_CHANGE_UPDATE_MOVE_EFFECT,
-                0, 0) == STAT_CHANGE_DIDNT_WORK)
+                0, 0, 1) == STAT_CHANGE_DIDNT_WORK)
         {
             gBattlescriptCurrInstr = battleScript;
         }
@@ -3366,7 +3366,7 @@ void SetMoveEffect(u32 battler, u32 effectBattler, enum MoveEffect moveEffect, c
                 SET_STAT_BUFF_VALUE(2) | STAT_BUFF_NEGATIVE,
                 moveEffect - MOVE_EFFECT_ATK_MINUS_2 + 1,
                 flags,
-                0, battleScript) == STAT_CHANGE_DIDNT_WORK)
+                0, battleScript, 1) == STAT_CHANGE_DIDNT_WORK)
         {
             if (!mirrorArmorReflected)
                 gBattlescriptCurrInstr = battleScript;
@@ -3696,8 +3696,7 @@ void SetMoveEffect(u32 battler, u32 effectBattler, enum MoveEffect moveEffect, c
                     SET_STAT_BUFF_VALUE(1),
                     stat,
                     STAT_CHANGE_UPDATE_MOVE_EFFECT,
-                    0,
-                    0) == STAT_CHANGE_DIDNT_WORK)
+                    0, 0, 1) == STAT_CHANGE_DIDNT_WORK)
             {
                 gBattlescriptCurrInstr = battleScript;
             }
@@ -10320,7 +10319,7 @@ static void TryPlayStatChangeAnimation(u32 battler, enum Ability ability, u32 st
     }
 }
 
-static u32 ChangeStatBuffs(u32 battler, s8 statValue, enum Stat statId, union StatChangeFlags flags, u32 stats, const u8 *BS_ptr)
+static u32 ChangeStatBuffs(u32 battler, s8 statValue, enum Stat statId, union StatChangeFlags flags, u32 stats, const u8 *BS_ptr, u32 changerIndex)
 {
     u32 index, battlerAbility;
     enum HoldEffect battlerHoldEffect;
@@ -10335,7 +10334,12 @@ static u32 ChangeStatBuffs(u32 battler, s8 statValue, enum Stat statId, union St
         statValue ^= STAT_BUFF_NEGATIVE;
         if (!flags.onlyChecking)
         {
-            gBattleScripting.statChanger ^= STAT_BUFF_NEGATIVE;
+            if (changerIndex <= 1)
+                gBattleScripting.statChanger ^= STAT_BUFF_NEGATIVE;
+            else if (changerIndex == 2)
+                gBattleScripting.statChanger2 ^= STAT_BUFF_NEGATIVE;
+            else if (changerIndex == 3)
+                gBattleScripting.statChanger3 ^= STAT_BUFF_NEGATIVE;
             RecordAbilityBattle(battler, ABILITY_CONTRARY);
             if (flags.updateMoveEffect)
                 gBattleScripting.moveEffect = ReverseStatChangeMoveEffect(gBattleScripting.moveEffect);
@@ -10469,7 +10473,12 @@ static u32 ChangeStatBuffs(u32 battler, s8 statValue, enum Stat statId, union St
         {
             if (flags.allowPtr)
             {
-                SET_STATCHANGER(statId, GET_STAT_BUFF_VALUE(statValue) | STAT_BUFF_NEGATIVE, TRUE);
+                if (changerIndex <= 1)
+                    SET_STATCHANGER(statId, GET_STAT_BUFF_VALUE(statValue) | STAT_BUFF_NEGATIVE, TRUE);
+                else if (changerIndex == 2)
+                    SET_STATCHANGER_SECOND(statId, GET_STAT_BUFF_VALUE(statValue) | STAT_BUFF_NEGATIVE, TRUE);
+                else if (changerIndex == 3)
+                    SET_STATCHANGER_THIRD(statId, GET_STAT_BUFF_VALUE(statValue) | STAT_BUFF_NEGATIVE, TRUE);
                 PushTraitStack(battler, ABILITY_MIRROR_ARMOR);
                 BattleScriptPush(BS_ptr);
                 gBattleScripting.battler = battler;
@@ -10505,13 +10514,23 @@ static u32 ChangeStatBuffs(u32 battler, s8 statValue, enum Stat statId, union St
             if (gBattleMons[battler].statStages[statId] == MIN_STAT_STAGE)
             {
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STAT_WONT_CHANGE;
-                gBattleScripting.statChanger |= STAT_BUFF_NEGATIVE;
+                if (changerIndex <= 1)
+                    gBattleScripting.statChanger |= STAT_BUFF_NEGATIVE;
+                else if (changerIndex == 2)
+                    gBattleScripting.statChanger2 |= STAT_BUFF_NEGATIVE;
+                else if (changerIndex == 3)
+                    gBattleScripting.statChanger3 |= STAT_BUFF_NEGATIVE;
             }
             else if (!flags.onlyChecking)
             {
                 gDisableStructs[battler].tryEjectPack = TRUE;
                 gProtectStructs[battler].lashOutAffected = TRUE;
-                gBattleScripting.statChanger |= STAT_BUFF_NEGATIVE;
+                if (changerIndex <= 1)
+                    gBattleScripting.statChanger |= STAT_BUFF_NEGATIVE;
+                else if (changerIndex == 2)
+                    gBattleScripting.statChanger2 |= STAT_BUFF_NEGATIVE;
+                else if (changerIndex == 3)
+                    gBattleScripting.statChanger3 |= STAT_BUFF_NEGATIVE;
             }
         }
     }
@@ -10541,7 +10560,12 @@ static u32 ChangeStatBuffs(u32 battler, s8 statValue, enum Stat statId, union St
         if (gBattleMons[battler].statStages[statId] == MAX_STAT_STAGE)
         {
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STAT_WONT_CHANGE;
-            gBattleScripting.statChanger &= ~STAT_BUFF_NEGATIVE;
+            if (changerIndex <= 1)
+                gBattleScripting.statChanger &= ~STAT_BUFF_NEGATIVE;
+            else if (changerIndex == 2)
+                gBattleScripting.statChanger2 &= ~STAT_BUFF_NEGATIVE;
+            else if (changerIndex == 3)
+                gBattleScripting.statChanger3 &= ~STAT_BUFF_NEGATIVE;
         }
         else if (!flags.onlyChecking)
         {
@@ -10552,8 +10576,12 @@ static u32 ChangeStatBuffs(u32 battler, s8 statValue, enum Stat statId, union St
                 statIncrease = statValue;
 
             gProtectStructs[battler].statRaised = TRUE;
-            gBattleScripting.statChanger &= ~STAT_BUFF_NEGATIVE;
-
+            if (changerIndex <= 1)
+                gBattleScripting.statChanger &= ~STAT_BUFF_NEGATIVE;
+            else if (changerIndex == 2)
+                gBattleScripting.statChanger2 &= ~STAT_BUFF_NEGATIVE;
+            else if (changerIndex == 3)
+                gBattleScripting.statChanger3 &= ~STAT_BUFF_NEGATIVE;
             if (statIncrease)
             {
                 // Check Mirror Herb / Opportunist
@@ -10625,7 +10653,7 @@ static void Cmd_statbuffchange(void)
             GET_STAT_BUFF_ID(gBattleScripting.statChanger),
             flags,
             stats,
-            failInstr) == STAT_CHANGE_WORKED)
+            failInstr, 1) == STAT_CHANGE_WORKED)
         gBattlescriptCurrInstr = cmd->nextInstr;
     else if (gBattlescriptCurrInstr == ptrBefore) // Prevent infinite looping.
         gBattlescriptCurrInstr = failInstr;
@@ -10647,7 +10675,7 @@ static void Cmd_statbuffchange2(void)
             GET_STAT_BUFF_ID(gBattleScripting.statChanger2),
             flags,
             stats,
-            failInstr) == STAT_CHANGE_WORKED)
+            failInstr, 2) == STAT_CHANGE_WORKED)
         gBattlescriptCurrInstr = cmd->nextInstr;
     else if (gBattlescriptCurrInstr == ptrBefore) // Prevent infinite looping.
         gBattlescriptCurrInstr = failInstr;
@@ -10669,7 +10697,7 @@ static void Cmd_statbuffchange3(void)
             GET_STAT_BUFF_ID(gBattleScripting.statChanger3),
             flags,
             stats,
-            failInstr) == STAT_CHANGE_WORKED)
+            failInstr, 3) == STAT_CHANGE_WORKED)
         gBattlescriptCurrInstr = cmd->nextInstr;
     else if (gBattlescriptCurrInstr == ptrBefore) // Prevent infinite looping.
         gBattlescriptCurrInstr = failInstr;
@@ -16250,7 +16278,7 @@ void BS_SpectralThiefPrintStats(void)
                     GET_STAT_BUFF_VALUE_WITH_SIGN(gBattleScripting.statChanger),
                     stat,
                     STAT_CHANGE_CERTAIN,
-                    0, NULL) == STAT_CHANGE_WORKED)
+                    0, NULL, 1) == STAT_CHANGE_WORKED)
             {
                 BattleScriptCall(BattleScript_StatUp);
                 return;

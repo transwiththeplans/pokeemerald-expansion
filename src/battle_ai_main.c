@@ -5664,7 +5664,7 @@ static s32 AI_CalcAdditionalEffectScore(u32 battlerAtk, u32 battlerDef, u32 move
     {
         const struct AdditionalEffect *additionalEffect = GetMoveAdditionalEffectById(move, i);
 
-        if (aiData->abilities[battlerAtk] == ABILITY_SHEER_FORCE)
+        if (AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_SHEER_FORCE))
         {
             if ((additionalEffect->chance > 0) != additionalEffect->sheerForceOverride)
                 continue;

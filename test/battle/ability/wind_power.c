@@ -24,8 +24,8 @@ SINGLE_BATTLE_TEST("Wind Power sets up Charge for player when hit by a wind move
     PARAMETRIZE {move = MOVE_AIR_CUTTER; }
 
     GIVEN {
-        PLAYER(SPECIES_WATTREL) { Ability(ABILITY_WIND_POWER); Speed(10); }
-        OPPONENT(SPECIES_WOBBUFFET) {Ability(ABILITY_LIMBER); Speed(5) ;} // Limber, so it doesn't get paralyzed.
+        PLAYER(SPECIES_WATTREL) { Ability(ABILITY_COMPETITIVE); Innates(ABILITY_WIND_POWER); Speed(10); }
+        OPPONENT(SPECIES_WOBBUFFET) {Ability(ABILITY_SHADOW_TAG); Innates(ABILITY_LIMBER); Speed(5) ;} // Limber, so it doesn't get paralyzed.
     } WHEN {
         TURN { MOVE(player, MOVE_THUNDERBOLT), MOVE(opponent, move); }
         TURN { MOVE(player, MOVE_THUNDERBOLT), MOVE(opponent, move); }
@@ -60,7 +60,7 @@ SINGLE_BATTLE_TEST("Wind Power sets up Charge for player when hit by a wind move
     }
 }
 
-SINGLE_BATTLE_TEST("Wind Power sets up Charge for opponent when hit by a wind move")
+SINGLE_BATTLE_TEST("Wind Power sets up Charge for opponent when hit by a wind move (Multi)")
 {
     s16 dmgBefore, dmgAfter;
     u16 move;
@@ -69,8 +69,8 @@ SINGLE_BATTLE_TEST("Wind Power sets up Charge for opponent when hit by a wind mo
     PARAMETRIZE {move = MOVE_AIR_CUTTER; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) {Ability(ABILITY_LIMBER); Speed(5) ;} // Limber, so it doesn't get paralyzed.
-        OPPONENT(SPECIES_WATTREL) { Ability(ABILITY_WIND_POWER); Speed(10); }
+        PLAYER(SPECIES_WOBBUFFET) {Ability(ABILITY_SHADOW_TAG); Innates(ABILITY_LIMBER); Speed(5) ;} // Limber, so it doesn't get paralyzed.
+        OPPONENT(SPECIES_WATTREL) { Ability(ABILITY_COMPETITIVE); Innates(ABILITY_WIND_POWER); Speed(10); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_THUNDERBOLT), MOVE(player, move); }
         TURN { MOVE(opponent, MOVE_THUNDERBOLT), MOVE(player, move); }
@@ -105,7 +105,7 @@ SINGLE_BATTLE_TEST("Wind Power sets up Charge for opponent when hit by a wind mo
     }
 }
 
-DOUBLE_BATTLE_TEST("Wind Power activates correctly for every battler with the ability when hit by a 2/3 target move")
+DOUBLE_BATTLE_TEST("Wind Power activates correctly for every battler with the ability when hit by a 2/3 target move (Multi)")
 {
     enum Ability abilityLeft, abilityRight;
 
@@ -114,10 +114,10 @@ DOUBLE_BATTLE_TEST("Wind Power activates correctly for every battler with the ab
     PARAMETRIZE {abilityLeft = ABILITY_WIND_POWER, abilityRight = ABILITY_WIND_POWER; }
 
     GIVEN {
-        PLAYER(SPECIES_WATTREL) { Ability(abilityLeft); Speed(10); }
-        PLAYER(SPECIES_WATTREL) { Ability(abilityRight); Speed(5); }
-        OPPONENT(SPECIES_WOBBUFFET) { Ability(ABILITY_LIMBER); Speed(20); }
-        OPPONENT(SPECIES_WOBBUFFET) { Ability(ABILITY_LIMBER); Speed(15); }
+        PLAYER(SPECIES_WATTREL) { Ability(ABILITY_COMPETITIVE); Innates(abilityLeft); Speed(10); }
+        PLAYER(SPECIES_WATTREL) { Ability(ABILITY_COMPETITIVE); Innates(abilityRight); Speed(5); }
+        OPPONENT(SPECIES_WOBBUFFET) { Ability(ABILITY_SHADOW_TAG); Innates(ABILITY_LIMBER); Speed(20); }
+        OPPONENT(SPECIES_WOBBUFFET) { Ability(ABILITY_SHADOW_TAG); Innates(ABILITY_LIMBER); Speed(15); }
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_AIR_CUTTER); MOVE(opponentRight, MOVE_AIR_CUTTER);}
     } SCENE {
@@ -146,7 +146,7 @@ DOUBLE_BATTLE_TEST("Wind Power activates correctly for every battler with the ab
     }
 }
 
-DOUBLE_BATTLE_TEST("Wind Power activates correctly for every battler with the ability when hit by a 3 target move")
+DOUBLE_BATTLE_TEST("Wind Power activates correctly for every battler with the ability when hit by a 3 target move (Multi)")
 {
     enum Ability abilityLeft, abilityRight;
 
@@ -155,10 +155,10 @@ DOUBLE_BATTLE_TEST("Wind Power activates correctly for every battler with the ab
     PARAMETRIZE {abilityLeft = ABILITY_WIND_POWER, abilityRight = ABILITY_WIND_POWER; }
 
     GIVEN {
-        PLAYER(SPECIES_WATTREL) { Ability(abilityLeft); Speed(10); }
-        PLAYER(SPECIES_WATTREL) { Ability(abilityRight); Speed(5); }
-        OPPONENT(SPECIES_WOBBUFFET) { Ability(ABILITY_LIMBER); Speed(20); }
-        OPPONENT(SPECIES_WOBBUFFET) { Ability(ABILITY_LIMBER); Speed(15); }
+        PLAYER(SPECIES_WATTREL) { Ability(ABILITY_COMPETITIVE); Innates(abilityLeft); Speed(10); }
+        PLAYER(SPECIES_WATTREL) { Ability(ABILITY_COMPETITIVE); Innates(abilityRight); Speed(5); }
+        OPPONENT(SPECIES_WOBBUFFET) { Ability(ABILITY_SHADOW_TAG); Innates(ABILITY_LIMBER); Speed(20); }
+        OPPONENT(SPECIES_WOBBUFFET) { Ability(ABILITY_SHADOW_TAG); Innates(ABILITY_LIMBER); Speed(15); }
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_PETAL_BLIZZARD);}
     } SCENE {
@@ -185,7 +185,7 @@ DOUBLE_BATTLE_TEST("Wind Power activates correctly for every battler with the ab
     }
 }
 
-DOUBLE_BATTLE_TEST("Wind Power activates correctly when Tailwind is used")
+DOUBLE_BATTLE_TEST("Wind Power activates correctly when Tailwind is used (Multi)")
 {
     bool8 opponentSide;
 
@@ -194,10 +194,10 @@ DOUBLE_BATTLE_TEST("Wind Power activates correctly when Tailwind is used")
 
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_TAILWIND) == EFFECT_TAILWIND);
-        PLAYER(SPECIES_WATTREL) { Ability(ABILITY_WIND_POWER); Speed(10); }
-        PLAYER(SPECIES_WATTREL) { Ability(ABILITY_WIND_POWER); Speed(5); }
-        OPPONENT(SPECIES_WATTREL) { Ability(ABILITY_WIND_POWER); Speed(20); }
-        OPPONENT(SPECIES_WATTREL) { Ability(ABILITY_WIND_POWER); Speed(15); }
+        PLAYER(SPECIES_WATTREL) { Ability(ABILITY_COMPETITIVE); Innates(ABILITY_WIND_POWER); Speed(10); }
+        PLAYER(SPECIES_WATTREL) { Ability(ABILITY_COMPETITIVE); Innates(ABILITY_WIND_POWER); Speed(5); }
+        OPPONENT(SPECIES_WATTREL) { Ability(ABILITY_COMPETITIVE); Innates(ABILITY_WIND_POWER); Speed(20); }
+        OPPONENT(SPECIES_WATTREL) { Ability(ABILITY_COMPETITIVE); Innates(ABILITY_WIND_POWER); Speed(15); }
     } WHEN {
         TURN { MOVE((opponentSide == TRUE) ? opponentLeft : playerLeft, MOVE_TAILWIND);}
     } SCENE {

@@ -218,14 +218,13 @@ static enum ItemEffect TryKingsRock(u32 battlerAtk, u32 battlerDef, u32 item)
      || MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_FLINCH))
         return effect;
 
-    enum Ability ability = GetBattlerAbility(battlerAtk);
     u32 holdEffectParam = GetItemHoldEffectParam(item);
 
-    if (B_SERENE_GRACE_BOOST >= GEN_5 && ability == ABILITY_SERENE_GRACE)
+    if (B_SERENE_GRACE_BOOST >= GEN_5 && BattlerHasTrait(battlerAtk, ABILITY_SERENE_GRACE))
         holdEffectParam *= 2;
     if (gSideStatuses[GetBattlerSide(battlerAtk)] & SIDE_STATUS_RAINBOW && gCurrentMove != MOVE_SECRET_POWER)
         holdEffectParam *= 2;
-    if (ability != ABILITY_STENCH && RandomPercentage(RNG_HOLD_EFFECT_FLINCH, holdEffectParam))
+    if (!BattlerHasTrait(battlerAtk, ABILITY_STENCH) && RandomPercentage(RNG_HOLD_EFFECT_FLINCH, holdEffectParam))
     {
         SetMoveEffect(battlerAtk, battlerDef, MOVE_EFFECT_FLINCH, gBattlescriptCurrInstr, NO_FLAGS);
         effect = ITEM_EFFECT_OTHER;

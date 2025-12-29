@@ -3786,7 +3786,7 @@ bool32 IsFlinchGuaranteed(u32 battlerAtk, u32 battlerDef, u32 move)
             if (gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_COVERT_CLOAK
             || DoesSubstituteBlockMove(battlerAtk, battlerDef, move)
             || (!IsMoldBreakerTypeAbility(battlerAtk, gAiLogicData->abilities[battlerAtk])
-            && (gAiLogicData->abilities[battlerDef] == ABILITY_SHIELD_DUST || gAiLogicData->abilities[battlerDef] == ABILITY_INNER_FOCUS)))
+            && (AI_BATTLER_HAS_TRAIT(battlerDef, ABILITY_SHIELD_DUST) || AI_BATTLER_HAS_TRAIT(battlerDef, ABILITY_SHIELD_DUST) || AI_BATTLER_HAS_TRAIT(battlerDef, ABILITY_INNER_FOCUS))))
                 return FALSE;
             else
                 return TRUE;

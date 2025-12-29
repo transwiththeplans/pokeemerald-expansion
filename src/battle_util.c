@@ -2664,12 +2664,12 @@ static enum MoveCanceler CancelerPPDeduction(struct BattleContext *ctx)
         for (u32 i = 0; i < gBattlersCount; i++)
         {
             if (!IsBattlerAlly(i, ctx->battlerAtk) && IsBattlerAlive(i))
-                ppToDeduct += (GetBattlerAbility(i) == ABILITY_PRESSURE);
+                ppToDeduct += (BattlerHasTrait(i, ABILITY_PRESSURE) != 0);
         }
     }
     else if (moveTarget != MOVE_TARGET_OPPONENTS_FIELD)
     {
-        if (ctx->battlerAtk != ctx->battlerDef && ctx->abilities[ctx->battlerDef] == ABILITY_PRESSURE)
+        if (ctx->battlerAtk != ctx->battlerDef && BattlerHasTrait(ctx->battlerDef, ABILITY_PRESSURE))
              ppToDeduct++;
     }
 
@@ -4137,7 +4137,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
 
         if ((traitCheck = SearchTraits(battlerTraits, ABILITY_TRACE)) && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1] )
         {
-            if (traitCheck != 1)
+            if (traitCheck > 1)
             {
                 // Trace replaces your main Ability, so it generally should not be an Innate.
                 DebugPrintf("Trace not set as main Ability");
@@ -5694,7 +5694,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
         // Prints message only. separate from ABILITYEFFECT_ON_SWITCHIN bc activates before entry hazards
         if (SearchTraits(battlerTraits, ABILITY_NEUTRALIZING_GAS) && !gDisableStructs[battler].neutralizingGas)
         {
-            if (SearchTraits(battlerTraits, ABILITY_NEUTRALIZING_GAS) != 1)
+            if (SearchTraits(battlerTraits, ABILITY_NEUTRALIZING_GAS) > 1)
             {
                 // Neutralizing Gas negates all Main Abilities and should not be an Innate.
                 DebugPrintf("Neutralizing Gas not set as main Ability");
@@ -5940,7 +5940,7 @@ u32 GetBattlerAbilityInternal(u32 battler, u32 ignoreMoldBreaker, u32 noAbilityS
 
     if (!hasAbilityShield
      && IsNeutralizingGasOnField()
-     && (gBattleMons[battler].ability != ABILITY_NEUTRALIZING_GAS || gBattleMons[battler].volatiles.gastroAcid))
+     && (gBattleMons[battler].ability != ABILITY_NEUTRALIZING_GAS || gBattleMons[battler].volatiles.gastroAcid)) // Neutralizing Gas should be a Main Ability
         return ABILITY_NONE;
 
     if (CanBreakThroughAbility(gBattlerAttacker, battler, ABILITY_NONE, hasAbilityShield, ignoreMoldBreaker))

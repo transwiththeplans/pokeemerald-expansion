@@ -4188,7 +4188,8 @@ static void SetToxicChainPriority(void)
         return;
 
     enum Ability abilityAtk = GetBattlerAbility(gBattlerAttacker);
-    if (abilityAtk == ABILITY_TOXIC_CHAIN
+    
+    if (BattlerHasTrait(gBattlerAttacker, ABILITY_TOXIC_CHAIN)
      && IsBattlerAlive(gBattlerTarget)
      && CanBePoisoned(gBattlerAttacker, gBattlerTarget, abilityAtk, GetBattlerAbility(gBattlerTarget))
      && IsBattlerTurnDamaged(gBattlerTarget)
@@ -17328,6 +17329,18 @@ void BS_TryActivateReceiver(void)
     u32 battler = GetBattlerForBattleScript(cmd->battler);
     gBattlerAbility = BATTLE_PARTNER(battler);
     u32 partnerAbility = GetBattlerAbility(gBattlerAbility);
+
+    if (BattlerHasTrait(gBattlerAbility, ABILITY_RECEIVER) > 1)
+    {
+        // Receiver replaces your main Ability, so it should not be an Innate.
+        DebugPrintf("Receiver not set as main Ability");
+    }
+    if (BattlerHasTrait(gBattlerAbility, ABILITY_POWER_OF_ALCHEMY) > 1)
+    {
+        // Power of Alchemy replaces your main Ability, so it should not be an Innate.
+        DebugPrintf("Power of Alchemy not set as main Ability");
+    }
+
     if (IsBattlerAlive(gBattlerAbility)
         && (partnerAbility == ABILITY_RECEIVER || partnerAbility == ABILITY_POWER_OF_ALCHEMY) // Should not be Innates (Multi)
         && GetBattlerHoldEffectIgnoreAbility(battler) != HOLD_EFFECT_ABILITY_SHIELD

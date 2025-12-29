@@ -232,26 +232,3 @@ DOUBLE_BATTLE_TEST("Download raises Sp.Attack if enemies have lower total Sp. De
         EXPECT_MUL_EQ(results[0].damage, Q_4_12(1.5), results[1].damage);
     }
 }
-
-SINGLE_BATTLE_TEST("Download INTIMID", s16 damage)
-{
-    enum Ability ability;
-    //PARAMETRIZE { ability = ABILITY_UNNERVE; }
-    PARAMETRIZE { ability = ABILITY_LIGHT_METAL; }
-    GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Ability(ABILITY_LEVITATE); Innates(ABILITY_LIGHT_METAL); Defense(100); SpDefense(1); }
-        OPPONENT(SPECIES_PORYGON) { Ability(ABILITY_UNNERVE); Innates( ABILITY_INTIMIDATE, ABILITY_DOWNLOAD, ABILITY_SUPERSWEET_SYRUP); }
-    } WHEN {
-        TURN { MOVE(opponent, MOVE_MUD_SLAP); }
-    } SCENE {
-        if (ability == ABILITY_DOWNLOAD)
-        {
-            ABILITY_POPUP(opponent, ABILITY_DOWNLOAD);
-            ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponent);
-            //MESSAGE("The opposing Porygon's Download raised its Attack!");
-        }
-        HP_BAR(player, captureDamage: &results[i].damage);
-    } FINALLY {
-        EXPECT_MUL_EQ(results[0].damage, Q_4_12(1.5), results[1].damage);
-    }
-}

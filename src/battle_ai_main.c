@@ -3265,7 +3265,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 {
                     ADJUST_SCORE(GOOD_EFFECT);
                 }
-                if ((aiData->abilities[battlerAtk] == ABILITY_RECEIVER || aiData->abilities[battlerAtk] == ABILITY_RECEIVER) && !partnerHasBadAbility)
+                if ((AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_RECEIVER) || AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_RECEIVER)) && !partnerHasBadAbility)
                 {
                     ADJUST_SCORE(GOOD_EFFECT);
                 }
@@ -4086,9 +4086,9 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
      {
         if (!AI_IsAbilityOnSide(battlerAtk, ABILITY_AROMA_VEIL)
          || IsMoldBreakerTypeAbility(battlerDef, aiData->abilities[battlerDef])
-         || aiData->abilities[battlerDef] == ABILITY_MYCELIUM_MIGHT
+         || AI_BATTLER_HAS_TRAIT(battlerDef, ABILITY_MYCELIUM_MIGHT)
          || IsMoldBreakerTypeAbility(BATTLE_PARTNER(battlerDef), aiData->abilities[BATTLE_PARTNER(battlerDef)])
-         || aiData->abilities[BATTLE_PARTNER(battlerDef)] == ABILITY_MYCELIUM_MIGHT)
+         || AI_BATTLER_HAS_TRAIT(BATTLE_PARTNER(battlerDef), ABILITY_MYCELIUM_MIGHT))
             return score;
      }
     // check thawing moves
@@ -4096,7 +4096,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         ADJUST_SCORE(10);
 
     // check burn / frostbite
-    if (gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_SMART_SWITCHING && aiData->abilities[battlerAtk] == ABILITY_NATURAL_CURE)
+    if (gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_SMART_SWITCHING && AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_NATURAL_CURE))
     {
         if ((gBattleMons[battlerAtk].status1 & STATUS1_BURN && HasOnlyMovesWithCategory(battlerAtk, DAMAGE_CATEGORY_PHYSICAL, TRUE))
         || (gBattleMons[battlerAtk].status1 & STATUS1_FROSTBITE && HasOnlyMovesWithCategory(battlerAtk, DAMAGE_CATEGORY_SPECIAL, TRUE)))
@@ -4259,24 +4259,24 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPATK_2));
         break;
     case EFFECT_GEAR_UP:
-        if (aiData->abilities[battlerAtk] == ABILITY_PLUS || aiData->abilities[battlerAtk] == ABILITY_MINUS)
+        if (AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_PLUS) || AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_MINUS))
         {
             ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_ATK));
             ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPATK));
         }
-        if (hasPartner && (aiData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_PLUS || aiData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_MINUS))
+        if (hasPartner && (AI_BATTLER_HAS_TRAIT(BATTLE_PARTNER(battlerAtk), ABILITY_PLUS) || AI_BATTLER_HAS_TRAIT(BATTLE_PARTNER(battlerAtk), ABILITY_MINUS)))
         {
             ADJUST_SCORE(IncreaseStatUpScore(BATTLE_PARTNER(battlerAtk), battlerDef, STAT_CHANGE_ATK));
             ADJUST_SCORE(IncreaseStatUpScore(BATTLE_PARTNER(battlerAtk), battlerDef, STAT_CHANGE_SPATK));
         }
         break;
     case EFFECT_MAGNETIC_FLUX:
-        if (aiData->abilities[battlerAtk] == ABILITY_PLUS || aiData->abilities[battlerAtk] == ABILITY_MINUS)
+        if (AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_PLUS) || AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_MINUS))
         {
             ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_DEF));
             ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPDEF));
         }
-        if (hasPartner && (aiData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_PLUS || aiData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_MINUS))
+        if (hasPartner && (AI_BATTLER_HAS_TRAIT(BATTLE_PARTNER(battlerAtk), ABILITY_PLUS) || AI_BATTLER_HAS_TRAIT(BATTLE_PARTNER(battlerAtk), ABILITY_MINUS)))
         {
             ADJUST_SCORE(IncreaseStatUpScore(BATTLE_PARTNER(battlerAtk), battlerDef, STAT_CHANGE_DEF));
             ADJUST_SCORE(IncreaseStatUpScore(BATTLE_PARTNER(battlerAtk), battlerDef, STAT_CHANGE_SPDEF));
@@ -4367,7 +4367,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         if (!IS_BATTLER_OF_TYPE(battlerAtk, GetMoveType(gBattleMons[battlerAtk].moves[0])))
         {
             ADJUST_SCORE(WEAK_EFFECT);
-            if (aiData->abilities[battlerAtk] == ABILITY_ADAPTABILITY)
+            if (AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_ADAPTABILITY))
                 ADJUST_SCORE(WEAK_EFFECT);
             if (IsConsideringZMove(battlerAtk, battlerDef, move))
                 ADJUST_SCORE(BEST_EFFECT);
@@ -5604,7 +5604,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
              && CanBattlerGetOrLoseItem(battlerDef, aiData->items[battlerDef])
              && CanBattlerGetOrLoseItem(battlerAtk, aiData->items[battlerDef])
              && !HasMoveWithEffect(battlerAtk, EFFECT_ACROBATICS)
-             && aiData->abilities[battlerDef] != ABILITY_STICKY_HOLD)
+             && !AI_BATTLER_HAS_TRAIT(battlerDef, ABILITY_STICKY_HOLD))
             {
                 switch (aiData->holdEffects[battlerDef])
                 {

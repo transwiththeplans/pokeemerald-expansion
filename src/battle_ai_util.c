@@ -678,7 +678,7 @@ bool32 IsDamageMoveUnusable(struct DamageContext *ctx)
             return TRUE;
     }
 
-    if (IsMoveDampBanned(ctx->move) && (battlerDefAbility == ABILITY_DAMP || partnerDefAbility == ABILITY_DAMP))
+    if (IsMoveDampBanned(ctx->move) && (BattlerHasTrait(ctx->battlerDef, ABILITY_DAMP) || BattlerHasTrait(BATTLE_PARTNER(ctx->battlerDef), ABILITY_DAMP)))
         return TRUE;
 
     switch (GetMoveEffect(ctx->move))
@@ -847,7 +847,7 @@ static inline void CalcDynamicMoveDamage(struct DamageContext *ctx, u16 *medianD
         maximum *= strikeCount;
     }
 
-    if (ctx->abilityAtk == ABILITY_PARENTAL_BOND
+    if (BattlerHasTrait(ctx->battlerAtk, ABILITY_PARENTAL_BOND)
         && !strikeCount
         && effect != EFFECT_TRIPLE_KICK
         && effect != EFFECT_MULTI_HIT
@@ -1458,7 +1458,7 @@ s32 AI_WhoStrikesFirst(u32 battlerAI, u32 battler, u32 aiMoveConsidered, u32 pla
 bool32 CanEndureHit(u32 battler, u32 battlerTarget, u32 move)
 {
     enum BattleMoveEffects effect = GetMoveEffect(move);
-    if (!AI_BattlerAtMaxHp(battlerTarget) || effect == EFFECT_MULTI_HIT || gAiLogicData->abilities[battler]  == ABILITY_PARENTAL_BOND)
+    if (!AI_BattlerAtMaxHp(battlerTarget) || effect == EFFECT_MULTI_HIT || AI_BATTLER_HAS_TRAIT(battler, ABILITY_PARENTAL_BOND))
         return FALSE;
     if (GetMoveStrikeCount(move) > 1 && !(effect == EFFECT_DRAGON_DARTS && !HasTwoOpponents(battler)))
         return FALSE;
@@ -3315,7 +3315,7 @@ enum AIPivot ShouldPivot(u32 battlerAtk, u32 battlerDef, enum Ability defAbility
 
     // Palafin always wants to activate Zero to Hero
     if (gBattleMons[battlerAtk].species == SPECIES_PALAFIN_ZERO
-        && gBattleMons[battlerAtk].ability == ABILITY_ZERO_TO_HERO
+        && BattlerHasTrait(battlerAtk, ABILITY_ZERO_TO_HERO)
         && CountUsablePartyMons(battlerAtk) != 0)
         return SHOULD_PIVOT;
 
@@ -3556,8 +3556,8 @@ bool32 ShouldPoison(u32 battlerAtk, u32 battlerDef)
     // Battler can be poisoned and has move/ability that synergizes with being poisoned
     if (CanBePoisoned(battlerAtk, battlerDef, gAiLogicData->abilities[battlerAtk], abilityDef) && (
         DoesBattlerBenefitFromAllVolatileStatus(battlerDef, abilityDef)
-        || abilityDef == ABILITY_POISON_HEAL
-        || (abilityDef == ABILITY_TOXIC_BOOST && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL))))
+        || AI_BATTLER_HAS_TRAIT(battlerDef, ABILITY_POISON_HEAL)
+        || (AI_BATTLER_HAS_TRAIT(battlerDef, ABILITY_TOXIC_BOOST) && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL))))
     {
         if (battlerAtk == battlerDef) // Targeting self
             return TRUE;
@@ -3797,11 +3797,10 @@ bool32 IsFlinchGuaranteed(u32 battlerAtk, u32 battlerDef, u32 move)
 
 bool32 HasChoiceEffect(u32 battler)
 {
-    enum Ability ability = gAiLogicData->abilities[battler];
-    if (ability == ABILITY_GORILLA_TACTICS)
+    if (AI_BATTLER_HAS_TRAIT(battler, ABILITY_GORILLA_TACTICS))
         return TRUE;
 
-    if (ability == ABILITY_KLUTZ)
+    if (AI_BATTLER_HAS_TRAIT(battler, ABILITY_KLUTZ))
         return FALSE;
 
     enum HoldEffect holdEffect = gAiLogicData->holdEffects[battler];
@@ -4027,10 +4026,10 @@ static bool32 ShouldCureStatusInternal(u32 battlerAtk, u32 battlerDef, bool32 us
         if (aiData->holdEffects[battlerDef] == HOLD_EFFECT_TOXIC_ORB)
             return FALSE;
 
-        if (aiData->abilities[battlerDef] == ABILITY_POISON_HEAL)
+        if (AI_BATTLER_HAS_TRAIT(battlerDef, ABILITY_POISON_HEAL))
             isHarmless = TRUE;
 
-        if (aiData->abilities[battlerDef] == ABILITY_TOXIC_BOOST && !isHarmless)
+        if (AI_BATTLER_HAS_TRAIT(battlerDef, ABILITY_TOXIC_BOOST) && !isHarmless)
         {
             if (HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL))
                 isHarmless = TRUE;
@@ -4044,7 +4043,7 @@ static bool32 ShouldCureStatusInternal(u32 battlerAtk, u32 battlerDef, bool32 us
         if (aiData->holdEffects[battlerDef] == HOLD_EFFECT_FLAME_ORB)
             return FALSE;
 
-        if (aiData->abilities[battlerDef] == ABILITY_FLARE_BOOST && !isHarmless)
+        if (AI_BATTLER_HAS_TRAIT(battlerDef, ABILITY_FLARE_BOOST) && !isHarmless)
         {
             if (HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL))
                 isHarmless = TRUE;
@@ -4848,7 +4847,7 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
         return NO_INCREASE;
 
     // Stat stages are effectively doubled under Simple.
-    if (gAiLogicData->abilities[battlerAtk] == ABILITY_SIMPLE)
+    if (AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_SIMPLE))
         stages *= 2;
 
     // Predicting switch
@@ -5575,14 +5574,14 @@ bool32 AI_ShouldSetUpHazards(u32 battlerAtk, u32 battlerDef, u32 move, struct Ai
             return FALSE;
         if (DoesBattlerIgnoreAbilityChecks(battlerAtk, aiData->abilities[battlerAtk], move))
             return TRUE;
-        if (aiData->abilities[battlerDef] == ABILITY_MAGIC_BOUNCE)
+        if (AI_BATTLER_HAS_TRAIT(battlerDef, ABILITY_MAGIC_BOUNCE))
             return FALSE;
     }
     else
     {
         if (DoesBattlerIgnoreAbilityChecks(battlerAtk, aiData->abilities[battlerAtk], move))
             return TRUE;
-        if (aiData->abilities[battlerDef] == ABILITY_SHIELD_DUST)
+        if (AI_BATTLER_HAS_TRAIT(battlerDef, ABILITY_SHIELD_DUST))
             return FALSE;
     }
     return TRUE;

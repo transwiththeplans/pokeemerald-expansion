@@ -5886,7 +5886,7 @@ static bool32 HandleMoveEndMoveBlock(u32 moveEffect)
         {
             u32 side = GetBattlerSide(gBattlerTarget);
 
-            if (GetBattlerAbility(gBattlerTarget) == ABILITY_STICKY_HOLD)
+            if (BattlerHasTrait(gBattlerTarget, ABILITY_STICKY_HOLD))
             {
                 gBattlerAbility = gBattlerTarget;
                 BattleScriptPushCursor();
@@ -5896,7 +5896,7 @@ static bool32 HandleMoveEndMoveBlock(u32 moveEffect)
             }
             gLastUsedItem = gBattleMons[gBattlerTarget].item;
             gBattleMons[gBattlerTarget].item = 0;
-            if (gBattleMons[gBattlerTarget].ability != ABILITY_GORILLA_TACTICS)
+            if (!BattlerHasTrait(gBattlerTarget, ABILITY_GORILLA_TACTICS))
                 gBattleStruct->choicedMove[gBattlerTarget] = MOVE_NONE;
             CheckSetUnburden(gBattlerTarget);
 

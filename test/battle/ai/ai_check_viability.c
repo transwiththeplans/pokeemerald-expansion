@@ -517,7 +517,7 @@ AI_DOUBLE_BATTLE_TEST("AI chooses moves that cure self or partner (Multi)")
     }
 }
 
-//AI_SINGLE_BATTLE_TEST("AI chooses moves that cure inactive party members (Multi)")  TODO: Innate parameters on reserve pokemon in Tests
+TO_DO_BATTLE_TEST("AI chooses moves that cure inactive party members (Multi)")  // TODO: Innate parameters on reserve pokemon in Tests
 
 AI_SINGLE_BATTLE_TEST("AI sees Shield Dust immunity to additional effects (Multi)")
 {

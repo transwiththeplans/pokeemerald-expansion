@@ -953,14 +953,14 @@ LittlerootTown_Text_ComeHomeIfAnythingHappens:
 	.string "Go on, go get them, honey!$"
 
 LittlerootTown_Text_CanUsePCToStoreItems:
-	.string "… … … … … … … …\n"
-	.string "… … … … … … … …\p"
-	.string "I'm not gonna say it. $"
+	.string "… … … … … …what?\n"
+	.string "… … … … … …get away from me.\p"
+	.string "Technology sucks. I hate AI.. $"
 
 LittlerootTown_Text_BirchSpendsDaysInLab:
-	.string "PROF. BIRCH spends days in his LAB\n"
-	.string "studying, then he'll suddenly go out in\l"
-	.string "the wild to do more research…\p"
+	.string "PROF. BIRCH spends more time in his LAB\n"
+	.string "ever since that comet flew over Hoenn,\l"
+	.string "and when he's not there, he's in the field.\p"
 	.string "When does PROF. BIRCH spend time\n"
 	.string "at home?$"
 

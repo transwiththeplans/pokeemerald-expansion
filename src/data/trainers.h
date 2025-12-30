@@ -12006,68 +12006,68 @@ F_TRAINER_FEMALE |
 #line 4855
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4856
-        .aiFlags = AI_FLAG_BASIC_TRAINER,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
             {
 #line 4858
-            .species = SPECIES_GEODUDE,
+            .species = SPECIES_ROGGENROLA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4861
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 4860
-            .ability = ABILITY_SKILL_LINK,
+            .ability = ABILITY_POWER_SPOT,
 #line 4859
             .lvl = 13,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 4862
-                MOVE_ROCK_BLAST,
-                MOVE_ARM_THRUST,
-                MOVE_SMACK_DOWN,
-                MOVE_DEFENSE_CURL,
+                MOVE_ROCK_RIPPLE,
+                MOVE_FAIRY_WIND,
+                MOVE_STEALTH_ROCK,
+                MOVE_MUD_SLAP,
             },
             },
             {
 #line 4867
-            .species = SPECIES_PHANPY,
+            .species = SPECIES_ROCKRUFF,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4870
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 4869
-            .ability = ABILITY_CURL_UP,
+            .ability = ABILITY_SIMPLE,
 #line 4868
             .lvl = 13,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 4871
-                MOVE_ROCK_TOMB,
-                MOVE_DEFENSE_CURL,
-                MOVE_ROLLOUT,
-                MOVE_GROWL,
+                MOVE_ROCK_THROW,
+                MOVE_TRAILBLAZE,
+                MOVE_BITE,
+                MOVE_HOWL,
             },
             },
             {
 #line 4876
-            .species = SPECIES_ROGGENROLA,
+            .species = SPECIES_PHANPY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4879
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 4878
-            .ability = ABILITY_POWER_SPOT,
+            .ability = ABILITY_CURL_UP,
 #line 4877
             .lvl = 14,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 4880
-                MOVE_ROCK_RIPPLE,
-                MOVE_FAIRY_WIND,
-                MOVE_STEALTH_ROCK,
-                MOVE_MUD_SLAP,
+                MOVE_ROCK_TOMB,
+                MOVE_DEFENSE_CURL,
+                MOVE_ROLLOUT,
+                MOVE_GROWL,
             },
             },
             {
@@ -12088,7 +12088,7 @@ F_TRAINER_FEMALE |
 #line 4889
                 MOVE_ANCIENT_POWER,
                 MOVE_SLOWDOWN,
-                MOVE_BLOCK,
+                MOVE_VACUUM_WAVE,
                 MOVE_THUNDER_WAVE,
             },
             },
@@ -12157,22 +12157,22 @@ F_TRAINER_FEMALE |
             },
             {
 #line 4922
-            .species = SPECIES_TORRACAT,
+            .species = SPECIES_PRIMEAPE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4925
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
 #line 4924
-            .ability = ABILITY_SCARE,
+            .ability = ABILITY_ANGER_POINT,
 #line 4923
             .lvl = 21,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 4926
-                MOVE_TAG_OUT,
-                MOVE_FIRE_FANG,
-                MOVE_BITE,
-                MOVE_GROWL,
+                MOVE_BUG_BITE,
+                MOVE_BRICK_BREAK,
+                MOVE_POUNCE,
+                MOVE_LEER,
             },
             },
             {
@@ -15002,7 +15002,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 6059
-            .species = SPECIES_GEODUDE,
+            .species = SPECIES_NACLI,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6061
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
@@ -15045,7 +15045,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 6076
-            .species = SPECIES_CHEWTLE,
+            .species = SPECIES_WOOPER,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6078
             .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),

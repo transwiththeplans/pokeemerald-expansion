@@ -9,7 +9,9 @@ GraniteCave_StevensRoom_EventScript_Steven::
 	call Common_EventScript_PlayerHandedOverTheItem
 	setflag FLAG_DELIVERED_STEVEN_LETTER
 	msgbox GraniteCave_StevensRoom_Text_ThankYouTakeThis, MSGBOX_DEFAULT
-	giveitem ITEM_TM_STEEL_WING
+	giveitem ITEM_MEGA_RING
+	call_if_eq VAR_RESULT, FALSE, GraniteCave_StevensRoom_EventScript_BagFull	
+	giveitem ITEM_ULTIMATRIX_SYMBOL
 	call_if_eq VAR_RESULT, FALSE, GraniteCave_StevensRoom_EventScript_BagFull
 	msgbox GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister, MSGBOX_DEFAULT
 	closemessage
@@ -80,24 +82,34 @@ GraniteCave_StevensRoom_Movement_StevenExitSouth:
 	step_end
 
 GraniteCave_StevensRoom_Text_ImStevenLetterForMe:
-	.string "My name is STEVEN.\p"
-	.string "I'm interested in rare stones,\n"
+	.string "Hm? Oh, hello. My name is STEVEN.\p"
+	.string "I'm a geologist in search of rare gems,\n"
 	.string "so I travel here and there.\p"
-	.string "Oh?\n"
-	.string "A LETTER for me?$"
+	.string "And you are?\p"
+	.string "... {PLAYER}. I see. Nice to meet you.\n"
+	.string "What brings you here?\p"
+	.string "Oh? A letter for me?$"
 
 GraniteCave_StevensRoom_Text_ThankYouTakeThis:
 	.string "STEVEN: Okay, thank you.\p"
 	.string "You went through all this trouble to\n"
 	.string "deliver that. I need to thank you.\p"
 	.string "Let me see…\n"
-	.string "I'll give you this TM.\p"
-	.string "It contains my favorite move,\n"
-	.string "STEEL WING.$"
+	.string "I'll give you this.\p"
+	.string "I see a lot of potential in you,\n"
+	.string "{PLAYER}.$"
 
 GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister:
 	.string "STEVEN: Your POKéMON appear quite\n"
-	.string "capable.\p"
+	.string "capable. That Mega Ring will help to\l"
+	.string "bolster your strength.\p"
+	.string "Normally, you'd need Mega Stones\n"
+	.string "to evolve certain Pokemon, but my\l"
+	.string "father developed a way around that\l"
+	.string "with the Ultimatrix Symbol.\p"
+	.string "It mega evolves a wide range of\n"
+	.string "Pokemon, but there's two more symbols in\l"
+	.string "development for some other Pokemon.\p"
 	.string "If you keep training, you could even\n"
 	.string "become the CHAMPION of the POKéMON\l"
 	.string "LEAGUE one day. That's what I think.\p"

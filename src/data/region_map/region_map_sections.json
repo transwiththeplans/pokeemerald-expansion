@@ -58,7 +58,7 @@
     },
     {
       "id": "MAPSEC_PETALBURG_CITY",
-      "name": "PETALBURG FIELDS",
+      "name": "PETALBURG CITY",
       "x": 1,
       "y": 9,
       "width": 1,
@@ -865,7 +865,7 @@
     },
     {
       "id": "MAPSEC_DIGLETTS_CAVE",
-      "name": "DIGLETT'S CAVE"
+      "name": "DIGLETT'S GROTTO"
     },
     {
       "id": "MAPSEC_KANTO_VICTORY_ROAD",
@@ -1213,7 +1213,7 @@
     },
     {
       "id": "MAPSEC_ALTERING_CAVE",
-      "name": "ALTERING CAVE",
+      "name": "DIGLETT'S GROTTO",
       "x": 6,
       "y": 8,
       "width": 1,

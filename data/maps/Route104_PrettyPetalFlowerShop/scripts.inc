@@ -51,12 +51,9 @@ Route104_PrettyPetalFlowerShop_EventScript_SellDecorations::
 
 	.align 2
 Route104_PrettyPetalFlowerShop_Pokemart_Plants:
-	.2byte DECOR_RED_PLANT
-	.2byte DECOR_TROPICAL_PLANT
-	.2byte DECOR_PRETTY_FLOWERS
-	.2byte DECOR_COLORFUL_PLANT
-	.2byte DECOR_BIG_PLANT
-	.2byte DECOR_GORGEOUS_PLANT
+	.2byte ITEM_SWEET_APPLE
+	.2byte ITEM_TART_APPLE
+	.2byte ITEM_SYRUPY_APPLE
 	pokemartlistend
 
 Route104_PrettyPetalFlowerShop_EventScript_WailmerPailGirl::

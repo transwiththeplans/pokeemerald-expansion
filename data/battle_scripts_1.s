@@ -7740,7 +7740,6 @@ BattleScript_ScareLoop:
 	jumpifabsent BS_TARGET, BattleScript_ScareLoopIncrement
 	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_ScareLoopIncrement
 	jumpifintimidateabilityprevented
-
 BattleScript_ScareEffect:
 	copybyte sBATTLER, gBattlerAttacker
 	setstatchanger STAT_SPATK, 1, TRUE
@@ -7758,7 +7757,6 @@ BattleScript_ScareEffect_WaitString:
 	call BattleScript_TryIntimidateHoldEffects
 	restoreattacker
 	restoretarget
-
 BattleScript_ScareLoopIncrement:
 	addbyte gBattlerTarget, 1
 	jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_ScareLoop

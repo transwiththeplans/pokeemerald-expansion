@@ -10623,11 +10623,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Dragon Rush"),
         .description = COMPOUND_STRING(
             "Tackles the foe with menace.\n"
-            "May cause flinching."),
+            "Lowers Defenses."),
         .effect = EFFECT_HIT,
-        .power = 100,
+        .power = 120,
         .type = TYPE_DRAGON,
-        .accuracy = 75,
+        .accuracy = 100,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -10635,8 +10635,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .makesContact = TRUE,
         .minimizeDoubleDamage = B_UPDATED_MOVE_FLAGS >= GEN_6,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_FLINCH,
-            .chance = 20,
+            .moveEffect = MOVE_EFFECT_DEF_SPDEF_DOWN,
+            .self = TRUE,
         }),
         .contestEffect = CONTEST_EFFECT_BETTER_IF_FIRST,
         .contestCategory = CONTEST_CATEGORY_COOL,
@@ -11520,7 +11520,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Launches a magnet that\n"
             "strikes without fail."),
         .effect = EFFECT_HIT,
-        .power = 60,
+        .power = 95,
         .type = TYPE_STEEL,
         .accuracy = 0,
         .pp = 20,
@@ -14058,9 +14058,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Glaciate"),
         .description = COMPOUND_STRING(
             "Blows very bitter air at the\n"
-            "foes. May lower special defense."),
+            "foes. May lower SpDef."),
         .effect = EFFECT_HIT,
-        .power = 75,
+        .power = 65,
         .type = TYPE_ICE,
         .accuracy = 95,
         .pp = 10,
@@ -14069,7 +14069,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_SP_DEF_MINUS_1,
-            .chance = 40,
+            .chance = 30,
         }),
         .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,

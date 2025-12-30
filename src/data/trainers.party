@@ -4853,28 +4853,10 @@ Gender: Female
 Music: Female
 Items: Potion / Potion
 Double Battle: No
-AI: Basic Trainer
-
-Geodude
-Level: 13
-Ability: Skill Link
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Rock Blast
-- Arm Thrust
-- Smack Down
-- Defense Curl
-
-Phanpy
-Level: 13
-Ability: Curl Up
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Rock Tomb
-- Defense Curl
-- Rollout
-- Growl
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Roggenrola
-Level: 14
+Level: 13
 Ability: Power Spot
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Rock Ripple
@@ -4882,13 +4864,31 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Stealth Rock
 - Mud Slap
 
+Rockruff
+Level: 13
+Ability: Simple
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Rock Throw
+- Trailblaze
+- Bite
+- Howl
+
+Phanpy
+Level: 14
+Ability: Curl Up
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Rock Tomb
+- Defense Curl
+- Rollout
+- Growl
+
 Nosepass @ Oran Berry
 Level: 15
 Ability: Gravity Well
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Ancient Power
 - Slowdown
-- Block
+- Vacuum Wave
 - Thunder Wave
 
 === TRAINER_BRAWLY_1 ===
@@ -4919,14 +4919,14 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Bulk Up
 - Knock Off
 
-Torracat
+Primeape
 Level: 21
-Ability: Scare
+Ability: Anger Point
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Tag Out
-- Fire Fang
-- Bite
-- Growl
+- Bug Bite
+- Brick Break
+- Pounce
+- Leer
 
 Gurdurr @ Sitrus Berry
 Level: 22
@@ -6056,7 +6056,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Geodude
+Nacli
 Level: 11
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -6073,7 +6073,7 @@ Roggenrola
 Level: 11
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 
-Chewtle
+Wooper
 Level: 11
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 

@@ -98,7 +98,7 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
 
     enum Ability ability = GetBattlerAbility(battler);
     u32 currBattleWeather = GetCurrentBattleWeather();
-    u16 battlerTraits[MAX_MON_TRAITS];
+    enum Ability battlerTraits[MAX_MON_TRAITS];
     STORE_BATTLER_TRAITS(battler);
 
     if (currBattleWeather == 0xFF)
@@ -871,7 +871,7 @@ static bool32 HandleEndTurnYawn(u32 battler)
          && !BattlerHasTrait(battler, ABILITY_VITAL_SPIRIT)
          && !BattlerHasTrait(battler, ABILITY_INSOMNIA)
          && !UproarWakeUpCheck(battler)
-         && !IsLeafGuardProtected(battler, ability))
+         && !IsLeafGuardProtected(battler))
         {
             gEffectBattler = gBattlerTarget = battler;
             enum HoldEffect holdEffect = GetBattlerHoldEffect(battler);
@@ -1262,7 +1262,7 @@ static bool32 HandleEndTurnThirdEventBlock(u32 battler)
         break;
     case THIRD_EVENT_BLOCK_ABILITIES:
     {
-        u16 battlerTraits[MAX_MON_TRAITS];
+        enum Ability battlerTraits[MAX_MON_TRAITS];
         STORE_BATTLER_TRAITS(battler);
 
         if (SearchTraits(battlerTraits, ABILITY_TRUANT) // Not fully accurate but it has to be handled somehow. TODO: Find a better way.
@@ -1314,7 +1314,7 @@ static bool32 HandleEndTurnFormChangeAbilities(u32 battler)
 
     gBattleStruct->eventState.endTurnBattler++;
 
-    u16 battlerTraits[MAX_MON_TRAITS];
+    enum Ability battlerTraits[MAX_MON_TRAITS];
     STORE_BATTLER_TRAITS(battler);
     
     if (SearchTraits(battlerTraits, ABILITY_POWER_CONSTRUCT)

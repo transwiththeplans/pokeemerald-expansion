@@ -115,7 +115,7 @@ bool32 CanTargetMoveFaintAi(u32 move, u32 battlerDef, u32 battlerAtk, u32 nHits)
 bool32 CanTargetFaintAiWithMod(u32 battlerDef, u32 battlerAtk, s32 hpMod, s32 dmgMod);
 enum Ability AI_DecideKnownAbilityForTurn(u32 battlerId);
 enum HoldEffect AI_DecideHoldEffectForTurn(u32 battlerId);
-bool32 DoesBattlerIgnoreAbilityChecks(u32 battlerAtk, enum Ability atkAbility, u32 move);
+bool32 DoesBattlerIgnoreAbilityChecks(u32 battlerAtk, u32 move);
 u32 AI_GetWeather(void);
 u32 AI_GetSwitchinWeather(struct BattlePokemon battleMon);
 enum WeatherState IsWeatherActive(u32 flags);
@@ -124,9 +124,9 @@ bool32 CanIndexMoveFaintTarget(u32 battlerAtk, u32 battlerDef, u32 index, enum D
 bool32 HasDamagingMove(u32 battler);
 bool32 HasDamagingMoveOfType(u32 battler, enum Type type);
 u32 GetBattlerSecondaryDamage(u32 battlerId);
-bool32 BattlerWillFaintFromWeather(u32 battler, enum Ability ability);
-bool32 BattlerWillFaintFromSecondaryDamage(u32 battler, enum Ability ability);
-bool32 ShouldTryOHKO(u32 battlerAtk, u32 battlerDef, enum Ability atkAbility, enum Ability defAbility, u32 move);
+bool32 BattlerWillFaintFromWeather(u32 battler);
+bool32 BattlerWillFaintFromSecondaryDamage(u32 battler);
+bool32 ShouldTryOHKO(u32 battlerAtk, u32 battlerDef, u32 move);
 bool32 ShouldUseRecoilMove(u32 battlerAtk, u32 battlerDef, u32 recoilDmg, u32 moveIndex);
 bool32 ShouldAbsorb(u32 battlerAtk, u32 battlerDef, u32 move, s32 damage);
 bool32 ShouldRecover(u32 battlerAtk, u32 battlerDef, u32 move, u32 healPercent);
@@ -140,7 +140,7 @@ bool32 IsStatBoostingBerry(u32 item);
 bool32 CanKnockOffItem(u32 battler, u32 item);
 bool32 IsAbilityOfRating(enum Ability ability, s8 rating);
 bool32 AI_IsAbilityOnSide(u32 battlerId, enum Ability ability);
-bool32 AI_MoveMakesContact(enum Ability ability, enum HoldEffect holdEffect, u32 move, u32 battlerAtk);
+bool32 AI_MoveMakesContact(enum HoldEffect holdEffect, u32 move, u32 battlerAtk);
 bool32 IsConsideringZMove(u32 battlerAtk, u32 battlerDef, u32 move);
 bool32 ShouldUseZMove(u32 battlerAtk, u32 battlerDef, u32 chosenMove);
 void SetAIUsingGimmick(u32 battler, enum AIConsiderGimmick use);
@@ -193,7 +193,7 @@ bool32 HasMoveWithLowAccuracy(u32 battlerAtk, u32 battlerDef, u32 accCheck, bool
 bool32 HasAnyKnownMove(u32 battlerId);
 bool32 IsAromaVeilProtectedEffect(enum BattleMoveEffects moveEffect);
 bool32 IsNonVolatileStatusMove(u32 moveEffect);
-bool32 IsMoveRedirectionPrevented(u32 battlerAtk, u32 move, enum Ability atkAbility);
+bool32 IsMoveRedirectionPrevented(u32 battlerAtk, u32 move);
 bool32 IsHazardMove(u32 move);
 bool32 IsTwoTurnNotSemiInvulnerableMove(u32 battlerAtk, u32 move);
 bool32 IsBattlerDamagedByStatus(u32 battler);
@@ -224,13 +224,13 @@ bool32 IsHazardClearingMove(u32 move);
 bool32 IsSubstituteEffect(enum BattleMoveEffects effect);
 
 // status checks
-bool32 AI_CanBeConfused(u32 battlerAtk, u32 battlerDef, u32 move, enum Ability ability);
+bool32 AI_CanBeConfused(u32 battlerAtk, u32 battlerDef, u32 move);
 bool32 IsBattlerIncapacitated(u32 battler, enum Ability ability);
 bool32 AI_CanPutToSleep(u32 battlerAtk, u32 battlerDef, enum Ability defAbility, u32 move, u32 partnerMove);
 bool32 ShouldPoison(u32 battlerAtk, u32 battlerDef);
 bool32 AI_CanPoison(u32 battlerAtk, u32 battlerDef, enum Ability defAbility, u32 move, u32 partnerMove);
 bool32 AI_CanParalyze(u32 battlerAtk, u32 battlerDef, enum Ability defAbility, u32 move, u32 partnerMove);
-bool32 AI_CanConfuse(u32 battlerAtk, u32 battlerDef, enum Ability defAbility, u32 battlerAtkPartner, u32 move, u32 partnerMove);
+bool32 AI_CanConfuse(u32 battlerAtk, u32 battlerDef, u32 battlerAtkPartner, u32 move, u32 partnerMove);
 bool32 ShouldBurn(u32 battlerAtk, u32 battlerDef, enum Ability abilityDef);
 bool32 ShouldFreezeOrFrostbite(u32 battlerAtk, u32 battlerDef, enum Ability abilityDef);
 bool32 ShouldParalyze(u32 battlerAtk, u32 battlerDef, enum Ability abilityDef);

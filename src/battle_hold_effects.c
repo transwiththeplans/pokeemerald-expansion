@@ -262,11 +262,10 @@ static enum ItemEffect TryAirBalloon(u32 battler, ActivationTiming timing)
 static enum ItemEffect TryRockyHelmet(u32 battlerDef, u32 battlerAtk, u32 item)
 {
     enum ItemEffect effect = ITEM_NO_EFFECT;
-    enum Ability ability = GetBattlerAbility(battlerAtk);
 
     if (IsBattlerTurnDamaged(battlerDef)
      && IsBattlerAlive(battlerAtk)
-     && !CanBattlerAvoidContactEffects(battlerAtk, battlerDef, ability, GetBattlerHoldEffect(battlerAtk), gCurrentMove)
+     && !CanBattlerAvoidContactEffects(battlerAtk, battlerDef, GetBattlerHoldEffect(battlerAtk), gCurrentMove)
      && !IsAbilityAndRecord(battlerAtk, ABILITY_MAGIC_GUARD))
     {
         SetPassiveDamageAmount(battlerAtk, GetNonDynamaxMaxHP(battlerAtk) / 6);
@@ -589,7 +588,7 @@ static enum ItemEffect TryStickyBarbOnTargetHit(u32 battlerDef, u32 battlerAtk, 
     enum ItemEffect effect = ITEM_NO_EFFECT;
 
     if (IsBattlerTurnDamaged(battlerDef)
-     && !CanBattlerAvoidContactEffects(battlerAtk, battlerDef, GetBattlerAbility(battlerAtk), GetBattlerHoldEffect(battlerAtk), gCurrentMove)
+     && !CanBattlerAvoidContactEffects(battlerAtk, battlerDef, GetBattlerHoldEffect(battlerAtk), gCurrentMove)
      && !DoesSubstituteBlockMove(battlerAtk, battlerDef, gCurrentMove)
      && IsBattlerAlive(battlerAtk)
      && CanStealItem(battlerAtk, battlerDef, item)
@@ -625,7 +624,7 @@ static enum ItemEffect TryToxicOrb(u32 battler)
     enum ItemEffect effect = ITEM_NO_EFFECT;
     enum Ability ability = GetBattlerAbility(battler);
 
-    if (CanBePoisoned(battler, battler, ability, ability)) // Can corrosion trigger toxic orb on itself?
+    if (CanBePoisoned(battler, battler)) // Can corrosion trigger toxic orb on itself?
     {
         gBattleMons[battler].status1 = STATUS1_TOXIC_POISON;
         BattleScriptExecute(BattleScript_ToxicOrb);

@@ -813,7 +813,7 @@ static void HealMon(struct Pokemon *mon)
 static bool8 DoesAbilityPreventStatus(struct Pokemon *mon, u32 status)
 {
     bool8 ret = FALSE;
-    u16 battlerTraits[MAX_MON_TRAITS];
+    enum Ability battlerTraits[MAX_MON_TRAITS];
     STORE_BATTLER_TRAITS(gBattlerTarget);
 
     if (SearchTraits(battlerTraits, ABILITY_COMATOSE))

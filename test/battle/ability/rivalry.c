@@ -78,7 +78,6 @@ SINGLE_BATTLE_TEST("Rivalry doesn't modify power if the attacker is genderless",
     }
 }
 
-
 SINGLE_BATTLE_TEST("Rivalry doesn't modify power if the target is genderless", s16 damage)
 {
     u16 species;
@@ -159,7 +158,7 @@ SINGLE_BATTLE_TEST("Rivalry doesn't modify power if the attacker is genderless (
 
     GIVEN {
         ASSUME(GetSpeciesAbility(SPECIES_PORYGON, 0) == ABILITY_TRACE);
-        PLAYER(SPECIES_PORYGON) { Ability(ABILITY_LEVITATE); Innates(ABILITY_TRACE); } // No genderless mon naturally gets Rivalry
+        PLAYER(SPECIES_PORYGON) { Ability(ABILITY_LEVITATE); Innates(ability); } // No genderless mon naturally gets Rivalry
         OPPONENT(species) { Ability(ABILITY_SHEER_FORCE); Innates(ability); };
     } WHEN {
         TURN { MOVE(player, MOVE_SCRATCH); }

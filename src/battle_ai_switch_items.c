@@ -237,7 +237,7 @@ static bool32 ShouldSwitchIfHasBadOdds(u32 battler)
                 maxDamageTaken = damageTaken;
                 bestPlayerMove = playerMove;
             }
-            if (GetBattleMovePriority(opposingBattler, gAiLogicData->abilities[opposingBattler], playerMove) > 0 && damageTaken > maxDamageTakenPriority && !AI_DoesChoiceEffectBlockMove(opposingBattler, playerMove))
+            if (GetBattleMovePriority(opposingBattler, playerMove) > 0 && damageTaken > maxDamageTakenPriority && !AI_DoesChoiceEffectBlockMove(opposingBattler, playerMove))
             {
                 maxDamageTakenPriority = damageTaken;
                 bestPlayerPriorityMove = playerMove;
@@ -298,7 +298,7 @@ static bool32 ShouldSwitchIfHasBadOdds(u32 battler)
 
     // Check if mon gets one shot
     if (maxDamageTaken > gBattleMons[battler].hp
-        && !(gItemsInfo[gBattleMons[battler].item].holdEffect == HOLD_EFFECT_FOCUS_SASH || (!IsMoldBreakerTypeAbility(opposingBattler, gAiLogicData->abilities[opposingBattler]) && B_STURDY >= GEN_5 && AI_BATTLER_HAS_TRAIT(battler, ABILITY_STURDY))))
+        && !(gItemsInfo[gBattleMons[battler].item].holdEffect == HOLD_EFFECT_FOCUS_SASH || (!HasMoldBreakerTypeAbility(opposingBattler) && B_STURDY >= GEN_5 && AI_BATTLER_HAS_TRAIT(battler, ABILITY_STURDY))))
     {
         getsOneShot = TRUE;
     }
@@ -420,8 +420,8 @@ static bool32 ShouldSwitchIfAllMovesBad(u32 battler)
         {
             aiMove = gBattleMons[battler].moves[moveIndex];
             if (gAiLogicData->effectiveness[battler][opposingBattler][moveIndex] > UQ_4_12(0.0) && aiMove != MOVE_NONE
-                && !CanAbilityAbsorbMove(battler, opposingBattler, gAiLogicData->abilities[opposingBattler], aiMove, GetBattleMoveType(aiMove), AI_CHECK)
-                && !CanAbilityBlockMove(battler, opposingBattler, gBattleMons[battler].ability, gAiLogicData->abilities[opposingBattler], aiMove, AI_CHECK)
+                && !CanAbilityAbsorbMove(battler, opposingBattler, aiMove, GetBattleMoveType(aiMove), AI_CHECK)
+                && !CanAbilityBlockMove(battler, opposingBattler, aiMove, AI_CHECK)
                 && (!ALL_MOVES_BAD_STATUS_MOVES_BAD || GetMovePower(aiMove) != 0)) // If using ALL_MOVES_BAD_STATUS_MOVES_BAD, then need power to be non-zero
                 return FALSE;
         }
@@ -492,7 +492,7 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler)
         return FALSE;
     if (AreStatsRaised(battler))
         return FALSE;
-    if (IsMoldBreakerTypeAbility(opposingBattler, gAiLogicData->abilities[opposingBattler]))
+    if (HasMoldBreakerTypeAbility(opposingBattler))
         return FALSE;
     // Don't switch if mon could OHKO
     for (i = 0; i < MAX_MON_MOVES; i++)
@@ -669,7 +669,7 @@ static bool32 ShouldSwitchIfBadlyStatused(u32 battler)
     u8 opposingPosition = BATTLE_OPPOSITE(GetBattlerPosition(battler));
     u8 opposingBattler = GetBattlerAtPosition(opposingPosition);
     bool32 hasStatRaised = AnyStatIsRaised(battler);
-    u16 AIBattlerTraits[MAX_MON_TRAITS];
+    enum Ability AIBattlerTraits[MAX_MON_TRAITS];
     AI_STORE_BATTLER_TRAITS(battler);
 
     //Perish Song
@@ -683,7 +683,7 @@ static bool32 ShouldSwitchIfBadlyStatused(u32 battler)
     {
         //Yawn
         if (gBattleMons[battler].volatiles.yawn
-            && CanBeSlept(battler, battler, monAbility, BLOCKED_BY_SLEEP_CLAUSE) // TODO: ask for help from pawwkie
+            && CanBeSlept(battler, battler, BLOCKED_BY_SLEEP_CLAUSE) // TODO: ask for help from pawwkie
             && gBattleMons[battler].hp > gBattleMons[battler].maxHP / 3
             && RandomPercentage(RNG_AI_SWITCH_YAWN, GetSwitchChance(SHOULD_SWITCH_YAWN)))
         {
@@ -711,7 +711,7 @@ static bool32 ShouldSwitchIfBadlyStatused(u32 battler)
                 switchMon = FALSE;
 
             // Check if Active Pokemon evasion boosted and might be able to dodge until awake
-            u16 AIBattlerTraits[MAX_MON_TRAITS];
+            enum Ability AIBattlerTraits[MAX_MON_TRAITS];
             AI_STORE_BATTLER_TRAITS(opposingBattler);
 
             if (gBattleMons[battler].statStages[STAT_EVASION] > (DEFAULT_STAT_STAGE + 3)
@@ -1027,8 +1027,8 @@ static bool32 ShouldSwitchIfBadChoiceLock(u32 battler)
     bool32 moveAffectsTarget = TRUE;
 
     if (lastUsedMove != MOVE_NONE && (AI_GetMoveEffectiveness(lastUsedMove, battler, opposingBattler) == UQ_4_12(0.0)
-        || CanAbilityAbsorbMove(battler, opposingBattler, gAiLogicData->abilities[opposingBattler], lastUsedMove, CheckDynamicMoveType(GetBattlerMon(battler), lastUsedMove, battler, MON_IN_BATTLE), AI_CHECK)
-        || CanAbilityBlockMove(battler, opposingBattler, gAiLogicData->abilities[battler], gAiLogicData->abilities[opposingBattler], lastUsedMove, AI_CHECK)))
+        || CanAbilityAbsorbMove(battler, opposingBattler, lastUsedMove, CheckDynamicMoveType(GetBattlerMon(battler), lastUsedMove, battler, MON_IN_BATTLE), AI_CHECK)
+        || CanAbilityBlockMove(battler, opposingBattler, lastUsedMove, AI_CHECK)))
         moveAffectsTarget = FALSE;
 
     if (IsHoldEffectChoice(holdEffect) && IsBattlerItemEnabled(battler))
@@ -1582,7 +1582,7 @@ static u32 GetSwitchinHazardsDamage(u32 battler, struct BattlePokemon *battleMon
             && !(gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD)
             && !IsAbilityOnSide(battler, ABILITY_PASTEL_VEIL)
             && !IsBattlerTerrainAffected(battler, gAiLogicData->holdEffects[battler], STATUS_FIELD_MISTY_TERRAIN)
-            && !IsAbilityStatusProtected(battler, ability)
+            && !IsAbilityStatusProtected(battler)
             && heldItemEffect != HOLD_EFFECT_CURE_PSN && heldItemEffect != HOLD_EFFECT_CURE_STATUS
             && IsMonGrounded(heldItemEffect, ability, defType1, defType2, species)))
         {
@@ -1830,7 +1830,7 @@ static u32 GetSwitchinHitsToKO(s32 damageTaken, u32 battler)
     u8 weatherDuration = gWishFutureKnock.weatherDuration, holdEffectParam = GetItemHoldEffectParam(item);
     u32 opposingBattler = GetOppositeBattler(battler);
     enum Ability opposingAbility = gAiLogicData->abilities[opposingBattler], ability = gAiLogicData->switchinCandidate.battleMon.ability;
-    bool32 usedSingleUseHealingItem = FALSE, opponentCanBreakMold = IsMoldBreakerTypeAbility(opposingBattler, opposingAbility);
+    bool32 usedSingleUseHealingItem = FALSE, opponentCanBreakMold = HasMoldBreakerTypeAbility(opposingBattler);
     s32 currentHP = startingHP, singleUseItemHeal = 0;
 
     // No damage being dealt
@@ -2023,7 +2023,7 @@ static s32 GetMaxPriorityDamagePlayerCouldDealToSwitchin(u32 battler, u32 opposi
         if (gBattleStruct->choicedMove[opposingBattler] !=MOVE_NONE && GetMovePriority(gBattleStruct->choicedMove[opposingBattler]) < 1)
             break;
         playerMove = SMART_SWITCHING_OMNISCIENT ? gBattleMons[opposingBattler].moves[i] : playerMoves[i];
-        if (GetBattleMovePriority(opposingBattler, gAiLogicData->abilities[opposingBattler], playerMove) > 0
+        if (GetBattleMovePriority(opposingBattler, playerMove) > 0
             && playerMove != MOVE_NONE && !IsBattleMoveStatus(playerMove) && GetMoveEffect(playerMove) != EFFECT_FOCUS_PUNCH && gBattleMons[opposingBattler].pp[i] > 0)
         {
             damageTaken = AI_CalcPartyMonDamage(playerMove, opposingBattler, battler, battleMon, &effectiveness, AI_DEFENDING);

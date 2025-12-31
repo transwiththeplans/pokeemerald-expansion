@@ -4777,12 +4777,16 @@ void SwapTurnOrder(u8 id1, u8 id2)
 }
 
 // For AI, so it doesn't 'cheat' by knowing player's ability
-u32 GetBattlerTotalSpeedStat(u32 battler, enum Ability ability, enum HoldEffect holdEffect)
+u32 GetBattlerTotalSpeedStat(u32 battler, enum HoldEffect holdEffect)
 {
     u32 speed = gBattleMons[battler].speed;
     u32 baseSpeed = gBattleMons[battler].speed;
-    u16 battlerTraits[MAX_MON_TRAITS];
+    enum Ability battlerTraits[MAX_MON_TRAITS];
     STORE_BATTLER_TRAITS(battler);
+
+    // Use AI Ability knowledge if this is an AI check
+    if(gAiLogicData->aiCalcInProgress)
+        battlerTraits[0] = gAiLogicData->abilities[battler];
 
     // stat stages
     speed *= gStatStageRatios[gBattleMons[battler].statStages[STAT_SPEED]][0];
@@ -4853,7 +4857,7 @@ u32 GetBattlerTotalSpeedStat(u32 battler, enum Ability ability, enum HoldEffect 
     return speed;
 }
 
-s32 GetChosenMovePriority(u32 battler, enum Ability ability)
+s32 GetChosenMovePriority(u32 battler)
 {
     u16 move;
 
@@ -4863,14 +4867,13 @@ s32 GetChosenMovePriority(u32 battler, enum Ability ability)
     else
         move = GetChosenMoveFromPosition(battler);
 
-    return GetBattleMovePriority(battler, ability, move);
+    return GetBattleMovePriority(battler, move);
 }
 
-s32 GetBattleMovePriority(u32 battler, enum Ability ability, u32 move)
+s32 GetBattleMovePriority(u32 battler, u32 move)
 {
     s32 priority = 0;
-    //u16 ability = GetBattlerAbility(battler);
-    u16 battlerTraits[MAX_MON_TRAITS];
+    enum Ability battlerTraits[MAX_MON_TRAITS];
     STORE_BATTLER_TRAITS(battler);
 
     if (GetActiveGimmick(battler) == GIMMICK_Z_MOVE && !IsBattleMoveStatus(move))
@@ -4972,15 +4975,15 @@ s32 GetWhichBattlerFasterArgs(struct BattleContext *ctx, bool32 ignoreChosenMove
 s32 GetWhichBattlerFasterOrTies(struct BattleContext *ctx, bool32 ignoreChosenMoves)
 {
     s32 priority1 = 0, priority2 = 0;
-    u32 speedBattler1 = GetBattlerTotalSpeedStat(ctx->battlerAtk, ctx->abilities[ctx->battlerAtk], ctx->holdEffects[ctx->battlerAtk]);
-    u32 speedBattler2 = GetBattlerTotalSpeedStat(ctx->battlerDef, ctx->abilities[ctx->battlerDef], ctx->holdEffects[ctx->battlerDef]);
+    u32 speedBattler1 = GetBattlerTotalSpeedStat(ctx->battlerAtk, ctx->holdEffects[ctx->battlerAtk]);
+    u32 speedBattler2 = GetBattlerTotalSpeedStat(ctx->battlerDef, ctx->holdEffects[ctx->battlerDef]);
 
     if (!ignoreChosenMoves)
     {
         if (gChosenActionByBattler[ctx->battlerAtk] == B_ACTION_USE_MOVE)
-            priority1 = GetChosenMovePriority(ctx->battlerAtk, ctx->abilities[ctx->battlerAtk]);
+            priority1 = GetChosenMovePriority(ctx->battlerAtk);
         if (gChosenActionByBattler[ctx->battlerDef] == B_ACTION_USE_MOVE)
-            priority2 = GetChosenMovePriority(ctx->battlerDef, ctx->abilities[ctx->battlerDef]);
+            priority2 = GetChosenMovePriority(ctx->battlerDef);
     }
 
     return GetWhichBattlerFasterArgs(

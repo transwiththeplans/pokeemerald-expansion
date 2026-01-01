@@ -999,9 +999,10 @@ static bool32 NoTargetPresent(u8 battler, u32 move)
     return FALSE;
 }
 
-bool32 ProteanTryChangeType(u32 battler, enum Ability ability, u32 move, enum Type moveType)
+bool32 ProteanTryChangeType(u32 battler, u32 move, enum Type moveType)
 {
-      if ((BattlerHasTrait(battler, ABILITY_PROTEAN) || BattlerHasTrait(battler, ABILITY_LIBERO))
+      if (((gAiLogicData->aiCalcInProgress ? AI_BATTLER_HAS_TRAIT(battler, ABILITY_PROTEAN) : BattlerHasTrait(battler, ABILITY_PROTEAN))
+       || (gAiLogicData->aiCalcInProgress ? AI_BATTLER_HAS_TRAIT(battler, ABILITY_LIBERO) : BattlerHasTrait(battler, ABILITY_LIBERO)))
          && !gDisableStructs[gBattlerAttacker].usedProteanLibero
          && (gBattleMons[battler].types[0] != moveType || gBattleMons[battler].types[1] != moveType
              || (gBattleMons[battler].types[2] != moveType && gBattleMons[battler].types[2] != TYPE_MYSTERY))
@@ -1455,7 +1456,6 @@ static void AccuracyCheck(bool32 recalcDragonDarts, const u8 *nextInstr, const u
         return;
     }
 
-    enum Ability abilityAtk = GetBattlerAbility(gBattlerAttacker);
     enum HoldEffect holdEffectAtk = GetBattlerHoldEffect(gBattlerAttacker);
     enum BattleMoveEffects effect = GetMoveEffect(move);
 
@@ -1487,17 +1487,14 @@ static void AccuracyCheck(bool32 recalcDragonDarts, const u8 *nextInstr, const u
                 continue;
 
             numTargets++;
-            enum Ability abilityDef = GetBattlerAbility(battlerDef);
             if (JumpIfMoveAffectedByProtect(move, battlerDef, FALSE, failInstr)
-             || CanMoveSkipAccuracyCalc(gBattlerAttacker, battlerDef, abilityAtk, abilityDef, move, RUN_SCRIPT))
+             || CanMoveSkipAccuracyCalc(gBattlerAttacker, battlerDef, move, RUN_SCRIPT))
                 continue;
 
             u32 holdEffectDef = GetBattlerHoldEffect(battlerDef);
             u32 accuracy = GetTotalAccuracy(gBattlerAttacker,
                                             battlerDef,
                                             move,
-                                            abilityAtk,
-                                            abilityDef,
                                             holdEffectAtk,
                                             holdEffectDef);
 
@@ -1532,8 +1529,6 @@ static void AccuracyCheck(bool32 recalcDragonDarts, const u8 *nextInstr, const u
                     ctx.chosenMove = gChosenMove;
                     ctx.moveType = moveType;
                     ctx.updateFlags = TRUE;
-                    ctx.abilityAtk = abilityAtk;
-                    ctx.abilityDef = abilityDef;
                     ctx.holdEffectAtk = holdEffectAtk;
                     ctx.holdEffectDef = holdEffectDef;
 
@@ -1634,14 +1629,10 @@ static inline u32 GetHoldEffectCritChanceIncrease(u32 battler, enum HoldEffect h
     return critStageIncrease;
 }
 
-s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordAbility, enum Ability abilityAtk, enum Ability abilityDef, enum HoldEffect holdEffectAtk)
+s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordAbility, enum HoldEffect holdEffectAtk)
 {
-    //Sets Trait Searches outside, use AI search??
     s32 critChance = 0;
-    enum Ability battlerTraits[MAX_MON_TRAITS];
-    enum Ability AIBattlerTraits[MAX_MON_TRAITS];
-    STORE_BATTLER_TRAITS(battlerAtk);
-    AI_STORE_BATTLER_TRAITS(battlerAtk);
+    enum Ability abilityDef = ABILITY_NONE;
 
     if (gSideStatuses[battlerDef] & SIDE_STATUS_LUCKY_CHANT)
     {
@@ -1649,7 +1640,8 @@ s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordA
     }
     else if (gBattleMons[battlerAtk].volatiles.laserFocus
           || MoveAlwaysCrits(move)
-          || (BattlerHasTrait(battlerAtk, ABILITY_MERCILESS) && gBattleMons[battlerDef].status1 & STATUS1_PSN_ANY))
+          || ((gAiLogicData->aiCalcInProgress ? AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_MERCILESS) : BattlerHasTrait(battlerAtk, ABILITY_MERCILESS))
+           && gBattleMons[battlerDef].status1 & STATUS1_PSN_ANY))
     {
         critChance = CRITICAL_HIT_ALWAYS;
     }
@@ -1660,19 +1652,15 @@ s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordA
                     + GetMoveCriticalHitStage(move)
                     + GetHoldEffectCritChanceIncrease(battlerAtk, holdEffectAtk)
                     + ((B_AFFECTION_MECHANICS == TRUE && GetBattlerAffectionHearts(battlerAtk) == AFFECTION_FIVE_HEARTS) ? 2 : 0)
-                    + ((gAiLogicData->aiCalcInProgress ? AISearchTraits(AIBattlerTraits, ABILITY_SUPER_LUCK) : SearchTraits(battlerTraits, ABILITY_SUPER_LUCK)) ? 1 : 0)
+                    + ((gAiLogicData->aiCalcInProgress ? AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_SUPER_LUCK) : BattlerHasTrait(battlerAtk, ABILITY_SUPER_LUCK)) ? 1 : 0)
                     + gBattleStruct->bonusCritStages[gBattlerAttacker];
         if (critChance >= ARRAY_COUNT(sCriticalHitOdds))
             critChance = ARRAY_COUNT(sCriticalHitOdds) - 1;
     }
 
-    STORE_BATTLER_TRAITS(battlerDef);
-    AI_STORE_BATTLER_TRAITS(battlerDef);
-
-    abilityDef = ABILITY_NONE;
-    if (gAiLogicData->aiCalcInProgress ? AISearchTraits(AIBattlerTraits, ABILITY_BATTLE_ARMOR) : SearchTraits(battlerTraits, ABILITY_BATTLE_ARMOR))
+    if (gAiLogicData->aiCalcInProgress ? AI_BATTLER_HAS_TRAIT(battlerDef, ABILITY_BATTLE_ARMOR) : BattlerHasTrait(battlerDef, ABILITY_BATTLE_ARMOR))
         abilityDef = ABILITY_BATTLE_ARMOR;
-    else if (gAiLogicData->aiCalcInProgress ? AISearchTraits(AIBattlerTraits, ABILITY_SHELL_ARMOR) : SearchTraits(battlerTraits, ABILITY_SHELL_ARMOR))
+    else if (gAiLogicData->aiCalcInProgress ? AI_BATTLER_HAS_TRAIT(battlerDef, ABILITY_SHELL_ARMOR) : BattlerHasTrait(battlerDef, ABILITY_SHELL_ARMOR))
         abilityDef = ABILITY_SHELL_ARMOR;
 
     if (critChance != CRITICAL_HIT_BLOCKED && abilityDef)
@@ -1696,9 +1684,10 @@ s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordA
 // Threshold = Base Speed / 2
 // High crit move = 8 * (Base Speed / 2)
 // Focus Energy = 4 * (Base Speed / 2)
-s32 CalcCritChanceStageGen1(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordAbility, enum Ability abilityAtk, enum Ability abilityDef, enum HoldEffect holdEffectAtk)
+s32 CalcCritChanceStageGen1(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordAbility, enum HoldEffect holdEffectAtk)
 {
     s32 critChance = 0;
+    enum Ability abilityDef = ABILITY_NONE;
     s32 moveCritStage = GetMoveCriticalHitStage(gCurrentMove);
     s32 bonusCritStage = gBattleStruct->bonusCritStages[battlerAtk]; // G-Max Chi Strike
     u32 holdEffectCritStage = GetHoldEffectCritChanceIncrease(battlerAtk, holdEffectAtk);
@@ -1721,16 +1710,21 @@ s32 CalcCritChanceStageGen1(u32 battlerAtk, u32 battlerDef, u32 move, bool32 rec
     if (holdEffectCritStage > 0)
         critChance *= 4 * holdEffectCritStage;
 
-    if (BattlerHasTrait(battlerAtk, ABILITY_SUPER_LUCK))
+    if (gAiLogicData->aiCalcInProgress ? AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_SUPER_LUCK) : BattlerHasTrait(battlerAtk, ABILITY_SUPER_LUCK))
         critChance *= 4;
 
     if (critChance > 255)
         critChance = 255;
 
+    if (gAiLogicData->aiCalcInProgress ? AI_BATTLER_HAS_TRAIT(battlerDef, ABILITY_BATTLE_ARMOR) : BattlerHasTrait(battlerDef, ABILITY_BATTLE_ARMOR))
+        abilityDef = ABILITY_BATTLE_ARMOR;
+    else if (gAiLogicData->aiCalcInProgress ? AI_BATTLER_HAS_TRAIT(battlerDef, ABILITY_SHELL_ARMOR) : BattlerHasTrait(battlerDef, ABILITY_SHELL_ARMOR))
+        abilityDef = ABILITY_SHELL_ARMOR;
+
     // Prevented crits
     if (gSideStatuses[battlerDef] & SIDE_STATUS_LUCKY_CHANT)
         critChance = CRITICAL_HIT_BLOCKED;
-    else if (BattlerHasTrait(battlerDef, ABILITY_BATTLE_ARMOR) || BattlerHasTrait(battlerDef, ABILITY_SHELL_ARMOR))
+    else if (abilityDef)
     {
         if (recordAbility)
             RecordAbilityBattle(battlerDef, abilityDef);
@@ -1780,13 +1774,10 @@ static void Cmd_critcalc(void)
          || gBattleStruct->moveResultFlags[battlerDef] & MOVE_RESULT_NO_EFFECT)
             continue;
 
-        enum Ability abilityDef = GetBattlerAbility(battlerDef);
-        enum Ability abilityAtk = GetBattlerAbility(gBattlerAttacker);
-
         if (GetGenConfig(GEN_CONFIG_CRIT_CHANCE) == GEN_1)
-            gBattleStruct->critChance[battlerDef] = CalcCritChanceStageGen1(gBattlerAttacker, battlerDef, gCurrentMove, TRUE, abilityAtk, abilityDef, holdEffectAtk);
+            gBattleStruct->critChance[battlerDef] = CalcCritChanceStageGen1(gBattlerAttacker, battlerDef, gCurrentMove, TRUE, holdEffectAtk);
         else
-            gBattleStruct->critChance[battlerDef] = CalcCritChanceStage(gBattlerAttacker, battlerDef, gCurrentMove, TRUE, abilityAtk, abilityDef, holdEffectAtk);
+            gBattleStruct->critChance[battlerDef] = CalcCritChanceStage(gBattlerAttacker, battlerDef, gCurrentMove, TRUE, holdEffectAtk);
 
         if (gBattleTypeFlags & (BATTLE_TYPE_WALLY_TUTORIAL | BATTLE_TYPE_FIRST_BATTLE))
             gSpecialStatuses[battlerDef].criticalHit = FALSE;
@@ -1884,8 +1875,6 @@ static void Cmd_typecalc(void)
         ctx.chosenMove = gChosenMove;
         ctx.moveType = GetBattleMoveType(gCurrentMove);
         ctx.updateFlags = TRUE;
-        ctx.abilityAtk = GetBattlerAbility(gBattlerAttacker);
-        ctx.abilityDef = GetBattlerAbility(gBattlerTarget);
         ctx.holdEffectAtk = GetBattlerHoldEffect(gBattlerAttacker);
         ctx.holdEffectDef = GetBattlerHoldEffect(gBattlerTarget);
 
@@ -3081,7 +3070,7 @@ void SetMoveEffect(u32 battler, u32 effectBattler, enum MoveEffect moveEffect, c
     gEffectBattler = effectBattler;
     battlerAbility = GetBattlerAbility(gEffectBattler);
 
-    if (!primary && !affectsUser && IsMoveEffectBlockedByTarget(battlerAbility))
+    if (!primary && !affectsUser && IsMoveEffectBlockedByTarget())
         moveEffect = MOVE_EFFECT_NONE;
     else if (!primary
           && TestIfSheerForceAffected(gBattlerAttacker, gCurrentMove)
@@ -4112,7 +4101,7 @@ void SetMoveEffect(u32 battler, u32 effectBattler, enum MoveEffect moveEffect, c
     {
         u32 argStatus = GetMoveEffectArg_Status(gCurrentMove);
         if ((gBattleMons[gEffectBattler].status1 & argStatus)
-         && (NumAffectedSpreadMoveTargets() > 1 || !IsMoveEffectBlockedByTarget(GetBattlerAbility(gEffectBattler))))
+         && (NumAffectedSpreadMoveTargets() > 1 || !IsMoveEffectBlockedByTarget()))
         {
             gBattleMons[gEffectBattler].status1 &= ~(argStatus);
             BtlController_EmitSetMonData(gEffectBattler, 0, REQUEST_STATUS_BATTLE, 0, 4, &gBattleMons[gEffectBattler].status1);
@@ -4179,8 +4168,6 @@ static void SetToxicChainPriority(void)
 {
     if (gBattleStruct->toxicChainPriority)
         return;
-
-    enum Ability abilityAtk = GetBattlerAbility(gBattlerAttacker);
     
     if (BattlerHasTrait(gBattlerAttacker, ABILITY_TOXIC_CHAIN)
      && IsBattlerAlive(gBattlerTarget)
@@ -4207,7 +4194,7 @@ static void Cmd_setadditionaleffects(void)
             // Various checks for if this move effect can be applied this turn
             if (CanApplyAdditionalEffect(additionalEffect))
             {
-                percentChance = CalcSecondaryEffectChance(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker), additionalEffect);
+                percentChance = CalcSecondaryEffectChance(gBattlerAttacker, additionalEffect);
 
                 // Activate effect if it's primary (chance == 0) or if RNGesus says so
                 if ((percentChance == 0) || RandomPercentage(RNG_SECONDARY_EFFECT + gBattleStruct->additionalEffectsCounter, percentChance))
@@ -6181,7 +6168,7 @@ static void Cmd_moveend(void)
                     break;
                 case PROTECT_BURNING_BULWARK:
                     if (!IsProtectivePadsProtected(gBattlerAttacker, GetBattlerHoldEffect(gBattlerAttacker))
-                     && CanBeBurned(gBattlerTarget, gBattlerAttacker, GetBattlerAbility(gBattlerAttacker)))
+                     && CanBeBurned(gBattlerTarget, gBattlerAttacker))
                     {
                         gProtectStructs[gBattlerAttacker].touchedProtectLike = FALSE;
                         gBattleScripting.moveEffect = MOVE_EFFECT_BURN;
@@ -6215,7 +6202,7 @@ static void Cmd_moveend(void)
 
                 // Not strictly a protect effect, but works the same way
                 if (IsBattlerUsingBeakBlast(gBattlerTarget)
-                 && CanBeBurned(gBattlerAttacker, gBattlerAttacker, GetBattlerAbility(gBattlerAttacker))
+                 && CanBeBurned(gBattlerAttacker, gBattlerAttacker)
                  && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT))
                 {
                     gProtectStructs[gBattlerAttacker].touchedProtectLike = FALSE;
@@ -16356,7 +16343,7 @@ void BS_SwapStats(void)
 
 static void TrySetParalysis(const u8 *nextInstr, const u8 *failInstr)
 {
-    if (CanBeParalyzed(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerTarget)))
+    if (CanBeParalyzed(gBattlerAttacker, gBattlerTarget))
         SetNonVolatileStatus(gBattlerTarget, MOVE_EFFECT_PARALYSIS, nextInstr, TRIGGER_ON_MOVE);
     else
         gBattlescriptCurrInstr = failInstr;
@@ -16603,7 +16590,7 @@ void BS_TryFlingHoldEffect(void)
     enum HoldEffect holdEffect = GetItemHoldEffect(gBattleStruct->flingItem);
     gBattleStruct->flingItem = ITEM_NONE;
 
-    if (IsMoveEffectBlockedByTarget(GetBattlerAbility(gBattlerTarget)))
+    if (IsMoveEffectBlockedByTarget())
     {
         gBattlescriptCurrInstr = BattleScript_FlingBlockedByShieldDust;
         return;
@@ -17597,7 +17584,7 @@ void BS_JumpIfTargetAlly(void)
 void BS_TryPsychoShift(void)
 {
     NATIVE_ARGS(const u8 *failInstr, const u8 *sleepClauseFailInstr);
-    u32 targetAbility = GetBattlerAbility(gBattlerTarget);
+
     // Psycho shift works
     if ((gBattleMons[gBattlerAttacker].status1 & STATUS1_POISON) && CanBePoisoned(gBattlerAttacker, gBattlerTarget))
     {
@@ -17607,11 +17594,11 @@ void BS_TryPsychoShift(void)
     {
         gBattleCommunication[MULTISTRING_CHOOSER] = 1;
     }
-    else if ((gBattleMons[gBattlerAttacker].status1 & STATUS1_BURN) && CanBeBurned(gBattlerAttacker, gBattlerTarget, targetAbility))
+    else if ((gBattleMons[gBattlerAttacker].status1 & STATUS1_BURN) && CanBeBurned(gBattlerAttacker, gBattlerTarget))
     {
         gBattleCommunication[MULTISTRING_CHOOSER] = 2;
     }
-    else if ((gBattleMons[gBattlerAttacker].status1 & STATUS1_PARALYSIS) && CanBeParalyzed(gBattlerAttacker, gBattlerTarget, targetAbility))
+    else if ((gBattleMons[gBattlerAttacker].status1 & STATUS1_PARALYSIS) && CanBeParalyzed(gBattlerAttacker, gBattlerTarget))
     {
         gBattleCommunication[MULTISTRING_CHOOSER] = 3;
     }
@@ -17619,7 +17606,7 @@ void BS_TryPsychoShift(void)
     {
         gBattleCommunication[MULTISTRING_CHOOSER] = 4;
     }
-    else if ((gBattleMons[gBattlerAttacker].status1 & STATUS1_FROSTBITE) && CanBeFrozen(gBattlerAttacker, gBattlerTarget, targetAbility))
+    else if ((gBattleMons[gBattlerAttacker].status1 & STATUS1_FROSTBITE) && CanBeFrozen(gBattlerAttacker, gBattlerTarget))
     {
         gBattleCommunication[MULTISTRING_CHOOSER] = 5;
     }

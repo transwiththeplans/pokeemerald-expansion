@@ -64,7 +64,7 @@ static bool32 TryRemoveScreens(u32 battler);
 static bool32 IsUnnerveAbilityOnOpposingSide(u32 battler);
 static u32 GetFlingPowerFromItemId(u32 itemId);
 static void SetRandomMultiHitCounter();
-static bool32 IsNonVolatileStatusBlocked(u32 battlerDef, enum Ability abilityDef, enum Ability abilityAffected, const u8 *battleScript, enum FunctionCallOption option);
+static bool32 IsNonVolatileStatusBlocked(u32 battlerDef, enum Ability abilityDef, bool32 abilityAffected, const u8 *battleScript, enum FunctionCallOption option);
 static bool32 CanSleepDueToSleepClause(u32 battlerAtk, u32 battlerDef, enum FunctionCallOption option);
 static bool32 IsOpposingSideEmpty(u32 battler);
 static void ResetParadoxWeatherStat(u32 battler);
@@ -2990,7 +2990,7 @@ static enum MoveCanceler CancelerPriorityBlock(struct BattleContext *ctx)
 static enum MoveCanceler CancelerProtean(struct BattleContext *ctx)
 {
     enum Type moveType = GetBattleMoveType(ctx->currentMove);
-    if (ProteanTryChangeType(ctx->battlerAtk, ctx->abilities[ctx->battlerAtk], ctx->currentMove, moveType))
+    if (ProteanTryChangeType(ctx->battlerAtk, ctx->currentMove, moveType))
     {
         if (GetGenConfig(GEN_PROTEAN_LIBERO) >= GEN_9)
             gDisableStructs[ctx->battlerAtk].usedProteanLibero = TRUE;
@@ -3648,7 +3648,6 @@ bool32 CanAbilityBlockMove(u32 battlerAtk, u32 battlerDef, u32 move, enum Functi
             }
         }
     }
-
 
     if (battleScriptBlocksMove == NULL)
         return FALSE;
@@ -4988,8 +4987,6 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
         }
         break;
     case ABILITYEFFECT_MOVE_END: // Think contact abilities.
-        enum Ability abilityAtk = GetBattlerAbility(gBattlerAttacker);
- 
         if (SearchTraits(battlerTraits, ABILITY_JUSTIFIED)
          && IsBattlerTurnDamaged(battler)
          && IsBattlerAlive(battler)
@@ -5236,7 +5233,6 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
         }
         if (SearchTraits(battlerTraits, ABILITY_EFFECT_SPORE))
         {
-            enum Ability abilityAtk = GetBattlerAbility(gBattlerAttacker);
             enum HoldEffect holdEffectAtk = GetBattlerHoldEffect(gBattlerAttacker);
             if (IsAffectedByPowderMove(gBattlerAttacker, holdEffectAtk))
             {
@@ -5312,7 +5308,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                 if (IsBattlerAlive(gBattlerAttacker)
                 && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
                 && IsBattlerTurnDamaged(gBattlerTarget)
-                && CanBeParalyzed(gBattlerTarget, gBattlerAttacker, abilityAtk)
+                && CanBeParalyzed(gBattlerTarget, gBattlerAttacker)
                 && !CanBattlerAvoidContactEffects(gBattlerAttacker, gBattlerTarget, GetBattlerHoldEffect(gBattlerAttacker), move))
                 {
                     gEffectBattler = gBattlerAttacker;
@@ -5330,7 +5326,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
          && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
          && !CanBattlerAvoidContactEffects(gBattlerAttacker, gBattlerTarget, GetBattlerHoldEffect(gBattlerAttacker), move)
          && IsBattlerTurnDamaged(gBattlerTarget)
-         && CanBeBurned(gBattlerTarget, gBattlerAttacker, abilityAtk)
+         && CanBeBurned(gBattlerTarget, gBattlerAttacker)
          && (B_ABILITY_TRIGGER_CHANCE >= GEN_4 ? RandomPercentage(RNG_FLAME_BODY, 30) : RandomChance(RNG_FLAME_BODY, 1, 3)))
         {
             gEffectBattler = gBattlerAttacker;
@@ -6203,7 +6199,7 @@ bool32 CanBePoisoned(u32 battlerAtk, u32 battlerDef)
 }
 
 // TODO: check order of battlerAtk and battlerDef
-bool32 CanBeBurned(u32 battlerAtk, u32 battlerDef, enum Ability abilityDef)
+bool32 CanBeBurned(u32 battlerAtk, u32 battlerDef)
 {
     if (CanSetNonVolatileStatus(
             battlerAtk,
@@ -6214,7 +6210,7 @@ bool32 CanBeBurned(u32 battlerAtk, u32 battlerDef, enum Ability abilityDef)
     return FALSE;
 }
 
-bool32 CanBeParalyzed(u32 battlerAtk, u32 battlerDef, enum Ability abilityDef)
+bool32 CanBeParalyzed(u32 battlerAtk, u32 battlerDef)
 {
     if (CanSetNonVolatileStatus(
             battlerAtk,
@@ -6225,7 +6221,7 @@ bool32 CanBeParalyzed(u32 battlerAtk, u32 battlerDef, enum Ability abilityDef)
     return FALSE;
 }
 
-bool32 CanBeFrozen(u32 battlerAtk, u32 battlerDef, enum Ability abilityDef)
+bool32 CanBeFrozen(u32 battlerAtk, u32 battlerDef)
 {
     if (CanSetNonVolatileStatus(
             battlerAtk,
@@ -6236,7 +6232,7 @@ bool32 CanBeFrozen(u32 battlerAtk, u32 battlerDef, enum Ability abilityDef)
     return FALSE;
 }
 // Unused, technically also redundant because it is just a copy of CanBeFrozen
-bool32 CanGetFrostbite(u32 battlerAtk, u32 battlerDef, enum Ability abilityDef)
+bool32 CanGetFrostbite(u32 battlerAtk, u32 battlerDef)
 {
     if (CanSetNonVolatileStatus(
             battlerAtk,
@@ -6458,7 +6454,7 @@ bool32 CanSetNonVolatileStatus(u32 battlerAtk, u32 battlerDef, enum MoveEffect e
     return TRUE;
 }
 
-static bool32 IsNonVolatileStatusBlocked(u32 battlerDef, enum Ability abilityDef, enum Ability abilityAffected, const u8 *battleScript, enum FunctionCallOption option)
+static bool32 IsNonVolatileStatusBlocked(u32 battlerDef, enum Ability abilityDef, bool32 abilityAffected, const u8 *battleScript, enum FunctionCallOption option)
 {
     if (battleScript != NULL)
     {
@@ -8821,8 +8817,6 @@ static inline void TryNoticeIllusionInTypeEffectiveness(u32 move, enum Type move
     ctx.move = ctx.chosenMove = move;
     ctx.moveType = moveType;
     ctx.updateFlags = FALSE;
-    ctx.abilityAtk = GetBattlerAbility(battlerAtk);
-    ctx.abilityDef = ABILITY_ILLUSION;
     ctx.holdEffectAtk = GetBattlerHoldEffect(battlerAtk);
     ctx.holdEffectDef = GetBattlerHoldEffect(battlerDef);
 
@@ -10307,7 +10301,7 @@ bool32 AreBattlersOfSameGender(u32 battler1, u32 battler2)
     return (gender1 != MON_GENDERLESS && gender2 != MON_GENDERLESS && gender1 == gender2);
 }
 
-u32 CalcSecondaryEffectChance(u32 battler, enum Ability battlerAbility, const struct AdditionalEffect *additionalEffect)
+u32 CalcSecondaryEffectChance(u32 battler, const struct AdditionalEffect *additionalEffect)
 {
     bool8 hasSereneGrace = (BattlerHasTrait(battler, ABILITY_SERENE_GRACE));
     bool8 hasRainbow = (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_RAINBOW) != 0;
@@ -10324,9 +10318,9 @@ u32 CalcSecondaryEffectChance(u32 battler, enum Ability battlerAbility, const st
     return secondaryEffectChance;
 }
 
-bool32 MoveEffectIsGuaranteed(u32 battler, enum Ability battlerAbility, const struct AdditionalEffect *additionalEffect)
+bool32 MoveEffectIsGuaranteed(u32 battler, const struct AdditionalEffect *additionalEffect)
 {
-    return additionalEffect->chance == 0 || CalcSecondaryEffectChance(battler, battlerAbility, additionalEffect) >= 100;
+    return additionalEffect->chance == 0 || CalcSecondaryEffectChance(battler, additionalEffect) >= 100;
 }
 
 bool32 IsGen6ExpShareEnabled(void)
@@ -10661,7 +10655,7 @@ bool32 DoesDestinyBondFail(u32 battler)
 }
 
 // This check has always to be the last in a condtion statement because of the recording of AI data.
-bool32 IsMoveEffectBlockedByTarget(enum Ability ability)
+bool32 IsMoveEffectBlockedByTarget(void)
 {
     if (BattlerHasTrait(gBattlerTarget, ABILITY_SHIELD_DUST))
     {
@@ -10722,8 +10716,7 @@ void UpdateStallMons(void)
     if (!IsDoubleBattle() || GetMoveTarget(gCurrentMove) == MOVE_TARGET_SELECTED)
     {
         enum Type moveType = GetBattleMoveType(gCurrentMove); //  Probably doesn't handle dynamic move types right now
-        enum Ability abilityAtk = GetBattlerAbility(gBattlerAttacker);
-        enum Ability abilityDef = GetBattlerAbility(gBattlerTarget);
+
         if (CanAbilityAbsorbMove(gBattlerAttacker, gBattlerTarget, gCurrentMove, moveType, CHECK_TRIGGER))
         {
             gAiBattleData->playerStallMons[gBattlerPartyIndexes[gBattlerTarget]]++;
@@ -10931,7 +10924,7 @@ void RemoveHazardFromField(u32 side, enum Hazards hazardType)
     }
 }
 
-bool32 CanMoveSkipAccuracyCalc(u32 battlerAtk, u32 battlerDef, enum Ability abilityAtk, enum Ability abilityDef, u32 move, enum FunctionCallOption option)
+bool32 CanMoveSkipAccuracyCalc(u32 battlerAtk, u32 battlerDef, u32 move, enum FunctionCallOption option)
 {
     bool32 effect = FALSE;
     enum BattleMoveEffects moveEffect = GetMoveEffect(move);
@@ -10951,7 +10944,7 @@ bool32 CanMoveSkipAccuracyCalc(u32 battlerAtk, u32 battlerDef, enum Ability abil
         effect = TRUE;
     }
     // If the target has the ability No Guard and they aren't involved in a Sky Drop or the current move isn't Sky Drop, move hits.
-    else if (BattlerHasTrait(abilityDef, ABILITY_NO_GUARD)
+    else if (BattlerHasTrait(battlerDef, ABILITY_NO_GUARD)
           && (moveEffect != EFFECT_SKY_DROP || gBattleStruct->skyDropTargets[battlerDef] == SKY_DROP_NO_TARGET))
     {
         effect = TRUE;
@@ -11012,7 +11005,7 @@ bool32 CanMoveSkipAccuracyCalc(u32 battlerAtk, u32 battlerDef, enum Ability abil
     return effect;
 }
 
-u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, enum Ability atkAbility, enum Ability defAbility, enum HoldEffect atkHoldEffect, enum HoldEffect defHoldEffect)
+u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, enum HoldEffect atkHoldEffect, enum HoldEffect defHoldEffect)
 {
     u32 calc, moveAcc;
     s8 buff, accStage, evasionStage;
@@ -11020,6 +11013,10 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, enum Ability atkA
     u32 defParam = GetBattlerHoldEffectParam(battlerDef);
     enum Ability battlerTraits[MAX_MON_TRAITS];
     STORE_BATTLER_TRAITS(battlerAtk);
+
+    // Use AI Ability knowledge if this is an AI check
+    if(gAiLogicData->aiCalcInProgress)
+        battlerTraits[0] = gAiLogicData->abilities[battlerAtk];
 
     gPotentialItemEffectBattler = battlerDef;
     accStage = gBattleMons[battlerAtk].statStages[STAT_ACC];
@@ -11029,7 +11026,7 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, enum Ability atkA
         evasionStage = DEFAULT_STAT_STAGE;
     if (MoveIgnoresDefenseEvasionStages(move))
         evasionStage = DEFAULT_STAT_STAGE;
-    if (BattlerHasTrait(battlerDef, ABILITY_UNAWARE))
+    if (gAiLogicData->aiCalcInProgress ? AI_BATTLER_HAS_TRAIT(battlerDef, ABILITY_UNAWARE) : BattlerHasTrait(battlerDef, ABILITY_UNAWARE))
         accStage = DEFAULT_STAT_STAGE;
 
     if (gBattleMons[battlerDef].volatiles.foresight || gBattleMons[battlerDef].volatiles.miracleEye)
@@ -11047,7 +11044,7 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, enum Ability atkA
     if (IsBattlerWeatherAffected(battlerDef, B_WEATHER_SUN) && MoveHas50AccuracyInSun(move))
         moveAcc = 50;
     // Check Wonder Skin.
-    if (defAbility == ABILITY_WONDER_SKIN && IsBattleMoveStatus(move) && moveAcc > 50)
+    if ((gAiLogicData->aiCalcInProgress ? AI_BATTLER_HAS_TRAIT(battlerDef, ABILITY_WONDER_SKIN) : BattlerHasTrait(battlerDef, ABILITY_WONDER_SKIN)) && IsBattleMoveStatus(move) && moveAcc > 50)
         moveAcc = 50;
 
     calc = gAccuracyStageRatios[buff].dividend * moveAcc;
@@ -11108,7 +11105,7 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, enum Ability atkA
     if (gBattleStruct->battlerState[battlerAtk].usedMicleBerry)
     {
         // TODO: Is this true?
-        if (atkAbility == ABILITY_RIPEN)
+        if ((gAiLogicData->aiCalcInProgress ? AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_RIPEN) : BattlerHasTrait(battlerAtk, ABILITY_RIPEN)))
             calc = (calc * 140) / 100;  // ripen gives 40% acc boost
         else
             calc = (calc * 120) / 100;  // 20% acc boost

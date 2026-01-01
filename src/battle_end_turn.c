@@ -859,8 +859,6 @@ static bool32 HandleEndTurnYawn(u32 battler)
 {
     bool32 effect = FALSE;
 
-    enum Ability ability = GetBattlerAbility(battler);
-
     gBattleStruct->eventState.endTurnBattler++;
 
     if (gBattleMons[battler].volatiles.yawn > 0)

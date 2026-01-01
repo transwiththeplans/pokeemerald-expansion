@@ -78,12 +78,6 @@ enum AbilityEffect
 {battlerTraits[traitLoop] = GetBattlerTrait(battler, traitLoop, TRUE);\
 }}) 
 
-// For functions that might pass an AI Logic Ability to check
-#define STORE_BATTLER_ABILITYINNATES(battler, ability) \
-({for (int traitLoop = 0; traitLoop < MAX_MON_TRAITS; traitLoop++)\
-{if (traitLoop == 0){battlerTraits[traitLoop] = ability;}else{battlerTraits[traitLoop] = GetBattlerTrait(battler, traitLoop, FALSE);\
-}}}) 
-
 enum ItemEffect
 {
     ITEM_NO_EFFECT,
@@ -394,10 +388,10 @@ u32 GetParadoxBoostedStatId(u32 battler);
 
 bool32 CanBeSlept(u32 battlerAtk, u32 battlerDef, enum SleepClauseBlock isBlockedBySleepClause);
 bool32 CanBePoisoned(u32 battlerAtk, u32 battlerDef);
-bool32 CanBeBurned(u32 battlerAtk, u32 battlerDef, enum Ability ability);
-bool32 CanBeParalyzed(u32 battlerAtk, u32 battlerDef, enum Ability abilityDef);
-bool32 CanBeFrozen(u32 battlerAtk, u32 battlerDef, enum Ability abilityDef);
-bool32 CanGetFrostbite(u32 battlerAtk, u32 battlerDef, enum Ability abilityDef);
+bool32 CanBeBurned(u32 battlerAtk, u32 battlerDef);
+bool32 CanBeParalyzed(u32 battlerAtk, u32 battlerDef);
+bool32 CanBeFrozen(u32 battlerAtk, u32 battlerDef);
+bool32 CanGetFrostbite(u32 battlerAtk, u32 battlerDef);
 bool32 CanSetNonVolatileStatus(u32 battlerAtk, u32 battlerDef, enum MoveEffect secondaryMoveEffect, enum FunctionCallOption option);
 bool32 CanBeConfused(u32 battler);
 u32 GetBattlerAffectionHearts(u32 battler);
@@ -409,8 +403,8 @@ void RemoveConfusionStatus(u32 battler);
 u8 GetBattlerGender(u32 battler);
 bool32 AreBattlersOfOppositeGender(u32 battler1, u32 battler2);
 bool32 AreBattlersOfSameGender(u32 battler1, u32 battler2);
-u32 CalcSecondaryEffectChance(u32 battler, enum Ability battlerAbility, const struct AdditionalEffect *additionalEffect);
-bool32 MoveEffectIsGuaranteed(u32 battler, enum Ability battlerAbility, const struct AdditionalEffect *additionalEffect);
+u32 CalcSecondaryEffectChance(u32 battler, const struct AdditionalEffect *additionalEffect);
+bool32 MoveEffectIsGuaranteed(u32 battler, const struct AdditionalEffect *additionalEffect);
 void GetBattlerTypes(u32 battler, bool32 ignoreTera, enum Type types[static 3]);
 enum Type GetBattlerType(u32 battler, u32 typeIndex, bool32 ignoreTera);
 bool8 CanMonParticipateInSkyBattle(struct Pokemon *mon);
@@ -423,7 +417,7 @@ bool32 IsSleepClauseActiveForSide(u32 battlerSide);
 bool32 IsSleepClauseEnabled();
 void ClearDamageCalcResults(void);
 u32 DoesDestinyBondFail(u32 battler);
-bool32 IsMoveEffectBlockedByTarget(enum Ability ability);
+bool32 IsMoveEffectBlockedByTarget(void);
 bool32 IsPursuitTargetSet(void);
 void ClearPursuitValuesIfSet(u32 battler);
 void ClearPursuitValues(void);
@@ -442,8 +436,8 @@ bool32 AreAnyHazardsOnSide(u32 side);
 void RemoveAllHazardsFromField(u32 side);
 bool32 IsHazardOnSideAndClear(u32 side, enum Hazards hazardType);
 void RemoveHazardFromField(u32 side, enum Hazards hazardType);
-bool32 CanMoveSkipAccuracyCalc(u32 battlerAtk, u32 battlerDef, enum Ability abilityAtk, enum Ability abilityDef, u32 move, enum FunctionCallOption option);
-u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, enum Ability atkAbility, enum Ability defAbility, enum HoldEffect atkHoldEffect, enum HoldEffect defHoldEffect);
+bool32 CanMoveSkipAccuracyCalc(u32 battlerAtk, u32 battlerDef, u32 move, enum FunctionCallOption option);
+u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, enum HoldEffect atkHoldEffect, enum HoldEffect defHoldEffect);
 bool32 IsSemiInvulnerable(u32 battler, enum SemiInvulnerableExclusion excludeCommander);
 bool32 BreaksThroughSemiInvulnerablity(u32 battler, u32 move);
 bool32 HasPartnerTrainer(u32 battler);

@@ -1829,7 +1829,6 @@ static u32 GetSwitchinHitsToKO(s32 damageTaken, u32 battler)
     u16 maxHP = gAiLogicData->switchinCandidate.battleMon.maxHP, item = gAiLogicData->switchinCandidate.battleMon.item, heldItemEffect = GetItemHoldEffect(item);
     u8 weatherDuration = gWishFutureKnock.weatherDuration, holdEffectParam = GetItemHoldEffectParam(item);
     u32 opposingBattler = GetOppositeBattler(battler);
-    enum Ability opposingAbility = gAiLogicData->abilities[opposingBattler], ability = gAiLogicData->switchinCandidate.battleMon.ability;
     bool32 usedSingleUseHealingItem = FALSE, opponentCanBreakMold = HasMoldBreakerTypeAbility(opposingBattler);
     s32 currentHP = startingHP, singleUseItemHeal = 0;
 
@@ -1852,7 +1851,7 @@ static u32 GetSwitchinHitsToKO(s32 damageTaken, u32 battler)
         currentHP = currentHP - damageTaken;
 
         // One shot prevention effects
-        if (damageTaken >= maxHP && startingHP == maxHP && (heldItemEffect == HOLD_EFFECT_FOCUS_SASH || (!opponentCanBreakMold && B_STURDY >= GEN_5 && (ability == ABILITY_STURDY || SpeciesHasInnate(gAiLogicData->switchinCandidate.battleMon.species, ABILITY_STURDY)))) && hitsToKO < 1)
+        if (damageTaken >= maxHP && startingHP == maxHP && (heldItemEffect == HOLD_EFFECT_FOCUS_SASH || (!opponentCanBreakMold && B_STURDY >= GEN_5 && (gAiLogicData->switchinCandidate.battleMon.ability == ABILITY_STURDY || SpeciesHasInnate(gAiLogicData->switchinCandidate.battleMon.species, ABILITY_STURDY)))) && hitsToKO < 1)
             currentHP = 1;
 
         // If mon is still alive, apply weather impact first, as it might KO the mon before it can heal with its item (order is weather -> item -> status)

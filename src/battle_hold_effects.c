@@ -622,7 +622,6 @@ static enum ItemEffect TryStickyBarbOnEndTurn(u32 battler, u32 item)
 static enum ItemEffect TryToxicOrb(u32 battler)
 {
     enum ItemEffect effect = ITEM_NO_EFFECT;
-    enum Ability ability = GetBattlerAbility(battler);
 
     if (CanBePoisoned(battler, battler)) // Can corrosion trigger toxic orb on itself?
     {
@@ -637,9 +636,8 @@ static enum ItemEffect TryToxicOrb(u32 battler)
 static enum ItemEffect TryFlameOrb(u32 battler)
 {
     enum ItemEffect effect = ITEM_NO_EFFECT;
-    enum Ability ability = GetBattlerAbility(battler);
 
-    if (CanBeBurned(battler, battler, ability))
+    if (CanBeBurned(battler, battler))
     {
         gBattleMons[battler].status1 = STATUS1_BURN;
         BattleScriptExecute(BattleScript_FlameOrb);

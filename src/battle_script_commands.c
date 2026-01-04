@@ -1103,7 +1103,7 @@ bool32 EmergencyExitCanBeTriggered(u32 battler)
     else if (BattlerHasTrait(battler, ABILITY_WIMP_OUT))
         ability = ABILITY_WIMP_OUT;
 
-    if (ability != ABILITY_EMERGENCY_EXIT && ability != ABILITY_WIMP_OUT)
+    if (ability == ABILITY_NONE)
         return FALSE;
 
     if (IsBattlerAlive(battler)
@@ -2909,7 +2909,7 @@ void StealTargetItem(u8 battlerStealer, u8 itemBattler)
     BtlController_EmitSetMonData(itemBattler, B_COMM_TO_CONTROLLER, REQUEST_HELDITEM_BATTLE, 0, sizeof(gBattleMons[itemBattler].item), &gBattleMons[itemBattler].item);  // remove target item
     MarkBattlerForControllerExec(itemBattler);
 
-    if (GetBattlerAbility(itemBattler) != ABILITY_GORILLA_TACTICS)
+    if (!BattlerHasTrait(itemBattler, ABILITY_GORILLA_TACTICS))
         gBattleStruct->choicedMove[itemBattler] = MOVE_NONE;
 
     TrySaveExchangedItem(itemBattler, gLastUsedItem);
@@ -6310,13 +6310,13 @@ static void Cmd_moveend(void)
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_SYNCHRONIZE_TARGET: // target synchronize
-            if (AbilityBattleEffects(ABILITYEFFECT_SYNCHRONIZE, gBattlerTarget, 0, 0, 0))
+            if (AbilityBattleEffects(ABILITYEFFECT_SYNCHRONIZE, gBattlerTarget, 0, 0))
                 effect = TRUE;
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_ABILITIES: // Such as abilities activating on contact(Poison Spore, Rough Skin, etc.).
             {
-                if (AbilityBattleEffects(ABILITYEFFECT_MOVE_END, gBattlerTarget, 0, 0, 0))
+                if (AbilityBattleEffects(ABILITYEFFECT_MOVE_END, gBattlerTarget, 0, 0))
                 effect = TRUE;
             else if (TryClearIllusion(gBattlerTarget, ABILITYEFFECT_MOVE_END))
                     effect = TRUE;
@@ -6324,21 +6324,21 @@ static void Cmd_moveend(void)
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_ABILITIES_ATTACKER: // Poison Touch, possibly other in the future
-            if (AbilityBattleEffects(ABILITYEFFECT_MOVE_END_ATTACKER, gBattlerAttacker, 0, 0, 0))
+            if (AbilityBattleEffects(ABILITYEFFECT_MOVE_END_ATTACKER, gBattlerAttacker, 0, 0))
                 effect = TRUE;
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_STATUS_IMMUNITY_ABILITIES: // status immunities
             for (u16 battler = 0; battler < gBattlersCount; battler++)
             {
-                if (AbilityBattleEffects(ABILITYEFFECT_IMMUNITY, battler, 0, 0, 0))
+                if (AbilityBattleEffects(ABILITYEFFECT_IMMUNITY, battler, 0, 0))
                     effect = TRUE;
             }
             if (!effect)
                 gBattleScripting.moveendState++;
             break;
         case MOVEEND_SYNCHRONIZE_ATTACKER: // attacker synchronize
-            if (AbilityBattleEffects(ABILITYEFFECT_ATK_SYNCHRONIZE, gBattlerAttacker, 0, 0, 0))
+            if (AbilityBattleEffects(ABILITYEFFECT_ATK_SYNCHRONIZE, gBattlerAttacker, 0, 0))
                 effect = TRUE;
             gBattleScripting.moveendState++;
             break;
@@ -6738,7 +6738,7 @@ static void Cmd_moveend(void)
                 u32 battler = gBattleStruct->eventState.moveEndBattler++;
                 if (battler == gBattlerAttacker)
                     continue;
-                if (AbilityBattleEffects(ABILITYEFFECT_COLOR_CHANGE, battler, GetBattlerAbility(battler), 0, 0))
+                if (AbilityBattleEffects(ABILITYEFFECT_COLOR_CHANGE, battler, 0, 0))
                     return;
             }
             gBattleStruct->eventState.moveEndBattler = 0;
@@ -7011,7 +7011,7 @@ static void Cmd_moveend(void)
                 u32 battler = gBattleStruct->eventState.moveEndBattler++;
                 if (!IsBattlerAlive(battler))
                     continue;
-                if (AbilityBattleEffects(ABILITYEFFECT_OPPORTUNIST, battler, GetBattlerAbility(battler), 0, 0))
+                if (AbilityBattleEffects(ABILITYEFFECT_OPPORTUNIST, battler, 0, 0))
                     return;
             }
             gBattleStruct->eventState.moveEndBattler = 0;
@@ -7228,7 +7228,7 @@ static void Cmd_moveend(void)
                                 nextDancer = battler | 0x4;
                         }
                     }
-                    if (nextDancer && AbilityBattleEffects(ABILITYEFFECT_MOVE_END_OTHER, nextDancer & 0x3, 0, 0, gCurrentMove))
+                    if (nextDancer && AbilityBattleEffects(ABILITYEFFECT_MOVE_END_OTHER, nextDancer & 0x3, 0, gCurrentMove))
                         effect = TRUE;
                 }
             }
@@ -7895,9 +7895,9 @@ static void Cmd_switchhandleorder(void)
 bool32 DoSwitchInAbilities(u32 battler)
 {
     return (TryPrimalReversion(battler)
-         || AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN, battler, 0, 0, 0)
-         || (gBattleWeather & B_WEATHER_ANY && HasWeatherEffect() && AbilityBattleEffects(ABILITYEFFECT_ON_WEATHER, battler, 0, 0, 0))
-         || (gFieldStatuses & STATUS_FIELD_TERRAIN_ANY && AbilityBattleEffects(ABILITYEFFECT_ON_TERRAIN, battler, 0, 0, 0)));
+         || AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN, battler, 0, 0)
+         || (gBattleWeather & B_WEATHER_ANY && HasWeatherEffect() && AbilityBattleEffects(ABILITYEFFECT_ON_WEATHER, battler, 0, 0))
+         || (gFieldStatuses & STATUS_FIELD_TERRAIN_ANY && AbilityBattleEffects(ABILITYEFFECT_ON_TERRAIN, battler, 0, 0)));
 }
 
 static void UpdateSentMonFlags(u32 battler)
@@ -8010,7 +8010,7 @@ static bool32 DoSwitchInEffectsForBattler(u32 battler)
     STORE_BATTLER_TRAITS(battler);
 
     // Neutralizing Gas announces itself before hazards
-    if (AbilityBattleEffects(ABILITYEFFECT_NEUTRALIZINGGAS, battler, 0, 0, 0))
+    if (AbilityBattleEffects(ABILITYEFFECT_NEUTRALIZINGGAS, battler, 0, 0))
     {
         return TRUE;
     }
@@ -8084,13 +8084,13 @@ static bool32 DoSwitchInEffectsForBattler(u32 battler)
                 continue;
             STORE_BATTLER_TRAITS(i);
             if (SearchTraits(battlerTraits, ABILITY_TRACE) || SearchTraits(battlerTraits, ABILITY_COMMANDER))
-                if (AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN, i, 0, 0, 0))
+                if (AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN, i, 0, 0))
                     return TRUE;
             STORE_BATTLER_TRAITS(i);
             if (SearchTraits(battlerTraits, ABILITY_FORECAST)
              || SearchTraits(battlerTraits, ABILITY_FLOWER_GIFT)
              || SearchTraits(battlerTraits, ABILITY_PROTOSYNTHESIS))
-                if (AbilityBattleEffects(ABILITYEFFECT_ON_WEATHER, i, 0, 0, 0))
+                if (AbilityBattleEffects(ABILITYEFFECT_ON_WEATHER, i, 0, 0))
                     return TRUE;
             if (TryClearIllusion(i, ABILITYEFFECT_ON_SWITCHIN))
                 return TRUE;
@@ -8103,7 +8103,7 @@ static bool32 DoSwitchInEffectsForBattler(u32 battler)
         }
         for (i = 0; i < gBattlersCount; i++)
         {
-            if (AbilityBattleEffects(ABILITYEFFECT_OPPORTUNIST, i, GetBattlerAbility(i), 0, 0))
+            if (AbilityBattleEffects(ABILITYEFFECT_OPPORTUNIST, i, 0, 0))
                 return TRUE;
         }
         for (i = 0; i < gBattlersCount; i++)
@@ -12942,9 +12942,9 @@ static void Cmd_tryswapitems(void)
             BtlController_EmitSetMonData(gBattlerTarget, B_COMM_TO_CONTROLLER, REQUEST_HELDITEM_BATTLE, 0, sizeof(gBattleMons[gBattlerTarget].item), &gBattleMons[gBattlerTarget].item);
             MarkBattlerForControllerExec(gBattlerTarget);
 
-            if (GetBattlerAbility(gBattlerTarget) != ABILITY_GORILLA_TACTICS)
+            if (!BattlerHasTrait(gBattlerTarget, ABILITY_GORILLA_TACTICS))
                 gBattleStruct->choicedMove[gBattlerTarget] = MOVE_NONE;
-            if (GetBattlerAbility(gBattlerAttacker) != ABILITY_GORILLA_TACTICS)
+            if (!BattlerHasTrait(gBattlerAttacker, ABILITY_GORILLA_TACTICS))
                 gBattleStruct->choicedMove[gBattlerAttacker] = MOVE_NONE;
 
             gBattlescriptCurrInstr = cmd->nextInstr;
@@ -16031,7 +16031,7 @@ void BS_ActivateWeatherChangeAbilities(void)
 
     u32 battler = GetBattlerForBattleScript(cmd->battler);
     gBattlescriptCurrInstr = cmd->nextInstr;
-    AbilityBattleEffects(ABILITYEFFECT_ON_WEATHER, battler, 0, 0, 0);
+    AbilityBattleEffects(ABILITYEFFECT_ON_WEATHER, battler, 0, 0);
 }
 
 void BS_ActivateTerrainChangeAbilities(void)
@@ -16040,7 +16040,7 @@ void BS_ActivateTerrainChangeAbilities(void)
 
     u32 battler = GetBattlerForBattleScript(cmd->battler);
     gBattlescriptCurrInstr = cmd->nextInstr;
-    AbilityBattleEffects(ABILITYEFFECT_ON_TERRAIN, battler, 0, 0, 0);
+    AbilityBattleEffects(ABILITYEFFECT_ON_TERRAIN, battler, 0, 0);
 }
 
 void BS_ResetTerrainAbilityFlags(void)
@@ -17247,16 +17247,16 @@ void BS_SwitchinAbilities(void)
     NATIVE_ARGS(u8 battler);
     u32 battler = GetBattlerForBattleScript(cmd->battler);
     gBattlescriptCurrInstr = cmd->nextInstr;
-    AbilityBattleEffects(ABILITYEFFECT_NEUTRALIZINGGAS, battler, 0, 0, 0);
-    AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN, battler, 0, 0, 0);
-    AbilityBattleEffects(ABILITYEFFECT_OPPORTUNIST, battler, 0, 0, 0);
-    AbilityBattleEffects(ABILITYEFFECT_IMMUNITY, battler, 0, 0, 0);
+    AbilityBattleEffects(ABILITYEFFECT_NEUTRALIZINGGAS, battler, 0, 0);
+    AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN, battler, 0, 0);
+    AbilityBattleEffects(ABILITYEFFECT_OPPORTUNIST, battler, 0, 0);
+    AbilityBattleEffects(ABILITYEFFECT_IMMUNITY, battler, 0, 0);
 
     if (gBattleWeather & B_WEATHER_ANY && HasWeatherEffect())
-        AbilityBattleEffects(ABILITYEFFECT_ON_WEATHER, battler, 0, 0, 0);
+        AbilityBattleEffects(ABILITYEFFECT_ON_WEATHER, battler, 0, 0);
 
     if (gFieldStatuses & STATUS_FIELD_TERRAIN_ANY)
-        AbilityBattleEffects(ABILITYEFFECT_ON_TERRAIN, battler, 0, 0, 0);
+        AbilityBattleEffects(ABILITYEFFECT_ON_TERRAIN, battler, 0, 0);
 }
 
 void BS_InstantHpDrop(void)
@@ -18019,10 +18019,9 @@ void BS_TryToClearPrimalWeather(void)
 
     for (u32 i = 0; i < gBattlersCount; i++)
     {
-        enum Ability ability = GetBattlerAbility(i);
-        if (((ability == ABILITY_DESOLATE_LAND && gBattleWeather & B_WEATHER_SUN_PRIMAL)
-             || (ability == ABILITY_PRIMORDIAL_SEA && gBattleWeather & B_WEATHER_RAIN_PRIMAL)
-             || (ability == ABILITY_DELTA_STREAM && gBattleWeather & B_WEATHER_STRONG_WINDS))
+        if (((BattlerHasTrait(i, ABILITY_DESOLATE_LAND) && gBattleWeather & B_WEATHER_SUN_PRIMAL)
+         || (BattlerHasTrait(i, ABILITY_PRIMORDIAL_SEA) && gBattleWeather & B_WEATHER_RAIN_PRIMAL)
+         || (BattlerHasTrait(i, ABILITY_DELTA_STREAM) && gBattleWeather & B_WEATHER_STRONG_WINDS))
             && IsBattlerAlive(i))
             shouldNotClear = TRUE;
     }

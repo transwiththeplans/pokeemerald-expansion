@@ -713,12 +713,11 @@ static u32 PpStallReduction(u32 move, u32 battlerAtk)
             continue;
         PokemonToBattleMon(&gPlayerParty[partyIndex], &gBattleMons[tempBattleMonIndex]);
         u32 species = GetMonData(&gPlayerParty[partyIndex], MON_DATA_SPECIES);
-        enum Ability abilityDef = GetPartyMonAbility(&gPlayerParty[partyIndex]);
         struct Pokemon *mon = &gPlayerParty[partyIndex];
         enum Type moveType = GetBattleMoveType(move); //  Probably doesn't handle dynamic types right now
         if (CanAbilityAbsorbMove(battlerAtk, tempBattleMonIndex, move, moveType, CHECK_TRIGGER)
          || CanAbilityBlockMove(battlerAtk, tempBattleMonIndex, move, CHECK_TRIGGER)
-         || (CalcPartyMonTypeEffectivenessMultiplier(move, species, abilityDef, mon) == 0))
+         || (CalcPartyMonTypeEffectivenessMultiplier(move, species, mon) == 0))
         {
             totalStallValue += currentStallValue;
         }

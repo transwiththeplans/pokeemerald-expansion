@@ -5502,7 +5502,6 @@ static bool32 TryStartFollowerTransformEffect(struct ObjectEvent *objectEvent, s
 {
     u32 multi;
     struct Pokemon *mon;
-    enum Ability ability;
     if (DoesSpeciesHaveFormChangeMethod(OW_SPECIES(objectEvent), FORM_CHANGE_OVERWORLD_WEATHER)
         && OW_SPECIES(objectEvent) != (multi = GetOverworldWeatherSpecies(OW_SPECIES(objectEvent))))
     {
@@ -5512,9 +5511,9 @@ static bool32 TryStartFollowerTransformEffect(struct ObjectEvent *objectEvent, s
     }
 
     if (OW_FOLLOWERS_COPY_WILD_PKMN
-        && (MonKnowsMove(mon = GetFirstLiveMon(), MOVE_TRANSFORM)
-         || (ability = GetMonAbility(mon)) == ABILITY_IMPOSTER || ability == ABILITY_ILLUSION)
-        && (Random() & 0xFFFF) < 18 && GetLocalWildMon(FALSE))
+         && (MonKnowsMove(mon = GetFirstLiveMon(), MOVE_TRANSFORM)
+         || MonHasTrait(mon, ABILITY_IMPOSTER) || MonHasTrait(mon, ABILITY_ILLUSION))
+         && (Random() & 0xFFFF) < 18 && GetLocalWildMon(FALSE))
     {
         sprite->data[7] = TRANSFORM_TYPE_RANDOM_WILD << 8;
         PlaySE(SE_M_MINIMIZE);

@@ -5141,7 +5141,6 @@ static u16 GetWinningMove(int winnerTournamentId, int loserTournamentId, u8 roun
             {
                 u32 personality = 0;
                 u32 targetSpecies = 0;
-                enum Ability targetAbility = 0;
                 uq4_12_t typeMultiplier = 0;
                 do
                 {
@@ -5150,12 +5149,7 @@ static u16 GetWinningMove(int winnerTournamentId, int loserTournamentId, u8 roun
 
                 targetSpecies = gFacilityTrainerMons[DOME_MONS[loserTournamentId][k]].species;
 
-                if (personality & 1)
-                    targetAbility = GetSpeciesAbility(targetSpecies, 1);
-                else
-                    targetAbility = GetSpeciesAbility(targetSpecies, 0);
-
-                typeMultiplier = CalcPartyMonTypeEffectivenessMultiplier(moves[i * 4 + j], targetSpecies, targetAbility, 0);
+                typeMultiplier = CalcPartyMonTypeEffectivenessMultiplier(moves[i * 4 + j], targetSpecies, 0);
                 if (typeMultiplier == UQ_4_12(0))
                     moveScores[i * MAX_MON_MOVES + j] += 0;
                 else if (typeMultiplier >= UQ_4_12(2))

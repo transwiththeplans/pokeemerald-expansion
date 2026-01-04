@@ -813,7 +813,7 @@ void HandleAction_Run(void)
         else
         {
             if (GetBattlerHoldEffect(gBattlerAttacker) != HOLD_EFFECT_CAN_ALWAYS_RUN
-             && GetBattlerAbility(gBattlerAttacker) != ABILITY_RUN_AWAY
+             && !BattlerHasTrait(gBattlerAttacker, ABILITY_RUN_AWAY)
              && !CanBattlerEscape(gBattlerAttacker))
             {
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_ATTACKER_CANT_ESCAPE;
@@ -1268,13 +1268,11 @@ void PrepareStringBattle(enum StringID stringId, u32 battler)
             stringId = gStatUpStringIds[gBattleCommunication[MULTISTRING_CHOOSER]];
         break;
     case STRINGID_STATSWONTINCREASE2:
-        if (hasContrary
-         && !((SearchTraits(battlerTraits, ABILITY_DEFIANT) || SearchTraits(battlerTraits, ABILITY_COMPETITIVE))))
+        if (hasContrary)
             stringId = STRINGID_STATSWONTDECREASE2;
         break;
     case STRINGID_STATSWONTDECREASE2:
-        if (hasContrary
-         && !((SearchTraits(battlerTraits, ABILITY_DEFIANT) || SearchTraits(battlerTraits, ABILITY_COMPETITIVE))))
+        if (hasContrary)
             stringId = STRINGID_STATSWONTINCREASE2;
         break;
     case STRINGID_PKMNCUTSATTACKWITH:
@@ -1283,12 +1281,21 @@ void PrepareStringBattle(enum StringID stringId, u32 battler)
          && CompareStat(gBattlerTarget, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN))
         {
             gBattlerAbility = gBattlerTarget;
+            PushTraitStack(gBattlerTarget, ABILITY_RATTLED);
             BattleScriptCall(BattleScript_AbilityRaisesDefenderStat);
             SET_STATCHANGER(STAT_SPEED, 1, FALSE);
         }
-        else if (hasContrary)
+        break;
+    case STRINGID_PKMNINTIMIDATECONTRARYRATTLED: // Special string for Intimidate + Contrary + Rattled.  Rattled should activate even if Attack is raised.
+        stringId = STRINGID_DEFENDERSSTATROSE;
+        if (GetGenConfig(GEN_CONFIG_UPDATED_INTIMIDATE) >= GEN_8
+         && SearchTraits(battlerTraits, ABILITY_RATTLED)
+         && CompareStat(gBattlerTarget, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN))
         {
-            stringId = STRINGID_DEFENDERSSTATROSE;
+            gBattlerAbility = gBattlerTarget;
+            BattleScriptCall(BattleScript_AbilityRaisesDefenderStat);
+            PushTraitStack(gBattlerTarget, ABILITY_RATTLED);
+            SET_STATCHANGER(STAT_SPEED, 1, FALSE);
         }
         break;
     case STRINGID_ITDOESNTAFFECT:
@@ -1299,7 +1306,8 @@ void PrepareStringBattle(enum StringID stringId, u32 battler)
         break;
     }
 
-    if ((stringId == STRINGID_PKMNCUTSATTACKWITH || stringId == STRINGID_DEFENDERSSTATFELL)
+    if (!hasContrary
+     && (stringId == STRINGID_PKMNCUTSATTACKWITH || stringId == STRINGID_DEFENDERSSTATFELL)
      && ShouldDefiantCompetitiveActivate(gBattlerTarget))
     {
         gBattlerAbility = gBattlerTarget;
@@ -1316,7 +1324,7 @@ void PrepareStringBattle(enum StringID stringId, u32 battler)
         }
     }
     // Check Defiant and Competitive when Contrary is present
-    else if (stringId == STRINGID_DEFENDERSSTATROSE
+    else if (stringId == STRINGID_DEFENDERSSTATFELL
               && hasContrary
               && gSpecialStatuses[gBattlerTarget].changedStatsBattlerId != BATTLE_PARTNER(gBattlerTarget) 
               && gSpecialStatuses[gBattlerTarget].changedStatsBattlerId != gBattlerTarget) // Defiant/Competitive should not trigger on self afflicted changes
@@ -1399,27 +1407,14 @@ void PrepareStringBattle(enum StringID stringId, u32 battler)
                 stringId = STRINGID_STATSWONTDECREASE;
             }
         }
-        PushTraitStack(gBattlerTarget, ABILITY_CONTRARY);
-        BattleScriptCall(BattleScript_GenerateAbilityPopUp);
-    }
-    else if (GetGenConfig(GEN_CONFIG_UPDATED_INTIMIDATE) >= GEN_8 && stringId == STRINGID_PKMNCUTSATTACKWITH && SearchTraits(battlerTraits, ABILITY_RATTLED)
-            && CompareStat(gBattlerTarget, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN))
-    {
-        gBattlerAbility = gBattlerTarget;
-        PushTraitStack(gBattlerTarget,ABILITY_RATTLED);
-        BattleScriptCall(BattleScript_AbilityRaisesDefenderStat);
-        SET_STATCHANGER(STAT_SPEED, 1, FALSE);
     }
 
-    // Adjust for Intimidate
-    if (hasContrary && stringId == STRINGID_STATSWONTINCREASE)
-        stringId = STRINGID_TARGETSTATWONTGOHIGHER;
-    if (hasContrary && (stringId == STRINGID_PKMNCUTSATTACKWITH || stringId == STRINGID_STATSWONTINCREASE))
+    // Generate ability popup for Contrary, only when a status change happens outside of Defiant/Competitive wich have their own popup calls
+    if (hasContrary
+        && ((stringId == STRINGID_DEFENDERSSTATFELL || stringId == STRINGID_STATSWONTINCREASE || stringId == STRINGID_STATSWONTDECREASE || stringId == STRINGID_STATSWONTINCREASE2 || stringId == STRINGID_STATSWONTDECREASE2)
+        || (stringId == STRINGID_DEFENDERSSTATROSE && !((gProtectStructs[gBattlerTarget].contraryCompetitive || gProtectStructs[gBattlerTarget].contraryDefiant))
+        && (gSpecialStatuses[gBattlerTarget].changedStatsBattlerId != BATTLE_PARTNER(gBattlerTarget) || gSpecialStatuses[gBattlerTarget].changedStatsBattlerId != gBattlerTarget))))
     {
-        if (stringId == STRINGID_STATSWONTINCREASE)
-            stringId = STRINGID_TARGETSTATWONTGOHIGHER;
-        else
-            stringId = STRINGID_DEFENDERSSTATROSE;
         PushTraitStack(gBattlerTarget, ABILITY_CONTRARY);
         BattleScriptCall(BattleScript_GenerateAbilityPopUp);
     }
@@ -2523,7 +2518,7 @@ static enum MoveCanceler CancelerChoiceLock(struct BattleContext *ctx)
 
     if (gChosenMove != MOVE_STRUGGLE
      && (*choicedMoveAtk == MOVE_NONE || *choicedMoveAtk == MOVE_UNAVAILABLE)
-     && (IsHoldEffectChoice(holdEffect) || ctx->abilities[ctx->battlerAtk] == ABILITY_GORILLA_TACTICS))
+     && (IsHoldEffectChoice(holdEffect) || BattlerHasTrait(ctx->battlerAtk, ABILITY_GORILLA_TACTICS)))
         *choicedMoveAtk = gChosenMove;
 
     u32 moveIndex;
@@ -4094,7 +4089,7 @@ bool32 TryFieldEffects(enum FieldEffectCases caseId)
     return effect;
 }
 
-u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ability, u32 special, u32 moveArg)
+u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u32 moveArg)
 {
     u32 effect = 0;
     enum Type moveType = 0;
@@ -4115,8 +4110,6 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
 
     if (special)
         gLastUsedAbility = special;
-    else if (ability)
-        gLastUsedAbility = ability;
     else
         gLastUsedAbility = GetBattlerAbility(battler);
 
@@ -4201,6 +4194,23 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                 gBattlerTarget = diagonalBattler;
                 effect += CommonSwitchInAbilities(battler, ABILITY_IMPOSTER, traitCheck, BattleScript_ImposterActivates);
             }
+        }
+        if ((traitCheck = SearchTraits(battlerTraits, ABILITY_INTIMIDATE)) && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1]
+         && !IsOpposingSideEmpty(battler))
+        {
+            PushTraitStack(battler, ABILITY_INTIMIDATE);
+            SaveBattlerAttacker(gBattlerAttacker);
+            gBattlerAttacker = battler;
+            effect += CommonSwitchInAbilities(battler, ABILITY_INTIMIDATE, traitCheck, BattleScript_IntimidateActivates);
+        }
+        if ((traitCheck = SearchTraits(battlerTraits, ABILITY_SUPERSWEET_SYRUP)) && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1]
+         && !GetBattlerPartyState(battler)->supersweetSyrup
+         && !IsOpposingSideEmpty(battler))
+        {
+            SaveBattlerAttacker(gBattlerAttacker);
+            gBattlerAttacker = battler;
+            GetBattlerPartyState(battler)->supersweetSyrup = TRUE;
+            effect += CommonSwitchInAbilities(battler, ABILITY_SUPERSWEET_SYRUP, traitCheck, BattleScript_SupersweetSyrupActivates);
         }
         // Only one Mold Breaker type move needs to activate
         if ((traitCheck = SearchTraits(battlerTraits, ABILITY_TERAVOLT)) && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1])
@@ -4456,22 +4466,6 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                 
             if(TryChangeBattleTerrain(battler, STATUS_FIELD_PSYCHIC_TERRAIN))
                 effect += CommonSwitchInAbilities(battler, ABILITY_PSYCHIC_SURGE, traitCheck, BattleScript_PsychicSurgeActivates);
-        }
-        if ((traitCheck = SearchTraits(battlerTraits, ABILITY_INTIMIDATE)) && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1]
-         && !IsOpposingSideEmpty(battler))
-        {
-            SaveBattlerAttacker(gBattlerAttacker);
-            gBattlerAttacker = battler;
-            effect += CommonSwitchInAbilities(battler, ABILITY_INTIMIDATE, traitCheck, BattleScript_IntimidateActivates);
-        }
-        if ((traitCheck = SearchTraits(battlerTraits, ABILITY_SUPERSWEET_SYRUP)) && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1]
-         && !GetBattlerPartyState(battler)->supersweetSyrup
-         && !IsOpposingSideEmpty(battler))
-        {
-            SaveBattlerAttacker(gBattlerAttacker);
-            gBattlerAttacker = battler;
-            GetBattlerPartyState(battler)->supersweetSyrup = TRUE;
-            effect += CommonSwitchInAbilities(battler, ABILITY_SUPERSWEET_SYRUP, traitCheck, BattleScript_SupersweetSyrupActivates);
         }
         if ((traitCheck = SearchTraits(battlerTraits, ABILITY_CLOUD_NINE)) && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1])
             effect += CommonSwitchInAbilities(battler, ABILITY_CLOUD_NINE, traitCheck, BattleScript_AnnounceAirLockCloudNine);
@@ -6147,14 +6141,14 @@ u32 GetParadoxHighestStatId(u32 battler)
 
 static void ResetParadoxWeatherStat(u32 battler)
 {
-    if (gBattleMons[battler].ability == ABILITY_PROTOSYNTHESIS
+    if (BattlerHasTrait(battler, ABILITY_PROTOSYNTHESIS)
      && !gDisableStructs[battler].boosterEnergyActivated)
         gDisableStructs[battler].paradoxBoostedStat = 0;
 }
 
 static void ResetParadoxTerrainStat(u32 battler)
 {
-    if (gBattleMons[battler].ability == ABILITY_QUARK_DRIVE
+    if (BattlerHasTrait(battler, ABILITY_QUARK_DRIVE)
      && !gDisableStructs[battler].boosterEnergyActivated)
         gDisableStructs[battler].paradoxBoostedStat = 0;
 }
@@ -8324,10 +8318,10 @@ static inline uq4_12_t GetScreensModifier(struct DamageContext *ctx)
     {
         return UQ_4_12(1.0);
     }
-    if (ctx->abilityAtk == ABILITY_INFILTRATOR)
+    if (BattlerHasTrait(ctx->battlerAtk, ABILITY_INFILTRATOR))
     {
         if (ctx->updateFlags)
-            RecordAbilityBattle(ctx->battlerAtk, ctx->abilityDef);
+            RecordAbilityBattle(ctx->battlerAtk, ABILITY_INFILTRATOR);
         return UQ_4_12(1.0);
     }
     if (reflect || lightScreen || auroraVeil)
@@ -8960,7 +8954,7 @@ uq4_12_t CalcTypeEffectivenessMultiplier(struct DamageContext *ctx)
     return modifier;
 }
 
-uq4_12_t CalcPartyMonTypeEffectivenessMultiplier(u16 move, u16 speciesDef, enum Ability abilityDef, struct Pokemon *mon)
+uq4_12_t CalcPartyMonTypeEffectivenessMultiplier(u16 move, u16 speciesDef, struct Pokemon *mon)
 {
     uq4_12_t modifier = UQ_4_12(1.0);
     enum Type moveType = GetBattleMoveType(move);
@@ -8980,7 +8974,7 @@ uq4_12_t CalcPartyMonTypeEffectivenessMultiplier(u16 move, u16 speciesDef, enum 
         {
             if (ctx.moveType == TYPE_GROUND && MonHasTrait(mon, ABILITY_LEVITATE) && !(gFieldStatuses & STATUS_FIELD_GRAVITY))
                 modifier = UQ_4_12(0.0);
-            if (abilityDef == ABILITY_WONDER_GUARD && modifier <= UQ_4_12(1.0) && GetMovePower(move) != 0)
+            if (MonHasTrait(mon, ABILITY_WONDER_GUARD) && modifier <= UQ_4_12(1.0) && GetMovePower(move) != 0)
                 modifier = UQ_4_12(0.0);
         }
         else
@@ -9376,7 +9370,7 @@ static bool32 CanBattlerFormChange(u32 battler, enum FormChanges method)
     case FORM_CHANGE_BATTLE_SWITCH:
         if (IsGigantamaxed(battler))
             return TRUE;
-        else if (GetActiveGimmick(battler) == GIMMICK_TERA && GetBattlerAbility(battler) == ABILITY_HUNGER_SWITCH)
+        else if (GetActiveGimmick(battler) == GIMMICK_TERA && BattlerHasTrait(battler, ABILITY_HUNGER_SWITCH))
             return FALSE;
         break;
     default:
@@ -11313,7 +11307,7 @@ static u32 GetSleepTalkMove(void)
 
     u32 i, unusableMovesBits = 0, movePosition;
 
-    if (GetBattlerAbility(gBattlerAttacker) != ABILITY_COMATOSE
+    if (!BattlerHasTrait(gBattlerAttacker, ABILITY_COMATOSE)
      && !(gBattleMons[gBattlerAttacker].status1 & STATUS1_SLEEP))
         return move;
 

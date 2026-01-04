@@ -6401,6 +6401,7 @@ BattleScript_DrizzleActivates::
 BattleScript_AbilityRaisesDefenderStat::
 	pause B_WAIT_TIME_SHORT
 	statbuffchange BS_TARGET, STAT_CHANGE_ONLY_CHECKING, BattleScript_AbilityCantRaiseDefenderStat
+	pause B_WAIT_TIME_SHORT
 	call BattleScript_AbilityPopUp
 	statbuffchange BS_TARGET, 0, BattleScript_AbilityCantRaiseDefenderStat
 	printstring STRINGID_DEFENDERSSTATROSE
@@ -6674,6 +6675,7 @@ BattleScript_IntimidateEffect:
 	copybyte sBATTLER, gBattlerAttacker
 	setstatchanger3 STAT_ATK, 1, TRUE
 	statbuffchange3 BS_TARGET, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_IntimidateLoopIncrement
+	jumpifability BS_TARGET, ABILITY_CONTRARY, BattleScript_IntimidateContrary
 	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_IntimidateWontDecrease
 	printstring STRINGID_PKMNCUTSATTACKWITH
 BattleScript_IntimidateEffect_WaitString:
@@ -6706,7 +6708,7 @@ BattleScript_IntimidateWontDecrease:
 
 BattleScript_IntimidateContrary:
 	pushtraitstack BS_TARGET ABILITY_CONTRARY
-	printfromtable gStatUpStringIds
+	printstring STRINGID_PKMNINTIMIDATECONTRARYRATTLED
 	goto BattleScript_IntimidateEffect_WaitString
 
 BattleScript_IntimidateInReverse::

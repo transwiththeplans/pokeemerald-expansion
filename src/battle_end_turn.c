@@ -96,7 +96,6 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
 {
     bool32 effect = FALSE;
 
-    enum Ability ability = GetBattlerAbility(battler);
     u32 currBattleWeather = GetCurrentBattleWeather();
     enum Ability battlerTraits[MAX_MON_TRAITS];
     STORE_BATTLER_TRAITS(battler);
@@ -125,7 +124,7 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
     case BATTLE_WEATHER_RAIN_DOWNPOUR:
         if (SearchTraits(battlerTraits, ABILITY_DRY_SKIN) || SearchTraits(battlerTraits, ABILITY_RAIN_DISH))
         {
-            if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, 0, MOVE_NONE))
+            if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, 0, MOVE_NONE))
                 effect = TRUE;
         }
         break;
@@ -133,7 +132,7 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
     case BATTLE_WEATHER_SUN_PRIMAL:
         if (SearchTraits(battlerTraits, ABILITY_DRY_SKIN) || SearchTraits(battlerTraits, ABILITY_SOLAR_POWER))
         {
-            if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, 0, MOVE_NONE))
+            if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, 0, MOVE_NONE))
                 effect = TRUE;
         }
         break;
@@ -158,7 +157,7 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
     case BATTLE_WEATHER_SNOW:
         if (SearchTraits(battlerTraits, ABILITY_ICE_BODY))
         {
-            if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, 0, MOVE_NONE))
+            if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, 0, MOVE_NONE))
                 effect = TRUE;
         }
         else if (currBattleWeather == BATTLE_WEATHER_HAIL)
@@ -373,11 +372,10 @@ static bool32 HandleEndTurnFirstEventBlock(u32 battler)
         break;
     case FIRST_EVENT_BLOCK_ABILITIES:
     {
-        enum Ability ability = GetBattlerAbility(battler);
         if (BattlerHasTrait(battler, ABILITY_HEALER)
          || BattlerHasTrait(battler, ABILITY_HYDRATION)
          || BattlerHasTrait(battler, ABILITY_SHED_SKIN))
-            if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, 0, MOVE_NONE))
+            if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, 0, MOVE_NONE))
                 effect = TRUE;
         gBattleStruct->eventState.endTurnBlock++;
         break;
@@ -1272,7 +1270,7 @@ static bool32 HandleEndTurnThirdEventBlock(u32 battler)
          || SearchTraits(battlerTraits, ABILITY_MOODY)
          || SearchTraits(battlerTraits, ABILITY_PICKUP)
          || SearchTraits(battlerTraits, ABILITY_SPEED_BOOST))
-            if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ABILITY_NONE, 0, MOVE_NONE))
+            if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, 0, MOVE_NONE))
                 effect = TRUE;
 
         gBattleStruct->eventState.endTurnBlock++;
@@ -1320,7 +1318,7 @@ static bool32 HandleEndTurnFormChangeAbilities(u32 battler)
      || SearchTraits(battlerTraits, ABILITY_SHIELDS_DOWN)
      || SearchTraits(battlerTraits, ABILITY_ZEN_MODE)
      || SearchTraits(battlerTraits, ABILITY_HUNGER_SWITCH))
-        if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ABILITY_NONE, 0, MOVE_NONE))
+        if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, 0, MOVE_NONE))
             effect = TRUE;
 
     return effect;

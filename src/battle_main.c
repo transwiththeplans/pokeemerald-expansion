@@ -3867,7 +3867,7 @@ static void TryDoEventsBeforeFirstTurn(void)
         while (gBattleStruct->switchInBattlerCounter < gBattlersCount) // From fastest to slowest
         {
             i = gBattlerByTurnOrder[gBattleStruct->switchInBattlerCounter++];
-            if (AbilityBattleEffects(ABILITYEFFECT_NEUTRALIZINGGAS_FIRST_TURN, i, 0, 0, 0) != 0)
+            if (AbilityBattleEffects(ABILITYEFFECT_NEUTRALIZINGGAS_FIRST_TURN, i, 0, 0) != 0)
                 return;
         }
         gBattleStruct->switchInBattlerCounter = 0;
@@ -3880,11 +3880,11 @@ static void TryDoEventsBeforeFirstTurn(void)
 
             if (TryPrimalReversion(battler))
                 return;
-            if (AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN, battler, 0, 0, 0))
+            if (AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN, battler, 0, 0))
                 return;
             if (TryClearIllusion(battler, ABILITYEFFECT_ON_SWITCHIN))
                 return;
-            if (AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN_IMMUNITIES, battler, 0, 0, 0) != 0)
+            if (AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN_IMMUNITIES, battler, 0, 0) != 0)
                 return;
         }
         gBattleStruct->switchInBattlerCounter = 0;
@@ -3914,7 +3914,7 @@ static void TryDoEventsBeforeFirstTurn(void)
         while (gBattleStruct->switchInBattlerCounter < gBattlersCount) // From fastest to slowest
         {
             u32 battler = gBattlerByTurnOrder[gBattleStruct->switchInBattlerCounter++];
-            if (AbilityBattleEffects(ABILITYEFFECT_OPPORTUNIST_FIRST_TURN, battler, GetBattlerAbility(battler), 0, 0))
+            if (AbilityBattleEffects(ABILITYEFFECT_OPPORTUNIST_FIRST_TURN, battler, 0, 0))
                 return;
         }
         gBattleStruct->switchInBattlerCounter = 0;

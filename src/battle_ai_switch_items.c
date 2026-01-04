@@ -664,7 +664,6 @@ static bool32 ShouldSwitchIfTrapperInParty(u32 battler)
 static bool32 ShouldSwitchIfBadlyStatused(u32 battler)
 {
     bool32 switchMon = FALSE;
-    enum Ability monAbility = gAiLogicData->abilities[battler];
     enum HoldEffect holdEffect = gAiLogicData->holdEffects[battler];
     u8 opposingPosition = BATTLE_OPPOSITE(GetBattlerPosition(battler));
     u8 opposingBattler = GetBattlerAtPosition(opposingPosition);
@@ -888,7 +887,6 @@ static bool32 FindMonWithFlagsAndSuperEffective(u32 battler, u16 flags, u32 perc
     for (i = firstId; i < lastId; i++)
     {
         u16 species;
-        enum Ability monAbility;
         uq4_12_t typeMultiplier;
         u16 moveFlags = 0;
         struct Pokemon *mon;
@@ -907,9 +905,8 @@ static bool32 FindMonWithFlagsAndSuperEffective(u32 battler, u16 flags, u32 perc
             continue;
 
         species = GetMonData(&party[i], MON_DATA_SPECIES_OR_EGG);
-        monAbility = GetMonAbility(&party[i]);
         mon = &gPlayerParty[i];
-        typeMultiplier = CalcPartyMonTypeEffectivenessMultiplier(gLastLandedMoves[battler], species, monAbility, mon);
+        typeMultiplier = CalcPartyMonTypeEffectivenessMultiplier(gLastLandedMoves[battler], species, mon);
         UpdateMoveResultFlags(typeMultiplier, &moveFlags);
         if (moveFlags & flags)
         {

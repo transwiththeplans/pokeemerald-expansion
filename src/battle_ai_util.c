@@ -2139,9 +2139,8 @@ bool32 CanLowerStat(u32 battlerAtk, u32 battlerDef, struct AiLogicData *aiData, 
         return FALSE;
 
     u32 move = gAiThinkingStruct->moveConsidered;
-    enum Ability abilityAtk = aiData->abilities[battlerAtk];
 
-    if (gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_MIST && abilityAtk != ABILITY_INFILTRATOR)
+    if (gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_MIST && !AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_INFILTRATOR))
         return FALSE;
 
     if (!DoesBattlerIgnoreAbilityChecks(battlerAtk, move))

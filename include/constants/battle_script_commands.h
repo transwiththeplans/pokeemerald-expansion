@@ -6,7 +6,7 @@
 #define sUNUSED_0x04                 (gBattleScripting + 0x04) // unused_0x04
 #define sMULTIHIT_STRING             (gBattleScripting + 0x08) // multihitString
 #define sEXP_CATCH                   (gBattleScripting + 0x0E) // expOnCatch
-#define sSTATCHANGER2                (gBattleScripting + 0x0F) // statChanger2
+#define sUNUSED                      (gBattleScripting + 0x0F) // unused
 #define sB_ANIM_ARG1                 (gBattleScripting + 0x10) // animArg1
 #define sB_ANIM_ARG2                 (gBattleScripting + 0x11) // animArg2
 #define sSAVED_STRINID               (gBattleScripting + 0x12) // savedStringId
@@ -31,7 +31,7 @@
 #define sSPECIAL_TRAINER_BATTLE_TYPE (gBattleScripting + 0x26) // specialTrainerBattleType
 #define sMON_CAUGHT                  (gBattleScripting + 0x27) // monCaught
 #define sSAVED_DMG                   (gBattleScripting + 0x28) // savedDmg
-#define sSTATCHANGER3                (gBattleScripting + 0x2C) // statChanger3
+#define sUNUSED_0x2C                (gBattleScripting + 0x2C)  // unused_0x2c
 #define sMOVE_EFFECT                 (gBattleScripting + 0x2E) // moveEffect
 #define sUNUSED_0x30                 (gBattleScripting + 0x30) // unused_0x30
 #define sILLUSION_NICK_HACK          (gBattleScripting + 0x32) // illusionNickHack

@@ -882,6 +882,14 @@
 	.byte 0x9e
 	.endm
 
+	.macro unused_0x9f
+	.byte 0x9f
+	.endm
+
+	.macro unused_0xA0
+	.byte 0xa0
+	.endm
+	
 	.macro statbuffchange2 battler:req, flags:req, failInstr:req, stats=0
 	.byte 0x9f
 	.byte \battler
@@ -1810,14 +1818,6 @@
 @ helpful macros
 	.macro setstatchanger stat:req, stages:req, down:req
 	setbyte sSTATCHANGER, \stat | \stages << 3 | \down << 7
-	.endm
-
-	.macro setstatchanger2 stat:req, stages:req, down:req
-	setbyte sSTATCHANGER2, \stat | \stages << 3 | \down << 7
-	.endm
-
-	.macro setstatchanger3 stat:req, stages:req, down:req
-	setbyte sSTATCHANGER3, \stat | \stages << 3 | \down << 7
 	.endm
 
 	.macro setmoveeffect effect:req

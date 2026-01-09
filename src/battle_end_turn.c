@@ -377,7 +377,9 @@ static bool32 HandleEndTurnFirstEventBlock(u32 battler)
          || BattlerHasTrait(battler, ABILITY_SHED_SKIN))
             if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, 0, MOVE_NONE))
                 effect = TRUE;
-        gBattleStruct->eventState.endTurnBlock++;
+
+        if (effect == FALSE) //Loop End Turn abilities until none activate anymore (Multi)
+            gBattleStruct->eventState.endTurnBlock++;
         break;
     }
     case FIRST_EVENT_BLOCK_HEAL_ITEMS:
@@ -1258,6 +1260,7 @@ static bool32 HandleEndTurnThirdEventBlock(u32 battler)
         break;
     case THIRD_EVENT_BLOCK_ABILITIES:
     {
+        DebugPrintf("Third Event Block Abilities");
         enum Ability battlerTraits[MAX_MON_TRAITS];
         STORE_BATTLER_TRAITS(battler);
 
@@ -1273,7 +1276,8 @@ static bool32 HandleEndTurnThirdEventBlock(u32 battler)
             if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, 0, MOVE_NONE))
                 effect = TRUE;
 
-        gBattleStruct->eventState.endTurnBlock++;
+        if (effect == FALSE) //Loop End Turn abilities until none activate anymore (Multi)
+            gBattleStruct->eventState.endTurnBlock++;
         break;
     }
     case THIRD_EVENT_BLOCK_ITEMS:

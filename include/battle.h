@@ -197,7 +197,6 @@ struct SpecialStatus
     u8 padding1:1;
     // End of byte
     u8 switchInAbilityDone:1;
-    bool8 switchInTraitDone[MAX_MON_TRAITS];
     u8 switchInItemDone:1;
     u8 instructedChosenTarget:3;
     u8 berryReduced:1;
@@ -217,6 +216,8 @@ struct SpecialStatus
     u8 dancerOriginalTarget:3;
     u8 padding3:5;
     // End of byte
+    bool8 switchInTraitDone[MAX_MON_TRAITS];
+    bool8 EndTurnTraitDone[MAX_MON_TRAITS];
 };
 
 struct SideTimer
@@ -876,9 +877,8 @@ static inline bool32 IsBattleMoveStatus(u32 move)
 #define SET_STAT_BUFF_VALUE(n) ((((n) << 3) & 0xF8))
 
 #define SET_STATCHANGER(statId, stage, goesDown) (gBattleScripting.statChanger = (statId) + ((stage) << 3) + (goesDown << 7))
-#define SET_STATCHANGER_SECOND(statId, stage, goesDown) (gBattleScripting.statChanger2 = (statId) + ((stage) << 3) + (goesDown << 7))
-#define SET_STATCHANGER_THIRD(statId, stage, goesDown) (gBattleScripting.statChanger3 = (statId) + ((stage) << 3) + (goesDown << 7))
 #define SET_STATCHANGER2(dst, statId, stage, goesDown)(dst = (statId) + ((stage) << 3) + (goesDown << 7)) // Moody
+#define SET_STATCHANGER3(dst, statId, stage, goesDown)(dst = (statId) + ((stage) << 3) + (goesDown << 7)) // Speed Boost
 
 // NOTE: The members of this struct have hard-coded offsets
 //       in include/constants/battle_script_commands.h
@@ -888,7 +888,7 @@ struct BattleScripting
     s32 bideDmg;
     u8 multihitString[6];
     bool8 expOnCatch;
-    u8 statChanger2;
+    u8 unused2;
     u8 animArg1;
     u8 animArg2;
     u16 savedStringId;
@@ -913,7 +913,7 @@ struct BattleScripting
     u8 specialTrainerBattleType;
     bool8 monCaught;
     s32 savedDmg;
-    u16 statChanger3;
+    u16 unused_0x2c;
     u16 moveEffect;
     u16 unused_0x30;
     u8 illusionNickHack; // To properly display nick in STRINGID_ENEMYABOUTTOSWITCHPKMN.

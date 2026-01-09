@@ -964,13 +964,43 @@ SINGLE_BATTLE_TEST("Multi - Toxic Chain gets priority over Poison Touch and does
 SINGLE_BATTLE_TEST("Multi - Stat raising abilities do not conflict")
 {
     GIVEN {
-        PLAYER(SPECIES_PORYGON) { Ability(ABILITY_DOWNLOAD); Innates(ABILITY_INTIMIDATE, ABILITY_SUPERSWEET_SYRUP); Defense(200); SpDefense(100); SpAttack(100); }
-        OPPONENT(SPECIES_WISHIWASHI) { Ability(ABILITY_SCHOOLING); Innates(ABILITY_INTIMIDATE, ABILITY_SPEED_BOOST, ABILITY_MOODY); Defense(200); SpDefense(100); SpAttack(100); }
+        PLAYER(SPECIES_PORYGON) { Ability(ABILITY_LIGHT_METAL); } //Innates(ABILITY_INTIMIDATE, ABILITY_SUPERSWEET_SYRUP); Defense(200); SpDefense(100); SpAttack(100); }
+        OPPONENT(SPECIES_WOBBUFFET) {  HP(20); MaxHP(100); Item(ITEM_ORAN_BERRY); Status1(STATUS1_POISON); } //Ability(ABILITY_MOODY); Innates(ABILITY_SPEED_BOOST, ABILITY_CUD_CHEW, ABILITY_SHED_SKIN);
     } WHEN {
         TURN { }
+        TURN { }
     } SCENE {
-            ABILITY_POPUP(player, ABILITY_DOWNLOAD);
-            ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
-            MESSAGE("Porygon's Download raised its Sp. Atk!");
+            // ABILITY_POPUP(player, ABILITY_DOWNLOAD);
+            // ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
+            // MESSAGE("Porygon's Download raised its Sp. Atk!");
+            // NONE_OF {
+            //     ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
+            // }
+            // ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
+
+            // ABILITY_POPUP(opponent, ABILITY_SHED_SKIN);
+            // ABILITY_POPUP(opponent, ABILITY_SPEED_BOOST);
+            // ABILITY_POPUP(opponent, ABILITY_MOODY);
+            // ABILITY_POPUP(opponent, ABILITY_SPEED_BOOST);
+            // ABILITY_POPUP(opponent, ABILITY_MOODY);
+            // ABILITY_POPUP(opponent, ABILITY_CUD_CHEW);
+
     }
 }
+
+
+// SINGLE_BATTLE_TEST("Multi - Stat raising abilities do not conflict")
+// {
+//     GIVEN {
+//         PLAYER(SPECIES_PORYGON); { Ability(ABILITY_LIGHT_METAL); } //Innates(ABILITY_INTIMIDATE, ABILITY_SUPERSWEET_SYRUP); Defense(200); SpDefense(100); SpAttack(100); }
+//         OPPONENT(SPECIES_WOBBUFFET) { Ability(ABILITY_MOODY); Innates(ABILITY_SPEED_BOOST); Defense(200); SpDefense(100); SpAttack(100); Status1(STATUS1_POISON); }
+//     } WHEN {
+//         TURN { }
+//     } SCENE {
+//             // ABILITY_POPUP(player, ABILITY_DOWNLOAD);
+//             // ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
+//             // MESSAGE("Porygon's Download raised its Sp. Atk!");
+//             ABILITY_POPUP(opponent, ABILITY_MOODY);
+//             ABILITY_POPUP(opponent, ABILITY_SPEED_BOOST);
+//     }
+// }

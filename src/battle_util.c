@@ -4686,10 +4686,11 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
         {
             gBattlerAttacker = battler;
 
-            if (SearchTraits(battlerTraits, ABILITY_PICKUP))
+            if ((traitCheck = SearchTraits(battlerTraits, ABILITY_PICKUP)) && !gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1])
             {
+                gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1] = TRUE;
                 gBattlerAttacker = battler;
-
+                
                 if (gBattleMons[battler].item == ITEM_NONE
                  && gBattleStruct->changedItems[battler] == ITEM_NONE   // Will not inherit an item
                  && PickupHasValidTarget(battler))
@@ -4699,53 +4700,63 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
                     PushTraitStack(battler, ABILITY_PICKUP);
                     BattleScriptExecute(BattleScript_PickupActivates);
                     effect++;
+                    break;
                 }
             }
-            if (SearchTraits(battlerTraits, ABILITY_HARVEST)
+            else if ((traitCheck = SearchTraits(battlerTraits, ABILITY_HARVEST)) && !gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1]
              && (IsBattlerWeatherAffected(battler, B_WEATHER_SUN) || RandomPercentage(RNG_HARVEST, 50))
              && gBattleMons[battler].item == ITEM_NONE
              && gBattleStruct->changedItems[battler] == ITEM_NONE   // Will not inherit an item
              && GetItemPocket(GetBattlerPartyState(battler)->usedHeldItem) == POCKET_BERRIES)
             {
+                gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1] = TRUE;
                 gLastUsedItem = GetBattlerPartyState(battler)->usedHeldItem;
                 PushTraitStack(battler, ABILITY_HARVEST);
                 BattleScriptExecute(BattleScript_HarvestActivates);
                 effect++;
+                break;
             }
-            if (SearchTraits(battlerTraits, ABILITY_ICE_BODY)
+            else if ((traitCheck = SearchTraits(battlerTraits, ABILITY_ICE_BODY)) && !gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1]
              && IsBattlerWeatherAffected(battler, B_WEATHER_HAIL | B_WEATHER_SNOW)
              && !IsBattlerAtMaxHp(battler)
              && gBattleMons[battler].volatiles.semiInvulnerable != STATE_UNDERGROUND
              && gBattleMons[battler].volatiles.semiInvulnerable != STATE_UNDERWATER
              && !gBattleMons[battler].volatiles.healBlock)
             {
+                gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1] = TRUE;
                 PushTraitStack(battler, ABILITY_ICE_BODY);
                 BattleScriptExecute(BattleScript_IceBodyHeal);
                 SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / 16);
                 effect++;
+                break;
             }
-            if (SearchTraits(battlerTraits, ABILITY_DRY_SKIN))
+            if ((traitCheck = SearchTraits(battlerTraits, ABILITY_DRY_SKIN)) && !gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1])
             {
                 if (IsBattlerWeatherAffected(battler, B_WEATHER_SUN) && !SearchTraits(battlerTraits, ABILITY_SOLAR_POWER)) // Damage stacking handled in Solar Power
                 {
+                    gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1] = TRUE;
                     PushTraitStack(battler, ABILITY_DRY_SKIN);
                     SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / 8);
                     BattleScriptExecute(BattleScript_SolarPowerActivates);
                     effect++;
+                    break;
                 }
                 else if (IsBattlerWeatherAffected(battler, B_WEATHER_RAIN) && !SearchTraits(battlerTraits, ABILITY_RAIN_DISH)) // Healing stacking handled in Rain Dish
                 {
+                    gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1] = TRUE;
                     PushTraitStack(battler, ABILITY_DRY_SKIN);
                     SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / 8);
                     BattleScriptExecute(BattleScript_RainDishActivates);
                     effect++;
+                    break;
                 }
             }
-            if (SearchTraits(battlerTraits, ABILITY_RAIN_DISH)
+            if ((traitCheck = SearchTraits(battlerTraits, ABILITY_RAIN_DISH)) && !gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1]
              && IsBattlerWeatherAffected(battler, B_WEATHER_RAIN)
              && !IsBattlerAtMaxHp(battler)
              && !gBattleMons[battler].volatiles.healBlock)
             {
+                gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1] = TRUE;
                 PushTraitStack(battler, ABILITY_RAIN_DISH);
                 if (!SearchTraits(battlerTraits, ABILITY_DRY_SKIN))
                     SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / 16);
@@ -4753,18 +4764,22 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
                     SetHealAmount(battler, GetNonDynamaxMaxHP(battler) * (0.187)); // Rain Dish + Dry Skin
                 BattleScriptExecute(BattleScript_RainDishActivates);
                 effect++;
+                break;
             }
-            if (SearchTraits(battlerTraits, ABILITY_HYDRATION)
+
+            if ((traitCheck = SearchTraits(battlerTraits, ABILITY_HYDRATION)) && !gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1]
              && IsBattlerWeatherAffected(battler, B_WEATHER_RAIN)
              && gBattleMons[battler].status1 & STATUS1_ANY)
             {
+                gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1] = TRUE;
                 PushTraitStack(battler, ABILITY_HYDRATION);
                 goto ABILITY_HEAL_MON_STATUS;
             }
-            if ((SearchTraits(battlerTraits, ABILITY_SHED_SKIN)
-             && gBattleMons[battler].status1 & STATUS1_ANY)
+            if ((traitCheck = SearchTraits(battlerTraits, ABILITY_SHED_SKIN)) && !gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1]
+             && gBattleMons[battler].status1 & STATUS1_ANY
              && (B_ABILITY_TRIGGER_CHANCE == GEN_4 ? RandomPercentage(RNG_SHED_SKIN, 30) : RandomChance(RNG_SHED_SKIN, 1, 3)))
             {
+                gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1] = TRUE;
                 PushTraitStack(battler, ABILITY_SHED_SKIN);
                 ABILITY_HEAL_MON_STATUS:
                     if (gBattleMons[battler].status1 & (STATUS1_POISON | STATUS1_TOXIC_POISON))
@@ -4789,19 +4804,22 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
                     BtlController_EmitSetMonData(battler, B_COMM_TO_CONTROLLER, REQUEST_STATUS_BATTLE, 0, 4, &gBattleMons[battler].status1);
                     MarkBattlerForControllerExec(battler);
                     effect++;
+                    break;
             }
-            if (SearchTraits(battlerTraits, ABILITY_SPEED_BOOST)
+
+            if ((traitCheck = SearchTraits(battlerTraits, ABILITY_SPEED_BOOST)) && !gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1]
                 && CompareStat(battler, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN) && gDisableStructs[battler].isFirstTurn != 2)
             {
-                DebugPrintf("Speed Boost Activated");
+                gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1] = TRUE;
                 SaveBattlerAttacker(gBattlerAttacker);
                 SET_STATCHANGER(STAT_SPEED, 1, FALSE);
                 PushTraitStack(battler, ABILITY_SPEED_BOOST);
                 BattleScriptExecute(BattleScript_AttackerAbilityStatRaiseEnd2);
                 gBattleScripting.battler = battler;
                 effect++;
+                break;
             }
-            if (SearchTraits(battlerTraits, ABILITY_MOODY)
+            else if ((traitCheck = SearchTraits(battlerTraits, ABILITY_MOODY)) && !gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1]
              && gDisableStructs[battler].isFirstTurn != 2)
             {
                 u32 validToRaise = 0, validToLower = 0;
@@ -4828,32 +4846,41 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
                     i = RandomUniformExcept(RNG_MOODY_DECREASE, STAT_ATK, statsNum - 1, MoodyCantLowerStat);
                     SET_STATCHANGER2(gBattleScripting.savedStatChanger, i, 1, TRUE);
                 }
+                gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1] = TRUE;
                 PushTraitStack(battler, ABILITY_MOODY);
                 BattleScriptExecute(BattleScript_MoodyActivates);
                 effect++;
+                break;
             }
-            if (SearchTraits(battlerTraits, ABILITY_TRUANT))
+            if ((traitCheck = SearchTraits(battlerTraits, ABILITY_TRUANT)) && !gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1])
             {
-            gDisableStructs[gBattlerAttacker].truantCounter ^= 1;
+                gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1] = TRUE;
+                gDisableStructs[gBattlerAttacker].truantCounter ^= 1;
+                break;
             }
-            if (SearchTraits(battlerTraits, ABILITY_SLOW_START))
+            if ((traitCheck = SearchTraits(battlerTraits, ABILITY_SLOW_START)) && !gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1])
             {
                 if (gDisableStructs[battler].slowStartTimer > 0 && --gDisableStructs[battler].slowStartTimer == 0)
                 {
+                    gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1] = TRUE;
                     PushTraitStack(battler, ABILITY_SLOW_START);
                     BattleScriptExecute(BattleScript_SlowStartEnds);
                     effect++;
+                    break;
                 }
             }
-            if (SearchTraits(battlerTraits, ABILITY_BAD_DREAMS))
+            if ((traitCheck = SearchTraits(battlerTraits, ABILITY_BAD_DREAMS)) && !gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1])
             {
+                gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1] = TRUE;
                 PushTraitStack(battler, ABILITY_BAD_DREAMS);
                 BattleScriptExecute(BattleScript_BadDreamsActivates);
                 effect++;
+                break;
             }
-            if (SearchTraits(battlerTraits, ABILITY_SOLAR_POWER)
+            if ((traitCheck = SearchTraits(battlerTraits, ABILITY_SOLAR_POWER)) && !gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1]
              && IsBattlerWeatherAffected(battler, B_WEATHER_SUN))
             {
+                gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1] = TRUE;
                 PushTraitStack(battler, ABILITY_SOLAR_POWER);
                 if (!SearchTraits(battlerTraits, ABILITY_DRY_SKIN))
                     SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / 8);
@@ -4861,58 +4888,70 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
                     SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / 4); // Solar Power + Dry Skin
                 BattleScriptExecute(BattleScript_SolarPowerActivates);
                 effect++;
+                break;
             }
 
-            if (SearchTraits(battlerTraits, ABILITY_HEALER))
+            if ((traitCheck = SearchTraits(battlerTraits, ABILITY_HEALER)) && !gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1])
             {
                 gBattleScripting.battler = BATTLE_PARTNER(battler);
                 if (IsBattlerAlive(gBattleScripting.battler)
                  && gBattleMons[gBattleScripting.battler].status1 & STATUS1_ANY
                  && RandomPercentage(RNG_HEALER, 30))
                 {
+                    gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1] = TRUE;
                     PushTraitStack(battler, ABILITY_HEALER);
                     BattleScriptExecute(BattleScript_HealerActivates);
                     effect++;
+                    break;
                 }
             }
-            if (SearchTraits(battlerTraits, ABILITY_SCHOOLING)
+            if ((traitCheck = SearchTraits(battlerTraits, ABILITY_SCHOOLING)) && !gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1]
              && gBattleMons[battler].level >= 20
              && TryBattleFormChange(battler, FORM_CHANGE_BATTLE_HP_PERCENT))
             {
+                gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1] = TRUE;
                 gBattleScripting.battler = battler;
                 PushTraitStack(battler, ABILITY_SCHOOLING);
                 BattleScriptExecute(BattleScript_BattlerFormChangeEnd2);
                 effect++;
+                break;
             }
-            if (SearchTraits(battlerTraits, ABILITY_ZEN_MODE)
+            if ((traitCheck = SearchTraits(battlerTraits, ABILITY_ZEN_MODE)) && !gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1]
              && TryBattleFormChange(battler, FORM_CHANGE_BATTLE_HP_PERCENT))
             {
+                gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1] = TRUE;
                 gBattleScripting.battler = battler;
                 PushTraitStack(battler, ABILITY_ZEN_MODE);
                 BattleScriptExecute(BattleScript_BattlerFormChangeEnd2);
                 effect++;
+                break;
             }
-            if (SearchTraits(battlerTraits, ABILITY_SHIELDS_DOWN)
+            if ((traitCheck = SearchTraits(battlerTraits, ABILITY_SHIELDS_DOWN)) && !gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1]
              && TryBattleFormChange(battler, FORM_CHANGE_BATTLE_HP_PERCENT))
             {
+                gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1] = TRUE;
                 gBattleScripting.battler = battler;
                 PushTraitStack(battler, ABILITY_SHIELDS_DOWN);
                 BattleScriptExecute(BattleScript_BattlerFormChangeEnd2);
                 effect++;
+                break;
             }
-            if (SearchTraits(battlerTraits, ABILITY_POWER_CONSTRUCT)
+            if ((traitCheck = SearchTraits(battlerTraits, ABILITY_POWER_CONSTRUCT)) && !gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1]
              && TryBattleFormChange(battler, FORM_CHANGE_BATTLE_HP_PERCENT))
             {
+                gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1] = TRUE;
                 gBattleScripting.battler = battler;
                 PushTraitStack(battler, ABILITY_POWER_CONSTRUCT);
                 BattleScriptExecute(BattleScript_PowerConstruct);
                 effect++;
+                break;
             }
-            if (SearchTraits(battlerTraits, ABILITY_BALL_FETCH)
+            if ((traitCheck = SearchTraits(battlerTraits, ABILITY_BALL_FETCH)) && !gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1]
              && gBattleMons[battler].item == ITEM_NONE
              && gBattleResults.catchAttempts[ItemIdToBallId(gLastUsedBall)] >= 1
              && !gHasFetchedBall)
             {
+                gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1] = TRUE;
                 gLastUsedItem = gLastUsedBall;
                 gBattleScripting.battler = battler;
                 gBattleMons[battler].item = gLastUsedItem;
@@ -4922,21 +4961,25 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
                 PushTraitStack(battler, ABILITY_BALL_FETCH);
                 BattleScriptExecute(BattleScript_BallFetch);
                 effect++;
+                break;
             }
-			if (SearchTraits(battlerTraits, ABILITY_HUNGER_SWITCH)
+			if ((traitCheck = SearchTraits(battlerTraits, ABILITY_HUNGER_SWITCH)) && !gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1]
              && !gBattleMons[battler].volatiles.transformed
              && GetActiveGimmick(battler) != GIMMICK_TERA
              && TryBattleFormChange(battler, FORM_CHANGE_BATTLE_TURN_END))
 			{
+                gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1] = TRUE;
                 gBattleScripting.battler = battler;
                 PushTraitStack(battler, ABILITY_HUNGER_SWITCH);
                 BattleScriptExecute(BattleScript_BattlerFormChangeEnd3NoPopup);
                 effect++;
+                break;
 			}
-			if (SearchTraits(battlerTraits, ABILITY_CUD_CHEW))
+			if ((traitCheck = SearchTraits(battlerTraits, ABILITY_CUD_CHEW)) && !gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1])
 			{
                 if (gDisableStructs[battler].cudChew == TRUE)
                 {
+                    gSpecialStatuses[battler].EndTurnTraitDone[traitCheck - 1] = TRUE;
                     gBattleScripting.battler = battler;
                     gDisableStructs[battler].cudChew = FALSE;
                     gLastUsedItem = GetBattlerPartyState(battler)->usedHeldItem;
@@ -4944,6 +4987,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
                     PushTraitStack(battler, ABILITY_CUD_CHEW);
                     BattleScriptExecute(BattleScript_CudChewActivates);
                     effect++;
+                    break;
                 }
                     else if (!gDisableStructs[battler].cudChew && GetItemPocket(GetBattlerPartyState(battler)->usedHeldItem) == POCKET_BERRIES)
                 {

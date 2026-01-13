@@ -49,9 +49,12 @@ enum FieldEffectCases
 
 enum AbilityEffect
 {
-    ABILITYEFFECT_ON_SWITCHIN,
-    ABILITYEFFECT_ENDTURN,
-    ABILITYEFFECT_MOVE_END_ATTACKER,
+    ABILITYEFFECT_ON_SWITCHIN, // Activates all available abilities (Multi)
+    ABILITYEFFECT_ENDTURN, // Loops until all available abilities have activated one by one (Multi)
+    ABILITYEFFECT_ENDTURN_WEATHER, // Only activates one ability so effects like Dry Skin and Rain Dish need to be combined (Multi)
+    ABILITYEFFECT_ENDTURN_STATUS_CURE, // Only activates one ability (Multi)
+    ABILITYEFFECT_ENDTURN_FORM_CHANGE, // Only activates one ability (Multi)
+    ABILITYEFFECT_MOVE_END_ATTACKER, // Only activates one ability (Multi)
     ABILITYEFFECT_COLOR_CHANGE, // Color Change, Berserk, Anger Shell
     ABILITYEFFECT_MOVE_END,
     ABILITYEFFECT_IMMUNITY,

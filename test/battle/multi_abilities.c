@@ -964,35 +964,178 @@ SINGLE_BATTLE_TEST("Multi - Toxic Chain gets priority over Poison Touch and does
 SINGLE_BATTLE_TEST("Multi - Stat raising abilities do not conflict")
 {
     GIVEN {
-        PLAYER(SPECIES_PORYGON) { Ability(ABILITY_LIGHT_METAL); } //Innates(ABILITY_INTIMIDATE, ABILITY_SUPERSWEET_SYRUP); Defense(200); SpDefense(100); SpAttack(100); }
-        OPPONENT(SPECIES_WOBBUFFET) {  HP(20); MaxHP(100); Item(ITEM_ORAN_BERRY); Status1(STATUS1_POISON); } //Ability(ABILITY_MOODY); Innates(ABILITY_SPEED_BOOST, ABILITY_CUD_CHEW, ABILITY_SHED_SKIN);
+        PLAYER(SPECIES_PORYGON) { Ability(ABILITY_DOWNLOAD); Innates(ABILITY_SPEED_BOOST, ABILITY_MOODY, ABILITY_INTIMIDATE); }
+        OPPONENT(SPECIES_WOBBUFFET) {Defense(200); SpDefense(100);}
     } WHEN {
         TURN { }
-        TURN { }
     } SCENE {
-            // ABILITY_POPUP(player, ABILITY_DOWNLOAD);
-            // ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
-            // MESSAGE("Porygon's Download raised its Sp. Atk!");
-            // NONE_OF {
-            //     ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
-            // }
-            // ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
-
-            // ABILITY_POPUP(opponent, ABILITY_SHED_SKIN);
-            // ABILITY_POPUP(opponent, ABILITY_SPEED_BOOST);
-            // ABILITY_POPUP(opponent, ABILITY_MOODY);
-            // ABILITY_POPUP(opponent, ABILITY_SPEED_BOOST);
-            // ABILITY_POPUP(opponent, ABILITY_MOODY);
-            // ABILITY_POPUP(opponent, ABILITY_CUD_CHEW);
-
+        ABILITY_POPUP(player, ABILITY_DOWNLOAD);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
+        MESSAGE("Porygon's Download raised its Sp. Atk!");
+        ABILITY_POPUP(player, ABILITY_INTIMIDATE);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponent);
+        MESSAGE("Porygon's Intimidate cuts the opposing Wobbuffet's Attack!");
+        ABILITY_POPUP(player, ABILITY_SPEED_BOOST);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
+        MESSAGE("Porygon's Speed Boost raised its Speed!");
+        ABILITY_POPUP(player, ABILITY_MOODY);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
+        NONE_OF {
+            MESSAGE("Porygon's Speed rose!");
+        }
     }
 }
 
+SINGLE_BATTLE_TEST("Multi - ABILITYEFFECT_ON_SWITCHIN abilities do not conflict")
+{
+    GIVEN {
+        PLAYER(SPECIES_DITTO) { Ability(ABILITY_IMPOSTER); Innates(ABILITY_MOLD_BREAKER, ABILITY_UNNERVE, ABILITY_DOWNLOAD); }
+        OPPONENT(SPECIES_MEWTWO) {Ability(ABILITY_PRESSURE); Innates(ABILITY_DARK_AURA, ABILITY_DRIZZLE, ABILITY_PSYCHIC_SURGE); }
+    } WHEN {
+        TURN { }
+    } SCENE {
+        ABILITY_POPUP(player, ABILITY_DOWNLOAD);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
+        MESSAGE("Ditto's Download raised its Sp. Atk!");
+        ABILITY_POPUP(player, ABILITY_UNNERVE);
+        MESSAGE("The opposing team is too nervous to eat Berries!");
+        ABILITY_POPUP(player, ABILITY_MOLD_BREAKER);
+        MESSAGE("Ditto breaks the mold!");
+        ABILITY_POPUP(player, ABILITY_IMPOSTER);
+        MESSAGE("Ditto transformed into the opposing Mewtwo using Imposter!");
+        ABILITY_POPUP(opponent, ABILITY_PSYCHIC_SURGE);
+        MESSAGE("The battlefield got weird!");
+        ABILITY_POPUP(opponent, ABILITY_DRIZZLE);
+        MESSAGE("The opposing Mewtwo's Drizzle made it rain!");
+        ABILITY_POPUP(opponent, ABILITY_DARK_AURA);
+        MESSAGE("The opposing Mewtwo is radiating a dark aura!");
+        ABILITY_POPUP(opponent, ABILITY_PRESSURE);
+        MESSAGE("The opposing Mewtwo is exerting its pressure!");
+    }
+}
 
-// SINGLE_BATTLE_TEST("Multi - Stat raising abilities do not conflict")
+SINGLE_BATTLE_TEST("Multi - ABILITYEFFECT_ENDTURN abilities do not conflict")
+{
+    GIVEN {
+        PLAYER(SPECIES_BLAZIKEN_MEGA) { Ability(ABILITY_SPEED_BOOST); Innates(ABILITY_MOODY, ABILITY_HARVEST, ABILITY_BAD_DREAMS); Item(ITEM_ORAN_BERRY); HP(20); MaxHP(100); }
+        OPPONENT(SPECIES_WOBBUFFET) { Status1(STATUS1_SLEEP); }
+    } WHEN {
+        TURN { }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
+        HP_BAR(player);
+        ABILITY_POPUP(player, ABILITY_HARVEST);
+        MESSAGE("Blaziken harvested its Oran Berry!");
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
+        HP_BAR(player);
+        ABILITY_POPUP(player, ABILITY_SPEED_BOOST);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
+        MESSAGE("Blaziken's Speed Boost raised its Speed!");
+        ABILITY_POPUP(player, ABILITY_MOODY);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
+        ABILITY_POPUP(player, ABILITY_BAD_DREAMS);
+        MESSAGE("The opposing Wobbuffet is tormented!");
+        HP_BAR(opponent);
+    }
+}
+
+DOUBLE_BATTLE_TEST("Multi - ABILITYEFFECT_ENDTURN_STATUS_CURE abilities do not conflict (only one activates at a time)")
+{
+    u32 ability;
+    PARAMETRIZE { ability = ABILITY_HYDRATION; }
+    PARAMETRIZE { ability = ABILITY_LEVITATE; }
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_KYOGRE) { Status1(STATUS1_BURN); }
+        OPPONENT(SPECIES_CHANSEY) { Ability(ABILITY_HEALER); Innates(ability, ABILITY_SHED_SKIN); Status1(STATUS1_BURN); }
+    } WHEN {
+        TURN { }
+    } SCENE {
+        if (ability == ABILITY_HYDRATION)
+        {
+            MESSAGE("The opposing Chansey's Hydration cured its burn problem!");
+        }
+        else
+        {
+            MESSAGE("The opposing Chansey's Shed Skin cured its burn problem!");
+        }
+        ABILITY_POPUP(opponentRight, ABILITY_HEALER);
+        MESSAGE("The opposing Chansey's Healer cured the opposing Kyogre's problem!");
+        NONE_OF {
+            STATUS_ICON(opponentLeft, burn: TRUE);
+            STATUS_ICON(opponentRight, burn: TRUE);
+        }
+    }
+}
+
+SINGLE_BATTLE_TEST("Multi - ABILITYEFFECT_MOVE_END_ATTACKER abilities do not conflict (only one activates at a time)")
+{
+    u32 ability, innate1, innate2, innate3;
+    PARAMETRIZE { ability = ABILITY_POISON_TOUCH; innate1 = ABILITY_TOXIC_CHAIN; innate2 = ABILITY_STENCH; innate3 = ABILITY_POISON_PUPPETEER; }
+    PARAMETRIZE { ability = ABILITY_LEVITATE; innate1 = ABILITY_LEVITATE; innate2 = ABILITY_STENCH; innate3 = ABILITY_POISON_PUPPETEER; }
+    PARAMETRIZE { ability = ABILITY_LEVITATE; innate1 = ABILITY_LEVITATE; innate2 = ABILITY_STENCH; innate3 = ABILITY_LEVITATE; }
+    GIVEN {
+        PLAYER(SPECIES_PECHARUNT) { Ability(ability); Innates(innate1, innate2, innate3); }
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { MOVE(player, MOVE_POISON_STING); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_POISON_STING, player);
+        if (innate1 == ABILITY_TOXIC_CHAIN)
+        {
+            ABILITY_POPUP(player, ABILITY_TOXIC_CHAIN);
+            ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PSN, opponent);
+            MESSAGE("The opposing Wobbuffet was badly poisoned!");
+            STATUS_ICON(opponent, badPoison: TRUE);
+            NONE_OF {
+                ABILITY_POPUP(player, ABILITY_POISON_TOUCH);
+                ABILITY_POPUP(player, ABILITY_POISON_PUPPETEER);
+            }
+        }
+        else if (innate3 == ABILITY_POISON_PUPPETEER)
+        {
+            ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PSN, opponent);
+            MESSAGE("The opposing Wobbuffet was poisoned!");
+            ABILITY_POPUP(player, ABILITY_POISON_PUPPETEER);
+            MESSAGE("The opposing Wobbuffet became confused!");
+        }
+        else if (innate2 == ABILITY_STENCH)
+        {
+            MESSAGE("The opposing Wobbuffet flinched and couldn't move!");
+        }
+    }
+}
+
+SINGLE_BATTLE_TEST("Multi - ABILITYEFFECT_MOVE_END abilities do not conflict")
+{
+    GIVEN {
+        PLAYER(SPECIES_MUDSDALE) { Ability(ABILITY_STAMINA); Innates(ABILITY_WEAK_ARMOR, ABILITY_CURSED_BODY, ABILITY_GOOEY); }
+        OPPONENT(SPECIES_DUGTRIO_ALOLA) { Ability(ABILITY_TANGLING_HAIR); Innates(ABILITY_INNARDS_OUT, ABILITY_FLAME_BODY, ABILITY_COTTON_DOWN); }
+    } WHEN {
+        TURN { MOVE(opponent, MOVE_SCRATCH); MOVE(player, MOVE_SCRATCH); }
+    } SCENE {
+        // ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
+        // HP_BAR(player);
+        // ABILITY_POPUP(player, ABILITY_HARVEST);
+        // MESSAGE("Blaziken harvested its Oran Berry!");
+        // ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
+        // HP_BAR(player);
+        // ABILITY_POPUP(player, ABILITY_SPEED_BOOST);
+        // ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
+        // MESSAGE("Blaziken's Speed Boost raised its Speed!");
+        // ABILITY_POPUP(player, ABILITY_MOODY);
+        // ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
+        // ABILITY_POPUP(player, ABILITY_BAD_DREAMS);
+        // MESSAGE("The opposing Wobbuffet is tormented!");
+        // HP_BAR(opponent);
+    }
+}
+
+// SINGLE_BATTLE_TEST("Multi - End Turn Abilities do not conflict")
 // {
 //     GIVEN {
-//         PLAYER(SPECIES_PORYGON); { Ability(ABILITY_LIGHT_METAL); } //Innates(ABILITY_INTIMIDATE, ABILITY_SUPERSWEET_SYRUP); Defense(200); SpDefense(100); SpAttack(100); }
+//         PLAYER(SPECIES_PORYGON); { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_INTIMIDATE, ABILITY_SUPERSWEET_SYRUP); Defense(200); SpDefense(100); SpAttack(100); }
 //         OPPONENT(SPECIES_WOBBUFFET) { Ability(ABILITY_MOODY); Innates(ABILITY_SPEED_BOOST); Defense(200); SpDefense(100); SpAttack(100); Status1(STATUS1_POISON); }
 //     } WHEN {
 //         TURN { }

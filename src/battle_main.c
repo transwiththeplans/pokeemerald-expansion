@@ -3276,7 +3276,7 @@ void SwitchInClearSetData(u32 battler, struct Volatiles *volatilesCopy)
     for(int j=0; j<=MAX_MON_INNATES; j++)
     {
         gSpecialStatuses[battler].switchInTraitDone[j] = FALSE;
-        gSpecialStatuses[battler].EndTurnTraitDone[j] = FALSE;
+        gSpecialStatuses[battler].endTurnTraitDone[j] = FALSE;
     }
 
     // Reset damage to prevent things like red card activating if the switched-in mon is holding it

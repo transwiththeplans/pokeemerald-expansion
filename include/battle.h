@@ -217,7 +217,7 @@ struct SpecialStatus
     u8 padding3:5;
     // End of byte
     bool8 switchInTraitDone[MAX_MON_TRAITS];
-    bool8 EndTurnTraitDone[MAX_MON_TRAITS];
+    bool8 endTurnTraitDone[MAX_MON_TRAITS];
 };
 
 struct SideTimer

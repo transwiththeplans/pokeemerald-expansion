@@ -3076,7 +3076,7 @@ void SetMoveEffect(u32 battler, u32 effectBattler, enum MoveEffect moveEffect, c
     if (!primary && !affectsUser && IsMoveEffectBlockedByTarget())
         moveEffect = MOVE_EFFECT_NONE;
     else if (!primary
-          && IsSheerForceAffected(gCurrentMove, GetBattlerAbility(battler))
+          && IsSheerForceAffected(gCurrentMove, battler)
           && !(GetMoveEffect(gCurrentMove) == EFFECT_ORDER_UP && gBattleStruct->battlerState[gBattlerAttacker].commanderSpecies != SPECIES_NONE))
         moveEffect = MOVE_EFFECT_NONE;
     else if (!IsBattlerAlive(gEffectBattler) && !activateAfterFaint)
@@ -3885,7 +3885,7 @@ void SetMoveEffect(u32 battler, u32 effectBattler, enum MoveEffect moveEffect, c
             default:
                 break;
         }
-        if (TryChangeBattleWeather(gBattlerAttacker, weather, ABILITY_NONE))
+        if (TryChangeBattleWeather(gBattlerAttacker, weather, FALSE))
         {
             gBattleCommunication[MULTISTRING_CHOOSER] = msg;
             BattleScriptPush(battleScript);
@@ -6477,7 +6477,7 @@ static void Cmd_moveend(void)
                 && gBattlerTarget != gBattlerAttacker
                 && !IsBattlerAlly(gBattlerTarget, gBattlerAttacker)
                 && gProtectStructs[gBattlerTarget].physicalBattlerId == gBattlerAttacker
-                && !IsSheerForceAffected(gCurrentMove, GetBattlerAbility(gBattlerAttacker)))
+                && !IsSheerForceAffected(gCurrentMove, gBattlerAttacker))
             {
                 gProtectStructs[gBattlerTarget].shellTrap = TRUE;
                 // Change move order in double battles, so the hit mon with shell trap moves immediately after being hit.
@@ -6737,7 +6737,7 @@ static void Cmd_moveend(void)
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_SHEER_FORCE:
-            if (IsSheerForceAffected(gCurrentMove, GetBattlerAbility(gBattlerAttacker)))
+            if (IsSheerForceAffected(gCurrentMove, gBattlerAttacker))
                 gBattleScripting.moveendState = MOVEEND_EJECT_PACK;
             else
                 gBattleScripting.moveendState++;
@@ -9911,7 +9911,7 @@ static void Cmd_setfieldweather(void)
 
     u8 battleWeatherId = cmd->weather;
 
-    if (!TryChangeBattleWeather(gBattlerAttacker, battleWeatherId, ABILITY_NONE))
+    if (!TryChangeBattleWeather(gBattlerAttacker, battleWeatherId, FALSE))
     {
         gBattleStruct->moveResultFlags[gBattlerTarget] |= MOVE_RESULT_MISSED;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEATHER_FAILED;
@@ -16476,7 +16476,7 @@ void BS_JumpIfIntimidateAbilityPrevented(void)
         gBattlescriptCurrInstr = BattleScript_IntimidateInReverse;
         RecordAbilityBattle(gBattlerTarget, ABILITY_GUARD_DOG);
     }
-    else if (ability != ABILITY_NONE && GetGenConfig(GEN_CONFIG_UPDATED_INTIMIDATE) >= GEN_8)
+    else if (ability != ABILITY_NONE && GetConfig(CONFIG_UPDATED_INTIMIDATE) >= GEN_8)
     {
         gLastUsedAbility = ability;
         gBattlerAbility = gBattlerTarget;
@@ -18199,7 +18199,7 @@ void BS_TryAbsorbToxicSpikesOnFaint(void)
         return;
     }
 
-    if (IsBattlerGrounded(battler, GetBattlerAbility(battler), GetBattlerHoldEffect(battler))
+    if (IsBattlerGrounded(battler, GetBattlerHoldEffect(battler))
      && IS_BATTLER_OF_TYPE(battler, TYPE_POISON))
     {
         gSideTimers[side].toxicSpikesAmount = 0;

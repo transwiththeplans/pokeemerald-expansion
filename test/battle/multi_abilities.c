@@ -986,7 +986,7 @@ SINGLE_BATTLE_TEST("Multi - Stat raising abilities do not conflict")
     }
 }
 
-SINGLE_BATTLE_TEST("Multi - ABILITYEFFECT_ON_SWITCHIN abilities do not conflict")
+SINGLE_BATTLE_TEST("Multi - ABILITYEFFECT_ON_SWITCHIN abilities do not conflict 1")
 {
     GIVEN {
         PLAYER(SPECIES_DITTO) { Ability(ABILITY_IMPOSTER); Innates(ABILITY_MOLD_BREAKER, ABILITY_UNNERVE, ABILITY_DOWNLOAD); }
@@ -1011,6 +1011,44 @@ SINGLE_BATTLE_TEST("Multi - ABILITYEFFECT_ON_SWITCHIN abilities do not conflict"
         MESSAGE("The opposing Mewtwo is radiating a dark aura!");
         ABILITY_POPUP(opponent, ABILITY_PRESSURE);
         MESSAGE("The opposing Mewtwo is exerting its pressure!");
+    }
+}
+
+DOUBLE_BATTLE_TEST("Multi - ABILITYEFFECT_ON_SWITCHIN abilities do not conflict 2")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_SCOLIPEDE) { HP(50); MaxHP(100); }
+        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_SLOWKING_GALAR) { Ability(ABILITY_CURIOUS_MEDICINE); Innates(ABILITY_UNNERVE, ABILITY_INTIMIDATE, ABILITY_HOSPITALITY); }
+    } WHEN {
+        TURN { MOVE(opponentLeft, MOVE_QUIVER_DANCE); MOVE(playerLeft, MOVE_CHARM, target: opponentLeft); }
+        TURN { SWITCH(opponentRight, 2); MOVE(playerLeft, MOVE_CELEBRATE); }
+    } SCENE {
+        // Turn 1 - buff up
+        MESSAGE("The opposing Scolipede used Quiver Dance!");
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponentLeft);
+        // Turn 2 - Switch into Slowking
+        MESSAGE("2 sent out Slowking!");
+        ABILITY_POPUP(opponentRight, ABILITY_HOSPITALITY);
+        MESSAGE("The opposing Scolipede drank down all the matcha that the opposing Slowking made!");
+        HP_BAR(opponentLeft);
+        ABILITY_POPUP(opponentRight, ABILITY_CURIOUS_MEDICINE);
+        MESSAGE("The opposing Scolipede's stat changes were removed!");
+        ABILITY_POPUP(opponentRight, ABILITY_UNNERVE);
+        MESSAGE("Your team is too nervous to eat Berries!");
+        ABILITY_POPUP(opponentRight, ABILITY_INTIMIDATE);
+        MESSAGE("The opposing Slowking's Intimidate cuts Wobbuffet's Attack!");
+        MESSAGE("The opposing Slowking's Intimidate cuts Wobbuffet's Attack!");
+    } THEN {
+        EXPECT_EQ(opponentLeft->statStages[STAT_ATK], DEFAULT_STAT_STAGE);
+        EXPECT_EQ(opponentLeft->statStages[STAT_DEF], DEFAULT_STAT_STAGE);
+        EXPECT_EQ(opponentLeft->statStages[STAT_SPEED], DEFAULT_STAT_STAGE);
+        EXPECT_EQ(opponentLeft->statStages[STAT_SPATK], DEFAULT_STAT_STAGE);
+        EXPECT_EQ(opponentLeft->statStages[STAT_SPDEF], DEFAULT_STAT_STAGE);
+        EXPECT_EQ(opponentLeft->statStages[STAT_ACC], DEFAULT_STAT_STAGE);
+        EXPECT_EQ(opponentLeft->statStages[STAT_EVASION], DEFAULT_STAT_STAGE);
     }
 }
 

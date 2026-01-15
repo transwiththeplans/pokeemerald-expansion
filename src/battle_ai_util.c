@@ -1009,7 +1009,7 @@ static bool32 AI_IsMoveEffectInPlus(u32 battlerAtk, u32 battlerDef, u32 move, s3
 {
     u32 i;
 
-    if (IsSheerForceAffected(move, abilityAtk))
+    if (IsSheerForceAffected(move, battlerAtk))
         return FALSE;
 
     switch (GetMoveEffect(move))

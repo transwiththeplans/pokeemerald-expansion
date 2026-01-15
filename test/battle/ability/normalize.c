@@ -356,7 +356,7 @@ SINGLE_BATTLE_TEST("Normalize doesn't boost power of unaffected moves by 20% (< 
     PARAMETRIZE { ability = ABILITY_NORMALIZE; }
 
     GIVEN {
-        WITH_CONFIG(GEN_CONFIG_ATE_MULTIPLIER, GEN_6);
+        WITH_CONFIG(CONFIG_ATE_MULTIPLIER, GEN_6);
         PLAYER(SPECIES_DELCATTY) { Ability(ABILITY_WONDER_SKIN); Innates(ability); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -375,7 +375,7 @@ SINGLE_BATTLE_TEST("Normalize boosts power of unaffected moves by 20% (Gen7+) (M
     PARAMETRIZE { ability = ABILITY_NORMALIZE; }
 
     GIVEN {
-        WITH_CONFIG(GEN_CONFIG_ATE_MULTIPLIER, GEN_7);
+        WITH_CONFIG(CONFIG_ATE_MULTIPLIER, GEN_7);
         PLAYER(SPECIES_DELCATTY) { Ability(ABILITY_WONDER_SKIN); Innates(ability); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -394,7 +394,7 @@ SINGLE_BATTLE_TEST("Normalize doesn't boost power of affected moves by 20% (< Ge
     PARAMETRIZE { ability = ABILITY_NORMALIZE; }
 
     GIVEN {
-        WITH_CONFIG(GEN_CONFIG_ATE_MULTIPLIER, GEN_6);
+        WITH_CONFIG(CONFIG_ATE_MULTIPLIER, GEN_6);
         PLAYER(SPECIES_SKITTY) { Ability(ABILITY_WONDER_SKIN); Innates(ability); Moves(MOVE_WATER_GUN); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -413,7 +413,7 @@ SINGLE_BATTLE_TEST("Normalize boosts power of affected moves by 20% (Gen7+) (Mul
     PARAMETRIZE { ability = ABILITY_NORMALIZE; }
 
     GIVEN {
-        WITH_CONFIG(GEN_CONFIG_ATE_MULTIPLIER, GEN_7);
+        WITH_CONFIG(CONFIG_ATE_MULTIPLIER, GEN_7);
         PLAYER(SPECIES_SKITTY) { Ability(ABILITY_WONDER_SKIN); Innates(ability); Moves(MOVE_WATER_GUN); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {

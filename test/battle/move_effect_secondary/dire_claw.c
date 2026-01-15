@@ -139,7 +139,7 @@ SINGLE_BATTLE_TEST("Dire Claw cannot poison/paralyze/cause to fall asleep Pokém
     PARAMETRIZE { statusAnim = B_ANIM_STATUS_SLP; rng = MOVE_EFFECT_SLEEP; species = SPECIES_HYPNO; ability = ABILITY_INSOMNIA; }
 
     GIVEN {
-        WITH_CONFIG(GEN_CONFIG_PARALYZE_ELECTRIC, GEN_5); // To prevent Electric paralysis immunity from affecting the test
+        WITH_CONFIG(CONFIG_PARALYZE_ELECTRIC, GEN_5); // To prevent Electric paralysis immunity from affecting the test
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(species) { Ability(ABILITY_LIGHT_METAL); Innates(ability); }
     } WHEN {

@@ -423,7 +423,7 @@ SINGLE_BATTLE_TEST("Beat Up's damage considers Huge Power and Choice Band (Gen5+
     PARAMETRIZE { ability = ABILITY_THICK_FAT;   item = ITEM_CHOICE_BAND; }
 
     GIVEN {
-        WITH_CONFIG(GEN_CONFIG_BEAT_UP, GEN_5);
+        WITH_CONFIG(CONFIG_BEAT_UP, GEN_5);
         PLAYER(SPECIES_AZUMARILL) { Ability(ABILITY_SAP_SIPPER); Innates(ability); Item(item); Moves(MOVE_BEAT_UP); }
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_WOBBUFFET);
@@ -448,7 +448,7 @@ SINGLE_BATTLE_TEST("Beat Up ignores Huge Power (Multi)", s16 damage)
     PARAMETRIZE { ability = ABILITY_HUGE_POWER; }
 
     GIVEN {
-        WITH_CONFIG(GEN_CONFIG_BEAT_UP, GEN_3);
+        WITH_CONFIG(CONFIG_BEAT_UP, GEN_3);
         PLAYER(SPECIES_AZUMARILL) { Ability(ABILITY_SAP_SIPPER); Innates(ability); Moves(MOVE_BEAT_UP); }
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_WOBBUFFET);

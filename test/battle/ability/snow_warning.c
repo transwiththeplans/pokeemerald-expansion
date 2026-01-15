@@ -140,7 +140,7 @@ SINGLE_BATTLE_TEST("Snow Warning sets up snow for 8 turns with Icy Rock (Gen9+)"
 SINGLE_BATTLE_TEST("Snow Warning summons hail (Gen4-8) (Multi)")
 {
     GIVEN {
-        WITH_CONFIG(GEN_SNOW_WARNING, GEN_8);
+        WITH_CONFIG(CONFIG_SNOW_WARNING, GEN_8);
         PLAYER(SPECIES_ABOMASNOW) { Ability(ABILITY_SOUNDPROOF); Innates(ABILITY_SNOW_WARNING); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -154,7 +154,7 @@ SINGLE_BATTLE_TEST("Snow Warning summons hail (Gen4-8) (Multi)")
 SINGLE_BATTLE_TEST("Snow Warning summons snow (Gen9+) (Multi)")
 {
     GIVEN {
-        WITH_CONFIG(GEN_SNOW_WARNING, GEN_9);
+        WITH_CONFIG(CONFIG_SNOW_WARNING, GEN_9);
         PLAYER(SPECIES_ABOMASNOW) { Ability(ABILITY_SOUNDPROOF); Innates(ABILITY_SNOW_WARNING); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {

@@ -441,7 +441,7 @@ DOUBLE_BATTLE_TEST("Transistor Damage calculation (Multi)", s16 damage)
                     }
     }
     GIVEN {
-        WITH_CONFIG(GEN_CONFIG_TRANSISTOR_BOOST, gen);
+        WITH_CONFIG(CONFIG_TRANSISTOR_BOOST, gen);
         ASSUME(GetMoveType(MOVE_WILD_CHARGE) == TYPE_ELECTRIC);
         ASSUME(GetMoveType(MOVE_THUNDER_SHOCK) == TYPE_ELECTRIC);
         ASSUME(GetMoveCategory(MOVE_WILD_CHARGE) == DAMAGE_CATEGORY_PHYSICAL);

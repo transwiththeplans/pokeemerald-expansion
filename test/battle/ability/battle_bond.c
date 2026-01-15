@@ -194,7 +194,7 @@ SINGLE_BATTLE_TEST("Battle Bond increases a Stat even if only one can be increas
 SINGLE_BATTLE_TEST("Battle Bond increases Atk, SpAtk and Speed by 1 stage (Gen9+) (Multi)")
 {
     GIVEN {
-        WITH_CONFIG(GEN_CONFIG_BATTLE_BOND, GEN_9);
+        WITH_CONFIG(CONFIG_BATTLE_BOND, GEN_9);
         PLAYER(SPECIES_GRENINJA_BATTLE_BOND) { Ability(ABILITY_TORRENT); Innates(ABILITY_BATTLE_BOND); }
         OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
         OPPONENT(SPECIES_WOBBUFFET);
@@ -215,7 +215,7 @@ SINGLE_BATTLE_TEST("Battle Bond increases Atk, SpAtk and Speed by 1 stage (Gen9+
 SINGLE_BATTLE_TEST("Battle Bond increases a Stat even if only one can be increased (Gen9+) (Multi)")
 {
     GIVEN {
-        WITH_CONFIG(GEN_CONFIG_BATTLE_BOND, GEN_9);
+        WITH_CONFIG(CONFIG_BATTLE_BOND, GEN_9);
         PLAYER(SPECIES_GRENINJA_BATTLE_BOND) { Ability(ABILITY_TORRENT); Innates(ABILITY_BATTLE_BOND); }
         OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
         OPPONENT(SPECIES_WOBBUFFET);

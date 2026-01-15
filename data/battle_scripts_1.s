@@ -4188,8 +4188,8 @@ BattleScript_EffectSkillSwap::
 	attackanimation
 	waitanimation
 	jumpiftargetally BattleScript_EffectSkillSwap_AfterAbilityPopUp
-	pushtraitstack BS_ATTACKER ABILITY_VOLT_ABSORB @ Generates placeholder popup entry
 	copybyte gBattlerAbility, gBattlerAttacker
+	pushtraitstack BS_ATTACKER ABILITY_VOLT_ABSORB @ Generates placeholder popup entry
 	call BattleScript_AbilityPopUpOverwriteThenNormal
 	copybyte gBattlerAbility, gBattlerTarget
 	copyhword sABILITY_OVERWRITE, gLastUsedAbility
@@ -7266,9 +7266,11 @@ BattleScript_WanderingSpiritActivates::
 	savetarget
 	copybyte gBattlerAbility, gBattlerTarget
 	sethword sABILITY_OVERWRITE, ABILITY_WANDERING_SPIRIT
+	pushtraitstack BS_TARGET ABILITY_WANDERING_SPIRIT @ Generates placeholder popup entry
 	call BattleScript_AbilityPopUpOverwriteThenNormal
 	copybyte gBattlerAbility, gBattlerAttacker
 	copyhword sABILITY_OVERWRITE, gLastUsedAbility
+	pushtraitstack BS_ATTACKER ABILITY_WANDERING_SPIRIT @ Generates placeholder popup entry
 	call BattleScript_AbilityPopUpOverwriteThenNormal
 	recordability BS_TARGET
 	recordability BS_ATTACKER
@@ -7631,30 +7633,30 @@ BattleScript_PasteVeilActivates::
 	waitmessage B_WAIT_TIME_LONG
 	end3
 
-BattleScript_HurtAttacker:
+BattleScript_HurtAttackerItem:
 	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
 	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
-	printstring STRINGID_PKMNHURTSWITH
+	printstring STRINGID_PKMNHURTSWITHITEM
 	waitmessage B_WAIT_TIME_LONG
 	tryfaintmon BS_ATTACKER
 	return
 
-BattleScript_HurtAttacker2:
+BattleScript_HurtAttackerAbility:
 	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
 	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
-	printstring STRINGID_PKMNHURTSWITH2
+	printstring STRINGID_PKMNHURTSWITHABILITY
 	waitmessage B_WAIT_TIME_LONG
 	tryfaintmon BS_ATTACKER
 	return
 
 BattleScript_RoughSkinActivates::
 	call BattleScript_AbilityPopUp
-	call BattleScript_HurtAttacker
+	call BattleScript_HurtAttackerAbility
 	return
 
 BattleScript_IronBarbsActivates::
 	call BattleScript_AbilityPopUp
-	call BattleScript_HurtAttacker2
+	call BattleScript_HurtAttackerAbility
 	return
 
 BattleScript_RockyHelmetActivates::
@@ -7663,7 +7665,7 @@ BattleScript_RockyHelmetActivates::
 	playanimation BS_TARGET, B_ANIM_HELD_ITEM_EFFECT
 	waitanimation
 BattleScript_RockyHelmetActivatesDmg:
-	call BattleScript_HurtAttacker
+	call BattleScript_HurtAttackerItem
 	return
 
 BattleScript_SpikyShieldEffect::
@@ -7671,7 +7673,7 @@ BattleScript_SpikyShieldEffect::
 	clearmoveresultflags MOVE_RESULT_NO_EFFECT
 	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
 	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
-	printstring STRINGID_PKMNHURTSWITH
+	printstring STRINGID_PKMNHURTSWITHITEM
 	waitmessage B_WAIT_TIME_LONG
 	tryfaintmon BS_ATTACKER
 	setmoveresultflags MOVE_RESULT_MISSED
@@ -7721,8 +7723,16 @@ BattleScript_TanglingHairActivates::
 BattleScript_TanglingHairActivatesRet:
 	return
 
-BattleScript_AbilityStatusEffect::
+BattleScript_AbilityStatusEffectAtk::
 	waitstate
+	copybyte gEffectBattler, gBattlerTarget
+	call BattleScript_AbilityPopUp
+	setnonvolatilestatus TRIGGER_ON_ABILITY
+	return
+
+BattleScript_AbilityStatusEffectDef::
+	waitstate
+	copybyte gEffectBattler, gBattlerAttacker
 	call BattleScript_AbilityPopUp
 	setnonvolatilestatus TRIGGER_ON_ABILITY
 	return
@@ -8393,7 +8403,7 @@ BattleScript_JabocaRowapBerryActivate_Anim:
 	playanimation BS_TARGET, B_ANIM_HELD_ITEM_EFFECT
 	waitanimation
 BattleScript_JabocaRowapBerryActivate_Dmg:
-	call BattleScript_HurtAttacker
+	call BattleScript_HurtAttackerItem
 	removeitem BS_TARGET
 	return
 
@@ -8686,47 +8696,35 @@ BattleScript_SymbiosisActivates::
 	return
 
 BattleScript_TargetAbilityStatRaiseRetJustified::
-	saveattacker
-	copybyte gBattlerAttacker, gEffectBattler
-	setstatchanger STAT_SPATK, 1, FALSE
+	setstatchanger STAT_ATK, 1, FALSE
 	call BattleScript_AbilityPopUp
-	statbuffchange BS_ATTACKER, STAT_CHANGE_CERTAIN, BattleScript_TargetAbilityStatRaiseRetJustified_End
+	statbuffchange BS_TARGET, STAT_CHANGE_CERTAIN, BattleScript_TargetAbilityStatRaiseRetJustified_End
 	call BattleScript_StatUp
 BattleScript_TargetAbilityStatRaiseRetJustified_End:
-	restoreattacker
 	return
 
 BattleScript_TargetAbilityStatRaiseRetRattled::
-	saveattacker
-	copybyte gBattlerAttacker, gEffectBattler
 	setstatchanger STAT_SPEED, 1, FALSE
 	call BattleScript_AbilityPopUp
-	statbuffchange BS_ATTACKER, STAT_CHANGE_CERTAIN, BattleScript_TargetAbilityStatRaiseRetRattled_End
+	statbuffchange BS_TARGET, STAT_CHANGE_CERTAIN, BattleScript_TargetAbilityStatRaiseRetRattled_End
 	call BattleScript_StatUp
 BattleScript_TargetAbilityStatRaiseRetRattled_End:
-	restoreattacker
 	return
 
 BattleScript_TargetAbilityStatRaiseRetWaterCompaction::
-	saveattacker
-	copybyte gBattlerAttacker, gEffectBattler
 	setstatchanger STAT_DEF, 2, FALSE
 	call BattleScript_AbilityPopUp
-	statbuffchange BS_ATTACKER, STAT_CHANGE_CERTAIN, BattleScript_TargetAbilityStatRaiseRetWaterCompaction_End
+	statbuffchange BS_TARGET, STAT_CHANGE_CERTAIN, BattleScript_TargetAbilityStatRaiseRetWaterCompaction_End
 	call BattleScript_StatUp
 BattleScript_TargetAbilityStatRaiseRetWaterCompaction_End:
-	restoreattacker
 	return
 
 BattleScript_TargetAbilityStatRaiseRetStamina::
-	saveattacker
-	copybyte gBattlerAttacker, gEffectBattler
 	setstatchanger STAT_DEF, 1, FALSE
 	call BattleScript_AbilityPopUp
-	statbuffchange BS_ATTACKER, STAT_CHANGE_CERTAIN, BattleScript_TargetAbilityStatRaiseRetStamina_End
+	statbuffchange BS_TARGET, STAT_CHANGE_CERTAIN, BattleScript_TargetAbilityStatRaiseRetStamina_End
 	call BattleScript_StatUp
 BattleScript_TargetAbilityStatRaiseRetStamina_End:
-	restoreattacker
 	return
 
 BattleScript_TargetAbilityStatRaiseRetBerserk::

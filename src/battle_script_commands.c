@@ -6097,7 +6097,7 @@ static void Cmd_moveend(void)
 {
     CMD_ARGS(u8 endMode, u8 endState);
 
-    s32 i, j;
+    s32 i;
     bool32 effect = FALSE;
     u32 moveType = 0;
     u32 endMode, endState;
@@ -6315,12 +6315,7 @@ static void Cmd_moveend(void)
             break;
         case MOVEEND_ABILITIES: // Such as abilities activating on contact(Poison Spore, Rough Skin, etc.).
             {
-                for (j = 0; j < MAX_MON_TRAITS; j++)
-                {    
-                    if (!AbilityBattleEffects(ABILITYEFFECT_MOVE_END, gBattlerTarget, 0, 0))
-                        break;
-                }
-                if (j > 0)
+                if (AbilityBattleEffects(ABILITYEFFECT_MOVE_END, gBattlerTarget, 0, 0))
                     effect = TRUE;
                 else if (TryClearIllusion(gBattlerTarget, ABILITYEFFECT_MOVE_END))
                     effect = TRUE;

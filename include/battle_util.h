@@ -55,19 +55,19 @@ enum AbilityEffect
     ABILITYEFFECT_ENDTURN_STATUS_CURE, // Only activates one ability (Multi)
     ABILITYEFFECT_ENDTURN_FORM_CHANGE, // Only activates one ability (Multi)
     ABILITYEFFECT_MOVE_END_ATTACKER, // Only activates one ability (Multi)
-    ABILITYEFFECT_COLOR_CHANGE, // Color Change, Berserk, Anger Shell
-    ABILITYEFFECT_MOVE_END,
-    ABILITYEFFECT_IMMUNITY,
+    ABILITYEFFECT_COLOR_CHANGE, // Activates all available abilities (Multi)
+    ABILITYEFFECT_MOVE_END, // Activates all available abilities (Multi)
+    ABILITYEFFECT_IMMUNITY, // Only activates one ability (Multi)
     ABILITYEFFECT_SYNCHRONIZE,
     ABILITYEFFECT_ATK_SYNCHRONIZE,
     ABILITYEFFECT_MOVE_END_OTHER,
     ABILITYEFFECT_NEUTRALIZINGGAS,
     ABILITYEFFECT_NEUTRALIZINGGAS_FIRST_TURN,
-    ABILITYEFFECT_ON_WEATHER,
-    ABILITYEFFECT_ON_TERRAIN,
+    ABILITYEFFECT_ON_WEATHER, // Only activates one ability (Multi)
+    ABILITYEFFECT_ON_TERRAIN, // Only activates one ability (Multi)
     ABILITYEFFECT_OPPORTUNIST,
     ABILITYEFFECT_OPPORTUNIST_FIRST_TURN,
-    ABILITYEFFECT_ON_SWITCHIN_IMMUNITIES,
+    ABILITYEFFECT_ON_SWITCHIN_IMMUNITIES, // Only activates one ability (Multi)
 };
 
 #define STORE_BATTLER_TRAITS(battler) \

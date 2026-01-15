@@ -4972,21 +4972,6 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
         }
         break;
     case ABILITYEFFECT_COLOR_CHANGE:
-        if (SearchTraits(battlerTraits, ABILITY_COLOR_CHANGE)
-         && IsBattlerTurnDamaged(battler)
-         && IsBattlerAlive(battler)
-         && !IS_BATTLER_OF_TYPE(battler, moveType)
-         && move != MOVE_STRUGGLE
-         && moveType != TYPE_STELLAR
-         && moveType != TYPE_MYSTERY)
-        {
-            gEffectBattler = gBattlerAbility = battler;
-            SET_BATTLER_TYPE(battler, moveType);
-            PREPARE_TYPE_BUFFER(gBattleTextBuff1, moveType);
-            PushTraitStack(battler, ABILITY_COLOR_CHANGE);
-            BattleScriptCall(BattleScript_ColorChangeActivates);
-            effect++;
-        }
         if (SearchTraits(battlerTraits, ABILITY_BERSERK)
          && IsBattlerTurnDamaged(battler)
          && IsBattlerAlive(battler)
@@ -5005,6 +4990,21 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
         {
             PushTraitStack(gBattlerTarget, ABILITY_ANGER_SHELL);
             BattleScriptCall(BattleScript_AngerShellActivates);
+            effect++;
+        }
+        if (SearchTraits(battlerTraits, ABILITY_COLOR_CHANGE) // Last so the other abilities don't overwrite the gBattleTextBuff1
+         && IsBattlerTurnDamaged(battler)
+         && IsBattlerAlive(battler)
+         && !IS_BATTLER_OF_TYPE(battler, moveType)
+         && move != MOVE_STRUGGLE
+         && moveType != TYPE_STELLAR
+         && moveType != TYPE_MYSTERY)
+        {
+            gEffectBattler = gBattlerAbility = battler;
+            SET_BATTLER_TYPE(battler, moveType);
+            PREPARE_TYPE_BUFFER(gBattleTextBuff1, moveType);
+            PushTraitStack(battler, ABILITY_COLOR_CHANGE);
+            BattleScriptCall(BattleScript_ColorChangeActivates);
             effect++;
         }
         break;
@@ -5076,7 +5076,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
         {
             gDisableStructs[gBattlerAttacker].disabledMove = gChosenMove;
             gDisableStructs[gBattlerAttacker].disableTimer = 4;
-            PREPARE_MOVE_BUFFER(gBattleTextBuff1, gChosenMove);
+            PREPARE_MOVE_BUFFER(gBattleTextBuff3, gChosenMove);
             PushTraitStack(battler, ABILITY_CURSED_BODY);
             BattleScriptCall(BattleScript_CursedBodyActivates);
             effect++;
@@ -5136,6 +5136,11 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
          && !(GetActiveGimmick(gBattlerTarget) == GIMMICK_DYNAMAX)
          && !gAbilitiesInfo[gBattleMons[gBattlerAttacker].ability].cantBeSwapped)
         {
+            if (SearchTraits(battlerTraits, ABILITY_WANDERING_SPIRIT) > 1)
+            {
+                // Wandering Spirit replaces your main Ability, so it generally should not be an Innate.
+                DebugPrintf("Wandering Spirit not set as main Ability");
+            }
             if (GetBattlerHoldEffectIgnoreAbility(gBattlerAttacker) == HOLD_EFFECT_ABILITY_SHIELD)
             {
                 RecordItemEffectBattle(gBattlerAttacker, HOLD_EFFECT_ABILITY_SHIELD);
@@ -5172,7 +5177,6 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
          {
             gLastUsedAbility = ABILITY_GOOEY;
             SET_STATCHANGER(STAT_SPEED, 1, TRUE);
-            PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
             PushTraitStack(battler, ABILITY_GOOEY);
             BattleScriptCall(BattleScript_GooeyActivates);
             effect++;
@@ -5186,7 +5190,6 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
         {
             gLastUsedAbility = ABILITY_TANGLING_HAIR;
             SET_STATCHANGER(STAT_SPEED, 1, TRUE);
-            PREPARE_ABILITY_BUFFER(gBattleTextBuff1, ABILITY_TANGLING_HAIR);
             PushTraitStack(battler, ABILITY_TANGLING_HAIR);
             BattleScriptCall(BattleScript_TanglingHairActivates);
             effect++;
@@ -5236,7 +5239,6 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
         {
             returnDamage += (GetNonDynamaxMaxHP(gBattlerAttacker) / (B_ROUGH_SKIN_DMG >= GEN_4 ? 8 : 16));
             gLastUsedAbility = ABILITY_IRON_BARBS;
-            PREPARE_ABILITY_BUFFER(gBattleTextBuff2, ABILITY_IRON_BARBS);
             PushTraitStack(battler, ABILITY_IRON_BARBS);
             BattleScriptCall(BattleScript_IronBarbsActivates);
             effect++;
@@ -5249,7 +5251,6 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
         {
             returnDamage += (GetNonDynamaxMaxHP(gBattlerAttacker) / (B_ROUGH_SKIN_DMG >= GEN_4 ? 8 : 16));
             gLastUsedAbility = ABILITY_ROUGH_SKIN;
-            PREPARE_ABILITY_BUFFER(gBattleTextBuff1, ABILITY_ROUGH_SKIN);
             PushTraitStack(battler, ABILITY_ROUGH_SKIN);
             BattleScriptCall(BattleScript_RoughSkinActivates);
             effect++;
@@ -5323,7 +5324,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
             burnAbility = ABILITY_FLAME_BODY;
             tryBurn = TRUE;
         }
-        else if (SearchTraits(battlerTraits, ABILITY_POISON_POINT)
+        if (SearchTraits(battlerTraits, ABILITY_POISON_POINT)
         && (B_ABILITY_TRIGGER_CHANCE >= GEN_4 ? RandomPercentage(RNG_POISON_POINT, 30) : RandomChance(RNG_POISON_POINT, 1, 3)))
         {
             poisonAbility = ABILITY_POISON_POINT;
@@ -5344,9 +5345,8 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
             gBattleScripting.battler = gBattlerTarget;
             gBattleScripting.moveEffect = MOVE_EFFECT_SLEEP;
             gLastUsedAbility = sleepAbility;
-            PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
             PushTraitStack(battler, gLastUsedAbility);
-            BattleScriptCall(BattleScript_AbilityStatusEffect);
+            BattleScriptCall(BattleScript_AbilityStatusEffectDef);
             effect++;
         }
         else if (tryParalysis
@@ -5360,9 +5360,8 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
             gBattleScripting.battler = gBattlerTarget;
             gBattleScripting.moveEffect = MOVE_EFFECT_PARALYSIS;
             gLastUsedAbility = paralysisAbility;
-            PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
             PushTraitStack(battler, gLastUsedAbility);
-            BattleScriptCall(BattleScript_AbilityStatusEffect);
+            BattleScriptCall(BattleScript_AbilityStatusEffectDef);
             effect++;
         }
         else if (tryBurn
@@ -5376,9 +5375,8 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
             gBattleScripting.battler = gBattlerTarget;
             gBattleScripting.moveEffect = MOVE_EFFECT_BURN;
             gLastUsedAbility = burnAbility;
-            PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
             PushTraitStack(battler, gLastUsedAbility);
-            BattleScriptCall(BattleScript_AbilityStatusEffect);
+            BattleScriptCall(BattleScript_AbilityStatusEffectDef);
             effect++;
         }
         else if (tryPoison
@@ -5392,9 +5390,8 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
             gBattleScripting.battler = gBattlerTarget;
             gBattleScripting.moveEffect = MOVE_EFFECT_POISON;
             gLastUsedAbility = poisonAbility;
-            PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
             PushTraitStack(battler, gLastUsedAbility);
-            BattleScriptCall(BattleScript_AbilityStatusEffect);
+            BattleScriptCall(BattleScript_AbilityStatusEffectDef);
             effect++;
         }
         
@@ -5419,7 +5416,6 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
          && gBattleStruct->illusion[gBattlerTarget].state == ILLUSION_ON && IsBattlerTurnDamaged(gBattlerTarget))
         {
             gBattleScripting.battler = gBattlerTarget;
-            PushTraitStack(battler, ABILITY_ILLUSION);
             BattleScriptCall(BattleScript_IllusionOff);
             effect++;
         }
@@ -5585,9 +5581,8 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
             gBattleStruct->poisonPuppeteerConfusion = FALSE;
             gBattleScripting.moveEffect = MOVE_EFFECT_CONFUSION;
             gLastUsedAbility = ABILITY_POISON_PUPPETEER;
-            PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
             PushTraitStack(gBattlerAttacker, ABILITY_POISON_PUPPETEER);
-            BattleScriptCall(BattleScript_AbilityStatusEffect);
+            BattleScriptCall(BattleScript_AbilityStatusEffectAtk);
             effect++;
         }
         else if (SearchTraits(battlerTraits, ABILITY_TOXIC_CHAIN)
@@ -5598,9 +5593,8 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
             gBattleScripting.battler = gBattlerAttacker;
             gBattleScripting.moveEffect = MOVE_EFFECT_TOXIC;
             gLastUsedAbility = ABILITY_TOXIC_CHAIN;
-            PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
             PushTraitStack(gBattlerAttacker, ABILITY_TOXIC_CHAIN);
-            BattleScriptCall(BattleScript_AbilityStatusEffect);
+            BattleScriptCall(BattleScript_AbilityStatusEffectAtk);
             effect++;
         }
         else if (SearchTraits(battlerTraits, ABILITY_POISON_TOUCH)
@@ -5615,9 +5609,8 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
             gBattleScripting.battler = gBattlerAttacker;
             gBattleScripting.moveEffect = MOVE_EFFECT_POISON;
             gLastUsedAbility = ABILITY_POISON_TOUCH;
-            PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
             PushTraitStack(gBattlerAttacker, ABILITY_POISON_TOUCH);
-            BattleScriptCall(BattleScript_AbilityStatusEffect);
+            BattleScriptCall(BattleScript_AbilityStatusEffectAtk);
             effect++;
         }
         else if (SearchTraits(battlerTraits, ABILITY_STENCH)

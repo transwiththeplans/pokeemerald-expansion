@@ -37908,6 +37908,7 @@ static const u16 sLycanrocDuskTeachableLearnset[] = {
 
 #if P_FAMILY_WISHIWASHI
 static const u16 sWishiwashiTeachableLearnset[] = {
+    MOVE_BREAKING_SWIPE,
     MOVE_CHILLING_WATER,
     MOVE_DIFFUSE_RAY,
     MOVE_DIVE,
@@ -37921,6 +37922,7 @@ static const u16 sWishiwashiTeachableLearnset[] = {
     MOVE_FACADE,
     MOVE_FLIP_TURN,
     MOVE_ICE_BEAM,
+    MOVE_ICE_FANG,
     MOVE_LIQUIDATION,
     MOVE_MUD_SHOT,
     MOVE_PROTECT,
@@ -37929,6 +37931,7 @@ static const u16 sWishiwashiTeachableLearnset[] = {
     MOVE_ROCK_SLIDE,
     MOVE_SCALD,
     MOVE_SCALE_SHOT,
+    MOVE_SIGNAL_BEAM,
     MOVE_SLEEP_TALK,
     MOVE_SNORE,
     MOVE_SPIRIT_BREAK,

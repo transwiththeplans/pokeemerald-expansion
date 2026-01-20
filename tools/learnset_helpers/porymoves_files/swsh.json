@@ -60828,62 +60828,22 @@
   },
   "WISHIWASHI": {
     "LevelMoves": [
-      {
-        "Level": 1,
-        "Move": "MOVE_WATER_GUN"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_GROWL"
-      },
-      {
-        "Level": 4,
-        "Move": "MOVE_HELPING_HAND"
-      },
-      {
-        "Level": 8,
-        "Move": "MOVE_BEAT_UP"
-      },
-      {
-        "Level": 12,
-        "Move": "MOVE_BRINE"
-      },
-      {
-        "Level": 16,
-        "Move": "MOVE_TEARFUL_LOOK"
-      },
-      {
-        "Level": 20,
-        "Move": "MOVE_DIVE"
-      },
-      {
-        "Level": 24,
-        "Move": "MOVE_SOAK"
-      },
-      {
-        "Level": 28,
-        "Move": "MOVE_UPROAR"
-      },
-      {
-        "Level": 32,
-        "Move": "MOVE_AQUA_TAIL"
-      },
-      {
-        "Level": 36,
-        "Move": "MOVE_AQUA_RING"
-      },
-      {
-        "Level": 40,
-        "Move": "MOVE_ENDEAVOR"
-      },
-      {
-        "Level": 44,
-        "Move": "MOVE_HYDRO_PUMP"
-      },
-      {
-        "Level": 48,
-        "Move": "MOVE_DOUBLE_EDGE"
-      }
+      { "Level": 1, "Move": "MOVE_WATER_GUN" },
+      { "Level": 1, "Move": "MOVE_AQUA_RING" },
+      { "Level": 1, "Move": "MOVE_GROWL" },
+      { "Level": 4, "Move": "MOVE_HELPING_HAND" },
+      { "Level": 8, "Move": "MOVE_AQUA_JET" },
+      { "Level": 12, "Move": "MOVE_WHIRLPOOL" },
+      { "Level": 16, "Move": "MOVE_TEARFUL_LOOK" },
+      { "Level": 20, "Move": "MOVE_WATER_PULSE" },
+      { "Level": 24, "Move": "MOVE_SOAK" },
+      { "Level": 28, "Move": "MOVE_UPROAR" },
+      { "Level": 32, "Move": "MOVE_AQUA_TAIL" },
+      { "Level": 36, "Move": "MOVE_BOUNCY_BUBBLE" },
+      { "Level": 40, "Move": "MOVE_TRIPLE_DIVE" },
+      { "Level": 44, "Move": "MOVE_HYDRO_PUMP" },
+      { "Level": 48, "Move": "MOVE_BOOMBURST" },
+      { "Level": 52, "Move": "MOVE_WAVE_CRASH" }
     ],
     "PreEvoMoves": [],
     "TMMoves": [
@@ -60897,6 +60857,9 @@
       "MOVE_BEAT_UP",
       "MOVE_FACADE",
       "MOVE_DRAGON_BREATH",
+      "MOVE_LIQUIDATION",
+      "MOVE_ICE_FANG",
+      "MOVE_BREAKING_SWIPE",
       "MOVE_DRAGON_PULSE",
       "MOVE_DIFFUSE_RAY",
       "MOVE_SPIRIT_BREAK",
@@ -60908,6 +60871,7 @@
       "MOVE_BRINE",
       "MOVE_U_TURN",
       "MOVE_ROUND",
+      "MOVE_SIGNAL_BEAM",
       "MOVE_BULLDOZE",
       "MOVE_HYDRO_PUMP",
       "MOVE_SURF",

@@ -2030,8 +2030,8 @@ static const u16 sMagearnaFormSpeciesIdTable[] = {
 #if P_FAMILY_MELTAN
 static const u16 sMelmetalFormSpeciesIdTable[] = {
     SPECIES_MELMETAL,
-#if P_GIGANTAMAX_FORMS
-    SPECIES_MELMETAL_GMAX,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_MELMETAL_MEGA,
 #endif
     FORM_SPECIES_END,
 };

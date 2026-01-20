@@ -1395,7 +1395,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_FAIRY),
-        .abilities = { ABILITY_RUN_AWAY, ABILITY_PICKUP, ABILITY_OWN_TEMPO },
+        .abilities = { ABILITY_RUN_AWAY, ABILITY_PICKUP, ABILITY_TECHNICIAN },
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Tandemaus"),
         .cryId = CRY_TANDEMAUS,
@@ -1577,9 +1577,9 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
     [SPECIES_MAUSHOLD_MEGA] =
     {
         .baseHP        = 74,
-        .baseAttack    = 95,
-        .baseDefense   = 85,
-        .baseSpeed     = 136,
+        .baseAttack    = 125,
+        .baseDefense   = 95,
+        .baseSpeed     = 96,
         .baseSpAttack  = 95,
         .baseSpDefense = 85,
         .types = MON_TYPES(TYPE_NORMAL, TYPE_GROUND),
@@ -1591,7 +1591,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_FAIRY),
-        .abilities = { ABILITY_SPECIALIST, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_NO_GUARD, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Maushold"),
         .cryId = CRY_MAUSHOLD_FOUR,
@@ -1600,7 +1600,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 30,
         .weight = 280,
         .description = COMPOUND_STRING(
-            "Mega Evolution sharpens their teamwork.\n"
+            "Mega Evolution sharpens their cloning powers.\n"
             "The family now moves as a flawless unit,\n"
             "executing rapid strikes with perfect timing\n"
             "and unrivaled precision."),
@@ -1667,7 +1667,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .height = 30,
         .weight = 280,
         .description = COMPOUND_STRING(
-            "Mega Evolution sharpens their teamwork.\n"
+            "Each member of the family has its own use.\n"
             "The family now moves as a flawless unit,\n"
             "executing rapid strikes with perfect timing\n"
             "and unrivaled precision."),

@@ -7689,16 +7689,16 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .formChangeTable = sMelmetalFormChangeTable,
     },
 
-#if P_GIGANTAMAX_FORMS
-    [SPECIES_MELMETAL_GMAX] =
+#if P_MEGA_EVOLUTION
+    [SPECIES_MELMETAL_MEGA] =
     {
         .baseHP        = 135,
-        .baseAttack    = 143,
-        .baseDefense   = 143,
-        .baseSpeed     = 34,
-        .baseSpAttack  = 80,
-        .baseSpDefense = 65,
-        .types = MON_TYPES(TYPE_STEEL),
+        .baseAttack    = 183,
+        .baseDefense   = 183,
+        .baseSpeed     = 24,
+        .baseSpAttack  = 100,
+        .baseSpDefense = 75,
+        .types = MON_TYPES(TYPE_POISON),
         .catchRate = 3,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 300 : 270,
         .evYield_Attack = 3,
@@ -7741,7 +7741,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         SHADOW(2, 13, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Melmetal)
         .isMythical = TRUE,
-        .isGigantamax = TRUE,
+        .isMegaEvolution = TRUE,
         .isFrontierBanned = TRUE,
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sMelmetalLevelUpLearnset,
@@ -7749,7 +7749,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .formSpeciesIdTable = sMelmetalFormSpeciesIdTable,
         .formChangeTable = sMelmetalFormChangeTable,
     },
-#endif //P_GIGANTAMAX_FORMS
+#endif //P_MEGA_EVOLUTION
 #endif //P_FAMILY_MELTAN
 
 #ifdef __INTELLISENSE__

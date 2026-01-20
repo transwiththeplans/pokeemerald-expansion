@@ -1332,8 +1332,8 @@ static const struct FormChange sNecrozmaDawnWingsFormChangeTable[] = {
 #if P_FAMILY_MELTAN
 static const struct FormChange sMelmetalFormChangeTable[] =
 {
-#if P_GIGANTAMAX_FORMS
-    {FORM_CHANGE_BATTLE_GIGANTAMAX, SPECIES_MELMETAL_GMAX},
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_MELMETAL_MEGA, ITEM_ULTIMATRIX_SYMBOL_MK2},
 #endif
     {FORM_CHANGE_TERMINATOR},
 };

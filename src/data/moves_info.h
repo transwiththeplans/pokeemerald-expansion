@@ -22477,6 +22477,134 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         }),
         .battleAnimScript = gBattleAnimMove_IcyWind,
     },
+	
+	    [MOVE_KINDLING] =
+    {
+        .name = COMPOUND_STRING("Kindling"),
+        .description = COMPOUND_STRING(
+            "A weak flame that raises\n"
+            "the user's Special Attack."),
+        .effect = EFFECT_HIT,
+        .power = 40,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SP_ATK_PLUS_1,
+            .self = TRUE,
+            .chance = 100,
+        }),
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Ember,
+    },
+	
+	    [MOVE_BRAINSTORM] =
+    {
+        .name = COMPOUND_STRING("Brainstorm"),
+        .description = COMPOUND_STRING(
+            "Projects a thought that raises\n"
+            "the user's Special Attack."),
+        .effect = EFFECT_HIT,
+        .power = 40,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SP_ATK_PLUS_1,
+            .self = TRUE,
+            .chance = 100,
+        }),
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Confusion,
+    },
+
+	[MOVE_AURA_CHARGE] =
+    {
+        .name = COMPOUND_STRING("Aura Charge"),
+        .description = COMPOUND_STRING(
+            "Focuses its aura and attacks.\n"
+            "Raises user's Special Attack."),
+        .effect = EFFECT_HIT,
+        .power = 40,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SP_ATK_PLUS_1,
+            .self = TRUE,
+            .chance = 100,
+        }),
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_VacuumWave,
+    },
+	
+	[MOVE_ACIDIFY] =
+    {
+        .name = COMPOUND_STRING("Acidify"),
+        .description = COMPOUND_STRING(
+            "Lowers its pH to\n"
+            "sharply boost Sp. Atk."),
+        .effect = EFFECT_SPECIAL_ATTACK_UP_2,
+        .power = 0,
+        .type = TYPE_POISON,
+        .accuracy = 0,
+        .pp = 5,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_RESET_STATS },
+        .snatchAffected = TRUE,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_AcidArmor,
+    },
+
+	[MOVE_ALKALIZING] =
+    {
+        .name = COMPOUND_STRING("Alkalizing"),
+        .description = COMPOUND_STRING(
+            "Raises its pH to\n"
+            "sharply boost Sp. Def."),
+        .effect = EFFECT_SPECIAL_DEFENSE_UP_2,
+        .power = 0,
+        .type = TYPE_POISON,
+        .accuracy = 0,
+        .pp = 5,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_RESET_STATS },
+        .snatchAffected = TRUE,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_AcidArmor,
+    },
 
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =

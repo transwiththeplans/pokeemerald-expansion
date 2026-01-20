@@ -11658,7 +11658,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .baseSpAttack  = 50,
         .baseSpDefense = 30,
         .types = MON_TYPES(TYPE_BUG, TYPE_POISON),
-        .catchRate = 45,
+        .catchRate = 127,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 60 : 89,
         .evYield_Attack = 1,
         .itemRare = ITEM_DRAGON_FANG,

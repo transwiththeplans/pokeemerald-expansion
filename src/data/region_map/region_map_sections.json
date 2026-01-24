@@ -42,7 +42,7 @@
     },
     {
       "id": "MAPSEC_VERDANTURF_TOWN",
-      "name": "Tandemaus Meadows",
+      "name": "TANDEMAUS_MEADOWS",
       "x": 4,
       "y": 6,
       "width": 1,
@@ -865,7 +865,7 @@
     },
     {
       "id": "MAPSEC_DIGLETTS_CAVE",
-      "name": "DIGLETT'S CAVE"
+      "name": "DIGLETT'S GROTTO"
     },
     {
       "id": "MAPSEC_KANTO_VICTORY_ROAD",
@@ -977,7 +977,7 @@
     },
     {
       "id": "MAPSEC_RESORT_GORGEOUS",
-      "name": "RESORT GORGEOUS"
+      "name": "Tandemaus_Meadows"
     },
     {
       "id": "MAPSEC_WATER_LABYRINTH",
@@ -1213,7 +1213,7 @@
     },
     {
       "id": "MAPSEC_ALTERING_CAVE",
-      "name": "ALTERING CAVE",
+      "name": "DIGLETT'S GROTTO",
       "x": 6,
       "y": 8,
       "width": 1,

@@ -287,7 +287,7 @@ Route103_EventScript_Isabelle::
 	end
 
 Route103_Text_MayRoute103Pokemon:
-	.string "MAY: Let's see… The POKéMON found\n"
+	.string "GWEN: Let's see… The POKéMON found\n"
 	.string "on ROUTE 103 include…$"
 
 Route103_Text_MayLetsBattle:
@@ -304,7 +304,7 @@ Route103_Text_MayDefeated:
 	.string "I can't believe I lost to you!$"
 
 Route103_Text_MayTimeToHeadBack:
-	.string "MAY: You got lucky, {PLAYER}{KUN}.\n"
+	.string "GWEN: You got lucky, {PLAYER}{KUN}.\n"
 	.string "I mean, you just got that POKéMON,\n"
 	.string "but it already likes you.\p"
 	.string "You must be doing something right\n"
@@ -313,7 +313,7 @@ Route103_Text_MayTimeToHeadBack:
 	.string "the LAB.$"
 
 Route103_Text_BrendanRoute103Pokemon:
-	.string "BRENDAN: Okay, so it's this one and\n"
+	.string "BEN: Okay, so it's this one and\n"
 	.string "that one that live on ROUTE 103…$"
 
 Route103_Text_BrendanLetsBattle:
@@ -329,7 +329,7 @@ Route103_Text_BrendanDefeated:
 	.string "Huh, dweeb...you're not too shabby.$"
 
 Route103_Text_BrendanTimeToHeadBack:
-	.string "BRENDAN: You got lucky, cuz.\n"
+	.string "BEN: You got lucky, cuz.\n"
 	.string "I mean, you just got that POKéMON,\n"
 	.string "but it already likes you.\p"
 	.string "You must be doing something right\n"

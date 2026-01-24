@@ -263,7 +263,6 @@ static u32 CalcBeatUpPower(void)
 static bool32 ShouldTeraShellDistortTypeMatchups(u32 move, u32 battlerDef, u32 abilityDef)
 {
     if (!gSpecialStatuses[battlerDef].distortedTypeMatchups
-     && gBattleMons[battlerDef].species == SPECIES_TERAPAGOS_TERASTAL
      && gBattleMons[battlerDef].hp == gBattleMons[battlerDef].maxHP
      && !IsBattleMoveStatus(move)
      && abilityDef == ABILITY_TERA_SHELL)
@@ -8561,6 +8560,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         if (basePower <= 60)
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
+    case ABILITY_SPECIALIST:
+        if (basePower <= 60)
+           modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
+        break;
     case ABILITY_FLARE_BOOST:
         if (gBattleMons[battlerAtk].status1 & STATUS1_BURN && IsBattleMoveSpecial(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
@@ -8682,6 +8685,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
     case ABILITY_PUNK_ROCK:
         if (IsSoundMove(move))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        break;
+    case ABILITY_POWER_METAL:
+        if (IsSoundMove(move))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
     case ABILITY_STEELY_SPIRIT:
         if (moveType == TYPE_STEEL)
@@ -8914,6 +8921,7 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
     {
     case ABILITY_HUGE_POWER:
     case ABILITY_PURE_POWER:
+    case ABILITY_STAR_POWER:
         if (IsBattleMovePhysical(move))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
@@ -8935,7 +8943,7 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         break;
     case ABILITY_DEFEATIST:
         if (gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 2))
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.5));
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
     case ABILITY_FLASH_FIRE:
         if (moveType == TYPE_FIRE && gDisableStructs[battlerAtk].flashFireBoosted)
@@ -9210,7 +9218,7 @@ static inline u32 CalcDefenseStat(struct DamageCalculationData *damageCalcData, 
             if (damageCalcData->updateFlags)
                 RecordAbilityBattle(battlerDef, ABILITY_FUR_COAT);
         }
-        break;
+        break;    
     case ABILITY_BIG_PECKS:
         if (usesDefStat)
         {
@@ -9505,6 +9513,12 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(u32 move, u32 moveType, u32 
         if (!IsMoveMakingContact(move, battlerAtk) && moveType == TYPE_FIRE)
             return UQ_4_12(2.0);
         if (IsMoveMakingContact(move, battlerAtk) && moveType != TYPE_FIRE)
+            return UQ_4_12(0.5);
+        break;    
+	case ABILITY_SHADOW_POWER:
+        if (!IsBattleMoveSpecial(move) && moveType == TYPE_FIRE)
+            return UQ_4_12(2.0);
+        if (IsBattleMoveSpecial(move) && moveType != TYPE_FIRE)
             return UQ_4_12(0.5);
         break;
     case ABILITY_PUNK_ROCK:
@@ -10112,7 +10126,7 @@ uq4_12_t GetOverworldTypeEffectiveness(struct Pokemon *mon, u8 moveType)
 		if ((modifier <= UQ_4_12(1.0) && abilityDef == ABILITY_WONDER_GUARD)
 			|| (moveType == TYPE_FIRE     && abilityDef == ABILITY_FLASH_FIRE)
 			|| (moveType == TYPE_GRASS    && abilityDef == ABILITY_SAP_SIPPER)
-			|| (moveType == TYPE_GROUND   && (abilityDef == ABILITY_LEVITATE || abilityDef == ABILITY_EARTH_EATER))
+			|| (moveType == TYPE_GROUND   && (abilityDef == ABILITY_LEVITATE || abilityDef == ABILITY_EARTH_EATER || abilityDef == ABILITY_POWER_METAL))
 			|| (moveType == TYPE_WATER    && (abilityDef == ABILITY_WATER_ABSORB || abilityDef == ABILITY_DRY_SKIN || abilityDef == ABILITY_STORM_DRAIN))
 			|| (moveType == TYPE_ELECTRIC && (abilityDef == ABILITY_LIGHTNING_ROD || abilityDef == ABILITY_VOLT_ABSORB || abilityDef == ABILITY_MOTOR_DRIVE))
 			|| (moveType == TYPE_FIGHTING && abilityDef == ABILITY_COUNTERPROOF)

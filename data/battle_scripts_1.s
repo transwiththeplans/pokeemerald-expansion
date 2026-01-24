@@ -3727,10 +3727,26 @@ BattleScript_EffectCelebrate::
 	attackcanceler
 	attackstring
 	ppreduce
+BattleScript_EffectCelebrateFromStatUp::
+	jumpifstat BS_ATTACKER, CMP_LESS_THAN, STAT_SPATK, MAX_STAT_STAGE, BattleScript_CelebrateDoMoveAnim
+	jumpifstat BS_ATTACKER, CMP_EQUAL, STAT_SPEED, MAX_STAT_STAGE, BattleScript_CantRaiseMultipleStats
+BattleScript_CelebrateDoMoveAnim::
 	attackanimation
 	waitanimation
-	printstring STRINGID_CELEBRATEMESSAGE
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_ATTACKER, BIT_SPATK | BIT_SPEED, 0
+	setstatchanger STAT_SPATK, 1, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_CelebrateTrySpeed
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_CelebrateTrySpeed
+	printfromtable gStatUpStringIds
 	waitmessage B_WAIT_TIME_LONG
+BattleScript_CelebrateTrySpeed::
+	setstatchanger STAT_SPEED, 1, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_CelebrateEnd
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_CelebrateEnd
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_CelebrateEnd::
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectHappyHour::
@@ -7724,7 +7740,6 @@ BattleScript_ScareLoop:
 	jumpifabsent BS_TARGET, BattleScript_ScareLoopIncrement
 	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_ScareLoopIncrement
 	jumpifintimidateabilityprevented
-
 BattleScript_ScareEffect:
 	copybyte sBATTLER, gBattlerAttacker
 	setstatchanger STAT_SPATK, 1, TRUE
@@ -7742,7 +7757,6 @@ BattleScript_ScareEffect_WaitString:
 	call BattleScript_TryIntimidateHoldEffects
 	restoreattacker
 	restoretarget
-
 BattleScript_ScareLoopIncrement:
 	addbyte gBattlerTarget, 1
 	jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_ScareLoop

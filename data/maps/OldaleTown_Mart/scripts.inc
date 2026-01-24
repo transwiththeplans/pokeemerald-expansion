@@ -11,6 +11,16 @@ OldaleTown_Mart_EventScript_Clerk::
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
+	
+OldaleTown_Mart_EventScript_ClerkTMs::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart OldaleTown_Mart_Pokemart_TMs
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
 
 	.align 2
 OldaleTown_Mart_Pokemart_Basic:
@@ -36,6 +46,11 @@ OldaleTown_Mart_Pokemart_Expanded:
 	.2byte ITEM_PARALYZE_HEAL
 	.2byte ITEM_AWAKENING
 	.2byte ITEM_RARE_CANDY
+	.2byte ITEM_TM_GLACIATE
+	.2byte ITEM_TM_VACUUM_WAVE
+	.2byte ITEM_TM_WATER_PULSE
+	.2byte ITEM_TM_SILVER_WIND
+	.2byte ITEM_TM_ASTEROID_BELT
 	pokemartlistend
 
 OldaleTown_Mart_EventScript_Woman::
@@ -69,3 +84,12 @@ OldaleTown_Mart_Text_RestoreHPWithPotion:
 	.string "To prevent your POKéMON from fainting,\n"
 	.string "restore its HP with a POTION.$"
 
+	.align 2
+OldaleTown_Mart_Pokemart_TMs:
+	.2byte ITEM_TM_HEX
+	.2byte ITEM_TM_ELECTRO_BALL
+	.2byte ITEM_TM_DRAGON_BREATH
+	.2byte ITEM_TM_MUD_SHOT
+	.2byte ITEM_TM_DRAINING_KISS
+	.2byte ITEM_TM_SUBSTITUTE
+	pokemartlistend

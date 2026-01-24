@@ -38,5 +38,14 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 13,
+      "y": 3,
+      "elevation": 0,
+      "item": "ITEM_ICE_STONE",
+      "flag": "FLAG_HIDDEN_ITEM_RUSTURF_TUNNEL_ICE_STONE"
+    }
+  ]
 }

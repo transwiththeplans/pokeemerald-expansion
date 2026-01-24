@@ -87,21 +87,21 @@
   "warp_events": [
     {
       "x": 3,
-      "y": 7,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_VERDANTURF_TOWN_BATTLE_TENT_LOBBY",
       "dest_warp_id": "0"
     },
     {
       "x": 12,
-      "y": 3,
+      "y": 5,
       "elevation": 0,
       "dest_map": "MAP_VERDANTURF_TOWN_MART",
       "dest_warp_id": "0"
     },
     {
       "x": 16,
-      "y": 3,
+      "y": 5,
       "elevation": 0,
       "dest_map": "MAP_VERDANTURF_TOWN_POKEMON_CENTER_1F",
       "dest_warp_id": "0"
@@ -140,7 +140,7 @@
     {
       "type": "sign",
       "x": 14,
-      "y": 3,
+      "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemartSign"
@@ -156,7 +156,7 @@
     {
       "type": "sign",
       "x": 17,
-      "y": 3,
+      "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemonCenterSign"
@@ -172,7 +172,7 @@
     {
       "type": "sign",
       "x": 13,
-      "y": 3,
+      "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemartSign"
@@ -180,7 +180,7 @@
     {
       "type": "sign",
       "x": 18,
-      "y": 3,
+      "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemonCenterSign"
@@ -188,7 +188,7 @@
     {
       "type": "sign",
       "x": 1,
-      "y": 8,
+      "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "VerdanturfTown_EventScript_BattleTentSign"

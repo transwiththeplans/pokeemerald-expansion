@@ -1,7 +1,7 @@
 gText_Birch_Welcome::
 	.string "Hi! Sorry to keep you waiting!\p"
 	.string "Welcome to the world of POKéMON!\p"
-	.string "My name is BIRCH.\p"
+	.string "My name is John Birch.\p"
 	.string "But everyone calls me the POKéMON\n"
 	.string "PROFESSOR.\p"
 	.string "$"
@@ -18,17 +18,16 @@ gText_Birch_MainSpeech::
 	.string "at times as friendly playmates, and\l"
 	.string "at times as cooperative workmates.\p"
 	.string "And sometimes, we band together\n"
-	.string "and battle others like us.\p"
+	.string "and battle other trainers.\p"
 	.string "But despite our closeness, we don't\n"
 	.string "know everything about POKéMON.\p"
 	.string "More recently, after a strange meteor\n"
 	.string "shower, all Pokemon in Hoenn\l"
 	.string "mysteriously transformed...\p"
 	.string "To unravel this new mystery,\n"
-	.string "I've been deep in research.\l"
-	.string "That's what I do.\p"
+	.string "I've been deep in research.\p"
 	.string "$"
-
+	
 gText_Birch_AndYouAre::
 	.string "And you are?$"
 
@@ -44,7 +43,7 @@ gText_Birch_SoItsPlayer::
 	.string "So it's {PLAYER}{KUN}?$"
 
 gText_Birch_YourePlayer::
-	.string "Ah, okay!\p"
+	.string "Ah, okay! What a wonderful name!\p"
 	.string "You're {PLAYER}{KUN} who's moving to my\n"
 	.string "hometown of LITTLEROOT.\l"
 	.string "I get it now!\p"

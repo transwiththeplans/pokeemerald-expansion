@@ -101,7 +101,33 @@
     F(SCALD) \
     F(FLASH_CANNON) \
     F(ACROBATICS) \
-    F(RAPID_SPIN)
+    F(RAPID_SPIN) \
+    F(CURSE) \
+    F(PIN_MISSILE) \
+    F(DIFFUSE_RAY) \
+    F(FLASH_VOLLEY) \
+    F(MOONBLAST) \
+    F(ELECTRO_BALL) \
+    F(THUNDER_WAVE) \
+    F(DRAGON_BREATH) \
+    F(GLACIATE) \
+    F(SOUL_SUCK) \
+    F(LIFE_DEW) \
+    F(AIR_BOMB) \
+    F(TOXIC_SPIKES) \
+    F(HEADLONG_RUSH) \
+    F(VACUUM_WAVE) \
+    F(BREAKING_SWIPE) \
+    F(SMART_STRIKE) \
+    F(SPIKES) \
+    F(MUD_SHOT) \
+    F(BATON_PASS) \
+    F(SILVER_WIND) \
+    F(TRICK_ROOM) \
+    F(POWER_WHIP) \
+    F(BARB_BARRAGE) \
+    F(LAST_RESPECTS)
+
 
 #define FOREACH_HM(F) \
     F(CUT) \

@@ -69,14 +69,14 @@
     {
       "id": "HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE",
       "map": "MAP_LITTLEROOT_TOWN",
-      "x": 5,
+      "x": 6,
       "y": 9
     },
     {
       "id": "HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE",
       "map": "MAP_LITTLEROOT_TOWN",
-      "x": 14,
-      "y": 9
+      "x": 23,
+      "y": 12
     },
     {
       "id": "HEAL_LOCATION_OLDALE_TOWN",
@@ -87,8 +87,8 @@
     {
       "id": "HEAL_LOCATION_DEWFORD_TOWN",
       "map": "MAP_DEWFORD_TOWN",
-      "x": 2,
-      "y": 11
+      "x": 21,
+      "y": 16
     },
     {
       "id": "HEAL_LOCATION_LAVARIDGE_TOWN",
@@ -106,7 +106,7 @@
       "id": "HEAL_LOCATION_VERDANTURF_TOWN",
       "map": "MAP_VERDANTURF_TOWN",
       "x": 16,
-      "y": 4
+      "y": 6
     },
     {
       "id": "HEAL_LOCATION_PACIFIDLOG_TOWN",

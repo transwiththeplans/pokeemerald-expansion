@@ -13,16 +13,16 @@ const u8 gRaticateAlolaPokedexText[] = _(
     "over food happen often.");
 
 const u8 gPichuPokedexText[] = _(
-    "It is still inept at retaining electricity.\n"
-    "When it is startled, it discharges power\n"
-    "accidentally. It gets better at holding\n"
-    "power as it grows older.");
+	"Unlike other Pichu forms, this variant\n"
+	"exothermically releases stored energy as\n"
+	"flames. Its body is warm to the touch,\n"
+	"even when calm.");
 
 const u8 gPikachuPokedexText[] = _(
-    "It stores electricity in the electric sacs\n"
-    "on its cheeks. When it releases pent-up\n"
-    "energy in a burst, the electric power is\n"
-    "equal to a lightning bolt.");
+	"Pikachu must be cautious in the wild. A\n"
+	"large gathering can accidentally ignite a\n"
+	"forest fire. Because of this, most prefer\n"
+	"to live alone.");
 
 const u8 gMarowakAlolaPokedexText[] = _(
     "The cursed flames that light up the bone\n"
@@ -31,10 +31,10 @@ const u8 gMarowakAlolaPokedexText[] = _(
     "pain that will never fade.");
 
 const u8 gEeveePokedexText[] = _(
-    "An Eevee has an unstable genetic makeup\n"
-    "that suddenly mutates due to its\n"
-    "environment. Radiation from various\n"
-    "Stones causes this Pokémon to evolve.");
+	"Eevee adapts to any threat it faces.\n"
+	"Its body holds traits of many apex\n"
+	"predators, shifting its instincts to\n"
+	"overcome whatever hunts it.");
 
 // Gen 2 families
 const u8 gUnownPokedexText[] = _(
@@ -115,10 +115,10 @@ const u8 gZygarde10PokedexText[] = _(
 
 // Gen 7 families
 const u8 gGumshoosPokedexText[] = _(
-    "When it finds a trace of its prey, it\n"
-    "patiently stakes out the location...\n"
-    "but as it's diurnal, it's always snoozing\n"
-    "by nightfall.");
+	"It is said to possess a brilliant mind, but\n"
+	"this has yet to be observed in nature. Most\n"
+	"of its 'leadership' is just well timed\n"
+	"cowardice.");
 
 const u8 gVikavoltPokedexText[] = _(
     "It concentrates electrical energy within\n"
@@ -127,16 +127,16 @@ const u8 gVikavoltPokedexText[] = _(
     "beams of electrical energy.");
 
 const u8 gRibombeePokedexText[] = _(
-    "Ribombee rolls up pollen into puffs.\n"
-    "It makes many different varieties, some\n"
-    "used as food and others used in battle.\n"
-    "They are sometimes sold as supplements.");
+	"Its advanced cognition helps it solve any\n"
+	"problem where strength fails. Even when\n"
+	"faced with the unknown, it learns at an\n"
+	"astonishing speed.");
 
 const u8 gRockruffPokedexText[] = _(
-    "This Pokémon has lived with people since\n"
-    "times long ago. It can sense when its\n"
-    "Trainer is in the dumps and will stick\n"
-    "close by its Trainer's side.");
+	"The collar around its neck reacts strongly\n"
+	"to elemental stones. Three reactions are\n"
+	"documented: Sun, Moon, and Thunder Stones\n"
+	"cause dramatic transformations.");
 
 const u8 gAraquanidPokedexText[] = _(
     "Despite what its appearance suggests,\n"

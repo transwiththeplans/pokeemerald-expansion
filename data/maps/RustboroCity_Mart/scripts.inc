@@ -25,9 +25,9 @@ RustboroCity_Mart_Pokemart_Basic:
 	.2byte ITEM_PARALYZE_HEAL
 	.2byte ITEM_ESCAPE_ROPE
 	.2byte ITEM_REPEL
-	.2byte ITEM_X_SPEED
-	.2byte ITEM_X_ATTACK
-	.2byte ITEM_X_DEFENSE
+	.2byte ITEM_LEFTOVERS
+	.2byte ITEM_MUSCLE_BAND
+	.2byte ITEM_WISE_GLASSES
 	pokemartlistend
 
 RustboroCity_Mart_EventScript_PokemartExpanded::
@@ -47,9 +47,9 @@ RustboroCity_Mart_Pokemart_Expanded:
 	.2byte ITEM_PARALYZE_HEAL
 	.2byte ITEM_ESCAPE_ROPE
 	.2byte ITEM_REPEL
-	.2byte ITEM_X_SPEED
-	.2byte ITEM_X_ATTACK
-	.2byte ITEM_X_DEFENSE
+	.2byte ITEM_LEFTOVERS
+	.2byte ITEM_MUSCLE_BAND
+	.2byte ITEM_WISE_GLASSES
 	pokemartlistend
 
 RustboroCity_Mart_EventScript_PokefanF::
@@ -82,3 +82,22 @@ RustboroCity_Mart_Text_GettingEscapeRopeJustInCase:
 	.string "I just need to use it to get back to\n"
 	.string "the entrance.$"
 
+RustboroCity_EventScript_ClerkTMs::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart RustboroCity_Mart_Pokemart_TMs
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+	
+	.align 2
+RustboroCity_Mart_Pokemart_TMs:
+	.2byte ITEM_TM_CURSE
+	.2byte ITEM_TM_THUNDER_WAVE
+	.2byte ITEM_TM_LIFE_DEW
+	.2byte ITEM_TM_SPIKES
+	.2byte ITEM_TM_BATON_PASS
+	.2byte ITEM_TM_TRICK_ROOM
+	pokemartlistend

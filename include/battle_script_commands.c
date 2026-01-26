@@ -14444,16 +14444,15 @@ static void Cmd_setstickyweb(void)
 
     u8 targetSide = GetBattlerSide(gBattlerTarget);
 
-    if (gSideStatuses[targetSide] & SIDE_STATUS_STICKY_WEB)
+    if (IsHazardOnSide(targetSide, HAZARDS_STICKY_WEB))
     {
         gBattlescriptCurrInstr = cmd->failInstr;
     }
     else
     {
-        gSideStatuses[targetSide] |= SIDE_STATUS_STICKY_WEB;
+        PushHazardTypeToQueue(targetSide, HAZARDS_STICKY_WEB);
         gSideTimers[targetSide].stickyWebBattlerId = gBattlerAttacker; // For Mirror Armor
         gSideTimers[targetSide].stickyWebBattlerSide = GetBattlerSide(gBattlerAttacker); // For Court Change/Defiant - set this to the user's side
-        gSideTimers[targetSide].stickyWebAmount = 1;
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
 }
@@ -15170,14 +15169,13 @@ static void Cmd_setstealthrock(void)
     CMD_ARGS(const u8 *failInstr);
 
     u8 targetSide = GetBattlerSide(gBattlerTarget);
-    if (gSideStatuses[targetSide] & SIDE_STATUS_STEALTH_ROCK)
+    if (IsHazardOnSide(targetSide, HAZARDS_STEALTH_ROCK))
     {
         gBattlescriptCurrInstr = cmd->failInstr;
     }
     else
     {
-        gSideStatuses[targetSide] |= SIDE_STATUS_STEALTH_ROCK;
-        gSideTimers[targetSide].stealthRockAmount = 1;
+        PushHazardTypeToQueue(targetSide, HAZARDS_STEALTH_ROCK);
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
 }

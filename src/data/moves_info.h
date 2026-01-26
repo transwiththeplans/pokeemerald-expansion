@@ -13264,7 +13264,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Burns up items, \n"
             "preventing their use."),
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_KNOCK_OFF,
         .power = 60,
         .type = TYPE_FIRE,
         .accuracy = 100,
@@ -13272,9 +13272,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = EFFECT_KNOCK_OFF,
-        }),
         .contestEffect = CONTEST_EFFECT_SHIFT_JUDGE_ATTENTION,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,

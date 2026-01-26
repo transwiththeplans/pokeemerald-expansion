@@ -3223,20 +3223,8 @@ BattleScript_EffectCelebrate::
 	attackcanceler
 	attackanimation
 	waitanimation
-	setbyte sSTAT_ANIM_PLAYED, FALSE
-	playstatchangeanimation BS_ATTACKER, BIT_SPATK | BIT_SPEED, 0
-	setstatchanger STAT_SPATK, 1, FALSE
-	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_CelebrateTrySpeed
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_CelebrateTrySpeed
-	printfromtable gStatUpStringIds
+	printstring STRINGID_CELEBRATEMESSAGE
 	waitmessage B_WAIT_TIME_LONG
-BattleScript_CelebrateTrySpeed::
-	setstatchanger STAT_SPEED, 1, FALSE
-	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_CelebrateEnd
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_CelebrateEnd
-	printfromtable gStatUpStringIds
-	waitmessage B_WAIT_TIME_LONG
-BattleScript_CelebrateEnd::
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectHappyHour::
@@ -6800,35 +6788,41 @@ BattleScript_IntimidateInReverse::
 	call BattleScript_TryIntimidateHoldEffects
 	goto BattleScript_IntimidateLoopIncrement
 
-BattleScript_ScareActivates::
+BattleScript_TryScareHoldEffects:
+	jumpifnoholdeffect BS_TARGET, HOLD_EFFECT_ADRENALINE_ORB, BattleScript_TryScareHoldEffectsRet
+	jumpifstat BS_TARGET, CMP_EQUAL, STAT_SPEED, MAX_STAT_STAGE, BattleScript_TryScareHoldEffectsRet
+	setstatchanger STAT_SPEED, 1, FALSE
+	playanimation BS_TARGET, B_ANIM_HELD_ITEM_EFFECT
+	statbuffchange BS_TARGET, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_CERTAIN | STAT_CHANGE_ALLOW_PTR, BattleScript_TryScareHoldEffectsRet
+	copybyte sBATTLER, gBattlerTarget
+	setlastuseditem BS_TARGET
+	printstring STRINGID_USINGITEMSTATOFPKMNROSE
+	waitmessage B_WAIT_TIME_LONG
+	removeitem BS_TARGET
+BattleScript_TryScareHoldEffectsRet:
+	return
+
+BattleScript_ScareActivates:
 	savetarget
-.if B_ABILITY_POP_UP == TRUE
-	showabilitypopup BS_ATTACKER
-	pause B_WAIT_TIME_LONG
-	destroyabilitypopup
-.endif
+	call BattleScript_AbilityPopUp
 	setbyte gBattlerTarget, 0
 BattleScript_ScareLoop:
-	jumpifbyteequal gBattlerTarget, gBattlerAttacker, BattleScript_ScareLoopIncrement
 	jumpiftargetally BattleScript_ScareLoopIncrement
 	jumpifabsent BS_TARGET, BattleScript_ScareLoopIncrement
-	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_ScareLoopIncrement
+	jumpifvolatile BS_TARGET, VOLATILE_SUBSTITUTE, BattleScript_ScareLoopIncrement
 	jumpifintimidateabilityprevented
 BattleScript_ScareEffect:
 	copybyte sBATTLER, gBattlerAttacker
-	setstatchanger STAT_SPATK, 1, TRUE
-	statbuffchange STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_ScareLoopIncrement
-	setgraphicalstatchangevalues
-	jumpifability BS_TARGET, ABILITY_CONTRARY, BattleScript_ScareContrary
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_DECREASE, BattleScript_ScareWontDecrease
-	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	setstatchanger STAT_ATK, 1, TRUE
+	statbuffchange BS_TARGET, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_ScareLoopIncrement
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_ScareWontDecrease
 	printstring STRINGID_PKMNCUTSSPATKWITH
 BattleScript_ScareEffect_WaitString:
 	waitmessage B_WAIT_TIME_LONG
 	saveattacker
 	savetarget
 	copybyte sBATTLER, gBattlerTarget
-	call BattleScript_TryIntimidateHoldEffects
+	call BattleScript_TryScareHoldEffects
 	restoreattacker
 	restoretarget
 BattleScript_ScareLoopIncrement:
@@ -6837,8 +6831,8 @@ BattleScript_ScareLoopIncrement:
 	copybyte sBATTLER, gBattlerAttacker
 	destroyabilitypopup
 	restoretarget
+	restoreattacker
 	pause B_WAIT_TIME_MED
-	tryintimidatejectpack
 	end3
 
 BattleScript_ScarePrevented::
@@ -6849,17 +6843,6 @@ BattleScript_ScarePrevented::
 
 BattleScript_ScareWontDecrease:
 	printstring STRINGID_STATSWONTDECREASE
-	goto BattleScript_ScareEffect_WaitString
-
-BattleScript_ScareContrary:
-	call BattleScript_AbilityPopUpTarget
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_ScareContrary_WontIncrease
-	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
-	printfromtable gStatUpStringIds
-	goto BattleScript_ScareEffect_WaitString
-
-BattleScript_ScareContrary_WontIncrease:
-	printstring STRINGID_TARGETSTATWONTGOHIGHER
 	goto BattleScript_ScareEffect_WaitString
 
 BattleScript_SupersweetSyrupActivates::

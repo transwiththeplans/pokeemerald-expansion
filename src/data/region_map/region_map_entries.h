@@ -5,294 +5,1498 @@
 #ifndef GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_H
 #define GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_H
 
-
-static const u8 sMapName_LITTLEROOT_TOWN[] = _("LITTLEROOT TOWN");
-static const u8 sMapName_OLDALE_TOWN[] = _("OLDALE TOWN");
-static const u8 sMapName_DEWFORD_TOWN[] = _("DEWFORD TOWN");
-static const u8 sMapName_LAVARIDGE_TOWN[] = _("LAVARIDGE TOWN");
-static const u8 sMapName_FALLARBOR_TOWN[] = _("FALLARBOR TOWN");
-static const u8 sMapName_TANDEMAUS_MEADOWS[] = _("TANDEMAUS_MEADOWS");
-static const u8 sMapName_PACIFIDLOG_TOWN[] = _("PACIFIDLOG TOWN");
-static const u8 sMapName_PETALBURG_CITY[] = _("PETALBURG CITY");
-static const u8 sMapName_SLATEPORT_CITY[] = _("SLATEPORT CITY");
-static const u8 sMapName_MAUVILLE_CITY[] = _("MAUVILLE CITY");
-static const u8 sMapName_RUSTBORO_CITY[] = _("RUSTBORO CITY");
-static const u8 sMapName_FORTREE_CITY[] = _("FORTREE CITY");
-static const u8 sMapName_LILYCOVE_CITY[] = _("LILYCOVE CITY");
-static const u8 sMapName_MOSSDEEP_CITY[] = _("MOSSDEEP CITY");
-static const u8 sMapName_SOOTOPOLIS_CITY[] = _("SOOTOPOLIS CITY");
-static const u8 sMapName_EVER_GRANDE_CITY[] = _("EVER GRANDE CITY");
-static const u8 sMapName_ROUTE_101[] = _("ROUTE 101");
-static const u8 sMapName_ROUTE_102[] = _("ROUTE 102");
-static const u8 sMapName_ROUTE_103[] = _("ROUTE 103");
-static const u8 sMapName_ROUTE_104[] = _("ROUTE 104");
-static const u8 sMapName_ROUTE_105[] = _("ROUTE 105");
-static const u8 sMapName_ROUTE_106[] = _("ROUTE 106");
-static const u8 sMapName_ROUTE_107[] = _("ROUTE 107");
-static const u8 sMapName_ROUTE_108[] = _("ROUTE 108");
-static const u8 sMapName_ROUTE_109[] = _("ROUTE 109");
-static const u8 sMapName_ROUTE_110[] = _("ROUTE 110");
-static const u8 sMapName_ROUTE_111[] = _("ROUTE 111");
-static const u8 sMapName_ROUTE_112[] = _("ROUTE 112");
-static const u8 sMapName_ROUTE_113[] = _("ROUTE 113");
-static const u8 sMapName_ROUTE_114[] = _("ROUTE 114");
-static const u8 sMapName_ROUTE_115[] = _("ROUTE 115");
-static const u8 sMapName_ROUTE_116[] = _("ROUTE 116");
-static const u8 sMapName_ROUTE_117[] = _("ROUTE 117");
-static const u8 sMapName_ROUTE_118[] = _("ROUTE 118");
-static const u8 sMapName_ROUTE_119[] = _("ROUTE 119");
-static const u8 sMapName_ROUTE_120[] = _("ROUTE 120");
-static const u8 sMapName_ROUTE_121[] = _("ROUTE 121");
-static const u8 sMapName_ROUTE_122[] = _("ROUTE 122");
-static const u8 sMapName_ROUTE_123[] = _("ROUTE 123");
-static const u8 sMapName_ROUTE_124[] = _("ROUTE 124");
-static const u8 sMapName_ROUTE_125[] = _("ROUTE 125");
-static const u8 sMapName_ROUTE_126[] = _("ROUTE 126");
-static const u8 sMapName_ROUTE_127[] = _("ROUTE 127");
-static const u8 sMapName_ROUTE_128[] = _("ROUTE 128");
-static const u8 sMapName_ROUTE_129[] = _("ROUTE 129");
-static const u8 sMapName_ROUTE_130[] = _("ROUTE 130");
-static const u8 sMapName_ROUTE_131[] = _("ROUTE 131");
-static const u8 sMapName_ROUTE_132[] = _("ROUTE 132");
-static const u8 sMapName_ROUTE_133[] = _("ROUTE 133");
-static const u8 sMapName_ROUTE_134[] = _("ROUTE 134");
-static const u8 sMapName_UNDERWATER[] = _("UNDERWATER");
-static const u8 sMapName_GRANITE_CAVE[] = _("GRANITE CAVE");
-static const u8 sMapName_MT__CHIMNEY[] = _("MT. CHIMNEY");
-static const u8 sMapName_SAFARI_ZONE[] = _("SAFARI ZONE");
-static const u8 sMapName_BATTLE_FRONTIER[] = _("BATTLE FRONTIER");
-static const u8 sMapName_PETALBURG_WOODS[] = _("PETALBURG WOODS");
-static const u8 sMapName_RUSTURF_TUNNEL[] = _("RUSTURF TUNNEL");
-static const u8 sMapName_ABANDONED_SHIP[] = _("ABANDONED SHIP");
-static const u8 sMapName_NEW_MAUVILLE[] = _("NEW MAUVILLE");
-static const u8 sMapName_METEOR_FALLS[] = _("METEOR FALLS");
-static const u8 sMapName_MT__PYRE[] = _("MT. PYRE");
-static const u8 sMapName__AQUA__HIDEOUT[] = _("{AQUA} HIDEOUT");
-static const u8 sMapName_SHOAL_CAVE[] = _("SHOAL CAVE");
-static const u8 sMapName_SEAFLOOR_CAVERN[] = _("SEAFLOOR CAVERN");
-static const u8 sMapName_VICTORY_ROAD[] = _("VICTORY ROAD");
-static const u8 sMapName_MIRAGE_ISLAND[] = _("MIRAGE ISLAND");
-static const u8 sMapName_CAVE_OF_ORIGIN[] = _("CAVE OF ORIGIN");
-static const u8 sMapName_SOUTHERN_ISLAND[] = _("SOUTHERN ISLAND");
-static const u8 sMapName_FIERY_PATH[] = _("FIERY PATH");
-static const u8 sMapName_JAGGED_PASS[] = _("JAGGED PASS");
-static const u8 sMapName_SEALED_CHAMBER[] = _("SEALED CHAMBER");
-static const u8 sMapName_SCORCHED_SLAB[] = _("SCORCHED SLAB");
-static const u8 sMapName_ISLAND_CAVE[] = _("ISLAND CAVE");
-static const u8 sMapName_DESERT_RUINS[] = _("DESERT RUINS");
-static const u8 sMapName_ANCIENT_TOMB[] = _("ANCIENT TOMB");
-static const u8 sMapName_INSIDE_OF_TRUCK[] = _("INSIDE OF TRUCK");
-static const u8 sMapName_SKY_PILLAR[] = _("SKY PILLAR");
-static const u8 sMapName_SECRET_BASE[] = _("SECRET BASE");
-static const u8 sMapName_PALLET_TOWN[] = _("PALLET TOWN");
-static const u8 sMapName_VIRIDIAN_CITY[] = _("VIRIDIAN CITY");
-static const u8 sMapName_PEWTER_CITY[] = _("PEWTER CITY");
-static const u8 sMapName_CERULEAN_CITY[] = _("CERULEAN CITY");
-static const u8 sMapName_LAVENDER_TOWN[] = _("LAVENDER TOWN");
-static const u8 sMapName_VERMILION_CITY[] = _("VERMILION CITY");
-static const u8 sMapName_CELADON_CITY[] = _("CELADON CITY");
-static const u8 sMapName_FUCHSIA_CITY[] = _("FUCHSIA CITY");
-static const u8 sMapName_CINNABAR_ISLAND[] = _("CINNABAR ISLAND");
-static const u8 sMapName_INDIGO_PLATEAU[] = _("INDIGO PLATEAU");
-static const u8 sMapName_SAFFRON_CITY[] = _("SAFFRON CITY");
-static const u8 sMapName_ROUTE_4[] = _("ROUTE 4");
-static const u8 sMapName_ROUTE_10[] = _("ROUTE 10");
-static const u8 sMapName_ROUTE_1[] = _("ROUTE 1");
-static const u8 sMapName_ROUTE_2[] = _("ROUTE 2");
-static const u8 sMapName_ROUTE_3[] = _("ROUTE 3");
-static const u8 sMapName_ROUTE_5[] = _("ROUTE 5");
-static const u8 sMapName_ROUTE_6[] = _("ROUTE 6");
-static const u8 sMapName_ROUTE_7[] = _("ROUTE 7");
-static const u8 sMapName_ROUTE_8[] = _("ROUTE 8");
-static const u8 sMapName_ROUTE_9[] = _("ROUTE 9");
-static const u8 sMapName_ROUTE_11[] = _("ROUTE 11");
-static const u8 sMapName_ROUTE_12[] = _("ROUTE 12");
-static const u8 sMapName_ROUTE_13[] = _("ROUTE 13");
-static const u8 sMapName_ROUTE_14[] = _("ROUTE 14");
-static const u8 sMapName_ROUTE_15[] = _("ROUTE 15");
-static const u8 sMapName_ROUTE_16[] = _("ROUTE 16");
-static const u8 sMapName_ROUTE_17[] = _("ROUTE 17");
-static const u8 sMapName_ROUTE_18[] = _("ROUTE 18");
-static const u8 sMapName_ROUTE_19[] = _("ROUTE 19");
-static const u8 sMapName_ROUTE_20[] = _("ROUTE 20");
-static const u8 sMapName_ROUTE_21[] = _("ROUTE 21");
-static const u8 sMapName_ROUTE_22[] = _("ROUTE 22");
-static const u8 sMapName_ROUTE_23[] = _("ROUTE 23");
-static const u8 sMapName_ROUTE_24[] = _("ROUTE 24");
-static const u8 sMapName_ROUTE_25[] = _("ROUTE 25");
-static const u8 sMapName_VIRIDIAN_FOREST[] = _("VIRIDIAN FOREST");
-static const u8 sMapName_MT__MOON[] = _("MT. MOON");
-static const u8 sMapName_S_S__ANNE[] = _("S.S. ANNE");
-static const u8 sMapName_UNDERGROUND_PATH[] = _("UNDERGROUND PATH");
-static const u8 sMapName_DIGLETT_S_GROTTO[] = _("DIGLETT'S GROTTO");
-static const u8 sMapName_ROCKET_HIDEOUT[] = _("ROCKET HIDEOUT");
-static const u8 sMapName_SILPH_CO_[] = _("SILPH CO.");
-static const u8 sMapName_POK__MON_MANSION[] = _("POKéMON MANSION");
-static const u8 sMapName_POK__MON_LEAGUE[] = _("POKéMON LEAGUE");
-static const u8 sMapName_ROCK_TUNNEL[] = _("ROCK TUNNEL");
-static const u8 sMapName_SEAFOAM_ISLANDS[] = _("SEAFOAM ISLANDS");
-static const u8 sMapName_POK__MON_TOWER[] = _("POKéMON TOWER");
-static const u8 sMapName_CERULEAN_CAVE[] = _("CERULEAN CAVE");
-static const u8 sMapName_POWER_PLANT[] = _("POWER PLANT");
-static const u8 sMapName_ONE_ISLAND[] = _("ONE ISLAND");
-static const u8 sMapName_TWO_ISLAND[] = _("TWO ISLAND");
-static const u8 sMapName_THREE_ISLAND[] = _("THREE ISLAND");
-static const u8 sMapName_FOUR_ISLAND[] = _("FOUR ISLAND");
-static const u8 sMapName_FIVE_ISLAND[] = _("FIVE ISLAND");
-static const u8 sMapName_SEVEN_ISLAND[] = _("SEVEN ISLAND");
-static const u8 sMapName_SIX_ISLAND[] = _("SIX ISLAND");
-static const u8 sMapName_KINDLE_ROAD[] = _("KINDLE ROAD");
-static const u8 sMapName_TREASURE_BEACH[] = _("TREASURE BEACH");
-static const u8 sMapName_CAPE_BRINK[] = _("CAPE BRINK");
-static const u8 sMapName_BOND_BRIDGE[] = _("BOND BRIDGE");
-static const u8 sMapName_THREE_ISLE_PORT[] = _("THREE ISLE PORT");
-static const u8 sMapName_SEVII_ISLE_6[] = _("SEVII ISLE 6");
-static const u8 sMapName_SEVII_ISLE_7[] = _("SEVII ISLE 7");
-static const u8 sMapName_SEVII_ISLE_8[] = _("SEVII ISLE 8");
-static const u8 sMapName_SEVII_ISLE_9[] = _("SEVII ISLE 9");
-static const u8 sMapName_Tandemaus_Meadows[] = _("Tandemaus_Meadows");
-static const u8 sMapName_WATER_LABYRINTH[] = _("WATER LABYRINTH");
-static const u8 sMapName_FIVE_ISLE_MEADOW[] = _("FIVE ISLE MEADOW");
-static const u8 sMapName_MEMORIAL_PILLAR[] = _("MEMORIAL PILLAR");
-static const u8 sMapName_OUTCAST_ISLAND[] = _("OUTCAST ISLAND");
-static const u8 sMapName_GREEN_PATH[] = _("GREEN PATH");
-static const u8 sMapName_WATER_PATH[] = _("WATER PATH");
-static const u8 sMapName_RUIN_VALLEY[] = _("RUIN VALLEY");
-static const u8 sMapName_TRAINER_TOWER[] = _("TRAINER TOWER");
-static const u8 sMapName_CANYON_ENTRANCE[] = _("CANYON ENTRANCE");
-static const u8 sMapName_SEVAULT_CANYON[] = _("SEVAULT CANYON");
-static const u8 sMapName_TANOBY_RUINS[] = _("TANOBY RUINS");
-static const u8 sMapName_SEVII_ISLE_22[] = _("SEVII ISLE 22");
-static const u8 sMapName_SEVII_ISLE_23[] = _("SEVII ISLE 23");
-static const u8 sMapName_SEVII_ISLE_24[] = _("SEVII ISLE 24");
-static const u8 sMapName_NAVEL_ROCK[] = _("NAVEL ROCK");
-static const u8 sMapName_MT__EMBER[] = _("MT. EMBER");
-static const u8 sMapName_BERRY_FOREST[] = _("BERRY FOREST");
-static const u8 sMapName_ICEFALL_CAVE[] = _("ICEFALL CAVE");
-static const u8 sMapName_ROCKET_WAREHOUSE[] = _("ROCKET WAREHOUSE");
-static const u8 sMapName_DOTTED_HOLE[] = _("DOTTED HOLE");
-static const u8 sMapName_LOST_CAVE[] = _("LOST CAVE");
-static const u8 sMapName_PATTERN_BUSH[] = _("PATTERN BUSH");
-static const u8 sMapName_ALTERING_CAVE[] = _("ALTERING CAVE");
-static const u8 sMapName_TANOBY_CHAMBERS[] = _("TANOBY CHAMBERS");
-static const u8 sMapName_THREE_ISLE_PATH[] = _("THREE ISLE PATH");
-static const u8 sMapName_TANOBY_KEY[] = _("TANOBY KEY");
-static const u8 sMapName_BIRTH_ISLAND[] = _("BIRTH ISLAND");
-static const u8 sMapName_MONEAN_CHAMBER[] = _("MONEAN CHAMBER");
-static const u8 sMapName_LIPTOO_CHAMBER[] = _("LIPTOO CHAMBER");
-static const u8 sMapName_WEEPTH_CHAMBER[] = _("WEEPTH CHAMBER");
-static const u8 sMapName_DILFORD_CHAMBER[] = _("DILFORD CHAMBER");
-static const u8 sMapName_SCUFIB_CHAMBER[] = _("SCUFIB CHAMBER");
-static const u8 sMapName_RIXY_CHAMBER[] = _("RIXY CHAMBER");
-static const u8 sMapName_VIAPOIS_CHAMBER[] = _("VIAPOIS CHAMBER");
-static const u8 sMapName_EMBER_SPA[] = _("EMBER SPA");
-static const u8 sMapName_SPECIAL_AREA[] = _("SPECIAL AREA");
-static const u8 sMapName_AQUA_HIDEOUT[] = _("AQUA HIDEOUT");
-static const u8 sMapName_MAGMA_HIDEOUT[] = _("MAGMA HIDEOUT");
-static const u8 sMapName_MIRAGE_TOWER[] = _("MIRAGE TOWER");
-static const u8 sMapName_FARAWAY_ISLAND[] = _("FARAWAY ISLAND");
-static const u8 sMapName_ARTISAN_CAVE[] = _("ARTISAN CAVE");
-static const u8 sMapName_MARINE_CAVE[] = _("MARINE CAVE");
-static const u8 sMapName_TERRA_CAVE[] = _("TERRA CAVE");
-static const u8 sMapName_DESERT_UNDERPASS[] = _("DESERT UNDERPASS");
-static const u8 sMapName_TRAINER_HILL[] = _("TRAINER HILL");
-
 const struct RegionMapLocation gRegionMapEntries[] = {
-    [MAPSEC_LITTLEROOT_TOWN] = { 4, 11, 1, 1, sMapName_LITTLEROOT_TOWN},
-    [MAPSEC_OLDALE_TOWN] = { 4, 9, 1, 1, sMapName_OLDALE_TOWN},
-    [MAPSEC_DEWFORD_TOWN] = { 2, 14, 1, 1, sMapName_DEWFORD_TOWN},
-    [MAPSEC_LAVARIDGE_TOWN] = { 5, 3, 1, 1, sMapName_LAVARIDGE_TOWN},
-    [MAPSEC_FALLARBOR_TOWN] = { 3, 0, 1, 1, sMapName_FALLARBOR_TOWN},
-    [MAPSEC_VERDANTURF_TOWN] = { 4, 6, 1, 1, sMapName_TANDEMAUS_MEADOWS},
-    [MAPSEC_PACIFIDLOG_TOWN] = { 17, 10, 1, 1, sMapName_PACIFIDLOG_TOWN},
-    [MAPSEC_PETALBURG_CITY] = { 1, 9, 1, 1, sMapName_PETALBURG_CITY},
-    [MAPSEC_SLATEPORT_CITY] = { 8, 10, 1, 2, sMapName_SLATEPORT_CITY},
-    [MAPSEC_MAUVILLE_CITY] = { 8, 6, 2, 1, sMapName_MAUVILLE_CITY},
-    [MAPSEC_RUSTBORO_CITY] = { 0, 5, 1, 2, sMapName_RUSTBORO_CITY},
-    [MAPSEC_FORTREE_CITY] = { 12, 0, 1, 1, sMapName_FORTREE_CITY},
-    [MAPSEC_LILYCOVE_CITY] = { 18, 3, 2, 1, sMapName_LILYCOVE_CITY},
-    [MAPSEC_MOSSDEEP_CITY] = { 24, 5, 2, 1, sMapName_MOSSDEEP_CITY},
-    [MAPSEC_SOOTOPOLIS_CITY] = { 21, 7, 1, 1, sMapName_SOOTOPOLIS_CITY},
-    [MAPSEC_EVER_GRANDE_CITY] = { 27, 8, 1, 2, sMapName_EVER_GRANDE_CITY},
-    [MAPSEC_ROUTE_101] = { 4, 10, 1, 1, sMapName_ROUTE_101},
-    [MAPSEC_ROUTE_102] = { 2, 9, 2, 1, sMapName_ROUTE_102},
-    [MAPSEC_ROUTE_103] = { 4, 8, 4, 1, sMapName_ROUTE_103},
-    [MAPSEC_ROUTE_104] = { 0, 7, 1, 3, sMapName_ROUTE_104},
-    [MAPSEC_ROUTE_105] = { 0, 10, 1, 3, sMapName_ROUTE_105},
-    [MAPSEC_ROUTE_106] = { 0, 13, 2, 1, sMapName_ROUTE_106},
-    [MAPSEC_ROUTE_107] = { 3, 14, 3, 1, sMapName_ROUTE_107},
-    [MAPSEC_ROUTE_108] = { 6, 14, 2, 1, sMapName_ROUTE_108},
-    [MAPSEC_ROUTE_109] = { 8, 12, 1, 3, sMapName_ROUTE_109},
-    [MAPSEC_ROUTE_110] = { 8, 7, 1, 3, sMapName_ROUTE_110},
-    [MAPSEC_ROUTE_111] = { 8, 0, 1, 6, sMapName_ROUTE_111},
-    [MAPSEC_ROUTE_112] = { 6, 3, 2, 1, sMapName_ROUTE_112},
-    [MAPSEC_ROUTE_113] = { 4, 0, 4, 1, sMapName_ROUTE_113},
-    [MAPSEC_ROUTE_114] = { 1, 0, 2, 3, sMapName_ROUTE_114},
-    [MAPSEC_ROUTE_115] = { 0, 2, 1, 3, sMapName_ROUTE_115},
-    [MAPSEC_ROUTE_116] = { 1, 5, 4, 1, sMapName_ROUTE_116},
-    [MAPSEC_ROUTE_117] = { 5, 6, 3, 1, sMapName_ROUTE_117},
-    [MAPSEC_ROUTE_118] = { 10, 6, 2, 1, sMapName_ROUTE_118},
-    [MAPSEC_ROUTE_119] = { 11, 0, 1, 6, sMapName_ROUTE_119},
-    [MAPSEC_ROUTE_120] = { 13, 0, 1, 4, sMapName_ROUTE_120},
-    [MAPSEC_ROUTE_121] = { 14, 3, 4, 1, sMapName_ROUTE_121},
-    [MAPSEC_ROUTE_122] = { 16, 4, 1, 2, sMapName_ROUTE_122},
-    [MAPSEC_ROUTE_123] = { 12, 6, 5, 1, sMapName_ROUTE_123},
-    [MAPSEC_ROUTE_124] = { 20, 3, 4, 3, sMapName_ROUTE_124},
-    [MAPSEC_ROUTE_125] = { 24, 3, 2, 2, sMapName_ROUTE_125},
-    [MAPSEC_ROUTE_126] = { 20, 6, 3, 3, sMapName_ROUTE_126},
-    [MAPSEC_ROUTE_127] = { 23, 6, 3, 3, sMapName_ROUTE_127},
-    [MAPSEC_ROUTE_128] = { 23, 9, 4, 1, sMapName_ROUTE_128},
-    [MAPSEC_ROUTE_129] = { 24, 10, 2, 1, sMapName_ROUTE_129},
-    [MAPSEC_ROUTE_130] = { 21, 10, 3, 1, sMapName_ROUTE_130},
-    [MAPSEC_ROUTE_131] = { 18, 10, 3, 1, sMapName_ROUTE_131},
-    [MAPSEC_ROUTE_132] = { 15, 10, 2, 1, sMapName_ROUTE_132},
-    [MAPSEC_ROUTE_133] = { 12, 10, 3, 1, sMapName_ROUTE_133},
-    [MAPSEC_ROUTE_134] = { 9, 10, 3, 1, sMapName_ROUTE_134},
-    [MAPSEC_UNDERWATER_124] = { 20, 3, 4, 3, sMapName_UNDERWATER},
-    [MAPSEC_UNDERWATER_126] = { 20, 6, 3, 3, sMapName_UNDERWATER},
-    [MAPSEC_UNDERWATER_127] = { 23, 6, 3, 3, sMapName_UNDERWATER},
-    [MAPSEC_UNDERWATER_128] = { 23, 9, 4, 1, sMapName_UNDERWATER},
-    [MAPSEC_UNDERWATER_SOOTOPOLIS] = { 21, 7, 1, 1, sMapName_UNDERWATER},
-    [MAPSEC_GRANITE_CAVE] = { 1, 13, 1, 1, sMapName_GRANITE_CAVE},
-    [MAPSEC_MT_CHIMNEY] = { 6, 2, 1, 1, sMapName_MT__CHIMNEY},
-    [MAPSEC_SAFARI_ZONE] = { 16, 2, 1, 1, sMapName_SAFARI_ZONE},
-    [MAPSEC_BATTLE_FRONTIER] = { 22, 12, 1, 1, sMapName_BATTLE_FRONTIER},
-    [MAPSEC_PETALBURG_WOODS] = { 0, 8, 1, 1, sMapName_PETALBURG_WOODS},
-    [MAPSEC_RUSTURF_TUNNEL] = { 2, 5, 1, 1, sMapName_RUSTURF_TUNNEL},
-    [MAPSEC_ABANDONED_SHIP] = { 6, 14, 1, 1, sMapName_ABANDONED_SHIP},
-    [MAPSEC_NEW_MAUVILLE] = { 8, 7, 1, 1, sMapName_NEW_MAUVILLE},
-    [MAPSEC_METEOR_FALLS] = { 0, 3, 1, 1, sMapName_METEOR_FALLS},
-    [MAPSEC_METEOR_FALLS2] = { 1, 2, 1, 1, sMapName_METEOR_FALLS},
-    [MAPSEC_MT_PYRE] = { 16, 4, 1, 1, sMapName_MT__PYRE},
-    [MAPSEC_AQUA_HIDEOUT_OLD] = { 19, 3, 1, 1, sMapName__AQUA__HIDEOUT},
-    [MAPSEC_SHOAL_CAVE] = { 24, 4, 1, 1, sMapName_SHOAL_CAVE},
-    [MAPSEC_SEAFLOOR_CAVERN] = { 24, 9, 1, 1, sMapName_SEAFLOOR_CAVERN},
-    [MAPSEC_UNDERWATER_SEAFLOOR_CAVERN] = { 24, 9, 1, 1, sMapName_UNDERWATER},
-    [MAPSEC_VICTORY_ROAD] = { 27, 9, 1, 1, sMapName_VICTORY_ROAD},
-    [MAPSEC_MIRAGE_ISLAND] = { 17, 10, 1, 1, sMapName_MIRAGE_ISLAND},
-    [MAPSEC_CAVE_OF_ORIGIN] = { 21, 7, 1, 1, sMapName_CAVE_OF_ORIGIN},
-    [MAPSEC_SOUTHERN_ISLAND] = { 12, 14, 1, 1, sMapName_SOUTHERN_ISLAND},
-    [MAPSEC_FIERY_PATH] = { 6, 3, 1, 1, sMapName_FIERY_PATH},
-    [MAPSEC_FIERY_PATH2] = { 7, 3, 1, 1, sMapName_FIERY_PATH},
-    [MAPSEC_JAGGED_PASS] = { 6, 3, 1, 1, sMapName_JAGGED_PASS},
-    [MAPSEC_JAGGED_PASS2] = { 7, 2, 1, 1, sMapName_JAGGED_PASS},
-    [MAPSEC_SEALED_CHAMBER] = { 11, 10, 1, 1, sMapName_SEALED_CHAMBER},
-    [MAPSEC_UNDERWATER_SEALED_CHAMBER] = { 11, 10, 1, 1, sMapName_UNDERWATER},
-    [MAPSEC_SCORCHED_SLAB] = { 13, 0, 1, 1, sMapName_SCORCHED_SLAB},
-    [MAPSEC_ISLAND_CAVE] = { 0, 10, 1, 1, sMapName_ISLAND_CAVE},
-    [MAPSEC_DESERT_RUINS] = { 8, 3, 1, 1, sMapName_DESERT_RUINS},
-    [MAPSEC_ANCIENT_TOMB] = { 13, 2, 1, 1, sMapName_ANCIENT_TOMB},
-    [MAPSEC_SKY_PILLAR] = { 19, 10, 1, 1, sMapName_SKY_PILLAR},
-    [MAPSEC_AQUA_HIDEOUT] = { 19, 3, 1, 1, sMapName_AQUA_HIDEOUT},
-    [MAPSEC_MAGMA_HIDEOUT] = { 6, 3, 1, 1, sMapName_MAGMA_HIDEOUT},
-    [MAPSEC_MIRAGE_TOWER] = { 8, 2, 1, 1, sMapName_MIRAGE_TOWER},
-    [MAPSEC_ARTISAN_CAVE] = { 22, 12, 1, 1, sMapName_ARTISAN_CAVE},
-    [MAPSEC_UNDERWATER_105] = { 0, 10, 1, 3, sMapName_UNDERWATER},
-    [MAPSEC_UNDERWATER_125] = { 24, 3, 2, 2, sMapName_UNDERWATER},
-    [MAPSEC_UNDERWATER_129] = { 24, 10, 2, 1, sMapName_UNDERWATER},
-    [MAPSEC_DESERT_UNDERPASS] = { 2, 0, 1, 1, sMapName_DESERT_UNDERPASS},
-    [MAPSEC_ALTERING_CAVE] = { 6, 8, 1, 1, sMapName_DIGLETT_S_GROTTO},
-    [MAPSEC_TRAINER_HILL] = { 8, 4, 1, 1, sMapName_TRAINER_HILL},
+    [MAPSEC_LITTLEROOT_TOWN] = {
+        .x = 4,
+        .y = 11,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("LITTLEROOT TOWN"),
+    },
+    [MAPSEC_OLDALE_TOWN] = {
+        .x = 4,
+        .y = 9,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("OLDALE TOWN"),
+    },
+    [MAPSEC_DEWFORD_TOWN] = {
+        .x = 2,
+        .y = 14,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("DEWFORD TOWN"),
+    },
+    [MAPSEC_LAVARIDGE_TOWN] = {
+        .x = 5,
+        .y = 3,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("LAVARIDGE TOWN"),
+    },
+    [MAPSEC_FALLARBOR_TOWN] = {
+        .x = 3,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("FALLARBOR TOWN"),
+    },
+    [MAPSEC_VERDANTURF_TOWN] = {
+        .x = 4,
+        .y = 6,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("TANDEMAUS_MEADOWS"),
+    },
+    [MAPSEC_PACIFIDLOG_TOWN] = {
+        .x = 17,
+        .y = 10,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("PACIFIDLOG TOWN"),
+    },
+    [MAPSEC_PETALBURG_CITY] = {
+        .x = 1,
+        .y = 9,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("PETALBURG CITY"),
+    },
+    [MAPSEC_SLATEPORT_CITY] = {
+        .x = 8,
+        .y = 10,
+        .width = 1,
+        .height = 2,
+        .name = COMPOUND_STRING("SLATEPORT CITY"),
+    },
+    [MAPSEC_MAUVILLE_CITY] = {
+        .x = 8,
+        .y = 6,
+        .width = 2,
+        .height = 1,
+        .name = COMPOUND_STRING("MAUVILLE CITY"),
+    },
+    [MAPSEC_RUSTBORO_CITY] = {
+        .x = 0,
+        .y = 5,
+        .width = 1,
+        .height = 2,
+        .name = COMPOUND_STRING("RUSTBORO CITY"),
+    },
+    [MAPSEC_FORTREE_CITY] = {
+        .x = 12,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("FORTREE CITY"),
+    },
+    [MAPSEC_LILYCOVE_CITY] = {
+        .x = 18,
+        .y = 3,
+        .width = 2,
+        .height = 1,
+        .name = COMPOUND_STRING("LILYCOVE CITY"),
+    },
+    [MAPSEC_MOSSDEEP_CITY] = {
+        .x = 24,
+        .y = 5,
+        .width = 2,
+        .height = 1,
+        .name = COMPOUND_STRING("MOSSDEEP CITY"),
+    },
+    [MAPSEC_SOOTOPOLIS_CITY] = {
+        .x = 21,
+        .y = 7,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SOOTOPOLIS CITY"),
+    },
+    [MAPSEC_EVER_GRANDE_CITY] = {
+        .x = 27,
+        .y = 8,
+        .width = 1,
+        .height = 2,
+        .name = COMPOUND_STRING("EVER GRANDE CITY"),
+    },
+    [MAPSEC_ROUTE_101] = {
+        .x = 4,
+        .y = 10,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 101"),
+    },
+    [MAPSEC_ROUTE_102] = {
+        .x = 2,
+        .y = 9,
+        .width = 2,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 102"),
+    },
+    [MAPSEC_ROUTE_103] = {
+        .x = 4,
+        .y = 8,
+        .width = 4,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 103"),
+    },
+    [MAPSEC_ROUTE_104] = {
+        .x = 0,
+        .y = 7,
+        .width = 1,
+        .height = 3,
+        .name = COMPOUND_STRING("ROUTE 104"),
+    },
+    [MAPSEC_ROUTE_105] = {
+        .x = 0,
+        .y = 10,
+        .width = 1,
+        .height = 3,
+        .name = COMPOUND_STRING("ROUTE 105"),
+    },
+    [MAPSEC_ROUTE_106] = {
+        .x = 0,
+        .y = 13,
+        .width = 2,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 106"),
+    },
+    [MAPSEC_ROUTE_107] = {
+        .x = 3,
+        .y = 14,
+        .width = 3,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 107"),
+    },
+    [MAPSEC_ROUTE_108] = {
+        .x = 6,
+        .y = 14,
+        .width = 2,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 108"),
+    },
+    [MAPSEC_ROUTE_109] = {
+        .x = 8,
+        .y = 12,
+        .width = 1,
+        .height = 3,
+        .name = COMPOUND_STRING("ROUTE 109"),
+    },
+    [MAPSEC_ROUTE_110] = {
+        .x = 8,
+        .y = 7,
+        .width = 1,
+        .height = 3,
+        .name = COMPOUND_STRING("ROUTE 110"),
+    },
+    [MAPSEC_ROUTE_111] = {
+        .x = 8,
+        .y = 0,
+        .width = 1,
+        .height = 6,
+        .name = COMPOUND_STRING("ROUTE 111"),
+    },
+    [MAPSEC_ROUTE_112] = {
+        .x = 6,
+        .y = 3,
+        .width = 2,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 112"),
+    },
+    [MAPSEC_ROUTE_113] = {
+        .x = 4,
+        .y = 0,
+        .width = 4,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 113"),
+    },
+    [MAPSEC_ROUTE_114] = {
+        .x = 1,
+        .y = 0,
+        .width = 2,
+        .height = 3,
+        .name = COMPOUND_STRING("ROUTE 114"),
+    },
+    [MAPSEC_ROUTE_115] = {
+        .x = 0,
+        .y = 2,
+        .width = 1,
+        .height = 3,
+        .name = COMPOUND_STRING("ROUTE 115"),
+    },
+    [MAPSEC_ROUTE_116] = {
+        .x = 1,
+        .y = 5,
+        .width = 4,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 116"),
+    },
+    [MAPSEC_ROUTE_117] = {
+        .x = 5,
+        .y = 6,
+        .width = 3,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 117"),
+    },
+    [MAPSEC_ROUTE_118] = {
+        .x = 10,
+        .y = 6,
+        .width = 2,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 118"),
+    },
+    [MAPSEC_ROUTE_119] = {
+        .x = 11,
+        .y = 0,
+        .width = 1,
+        .height = 6,
+        .name = COMPOUND_STRING("ROUTE 119"),
+    },
+    [MAPSEC_ROUTE_120] = {
+        .x = 13,
+        .y = 0,
+        .width = 1,
+        .height = 4,
+        .name = COMPOUND_STRING("ROUTE 120"),
+    },
+    [MAPSEC_ROUTE_121] = {
+        .x = 14,
+        .y = 3,
+        .width = 4,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 121"),
+    },
+    [MAPSEC_ROUTE_122] = {
+        .x = 16,
+        .y = 4,
+        .width = 1,
+        .height = 2,
+        .name = COMPOUND_STRING("ROUTE 122"),
+    },
+    [MAPSEC_ROUTE_123] = {
+        .x = 12,
+        .y = 6,
+        .width = 5,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 123"),
+    },
+    [MAPSEC_ROUTE_124] = {
+        .x = 20,
+        .y = 3,
+        .width = 4,
+        .height = 3,
+        .name = COMPOUND_STRING("ROUTE 124"),
+    },
+    [MAPSEC_ROUTE_125] = {
+        .x = 24,
+        .y = 3,
+        .width = 2,
+        .height = 2,
+        .name = COMPOUND_STRING("ROUTE 125"),
+    },
+    [MAPSEC_ROUTE_126] = {
+        .x = 20,
+        .y = 6,
+        .width = 3,
+        .height = 3,
+        .name = COMPOUND_STRING("ROUTE 126"),
+    },
+    [MAPSEC_ROUTE_127] = {
+        .x = 23,
+        .y = 6,
+        .width = 3,
+        .height = 3,
+        .name = COMPOUND_STRING("ROUTE 127"),
+    },
+    [MAPSEC_ROUTE_128] = {
+        .x = 23,
+        .y = 9,
+        .width = 4,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 128"),
+    },
+    [MAPSEC_ROUTE_129] = {
+        .x = 24,
+        .y = 10,
+        .width = 2,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 129"),
+    },
+    [MAPSEC_ROUTE_130] = {
+        .x = 21,
+        .y = 10,
+        .width = 3,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 130"),
+    },
+    [MAPSEC_ROUTE_131] = {
+        .x = 18,
+        .y = 10,
+        .width = 3,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 131"),
+    },
+    [MAPSEC_ROUTE_132] = {
+        .x = 15,
+        .y = 10,
+        .width = 2,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 132"),
+    },
+    [MAPSEC_ROUTE_133] = {
+        .x = 12,
+        .y = 10,
+        .width = 3,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 133"),
+    },
+    [MAPSEC_ROUTE_134] = {
+        .x = 9,
+        .y = 10,
+        .width = 3,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 134"),
+    },
+    [MAPSEC_UNDERWATER_124] = {
+        .x = 20,
+        .y = 3,
+        .width = 4,
+        .height = 3,
+        .name = COMPOUND_STRING("UNDERWATER"),
+    },
+    [MAPSEC_UNDERWATER_126] = {
+        .x = 20,
+        .y = 6,
+        .width = 3,
+        .height = 3,
+        .name = COMPOUND_STRING("UNDERWATER"),
+    },
+    [MAPSEC_UNDERWATER_127] = {
+        .x = 23,
+        .y = 6,
+        .width = 3,
+        .height = 3,
+        .name = COMPOUND_STRING("UNDERWATER"),
+    },
+    [MAPSEC_UNDERWATER_128] = {
+        .x = 23,
+        .y = 9,
+        .width = 4,
+        .height = 1,
+        .name = COMPOUND_STRING("UNDERWATER"),
+    },
+    [MAPSEC_UNDERWATER_SOOTOPOLIS] = {
+        .x = 21,
+        .y = 7,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("UNDERWATER"),
+    },
+    [MAPSEC_GRANITE_CAVE] = {
+        .x = 1,
+        .y = 13,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("GRANITE CAVE"),
+    },
+    [MAPSEC_MT_CHIMNEY] = {
+        .x = 6,
+        .y = 2,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("MT. CHIMNEY"),
+    },
+    [MAPSEC_SAFARI_ZONE] = {
+        .x = 16,
+        .y = 2,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SAFARI ZONE"),
+    },
+    [MAPSEC_BATTLE_FRONTIER] = {
+        .x = 22,
+        .y = 12,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("BATTLE FRONTIER"),
+    },
+    [MAPSEC_PETALBURG_WOODS] = {
+        .x = 0,
+        .y = 8,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("PETALBURG WOODS"),
+    },
+    [MAPSEC_RUSTURF_TUNNEL] = {
+        .x = 2,
+        .y = 5,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("RUSTURF TUNNEL"),
+    },
+    [MAPSEC_ABANDONED_SHIP] = {
+        .x = 6,
+        .y = 14,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ABANDONED SHIP"),
+    },
+    [MAPSEC_NEW_MAUVILLE] = {
+        .x = 8,
+        .y = 7,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("NEW MAUVILLE"),
+    },
+    [MAPSEC_METEOR_FALLS] = {
+        .x = 0,
+        .y = 3,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("METEOR FALLS"),
+    },
+    [MAPSEC_METEOR_FALLS2] = {
+        .x = 1,
+        .y = 2,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("METEOR FALLS"),
+    },
+    [MAPSEC_MT_PYRE] = {
+        .x = 16,
+        .y = 4,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("MT. PYRE"),
+    },
+    [MAPSEC_AQUA_HIDEOUT_OLD] = {
+        .x = 19,
+        .y = 3,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("{AQUA} HIDEOUT"),
+    },
+    [MAPSEC_SHOAL_CAVE] = {
+        .x = 24,
+        .y = 4,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SHOAL CAVE"),
+    },
+    [MAPSEC_SEAFLOOR_CAVERN] = {
+        .x = 24,
+        .y = 9,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SEAFLOOR CAVERN"),
+    },
+    [MAPSEC_UNDERWATER_SEAFLOOR_CAVERN] = {
+        .x = 24,
+        .y = 9,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("UNDERWATER"),
+    },
+    [MAPSEC_VICTORY_ROAD] = {
+        .x = 27,
+        .y = 9,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("VICTORY ROAD"),
+    },
+    [MAPSEC_MIRAGE_ISLAND] = {
+        .x = 17,
+        .y = 10,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("MIRAGE ISLAND"),
+    },
+    [MAPSEC_CAVE_OF_ORIGIN] = {
+        .x = 21,
+        .y = 7,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("CAVE OF ORIGIN"),
+    },
+    [MAPSEC_SOUTHERN_ISLAND] = {
+        .x = 12,
+        .y = 14,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SOUTHERN ISLAND"),
+    },
+    [MAPSEC_FIERY_PATH] = {
+        .x = 6,
+        .y = 3,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("FIERY PATH"),
+    },
+    [MAPSEC_FIERY_PATH2] = {
+        .x = 7,
+        .y = 3,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("FIERY PATH"),
+    },
+    [MAPSEC_JAGGED_PASS] = {
+        .x = 6,
+        .y = 3,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("JAGGED PASS"),
+    },
+    [MAPSEC_JAGGED_PASS2] = {
+        .x = 7,
+        .y = 2,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("JAGGED PASS"),
+    },
+    [MAPSEC_SEALED_CHAMBER] = {
+        .x = 11,
+        .y = 10,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SEALED CHAMBER"),
+    },
+    [MAPSEC_UNDERWATER_SEALED_CHAMBER] = {
+        .x = 11,
+        .y = 10,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("UNDERWATER"),
+    },
+    [MAPSEC_SCORCHED_SLAB] = {
+        .x = 13,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SCORCHED SLAB"),
+    },
+    [MAPSEC_ISLAND_CAVE] = {
+        .x = 0,
+        .y = 10,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ISLAND CAVE"),
+    },
+    [MAPSEC_DESERT_RUINS] = {
+        .x = 8,
+        .y = 3,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("DESERT RUINS"),
+    },
+    [MAPSEC_ANCIENT_TOMB] = {
+        .x = 13,
+        .y = 2,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ANCIENT TOMB"),
+    },
+    [MAPSEC_INSIDE_OF_TRUCK] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("INSIDE OF TRUCK"),
+    },
+    [MAPSEC_SKY_PILLAR] = {
+        .x = 19,
+        .y = 10,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SKY PILLAR"),
+    },
+    [MAPSEC_SECRET_BASE] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SECRET BASE"),
+    },
+    [MAPSEC_DYNAMIC] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = (const u8[])_(""),
+    },
+    [MAPSEC_PALLET_TOWN] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("PALLET TOWN"),
+    },
+    [MAPSEC_VIRIDIAN_CITY] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("VIRIDIAN CITY"),
+    },
+    [MAPSEC_PEWTER_CITY] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("PEWTER CITY"),
+    },
+    [MAPSEC_CERULEAN_CITY] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("CERULEAN CITY"),
+    },
+    [MAPSEC_LAVENDER_TOWN] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("LAVENDER TOWN"),
+    },
+    [MAPSEC_VERMILION_CITY] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("VERMILION CITY"),
+    },
+    [MAPSEC_CELADON_CITY] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("CELADON CITY"),
+    },
+    [MAPSEC_FUCHSIA_CITY] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("FUCHSIA CITY"),
+    },
+    [MAPSEC_CINNABAR_ISLAND] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("CINNABAR ISLAND"),
+    },
+    [MAPSEC_INDIGO_PLATEAU] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("INDIGO PLATEAU"),
+    },
+    [MAPSEC_SAFFRON_CITY] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SAFFRON CITY"),
+    },
+    [MAPSEC_ROUTE_4_POKECENTER] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 4"),
+    },
+    [MAPSEC_ROUTE_10_POKECENTER] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 10"),
+    },
+    [MAPSEC_ROUTE_1] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 1"),
+    },
+    [MAPSEC_ROUTE_2] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 2"),
+    },
+    [MAPSEC_ROUTE_3] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 3"),
+    },
+    [MAPSEC_ROUTE_4] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 4"),
+    },
+    [MAPSEC_ROUTE_5] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 5"),
+    },
+    [MAPSEC_ROUTE_6] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 6"),
+    },
+    [MAPSEC_ROUTE_7] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 7"),
+    },
+    [MAPSEC_ROUTE_8] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 8"),
+    },
+    [MAPSEC_ROUTE_9] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 9"),
+    },
+    [MAPSEC_ROUTE_10] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 10"),
+    },
+    [MAPSEC_ROUTE_11] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 11"),
+    },
+    [MAPSEC_ROUTE_12] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 12"),
+    },
+    [MAPSEC_ROUTE_13] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 13"),
+    },
+    [MAPSEC_ROUTE_14] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 14"),
+    },
+    [MAPSEC_ROUTE_15] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 15"),
+    },
+    [MAPSEC_ROUTE_16] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 16"),
+    },
+    [MAPSEC_ROUTE_17] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 17"),
+    },
+    [MAPSEC_ROUTE_18] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 18"),
+    },
+    [MAPSEC_ROUTE_19] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 19"),
+    },
+    [MAPSEC_ROUTE_20] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 20"),
+    },
+    [MAPSEC_ROUTE_21] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 21"),
+    },
+    [MAPSEC_ROUTE_22] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 22"),
+    },
+    [MAPSEC_ROUTE_23] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 23"),
+    },
+    [MAPSEC_ROUTE_24] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 24"),
+    },
+    [MAPSEC_ROUTE_25] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROUTE 25"),
+    },
+    [MAPSEC_VIRIDIAN_FOREST] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("VIRIDIAN FOREST"),
+    },
+    [MAPSEC_MT_MOON] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("MT. MOON"),
+    },
+    [MAPSEC_S_S_ANNE] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("S.S. ANNE"),
+    },
+    [MAPSEC_UNDERGROUND_PATH] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("UNDERGROUND PATH"),
+    },
+    [MAPSEC_UNDERGROUND_PATH_2] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("UNDERGROUND PATH"),
+    },
+    [MAPSEC_DIGLETTS_CAVE] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("DIGLETT'S GROTTO"),
+    },
+    [MAPSEC_KANTO_VICTORY_ROAD] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("VICTORY ROAD"),
+    },
+    [MAPSEC_ROCKET_HIDEOUT] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROCKET HIDEOUT"),
+    },
+    [MAPSEC_SILPH_CO] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SILPH CO."),
+    },
+    [MAPSEC_POKEMON_MANSION] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("POKéMON MANSION"),
+    },
+    [MAPSEC_KANTO_SAFARI_ZONE] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SAFARI ZONE"),
+    },
+    [MAPSEC_POKEMON_LEAGUE] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("POKéMON LEAGUE"),
+    },
+    [MAPSEC_ROCK_TUNNEL] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROCK TUNNEL"),
+    },
+    [MAPSEC_SEAFOAM_ISLANDS] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SEAFOAM ISLANDS"),
+    },
+    [MAPSEC_POKEMON_TOWER] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("POKéMON TOWER"),
+    },
+    [MAPSEC_CERULEAN_CAVE] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("CERULEAN CAVE"),
+    },
+    [MAPSEC_POWER_PLANT] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("POWER PLANT"),
+    },
+    [MAPSEC_ONE_ISLAND] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ONE ISLAND"),
+    },
+    [MAPSEC_TWO_ISLAND] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("TWO ISLAND"),
+    },
+    [MAPSEC_THREE_ISLAND] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("THREE ISLAND"),
+    },
+    [MAPSEC_FOUR_ISLAND] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("FOUR ISLAND"),
+    },
+    [MAPSEC_FIVE_ISLAND] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("FIVE ISLAND"),
+    },
+    [MAPSEC_SEVEN_ISLAND] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SEVEN ISLAND"),
+    },
+    [MAPSEC_SIX_ISLAND] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SIX ISLAND"),
+    },
+    [MAPSEC_KINDLE_ROAD] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("KINDLE ROAD"),
+    },
+    [MAPSEC_TREASURE_BEACH] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("TREASURE BEACH"),
+    },
+    [MAPSEC_CAPE_BRINK] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("CAPE BRINK"),
+    },
+    [MAPSEC_BOND_BRIDGE] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("BOND BRIDGE"),
+    },
+    [MAPSEC_THREE_ISLE_PORT] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("THREE ISLE PORT"),
+    },
+    [MAPSEC_SEVII_ISLE_6] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SEVII ISLE 6"),
+    },
+    [MAPSEC_SEVII_ISLE_7] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SEVII ISLE 7"),
+    },
+    [MAPSEC_SEVII_ISLE_8] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SEVII ISLE 8"),
+    },
+    [MAPSEC_SEVII_ISLE_9] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SEVII ISLE 9"),
+    },
+    [MAPSEC_RESORT_GORGEOUS] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("Tandemaus_Meadows"),
+    },
+    [MAPSEC_WATER_LABYRINTH] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("WATER LABYRINTH"),
+    },
+    [MAPSEC_FIVE_ISLE_MEADOW] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("FIVE ISLE MEADOW"),
+    },
+    [MAPSEC_MEMORIAL_PILLAR] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("MEMORIAL PILLAR"),
+    },
+    [MAPSEC_OUTCAST_ISLAND] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("OUTCAST ISLAND"),
+    },
+    [MAPSEC_GREEN_PATH] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("GREEN PATH"),
+    },
+    [MAPSEC_WATER_PATH] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("WATER PATH"),
+    },
+    [MAPSEC_RUIN_VALLEY] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("RUIN VALLEY"),
+    },
+    [MAPSEC_TRAINER_TOWER] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("TRAINER TOWER"),
+    },
+    [MAPSEC_CANYON_ENTRANCE] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("CANYON ENTRANCE"),
+    },
+    [MAPSEC_SEVAULT_CANYON] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SEVAULT CANYON"),
+    },
+    [MAPSEC_TANOBY_RUINS] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("TANOBY RUINS"),
+    },
+    [MAPSEC_SEVII_ISLE_22] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SEVII ISLE 22"),
+    },
+    [MAPSEC_SEVII_ISLE_23] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SEVII ISLE 23"),
+    },
+    [MAPSEC_SEVII_ISLE_24] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SEVII ISLE 24"),
+    },
+    [MAPSEC_NAVEL_ROCK_FRLG] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("NAVEL ROCK"),
+    },
+    [MAPSEC_MT_EMBER] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("MT. EMBER"),
+    },
+    [MAPSEC_BERRY_FOREST] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("BERRY FOREST"),
+    },
+    [MAPSEC_ICEFALL_CAVE] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ICEFALL CAVE"),
+    },
+    [MAPSEC_ROCKET_WAREHOUSE] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ROCKET WAREHOUSE"),
+    },
+    [MAPSEC_TRAINER_TOWER_2] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("TRAINER TOWER"),
+    },
+    [MAPSEC_DOTTED_HOLE] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("DOTTED HOLE"),
+    },
+    [MAPSEC_LOST_CAVE] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("LOST CAVE"),
+    },
+    [MAPSEC_PATTERN_BUSH] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("PATTERN BUSH"),
+    },
+    [MAPSEC_ALTERING_CAVE_FRLG] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ALTERING CAVE"),
+    },
+    [MAPSEC_TANOBY_CHAMBERS] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("TANOBY CHAMBERS"),
+    },
+    [MAPSEC_THREE_ISLE_PATH] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("THREE ISLE PATH"),
+    },
+    [MAPSEC_TANOBY_KEY] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("TANOBY KEY"),
+    },
+    [MAPSEC_BIRTH_ISLAND_FRLG] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("BIRTH ISLAND"),
+    },
+    [MAPSEC_MONEAN_CHAMBER] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("MONEAN CHAMBER"),
+    },
+    [MAPSEC_LIPTOO_CHAMBER] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("LIPTOO CHAMBER"),
+    },
+    [MAPSEC_WEEPTH_CHAMBER] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("WEEPTH CHAMBER"),
+    },
+    [MAPSEC_DILFORD_CHAMBER] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("DILFORD CHAMBER"),
+    },
+    [MAPSEC_SCUFIB_CHAMBER] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SCUFIB CHAMBER"),
+    },
+    [MAPSEC_RIXY_CHAMBER] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("RIXY CHAMBER"),
+    },
+    [MAPSEC_VIAPOIS_CHAMBER] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("VIAPOIS CHAMBER"),
+    },
+    [MAPSEC_EMBER_SPA] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("EMBER SPA"),
+    },
+    [MAPSEC_SPECIAL_AREA] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("SPECIAL AREA"),
+    },
+    [MAPSEC_AQUA_HIDEOUT] = {
+        .x = 19,
+        .y = 3,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("AQUA HIDEOUT"),
+    },
+    [MAPSEC_MAGMA_HIDEOUT] = {
+        .x = 6,
+        .y = 3,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("MAGMA HIDEOUT"),
+    },
+    [MAPSEC_MIRAGE_TOWER] = {
+        .x = 8,
+        .y = 2,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("MIRAGE TOWER"),
+    },
+    [MAPSEC_BIRTH_ISLAND] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("BIRTH ISLAND"),
+    },
+    [MAPSEC_FARAWAY_ISLAND] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("FARAWAY ISLAND"),
+    },
+    [MAPSEC_ARTISAN_CAVE] = {
+        .x = 22,
+        .y = 12,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("ARTISAN CAVE"),
+    },
+    [MAPSEC_MARINE_CAVE] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("MARINE CAVE"),
+    },
+    [MAPSEC_UNDERWATER_MARINE_CAVE] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("UNDERWATER"),
+    },
+    [MAPSEC_TERRA_CAVE] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("TERRA CAVE"),
+    },
+    [MAPSEC_UNDERWATER_105] = {
+        .x = 0,
+        .y = 10,
+        .width = 1,
+        .height = 3,
+        .name = COMPOUND_STRING("UNDERWATER"),
+    },
+    [MAPSEC_UNDERWATER_125] = {
+        .x = 24,
+        .y = 3,
+        .width = 2,
+        .height = 2,
+        .name = COMPOUND_STRING("UNDERWATER"),
+    },
+    [MAPSEC_UNDERWATER_129] = {
+        .x = 24,
+        .y = 10,
+        .width = 2,
+        .height = 1,
+        .name = COMPOUND_STRING("UNDERWATER"),
+    },
+    [MAPSEC_DESERT_UNDERPASS] = {
+        .x = 2,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("DESERT UNDERPASS"),
+    },
+    [MAPSEC_ALTERING_CAVE] = {
+        .x = 6,
+        .y = 8,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("DIGLETT'S GROTTO"),
+    },
+    [MAPSEC_NAVEL_ROCK] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("NAVEL ROCK"),
+    },
+    [MAPSEC_TRAINER_HILL] = {
+        .x = 8,
+        .y = 4,
+        .width = 1,
+        .height = 1,
+        .name = COMPOUND_STRING("TRAINER HILL"),
+    },
 };
 
 #endif // GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_H

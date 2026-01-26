@@ -4434,8 +4434,8 @@
     {
       "id": "LAYOUT_PETALBERG_FIELDS",
       "name": "PetalbergFields_Layout",
-      "width": 40,
-      "height": 35,
+      "width": 45,
+      "height": 40,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/PetalbergFields/border.bin",

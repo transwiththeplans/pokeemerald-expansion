@@ -65,7 +65,7 @@
       "id": "LAYOUT_MOSSDEEP_CITY",
       "name": "MossdeepCity_Layout",
       "width": 80,
-      "height": 40,
+      "height": 50,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mossdeep",
       "border_filepath": "data/layouts/MossdeepCity/border.bin",
@@ -4434,7 +4434,7 @@
     {
       "id": "LAYOUT_PETALBERG_FIELDS",
       "name": "PetalbergFields_Layout",
-      "width": 45,
+      "width": 35,
       "height": 40,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",

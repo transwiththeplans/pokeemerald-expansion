@@ -29,6 +29,7 @@ SINGLE_BATTLE_TEST("Ice Scales halves the damage from special moves", s16 damage
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Ice Scales halves the damage from special moves (Multi)", s16 damage)
 {
     u32 move;
@@ -56,3 +57,4 @@ SINGLE_BATTLE_TEST("Ice Scales halves the damage from special moves (Multi)", s1
         EXPECT_EQ(results[4].damage, results[5].damage); // Ice Scales doesn't affect the damage of physical moves
     }
 }
+#endif

@@ -456,6 +456,7 @@ DOUBLE_BATTLE_TEST("Commander prevent Dondozo from switch out by Dragon Tail")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Commander will activate once Dondozo switches in (Multi)")
 {
     GIVEN {
@@ -910,3 +911,4 @@ DOUBLE_BATTLE_TEST("Commander prevent Dondozo from switch out by Dragon Tail (Mu
         NOT MESSAGE("Wobbuffet was dragged out!");
     }
 }
+#endif

@@ -316,6 +316,7 @@ DOUBLE_BATTLE_TEST("Powder damages a target using Shell Trap even if it wasn't h
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Powder doesn't damage target if it has Magic Guard (Multi)")
 {
     GIVEN {
@@ -404,3 +405,4 @@ SINGLE_BATTLE_TEST("Powder prevents Protean/Libero from changing its user to Fir
         }
     }
 }
+#endif

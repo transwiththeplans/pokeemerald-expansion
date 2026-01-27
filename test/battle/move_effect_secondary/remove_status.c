@@ -134,6 +134,7 @@ DOUBLE_BATTLE_TEST("Sparkling Aria cures burns from all Pokemon on the field and
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Smelling Salts does not cure paralyzed pokemons behind substitutes or get increased power (Multi)")
 {
     enum Ability ability;
@@ -196,3 +197,4 @@ SINGLE_BATTLE_TEST("Wake-Up Slap does not cure paralyzed pokemons behind substit
         }
     }
 }
+#endif

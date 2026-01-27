@@ -49,6 +49,7 @@ SINGLE_BATTLE_TEST("Alluring Voice confuse effect is removed if it is Sheer Forc
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Alluring Voice confuse effect is removed if it is Sheer Force boosted (Multi)")
 {
     GIVEN {
@@ -67,3 +68,4 @@ SINGLE_BATTLE_TEST("Alluring Voice confuse effect is removed if it is Sheer Forc
         }
     }
 }
+#endif

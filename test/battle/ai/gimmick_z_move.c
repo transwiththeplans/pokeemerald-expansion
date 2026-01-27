@@ -210,6 +210,7 @@ AI_SINGLE_BATTLE_TEST("AI uses Z-Moves -- Z-Transform")
 
 TO_DO_BATTLE_TEST("TODO: AI uses Z-Moves -- Z-Trick Room")
 
+#if MAX_MON_TRAITS > 1
 AI_SINGLE_BATTLE_TEST("AI uses Z-Moves -- Z-Conversion (Multi)")
 {
     enum Ability ability;
@@ -228,3 +229,4 @@ AI_SINGLE_BATTLE_TEST("AI uses Z-Moves -- Z-Conversion (Multi)")
         TURN { EXPECT_MOVE(opponent, MOVE_CONVERSION, gimmick: GIMMICK_Z_MOVE); }
     }
 }
+#endif

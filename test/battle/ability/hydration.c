@@ -28,6 +28,7 @@ SINGLE_BATTLE_TEST("Hydration doesn't cure status conditions if Cloud Nine/Air L
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Hydration cures non-volatile Status conditions if it is raining (Multi)")
 {
     GIVEN {
@@ -54,3 +55,4 @@ SINGLE_BATTLE_TEST("Hydration doesn't cure status conditions if Cloud Nine/Air L
         MESSAGE("Vaporeon was hurt by its burn!");
     }
 }
+#endif

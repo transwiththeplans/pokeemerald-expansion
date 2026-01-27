@@ -377,6 +377,7 @@ TO_DO_BATTLE_TEST("Dancer can still copy status moves if the user is holding an 
 TO_DO_BATTLE_TEST("Dancer copies Lunar Dance after the original user faints, but before the replacement is sent out")
 TO_DO_BATTLE_TEST("Dancer doesn't activate Feather Dance if it was reflected by Magic Bounce/Coat")
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Dancer can copy a dance move immediately after it was used and allow the user of Dancer to still use its move (Multi)")
 {
     GIVEN {
@@ -567,3 +568,4 @@ TO_DO_BATTLE_TEST("Dancer tries to copy a status move but fails if it's under Ta
 TO_DO_BATTLE_TEST("Dancer can still copy status moves if the user is holding an Assault Vest (Multi)")
 TO_DO_BATTLE_TEST("Dancer copies Lunar Dance after the original user faints, but before the replacement is sent out (Multi)")
 TO_DO_BATTLE_TEST("Dancer doesn't activate Feather Dance if it was reflected by Magic Bounce/Coat (Multi)")
+#endif

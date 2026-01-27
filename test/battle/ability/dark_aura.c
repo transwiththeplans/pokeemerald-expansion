@@ -107,6 +107,7 @@ DOUBLE_BATTLE_TEST("Dark Aura's effect doesn't stack multiple times")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Dark Aura increases the power of all Dark-type attacks by 33% (Multi)")
 {
     s16 damage[8];
@@ -210,3 +211,4 @@ DOUBLE_BATTLE_TEST("Dark Aura's effect doesn't stack multiple times (Multi)")
         EXPECT_EQ(damage[5], damage[2]);
     }
 }
+#endif

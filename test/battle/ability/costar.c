@@ -122,6 +122,7 @@ DOUBLE_BATTLE_TEST("Costar copies an ally's Dragon Cheer critical hit boost")
 TO_DO_BATTLE_TEST("Costar's message displays correctly after all battlers fainted - Player");
 TO_DO_BATTLE_TEST("Costar's message displays correctly after all battlers fainted - Opponent");
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Costar copies an ally's stat stages upon entering battle (Multi)")
 {
     GIVEN {
@@ -244,3 +245,4 @@ TO_DO_BATTLE_TEST("Costar's message displays correctly after all battlers fainte
 TO_DO_BATTLE_TEST("Costar's message displays correctly after all battlers fainted - Opponent (Multi)");
 
 TO_DO_BATTLE_TEST("Costar can copy an ally's critical hit ratio (Multi)");
+#endif

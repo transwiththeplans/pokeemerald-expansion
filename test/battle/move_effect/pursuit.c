@@ -696,6 +696,7 @@ DOUBLE_BATTLE_TEST("Pursuit user switches out due to Red Card and partner's swit
 
 TO_DO_BATTLE_TEST("Baton Pass doesn't cause Pursuit to increase its power or priority");
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Pursuit ignores accuracy checks when attacking a switching target (Multi)")
 {
     PASSES_RANDOMLY(100, 100, RNG_ACCURACY);
@@ -848,3 +849,4 @@ SINGLE_BATTLE_TEST("Pursuit doesn't cause mon with Emergency Exit to switch twic
         EXPECT_EQ(player->species, SPECIES_VOLTORB);
     }
 }
+#endif

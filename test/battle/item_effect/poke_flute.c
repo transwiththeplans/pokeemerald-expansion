@@ -42,6 +42,7 @@ DOUBLE_BATTLE_TEST("Poke Flute does not heal battlers with Soundproof from being
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Poke Flute does not heal battlers with Soundproof from being asleep (Multi)")
 {
     GIVEN {
@@ -61,3 +62,4 @@ DOUBLE_BATTLE_TEST("Poke Flute does not heal battlers with Soundproof from being
         EXPECT_NE(opponentRight->status1, STATUS1_NONE);
     }
 }
+#endif

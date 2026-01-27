@@ -312,6 +312,7 @@ SINGLE_BATTLE_TEST("Protosynthesis retains its boosted stat after Neutralizing G
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Protosynthesis boosts the highest stat (Multi)")
 {
     GIVEN {
@@ -565,3 +566,4 @@ SINGLE_BATTLE_TEST("Protosynthesis keeps its initial boosted stat after Speed is
         EXPECT_EQ(damage[0], damage[1]);
     }
 }
+#endif

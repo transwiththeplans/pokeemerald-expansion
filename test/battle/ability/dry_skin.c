@@ -127,6 +127,7 @@ SINGLE_BATTLE_TEST("Dry Skin prevents Absorb Bulb and Luminous Moss from activat
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Dry Skin causes 1/8th Max HP damage in Sun (Multi)")
 {
     GIVEN {
@@ -252,3 +253,4 @@ SINGLE_BATTLE_TEST("Dry Skin prevents Absorb Bulb and Luminous Moss from activat
         }
     }
 }
+#endif

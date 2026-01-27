@@ -218,6 +218,7 @@ SINGLE_BATTLE_TEST("Sticky Syrup is removed when the user faints")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Syrup Bomb is prevented by Bulletproof (Multi)")
 {
     GIVEN {
@@ -286,3 +287,4 @@ SINGLE_BATTLE_TEST("Sticky Syrup speed reduction is prevented by Clear Body, Whi
         }
     }
 }
+#endif

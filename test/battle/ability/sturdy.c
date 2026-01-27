@@ -65,6 +65,7 @@ SINGLE_BATTLE_TEST("Sturdy does not prevent non-OHKOs")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Sturdy prevents OHKO moves (Multi)")
 {
     GIVEN {
@@ -109,3 +110,4 @@ SINGLE_BATTLE_TEST("Sturdy does not prevent non-OHKOs (Multi)")
         HP_BAR(player, hp: 0);
     }
 }
+#endif

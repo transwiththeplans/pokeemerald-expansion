@@ -131,6 +131,7 @@ DOUBLE_BATTLE_TEST("Lightning Rod absorbs moves that targets all battlers but do
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Lightning Rod absorbs Electric-type moves and increases the Sp. Attack [Gen5+] (Multi)")
 {
     GIVEN {
@@ -245,3 +246,4 @@ DOUBLE_BATTLE_TEST("Lightning Rod absorbs moves that targets all battlers but do
         HP_BAR(playerRight);
     }
 }
+#endif

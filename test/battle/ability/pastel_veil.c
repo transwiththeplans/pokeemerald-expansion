@@ -188,6 +188,7 @@ DOUBLE_BATTLE_TEST("Pastel Veil cures partner's poison on switch in")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Pastel Veil prevents Poison Sting poison (Multi)")
 {
     GIVEN {
@@ -368,3 +369,4 @@ DOUBLE_BATTLE_TEST("Pastel Veil cures partner's poison on switch in (Multi)")
         STATUS_ICON(opponentLeft, none: TRUE);
     }
 }
+#endif

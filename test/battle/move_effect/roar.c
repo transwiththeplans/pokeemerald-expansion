@@ -106,6 +106,7 @@ SINGLE_BATTLE_TEST("Roar fails to switch out target with Suction Cups")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Roar fails against target with Guard Dog (Multi)")
 {
     GIVEN {
@@ -140,3 +141,4 @@ SINGLE_BATTLE_TEST("Roar fails to switch out target with Suction Cups (Multi)")
         NOT MESSAGE("The opposing Charmander was dragged out!");
     }
 }
+#endif

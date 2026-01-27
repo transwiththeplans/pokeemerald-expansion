@@ -164,6 +164,7 @@ SINGLE_BATTLE_TEST("Toxic Thread fails if speed can't be lowered and target is a
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Toxic Thread still inflicts Poison if speed can't be lowered (Multi)")
 {
     GIVEN {
@@ -196,3 +197,4 @@ SINGLE_BATTLE_TEST("Toxic Thread fails if speed can't be lowered due to Clear Bo
         NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_TOXIC_THREAD, player);
     }
 }
+#endif

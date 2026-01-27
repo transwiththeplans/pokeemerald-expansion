@@ -243,6 +243,7 @@ SINGLE_BATTLE_TEST("Conversion 2 fails if last hit by a Stellar-type move (Gen 1
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Conversion 2's type change considers move types changed by Normalize and Electrify (Multi)")
 {
     GIVEN {
@@ -272,3 +273,4 @@ SINGLE_BATTLE_TEST("Conversion 2's type change considers move types changed by N
         }
     }
 }
+#endif

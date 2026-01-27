@@ -180,6 +180,7 @@ TO_DO_BATTLE_TEST("Aerilate doesn't affect Terrain Pulse's type");
 TO_DO_BATTLE_TEST("Aerilate doesn't affect damaging Z-Move types");
 TO_DO_BATTLE_TEST("(DYNAMAX) Aerilate turns Max Strike into Max Airstream"); // All other -ate abilities do this, so interpolating this as no Aerilate mon is available in a Dynamax game
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Aerilate boosts power of affected moves by 20% (Gen7+) or 30% (Gen1-6) (Multi)", s16 damage)
 {
     u32 move, genConfig;
@@ -262,3 +263,4 @@ TO_DO_BATTLE_TEST("Aerilate doesn't affect Max Strike's type (Multi)");
 TO_DO_BATTLE_TEST("Aerilate doesn't affect Terrain Pulse's type (Multi)");
 TO_DO_BATTLE_TEST("Aerilate doesn't affect damaging Z-Move types (Multi)");
 TO_DO_BATTLE_TEST("(DYNAMAX) Aerilate turns Max Strike into Max Airstream (Multi)"); // All other -ate abilities do this, so interpolating this as no Aerilate mon is available in a Dynamax game
+#endif

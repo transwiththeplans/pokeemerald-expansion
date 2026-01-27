@@ -91,6 +91,7 @@ TO_DO_BATTLE_TEST("Cursed Body disables the move that called another move instea
 TO_DO_BATTLE_TEST("Cursed Body disables damaging Z-Moves, but not the base move") // Rotom Powers can restore Z-Moves
 TO_DO_BATTLE_TEST("Cursed Body disables the base move of a status Z-Move")
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Cursed Body triggers 30% of the time (Multi)")
 {
     PASSES_RANDOMLY(3, 10, RNG_CURSED_BODY);
@@ -180,3 +181,4 @@ SINGLE_BATTLE_TEST("Cursed Body does not stop a multistrike move mid-execution (
 TO_DO_BATTLE_TEST("Cursed Body disables the move that called another move instead of the called move (Multi)")
 TO_DO_BATTLE_TEST("Cursed Body disables damaging Z-Moves, but not the base move (Multi)") // Rotom Powers can restore Z-Moves
 TO_DO_BATTLE_TEST("Cursed Body disables the base move of a status Z-Move (Multi)")
+#endif

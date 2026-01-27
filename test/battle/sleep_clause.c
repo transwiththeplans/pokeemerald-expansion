@@ -1870,6 +1870,7 @@ DOUBLE_BATTLE_TEST("Sleep Clause: Opponent Spore'ing player's partner after part
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Sleep Clause: Effect Spore causes sleep 11% of the time with sleep clause active (Multi)")
 {
     PASSES_RANDOMLY(11, 100, RNG_EFFECT_SPORE);
@@ -2354,3 +2355,4 @@ DOUBLE_BATTLE_TEST("Sleep Clause: Magic Bounce reflecting Dark Void only sleeps 
         }
     }
 }
+#endif

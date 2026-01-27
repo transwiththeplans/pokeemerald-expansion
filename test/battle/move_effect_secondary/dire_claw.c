@@ -123,6 +123,7 @@ SINGLE_BATTLE_TEST("Dire Claw cannot poison/paralyze/cause to fall asleep a mon 
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Dire Claw cannot poison/paralyze/cause to fall asleep Pokémon with abilities preventing respective statuses (Multi)")
 {
     KNOWN_FAILING;
@@ -160,3 +161,4 @@ SINGLE_BATTLE_TEST("Dire Claw cannot poison/paralyze/cause to fall asleep Pokém
         }
     }
 }
+#endif

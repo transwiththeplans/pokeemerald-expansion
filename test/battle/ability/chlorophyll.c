@@ -49,6 +49,7 @@ SINGLE_BATTLE_TEST("Chlorophyll doesn't double speed if they have an Utility Umb
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Chlorophyll doubles speed if it's sunny (Multi)")
 {
     GIVEN {
@@ -96,3 +97,4 @@ SINGLE_BATTLE_TEST("Chlorophyll doesn't double speed if they have an Utility Umb
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, player);
     }
 }
+#endif

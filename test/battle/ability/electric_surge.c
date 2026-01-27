@@ -14,6 +14,7 @@ SINGLE_BATTLE_TEST("Electric Surge creates Electric Terrain when entering the ba
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Electric Surge creates Electric Terrain when entering the battle (Multi)")
 {
     GIVEN {
@@ -26,3 +27,4 @@ SINGLE_BATTLE_TEST("Electric Surge creates Electric Terrain when entering the ba
         MESSAGE("An electric current ran across the battlefield!");
     }
 }
+#endif

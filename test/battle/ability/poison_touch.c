@@ -76,6 +76,7 @@ SINGLE_BATTLE_TEST("Poison Touch applies between multi-hit move hits")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Poison Touch has a 30% chance to poison when attacking with contact moves (Multi)")
 {
     PASSES_RANDOMLY(3, 10, RNG_POISON_TOUCH);
@@ -150,3 +151,4 @@ SINGLE_BATTLE_TEST("Poison Touch applies between multi-hit move hits (Multi)")
         STATUS_ICON(opponent, poison: TRUE);
     }
 }
+#endif

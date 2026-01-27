@@ -72,6 +72,7 @@ DOUBLE_BATTLE_TEST("Psychic Noise heal block effect is blocked by partners Aroma
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Psychic Noise is blocked by Soundproof (Multi)")
 {
     GIVEN {
@@ -117,3 +118,4 @@ DOUBLE_BATTLE_TEST("Psychic Noise heal block effect is blocked by partners Aroma
         ANIMATION(ANIM_TYPE_MOVE, MOVE_RECOVER, opponentLeft);
     }
 }
+#endif

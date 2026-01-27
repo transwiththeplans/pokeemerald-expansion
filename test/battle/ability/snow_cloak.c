@@ -56,6 +56,7 @@ SINGLE_BATTLE_TEST("Snow Cloak increases evasion during snow")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Snow Cloak prevents damage from hail (Multi)")
 {
     GIVEN {
@@ -110,3 +111,4 @@ SINGLE_BATTLE_TEST("Snow Cloak increases evasion during snow (Multi)")
         HP_BAR(player);
     }
 }
+#endif

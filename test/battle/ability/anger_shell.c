@@ -114,6 +114,7 @@ SINGLE_BATTLE_TEST("Anger Shell does not activate if move is boosted by Sheer Fo
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Anger Shell activates only if the target had more than 50% of its HP (Multi)")
 {
     bool32 activates = FALSE;
@@ -226,3 +227,4 @@ SINGLE_BATTLE_TEST("Anger Shell does not activate if move is boosted by Sheer Fo
         EXPECT_EQ(player->statStages[STAT_SPEED], DEFAULT_STAT_STAGE);
     }
 }
+#endif

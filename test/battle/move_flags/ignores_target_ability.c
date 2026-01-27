@@ -95,6 +95,7 @@ SINGLE_BATTLE_TEST("ignoresTargetAbility allows Pokémon with Battle Armor and S
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("ignoresTargetAbility moves do not ignore the attacker's own ability (Multi)", s16 damage)
 {
     enum Ability ability;
@@ -181,3 +182,4 @@ SINGLE_BATTLE_TEST("ignoresTargetAbility allows Pokémon with Battle Armor and S
         MESSAGE("A critical hit!");
     }
 }
+#endif

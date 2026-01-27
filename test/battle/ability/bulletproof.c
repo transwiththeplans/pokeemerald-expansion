@@ -19,6 +19,7 @@ SINGLE_BATTLE_TEST("Bulletproof makes ballistic moves fail against the ability u
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Bulletproof makes ballistic moves fail against the ability user (Multi)")
 {
     GIVEN {
@@ -36,3 +37,4 @@ SINGLE_BATTLE_TEST("Bulletproof makes ballistic moves fail against the ability u
         }
     }
 }
+#endif

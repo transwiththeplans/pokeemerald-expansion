@@ -262,6 +262,7 @@ DOUBLE_BATTLE_TEST("Wind Power activates correctly when Tailwind is used")
 }
 
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Wind Power sets up Charge for player when hit by a wind move (Multi)")
 {
     s16 dmgBefore, dmgAfter;
@@ -506,3 +507,4 @@ DOUBLE_BATTLE_TEST("Wind Power activates correctly when Tailwind is used (Multi)
         }
     }
 }
+#endif

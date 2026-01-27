@@ -111,6 +111,7 @@ SINGLE_BATTLE_TEST("Toxic Chain makes Lum/Pecha Berry trigger before being knock
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Toxic Chain inflicts bad poison when attacking (Multi)")
 {
     PASSES_RANDOMLY(3, 10, RNG_TOXIC_CHAIN);
@@ -220,3 +221,4 @@ SINGLE_BATTLE_TEST("Toxic Chain makes Lum/Pecha Berry trigger before being knock
         EXPECT(opponent->status1 == 0);
     }
 }
+#endif

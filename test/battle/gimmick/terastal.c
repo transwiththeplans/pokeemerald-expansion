@@ -841,6 +841,7 @@ SINGLE_BATTLE_TEST("(TERA) All type indicators function correctly - Opponent")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("(TERA) Terastallization's 60 BP floor occurs after Technician (Multi)", s16 damage)
 {
     bool32 tera;
@@ -940,3 +941,4 @@ SINGLE_BATTLE_TEST("(TERA) Stellar type's one-time boost factors in dynamically-
         EXPECT_EQ(damage[3], damage[2]);
     }
 }
+#endif

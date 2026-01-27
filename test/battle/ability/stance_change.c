@@ -80,6 +80,7 @@ SINGLE_BATTLE_TEST("Stance Change doesn't change Aegislash to Shield if King's S
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Stance Change changes Aegislash from Shield to Blade when using a damaging move (Multi)")
 {
     u16 move;
@@ -157,3 +158,4 @@ SINGLE_BATTLE_TEST("Stance Change doesn't change Aegislash to Shield if King's S
         EXPECT_EQ(player->species, SPECIES_AEGISLASH_BLADE);
     }
 }
+#endif

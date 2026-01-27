@@ -69,6 +69,7 @@ SINGLE_BATTLE_TEST("Pressure's effect doesn't apply to Sticky Web")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Pressure causes opponent's moves to use up 1 additional PP (Multi)")
 {
     GIVEN {
@@ -136,3 +137,4 @@ SINGLE_BATTLE_TEST("Pressure's effect doesn't apply to Sticky Web (Multi)")
         EXPECT_EQ(player->pp[0], 19);
     }
 }
+#endif

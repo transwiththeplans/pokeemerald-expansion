@@ -65,6 +65,7 @@ SINGLE_BATTLE_TEST("Slush Rush doesn't prevent non-Ice types from taking damage 
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Slush Rush doubles speed from hail (Multi)")
 {
     GIVEN {
@@ -128,3 +129,4 @@ SINGLE_BATTLE_TEST("Slush Rush doesn't prevent non-Ice types from taking damage 
         HP_BAR(player);
     }
 }
+#endif

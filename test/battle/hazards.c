@@ -170,6 +170,7 @@ DOUBLE_BATTLE_TEST("Hazards can trigger Emergency Exit and hazards still activat
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Hazards can trigger Emergency Exit and other hazards don't activate (Multi)")
 {
     GIVEN {
@@ -243,3 +244,4 @@ DOUBLE_BATTLE_TEST("Hazards can trigger Emergency Exit and hazards still activat
         MESSAGE("Wynaut was hurt by the spikes!");
     }
 }
+#endif

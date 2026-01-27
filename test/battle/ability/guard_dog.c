@@ -27,6 +27,7 @@ SINGLE_BATTLE_TEST("Guard Dog raises Attack when intimidated", s16 damage)
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Guard Dog raises Attack when intimidated (Multi)", s16 damage)
 {
     enum Ability ability;
@@ -52,3 +53,4 @@ SINGLE_BATTLE_TEST("Guard Dog raises Attack when intimidated (Multi)", s16 damag
         EXPECT_MUL_EQ(results[1].damage, Q_4_12(1.5), results[0].damage);
     }
 }
+#endif

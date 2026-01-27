@@ -129,6 +129,7 @@ SINGLE_BATTLE_TEST("Innards Out triggers if Future Sight user is back on the fie
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Innards Out deal dmg on fainting equal to the amount of dmg inflicted on the Innards Out mon (Multi)")
 {
     u16 hp = 0;
@@ -234,3 +235,4 @@ SINGLE_BATTLE_TEST("Innards Out triggers if Future Sight user is back on the fie
         HP_BAR(opponent);
     }
 }
+#endif

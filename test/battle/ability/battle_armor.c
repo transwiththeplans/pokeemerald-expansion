@@ -48,6 +48,7 @@ SINGLE_BATTLE_TEST("Mold Breaker, Teravolt and Turboblaze ignore Battle Armor an
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Battle Armor and Shell Armor block critical hits (Multi)")
 {
     u32 species;
@@ -94,3 +95,4 @@ SINGLE_BATTLE_TEST("Mold Breaker, Teravolt and Turboblaze ignore Battle Armor an
         MESSAGE("A critical hit!");
     }
 }
+#endif

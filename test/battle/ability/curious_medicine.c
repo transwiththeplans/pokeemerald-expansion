@@ -39,6 +39,7 @@ DOUBLE_BATTLE_TEST("Curious Medicine resets ally's stat stages upon entering bat
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Curious Medicine resets ally's stat stages upon entering battle (Multi)")
 {
     enum Ability ability;
@@ -76,3 +77,4 @@ DOUBLE_BATTLE_TEST("Curious Medicine resets ally's stat stages upon entering bat
         EXPECT_EQ(opponentLeft->statStages[STAT_EVASION], DEFAULT_STAT_STAGE);
     }
 }
+#endif

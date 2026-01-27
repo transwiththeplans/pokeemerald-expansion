@@ -101,6 +101,7 @@ SINGLE_BATTLE_TEST("Rivalry doesn't modify power if the target is genderless", s
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Rivalry increases power by x1.25 towards Pokémon of the same gender (Multi)", s16 damage)
 {
     u16 species;
@@ -194,3 +195,4 @@ SINGLE_BATTLE_TEST("Rivalry doesn't modify power if the target is genderless (Mu
         EXPECT(results[2].damage == results[3].damage);
     }
 }
+#endif

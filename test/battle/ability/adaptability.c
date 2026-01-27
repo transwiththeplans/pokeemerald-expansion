@@ -63,6 +63,7 @@ SINGLE_BATTLE_TEST("(TERA) Terastallizing into the same type with Adaptability g
 
 TO_DO_BATTLE_TEST("Adaptability does not affect Stellar-type moves");
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Adaptability increases same-type attack bonus from x1.5 to x2 (Multi)", s16 damage)
 {
     enum Ability ability;
@@ -124,3 +125,4 @@ SINGLE_BATTLE_TEST("(TERA) Terastallizing into the same type with Adaptability g
 }
 
 TO_DO_BATTLE_TEST("Adaptability does not affect Stellar-type moves (Multi)");
+#endif

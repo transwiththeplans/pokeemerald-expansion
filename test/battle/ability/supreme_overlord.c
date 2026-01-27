@@ -134,6 +134,7 @@ SINGLE_BATTLE_TEST("Supreme Overlord's message displays correctly after all batt
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Supreme Overlord boosts Attack by an additive 10% per fainted mon on its side upon switch in (Multi)", s16 damage)
 {
     bool32 switchMon = 0;
@@ -266,3 +267,4 @@ SINGLE_BATTLE_TEST("Supreme Overlord's message displays correctly after all batt
         MESSAGE("The opposing Kingambit gained strength from the fallen!");
     }
 }
+#endif

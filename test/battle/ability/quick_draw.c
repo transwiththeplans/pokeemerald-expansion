@@ -31,6 +31,7 @@ SINGLE_BATTLE_TEST("Quick Draw does not activate 70% of the time")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Quick Draw has a 30% chance of going first (Multi)")
 {
     PASSES_RANDOMLY(3, 10, RNG_QUICK_DRAW);
@@ -60,3 +61,4 @@ SINGLE_BATTLE_TEST("Quick Draw does not activate 70% of the time (Multi)")
         MESSAGE("Slowbro used Scratch!");
     }
 }
+#endif

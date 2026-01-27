@@ -539,6 +539,7 @@ SINGLE_BATTLE_TEST("Red Card activates before Eject Pack")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Red Card does not activate if stolen by Magician (Multi)")
 {
     u32 item;
@@ -668,3 +669,4 @@ SINGLE_BATTLE_TEST("Red Card prevents Emergency Exit activation when triggered (
         NOT ABILITY_POPUP(opponent, ABILITY_EMERGENCY_EXIT);
     }
 }
+#endif

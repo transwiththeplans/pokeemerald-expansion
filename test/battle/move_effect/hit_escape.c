@@ -208,6 +208,7 @@ SINGLE_BATTLE_TEST("Hit Escape: U-turn will fail to switch if the user faints")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Hit Escape: U-turn does not switch the user out if Wimp Out activates (Multi)")
 {
     GIVEN {
@@ -339,3 +340,4 @@ SINGLE_BATTLE_TEST("Hit Escape: U-turn triggers before Eject Pack (Multi)")
         SEND_IN_MESSAGE("Wynaut");
     }
 }
+#endif

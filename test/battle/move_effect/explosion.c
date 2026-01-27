@@ -163,6 +163,7 @@ SINGLE_BATTLE_TEST("Explosion is blocked by Ability Damp")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Explosion boosted by Galvanize is correctly blocked by Volt Absorb (Multi)")
 {
     GIVEN {
@@ -184,3 +185,4 @@ DOUBLE_BATTLE_TEST("Explosion boosted by Galvanize is correctly blocked by Volt 
         MESSAGE("Geodude fainted!");
     }
 }
+#endif

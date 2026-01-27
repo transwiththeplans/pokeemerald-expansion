@@ -50,6 +50,7 @@ SINGLE_BATTLE_TEST("Sand Rush doesn't double speed if Cloud Nine/Air Lock is on 
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Sand Rush prevents damage from sandstorm (Multi)")
 {
     enum Type type1 = GetSpeciesType(SPECIES_STOUTLAND, 0);
@@ -98,3 +99,4 @@ SINGLE_BATTLE_TEST("Sand Rush doesn't double speed if Cloud Nine/Air Lock is on 
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, player);
     }
 }
+#endif

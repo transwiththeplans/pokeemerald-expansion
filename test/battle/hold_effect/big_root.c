@@ -77,6 +77,7 @@ SINGLE_BATTLE_TEST("Big Root increases damage from absorbing Liquid Ooze", s16 d
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Big Root increases damage from absorbing Liquid Ooze (Multi)", s16 damage)
 {
     u32 item;
@@ -96,3 +97,4 @@ SINGLE_BATTLE_TEST("Big Root increases damage from absorbing Liquid Ooze (Multi)
         EXPECT_MUL_EQ(results[0].damage, Q_4_12(1.3), results[1].damage);
     }
 }
+#endif

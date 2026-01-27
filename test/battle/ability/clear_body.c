@@ -464,6 +464,7 @@ SINGLE_BATTLE_TEST("Clear Body, Full Metal Body, and White Smoke protect from Pr
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Clear Body, Full Metal Body, and White Smoke prevent intimidate (Multi)")
 {
     s16 turnOneHit;
@@ -926,3 +927,4 @@ SINGLE_BATTLE_TEST("Clear Body, Full Metal Body, and White Smoke protect from Pr
         }
     }
 }
+#endif

@@ -309,6 +309,7 @@ DOUBLE_BATTLE_TEST("Dragon Darts fails to strike the second target if first targ
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Dragon Darts strikes an opponent twice if electrified and the other one has Volt Absorb (Multi)")
 {
     struct BattlePokemon *chosenTarget = NULL;
@@ -360,3 +361,4 @@ DOUBLE_BATTLE_TEST("Dragon Darts strikes an opponent twice if electrified and th
         MESSAGE("The Pokémon was hit 2 time(s)!");
     }
 }
+#endif

@@ -280,6 +280,7 @@ DOUBLE_BATTLE_TEST("Shell Trap does not trigger when hit into Substitute")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Shell Trap does not activate if attacker's Sheer Force applied (Multi)")
 {
     u32 move;
@@ -310,3 +311,4 @@ SINGLE_BATTLE_TEST("Shell Trap does not activate if attacker's Sheer Force appli
         }
     }
 }
+#endif

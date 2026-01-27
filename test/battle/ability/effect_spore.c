@@ -107,6 +107,7 @@ SINGLE_BATTLE_TEST("Effect Spore will check if it can inflict status onto attack
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Effect Spore only inflicts status on contact (Multi)")
 {
     u32 move;
@@ -212,3 +213,4 @@ SINGLE_BATTLE_TEST("Effect Spore will check if it can inflict status onto attack
         STATUS_ICON(player, sleep: TRUE);
     }
 }
+#endif

@@ -50,6 +50,7 @@ AI_DOUBLE_BATTLE_TEST("AI will not try to lower opposing stats if target is prot
 }
 
 
+#if MAX_MON_TRAITS > 1
 AI_SINGLE_BATTLE_TEST("AI will not try to lower opposing stats if target is protected by it's ability (Multi)")
 {
     enum Ability ability;
@@ -96,3 +97,4 @@ AI_DOUBLE_BATTLE_TEST("AI will not try to lower opposing stats if target is prot
         TURN { SCORE_LT_VAL(opponentLeft, move, AI_SCORE_DEFAULT, target: playerRight); }
     }
 }
+#endif

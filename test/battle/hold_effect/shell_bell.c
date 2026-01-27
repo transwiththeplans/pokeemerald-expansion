@@ -292,6 +292,7 @@ SINGLE_BATTLE_TEST("Shell Bell recovers only 1 damage if the move only did 1 dam
 TO_DO_BATTLE_TEST("If a Pokémon steals a Shell Bell with Thief or Covet, it will recover HP for the use of that move that stole the Shell Bell")
 TO_DO_BATTLE_TEST("If a Pokémon steals a Shell Bell with Magician, it will recover HP for the use of that move that stole the Shell Bell")
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Shell Bell activates after Rough Skin (Multi)")
 {
     GIVEN {
@@ -310,3 +311,4 @@ SINGLE_BATTLE_TEST("Shell Bell activates after Rough Skin (Multi)")
 
 TO_DO_BATTLE_TEST("If a Pokémon steals a Shell Bell with Thief or Covet, it will recover HP for the use of that move that stole the Shell Bell (Multi)")
 TO_DO_BATTLE_TEST("If a Pokémon steals a Shell Bell with Magician, it will recover HP for the use of that move that stole the Shell Bell (Multi)")
+#endif

@@ -122,6 +122,7 @@ SINGLE_BATTLE_TEST("Dazzling, Queenly Majesty and Armor Tail prevent Protean act
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Dazzling, Queenly Majesty and Armor Tail protect the user from priority moves (Multi)")
 {
     u32 species;
@@ -248,3 +249,4 @@ TO_DO_BATTLE_TEST("Mold Breaker ignores Dazzling, Queenly Majesty and Armor Tail
 TO_DO_BATTLE_TEST("Instruct-called moves keep their priority, which is considered for Dazzling, Queenly Majesty and Armor Tail")
 
 TO_DO_BATTLE_TEST(" Dazzling, Queenly Majesty and Armor Tail do not block high-priority moves called by other moves") // Metronome, Assist, Nature Power, etc.
+#endif

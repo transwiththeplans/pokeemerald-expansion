@@ -95,6 +95,7 @@ DOUBLE_BATTLE_TEST("Mycelium Might priority bracket will not change if the abili
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Mycelium Might causes the user to move last in the priority bracket if it uses a status move (Multi)")
 {
     GIVEN {
@@ -161,3 +162,4 @@ SINGLE_BATTLE_TEST("Mycelium Might vs Stall action order depends on speed (Multi
         }
     }
 }
+#endif

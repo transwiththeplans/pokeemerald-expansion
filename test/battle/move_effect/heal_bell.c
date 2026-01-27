@@ -217,6 +217,7 @@ SINGLE_BATTLE_TEST("Aromatherapy cures inactive Soundproof Pokemon regardless of
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Heal Bell does not cure Soundproof partners (Gen 4, Gen 6+) (Multi)")
 {
     enum Ability ability;
@@ -349,3 +350,4 @@ SINGLE_BATTLE_TEST("Aromatherapy cures inactive Soundproof Pokemon regardless of
         NOT MESSAGE("Exploud was hurt by its poisoning!");
     }
 }
+#endif

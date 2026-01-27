@@ -75,6 +75,7 @@ SINGLE_BATTLE_TEST("Moody randomly raises the holder's Attack, Defense, Sp. Atk,
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Moody randomly raises the user's Attack, Defense, Sp. Atk, Sp. Def, or Speed by two stages (Multi)")
 {
     u32 config, statsNum;
@@ -148,3 +149,4 @@ SINGLE_BATTLE_TEST("Moody randomly raises the holder's Attack, Defense, Sp. Atk,
             EXPECT_NE(player->statStages[stat], DEFAULT_STAT_STAGE + 1); // Both raised and lowered
     }
 }
+#endif

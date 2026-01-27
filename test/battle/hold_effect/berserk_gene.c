@@ -304,6 +304,7 @@ SINGLE_BATTLE_TEST("Berserker Gene confusion can be healed with used held items"
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Berserk Gene does not confuse a Pokemon with Own Tempo but still raises attack sharply in a single battle (Multi)", s16 damage)
 {
     u16 item;
@@ -404,3 +405,4 @@ SINGLE_BATTLE_TEST("Berserk Gene does not cause an infinite loop (Multi)")
         MESSAGE("Using Berserk Gene, the Attack of the opposing Wobbuffet sharply rose!");
     }
 }
+#endif

@@ -81,6 +81,7 @@ DOUBLE_BATTLE_TEST("Frisk triggers for opponent in a Double Battle after switchi
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Frisk does not trigger when Pokémon hold no items (Multi)")
 {
     GIVEN {
@@ -160,3 +161,4 @@ DOUBLE_BATTLE_TEST("Frisk triggers for opponent in a Double Battle after switchi
         MESSAGE("The opposing Furret frisked Wynaut and found its Potion!");
     }
 }
+#endif

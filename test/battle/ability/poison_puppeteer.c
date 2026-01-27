@@ -68,6 +68,7 @@ SINGLE_BATTLE_TEST("Poison Puppeteer does not trigger if poison is Toxic Spikes 
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Poison Puppeteer confuses target if it was poisoned by a damaging move (Multi)")
 {
     GIVEN {
@@ -134,3 +135,4 @@ SINGLE_BATTLE_TEST("Poison Puppeteer does not trigger if poison is Toxic Spikes 
         }
     }
 }
+#endif

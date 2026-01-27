@@ -60,6 +60,7 @@ SINGLE_BATTLE_TEST("Water Compaction does not affect damage taken from Water typ
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Water Compaction raises Defense 2 stages when hit by a water type move (Multi)")
 {
     GIVEN {
@@ -118,3 +119,4 @@ SINGLE_BATTLE_TEST("Water Compaction does not affect damage taken from Water typ
         EXPECT_EQ(results[0].damage, results[1].damage);
     }
 }
+#endif

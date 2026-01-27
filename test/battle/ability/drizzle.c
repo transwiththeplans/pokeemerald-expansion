@@ -104,6 +104,7 @@ SINGLE_BATTLE_TEST("Drizzle sets up permanent rain (Gen3-5)")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Drizzle summons rain (Multi)", s16 damage)
 {
     enum Ability ability;
@@ -207,3 +208,4 @@ SINGLE_BATTLE_TEST("Drizzle sets up permanent rain (Gen3-5) (Multi)")
     }
 }
 
+#endif

@@ -55,6 +55,7 @@ DOUBLE_BATTLE_TEST("Steadfast doesn't activate if the user has already moved")
 
 TO_DO_BATTLE_TEST("TODO: Write Steadfast (Ability) test titles")
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Steadfast boosts Speed when the user attempts to move but is flinched (Multi)")
 {
     GIVEN {
@@ -108,3 +109,4 @@ DOUBLE_BATTLE_TEST("Steadfast doesn't activate if the user has already moved (Mu
 }
 
 TO_DO_BATTLE_TEST("TODO: Write Steadfast (Ability) test titles (Multi)")
+#endif

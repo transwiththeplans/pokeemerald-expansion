@@ -202,6 +202,7 @@ SINGLE_BATTLE_TEST("Gulp Missile triggered by explosion doesn't freeze the game"
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("(Gulp Missile) If base Cramorant hits target with Surf it transforms into Gulping form if max HP is over 1/2 (Multi)")
 {
     GIVEN {
@@ -397,3 +398,4 @@ SINGLE_BATTLE_TEST("Gulp Missile triggered by explosion doesn't freeze the game 
         TURN { MOVE(opponent, MOVE_SURF); MOVE(player, MOVE_EXPLOSION); }
     }
 }
+#endif

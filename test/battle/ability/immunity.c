@@ -80,6 +80,7 @@ SINGLE_BATTLE_TEST("Immunity cures existing poison on turn 0")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Immunity prevents Poison Sting poison (Multi)")
 {
     GIVEN {
@@ -158,3 +159,4 @@ SINGLE_BATTLE_TEST("Immunity cures existing poison on turn 0 (Multi)")
         EXPECT_EQ(player->status1, STATUS1_NONE);
     }
 }
+#endif

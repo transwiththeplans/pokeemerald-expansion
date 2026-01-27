@@ -1096,6 +1096,7 @@ DOUBLE_BATTLE_TEST("Pledge move combo doesn't trigger on opponent's Pledge move 
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Rainbow flinch chance does not stack with Serene Grace (Multi)")
 {
     PASSES_RANDOMLY(60, 100, RNG_SECONDARY_EFFECT);
@@ -1344,3 +1345,4 @@ DOUBLE_BATTLE_TEST("Pledge move combo doesn't trigger on opponent's Pledge move 
         HP_BAR(opponentRight);
     }
 }
+#endif

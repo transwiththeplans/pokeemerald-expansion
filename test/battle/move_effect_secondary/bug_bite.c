@@ -149,6 +149,7 @@ SINGLE_BATTLE_TEST("Bug Bite ignores Unnerve")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Bug Bite ignores Unnerve (Multi)")
 {
     GIVEN {
@@ -163,3 +164,4 @@ SINGLE_BATTLE_TEST("Bug Bite ignores Unnerve (Multi)")
         EXPECT_EQ(opponent->item, ITEM_NONE);
     }
 }
+#endif

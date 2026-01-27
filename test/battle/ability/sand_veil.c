@@ -44,6 +44,7 @@ SINGLE_BATTLE_TEST("Sand Veil doesn't increase evasion if Cloud Nine/Air Lock is
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Sand Veil prevents damage from sandstorm (Multi)")
 {
     GIVEN {
@@ -86,3 +87,4 @@ SINGLE_BATTLE_TEST("Sand Veil doesn't increase evasion if Cloud Nine/Air Lock is
         HP_BAR(player);
     }
 }
+#endif

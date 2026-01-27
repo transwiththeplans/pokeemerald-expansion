@@ -14,6 +14,7 @@ SINGLE_BATTLE_TEST("Psychic Surge creates Psychic Terrain when entering the batt
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Psychic Surge creates Psychic Terrain when entering the battle (Multi)")
 {
     GIVEN {
@@ -26,3 +27,4 @@ SINGLE_BATTLE_TEST("Psychic Surge creates Psychic Terrain when entering the batt
         MESSAGE("The battlefield got weird!");
     }
 }
+#endif

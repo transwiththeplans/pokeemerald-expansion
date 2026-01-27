@@ -74,6 +74,7 @@ SINGLE_BATTLE_TEST("Synchronize will mirror back static activation")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Synchronize will mirror back non volatile status back at opposing mon (Multi)")
 {
 
@@ -141,3 +142,4 @@ SINGLE_BATTLE_TEST("Synchronize will mirror back static activation (Multi)")
         STATUS_ICON(player, paralysis: TRUE);
     }
 }
+#endif

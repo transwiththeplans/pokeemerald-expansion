@@ -69,6 +69,7 @@ SINGLE_BATTLE_TEST("Relic Song is blocked by Throat Chop")
 }
 
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Relic Song is prevented by Soundproof (Multi)")
 {
     GIVEN {
@@ -99,3 +100,4 @@ SINGLE_BATTLE_TEST("Relic Song will become a Water-type move when used by a Pok√
         MESSAGE("It's super effective!");
     }
 }
+#endif

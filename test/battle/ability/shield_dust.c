@@ -217,6 +217,7 @@ AI_SINGLE_BATTLE_TEST("AI will score secondary effects against shield dust corre
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Shield Dust blocks secondary effects (Multi)")
 {
     u16 move;
@@ -432,3 +433,4 @@ AI_SINGLE_BATTLE_TEST("AI will score secondary effects against shield dust corre
         }
     }
 }
+#endif

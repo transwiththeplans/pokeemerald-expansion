@@ -394,6 +394,7 @@ SINGLE_BATTLE_TEST("Beat Up ignores Choice Band", s16 damage)
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Beat Up doesn't consider Comatose as a status (Multi)")
 {
     GIVEN {
@@ -462,3 +463,4 @@ SINGLE_BATTLE_TEST("Beat Up ignores Huge Power (Multi)", s16 damage)
             EXPECT_EQ(results[i].damage, results[0].damage);
     }
 }
+#endif

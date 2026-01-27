@@ -211,6 +211,7 @@ DOUBLE_BATTLE_TEST("Psychic Terrain protects grounded battlers from priority mov
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Psychic Terrain protects grounded battlers from priority moves (Multi)")
 {
     GIVEN {
@@ -368,3 +369,4 @@ DOUBLE_BATTLE_TEST("Psychic Terrain protects grounded battlers from priority mov
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, playerRight);
     }
 }
+#endif

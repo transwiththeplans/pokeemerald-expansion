@@ -278,6 +278,7 @@ TO_DO_BATTLE_TEST("Normalize makes Flying Press do Normal/Flying damage");
 TO_DO_BATTLE_TEST("Normalize doesn't affect Terrain Pulse's type");
 TO_DO_BATTLE_TEST("Normalize doesn't affect damaging Z-Move types");
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Normalize turns a move into a Normal-type move (Multi)")
 {
     enum Ability ability;
@@ -546,3 +547,4 @@ TO_DO_BATTLE_TEST("Aerilate doesn't affect Tera Starstorm's type (Multi)");
 TO_DO_BATTLE_TEST("Normalize makes Flying Press do Normal/Flying damage (Multi)");
 TO_DO_BATTLE_TEST("Normalize doesn't affect Terrain Pulse's type (Multi)");
 TO_DO_BATTLE_TEST("Normalize doesn't affect damaging Z-Move types (Multi)");
+#endif

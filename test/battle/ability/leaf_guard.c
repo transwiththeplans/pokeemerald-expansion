@@ -164,6 +164,7 @@ SINGLE_BATTLE_TEST("Leaf Guard doesn't prevent Rest if Cloud Nine/Air Lock is on
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Leaf Guard prevents non-volatile status conditions in sun (Multi)")
 {
     u32 move;
@@ -326,3 +327,4 @@ SINGLE_BATTLE_TEST("Leaf Guard doesn't prevent Rest if Cloud Nine/Air Lock is on
         HP_BAR(player);
     }
 }
+#endif

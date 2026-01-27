@@ -63,6 +63,7 @@ SINGLE_BATTLE_TEST("Static triggers even if attacker is under substitute")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Static inflicts paralysis on contact (Multi)")
 {
     u32 move;
@@ -124,3 +125,4 @@ SINGLE_BATTLE_TEST("Static triggers even if attacker is under substitute (Multi)
         STATUS_ICON(player, paralysis: TRUE);
     }
 }
+#endif

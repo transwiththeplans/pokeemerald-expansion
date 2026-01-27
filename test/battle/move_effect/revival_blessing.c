@@ -134,6 +134,7 @@ DOUBLE_BATTLE_TEST("Revival Blessing correctly updates battler absent flags")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Revival Blessing correctly updates battler absent flags (Multi)")
 {
     GIVEN {
@@ -162,3 +163,4 @@ DOUBLE_BATTLE_TEST("Revival Blessing correctly updates battler absent flags (Mul
         MESSAGE("It doesn't affect the opposing Starly…");
     }
 }
+#endif

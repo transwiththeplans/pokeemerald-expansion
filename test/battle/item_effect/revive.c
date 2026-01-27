@@ -225,6 +225,7 @@ DOUBLE_BATTLE_TEST("Revive force revived pokemon to replace absent battler immed
 
 TO_DO_BATTLE_TEST("Revive won't restore a battler's HP if it hasn't fainted")
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Revive can trigger switch-in abilities (Multi)")
 {
     GIVEN {
@@ -299,3 +300,4 @@ DOUBLE_BATTLE_TEST("Revive force revived pokemon to replace absent battler immed
         EXPECT_MUL_EQ(results[0].damage, Q_4_12(1.5), results[1].damage);
     }
 }
+#endif

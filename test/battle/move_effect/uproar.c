@@ -42,6 +42,7 @@ SINGLE_BATTLE_TEST("Uproar wakes up other pokemon on field")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Uproar status causes sleeping Pokémon to wake up during an attack (Multi)")
 {
     PASSES_RANDOMLY(1, 2, RNG_RANDOM_TARGET); // test fails if we target soundproof mon
@@ -63,3 +64,4 @@ DOUBLE_BATTLE_TEST("Uproar status causes sleeping Pokémon to wake up during an 
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, opponentRight);
     }
 }
+#endif

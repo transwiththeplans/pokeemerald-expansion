@@ -137,6 +137,7 @@ SINGLE_BATTLE_TEST("Snow Warning sets up snow for 8 turns with Icy Rock (Gen9+)"
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Snow Warning summons hail (Gen4-8) (Multi)")
 {
     GIVEN {
@@ -164,3 +165,4 @@ SINGLE_BATTLE_TEST("Snow Warning summons snow (Gen9+) (Multi)")
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_SNOW_CONTINUES);
     }
 }
+#endif

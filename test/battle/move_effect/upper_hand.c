@@ -174,6 +174,7 @@ SINGLE_BATTLE_TEST("Upper Hand failing will prevent Protean activation")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Upper Hand fails if the target is not using a priority move (Multi)")
 {
     GIVEN {
@@ -265,3 +266,4 @@ SINGLE_BATTLE_TEST("Upper Hand failing will prevent Protean activation (Multi)")
         }
     }
 }
+#endif

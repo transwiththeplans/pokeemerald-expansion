@@ -348,6 +348,7 @@ DOUBLE_BATTLE_TEST("Instruct message references the correct battlers")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Instruct fails if target doesn't know the last move it used (Multi)")
 {
     GIVEN {
@@ -394,3 +395,4 @@ DOUBLE_BATTLE_TEST("Instructed move will be redirected and absorbed by Lightning
         NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, playerLeft);
     }
 }
+#endif

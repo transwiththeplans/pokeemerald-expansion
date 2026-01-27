@@ -157,6 +157,7 @@ SINGLE_BATTLE_TEST("Chloroblast is not affected by Reckless", s16 damage)
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Chloroblast hp loss is prevented by Magic Guard (Multi)")
 {
     GIVEN {
@@ -201,3 +202,4 @@ SINGLE_BATTLE_TEST("Chloroblast does not cause the user to lose HP even if it is
         }
     }
 }
+#endif

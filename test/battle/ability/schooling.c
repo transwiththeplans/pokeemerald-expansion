@@ -107,6 +107,7 @@ SINGLE_BATTLE_TEST("Schooling switches Level 20+ Wishiwashi's form when HP is he
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Schooling switches Level 20+ Wishiwashi's form when HP is 25-percent or less at the end of the turn (Multi)")
 {
     u16 level;
@@ -212,3 +213,4 @@ SINGLE_BATTLE_TEST("Schooling switches Level 20+ Wishiwashi's form when HP is he
             EXPECT_EQ(player->species, SPECIES_WISHIWASHI_SOLO);
     }
 }
+#endif

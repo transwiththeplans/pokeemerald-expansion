@@ -97,6 +97,7 @@ DOUBLE_BATTLE_TEST("Cotton Down correctly gets blocked by stat reduction prevent
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Cotton Down drops speed by one of opposing battler if hit by a damaging move (Multi)")
 {
     GIVEN {
@@ -192,3 +193,4 @@ DOUBLE_BATTLE_TEST("Cotton Down correctly gets blocked by stat reduction prevent
         EXPECT_EQ(opponentRight->statStages[STAT_SPEED], DEFAULT_STAT_STAGE);
     }
 }
+#endif

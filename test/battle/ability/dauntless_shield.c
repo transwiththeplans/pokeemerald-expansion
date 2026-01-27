@@ -82,6 +82,7 @@ SINGLE_BATTLE_TEST("Dauntless Shield activates when it's no longer effected by N
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Dauntless Shield raises Defense by one stage (Multi)")
 {
     GIVEN {
@@ -143,3 +144,4 @@ SINGLE_BATTLE_TEST("Dauntless Shield raises Defense by one stage only once per b
         EXPECT_EQ(opponent->statStages[STAT_DEF], DEFAULT_STAT_STAGE);
     }
 }
+#endif

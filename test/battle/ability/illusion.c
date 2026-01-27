@@ -132,6 +132,7 @@ SINGLE_BATTLE_TEST("Illusion breaks when attacked behind a substitute")
 }
 
 //  This test is eyes on only
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Illusion can only imitate Normal Form terapagos (Multi)")
 {
     GIVEN {
@@ -218,3 +219,4 @@ SINGLE_BATTLE_TEST("Illusion breaks when attacked behind a substitute (Multi)")
     }
 }
 
+#endif

@@ -148,6 +148,7 @@ SINGLE_BATTLE_TEST("Steel Beam is not blocked by Damp")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Steel Beam hp loss is prevented by Magic Guard (Multi)")
 {
     GIVEN {
@@ -178,3 +179,4 @@ SINGLE_BATTLE_TEST("Steel Beam is not blocked by Damp (Multi)")
         }
     }
 }
+#endif

@@ -135,6 +135,7 @@ SINGLE_BATTLE_TEST("Berserk activates before the hp can be restored on non multi
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Berserk activates only if the target had more than 50% of its HP (Multi)")
 {
     bool32 activates = FALSE;
@@ -268,3 +269,4 @@ SINGLE_BATTLE_TEST("Berserk activates before the hp can be restored on non multi
         EXPECT_EQ(player->statStages[STAT_SPATK], DEFAULT_STAT_STAGE + 1);
     }
 }
+#endif

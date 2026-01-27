@@ -145,6 +145,7 @@ DOUBLE_BATTLE_TEST("Multi-target moves hit correct battlers after Seed Sower is 
 #undef MOVE_HIT
 
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Seed Sower sets up Grassy Terrain when hit by an attack (Multi)")
 {
     GIVEN {
@@ -287,3 +288,4 @@ DOUBLE_BATTLE_TEST("Multi-target moves hit correct battlers after Seed Sower is 
 
 #undef ABILITY_PARAM
 #undef MOVE_HIT
+#endif

@@ -126,6 +126,7 @@ DOUBLE_BATTLE_TEST("Unnerve stops applying on death but applies on revive")
 }
 
 // Remember to add a PARAMETRIZE for As One in the following tests:
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Unnerve prevents opposing Pokémon from eating their own berries (Multi)")
 {
     u16 mon;
@@ -221,3 +222,4 @@ DOUBLE_BATTLE_TEST("Unnerve stops applying on death but applies on revive (Multi
     }
 
 }
+#endif

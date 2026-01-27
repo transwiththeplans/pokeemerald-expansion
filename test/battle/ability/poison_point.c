@@ -70,6 +70,7 @@ SINGLE_BATTLE_TEST("Poison Point will not poison Poison-Type targets with corros
 }
 
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Poison Point inflicts poison on contact (Multi)")
 {
     u32 move;
@@ -137,3 +138,4 @@ SINGLE_BATTLE_TEST("Poison Point will not poison Poison-Type targets with corros
         }
     }
 }
+#endif

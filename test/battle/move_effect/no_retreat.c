@@ -60,6 +60,7 @@ SINGLE_BATTLE_TEST("No Retreat won't activate Protean if it fails due to already
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("No Retreat won't activate Protean if it fails due to already being used by the user (Multi)")
 {
     GIVEN {
@@ -78,3 +79,4 @@ SINGLE_BATTLE_TEST("No Retreat won't activate Protean if it fails due to already
         }
     }
 }
+#endif

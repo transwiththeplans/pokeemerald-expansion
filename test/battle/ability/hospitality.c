@@ -112,6 +112,7 @@ DOUBLE_BATTLE_TEST("Hospitality is blocked by Heal Block")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Hospitality user restores 25% of ally's health (Multi)")
 {
     s16 health;
@@ -222,3 +223,4 @@ DOUBLE_BATTLE_TEST("Hospitality is blocked by Heal Block (Multi)")
         }
     }
 }
+#endif

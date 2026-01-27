@@ -355,6 +355,7 @@ TO_DO_BATTLE_TEST("Anticipation considers Gravity into their effectiveness (Gen4
 TO_DO_BATTLE_TEST("Anticipation doesn't trigger from Counter, Metal Burst or Mirror Coat (Gen4)");
 TO_DO_BATTLE_TEST("Anticipation treats Hidden Power as Normal Type (Gen4-5)");
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Anticipation causes notifies if an opponent has a super-effective move (Multi)")
 {
     GIVEN {
@@ -701,3 +702,4 @@ TO_DO_BATTLE_TEST("Anticipation considers Scrappy and Normalize into their effec
 TO_DO_BATTLE_TEST("Anticipation considers Gravity into their effectiveness (Gen4) (Multi)");
 TO_DO_BATTLE_TEST("Anticipation doesn't trigger from Counter, Metal Burst or Mirror Coat (Gen4) (Multi)");
 TO_DO_BATTLE_TEST("Anticipation treats Hidden Power as Normal Type (Gen4-5) (Multi)");
+#endif

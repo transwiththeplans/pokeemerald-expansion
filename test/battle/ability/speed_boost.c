@@ -19,6 +19,7 @@ SINGLE_BATTLE_TEST("Speed Boost gradually boosts Speed")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Speed Boost gradually boosts Speed (Multi)")
 {
     GIVEN {
@@ -36,3 +37,4 @@ SINGLE_BATTLE_TEST("Speed Boost gradually boosts Speed (Multi)")
         MESSAGE("The opposing Wobbuffet used Celebrate!");
     }
 }
+#endif

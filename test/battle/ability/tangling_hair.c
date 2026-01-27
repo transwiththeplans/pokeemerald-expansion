@@ -112,6 +112,7 @@ SINGLE_BATTLE_TEST("Tangling Hair will trigger if move is boosted by Sheer Force
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Tangling Hair drops opposing mon's speed if ability user got hit by a contact move (Multi)")
 {
     u32 move;
@@ -215,3 +216,4 @@ SINGLE_BATTLE_TEST("Tangling Hair will trigger if move is boosted by Sheer Force
         ABILITY_POPUP(player, ABILITY_TANGLING_HAIR);
     }
 }
+#endif

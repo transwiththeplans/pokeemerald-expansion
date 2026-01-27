@@ -117,6 +117,7 @@ SINGLE_BATTLE_TEST("Air Balloon pops before it can be stolen by Thief")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Air Balloon pops before it can be stolen with Magician (Multi)")
 {
     GIVEN {
@@ -130,3 +131,4 @@ SINGLE_BATTLE_TEST("Air Balloon pops before it can be stolen with Magician (Mult
         NOT ABILITY_POPUP(opponent, ABILITY_MAGICIAN);
     }
 }
+#endif

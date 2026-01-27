@@ -221,6 +221,7 @@ DOUBLE_BATTLE_TEST("Flower Gift reverts Cherrim back after Teraform Zero clears 
 
 TO_DO_BATTLE_TEST("Flower Gift does not transform Cherrim back to normal when suppressed if Cherrim is Dynamaxed");
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Flower Gift transforms Cherrim in harsh sunlight (Multi)")
 {
     GIVEN {
@@ -418,3 +419,4 @@ DOUBLE_BATTLE_TEST("Flower Gift reverts Cherrim back after Teraform Zero clears 
 }
 
 TO_DO_BATTLE_TEST("Flower Gift does not transform Cherrim back to normal when suppressed if Cherrim is Dynamaxed (Multi)");
+#endif

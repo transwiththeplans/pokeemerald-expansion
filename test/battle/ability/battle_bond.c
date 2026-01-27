@@ -191,6 +191,7 @@ SINGLE_BATTLE_TEST("Battle Bond increases a Stat even if only one can be increas
 }
 
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Battle Bond increases Atk, SpAtk and Speed by 1 stage (Gen9+) (Multi)")
 {
     GIVEN {
@@ -238,3 +239,4 @@ SINGLE_BATTLE_TEST("Battle Bond increases a Stat even if only one can be increas
         EXPECT_EQ(player->statStages[STAT_SPEED], DEFAULT_STAT_STAGE + 6);
     }
 }
+#endif

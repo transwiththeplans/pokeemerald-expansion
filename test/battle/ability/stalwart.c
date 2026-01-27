@@ -57,6 +57,7 @@ DOUBLE_BATTLE_TEST("Stalwart stops Lightning Rod and Storm Drain from redirectin
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Stalwart ignores redirection from Follow-Me (Multi)")
 {
     GIVEN {
@@ -110,3 +111,4 @@ DOUBLE_BATTLE_TEST("Stalwart stops Lightning Rod and Storm Drain from redirectin
         }
     }
 }
+#endif

@@ -62,6 +62,7 @@ SINGLE_BATTLE_TEST("Sand Force don't increase move power if Cloud Nine/Air Lock 
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Sand Force prevents damage from sandstorm (Multi)")
 {
     enum Type type1 = GetSpeciesType(SPECIES_SHELLOS, 0);
@@ -122,3 +123,4 @@ SINGLE_BATTLE_TEST("Sand Force don't increase move power if Cloud Nine/Air Lock 
         EXPECT_EQ(results[0].damage, results[1].damage);
     }
 }
+#endif

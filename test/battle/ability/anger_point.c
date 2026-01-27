@@ -47,6 +47,7 @@ SINGLE_BATTLE_TEST("Anger Point does not trigger when already at maximum Attack 
 
 TO_DO_BATTLE_TEST("Anger Point triggers when a substitute takes the hit (Gen4)");
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Anger Point does not trigger when a substitute takes the hit (Gen5+) (Multi)")
 {
     GIVEN {
@@ -140,3 +141,4 @@ SINGLE_BATTLE_TEST("Anger Point does not trigger when a substitute takes the hit
         EXPECT_EQ(player->statStages[STAT_ATK], DEFAULT_STAT_STAGE);
     }
 }
+#endif

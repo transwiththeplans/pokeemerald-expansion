@@ -187,6 +187,7 @@ SINGLE_BATTLE_TEST("Mind Blown does not cause the user to lose HP if there is no
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Mind Blown hp loss is prevented by Magic Guard (Multi)")
 {
     GIVEN {
@@ -232,3 +233,4 @@ SINGLE_BATTLE_TEST("Mind Blown makes the user lose HP even if it is absorbed by 
         HP_BAR(player);
     }
 }
+#endif

@@ -45,6 +45,7 @@ SINGLE_BATTLE_TEST("Magic Guard does not ignore speed stat changes caused by par
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Magic Guard prevents recoil damage to the user (Multi)")
 {
     GIVEN {
@@ -88,3 +89,4 @@ SINGLE_BATTLE_TEST("Magic Guard does not ignore speed stat changes caused by par
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, player);
     }
 }
+#endif

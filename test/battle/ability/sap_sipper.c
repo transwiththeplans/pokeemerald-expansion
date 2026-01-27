@@ -79,6 +79,7 @@ SINGLE_BATTLE_TEST("Sap Sipper blocks multi-hit grass type moves")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Sap Sipper negates damage from Grass-type moves (Multi)")
 {
     GIVEN {
@@ -156,3 +157,4 @@ SINGLE_BATTLE_TEST("Sap Sipper blocks multi-hit grass type moves (Multi)")
         }
     }
 }
+#endif

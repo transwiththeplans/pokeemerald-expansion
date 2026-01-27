@@ -92,7 +92,7 @@ AI_DOUBLE_BATTLE_TEST("AI will not try to switch for the same Pokémon for 2 spo
 }
 
 // Used to test EXPECT_SWITCH only on partner
-AI_MULTI_BATTLE_TEST("AI partner will not switch mid-turn into a player Pokémon (multi)")
+AI_MULTI_BATTLE_TEST("AI partner will not switch mid-turn into a player Pokémon (multi battle)")
 {
     u32 flags;
 
@@ -156,7 +156,7 @@ AI_TWO_VS_ONE_BATTLE_TEST("AI partner will not switch mid-turn into a player Pok
 }
 
 // Used to test EXPECT_SEND_OUT only on partner
-AI_MULTI_BATTLE_TEST("AI partner will not switch into a player Pokémon after fainting (multi)")
+AI_MULTI_BATTLE_TEST("AI partner will not switch into a player Pokémon after fainting (multi battle)")
 {
     u32 flags;
 
@@ -216,7 +216,7 @@ AI_TWO_VS_ONE_BATTLE_TEST("AI partner will not switch into a player Pokémon aft
 }
 
 // Used to test EXPECT_SWITCH, EXPECT_SEND_OUT, and EXPECT_MOVE on partner
-AI_MULTI_BATTLE_TEST("AI partner will not switch into a player Pokémon (multi)")
+AI_MULTI_BATTLE_TEST("AI partner will not switch into a player Pokémon (multi battle)")
 {
     u32 flags;
 

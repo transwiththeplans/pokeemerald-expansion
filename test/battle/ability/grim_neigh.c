@@ -104,6 +104,7 @@ DOUBLE_BATTLE_TEST("Grim Neigh does not increase damage done by the same move th
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Grim Neigh raises Sp. Attack by one stage after directly causing a Pokemon to faint (Multi)")
 {
     u32 species = 0, abilityPopUp = 0;
@@ -206,3 +207,4 @@ DOUBLE_BATTLE_TEST("Grim Neigh does not increase damage done by the same move th
         EXPECT_EQ(damage[0], damage[1]);
     }
 }
+#endif

@@ -1039,6 +1039,7 @@ AI_DOUBLE_BATTLE_TEST("AI won't be confused by player's previous priority moves 
     }
 }
 
+#if MAX_MON_TRAITS > 1
 AI_SINGLE_BATTLE_TEST("AI prefers Water Gun over Bubble if it knows that foe has Contrary (Multi)")
 {
     enum Ability abilityAI;
@@ -1524,3 +1525,4 @@ AI_SINGLE_BATTLE_TEST("AI won't setup if it can KO through Sturdy effect (Multi)
         TURN { MOVE(player, MOVE_TACKLE); EXPECT_MOVE(opponent, MOVE_FIRE_BLAST); }
     }
 }
+#endif

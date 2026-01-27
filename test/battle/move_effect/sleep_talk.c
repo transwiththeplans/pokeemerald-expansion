@@ -188,6 +188,7 @@ SINGLE_BATTLE_TEST("Sleep Talk deducts power points from itself, not the called 
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Sleep Talk calls move and that move may be redirected by Lightning Rod (Multi)")
 {
     PASSES_RANDOMLY(1, 2, RNG_RANDOM_TARGET);
@@ -225,3 +226,4 @@ DOUBLE_BATTLE_TEST("Sleep Talk calls move and that move may be redirected by Sto
         ABILITY_POPUP(opponentRight, ABILITY_STORM_DRAIN);
     }
 }
+#endif

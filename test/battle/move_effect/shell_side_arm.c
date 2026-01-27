@@ -86,6 +86,7 @@ DOUBLE_BATTLE_TEST("Shell Side Arm chooses its category for each battler on the 
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Shell Side Arm does not change category mid-turn (Multi)")
 {
     GIVEN {
@@ -112,3 +113,4 @@ DOUBLE_BATTLE_TEST("Shell Side Arm does not change category mid-turn (Multi)")
         HP_BAR(playerLeft);
     }
 }
+#endif

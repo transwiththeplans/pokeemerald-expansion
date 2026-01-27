@@ -217,6 +217,7 @@ SINGLE_BATTLE_TEST("Belly Drum deducts HP if the user has Contrary and is at -6"
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Belly Drum minimizes the user's Attack stat with Contrary (Multi)", s16 damage)
 {
     bool32 raiseAttack;
@@ -301,3 +302,4 @@ SINGLE_BATTLE_TEST("Belly Drum deducts HP if the user has Contrary and is at -6 
         MESSAGE("Serperior cut its own HP and maximized its Attack!");
     }
 }
+#endif

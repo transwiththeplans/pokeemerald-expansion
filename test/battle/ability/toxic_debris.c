@@ -141,6 +141,7 @@ DOUBLE_BATTLE_TEST("Toxic Debris sets Toxic Spikes on the opposing side even whe
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Toxic Debris sets Toxic Spikes on the opposing side if hit by a physical attack (Multi)")
 {
     u32 move;
@@ -274,3 +275,4 @@ DOUBLE_BATTLE_TEST("Toxic Debris sets Toxic Spikes on the opposing side even whe
         MESSAGE("Poison spikes were scattered on the ground all around the opposing team!");
     }
 }
+#endif

@@ -336,6 +336,7 @@ SINGLE_BATTLE_TEST("Competitive doesn't activate if the pokemon lowers it's own 
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Competitive sharply raises player's Sp. Atk after Intimidate (Multi)")
 {
     u32 abilityLeft, abilityRight;
@@ -670,3 +671,4 @@ SINGLE_BATTLE_TEST("Competitive doesn't activate if the pokemon lowers it's own 
             EXPECT_EQ(player->statStages[STAT_ATK], DEFAULT_STAT_STAGE);
     }
 }
+#endif

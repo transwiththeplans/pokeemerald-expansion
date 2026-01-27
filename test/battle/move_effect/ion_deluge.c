@@ -65,6 +65,7 @@ SINGLE_BATTLE_TEST("Ion Deluge makes Normal type moves Electric type")
 }
 
 // For some reason SINGLE_BATTLE_TEST didn't catch these two issues.
+#if MAX_MON_TRAITS > 1
 WILD_BATTLE_TEST("Ion Deluge works the same way as always when used by a mon with Volt Absorb (Multi)")
 {
     GIVEN {
@@ -105,3 +106,4 @@ WILD_BATTLE_TEST("Ion Deluge works the same way as always when used by a mon wit
         MESSAGE("A deluge of ions showers the battlefield!");
     }
 }
+#endif

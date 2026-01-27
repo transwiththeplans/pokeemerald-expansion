@@ -187,6 +187,7 @@ SINGLE_BATTLE_TEST("Color Change does not activate if move is boosted by Sheer F
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Color Change changes the type of a Pokemon being hit by a move if the type of the move and the Pokemon are different (Multi)")
 {
     GIVEN {
@@ -372,3 +373,4 @@ SINGLE_BATTLE_TEST("Color Change does not activate if move is boosted by Sheer F
         NOT ABILITY_POPUP(player, ABILITY_COLOR_CHANGE);
     }
 }
+#endif

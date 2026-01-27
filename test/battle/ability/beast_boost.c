@@ -255,6 +255,7 @@ SINGLE_BATTLE_TEST("Beast Boost doesn't consider status condition reductions")
 }
 
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Beast Boost boosts the most proficient stat when knocking out a target (Multi)")
 {
     u8 stats[] = {1, 1, 1, 1, 1};
@@ -501,3 +502,4 @@ SINGLE_BATTLE_TEST("Beast Boost doesn't consider status condition reductions (Mu
         EXPECT_EQ(player->statStages[STAT_ATK], DEFAULT_STAT_STAGE + 1);
     }
 }
+#endif

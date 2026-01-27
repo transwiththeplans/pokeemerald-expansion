@@ -76,6 +76,7 @@ SINGLE_BATTLE_TEST("Poison Heal activates before Toxic Orb")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Poison Heal heals from (Toxic) Poison damage (Multi)")
 {
     u8 status;
@@ -150,3 +151,4 @@ SINGLE_BATTLE_TEST("Poison Heal activates before Toxic Orb (Multi)")
         }
     }
 }
+#endif

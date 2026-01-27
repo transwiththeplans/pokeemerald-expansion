@@ -62,6 +62,7 @@ TO_DO_BATTLE_TEST("Aurora Veil doesn't reduce confusion damage")
 TO_DO_BATTLE_TEST("Aurora Veil doesn't reduce damage done by moves that do direct damage") // Bide, Counter, Endeavor, Final Gambit, Metal Burst, Mirror Coat, Psywave, Seismic Toss, Sonic Boom, Super Fang
 
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Aurora Veil will prevent Protean activation if it fails due to no Snow/Hail (Multi)")
 {
     GIVEN {
@@ -90,3 +91,4 @@ SINGLE_BATTLE_TEST("Aurora Veil wont prevent Protean activation when it fails du
         MESSAGE("But it failed!");
     }
 }
+#endif

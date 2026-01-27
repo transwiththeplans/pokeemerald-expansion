@@ -93,6 +93,7 @@ SINGLE_BATTLE_TEST("Stone Axe fails to set up hazards if user faints")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Stone Axe sets up hazards after any ability activation (Multi)")
 {
     GIVEN {
@@ -106,3 +107,4 @@ SINGLE_BATTLE_TEST("Stone Axe sets up hazards after any ability activation (Mult
         MESSAGE("Pointed stones float in the air around the opposing team!");
     }
 }
+#endif

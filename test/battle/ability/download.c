@@ -120,6 +120,7 @@ DOUBLE_BATTLE_TEST("Download raises Sp.Attack if enemies have lower total Sp. De
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Download raises Attack if player has lower Def than Sp. Def (Multi)", s16 damage)
 {
     enum Ability ability;
@@ -232,3 +233,4 @@ DOUBLE_BATTLE_TEST("Download raises Sp.Attack if enemies have lower total Sp. De
         EXPECT_MUL_EQ(results[0].damage, Q_4_12(1.5), results[1].damage);
     }
 }
+#endif

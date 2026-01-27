@@ -59,6 +59,7 @@ SINGLE_BATTLE_TEST("Insomnia prevents Rest")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Insomnia prevents sleep (Multi)")
 {
     GIVEN {
@@ -116,3 +117,4 @@ SINGLE_BATTLE_TEST("Insomnia prevents Rest (Multi)")
         }
     }
 }
+#endif

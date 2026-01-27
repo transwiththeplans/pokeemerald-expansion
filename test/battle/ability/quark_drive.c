@@ -237,6 +237,7 @@ SINGLE_BATTLE_TEST("Quark Drive doesn't activate for a transformed battler")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Quark Drive boosts the highest stat (Multi)")
 {
     GIVEN {
@@ -417,3 +418,4 @@ SINGLE_BATTLE_TEST("Quark Drive activates in Electric Terrain before Booster Ene
         EXPECT_EQ(player->item, ITEM_BOOSTER_ENERGY);
     }
 }
+#endif

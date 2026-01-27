@@ -316,6 +316,7 @@ DOUBLE_BATTLE_TEST("Opportunist and Mirror Herb resolve correctly")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Opportunist only copies foe's positive stat changes in a turn (Multi)", s16 damage)
 {
     enum Ability ability;
@@ -624,3 +625,4 @@ DOUBLE_BATTLE_TEST("Opportunist and Mirror Herb resolve correctly (Multi)")
         EXPECT_EQ(opponentRight->statStages[STAT_ATK], DEFAULT_STAT_STAGE + 2);
     }
 }
+#endif

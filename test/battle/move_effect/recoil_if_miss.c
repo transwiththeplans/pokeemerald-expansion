@@ -155,6 +155,7 @@ SINGLE_BATTLE_TEST("Recoil if miss: Disguise doesn't prevent crash damage from J
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Recoil if miss: Supercell Slam causes recoil if it is absorbed (Multi)")
 {
     GIVEN {
@@ -192,3 +193,4 @@ SINGLE_BATTLE_TEST("Recoil if miss: Disguise doesn't prevent crash damage from J
         }
     }
 }
+#endif

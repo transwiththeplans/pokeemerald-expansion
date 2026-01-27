@@ -96,6 +96,7 @@ AI_SINGLE_BATTLE_TEST("AI avoids Will-o-Wisp when it can not burn target")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 AI_SINGLE_BATTLE_TEST("AI avoids Will-o-Wisp when it can not burn target (Multi)")
 {
     u32 species;
@@ -116,3 +117,4 @@ AI_SINGLE_BATTLE_TEST("AI avoids Will-o-Wisp when it can not burn target (Multi)
         TURN { SCORE_EQ(opponent, MOVE_CELEBRATE, MOVE_WILL_O_WISP); } // Both get -10
     }
 }
+#endif

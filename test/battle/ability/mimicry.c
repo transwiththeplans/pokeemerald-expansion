@@ -125,6 +125,7 @@ DOUBLE_BATTLE_TEST("Mimicry triggers after Skill Swap")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Mimicry changes the battler's type based on Terrain (Multi)")
 {
     u32 j;
@@ -210,3 +211,4 @@ DOUBLE_BATTLE_TEST("Mimicry can trigger multiple times in a turn (Multi)")
         EXPECT_EQ(gBattleMons[0].types[2], TYPE_MYSTERY);
     }
 }
+#endif

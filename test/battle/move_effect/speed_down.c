@@ -31,6 +31,7 @@ DOUBLE_BATTLE_TEST("Speed Down: Cotton Spore does not fail if it is blocked by o
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Speed Down: Cotton Spore does not fail if it is blocked by one target (Multi)")
 {
     enum Ability abilityOne, abilityTwo;
@@ -60,3 +61,4 @@ DOUBLE_BATTLE_TEST("Speed Down: Cotton Spore does not fail if it is blocked by o
         }
     }
 }
+#endif

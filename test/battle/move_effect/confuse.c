@@ -57,6 +57,7 @@ DOUBLE_BATTLE_TEST("Teeter Dance can confuse foes and allies")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Teeter Dance confusion is blocked by Own Tempo (Multi)")
 {
     GIVEN {
@@ -73,3 +74,4 @@ SINGLE_BATTLE_TEST("Teeter Dance confusion is blocked by Own Tempo (Multi)")
         }
     }
 }
+#endif

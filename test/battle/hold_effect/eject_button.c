@@ -251,6 +251,7 @@ SINGLE_BATTLE_TEST("Eject Button activates after Wandring Spirit")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Eject Button is not activated by a Sheer Force boosted move (Multi)")
 {
     GIVEN {
@@ -370,3 +371,4 @@ SINGLE_BATTLE_TEST("Eject Button activates after Wandring Spirit (Multi)")
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
     }
 }
+#endif

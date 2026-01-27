@@ -66,6 +66,7 @@ DOUBLE_BATTLE_TEST("Flower Veil prevents status on allied Grass-types - left tar
 TO_DO_BATTLE_TEST("Flower Veil's stat reduction protection considers Contrary") // Eg. If a move would reduce stats due to Contrary, it will be protected by Mist.
 
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Flower Veil prevents status on allied Grass-types - right target (Multi)")
 {
     u32 move;
@@ -115,3 +116,4 @@ DOUBLE_BATTLE_TEST("Flower Veil prevents status on allied Grass-types - left tar
 }
 
 TO_DO_BATTLE_TEST("Flower Veil's stat reduction protection considers Contrary (Multi)") // Eg. If a move would reduce stats due to Contrary, it will be protected by Mist.
+#endif

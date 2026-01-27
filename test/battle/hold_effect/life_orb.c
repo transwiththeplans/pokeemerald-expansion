@@ -158,6 +158,7 @@ SINGLE_BATTLE_TEST("Life Orb does not activate on a charge turn")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Life Orb does not activate if move was absorbed by target (Multi)")
 {
     GIVEN {
@@ -174,3 +175,4 @@ SINGLE_BATTLE_TEST("Life Orb does not activate if move was absorbed by target (M
         }
     }
 }
+#endif

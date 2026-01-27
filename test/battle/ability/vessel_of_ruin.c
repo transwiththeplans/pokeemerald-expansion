@@ -147,6 +147,7 @@ DOUBLE_BATTLE_TEST("Vessel of Ruin is active if removed by Mold Breaker Entrainm
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Vessel of Ruin reduces Sp. Atk if opposing mon's ability doesn't match (Multi)")
 {
     s16 damage[2];
@@ -238,3 +239,4 @@ SINGLE_BATTLE_TEST("Vessel of Ruin is still active if removed by Mold Breaker + 
         EXPECT_EQ(damage[0], damage[1]);
     }
 }
+#endif

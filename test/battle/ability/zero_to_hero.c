@@ -182,6 +182,7 @@ SINGLE_BATTLE_TEST("Zero to Hero's message displays correctly after all battlers
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Zero to Hero transforms Palafin when it switches out (Multi)")
 {
     GIVEN {
@@ -324,3 +325,4 @@ SINGLE_BATTLE_TEST("Zero to Hero's message displays correctly after all battlers
         MESSAGE("The opposing Palafin underwent a heroic transformation!");
     }
 }
+#endif

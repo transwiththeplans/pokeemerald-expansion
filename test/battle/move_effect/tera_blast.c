@@ -187,6 +187,7 @@ SINGLE_BATTLE_TEST("Flying-type Tera Blast does not have its priority boosted by
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Flying-type Tera Blast does not have its priority boosted by Gale Wings (Multi)")
 {
     GIVEN {
@@ -201,3 +202,4 @@ SINGLE_BATTLE_TEST("Flying-type Tera Blast does not have its priority boosted by
         ANIMATION(ANIM_TYPE_MOVE, MOVE_TERA_BLAST, player);
     }
 }
+#endif

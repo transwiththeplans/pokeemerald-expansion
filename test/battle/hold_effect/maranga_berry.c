@@ -106,6 +106,7 @@ SINGLE_BATTLE_TEST("Maranga Berry doesn't trigger if the move was boosted by She
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Maranga Berry raises the holder's Sp. Def by two stages with Ripen when hit by a special move (Multi)")
 {
     GIVEN {
@@ -139,3 +140,4 @@ SINGLE_BATTLE_TEST("Maranga Berry doesn't trigger if the move was boosted by She
         EXPECT_EQ(player->statStages[STAT_DEF], DEFAULT_STAT_STAGE);
     }
 }
+#endif

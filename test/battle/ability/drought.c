@@ -82,6 +82,7 @@ SINGLE_BATTLE_TEST("Drought sets up permanent sun (Gen3-5)")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Drought sets up sun for 5 turns (Gen6+) (Multi)")
 {
     GIVEN {
@@ -162,3 +163,4 @@ SINGLE_BATTLE_TEST("Drought sets up permanent sun (Gen3-5) (Multi)")
         NOT MESSAGE("The sunlight faded.");
     }
 }
+#endif

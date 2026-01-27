@@ -211,6 +211,7 @@ SINGLE_BATTLE_TEST("Disguise does not break from a teammate's Wish")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Disguised Mimikyu doesn't lose 1/8 of its max HP upon changing to its busted form (Gen7) (Multi)")
 {
     GIVEN {
@@ -413,3 +414,4 @@ SINGLE_BATTLE_TEST("Disguise does not break from a teammate's Wish (Multi)")
         NOT ABILITY_POPUP(player, ABILITY_DISGUISE);
     }
 }
+#endif

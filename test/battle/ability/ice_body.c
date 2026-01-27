@@ -54,6 +54,7 @@ SINGLE_BATTLE_TEST("Ice Body doesn't recover HP if Cloud Nine/Air Lock is on the
 }
 
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Ice Body prevents damage from hail (Multi)")
 {
     u32 move;
@@ -100,3 +101,4 @@ SINGLE_BATTLE_TEST("Ice Body doesn't recover HP if Cloud Nine/Air Lock is on the
         NOT ABILITY_POPUP(player, ABILITY_ICE_BODY);
     }
 }
+#endif

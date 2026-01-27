@@ -104,6 +104,7 @@ DOUBLE_BATTLE_TEST("Rest doesn't fail if the user is protected by Flower Veil")
 
 TO_DO_BATTLE_TEST("TODO: Write Rest (Move Effect) test titles")
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Rest fails if the user is protected by Shields Down (Multi)")
 {
     GIVEN {
@@ -134,3 +135,4 @@ DOUBLE_BATTLE_TEST("Rest doesn't fail if the user is protected by Flower Veil (M
         EXPECT(playerLeft->status1 & STATUS1_SLEEP);
     }
 }
+#endif

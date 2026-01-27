@@ -229,6 +229,7 @@ SINGLE_BATTLE_TEST("Mirror Armor reflects Obstruct defense drop")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Mirror Armor lowers a stat of the attacking Pokémon (Multi)")
 {
     u16 move, statId;
@@ -456,3 +457,4 @@ SINGLE_BATTLE_TEST("Mirror Armor reflects Obstruct defense drop (Multi)")
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
     }
 }
+#endif

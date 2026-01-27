@@ -138,6 +138,7 @@ SINGLE_BATTLE_TEST("Recoil: No recoil is taken if the move is blocked by Disguis
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Recoil: Flare Blitz is absorbed by Flash Fire and no recoil damage is dealt (Multi)")
 {
     GIVEN {
@@ -171,3 +172,4 @@ SINGLE_BATTLE_TEST("Recoil: No recoil is taken if the move is blocked by Disguis
         EXPECT_EQ(player->hp, player->maxHP);
     }
 }
+#endif

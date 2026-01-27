@@ -31,6 +31,7 @@ SINGLE_BATTLE_TEST("Rain Dish doesn't recover HP if Cloud Nine/Air Lock is on th
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Rain Dish recovers 1/16th of Max HP in Rain (Multi)")
 {
     GIVEN {
@@ -56,3 +57,4 @@ SINGLE_BATTLE_TEST("Rain Dish doesn't recover HP if Cloud Nine/Air Lock is on th
         NOT ABILITY_POPUP(player, ABILITY_RAIN_DISH);
     }
 }
+#endif

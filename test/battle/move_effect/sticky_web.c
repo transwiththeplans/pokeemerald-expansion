@@ -300,6 +300,7 @@ DOUBLE_BATTLE_TEST("Sticky Web setter has their speed lowered with Mirror Armor 
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Sticky Web raises Speed by 1 for a Pokemon with Contrary (Multi)")
 {
     GIVEN {
@@ -491,3 +492,4 @@ DOUBLE_BATTLE_TEST("Sticky Web setter has their speed lowered with Mirror Armor 
         MESSAGE("The opposing Caterpie's Speed fell!");
     }
 }
+#endif

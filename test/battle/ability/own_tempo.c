@@ -144,6 +144,7 @@ SINGLE_BATTLE_TEST("Own Tempo prevents confusion from items")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Own Tempo doesn't prevent Intimidate (Gen3-7) (Multi)")
 {
     GIVEN {
@@ -264,3 +265,4 @@ SINGLE_BATTLE_TEST("Own Tempo prevents confusion from items (Multi)")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, opponent);
     }
 }
+#endif

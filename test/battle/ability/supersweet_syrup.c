@@ -82,6 +82,7 @@ SINGLE_BATTLE_TEST("Supersweet Syrup can not further lower opponents evasion if 
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Supersweet Syrup lowers evasion once per battle by one stage (Multi)")
 {
     GIVEN {
@@ -162,3 +163,4 @@ SINGLE_BATTLE_TEST("Supersweet Syrup can not further lower opponents evasion if 
         EXPECT_EQ(player->statStages[STAT_EVASION], MIN_STAT_STAGE);
     }
 }
+#endif

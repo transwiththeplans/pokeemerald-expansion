@@ -24,6 +24,7 @@ SINGLE_BATTLE_TEST("Super Luck increases the critical hit ratio by 1 stage")
 
 TO_DO_BATTLE_TEST("Super Luck increases the chances of wild Pokémon holding items (Gen8+)");
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Super Luck increases the critical hit ratio by 1 stage (Multi)")
 {
     u32 j, genConfig = 0, passes = 0, trials = 0;
@@ -46,3 +47,4 @@ SINGLE_BATTLE_TEST("Super Luck increases the critical hit ratio by 1 stage (Mult
 }
 
 TO_DO_BATTLE_TEST("Super Luck increases the chances of wild Pokémon holding items (Gen8+) (Multi)");
+#endif

@@ -409,6 +409,7 @@ DOUBLE_BATTLE_TEST("Ally Switch updates attract battler")
 // Triple Battles required to test
 //TO_DO_BATTLE_TEST("Ally Switch fails if the user is in the middle of the field in a Triple Battle");
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Ally Switch does not redirect moves done by Pokémon with Stalwart and Propeller Tail (Multi)")
 {
     enum Ability ability;
@@ -534,3 +535,4 @@ DOUBLE_BATTLE_TEST("Ally Switch updates attract battler (Multi)")
         MESSAGE("Wobbuffet is in love with the opposing Clefairy!"); // tracks attract battler
     }
 }
+#endif

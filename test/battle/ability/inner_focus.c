@@ -83,6 +83,7 @@ SINGLE_BATTLE_TEST("Mold Breaker ignores Inner Focus")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Inner Focus doesn't prevent intimidate (Gen3-7) (Multi)")
 {
     s16 turnOneHit;
@@ -164,3 +165,4 @@ SINGLE_BATTLE_TEST("Mold Breaker ignores Inner Focus (Multi)")
         MESSAGE("The opposing Zubat flinched and couldn't move!");
     }
 }
+#endif

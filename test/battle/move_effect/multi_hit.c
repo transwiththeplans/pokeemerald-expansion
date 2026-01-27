@@ -285,6 +285,7 @@ SINGLE_BATTLE_TEST("Multi Hit moves will not disrupt Destiny Bond flag")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Multi hit Moves hit the maximum amount with Skill Link (Multi)")
 {
     PASSES_RANDOMLY(100, 100, RNG_HITS);
@@ -329,3 +330,4 @@ SINGLE_BATTLE_TEST("Scale Shot decreases defense and increases speed after killi
         MESSAGE("Bagon's Speed rose!");
     }
 }
+#endif

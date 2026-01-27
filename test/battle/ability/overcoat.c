@@ -98,6 +98,7 @@ SINGLE_BATTLE_TEST("Overcoat blocks Effect Spore's effect (Gen6+)")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Overcoat blocks powder and spore moves (Gen6+) (Multi)")
 {
     u32 gen = 0;
@@ -194,3 +195,4 @@ SINGLE_BATTLE_TEST("Overcoat blocks Effect Spore's effect (Gen6+) (Multi)")
             EXPECT_NE(player->status1, 0);
     }
 }
+#endif

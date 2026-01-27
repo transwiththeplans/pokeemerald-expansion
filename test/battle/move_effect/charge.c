@@ -155,6 +155,7 @@ SINGLE_BATTLE_TEST("Charge will expire if user flinches while using an electric 
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Charge's effect does not stack with Electromorphosis or Wind Power (Multi)")
 {
     u32 species;
@@ -184,3 +185,4 @@ SINGLE_BATTLE_TEST("Charge's effect does not stack with Electromorphosis or Wind
         EXPECT_MUL_EQ(damage[0], Q_4_12(2.0), damage[1]);
     }
 }
+#endif

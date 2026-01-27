@@ -74,6 +74,7 @@ DOUBLE_BATTLE_TEST("Mirror Herb does not trigger for Ally's Soul Heart's stat ra
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Mirror Herb copies the boost gained by an ability (Multi)")
 {
     GIVEN {
@@ -129,3 +130,4 @@ SINGLE_BATTLE_TEST("Mirror Herb copies the boost gained by an ability (Multi)")
         EXPECT_EQ(opponent->statStages[STAT_ATK], DEFAULT_STAT_STAGE + 1);
     }
 }
+#endif

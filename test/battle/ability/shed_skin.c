@@ -20,6 +20,7 @@ SINGLE_BATTLE_TEST("Shed Skin triggers 33% of the time")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Shed Skin triggers 33% of the time (Multi)")
 {
     if (B_ABILITY_TRIGGER_CHANCE == GEN_4)
@@ -38,3 +39,4 @@ SINGLE_BATTLE_TEST("Shed Skin triggers 33% of the time (Multi)")
         STATUS_ICON(opponent, poison: FALSE);
     }
 }
+#endif

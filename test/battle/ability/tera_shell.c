@@ -113,6 +113,7 @@ SINGLE_BATTLE_TEST("Tera Shell respects immunity")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Tera Shell makes all moves against Terapagos not very effective when at full HP (Multi)")
 {
     u16 hp;
@@ -224,3 +225,4 @@ SINGLE_BATTLE_TEST("Tera Shell respects immunity (Multi)")
         }
     }
 }
+#endif

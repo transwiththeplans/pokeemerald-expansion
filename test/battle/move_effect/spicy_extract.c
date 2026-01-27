@@ -207,6 +207,7 @@ AI_DOUBLE_BATTLE_TEST("Spicy Extract user will not choose the move if it does no
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Spicy Extract is prevented by target's ability if it's Attack stat is maxed out (Multi)")
 {
     enum Ability ability;
@@ -330,3 +331,4 @@ AI_DOUBLE_BATTLE_TEST("Spicy Extract user will not choose the move if it does no
         }
     }
 }
+#endif

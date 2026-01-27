@@ -166,6 +166,7 @@ SINGLE_BATTLE_TEST("Ice Face is not restored if hail or snow and Eiscue are alre
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Ice Face blocks physical moves, changing Eiscue into its Noice Face form (Multi)")
 {
     GIVEN {
@@ -330,3 +331,4 @@ SINGLE_BATTLE_TEST("Ice Face is not restored if hail or snow and Eiscue are alre
         }
     }
 }
+#endif

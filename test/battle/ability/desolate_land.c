@@ -178,6 +178,7 @@ SINGLE_BATTLE_TEST("Desolate Land can be replaced by Primordial Sea")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Desolate Land prevents other weather abilities (Multi)")
 {
     u16 ability, species;
@@ -198,3 +199,4 @@ SINGLE_BATTLE_TEST("Desolate Land prevents other weather abilities (Multi)")
         EXPECT(gBattleWeather & B_WEATHER_SUN_PRIMAL);
     }
 }
+#endif

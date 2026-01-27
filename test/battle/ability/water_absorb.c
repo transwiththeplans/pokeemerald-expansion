@@ -84,6 +84,7 @@ SINGLE_BATTLE_TEST("Water Absorb prevents Absorb Bulb and Luminous Moss from act
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Water Absorb heals 25% when hit by water type moves (Multi)")
 {
     GIVEN {
@@ -166,3 +167,4 @@ SINGLE_BATTLE_TEST("Water Absorb prevents Absorb Bulb and Luminous Moss from act
 
     }
 }
+#endif

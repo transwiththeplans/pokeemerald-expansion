@@ -106,6 +106,7 @@ SINGLE_BATTLE_TEST("Starf Berry randomly raises the holder's Attack, Defense, Sp
 }
 
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Starf Berry randomly raises the holder's Attack, Defense, Sp. Atk, Sp. Def, or Speed by two stages when the holder's HP drop to 1/2 or below if it has Gluttony (Multi)")
 {
     GIVEN {
@@ -160,3 +161,4 @@ SINGLE_BATTLE_TEST("Starf Berry randomly raises the holder's Attack, Defense, Sp
         EXPECT_EQ(boostedStats, 1);
     }
 }
+#endif

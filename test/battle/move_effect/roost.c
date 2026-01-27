@@ -443,6 +443,7 @@ SINGLE_BATTLE_TEST("Roost does not suppress the ungrounded effect of Telekinesis
 // Probably better as a Transform test.
 TO_DO_BATTLE_TEST("Roost's suppression does not prevent others who are Transforming into the user from copying its Flying-type");
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Roost suppresses the user's Flying-typing this turn, then restores it at the end of the turn (Multi)")
 {
     GIVEN {
@@ -551,3 +552,4 @@ SINGLE_BATTLE_TEST("Roost does not suppress the ungrounded effect of Levitate (M
         }
     }
 }
+#endif

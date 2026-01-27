@@ -69,6 +69,7 @@ SINGLE_BATTLE_TEST("Solar Power doesn't cause the Pokémon to lose 1/8 max HP if
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Solar Power increases a Sp. Attack by x1.5 in Sun (Multi)", s16 damage)
 {
     u32 move;
@@ -136,3 +137,4 @@ SINGLE_BATTLE_TEST("Solar Power doesn't cause the Pokémon to lose 1/8 max HP if
         EXPECT_EQ(player->hp, player->maxHP);
     }
 }
+#endif

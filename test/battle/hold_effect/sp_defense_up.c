@@ -70,6 +70,7 @@ SINGLE_BATTLE_TEST("Apicot Berry raises Sp. Def by one stage when HP drops to 1/
 }
 
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Apicot Berry raises Sp. Def by one stage when HP drops to 1/2 or below if holder has Gluttony (Multi)")
 {
     GIVEN {
@@ -101,3 +102,4 @@ SINGLE_BATTLE_TEST("Apicot Berry raises Sp. Def by one stage when HP drops to 1/
         EXPECT_EQ(player->statStages[STAT_SPDEF], DEFAULT_STAT_STAGE + 2);
     }
 }
+#endif

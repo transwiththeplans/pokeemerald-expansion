@@ -115,6 +115,7 @@ SINGLE_BATTLE_TEST("Big Pecks doesn't prevent receiving negative Defense stage c
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Big Pecks prevents Defense stage reduction from moves (Multi)")
 {
     GIVEN {
@@ -228,3 +229,4 @@ SINGLE_BATTLE_TEST("Big Pecks doesn't prevent receiving negative Defense stage c
         EXPECT_EQ(opponent->statStages[STAT_DEF], DEFAULT_STAT_STAGE - 1);
     }
 }
+#endif

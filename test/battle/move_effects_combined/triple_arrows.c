@@ -97,6 +97,7 @@ SINGLE_BATTLE_TEST("Triple Arrows's flinching is prevented by Inner Focus")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Triple Arrows may lower Defense by one stage (Multi)")
 {
     enum Ability ability;
@@ -149,3 +150,4 @@ SINGLE_BATTLE_TEST("Triple Arrows's flinching is prevented by Inner Focus (Multi
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, opponent);
     }
 }
+#endif

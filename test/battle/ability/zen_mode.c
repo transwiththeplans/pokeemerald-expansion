@@ -89,6 +89,7 @@ SINGLE_BATTLE_TEST("Zen Mode switches Darmanitan's form when HP is healed above 
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Zen Mode switches Darmanitan's form when HP is half or less at the end of the turn (Multi)")
 {
     u16 standardSpecies, zenSpecies;
@@ -176,3 +177,4 @@ SINGLE_BATTLE_TEST("Zen Mode switches Darmanitan's form when HP is healed above 
         EXPECT_EQ(player->species, standardSpecies);
     }
 }
+#endif

@@ -551,6 +551,7 @@ SINGLE_BATTLE_TEST("Fling deals damage based on a TM's move power")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Fling fails for Pokémon with Klutz ability (Multi)")
 {
     enum Ability ability;
@@ -670,3 +671,4 @@ SINGLE_BATTLE_TEST("Fling's secondary effects are blocked by Shield Dust (Multi)
         }
     }
 }
+#endif

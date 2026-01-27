@@ -219,6 +219,7 @@ SINGLE_BATTLE_TEST("Liquid Ooze HP loss from Leech Seed is blocked by Magic Guar
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Liquid Ooze causes Absorb users to lose HP instead of heal (Multi)")
 {
     s16 damage;
@@ -436,3 +437,4 @@ SINGLE_BATTLE_TEST("Liquid Ooze HP loss from Leech Seed is blocked by Magic Guar
         NOT HP_BAR(player);
     }
 }
+#endif

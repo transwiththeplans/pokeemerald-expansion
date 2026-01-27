@@ -125,6 +125,7 @@ SINGLE_BATTLE_TEST("Stamina is not activated by users own Substitute")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Stamina raises Defense by 1 when hit by a move (Multi)")
 {
     s16 turnOneHit, turnTwoHit;
@@ -234,3 +235,4 @@ SINGLE_BATTLE_TEST("Stamina is not activated by users own Substitute (Multi)")
         EXPECT_EQ(player->statStages[STAT_DEF], DEFAULT_STAT_STAGE);
     }
 }
+#endif

@@ -155,6 +155,7 @@ SINGLE_BATTLE_TEST("Hyper Cutter doesn't prevent receiving negative Attack stage
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Hyper Cutter prevents intimidate (Multi)")
 {
     s16 turnOneHit;
@@ -308,3 +309,4 @@ SINGLE_BATTLE_TEST("Hyper Cutter doesn't prevent receiving negative Attack stage
         EXPECT_EQ(opponent->statStages[STAT_ATK], DEFAULT_STAT_STAGE - 1);
     }
 }
+#endif

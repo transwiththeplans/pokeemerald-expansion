@@ -132,6 +132,7 @@ DOUBLE_BATTLE_TEST("Quash-affected mon that acted early via After You is not aff
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Quash-affected target will move last in the priority bracket (Multi)")
 {
     GIVEN {
@@ -225,3 +226,4 @@ DOUBLE_BATTLE_TEST("Quash-affected mon that acted early via After You is not aff
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, playerRight); // this is the relevant part, testing if quash affected battler becomes last to move causing playerRight to not move
     }
 }
+#endif

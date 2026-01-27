@@ -59,6 +59,7 @@ DOUBLE_BATTLE_TEST("Sweet Veil prevents Yawn activation")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Sweet Veil prevents Sleep on partner - right target (Multi)")
 {
     GIVEN {
@@ -110,3 +111,4 @@ DOUBLE_BATTLE_TEST("Sweet Veil prevents Yawn activation (Multi)")
         NOT STATUS_ICON(opponentLeft, sleep: TRUE);
     }
 }
+#endif

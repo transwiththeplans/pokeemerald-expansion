@@ -171,6 +171,7 @@ DOUBLE_BATTLE_TEST("Order Up is always boosted by Sheer Force", s16 damage)
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Order Up increases a stat based on Tatsugiri's form (Multi)")
 {
     u32 species = 0;
@@ -321,3 +322,4 @@ DOUBLE_BATTLE_TEST("Order Up is always boosted by Sheer Force (Multi)", s16 dama
         EXPECT_MUL_EQ(results[0].damage, UQ_4_12(1.3), results[2].damage);
     }
 }
+#endif

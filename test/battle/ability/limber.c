@@ -37,6 +37,7 @@ SINGLE_BATTLE_TEST("Limber prevents paralysis from Thunder Wave")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Limber prevents paralysis (Multi)")
 {
     GIVEN {
@@ -71,3 +72,4 @@ SINGLE_BATTLE_TEST("Limber prevents paralysis from Thunder Wave (Multi)")
         }
     }
 }
+#endif

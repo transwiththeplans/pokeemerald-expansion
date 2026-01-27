@@ -190,6 +190,7 @@ DOUBLE_BATTLE_TEST("Beads of Ruin's Sp. Def reduction is ignored by Gastro Acid"
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Beads of Ruin reduces Sp. Def if opposing mon's ability doesn't match (Multi)")
 {
     s16 damage[2];
@@ -328,3 +329,4 @@ DOUBLE_BATTLE_TEST("Beads of Ruin's Sp. Def reduction is ignored by Gastro Acid 
         EXPECT_LT(results[0].damage, results[1].damage);
     }
 }
+#endif

@@ -444,6 +444,7 @@ DOUBLE_BATTLE_TEST("Intimidate will not miss timing for competitive")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Intimidate (opponent) lowers player's attack after switch out (Multi)", s16 damage)
 {
     enum Ability ability;
@@ -769,3 +770,4 @@ DOUBLE_BATTLE_TEST("Intimidate will not miss timing for competitive (Multi)")
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponentRight);
     }
 }
+#endif

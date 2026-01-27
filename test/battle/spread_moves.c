@@ -456,6 +456,7 @@ DOUBLE_BATTLE_TEST("Spread Moves: Focus Sash activates correctly")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Spread Moves: Ability and Item effects activate correctly after a multi target move (Multi)")
 {
     GIVEN {
@@ -615,3 +616,4 @@ DOUBLE_BATTLE_TEST("Spread Moves: Spread move vs Eiscue and Mimikyu with 1 Eject
         MESSAGE("The opposing Mimikyu is switched out with the Eject Button!");
     }
 }
+#endif

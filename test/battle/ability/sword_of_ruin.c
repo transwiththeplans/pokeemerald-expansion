@@ -189,6 +189,7 @@ DOUBLE_BATTLE_TEST("Sword of Ruin's Defense reduction is ignored by Gastro Acid"
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Sword of Ruin reduces Defense if opposing mon's ability doesn't match (Multi)")
 {
     s16 damage[2];
@@ -344,3 +345,4 @@ DOUBLE_BATTLE_TEST("Sword of Ruin's Defense reduction is not ignored by Mold Bre
         EXPECT_EQ(results[0].damage, results[1].damage);
     }
 }
+#endif

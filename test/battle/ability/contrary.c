@@ -271,6 +271,7 @@ AI_SINGLE_BATTLE_TEST("AI sees Contrary-effected moves correctly in MoveEffectIn
 
 TO_DO_BATTLE_TEST("Contrary does not invert stat changes that have been Baton-passed")
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Contrary raises Attack when Intimidated in a single battle (Multi)", s16 damage)
 {
     enum Ability ability;
@@ -535,3 +536,4 @@ AI_SINGLE_BATTLE_TEST("AI sees Contrary-effected moves correctly in MoveEffectIn
 }
 
 TO_DO_BATTLE_TEST("Contrary does not invert stat changes that have been Baton-passed (Multi)")
+#endif

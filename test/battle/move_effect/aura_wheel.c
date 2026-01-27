@@ -88,6 +88,7 @@ SINGLE_BATTLE_TEST("Aura Wheel can be turned into a Normal-type move after Morpe
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Aura Wheel changes type depending on Morpeko's form (Multi)")
 {
     GIVEN {
@@ -144,3 +145,4 @@ SINGLE_BATTLE_TEST("Aura Wheel can be turned into a Normal-type move after Morpe
         }
     }
 }
+#endif

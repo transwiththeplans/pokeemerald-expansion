@@ -93,6 +93,7 @@ SINGLE_BATTLE_TEST("Scrappy doesn't bypass a Ghost-type's Wonder Guard")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Scrappy doesn't prevent Intimidate (Gen4-7) (Multi)")
 {
     s16 turnOneHit;
@@ -184,3 +185,4 @@ SINGLE_BATTLE_TEST("Scrappy doesn't bypass a Ghost-type's Wonder Guard (Multi)")
         MESSAGE("The opposing Shedinja avoided damage with Wonder Guard!");
     }
 }
+#endif

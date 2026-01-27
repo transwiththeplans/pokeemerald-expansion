@@ -97,6 +97,7 @@ SINGLE_BATTLE_TEST("Protean/Libero does not change the user's type when using St
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Protean/Libero changes the type of the user to the move used every time (Gen6-8) (Multi)")
 {
     u32 ability, species;
@@ -192,3 +193,4 @@ SINGLE_BATTLE_TEST("Protean/Libero does not change the user's type when using St
         ANIMATION(ANIM_TYPE_MOVE, MOVE_STRUGGLE, opponent);
     }
 }
+#endif

@@ -208,6 +208,7 @@ SINGLE_BATTLE_TEST("Weak Armor doesn't interrupt multi hit moves if Speed can't 
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Weak Armor lowers Defense by 1 and boosts Speed by 1 (Gen5-6) or 2 (Gen7+) when hit by a physical attack (Multi)")
 {
     u16 move, gen;
@@ -406,3 +407,4 @@ SINGLE_BATTLE_TEST("Weak Armor doesn't interrupt multi hit moves if Speed can't 
         EXPECT_EQ(player->statStages[STAT_SPEED], MAX_STAT_STAGE);
     }
 }
+#endif

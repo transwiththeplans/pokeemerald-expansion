@@ -48,6 +48,7 @@ SINGLE_BATTLE_TEST("Earth Eater activates on status moves")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Earth Eater heals 25% when hit by ground type moves (Multi)")
 {
     GIVEN {
@@ -94,3 +95,4 @@ SINGLE_BATTLE_TEST("Earth Eater activates on status moves (Multi)")
         MESSAGE("Orthworm restored HP using its Earth Eater!");
     }
 }
+#endif

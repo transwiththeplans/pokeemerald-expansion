@@ -76,6 +76,7 @@ SINGLE_BATTLE_TEST("Shields Down protects Minior Meteor from status conditions")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Minior Core doesn't transform into Minior Meteor on switch-in if it has 1/2 or less health (Multi)")
 {
     GIVEN {
@@ -150,3 +151,4 @@ SINGLE_BATTLE_TEST("Shields Down protects Minior Meteor from status conditions (
             EXPECT(opponent->status1 & STATUS1_BURN);
     }
 }
+#endif

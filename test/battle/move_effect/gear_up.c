@@ -16,6 +16,7 @@ AI_DOUBLE_BATTLE_TEST("AI uses Gear Up")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 AI_DOUBLE_BATTLE_TEST("AI uses Gear Up (Multi)")
 {
     GIVEN {
@@ -28,3 +29,4 @@ AI_DOUBLE_BATTLE_TEST("AI uses Gear Up (Multi)")
         TURN {  EXPECT_MOVE(opponentLeft, MOVE_GEAR_UP); }
     }
 }
+#endif

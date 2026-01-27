@@ -88,6 +88,7 @@ DOUBLE_BATTLE_TEST("Salac Berry does not miss timing miss timing")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Salac Berry raises Speed by one stage when HP drops to 1/2 or below if holder has Gluttony (Multi)")
 {
     GIVEN {
@@ -119,3 +120,4 @@ SINGLE_BATTLE_TEST("Salac Berry raises Speed by one stage when HP drops to 1/4 o
         EXPECT_EQ(player->statStages[STAT_SPEED], DEFAULT_STAT_STAGE + 2);
     }
 }
+#endif

@@ -49,6 +49,7 @@ SINGLE_BATTLE_TEST("Flame Body triggers 30% of the time")
 }
 
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Flame Body inflicts burn on contact (Multi)")
 {
     u32 move;
@@ -95,3 +96,4 @@ SINGLE_BATTLE_TEST("Flame Body triggers 30% of the time (Multi)")
         STATUS_ICON(player, burn: TRUE);
     }
 }
+#endif

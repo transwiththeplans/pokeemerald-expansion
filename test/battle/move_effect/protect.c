@@ -773,6 +773,7 @@ DOUBLE_BATTLE_TEST("Wide Guard is still activate even if user is switched out du
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Protect is not transferred to a mon that is switched in due to Eject Button (Multi)")
 {
     GIVEN {
@@ -798,3 +799,4 @@ DOUBLE_BATTLE_TEST("Protect is not transferred to a mon that is switched in due 
         HP_BAR(opponentRight);
     }
 }
+#endif

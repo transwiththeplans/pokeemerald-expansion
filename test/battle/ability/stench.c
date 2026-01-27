@@ -81,6 +81,7 @@ DOUBLE_BATTLE_TEST("Stench doesn't trigger if partner uses a move")
 
 // TODO: Test against interaction with multi hits
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Stench has a 10% chance to flinch (Multi)")
 {
     PASSES_RANDOMLY(1, 10, RNG_STENCH);
@@ -160,3 +161,4 @@ DOUBLE_BATTLE_TEST("Stench doesn't trigger if partner uses a move (Multi)")
 }
 
 // TODO: Test against interaction with multi hits
+#endif

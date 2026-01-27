@@ -484,6 +484,7 @@ AI_SINGLE_BATTLE_TEST("AI uses Sparkling Aria to cure an enemy with Guts")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 AI_SINGLE_BATTLE_TEST("AI chooses moves with secondary effect that have a 100% chance to trigger (Multi)")
 {
     enum Ability ability;
@@ -607,3 +608,4 @@ AI_SINGLE_BATTLE_TEST("AI uses Sparkling Aria to cure an enemy with Guts (Multi)
             TURN { EXPECT_MOVE(opponent, MOVE_SCALD); }
     }
 }
+#endif

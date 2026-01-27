@@ -94,6 +94,7 @@ TO_DO_BATTLE_TEST("Comatose isn't affected by Poison Touch + Sunsteel Strike")
 TO_DO_BATTLE_TEST("Comatose boosts Dream Ball's multiplier")
 
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Comatose prevents status-inducing moves (Multi)")
 {
     u32 move;
@@ -153,3 +154,4 @@ TO_DO_BATTLE_TEST("Comatose makes Rest fail (Multi)")
 TO_DO_BATTLE_TEST("Comatose isn't affected by Mold Breaker, Turboblaze or Teravolt (Multi)")
 TO_DO_BATTLE_TEST("Comatose isn't affected by Poison Touch + Sunsteel Strike (Multi)")
 TO_DO_BATTLE_TEST("Comatose boosts Dream Ball's multiplier (Multi)")
+#endif

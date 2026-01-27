@@ -248,6 +248,7 @@ ONE_VS_TWO_BATTLE_TEST("Switch-in abilities trigger in Speed Order after post-KO
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Switch-in abilities trigger in Speed Order at the battle's start - Single Battle (Multi)")
 {
     u32 spdPlayer, spdOpponent;
@@ -494,3 +495,4 @@ ONE_VS_TWO_BATTLE_TEST("Switch-in abilities trigger in Speed Order after post-KO
         }
     }
 }
+#endif

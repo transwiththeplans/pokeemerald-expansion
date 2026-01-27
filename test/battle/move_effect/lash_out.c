@@ -187,6 +187,7 @@ DOUBLE_BATTLE_TEST("Lash Out damage is not boosted by Treasure of Ruin ability a
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Lash Out damage is only boosted on the turn that Intimidate switches in (Multi)")
 {
     s16 damage[3] = {0};
@@ -323,3 +324,4 @@ DOUBLE_BATTLE_TEST("Lash Out damage is not boosted by Treasure of Ruin ability a
             EXPECT_EQ(damage[0], damage[1]);
     }
 }
+#endif

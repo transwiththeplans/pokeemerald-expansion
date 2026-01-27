@@ -75,6 +75,7 @@ SINGLE_BATTLE_TEST("Damp prevents damage from Aftermath")
 
 //TO_DO_BATTLE_TEST("Damp affects non-adjacent Pokémon (triples)")
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Damp prevents explosion-like moves from enemies (Multi)")
 {
     u32 move;
@@ -146,3 +147,4 @@ SINGLE_BATTLE_TEST("Damp prevents damage from Aftermath (Multi)")
         NONE_OF { HP_BAR(player); }
     }
 }
+#endif

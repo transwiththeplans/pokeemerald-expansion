@@ -137,6 +137,7 @@ SINGLE_BATTLE_TEST("Magic Bounce bounced back status moves can not be bounced ba
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Magic Bounce bounces back status moves (Multi)")
 {
     GIVEN {
@@ -271,3 +272,4 @@ SINGLE_BATTLE_TEST("Magic Bounce bounced back status moves can not be bounced ba
         STATUS_ICON(player, badPoison: TRUE);
     }
 }
+#endif

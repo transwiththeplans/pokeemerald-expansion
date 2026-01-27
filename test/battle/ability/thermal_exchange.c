@@ -90,6 +90,7 @@ SINGLE_BATTLE_TEST("Thermal Exchange boosts attack if hit by a damaging fire typ
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Thermal Exchange makes Will-O-Wisp fail (Multi)")
 {
     GIVEN {
@@ -158,3 +159,4 @@ SINGLE_BATTLE_TEST("Thermal Exchange boosts attack if hit by a damaging fire typ
         EXPECT_EQ(player->statStages[STAT_ATK], DEFAULT_STAT_STAGE + 1);
     }
 }
+#endif

@@ -71,6 +71,7 @@ SINGLE_BATTLE_TEST("Hunger Switch does not switch Morpeko's form after switching
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Hunger Switch switches Morpeko's forms at the end of the turn (Multi)")
 {
     u16 species;
@@ -140,3 +141,4 @@ SINGLE_BATTLE_TEST("Hunger Switch does not switch Morpeko's form after switching
         EXPECT_EQ(player->species, SPECIES_MORPEKO_HANGRY);
     }
 }
+#endif

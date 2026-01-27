@@ -70,6 +70,7 @@ SINGLE_BATTLE_TEST("Cute Charm triggers 30% of the time (Gen 4+)")
 }
 
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Cute Charm inflicts infatuation on contact (Multi)")
 {
     u32 move;
@@ -137,3 +138,4 @@ SINGLE_BATTLE_TEST("Cute Charm triggers 30% of the time (Gen 4+) (Multi)")
         MESSAGE("Wobbuffet is in love with the opposing Clefairy!");
     }
 }
+#endif

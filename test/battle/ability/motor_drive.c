@@ -31,6 +31,7 @@ DOUBLE_BATTLE_TEST("Motor Drive absorbs moves that target all battlers but does 
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Motor Drive absorbs status moves (Multi)")
 {
     GIVEN {
@@ -60,3 +61,4 @@ DOUBLE_BATTLE_TEST("Motor Drive absorbs moves that target all battlers but does 
         ABILITY_POPUP(opponentRight, ABILITY_MOTOR_DRIVE);
     }
 }
+#endif

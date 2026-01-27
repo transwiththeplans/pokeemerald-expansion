@@ -32,6 +32,7 @@ SINGLE_BATTLE_TEST("Compound Eyes does not affect OHKO moves")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Compound Eyes raises accuracy (Multi)")
 {
     PASSES_RANDOMLY(91, 100, RNG_ACCURACY);
@@ -62,3 +63,4 @@ SINGLE_BATTLE_TEST("Compound Eyes does not affect OHKO moves (Multi)")
         HP_BAR(opponent, hp: 0);
     }
 }
+#endif

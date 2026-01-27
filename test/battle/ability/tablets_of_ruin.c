@@ -74,6 +74,7 @@ SINGLE_BATTLE_TEST("Tablets of Ruin's message displays correctly after all battl
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Tablets of Ruin reduces Attack if opposing mon's ability doesn't match (Multi)")
 {
     s16 damage[2];
@@ -141,3 +142,4 @@ SINGLE_BATTLE_TEST("Tablets of Ruin's message displays correctly after all battl
         MESSAGE("The opposing Wo-Chien's Tablets of Ruin weakened the Attack of all surrounding Pokémon!");
     }
 }
+#endif

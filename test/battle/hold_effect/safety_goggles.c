@@ -76,6 +76,7 @@ SINGLE_BATTLE_TEST("Safety Goggles blocks Effect Spore's effect")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Safety Goggles blocks Effect Spore's effect (Multi)")
 {
     KNOWN_FAILING;
@@ -107,3 +108,4 @@ SINGLE_BATTLE_TEST("Safety Goggles blocks Effect Spore's effect (Multi)")
         }
     }
 }
+#endif

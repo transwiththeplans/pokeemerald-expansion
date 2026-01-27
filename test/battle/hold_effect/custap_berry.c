@@ -50,6 +50,7 @@ SINGLE_BATTLE_TEST("Custap Berry activates even if the opposing mon switches out
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Custap Berry allows the holder to move first in its priority bracket when HP is below 1/2. If the holder has Gluttony (Multi)")
 {
     GIVEN {
@@ -64,3 +65,4 @@ SINGLE_BATTLE_TEST("Custap Berry allows the holder to move first in its priority
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, opponent);
     }
 }
+#endif

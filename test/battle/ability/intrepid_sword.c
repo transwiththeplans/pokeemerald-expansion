@@ -157,6 +157,7 @@ SINGLE_BATTLE_TEST("Intrepid Sword and Dauntless Shield do not proc at max stage
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Intrepid Sword raises Attack by one stage (Multi)")
 {
     GIVEN {
@@ -242,3 +243,4 @@ SINGLE_BATTLE_TEST("Intrepid Sword and Dauntless Shield do not proc at max stage
         }
     }
 }
+#endif

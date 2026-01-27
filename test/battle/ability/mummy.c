@@ -99,6 +99,7 @@ SINGLE_BATTLE_TEST("Mummy doesn't replace abilities that can't be suppressed")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Mummy/Lingering Aroma replace the attacker's ability on contact (Multi)")
 {
     u32 move, species;
@@ -215,3 +216,4 @@ SINGLE_BATTLE_TEST("Mummy doesn't replace abilities that can't be suppressed (Mu
         }
     }
 }
+#endif

@@ -14,6 +14,7 @@ SINGLE_BATTLE_TEST("Misty Surge creates Misty Terrain when entering the battle")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Misty Surge creates Misty Terrain when entering the battle (Multi)")
 {
     GIVEN {
@@ -26,3 +27,4 @@ SINGLE_BATTLE_TEST("Misty Surge creates Misty Terrain when entering the battle (
         MESSAGE("Mist swirled around the battlefield!");
     }
 }
+#endif

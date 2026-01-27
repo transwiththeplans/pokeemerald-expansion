@@ -362,6 +362,7 @@ DOUBLE_BATTLE_TEST("Eject Pack will trigger on the fastest mon at the end of the
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Eject Pack does not activate if there are no Pokémon left to battle (Multi)")
 {
     GIVEN {
@@ -577,3 +578,4 @@ SINGLE_BATTLE_TEST("Eject Pack does not activate if mon is switched in due to Ej
         NOT ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
     }
 }
+#endif

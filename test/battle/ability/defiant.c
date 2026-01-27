@@ -379,6 +379,7 @@ SINGLE_BATTLE_TEST("Defiant doesn't display ability popup when already at Maximu
     }
 }
 
+#if MAX_MON_TRAITS > 1
 DOUBLE_BATTLE_TEST("Defiant sharply raises player's Attack after Intimidate (Multi)")
 {
     enum Ability abilityLeft, abilityRight;
@@ -756,3 +757,4 @@ SINGLE_BATTLE_TEST("Defiant doesn't display ability popup when already at Maximu
         EXPECT_EQ(player->statStages[STAT_ATK], MAX_STAT_STAGE);
     }
 }
+#endif

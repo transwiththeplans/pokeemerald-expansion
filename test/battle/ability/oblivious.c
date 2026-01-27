@@ -100,6 +100,7 @@ SINGLE_BATTLE_TEST("Oblivious prevents Intimidate (Gen8+)")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Oblivious prevents Infatuation (Multi)")
 {
     GIVEN {
@@ -198,3 +199,4 @@ SINGLE_BATTLE_TEST("Oblivious prevents Intimidate (Gen8+) (Multi)")
         MESSAGE("Slowpoke's Oblivious prevents stat loss!");
     }
 }
+#endif

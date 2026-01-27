@@ -98,6 +98,7 @@ SINGLE_BATTLE_TEST("Micle Berry increases the accuracy of the next used move the
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Micle Berry raises the holder's accuracy by 1.2 when HP drops to 1/2 or below (Multi)")
 {
     GIVEN {
@@ -111,3 +112,4 @@ SINGLE_BATTLE_TEST("Micle Berry raises the holder's accuracy by 1.2 when HP drop
         MESSAGE("Bellsprout boosted the accuracy of its next move using Micle Berry!");
     }
 }
+#endif

@@ -118,6 +118,7 @@ SINGLE_BATTLE_TEST("Throat Spray is not blocked by Sheer Force")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Throat Spray is not blocked by Sheer Force (Multi)")
 {
     GIVEN {
@@ -130,3 +131,4 @@ SINGLE_BATTLE_TEST("Throat Spray is not blocked by Sheer Force (Multi)")
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
     }
 }
+#endif

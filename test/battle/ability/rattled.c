@@ -112,6 +112,7 @@ SINGLE_BATTLE_TEST("Rattled triggers correctly when hit by U-Turn") // Specific 
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Rattled boosts speed by 1 when hit by Bug, Dark or Ghost type move (Multi)")
 {
     u16 move;
@@ -210,3 +211,4 @@ SINGLE_BATTLE_TEST("Rattled triggers correctly when hit by U-Turn (Multi)") // S
         SEND_IN_MESSAGE("Wynaut");
     }
 }
+#endif

@@ -879,6 +879,7 @@ AI_DOUBLE_BATTLE_TEST("AI prefers to Fake Out the opponent vulnerable to flinchi
     }
 }
 
+#if MAX_MON_TRAITS > 1
 AI_DOUBLE_BATTLE_TEST("AI recognizes its ally's Telepathy (Multi)")
 {
     ASSUME(GetMoveTarget(MOVE_EARTHQUAKE) == MOVE_TARGET_FOES_AND_ALLY);
@@ -1141,3 +1142,4 @@ AI_DOUBLE_BATTLE_TEST("AI prefers to Fake Out the opponent vulnerable to flinchi
         TURN { EXPECT_MOVE(opponentLeft, MOVE_FAKE_OUT, target:playerRight); }
     }
 }
+#endif

@@ -69,6 +69,7 @@ DOUBLE_BATTLE_TEST("Good as Gold protects from partner's status moves")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Good as Gold protects from status moves (Multi)")
 {
     GIVEN {
@@ -135,3 +136,4 @@ DOUBLE_BATTLE_TEST("Good as Gold protects from partner's status moves (Multi)")
         MESSAGE("It doesn't affect the opposing Gholdengo…");
     }
 }
+#endif

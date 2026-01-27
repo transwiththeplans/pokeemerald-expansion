@@ -24,6 +24,7 @@ SINGLE_BATTLE_TEST("Solid Rock reduces damage to Super Effective moves by 0.75",
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Solid Rock reduces damage to Super Effective moves by 0.75 (Multi)", s16 damage)
 {
     enum Ability ability;
@@ -46,3 +47,4 @@ SINGLE_BATTLE_TEST("Solid Rock reduces damage to Super Effective moves by 0.75 (
         EXPECT_MUL_EQ(results[0].damage, Q_4_12(0.75), results[1].damage);
     }
 }
+#endif

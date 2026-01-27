@@ -106,6 +106,7 @@ SINGLE_BATTLE_TEST("Volt Absorb prevents Cell Battery from activating")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Volt Absorb heals 25% when hit by electric type moves (Multi)")
 {
     GIVEN {
@@ -210,3 +211,4 @@ SINGLE_BATTLE_TEST("Volt Absorb prevents Cell Battery from activating (Multi)")
 
     }
 }
+#endif

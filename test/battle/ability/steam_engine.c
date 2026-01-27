@@ -22,6 +22,7 @@ SINGLE_BATTLE_TEST("Steam Engine raises speed when hit by a Fire or Water move")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Steam Engine raises speed when hit by a Fire or Water move (Multi)")
 {
     u16 move;
@@ -43,3 +44,4 @@ SINGLE_BATTLE_TEST("Steam Engine raises speed when hit by a Fire or Water move (
     }
 }
 
+#endif

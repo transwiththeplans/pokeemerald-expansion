@@ -118,6 +118,7 @@ SINGLE_BATTLE_TEST("Gem is consumed if the move type is changed")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Gem is consumed if the move type is changed (Multi)")
 {
     GIVEN {
@@ -133,3 +134,4 @@ SINGLE_BATTLE_TEST("Gem is consumed if the move type is changed (Multi)")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_FEINT_ATTACK, player);
     }
 }
+#endif

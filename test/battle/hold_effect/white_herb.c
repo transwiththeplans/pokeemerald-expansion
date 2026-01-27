@@ -235,6 +235,7 @@ DOUBLE_BATTLE_TEST("White Herb is correctly displayed")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("White Herb restores stats after Attack was lowered by Intimidate in singles (Multi)")
 {
     GIVEN {
@@ -427,3 +428,4 @@ SINGLE_BATTLE_TEST("White Herb has correct interactions with Intimidate triggere
         }
     }
 }
+#endif

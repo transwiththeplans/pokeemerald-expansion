@@ -95,6 +95,7 @@ MULTI_BATTLE_TEST("Multi Battle Tests register partner's status1")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Forced abilities activate on switch-in (Multi)")
 {
     GIVEN {
@@ -111,3 +112,4 @@ SINGLE_BATTLE_TEST("Forced abilities activate on switch-in (Multi)")
         MESSAGE("Kadabra's Sp. Atk was heightened!");
     }
 }
+#endif

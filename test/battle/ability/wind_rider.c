@@ -126,6 +126,7 @@ SINGLE_BATTLE_TEST("Wind Rider absorbs Wind moves and raises Attack by one stage
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Wind Rider raises Attack by one stage if it sets up Tailwind (Multi)")
 {
     GIVEN {
@@ -221,3 +222,4 @@ SINGLE_BATTLE_TEST("Wind Rider absorbs Wind moves and raises Attack by one stage
         EXPECT_EQ(opponent->statStages[STAT_ATK], DEFAULT_STAT_STAGE + 1);
     }
 }
+#endif

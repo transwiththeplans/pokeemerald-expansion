@@ -136,6 +136,7 @@ SINGLE_BATTLE_TEST("Purifying Salt protects from secondary effect burn")
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Purifying Salt halves damage from Ghost-type moves (Multi)", s16 damage)
 {
     enum Ability ability;
@@ -270,3 +271,4 @@ SINGLE_BATTLE_TEST("Purifying Salt protects from secondary effect burn (Multi)")
         NOT STATUS_ICON(player, STATUS1_BURN);
     }
 }
+#endif

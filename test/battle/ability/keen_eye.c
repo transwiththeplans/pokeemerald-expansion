@@ -203,6 +203,7 @@ SINGLE_BATTLE_TEST("Keen Eye & Gen9+ Illuminate don't prevent Spectral Thief fro
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Keen Eye, Gen9+ Illuminate & Minds Eye prevent accuracy stage reduction from moves (Multi)")
 {
     enum Ability ability, ability2;
@@ -398,3 +399,4 @@ SINGLE_BATTLE_TEST("Keen Eye & Gen9+ Illuminate don't prevent Spectral Thief fro
         EXPECT_EQ(opponent->statStages[STAT_ACC], DEFAULT_STAT_STAGE);
     }
 }
+#endif

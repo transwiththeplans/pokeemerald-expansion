@@ -447,6 +447,7 @@ DOUBLE_BATTLE_TEST("Forecast reverts Castform back after Teraform Zero clears we
     }
 }
 
+#if MAX_MON_TRAITS > 1
 SINGLE_BATTLE_TEST("Forecast transforms Castform in weather from an opponent's move (Multi)")
 {
     u32 move;
@@ -870,3 +871,4 @@ DOUBLE_BATTLE_TEST("Forecast reverts Castform back after Teraform Zero clears we
         EXPECT_EQ(playerRight->species, SPECIES_CASTFORM_NORMAL);
     }
 }
+#endif

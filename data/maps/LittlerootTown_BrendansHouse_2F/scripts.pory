@@ -309,3 +309,53 @@ PlayersHouse_2F_Text_ItsAGameCube:
 	.string "You got Super Monkey Ball?\n"
 	.string "Dude, that's sick.$"
 `
+
+script LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool{
+	lockall
+	switch(var(VAR_STARTER_POOL)){
+		case STARTER_POOL_AF:
+			msgbox(format("It's the AF Channel its showing the news, do you want to change the channel?"), MSGBOX_YESNO)
+		break
+		case STARTER_POOL_OS:
+			msgbox(format("It's the AF Channel its showing the news, do you want to change the channel?"), MSGBOX_YESNO)
+		break
+		case STARTER_POOL_UA:
+			msgbox(format("It's the AF Channel its showing the news, do you want to change the channel?"), MSGBOX_YESNO)
+		break
+		case STARTER_POOL_OV:
+			msgbox(format("It's the AF Channel its showing the news, do you want to change the channel?"), MSGBOX_YESNO)
+		break
+		case STARTER_POOL_AS:
+			msgbox(format("It's the AF Channel its showing the news, do you want to change the channel?"), MSGBOX_YESNO)
+		break
+	}
+	if(var(VAR_RESULT) == YES){
+		goto(LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Switch)
+	}
+	else{
+		msgbox(format("Grampa also likes this channel"), MSGBOX_NPC)
+	}
+	releaseall
+	end
+}
+
+script LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Switch{
+	lockall
+	msgbox(format("What channel do you want to tune?"), MSGBOX_NPC)
+	multichoice(0, 0, MULTI_STARTER_POOL, FALSE)
+	switch(var(VAR_RESULT)){
+		default:
+			msgbox(format("Grampa also likes this channel"), MSGBOX_NPC)
+		break
+		case STARTER_POOL_AF:
+		case STARTER_POOL_OS:
+		case STARTER_POOL_UA:
+		case STARTER_POOL_OV:
+		case STARTER_POOL_AS:
+			copyvar(VAR_STARTER_POOL, VAR_RESULT)
+			msgbox(format("Grampa also likes this channel"), MSGBOX_NPC)
+		break
+	}
+	releaseall
+	end
+}

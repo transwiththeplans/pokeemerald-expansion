@@ -1365,6 +1365,15 @@ enum HoennDexOrder
 
 enum
 {
+    STARTER_POOL_AF,
+    STARTER_POOL_OS,
+    STARTER_POOL_UA,
+    STARTER_POOL_OV,
+    STARTER_POOL_AS,
+};
+
+enum
+{
     DEX_MODE_HOENN,
     DEX_MODE_NATIONAL
 };

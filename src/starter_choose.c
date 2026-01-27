@@ -117,6 +117,34 @@ static const u16 sStarterMon[STARTER_MON_COUNT] =
     SPECIES_MUDKIP,
 };
 
+static const u16 sStarterMon_OS[STARTER_MON_COUNT] =
+{
+    SPECIES_CHIKORITA,
+    SPECIES_CYNDAQUIL,
+    SPECIES_TOTODILE,
+};
+
+static const u16 sStarterMon_UA[STARTER_MON_COUNT] =
+{
+    SPECIES_CHESPIN,
+    SPECIES_TEPIG,
+    SPECIES_POPPLIO,
+};
+
+static const u16 sStarterMon_OV[STARTER_MON_COUNT] =
+{
+    SPECIES_TURTWIG,
+    SPECIES_SCORBUNNY,
+    SPECIES_FROAKIE,
+};
+
+static const u16 sStarterMon_AS[STARTER_MON_COUNT] =
+{
+    SPECIES_SNIVY,
+    SPECIES_CHIMCHAR,
+    SPECIES_QUAXLY,
+};
+
 static const struct BgTemplate sBgTemplates[3] =
 {
     {
@@ -352,7 +380,26 @@ u16 GetStarterPokemon(u16 chosenStarterId)
 {
     if (chosenStarterId > STARTER_MON_COUNT)
         chosenStarterId = 0;
-    return sStarterMon[chosenStarterId];
+    
+    switch(VarGet(VAR_STARTER_POOL)){
+		case STARTER_POOL_AF:
+            return sStarterMon[chosenStarterId];
+        break;
+		case STARTER_POOL_OS:
+            return sStarterMon_OS[chosenStarterId];
+        break;
+		case STARTER_POOL_UA:
+            return sStarterMon_UA[chosenStarterId];
+        break;
+		case STARTER_POOL_OV:
+            return sStarterMon_OV[chosenStarterId];
+        break;
+		case STARTER_POOL_AS:
+            return sStarterMon_AS[chosenStarterId];
+        break;
+    }
+    
+    return sStarterMon[chosenStarterId]; //Fallback
 }
 
 static void VblankCB_StarterChoose(void)

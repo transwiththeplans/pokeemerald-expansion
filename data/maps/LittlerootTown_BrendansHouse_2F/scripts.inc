@@ -618,3 +618,108 @@ PlayersHouse_2F_Text_ItsAGameCube:
 	.string "You got Super Monkey Ball?\n"
 # 310 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Dude, that's sick.$"
+
+LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool::
+# 314 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	lockall
+# 315 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	switch VAR_STARTER_POOL
+# 316 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	case STARTER_POOL_AF, LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_3
+# 319 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	case STARTER_POOL_OS, LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_4
+# 322 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	case STARTER_POOL_UA, LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_5
+# 325 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	case STARTER_POOL_OV, LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_6
+# 328 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	case STARTER_POOL_AS, LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_7
+LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_1:
+# 332 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_9
+# 336 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	msgbox LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Text_1, MSGBOX_NPC
+LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_8:
+# 338 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	releaseall
+	end
+
+LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_3:
+# 317 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	msgbox LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Text_0, MSGBOX_YESNO
+	goto LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_1
+
+LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_4:
+# 320 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	msgbox LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Text_0, MSGBOX_YESNO
+	goto LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_1
+
+LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_5:
+# 323 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	msgbox LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Text_0, MSGBOX_YESNO
+	goto LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_1
+
+LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_6:
+# 326 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	msgbox LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Text_0, MSGBOX_YESNO
+	goto LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_1
+
+LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_7:
+# 329 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	msgbox LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Text_0, MSGBOX_YESNO
+	goto LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_1
+
+LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_9:
+# 333 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	goto LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Switch
+	goto LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_8
+
+
+LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Switch::
+# 343 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	lockall
+# 344 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	msgbox LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Switch_Text_0, MSGBOX_NPC
+# 345 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	multichoice 0, 0, MULTI_STARTER_POOL, FALSE
+# 346 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	switch VAR_RESULT
+# 350 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	case STARTER_POOL_AF, LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Switch_4
+# 351 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	case STARTER_POOL_OS, LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Switch_4
+# 352 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	case STARTER_POOL_UA, LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Switch_4
+# 353 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	case STARTER_POOL_OV, LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Switch_4
+# 354 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	case STARTER_POOL_AS, LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Switch_4
+# 348 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	msgbox LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Text_1, MSGBOX_NPC
+LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Switch_1:
+# 359 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	releaseall
+	end
+
+LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Switch_4:
+# 355 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	copyvar VAR_STARTER_POOL, VAR_RESULT
+# 356 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	msgbox LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Text_1, MSGBOX_NPC
+	goto LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Switch_1
+
+
+LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Text_0:
+# 317 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "It's the AF Channel its showing the\n"
+	.string "news, do you want to change the\l"
+	.string "channel?$"
+
+LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Text_1:
+# 336 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "Grampa also likes this channel$"
+
+LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Switch_Text_0:
+# 344 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "What channel do you want to tune?$"

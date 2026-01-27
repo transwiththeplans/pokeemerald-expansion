@@ -778,6 +778,16 @@ static const struct MenuAction MultichoiceList_BerryPlot[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_StarterPools[] =
+{
+    {COMPOUND_STRING("AF")},
+    {COMPOUND_STRING("OS")},
+    {COMPOUND_STRING("UA")},
+    {COMPOUND_STRING("OV")},
+    {COMPOUND_STRING("AS")},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -906,6 +916,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_FALLARBOR_TENT_RULES]       = MULTICHOICE(MultichoiceList_FallarborTentRules),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
     [MULTI_BERRY_PLOT]                 = MULTICHOICE(MultichoiceList_BerryPlot),
+    [MULTI_STARTER_POOL]               = MULTICHOICE(MultichoiceList_StarterPools),
 };
 
 const u8 *const gStdStrings[] =

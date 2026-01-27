@@ -58,10 +58,22 @@ ifneq (,$(filter release tidyrelease,$(MAKECMDGOALS)))
   RELEASE := 1
 endif
 
-include config.mk
+.PHONY: check-submodules
+
+check-submodules:
+	@if [ ! -f tools/poryscript/poryscript.py ]; then \
+		if command -v git >/dev/null 2>&1 && [ -d .git ]; then \
+			echo "poryscript missing; initializing submodules..."; \
+			git submodule update --init --recursive; \
+		else \
+			echo "ERROR: poryscript submodule missing."; \
+			echo "Run: git submodule update --init --recursive"; \
+			exit 1; \
+		fi \
+	fi
 
 # Default make rule
-all: rom
+all: check-submodules rom
 
 # Toolchain selection
 TOOLCHAIN := $(DEVKITARM)

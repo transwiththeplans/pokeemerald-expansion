@@ -150,7 +150,7 @@ SINGLE_BATTLE_TEST("Bug Bite ignores Unnerve")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Bug Bite ignores Unnerve (Multi)")
+SINGLE_BATTLE_TEST("Bug Bite ignores Unnerve (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { HP(1); }

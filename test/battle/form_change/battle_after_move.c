@@ -131,7 +131,7 @@ SINGLE_BATTLE_TEST("Relic Song transforms Meloetta after Magician was activated"
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Relic Song transformation is the last thing that happens after it hits (Multi)")
+SINGLE_BATTLE_TEST("Relic Song transformation is the last thing that happens after it hits (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_MELOETTA_ARIA);
@@ -150,7 +150,7 @@ SINGLE_BATTLE_TEST("Relic Song transformation is the last thing that happens aft
     }
 }
 
-SINGLE_BATTLE_TEST("Relic Song loses the form-changing effect with Sheer Force (Multi)")
+SINGLE_BATTLE_TEST("Relic Song loses the form-changing effect with Sheer Force (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_MELOETTA_ARIA){ Ability(ABILITY_SERENE_GRACE); Innates(ABILITY_SHEER_FORCE); }
@@ -167,7 +167,7 @@ SINGLE_BATTLE_TEST("Relic Song loses the form-changing effect with Sheer Force (
     }
 }
 
-SINGLE_BATTLE_TEST("Relic Song transforms Meloetta after Magician was activated (Multi)")
+SINGLE_BATTLE_TEST("Relic Song transforms Meloetta after Magician was activated (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_MELOETTA_ARIA){ Ability(ABILITY_SERENE_GRACE); Innates(ABILITY_MAGICIAN); }

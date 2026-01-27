@@ -114,7 +114,7 @@ AI_SINGLE_BATTLE_TEST("Levitate is seen correctly by switch AI")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Levitate activates when targeted by ground type moves (Multi)")
+SINGLE_BATTLE_TEST("Levitate activates when targeted by ground type moves (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveType(MOVE_MUD_SLAP) == TYPE_GROUND);
@@ -128,7 +128,7 @@ SINGLE_BATTLE_TEST("Levitate activates when targeted by ground type moves (Multi
     }
 }
 
-SINGLE_BATTLE_TEST("Levitate does not activate if protected (Multi)")
+SINGLE_BATTLE_TEST("Levitate does not activate if protected (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveType(MOVE_MUD_SLAP) == TYPE_GROUND);
@@ -144,7 +144,7 @@ SINGLE_BATTLE_TEST("Levitate does not activate if protected (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Levitate does not activate on status moves (Multi)")
+SINGLE_BATTLE_TEST("Levitate does not activate on status moves (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveType(MOVE_SAND_ATTACK) == TYPE_GROUND);
@@ -161,7 +161,7 @@ SINGLE_BATTLE_TEST("Levitate does not activate on status moves (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Levitate does not activate if attacked by an opponent with Mold Breaker (Multi)")
+SINGLE_BATTLE_TEST("Levitate does not activate if attacked by an opponent with Mold Breaker (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveType(MOVE_MUD_SLAP) == TYPE_GROUND);
@@ -177,7 +177,7 @@ SINGLE_BATTLE_TEST("Levitate does not activate if attacked by an opponent with M
     }
 }
 
-DOUBLE_BATTLE_TEST("Levitate does not cause single remaining target to take higher damage (Multi)")
+DOUBLE_BATTLE_TEST("Levitate does not cause single remaining target to take higher damage (Traits)")
 {
     s16 damage[3];
     GIVEN {
@@ -203,7 +203,7 @@ DOUBLE_BATTLE_TEST("Levitate does not cause single remaining target to take high
     }
 }
 
-AI_SINGLE_BATTLE_TEST("Levitate is seen correctly by switch AI (Multi)")
+AI_SINGLE_BATTLE_TEST("Levitate is seen correctly by switch AI (Traits)")
 {
     enum Ability ability = ABILITY_NONE, item = ITEM_NONE;
 

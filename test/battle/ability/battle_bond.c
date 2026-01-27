@@ -192,7 +192,7 @@ SINGLE_BATTLE_TEST("Battle Bond increases a Stat even if only one can be increas
 
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Battle Bond increases Atk, SpAtk and Speed by 1 stage (Gen9+) (Multi)")
+SINGLE_BATTLE_TEST("Battle Bond increases Atk, SpAtk and Speed by 1 stage (Gen9+) (Traits)")
 {
     GIVEN {
         WITH_CONFIG(CONFIG_BATTLE_BOND, GEN_9);
@@ -213,7 +213,7 @@ SINGLE_BATTLE_TEST("Battle Bond increases Atk, SpAtk and Speed by 1 stage (Gen9+
     }
 }
 
-SINGLE_BATTLE_TEST("Battle Bond increases a Stat even if only one can be increased (Gen9+) (Multi)")
+SINGLE_BATTLE_TEST("Battle Bond increases a Stat even if only one can be increased (Gen9+) (Traits)")
 {
     GIVEN {
         WITH_CONFIG(CONFIG_BATTLE_BOND, GEN_9);

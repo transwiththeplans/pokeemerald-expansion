@@ -77,7 +77,7 @@ SINGLE_BATTLE_TEST("Poison Touch applies between multi-hit move hits")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Poison Touch has a 30% chance to poison when attacking with contact moves (Multi)")
+SINGLE_BATTLE_TEST("Poison Touch has a 30% chance to poison when attacking with contact moves (Traits)")
 {
     PASSES_RANDOMLY(3, 10, RNG_POISON_TOUCH);
     GIVEN {
@@ -96,7 +96,7 @@ SINGLE_BATTLE_TEST("Poison Touch has a 30% chance to poison when attacking with 
     }
 }
 
-SINGLE_BATTLE_TEST("Poison Touch only applies when using contact moves (Multi)")
+SINGLE_BATTLE_TEST("Poison Touch only applies when using contact moves (Traits)")
 {
     u32 move;
 
@@ -127,7 +127,7 @@ SINGLE_BATTLE_TEST("Poison Touch only applies when using contact moves (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Poison Touch applies between multi-hit move hits (Multi)")
+SINGLE_BATTLE_TEST("Poison Touch applies between multi-hit move hits (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_ARM_THRUST) == EFFECT_MULTI_HIT);

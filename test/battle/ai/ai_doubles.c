@@ -880,7 +880,7 @@ AI_DOUBLE_BATTLE_TEST("AI prefers to Fake Out the opponent vulnerable to flinchi
 }
 
 #if MAX_MON_TRAITS > 1
-AI_DOUBLE_BATTLE_TEST("AI recognizes its ally's Telepathy (Multi)")
+AI_DOUBLE_BATTLE_TEST("AI recognizes its ally's Telepathy (Traits)")
 {
     ASSUME(GetMoveTarget(MOVE_EARTHQUAKE) == MOVE_TARGET_FOES_AND_ALLY);
 
@@ -896,7 +896,7 @@ AI_DOUBLE_BATTLE_TEST("AI recognizes its ally's Telepathy (Multi)")
     }
 }
 
-AI_DOUBLE_BATTLE_TEST("AI will choose Bulldoze if it triggers its ally's ability but will not KO the ally needlessly (Multi)")
+AI_DOUBLE_BATTLE_TEST("AI will choose Bulldoze if it triggers its ally's ability but will not KO the ally needlessly (Traits)")
 {
     ASSUME(GetMoveTarget(MOVE_BULLDOZE) == MOVE_TARGET_FOES_AND_ALLY);
     ASSUME(GetMoveType(MOVE_BULLDOZE) == TYPE_GROUND);
@@ -925,7 +925,7 @@ AI_DOUBLE_BATTLE_TEST("AI will choose Bulldoze if it triggers its ally's ability
     }
 }
 
-AI_DOUBLE_BATTLE_TEST("AI will choose Beat Up on an ally with Justified if it will benefit the ally (Multi)")
+AI_DOUBLE_BATTLE_TEST("AI will choose Beat Up on an ally with Justified if it will benefit the ally (Traits)")
 {
     ASSUME(GetMoveEffect(MOVE_BEAT_UP) == EFFECT_BEAT_UP);
     ASSUME(GetMoveType(MOVE_BEAT_UP) == TYPE_DARK);
@@ -951,7 +951,7 @@ AI_DOUBLE_BATTLE_TEST("AI will choose Beat Up on an ally with Justified if it wi
     }
 }
 
-AI_DOUBLE_BATTLE_TEST("AI sees corresponding absorbing abilities on partners (Multi)")
+AI_DOUBLE_BATTLE_TEST("AI sees corresponding absorbing abilities on partners (Traits)")
 {
     ASSUME(GetMoveTarget(MOVE_DISCHARGE) == MOVE_TARGET_FOES_AND_ALLY);
     ASSUME(GetMoveType(MOVE_DISCHARGE) == TYPE_ELECTRIC);
@@ -992,7 +992,7 @@ AI_DOUBLE_BATTLE_TEST("AI sees corresponding absorbing abilities on partners (Mu
     }
 }
 
-AI_DOUBLE_BATTLE_TEST("AI treats an ally's redirection ability appropriately (gen 4) (Multi)")
+AI_DOUBLE_BATTLE_TEST("AI treats an ally's redirection ability appropriately (gen 4) (Traits)")
 {
     KNOWN_FAILING;
     ASSUME(GetMoveTarget(MOVE_DISCHARGE) == MOVE_TARGET_FOES_AND_ALLY);
@@ -1018,7 +1018,7 @@ AI_DOUBLE_BATTLE_TEST("AI treats an ally's redirection ability appropriately (ge
     }
 }
 
-AI_DOUBLE_BATTLE_TEST("AI treats an ally's redirection ability appropriately (gen 5+) (Multi)")
+AI_DOUBLE_BATTLE_TEST("AI treats an ally's redirection ability appropriately (gen 5+) (Traits)")
 {
     ASSUME(GetMoveTarget(MOVE_DISCHARGE) == MOVE_TARGET_FOES_AND_ALLY);
     ASSUME(GetMoveType(MOVE_DISCHARGE) == TYPE_ELECTRIC);
@@ -1046,7 +1046,7 @@ AI_DOUBLE_BATTLE_TEST("AI treats an ally's redirection ability appropriately (ge
 // Sandstorm is omitted on purpose.
 // Tornadus is currently not willing to set up Sandstorm for its ally, but the actual purpose of this test is to demonstrate that Tornadus or Whimsicott will perform standard VGC openers.
 // Rain Dance, Sunny Day, and Snowscape are the actually important ones; setting up a good Sandstorm test + functionality is less important and will be done in later PRs.
-AI_DOUBLE_BATTLE_TEST("AI sets up weather for its ally (Multi)")
+AI_DOUBLE_BATTLE_TEST("AI sets up weather for its ally (Traits)")
 {
     u32 goodWeather, badWeather, weatherTrigger;
     u64 aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT;
@@ -1078,7 +1078,7 @@ AI_DOUBLE_BATTLE_TEST("AI sets up weather for its ally (Multi)")
     }
 }
 
-AI_DOUBLE_BATTLE_TEST("AI uses After You to set up Trick Room (Multi)")
+AI_DOUBLE_BATTLE_TEST("AI uses After You to set up Trick Room (Traits)")
 {
     u32 move;
 
@@ -1102,7 +1102,7 @@ AI_DOUBLE_BATTLE_TEST("AI uses After You to set up Trick Room (Multi)")
     }
 }
 
-AI_DOUBLE_BATTLE_TEST("AI uses Trick Room intelligently (Multi)")
+AI_DOUBLE_BATTLE_TEST("AI uses Trick Room intelligently (Traits)")
 {
     u32 move, ability, speed;
 
@@ -1130,7 +1130,7 @@ AI_DOUBLE_BATTLE_TEST("AI uses Trick Room intelligently (Multi)")
     }
 }
 
-AI_DOUBLE_BATTLE_TEST("AI prefers to Fake Out the opponent vulnerable to flinching. (Multi)")
+AI_DOUBLE_BATTLE_TEST("AI prefers to Fake Out the opponent vulnerable to flinching. (Traits)")
 {
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_DOUBLE_BATTLE | AI_FLAG_OMNISCIENT);

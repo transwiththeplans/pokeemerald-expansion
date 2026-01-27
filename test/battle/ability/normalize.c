@@ -279,7 +279,7 @@ TO_DO_BATTLE_TEST("Normalize doesn't affect Terrain Pulse's type");
 TO_DO_BATTLE_TEST("Normalize doesn't affect damaging Z-Move types");
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Normalize turns a move into a Normal-type move (Multi)")
+SINGLE_BATTLE_TEST("Normalize turns a move into a Normal-type move (Traits)")
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_CUTE_CHARM; }
@@ -304,7 +304,7 @@ SINGLE_BATTLE_TEST("Normalize turns a move into a Normal-type move (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Normalize affects status moves (Multi)")
+SINGLE_BATTLE_TEST("Normalize affects status moves (Traits)")
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_CUTE_CHARM; }
@@ -330,7 +330,7 @@ SINGLE_BATTLE_TEST("Normalize affects status moves (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Normalize still makes Freeze-Dry do super effective damage to Water-type Pokémon (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Normalize still makes Freeze-Dry do super effective damage to Water-type Pokémon (Traits)", s16 damage)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_CUTE_CHARM; }
@@ -350,7 +350,7 @@ SINGLE_BATTLE_TEST("Normalize still makes Freeze-Dry do super effective damage t
     }
 }
 
-SINGLE_BATTLE_TEST("Normalize doesn't boost power of unaffected moves by 20% (< Gen7) (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Normalize doesn't boost power of unaffected moves by 20% (< Gen7) (Traits)", s16 damage)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_CUTE_CHARM; }
@@ -369,7 +369,7 @@ SINGLE_BATTLE_TEST("Normalize doesn't boost power of unaffected moves by 20% (< 
     }
 }
 
-SINGLE_BATTLE_TEST("Normalize boosts power of unaffected moves by 20% (Gen7+) (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Normalize boosts power of unaffected moves by 20% (Gen7+) (Traits)", s16 damage)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_CUTE_CHARM; }
@@ -388,7 +388,7 @@ SINGLE_BATTLE_TEST("Normalize boosts power of unaffected moves by 20% (Gen7+) (M
     }
 }
 
-SINGLE_BATTLE_TEST("Normalize doesn't boost power of affected moves by 20% (< Gen7) (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Normalize doesn't boost power of affected moves by 20% (< Gen7) (Traits)", s16 damage)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_CUTE_CHARM; }
@@ -407,7 +407,7 @@ SINGLE_BATTLE_TEST("Normalize doesn't boost power of affected moves by 20% (< Ge
     }
 }
 
-SINGLE_BATTLE_TEST("Normalize boosts power of affected moves by 20% (Gen7+) (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Normalize boosts power of affected moves by 20% (Gen7+) (Traits)", s16 damage)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_CUTE_CHARM; }
@@ -426,7 +426,7 @@ SINGLE_BATTLE_TEST("Normalize boosts power of affected moves by 20% (Gen7+) (Mul
     }
 }
 
-SINGLE_BATTLE_TEST("Normalize-affected moves become Electric-type under Electrify's effect (Multi)")
+SINGLE_BATTLE_TEST("Normalize-affected moves become Electric-type under Electrify's effect (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_ELECTRIFY) == EFFECT_ELECTRIFY);
@@ -439,7 +439,7 @@ SINGLE_BATTLE_TEST("Normalize-affected moves become Electric-type under Electrif
     }
 }
 
-SINGLE_BATTLE_TEST("Normalize-affected moves become Electric-type under Ion Deluge's effect (Multi)")
+SINGLE_BATTLE_TEST("Normalize-affected moves become Electric-type under Ion Deluge's effect (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_ION_DELUGE) == EFFECT_ION_DELUGE);
@@ -452,7 +452,7 @@ SINGLE_BATTLE_TEST("Normalize-affected moves become Electric-type under Ion Delu
     }
 }
 
-SINGLE_BATTLE_TEST("Normalize doesn't affect Weather Ball's type (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Normalize doesn't affect Weather Ball's type (Traits)", s16 damage)
 {
     u16 move;
     enum Ability ability;
@@ -481,7 +481,7 @@ SINGLE_BATTLE_TEST("Normalize doesn't affect Weather Ball's type (Multi)", s16 d
     }
 }
 
-SINGLE_BATTLE_TEST("Normalize doesn't affect Natural Gift's type (Multi)")
+SINGLE_BATTLE_TEST("Normalize doesn't affect Natural Gift's type (Traits)")
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_CUTE_CHARM; }
@@ -500,7 +500,7 @@ SINGLE_BATTLE_TEST("Normalize doesn't affect Natural Gift's type (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Normalize doesn't affect Judgment / Techno Blast / Multi-Attack's type (Multi)")
+SINGLE_BATTLE_TEST("Normalize doesn't affect Judgment / Techno Blast / Multi-Attack's type (Traits)")
 {
     u16 move, item;
     PARAMETRIZE { move = MOVE_JUDGMENT; item = ITEM_ZAP_PLATE; }
@@ -527,7 +527,7 @@ SINGLE_BATTLE_TEST("Normalize doesn't affect Judgment / Techno Blast / Multi-Att
     }
 }
 
-SINGLE_BATTLE_TEST("Normalize doesn't affect Hidden Power's type (Multi)")
+SINGLE_BATTLE_TEST("Normalize doesn't affect Hidden Power's type (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_HIDDEN_POWER) == EFFECT_HIDDEN_POWER);
@@ -543,8 +543,8 @@ SINGLE_BATTLE_TEST("Normalize doesn't affect Hidden Power's type (Multi)")
     }
 }
 
-TO_DO_BATTLE_TEST("Aerilate doesn't affect Tera Starstorm's type (Multi)");
-TO_DO_BATTLE_TEST("Normalize makes Flying Press do Normal/Flying damage (Multi)");
-TO_DO_BATTLE_TEST("Normalize doesn't affect Terrain Pulse's type (Multi)");
-TO_DO_BATTLE_TEST("Normalize doesn't affect damaging Z-Move types (Multi)");
+TO_DO_BATTLE_TEST("Aerilate doesn't affect Tera Starstorm's type (Traits)");
+TO_DO_BATTLE_TEST("Normalize makes Flying Press do Normal/Flying damage (Traits)");
+TO_DO_BATTLE_TEST("Normalize doesn't affect Terrain Pulse's type (Traits)");
+TO_DO_BATTLE_TEST("Normalize doesn't affect damaging Z-Move types (Traits)");
 #endif

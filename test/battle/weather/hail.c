@@ -106,7 +106,7 @@ SINGLE_BATTLE_TEST("Hail doesn't do damage when weather is negated")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Hail doesn't do damage when weather is negated (Multi)")
+SINGLE_BATTLE_TEST("Hail doesn't do damage when weather is negated (Traits)")
 {
     GIVEN {
         ASSUME(GetSpeciesType(SPECIES_WOBBUFFET, 0) != TYPE_ICE);

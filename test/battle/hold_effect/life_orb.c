@@ -159,7 +159,7 @@ SINGLE_BATTLE_TEST("Life Orb does not activate on a charge turn")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Life Orb does not activate if move was absorbed by target (Multi)")
+SINGLE_BATTLE_TEST("Life Orb does not activate if move was absorbed by target (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_LIFE_ORB); }

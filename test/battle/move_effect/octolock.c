@@ -181,7 +181,7 @@ SINGLE_BATTLE_TEST("Octolock ends after user that set the lock switches out")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Octolock reduction is prevented by Clear Body, White Smoke and Full Metal Body (Multi)")
+SINGLE_BATTLE_TEST("Octolock reduction is prevented by Clear Body, White Smoke and Full Metal Body (Traits)")
 {
     u32 species;
     enum Ability ability;
@@ -231,7 +231,7 @@ SINGLE_BATTLE_TEST("Octolock reduction is prevented by Clear Body, White Smoke a
     }
 }
 
-SINGLE_BATTLE_TEST("Octolock Defense reduction is prevented by Big Pecks (Multi)")
+SINGLE_BATTLE_TEST("Octolock Defense reduction is prevented by Big Pecks (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -249,7 +249,7 @@ SINGLE_BATTLE_TEST("Octolock Defense reduction is prevented by Big Pecks (Multi)
     }
 }
 
-SINGLE_BATTLE_TEST("Octolock triggers Defiant for both stat reductions (Multi)")
+SINGLE_BATTLE_TEST("Octolock triggers Defiant for both stat reductions (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);

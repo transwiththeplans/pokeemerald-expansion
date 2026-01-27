@@ -56,7 +56,7 @@ DOUBLE_BATTLE_TEST("Steadfast doesn't activate if the user has already moved")
 TO_DO_BATTLE_TEST("TODO: Write Steadfast (Ability) test titles")
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Steadfast boosts Speed when the user attempts to move but is flinched (Multi)")
+SINGLE_BATTLE_TEST("Steadfast boosts Speed when the user attempts to move but is flinched (Traits)")
 {
     GIVEN {
         ASSUME(MoveHasAdditionalEffectWithChance(MOVE_FAKE_OUT, MOVE_EFFECT_FLINCH, 100));
@@ -72,7 +72,7 @@ SINGLE_BATTLE_TEST("Steadfast boosts Speed when the user attempts to move but is
     }
 }
 
-SINGLE_BATTLE_TEST("Steadfast doesn't activate if the user wasn't flinched (Multi)")
+SINGLE_BATTLE_TEST("Steadfast doesn't activate if the user wasn't flinched (Traits)")
 {
     GIVEN {
         ASSUME(MoveHasAdditionalEffectWithChance(MOVE_FAKE_OUT, MOVE_EFFECT_FLINCH, 100));
@@ -89,7 +89,7 @@ SINGLE_BATTLE_TEST("Steadfast doesn't activate if the user wasn't flinched (Mult
     }
 }
 
-DOUBLE_BATTLE_TEST("Steadfast doesn't activate if the user has already moved (Multi)")
+DOUBLE_BATTLE_TEST("Steadfast doesn't activate if the user has already moved (Traits)")
 {
     GIVEN {
         ASSUME(MoveHasAdditionalEffect(MOVE_BITE, MOVE_EFFECT_FLINCH));
@@ -108,5 +108,5 @@ DOUBLE_BATTLE_TEST("Steadfast doesn't activate if the user has already moved (Mu
     }
 }
 
-TO_DO_BATTLE_TEST("TODO: Write Steadfast (Ability) test titles (Multi)")
+TO_DO_BATTLE_TEST("TODO: Write Steadfast (Ability) test titles (Traits)")
 #endif

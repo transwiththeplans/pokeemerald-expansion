@@ -67,7 +67,7 @@ SINGLE_BATTLE_TEST("Shed Shell does not allow Teleport when trapped")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Shed Shell allows switching out even when trapped by Shadow Tag (Multi)")
+SINGLE_BATTLE_TEST("Shed Shell allows switching out even when trapped by Shadow Tag (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_SHED_SHELL); }
@@ -81,7 +81,7 @@ SINGLE_BATTLE_TEST("Shed Shell allows switching out even when trapped by Shadow 
     }
 }
 
-SINGLE_BATTLE_TEST("Shed Shell allows switching out even when trapped by Arena Trap (Multi)")
+SINGLE_BATTLE_TEST("Shed Shell allows switching out even when trapped by Arena Trap (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_DIGLETT) { Item(ITEM_SHED_SHELL); } // Grounded

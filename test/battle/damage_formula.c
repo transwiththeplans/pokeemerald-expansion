@@ -420,7 +420,7 @@ DOUBLE_BATTLE_TEST("Transistor Damage calculation", s16 damage)
 }
 
 #if MAX_MON_TRAITS > 1
-DOUBLE_BATTLE_TEST("Transistor Damage calculation (Multi)", s16 damage)
+DOUBLE_BATTLE_TEST("Transistor Damage calculation (Traits)", s16 damage)
 {
     s16 expectedDamageTransistorSpec = 0, expectedDamageRegularPhys = 0, expectedDamageRegularSpec = 0, expectedDamageTransistorPhys = 0;
     s16 damagePlayerLeft, damagePlayerRight, damageOpponentLeft, damageOpponentRight;

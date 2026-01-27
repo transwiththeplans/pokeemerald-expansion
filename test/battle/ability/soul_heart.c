@@ -23,7 +23,7 @@ SINGLE_BATTLE_TEST("Soul Heart boosts Sp. Atk after opponent uses Memento")
 TO_DO_BATTLE_TEST("TODO: Write Soul Heart (Ability) test titles")
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Soul Heart boosts Sp. Atk after opponent uses Memento (Multi)")
+SINGLE_BATTLE_TEST("Soul Heart boosts Sp. Atk after opponent uses Memento (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_MEMENTO) == EFFECT_MEMENTO);
@@ -42,6 +42,6 @@ SINGLE_BATTLE_TEST("Soul Heart boosts Sp. Atk after opponent uses Memento (Multi
     }
 }
 
-TO_DO_BATTLE_TEST("TODO: Write Soul Heart (Ability) test titles (Multi)")
+TO_DO_BATTLE_TEST("TODO: Write Soul Heart (Ability) test titles (Traits)")
 
 #endif

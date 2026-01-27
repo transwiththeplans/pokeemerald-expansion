@@ -71,7 +71,7 @@ SINGLE_BATTLE_TEST("Poison Point will not poison Poison-Type targets with corros
 
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Poison Point inflicts poison on contact (Multi)")
+SINGLE_BATTLE_TEST("Poison Point inflicts poison on contact (Traits)")
 {
     u32 move;
     PARAMETRIZE { move = MOVE_SCRATCH; }
@@ -101,7 +101,7 @@ SINGLE_BATTLE_TEST("Poison Point inflicts poison on contact (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Poison Point triggers 30% of the time (Multi)")
+SINGLE_BATTLE_TEST("Poison Point triggers 30% of the time (Traits)")
 {
     PASSES_RANDOMLY(3, 10, RNG_POISON_POINT);
     GIVEN {
@@ -120,7 +120,7 @@ SINGLE_BATTLE_TEST("Poison Point triggers 30% of the time (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Poison Point will not poison Poison-Type targets with corrosion (Multi)")
+SINGLE_BATTLE_TEST("Poison Point will not poison Poison-Type targets with corrosion (Traits)")
 {
     GIVEN {
         ASSUME(MoveMakesContact(MOVE_TACKLE));

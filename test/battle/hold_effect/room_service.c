@@ -33,7 +33,7 @@ SINGLE_BATTLE_TEST("Room Serive decreases the holder's seep by one stage")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Room Serive decreases the holder's seep by one stage (Multi)")
+SINGLE_BATTLE_TEST("Room Serive decreases the holder's seep by one stage (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_U_TURN) == EFFECT_HIT_ESCAPE);

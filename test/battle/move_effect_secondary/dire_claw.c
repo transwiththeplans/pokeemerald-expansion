@@ -124,7 +124,7 @@ SINGLE_BATTLE_TEST("Dire Claw cannot poison/paralyze/cause to fall asleep a mon 
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Dire Claw cannot poison/paralyze/cause to fall asleep Pokémon with abilities preventing respective statuses (Multi)")
+SINGLE_BATTLE_TEST("Dire Claw cannot poison/paralyze/cause to fall asleep Pokémon with abilities preventing respective statuses (Traits)")
 {
     KNOWN_FAILING;
     u8 statusAnim;

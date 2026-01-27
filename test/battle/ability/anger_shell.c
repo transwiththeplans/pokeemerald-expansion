@@ -115,7 +115,7 @@ SINGLE_BATTLE_TEST("Anger Shell does not activate if move is boosted by Sheer Fo
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Anger Shell activates only if the target had more than 50% of its HP (Multi)")
+SINGLE_BATTLE_TEST("Anger Shell activates only if the target had more than 50% of its HP (Traits)")
 {
     bool32 activates = FALSE;
     u16 maxHp = 500, hp = 0;
@@ -151,7 +151,7 @@ SINGLE_BATTLE_TEST("Anger Shell activates only if the target had more than 50% o
     }
 }
 
-SINGLE_BATTLE_TEST("Anger Shell lowers Def/Sp.Def by 1 and raises Atk/Sp.Atk/Spd by 1 (Multi)")
+SINGLE_BATTLE_TEST("Anger Shell lowers Def/Sp.Def by 1 and raises Atk/Sp.Atk/Spd by 1 (Traits)")
 {
     u16 maxHp = 500;
     GIVEN {
@@ -182,7 +182,7 @@ SINGLE_BATTLE_TEST("Anger Shell lowers Def/Sp.Def by 1 and raises Atk/Sp.Atk/Spd
     }
 }
 
-SINGLE_BATTLE_TEST("Anger Shell activates after all hits from a multi-hit move (Multi)")
+SINGLE_BATTLE_TEST("Anger Shell activates after all hits from a multi-hit move (Traits)")
 {
     u32 j;
     u16 maxHp = 500;
@@ -208,7 +208,7 @@ SINGLE_BATTLE_TEST("Anger Shell activates after all hits from a multi-hit move (
     }
 }
 
-SINGLE_BATTLE_TEST("Anger Shell does not activate if move is boosted by Sheer Force (Multi)")
+SINGLE_BATTLE_TEST("Anger Shell does not activate if move is boosted by Sheer Force (Traits)")
 {
     u16 maxHp = 500;
     GIVEN {

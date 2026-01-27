@@ -150,7 +150,7 @@ DOUBLE_BATTLE_TEST("Salt Cure works in double battles")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Salt Cure residual damage does not inflict any damage against Magic Guard (Multi)")
+SINGLE_BATTLE_TEST("Salt Cure residual damage does not inflict any damage against Magic Guard (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);

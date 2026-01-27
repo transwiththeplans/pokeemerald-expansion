@@ -17,7 +17,7 @@ SINGLE_BATTLE_TEST("Sticky Hold prevents item theft")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Sticky Hold prevents item theft (Multi)")
+SINGLE_BATTLE_TEST("Sticky Hold prevents item theft (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_THIEF) == EFFECT_STEAL_ITEM);

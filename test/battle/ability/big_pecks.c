@@ -116,7 +116,7 @@ SINGLE_BATTLE_TEST("Big Pecks doesn't prevent receiving negative Defense stage c
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Big Pecks prevents Defense stage reduction from moves (Multi)")
+SINGLE_BATTLE_TEST("Big Pecks prevents Defense stage reduction from moves (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_LEER) == EFFECT_DEFENSE_DOWN);
@@ -130,7 +130,7 @@ SINGLE_BATTLE_TEST("Big Pecks prevents Defense stage reduction from moves (Multi
     }
 }
 
-SINGLE_BATTLE_TEST("Big Pecks is ignored by Mold Breaker (Multi)")
+SINGLE_BATTLE_TEST("Big Pecks is ignored by Mold Breaker (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_LEER) == EFFECT_DEFENSE_DOWN);
@@ -150,7 +150,7 @@ SINGLE_BATTLE_TEST("Big Pecks is ignored by Mold Breaker (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Big Pecks doesn't prevent Defense stage reduction from moves used by the user (Multi)")
+SINGLE_BATTLE_TEST("Big Pecks doesn't prevent Defense stage reduction from moves used by the user (Traits)")
 {
     GIVEN {
         ASSUME(MoveHasAdditionalEffectSelf(MOVE_SUPERPOWER, MOVE_EFFECT_ATK_DEF_DOWN) == TRUE);
@@ -168,7 +168,7 @@ SINGLE_BATTLE_TEST("Big Pecks doesn't prevent Defense stage reduction from moves
     }
 }
 
-SINGLE_BATTLE_TEST("Big Pecks doesn't prevent Topsy-Turvy (Multi)")
+SINGLE_BATTLE_TEST("Big Pecks doesn't prevent Topsy-Turvy (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_HARDEN) == EFFECT_DEFENSE_UP);
@@ -187,7 +187,7 @@ SINGLE_BATTLE_TEST("Big Pecks doesn't prevent Topsy-Turvy (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Big Pecks doesn't prevent Spectral Thief from resetting positive Defense stage changes (Multi)")
+SINGLE_BATTLE_TEST("Big Pecks doesn't prevent Spectral Thief from resetting positive Defense stage changes (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_HARDEN) == EFFECT_DEFENSE_UP);
@@ -208,7 +208,7 @@ SINGLE_BATTLE_TEST("Big Pecks doesn't prevent Spectral Thief from resetting posi
     }
 }
 
-SINGLE_BATTLE_TEST("Big Pecks doesn't prevent receiving negative Defense stage changes from Baton Pass (Multi)")
+SINGLE_BATTLE_TEST("Big Pecks doesn't prevent receiving negative Defense stage changes from Baton Pass (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_LEER) == EFFECT_DEFENSE_DOWN);

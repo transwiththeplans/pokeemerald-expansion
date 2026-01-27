@@ -313,7 +313,7 @@ SINGLE_BATTLE_TEST("Protosynthesis retains its boosted stat after Neutralizing G
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Protosynthesis boosts the highest stat (Multi)")
+SINGLE_BATTLE_TEST("Protosynthesis boosts the highest stat (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WALKING_WAKE) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_PROTOSYNTHESIS); }
@@ -328,7 +328,7 @@ SINGLE_BATTLE_TEST("Protosynthesis boosts the highest stat (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Protosynthesis boosts either Attack or Special Attack, not both (Multi)")
+SINGLE_BATTLE_TEST("Protosynthesis boosts either Attack or Special Attack, not both (Traits)")
 {
     u16 species;
     u32 move;
@@ -360,7 +360,7 @@ SINGLE_BATTLE_TEST("Protosynthesis boosts either Attack or Special Attack, not b
     }
 }
 
-SINGLE_BATTLE_TEST("Protosynthesis ability pop up activates only once during the duration of sunny day (Multi)")
+SINGLE_BATTLE_TEST("Protosynthesis ability pop up activates only once during the duration of sunny day (Traits)")
 {
     u16 turns;
 
@@ -391,7 +391,7 @@ SINGLE_BATTLE_TEST("Protosynthesis ability pop up activates only once during the
     }
 }
 
-SINGLE_BATTLE_TEST("Protosynthesis activates on switch-in (Multi)")
+SINGLE_BATTLE_TEST("Protosynthesis activates on switch-in (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -407,7 +407,7 @@ SINGLE_BATTLE_TEST("Protosynthesis activates on switch-in (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Protosynthesis prioritizes stats in the case of a tie in the following order: Atk, Def, Sp.Atk, Sp.Def, Speed (Multi)")
+SINGLE_BATTLE_TEST("Protosynthesis prioritizes stats in the case of a tie in the following order: Atk, Def, Sp.Atk, Sp.Def, Speed (Traits)")
 {
     u8 stats[] = {1, 1, 1, 1, 1};
 
@@ -440,7 +440,7 @@ SINGLE_BATTLE_TEST("Protosynthesis prioritizes stats in the case of a tie in the
     }
 }
 
-SINGLE_BATTLE_TEST("Protosynthesis activates in Sun before Booster Energy (Multi)")
+SINGLE_BATTLE_TEST("Protosynthesis activates in Sun before Booster Energy (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -456,7 +456,7 @@ SINGLE_BATTLE_TEST("Protosynthesis activates in Sun before Booster Energy (Multi
     }
 }
 
-SINGLE_BATTLE_TEST("Protosynthesis doesn't activate for a transformed battler (Multi)")
+SINGLE_BATTLE_TEST("Protosynthesis doesn't activate for a transformed battler (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -475,7 +475,7 @@ SINGLE_BATTLE_TEST("Protosynthesis doesn't activate for a transformed battler (M
     }
 }
 
-SINGLE_BATTLE_TEST("Protosynthesis activates even if the Pokémon is holding an Utility Umbrella (Multi)")
+SINGLE_BATTLE_TEST("Protosynthesis activates even if the Pokémon is holding an Utility Umbrella (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_GREAT_TUSK) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_PROTOSYNTHESIS); Item(ITEM_UTILITY_UMBRELLA); }
@@ -488,7 +488,7 @@ SINGLE_BATTLE_TEST("Protosynthesis activates even if the Pokémon is holding an 
     }
 }
 
-SINGLE_BATTLE_TEST("Protosynthesis doesn't activate if Cloud Nine/Air Lock is on the field (Multi)")
+SINGLE_BATTLE_TEST("Protosynthesis doesn't activate if Cloud Nine/Air Lock is on the field (Traits)")
 {
     u32 species;
     enum Ability ability;
@@ -507,7 +507,7 @@ SINGLE_BATTLE_TEST("Protosynthesis doesn't activate if Cloud Nine/Air Lock is on
     }
 }
 
-SINGLE_BATTLE_TEST("Protosynthesis activates after weather was reset (Multi)")
+SINGLE_BATTLE_TEST("Protosynthesis activates after weather was reset (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WALKING_WAKE) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_PROTOSYNTHESIS); }
@@ -525,7 +525,7 @@ SINGLE_BATTLE_TEST("Protosynthesis activates after weather was reset (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Protosynthesis accounts for Sticky Web when determining the boosted stat (Multi)")
+SINGLE_BATTLE_TEST("Protosynthesis accounts for Sticky Web when determining the boosted stat (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Speed(1); }
@@ -544,7 +544,7 @@ SINGLE_BATTLE_TEST("Protosynthesis accounts for Sticky Web when determining the 
     }
 }
 
-SINGLE_BATTLE_TEST("Protosynthesis keeps its initial boosted stat after Speed is lowered (Multi)")
+SINGLE_BATTLE_TEST("Protosynthesis keeps its initial boosted stat after Speed is lowered (Traits)")
 {
     s16 damage[2];
 

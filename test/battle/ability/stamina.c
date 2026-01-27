@@ -126,7 +126,7 @@ SINGLE_BATTLE_TEST("Stamina is not activated by users own Substitute")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Stamina raises Defense by 1 when hit by a move (Multi)")
+SINGLE_BATTLE_TEST("Stamina raises Defense by 1 when hit by a move (Traits)")
 {
     s16 turnOneHit, turnTwoHit;
     u16 move;
@@ -158,7 +158,7 @@ SINGLE_BATTLE_TEST("Stamina raises Defense by 1 when hit by a move (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Stamina activates correctly for every battler with the ability when hit by a multi target move (Multi)")
+DOUBLE_BATTLE_TEST("Stamina activates correctly for every battler with the ability when hit by a multi target move (Traits)")
 {
     enum Ability abilityLeft, abilityRight;
 
@@ -200,7 +200,7 @@ DOUBLE_BATTLE_TEST("Stamina activates correctly for every battler with the abili
     }
 }
 
-SINGLE_BATTLE_TEST("Stamina activates for every hit of a multi hit move (Multi)")
+SINGLE_BATTLE_TEST("Stamina activates for every hit of a multi hit move (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -217,7 +217,7 @@ SINGLE_BATTLE_TEST("Stamina activates for every hit of a multi hit move (Multi)"
     }
 }
 
-SINGLE_BATTLE_TEST("Stamina is not activated by users own Substitute (Multi)")
+SINGLE_BATTLE_TEST("Stamina is not activated by users own Substitute (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_MUDBRAY) { Ability(ABILITY_OWN_TEMPO); Innates(ABILITY_STAMINA); }

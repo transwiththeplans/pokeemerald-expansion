@@ -76,7 +76,7 @@ SINGLE_BATTLE_TEST("Moody randomly raises the holder's Attack, Defense, Sp. Atk,
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Moody randomly raises the user's Attack, Defense, Sp. Atk, Sp. Def, or Speed by two stages (Multi)")
+SINGLE_BATTLE_TEST("Moody randomly raises the user's Attack, Defense, Sp. Atk, Sp. Def, or Speed by two stages (Traits)")
 {
     u32 config, statsNum;
 
@@ -101,7 +101,7 @@ SINGLE_BATTLE_TEST("Moody randomly raises the user's Attack, Defense, Sp. Atk, S
     }
 }
 
-SINGLE_BATTLE_TEST("Moody randomly lowers the user's Attack, Defense, Sp. Atk, Sp. Def, or Speed by one stage (Multi)")
+SINGLE_BATTLE_TEST("Moody randomly lowers the user's Attack, Defense, Sp. Atk, Sp. Def, or Speed by one stage (Traits)")
 {
     u32 config, statsNum;
 
@@ -126,7 +126,7 @@ SINGLE_BATTLE_TEST("Moody randomly lowers the user's Attack, Defense, Sp. Atk, S
     }
 }
 
-SINGLE_BATTLE_TEST("Moody randomly raises the holder's Attack, Defense, Sp. Atk, Sp. Def, or Speed by two stages and lowers a different stat by one stage (Multi)")
+SINGLE_BATTLE_TEST("Moody randomly raises the holder's Attack, Defense, Sp. Atk, Sp. Def, or Speed by two stages and lowers a different stat by one stage (Traits)")
 {
     u32 config, statsNum;
 

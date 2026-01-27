@@ -80,7 +80,7 @@ SINGLE_BATTLE_TEST("Sap Sipper blocks multi-hit grass type moves")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Sap Sipper negates damage from Grass-type moves (Multi)")
+SINGLE_BATTLE_TEST("Sap Sipper negates damage from Grass-type moves (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_MARILL) { Ability(ABILITY_THICK_FAT); Innates(ABILITY_SAP_SIPPER); }
@@ -92,7 +92,7 @@ SINGLE_BATTLE_TEST("Sap Sipper negates damage from Grass-type moves (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Sap Sipper negates effects from Grass-type moves (Multi)")
+SINGLE_BATTLE_TEST("Sap Sipper negates effects from Grass-type moves (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_MARILL) { Ability(ABILITY_THICK_FAT); Innates(ABILITY_SAP_SIPPER); }
@@ -107,7 +107,7 @@ SINGLE_BATTLE_TEST("Sap Sipper negates effects from Grass-type moves (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Sap Sipper increases Attack by one stage when hit by a Grass-type move (Multi)")
+SINGLE_BATTLE_TEST("Sap Sipper increases Attack by one stage when hit by a Grass-type move (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_MARILL) { Ability(ABILITY_THICK_FAT); Innates(ABILITY_SAP_SIPPER); }
@@ -121,7 +121,7 @@ SINGLE_BATTLE_TEST("Sap Sipper increases Attack by one stage when hit by a Grass
     }
 }
 
-SINGLE_BATTLE_TEST("Sap Sipper does not increase Attack if already maxed (Multi)")
+SINGLE_BATTLE_TEST("Sap Sipper does not increase Attack if already maxed (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_MARILL) { Ability(ABILITY_THICK_FAT); Innates(ABILITY_SAP_SIPPER); }
@@ -137,7 +137,7 @@ SINGLE_BATTLE_TEST("Sap Sipper does not increase Attack if already maxed (Multi)
     }
 }
 
-SINGLE_BATTLE_TEST("Sap Sipper blocks multi-hit grass type moves (Multi)")
+SINGLE_BATTLE_TEST("Sap Sipper blocks multi-hit grass type moves (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_BULLET_SEED) == EFFECT_MULTI_HIT);

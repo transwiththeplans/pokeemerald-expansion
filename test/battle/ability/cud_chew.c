@@ -51,7 +51,7 @@ SINGLE_BATTLE_TEST("Cud Chew will activate Oran Berry effect again on the next t
 TO_DO_BATTLE_TEST("Cud Chew will activate Lum Berry effect again on the next turn")
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Cud Chew will activate Kee Berry effect again on the next turn (Multi)")
+SINGLE_BATTLE_TEST("Cud Chew will activate Kee Berry effect again on the next turn (Traits)")
 {
     GIVEN {
         ASSUME(gItemsInfo[ITEM_KEE_BERRY].holdEffect == HOLD_EFFECT_KEE_BERRY);
@@ -73,7 +73,7 @@ SINGLE_BATTLE_TEST("Cud Chew will activate Kee Berry effect again on the next tu
     }
 }
 
-SINGLE_BATTLE_TEST("Cud Chew will activate Oran Berry effect again on the next turn (Multi)")
+SINGLE_BATTLE_TEST("Cud Chew will activate Oran Berry effect again on the next turn (Traits)")
 {
     GIVEN {
         ASSUME(gItemsInfo[ITEM_ORAN_BERRY].holdEffect == HOLD_EFFECT_RESTORE_HP);
@@ -98,5 +98,5 @@ SINGLE_BATTLE_TEST("Cud Chew will activate Oran Berry effect again on the next t
     }
 }
 
-TO_DO_BATTLE_TEST("Cud Chew will activate Lum Berry effect again on the next turn (Multi)")
+TO_DO_BATTLE_TEST("Cud Chew will activate Lum Berry effect again on the next turn (Traits)")
 #endif

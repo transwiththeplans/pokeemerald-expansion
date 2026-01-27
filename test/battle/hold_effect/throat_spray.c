@@ -119,7 +119,7 @@ SINGLE_BATTLE_TEST("Throat Spray is not blocked by Sheer Force")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Throat Spray is not blocked by Sheer Force (Multi)")
+SINGLE_BATTLE_TEST("Throat Spray is not blocked by Sheer Force (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_NIDOKING) { Ability(ABILITY_RIVALRY); Innates(ABILITY_SHEER_FORCE); Item(ITEM_THROAT_SPRAY); }

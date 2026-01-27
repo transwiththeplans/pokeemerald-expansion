@@ -98,7 +98,7 @@ DOUBLE_BATTLE_TEST("Cotton Down correctly gets blocked by stat reduction prevent
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Cotton Down drops speed by one of opposing battler if hit by a damaging move (Multi)")
+SINGLE_BATTLE_TEST("Cotton Down drops speed by one of opposing battler if hit by a damaging move (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -115,7 +115,7 @@ SINGLE_BATTLE_TEST("Cotton Down drops speed by one of opposing battler if hit by
     }
 }
 
-SINGLE_BATTLE_TEST("Cotton Down drops speed by one for each multi hit (Multi)")
+SINGLE_BATTLE_TEST("Cotton Down drops speed by one for each multi hit (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -135,7 +135,7 @@ SINGLE_BATTLE_TEST("Cotton Down drops speed by one for each multi hit (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Cotton Down drops speed by one of all other battlers on the field (Multi)")
+DOUBLE_BATTLE_TEST("Cotton Down drops speed by one of all other battlers on the field (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -160,7 +160,7 @@ DOUBLE_BATTLE_TEST("Cotton Down drops speed by one of all other battlers on the 
     }
 }
 
-DOUBLE_BATTLE_TEST("Cotton Down correctly gets blocked by stat reduction preventing abilities (Multi)")
+DOUBLE_BATTLE_TEST("Cotton Down correctly gets blocked by stat reduction preventing abilities (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_METAGROSS) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_CLEAR_BODY); }

@@ -35,7 +35,7 @@ SINGLE_BATTLE_TEST("Tera Shift can't be suppressed by Neutralizing Gas")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Tera Shift transforms Terapagos into its Terastal form on switch in (Multi)")
+SINGLE_BATTLE_TEST("Tera Shift transforms Terapagos into its Terastal form on switch in (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_TERAPAGOS_NORMAL) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_TERA_SHIFT); }

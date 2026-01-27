@@ -180,7 +180,7 @@ DOUBLE_BATTLE_TEST("Symbiosis transfers its item after Gem consumption, but befo
 }
 
 #if MAX_MON_TRAITS > 1
-DOUBLE_BATTLE_TEST("Symbiosis transfers its item to an ally after it consumes an item (Multi)")
+DOUBLE_BATTLE_TEST("Symbiosis transfers its item to an ally after it consumes an item (Traits)")
 {
     GIVEN {
         ASSUME(gItemsInfo[ITEM_ROOM_SERVICE].holdEffect == HOLD_EFFECT_ROOM_SERVICE);
@@ -207,7 +207,7 @@ DOUBLE_BATTLE_TEST("Symbiosis transfers its item to an ally after it consumes an
     }
 }
 
-DOUBLE_BATTLE_TEST("Symbiosis triggers after partners berry eaten from bug bite (Multi)")
+DOUBLE_BATTLE_TEST("Symbiosis triggers after partners berry eaten from bug bite (Traits)")
 {
     GIVEN {
         ASSUME(gItemsInfo[ITEM_LIECHI_BERRY].holdEffect == HOLD_EFFECT_ATTACK_UP);
@@ -235,7 +235,7 @@ DOUBLE_BATTLE_TEST("Symbiosis triggers after partners berry eaten from bug bite 
     }
 }
 
-DOUBLE_BATTLE_TEST("Symbiosis triggers after partner bestows its item (Multi)")
+DOUBLE_BATTLE_TEST("Symbiosis triggers after partner bestows its item (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Speed(100); Item(ITEM_FLAME_ORB); }
@@ -264,7 +264,7 @@ DOUBLE_BATTLE_TEST("Symbiosis triggers after partner bestows its item (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Symbiosis triggers after partner flings its item (Multi)")
+DOUBLE_BATTLE_TEST("Symbiosis triggers after partner flings its item (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Speed(100); Item(ITEM_FLAME_ORB); }
@@ -290,7 +290,7 @@ DOUBLE_BATTLE_TEST("Symbiosis triggers after partner flings its item (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Symbiosis transfers its item to an ally after it consumes a weakness berry (Multi)")
+DOUBLE_BATTLE_TEST("Symbiosis transfers its item to an ally after it consumes a weakness berry (Traits)")
 {
     GIVEN {
         ASSUME(gItemsInfo[ITEM_CHILAN_BERRY].holdEffect == HOLD_EFFECT_RESIST_BERRY);
@@ -311,7 +311,7 @@ DOUBLE_BATTLE_TEST("Symbiosis transfers its item to an ally after it consumes a 
     }
 }
 
-DOUBLE_BATTLE_TEST("Symbiosis transfers its item after Gem consumption and move execution (Gen7+) (Multi)")
+DOUBLE_BATTLE_TEST("Symbiosis transfers its item after Gem consumption and move execution (Gen7+) (Traits)")
 {
     GIVEN {
         ASSUME(GetItemHoldEffect(ITEM_NORMAL_GEM) == HOLD_EFFECT_GEMS);
@@ -334,7 +334,7 @@ DOUBLE_BATTLE_TEST("Symbiosis transfers its item after Gem consumption and move 
     }
 }
 
-DOUBLE_BATTLE_TEST("Symbiosis transfers its item after Gem consumption, but before move execution (Gen6) (Multi)")
+DOUBLE_BATTLE_TEST("Symbiosis transfers its item after Gem consumption, but before move execution (Gen6) (Traits)")
 {
     GIVEN {
         ASSUME(GetItemHoldEffect(ITEM_NORMAL_GEM) == HOLD_EFFECT_GEMS);

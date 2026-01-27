@@ -70,7 +70,7 @@ SINGLE_BATTLE_TEST("Ganlon Berry raises Defense by one stage when HP drops to 1/
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Ganlon Berry raises Defense by one stage when HP drops to 1/2 or below if holder has Gluttony (Multi)")
+SINGLE_BATTLE_TEST("Ganlon Berry raises Defense by one stage when HP drops to 1/2 or below if holder has Gluttony (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_BELLSPROUT) { MaxHP(80); HP(80); Ability(ABILITY_CHLOROPHYLL); Innates(ABILITY_GLUTTONY); Item(ITEM_GANLON_BERRY); }
@@ -86,7 +86,7 @@ SINGLE_BATTLE_TEST("Ganlon Berry raises Defense by one stage when HP drops to 1/
     }
 }
 
-SINGLE_BATTLE_TEST("Ganlon Berry raises Defense by one stage when HP drops to 1/4 or below if holder has Ripen (Multi)")
+SINGLE_BATTLE_TEST("Ganlon Berry raises Defense by one stage when HP drops to 1/4 or below if holder has Ripen (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_APPLIN) { MaxHP(160); HP(80); Ability(ABILITY_BULLETPROOF); Innates(ABILITY_RIPEN); Item(ITEM_GANLON_BERRY); }

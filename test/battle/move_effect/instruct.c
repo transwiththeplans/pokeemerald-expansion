@@ -349,7 +349,7 @@ DOUBLE_BATTLE_TEST("Instruct message references the correct battlers")
 }
 
 #if MAX_MON_TRAITS > 1
-DOUBLE_BATTLE_TEST("Instruct fails if target doesn't know the last move it used (Multi)")
+DOUBLE_BATTLE_TEST("Instruct fails if target doesn't know the last move it used (Traits)")
 {
     GIVEN {
         ASSUME(IsDanceMove(MOVE_DRAGON_DANCE));
@@ -370,7 +370,7 @@ DOUBLE_BATTLE_TEST("Instruct fails if target doesn't know the last move it used 
     }
 }
 
-DOUBLE_BATTLE_TEST("Instructed move will be redirected and absorbed by Lightning Rod if it turns into an Electric Type move (Multi)")
+DOUBLE_BATTLE_TEST("Instructed move will be redirected and absorbed by Lightning Rod if it turns into an Electric Type move (Traits)")
 {
     struct BattlePokemon *moveTarget = NULL;
     PARAMETRIZE { moveTarget = opponentLeft; }

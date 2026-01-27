@@ -70,7 +70,7 @@ AI_SINGLE_BATTLE_TEST("AI avoids hypnosis when it can not put target to sleep")
 }
 
 #if MAX_MON_TRAITS > 1
-AI_SINGLE_BATTLE_TEST("AI avoids hypnosis when it can not put target to sleep (Multi)")
+AI_SINGLE_BATTLE_TEST("AI avoids hypnosis when it can not put target to sleep (Traits)")
 {
     u32 species;
     enum Ability ability;

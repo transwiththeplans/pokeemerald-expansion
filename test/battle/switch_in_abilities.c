@@ -249,7 +249,7 @@ ONE_VS_TWO_BATTLE_TEST("Switch-in abilities trigger in Speed Order after post-KO
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Switch-in abilities trigger in Speed Order at the battle's start - Single Battle (Multi)")
+SINGLE_BATTLE_TEST("Switch-in abilities trigger in Speed Order at the battle's start - Single Battle (Traits)")
 {
     u32 spdPlayer, spdOpponent;
 
@@ -272,7 +272,7 @@ SINGLE_BATTLE_TEST("Switch-in abilities trigger in Speed Order at the battle's s
     }
 }
 
-DOUBLE_BATTLE_TEST("Switch-in abilities trigger in Speed Order at the battle's start - Double Battle (Multi)")
+DOUBLE_BATTLE_TEST("Switch-in abilities trigger in Speed Order at the battle's start - Double Battle (Traits)")
 {
     u32 spdPlayer1, spdPlayer2, spdOpponent1, spdOpponent2;
 
@@ -307,7 +307,7 @@ DOUBLE_BATTLE_TEST("Switch-in abilities trigger in Speed Order at the battle's s
     }
 }
 
-SINGLE_BATTLE_TEST("Switch-in abilities trigger in Speed Order after post-KO switch - Single Battle (Multi)")
+SINGLE_BATTLE_TEST("Switch-in abilities trigger in Speed Order after post-KO switch - Single Battle (Traits)")
 {
     u32 spdPlayer, spdOpponent;
 
@@ -334,7 +334,7 @@ SINGLE_BATTLE_TEST("Switch-in abilities trigger in Speed Order after post-KO swi
     }
 }
 
-DOUBLE_BATTLE_TEST("Switch-in abilities trigger in Speed Order after post-KO switch - Double Battle (Multi)")
+DOUBLE_BATTLE_TEST("Switch-in abilities trigger in Speed Order after post-KO switch - Double Battle (Traits)")
 {
     u32 spdPlayer1, spdPlayer2, spdOpponent1, spdOpponent2;
 
@@ -375,7 +375,7 @@ DOUBLE_BATTLE_TEST("Switch-in abilities trigger in Speed Order after post-KO swi
     }
 }
 
-MULTI_BATTLE_TEST("Switch-in abilities trigger in Speed Order after post-KO switch - multibattle (Multi)")
+MULTI_BATTLE_TEST("Switch-in abilities trigger in Speed Order after post-KO switch - multibattle (Traits)")
 {
     u32 spdPlayer1, spdPlayer2, spdOpponent1, spdOpponent2;
 
@@ -416,7 +416,7 @@ MULTI_BATTLE_TEST("Switch-in abilities trigger in Speed Order after post-KO swit
     }
 }
 
-TWO_VS_ONE_BATTLE_TEST("Switch-in abilities trigger in Speed Order after post-KO switch - 2v1 (Multi)")
+TWO_VS_ONE_BATTLE_TEST("Switch-in abilities trigger in Speed Order after post-KO switch - 2v1 (Traits)")
 {
     u32 spdPlayer1, spdPlayer2, spdOpponent1, spdOpponent2;
 
@@ -456,7 +456,7 @@ TWO_VS_ONE_BATTLE_TEST("Switch-in abilities trigger in Speed Order after post-KO
     }
 }
 
-ONE_VS_TWO_BATTLE_TEST("Switch-in abilities trigger in Speed Order after post-KO switch - 1v2 (Multi)")
+ONE_VS_TWO_BATTLE_TEST("Switch-in abilities trigger in Speed Order after post-KO switch - 1v2 (Traits)")
 {
     u32 spdPlayer1, spdPlayer2, spdOpponent1, spdOpponent2;
 

@@ -50,7 +50,7 @@ SINGLE_BATTLE_TEST("Regenerator heals 1/3 of max HP upon switching out but doesn
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Regenerator heals 1/3 of max HP upon switching out (Multi)")
+SINGLE_BATTLE_TEST("Regenerator heals 1/3 of max HP upon switching out (Traits)")
 {
     u32 currHP;
     PARAMETRIZE { currHP = 1; }
@@ -73,7 +73,7 @@ SINGLE_BATTLE_TEST("Regenerator heals 1/3 of max HP upon switching out (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Regenerator heals 1/3 of max HP upon switching out but doesn't surpass max HP (Multi)")
+SINGLE_BATTLE_TEST("Regenerator heals 1/3 of max HP upon switching out but doesn't surpass max HP (Traits)")
 {
     u32 currHP;
     PARAMETRIZE { currHP = 5; }

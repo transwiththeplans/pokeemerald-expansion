@@ -204,7 +204,7 @@ SINGLE_BATTLE_TEST("Covert Cloak does not prevent ability stat changes")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Covert Cloak does not prevent ability stat changes (Multi)")
+SINGLE_BATTLE_TEST("Covert Cloak does not prevent ability stat changes (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_COVERT_CLOAK); }

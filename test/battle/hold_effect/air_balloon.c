@@ -118,7 +118,7 @@ SINGLE_BATTLE_TEST("Air Balloon pops before it can be stolen by Thief")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Air Balloon pops before it can be stolen with Magician (Multi)")
+SINGLE_BATTLE_TEST("Air Balloon pops before it can be stolen with Magician (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_AIR_BALLOON); };

@@ -105,7 +105,7 @@ SINGLE_BATTLE_TEST("Drizzle sets up permanent rain (Gen3-5)")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Drizzle summons rain (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Drizzle summons rain (Traits)", s16 damage)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_DRIZZLE; }
@@ -127,7 +127,7 @@ SINGLE_BATTLE_TEST("Drizzle summons rain (Multi)", s16 damage)
     }
 }
 
-SINGLE_BATTLE_TEST("Drizzle sets up rain for 5 turns (Gen6+) (Multi)")
+SINGLE_BATTLE_TEST("Drizzle sets up rain for 5 turns (Gen6+) (Traits)")
 {
     GIVEN {
         WITH_CONFIG(CONFIG_ABILITY_WEATHER, GEN_6);
@@ -149,7 +149,7 @@ SINGLE_BATTLE_TEST("Drizzle sets up rain for 5 turns (Gen6+) (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Drizzle sets up rain for 8 turns with Damp Rock (Gen6+) (Multi)")
+SINGLE_BATTLE_TEST("Drizzle sets up rain for 8 turns with Damp Rock (Gen6+) (Traits)")
 {
     GIVEN {
         WITH_CONFIG(CONFIG_ABILITY_WEATHER, GEN_6);
@@ -177,7 +177,7 @@ SINGLE_BATTLE_TEST("Drizzle sets up rain for 8 turns with Damp Rock (Gen6+) (Mul
     }
 }
 
-SINGLE_BATTLE_TEST("Drizzle sets up permanent rain (Gen3-5) (Multi)")
+SINGLE_BATTLE_TEST("Drizzle sets up permanent rain (Gen3-5) (Traits)")
 {
     GIVEN {
         WITH_CONFIG(CONFIG_ABILITY_WEATHER, GEN_3);

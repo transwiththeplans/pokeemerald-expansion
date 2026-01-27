@@ -101,7 +101,7 @@ SINGLE_BATTLE_TEST("Unburden doubling speed effect is ignored by Neutralizing Ga
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Unburden doubles speed once user uses item (Multi)")
+SINGLE_BATTLE_TEST("Unburden doubles speed once user uses item (Traits)")
 {
     GIVEN {
         ASSUME(GetItemHoldEffect(ITEM_GRASSY_SEED) == HOLD_EFFECT_TERRAIN_SEED);
@@ -123,7 +123,7 @@ SINGLE_BATTLE_TEST("Unburden doubles speed once user uses item (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Unburden doubles speed once user gets their item knocked off (Multi)")
+SINGLE_BATTLE_TEST("Unburden doubles speed once user gets their item knocked off (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_KNOCK_OFF) == EFFECT_KNOCK_OFF);

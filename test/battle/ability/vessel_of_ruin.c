@@ -148,7 +148,7 @@ DOUBLE_BATTLE_TEST("Vessel of Ruin is active if removed by Mold Breaker Entrainm
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Vessel of Ruin reduces Sp. Atk if opposing mon's ability doesn't match (Multi)")
+SINGLE_BATTLE_TEST("Vessel of Ruin reduces Sp. Atk if opposing mon's ability doesn't match (Traits)")
 {
     s16 damage[2];
 
@@ -172,7 +172,7 @@ SINGLE_BATTLE_TEST("Vessel of Ruin reduces Sp. Atk if opposing mon's ability doe
     }
 }
 
-SINGLE_BATTLE_TEST("Vessel of Ruin's message displays correctly after all battlers fainted - Player (Multi)")
+SINGLE_BATTLE_TEST("Vessel of Ruin's message displays correctly after all battlers fainted - Player (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_EXPLOSION) == EFFECT_EXPLOSION);
@@ -194,7 +194,7 @@ SINGLE_BATTLE_TEST("Vessel of Ruin's message displays correctly after all battle
     }
 }
 
-SINGLE_BATTLE_TEST("Vessel of Ruin's message displays correctly after all battlers fainted - Opponent (Multi)")
+SINGLE_BATTLE_TEST("Vessel of Ruin's message displays correctly after all battlers fainted - Opponent (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_EXPLOSION) == EFFECT_EXPLOSION);
@@ -216,7 +216,7 @@ SINGLE_BATTLE_TEST("Vessel of Ruin's message displays correctly after all battle
     }
 }
 
-SINGLE_BATTLE_TEST("Vessel of Ruin is still active if removed by Mold Breaker + Entrainment (Multi)")
+SINGLE_BATTLE_TEST("Vessel of Ruin is still active if removed by Mold Breaker + Entrainment (Traits)")
 {
     s16 damage[2];
 

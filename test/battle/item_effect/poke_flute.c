@@ -43,7 +43,7 @@ DOUBLE_BATTLE_TEST("Poke Flute does not heal battlers with Soundproof from being
 }
 
 #if MAX_MON_TRAITS > 1
-DOUBLE_BATTLE_TEST("Poke Flute does not heal battlers with Soundproof from being asleep (Multi)")
+DOUBLE_BATTLE_TEST("Poke Flute does not heal battlers with Soundproof from being asleep (Traits)")
 {
     GIVEN {
         ASSUME(gItemsInfo[ITEM_POKE_FLUTE].battleUsage == EFFECT_ITEM_USE_POKE_FLUTE);

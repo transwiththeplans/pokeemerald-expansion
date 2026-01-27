@@ -113,7 +113,7 @@ SINGLE_BATTLE_TEST("Tangling Hair will trigger if move is boosted by Sheer Force
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Tangling Hair drops opposing mon's speed if ability user got hit by a contact move (Multi)")
+SINGLE_BATTLE_TEST("Tangling Hair drops opposing mon's speed if ability user got hit by a contact move (Traits)")
 {
     u32 move;
 
@@ -136,7 +136,7 @@ SINGLE_BATTLE_TEST("Tangling Hair drops opposing mon's speed if ability user got
     }
 }
 
-SINGLE_BATTLE_TEST("Tangling Hair does not cause Rocky Helmet miss activation (Multi)")
+SINGLE_BATTLE_TEST("Tangling Hair does not cause Rocky Helmet miss activation (Traits)")
 {
     GIVEN {
         ASSUME(gItemsInfo[ITEM_ROCKY_HELMET].holdEffect == HOLD_EFFECT_ROCKY_HELMET);
@@ -154,7 +154,7 @@ SINGLE_BATTLE_TEST("Tangling Hair does not cause Rocky Helmet miss activation (M
     }
 }
 
-SINGLE_BATTLE_TEST("Tangling Hair Speed stat drop triggers defiant and keeps original attacker/target (Multi)")
+SINGLE_BATTLE_TEST("Tangling Hair Speed stat drop triggers defiant and keeps original attacker/target (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_DUGTRIO) { Ability(ABILITY_SAND_VEIL); Innates(ABILITY_TANGLING_HAIR); Item(ITEM_ROCKY_HELMET); }
@@ -173,7 +173,7 @@ SINGLE_BATTLE_TEST("Tangling Hair Speed stat drop triggers defiant and keeps ori
     }
 }
 
-SINGLE_BATTLE_TEST("Tangling Hair does not activate on confusion damage (Multi)")
+SINGLE_BATTLE_TEST("Tangling Hair does not activate on confusion damage (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_CONFUSE_RAY) == EFFECT_CONFUSE);
@@ -190,7 +190,7 @@ SINGLE_BATTLE_TEST("Tangling Hair does not activate on confusion damage (Multi)"
     }
 }
 
-SINGLE_BATTLE_TEST("Tangling Hair does not trigger on Clear Body (Multi)")
+SINGLE_BATTLE_TEST("Tangling Hair does not trigger on Clear Body (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_DUGTRIO) { Ability(ABILITY_SAND_VEIL); Innates(ABILITY_TANGLING_HAIR); }
@@ -203,7 +203,7 @@ SINGLE_BATTLE_TEST("Tangling Hair does not trigger on Clear Body (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Tangling Hair will trigger if move is boosted by Sheer Force (Multi)")
+SINGLE_BATTLE_TEST("Tangling Hair will trigger if move is boosted by Sheer Force (Traits)")
 {
     ASSUME(MoveIsAffectedBySheerForce(MOVE_POISON_JAB));
     GIVEN {

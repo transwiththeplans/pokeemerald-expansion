@@ -21,7 +21,7 @@ SINGLE_BATTLE_TEST("Flare Boost increases Sp. Attack by 50% when the Pokémon is
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Flare Boost increases Sp. Attack by 50% when the Pokémon is burned (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Flare Boost increases Sp. Attack by 50% when the Pokémon is burned (Traits)", s16 damage)
 {
     u32 status1;
     PARAMETRIZE { status1 = STATUS1_NONE; }

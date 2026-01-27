@@ -57,7 +57,7 @@ SINGLE_BATTLE_TEST("Snow Cloak increases evasion during snow")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Snow Cloak prevents damage from hail (Multi)")
+SINGLE_BATTLE_TEST("Snow Cloak prevents damage from hail (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -69,7 +69,7 @@ SINGLE_BATTLE_TEST("Snow Cloak prevents damage from hail (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Snow Cloak increases evasion during hail (Multi)")
+SINGLE_BATTLE_TEST("Snow Cloak increases evasion during hail (Traits)")
 {
     PASSES_RANDOMLY(4, 5, RNG_ACCURACY);
     GIVEN {
@@ -84,7 +84,7 @@ SINGLE_BATTLE_TEST("Snow Cloak increases evasion during hail (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Snow Cloak doesn't increase evasion if Cloud Nine/Air Lock is on the field (Multi)")
+SINGLE_BATTLE_TEST("Snow Cloak doesn't increase evasion if Cloud Nine/Air Lock is on the field (Traits)")
 {
     PASSES_RANDOMLY(10, 10, RNG_ACCURACY);
     GIVEN {
@@ -97,7 +97,7 @@ SINGLE_BATTLE_TEST("Snow Cloak doesn't increase evasion if Cloud Nine/Air Lock i
     }
 }
 
-SINGLE_BATTLE_TEST("Snow Cloak increases evasion during snow (Multi)")
+SINGLE_BATTLE_TEST("Snow Cloak increases evasion during snow (Traits)")
 {
     PASSES_RANDOMLY(4, 5, RNG_ACCURACY);
     GIVEN {

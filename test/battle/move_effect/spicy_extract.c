@@ -208,7 +208,7 @@ AI_DOUBLE_BATTLE_TEST("Spicy Extract user will not choose the move if it does no
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Spicy Extract is prevented by target's ability if it's Attack stat is maxed out (Multi)")
+SINGLE_BATTLE_TEST("Spicy Extract is prevented by target's ability if it's Attack stat is maxed out (Traits)")
 {
     enum Ability ability;
 
@@ -245,7 +245,7 @@ SINGLE_BATTLE_TEST("Spicy Extract is prevented by target's ability if it's Attac
     }
 }
 
-SINGLE_BATTLE_TEST("Spicy Extract Defense loss is prevented by Big Pecks (Multi)")
+SINGLE_BATTLE_TEST("Spicy Extract Defense loss is prevented by Big Pecks (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -266,7 +266,7 @@ SINGLE_BATTLE_TEST("Spicy Extract Defense loss is prevented by Big Pecks (Multi)
     }
 }
 
-SINGLE_BATTLE_TEST("Spicy Extract stat changes will be inverted by Contrary (Multi)")
+SINGLE_BATTLE_TEST("Spicy Extract stat changes will be inverted by Contrary (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -288,7 +288,7 @@ SINGLE_BATTLE_TEST("Spicy Extract stat changes will be inverted by Contrary (Mul
     }
 }
 
-SINGLE_BATTLE_TEST("Spicy Extract against Clear Amulet and Contrary raises Defense only (Multi)")
+SINGLE_BATTLE_TEST("Spicy Extract against Clear Amulet and Contrary raises Defense only (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -311,7 +311,7 @@ SINGLE_BATTLE_TEST("Spicy Extract against Clear Amulet and Contrary raises Defen
     }
 }
 
-AI_DOUBLE_BATTLE_TEST("Spicy Extract user will not choose the move if it does not benefit partner (Multi)")
+AI_DOUBLE_BATTLE_TEST("Spicy Extract user will not choose the move if it does not benefit partner (Traits)")
 {
     u32 species;
     enum Ability ability;

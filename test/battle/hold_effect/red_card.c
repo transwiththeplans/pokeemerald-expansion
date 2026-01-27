@@ -540,7 +540,7 @@ SINGLE_BATTLE_TEST("Red Card activates before Eject Pack")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Red Card does not activate if stolen by Magician (Multi)")
+SINGLE_BATTLE_TEST("Red Card does not activate if stolen by Magician (Traits)")
 {
     u32 item;
     bool32 activate;
@@ -569,7 +569,7 @@ SINGLE_BATTLE_TEST("Red Card does not activate if stolen by Magician (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Red Card activates but fails if the attacker has Suction Cups (Multi)")
+DOUBLE_BATTLE_TEST("Red Card activates but fails if the attacker has Suction Cups (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }
@@ -598,7 +598,7 @@ DOUBLE_BATTLE_TEST("Red Card activates but fails if the attacker has Suction Cup
     }
 }
 
-DOUBLE_BATTLE_TEST("Red Card activates but fails if the attacker has Guard Dog (Multi)")
+DOUBLE_BATTLE_TEST("Red Card activates but fails if the attacker has Guard Dog (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }
@@ -626,7 +626,7 @@ DOUBLE_BATTLE_TEST("Red Card activates but fails if the attacker has Guard Dog (
     }
 }
 
-SINGLE_BATTLE_TEST("Red Card does not activate if attacker's Sheer Force applied (Multi)")
+SINGLE_BATTLE_TEST("Red Card does not activate if attacker's Sheer Force applied (Traits)")
 {
     u32 move;
     bool32 activate;
@@ -653,7 +653,7 @@ SINGLE_BATTLE_TEST("Red Card does not activate if attacker's Sheer Force applied
     }
 }
 
-SINGLE_BATTLE_TEST("Red Card prevents Emergency Exit activation when triggered (Multi)")
+SINGLE_BATTLE_TEST("Red Card prevents Emergency Exit activation when triggered (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);

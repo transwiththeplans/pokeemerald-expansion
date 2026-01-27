@@ -82,7 +82,7 @@ DOUBLE_BATTLE_TEST("Stench doesn't trigger if partner uses a move")
 // TODO: Test against interaction with multi hits
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Stench has a 10% chance to flinch (Multi)")
+SINGLE_BATTLE_TEST("Stench has a 10% chance to flinch (Traits)")
 {
     PASSES_RANDOMLY(1, 10, RNG_STENCH);
     GIVEN {
@@ -96,7 +96,7 @@ SINGLE_BATTLE_TEST("Stench has a 10% chance to flinch (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Stench does not stack with King's Rock (Multi)")
+SINGLE_BATTLE_TEST("Stench does not stack with King's Rock (Traits)")
 {
     PASSES_RANDOMLY(1, 10, RNG_STENCH);
     GIVEN {
@@ -112,7 +112,7 @@ SINGLE_BATTLE_TEST("Stench does not stack with King's Rock (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Stench only triggers if target takes damage (Multi)")
+DOUBLE_BATTLE_TEST("Stench only triggers if target takes damage (Traits)")
 {
     GIVEN {
         ASSUME(GetMovePower(MOVE_SCRATCH) > 0);
@@ -136,7 +136,7 @@ DOUBLE_BATTLE_TEST("Stench only triggers if target takes damage (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Stench doesn't trigger if partner uses a move (Multi)")
+DOUBLE_BATTLE_TEST("Stench doesn't trigger if partner uses a move (Traits)")
 {
     GIVEN {
         ASSUME(GetMovePower(MOVE_SCRATCH) > 0);

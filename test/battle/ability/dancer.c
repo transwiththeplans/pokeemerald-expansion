@@ -378,7 +378,7 @@ TO_DO_BATTLE_TEST("Dancer copies Lunar Dance after the original user faints, but
 TO_DO_BATTLE_TEST("Dancer doesn't activate Feather Dance if it was reflected by Magic Bounce/Coat")
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Dancer can copy a dance move immediately after it was used and allow the user of Dancer to still use its move (Multi)")
+SINGLE_BATTLE_TEST("Dancer can copy a dance move immediately after it was used and allow the user of Dancer to still use its move (Traits)")
 {
     GIVEN {
         ASSUME(IsDanceMove(MOVE_QUIVER_DANCE));
@@ -396,7 +396,7 @@ SINGLE_BATTLE_TEST("Dancer can copy a dance move immediately after it was used a
     }
 }
 
-SINGLE_BATTLE_TEST("Dancer can copy Teeter Dance (Multi)")
+SINGLE_BATTLE_TEST("Dancer can copy Teeter Dance (Traits)")
 {
     GIVEN {
         ASSUME(IsDanceMove(MOVE_TEETER_DANCE));
@@ -411,7 +411,7 @@ SINGLE_BATTLE_TEST("Dancer can copy Teeter Dance (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Dancer can copy Teeter Dance and confuse both opposing targets (Multi)")
+DOUBLE_BATTLE_TEST("Dancer can copy Teeter Dance and confuse both opposing targets (Traits)")
 {
     GIVEN {
         ASSUME(IsDanceMove(MOVE_TEETER_DANCE));
@@ -431,7 +431,7 @@ DOUBLE_BATTLE_TEST("Dancer can copy Teeter Dance and confuse both opposing targe
     }
 }
 
-DOUBLE_BATTLE_TEST("Dancer triggers from slowest to fastest (Multi)")
+DOUBLE_BATTLE_TEST("Dancer triggers from slowest to fastest (Traits)")
 {
     GIVEN {
         ASSUME(IsDanceMove(MOVE_DRAGON_DANCE));
@@ -456,7 +456,7 @@ DOUBLE_BATTLE_TEST("Dancer triggers from slowest to fastest (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Dancer doesn't trigger if the original user flinches (Multi)")
+SINGLE_BATTLE_TEST("Dancer doesn't trigger if the original user flinches (Traits)")
 {
     GIVEN {
         ASSUME(MoveHasAdditionalEffectWithChance(MOVE_FAKE_OUT, MOVE_EFFECT_FLINCH, 100));
@@ -475,7 +475,7 @@ SINGLE_BATTLE_TEST("Dancer doesn't trigger if the original user flinches (Multi)
     }
 }
 
-DOUBLE_BATTLE_TEST("Dancer still triggers if another dancer flinches (Multi)")
+DOUBLE_BATTLE_TEST("Dancer still triggers if another dancer flinches (Traits)")
 {
     GIVEN {
         ASSUME(MoveHasAdditionalEffectWithChance(MOVE_FAKE_OUT, MOVE_EFFECT_FLINCH, 100));
@@ -504,7 +504,7 @@ DOUBLE_BATTLE_TEST("Dancer still triggers if another dancer flinches (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Dancer still activates after Red Card (Multi)")
+DOUBLE_BATTLE_TEST("Dancer still activates after Red Card (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) ;
@@ -530,7 +530,7 @@ DOUBLE_BATTLE_TEST("Dancer still activates after Red Card (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Dancer still activate after Red Card even if blocked by Suction Cups (Multi)")
+DOUBLE_BATTLE_TEST("Dancer still activate after Red Card even if blocked by Suction Cups (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Ability(ABILITY_SHADOW_TAG); Innates(ABILITY_SUCTION_CUPS); }
@@ -557,15 +557,15 @@ DOUBLE_BATTLE_TEST("Dancer still activate after Red Card even if blocked by Suct
     }
 }
 
-TO_DO_BATTLE_TEST("Dancer-called damaging moves are considered for Counter/Mirror Coat/Metal Burst (Multi)")
-TO_DO_BATTLE_TEST("Dancer copies a status Z-Move's base move without gaining an additional Z-Power effect (Multi)")
-TO_DO_BATTLE_TEST("Dancer user may hit itself in confusion instead of copying a move if it's confused (Multi)")
-TO_DO_BATTLE_TEST("Dancer tries to copy a move but fails if it's being forced into a different move - Rampage move (Multi)") // Test with Petal Dance, Thrash
-TO_DO_BATTLE_TEST("Dancer tries to copy a move but fails if it's being forced into a different move - Rollout (Multi)")
-TO_DO_BATTLE_TEST("Dancer tries to copy a move but fails if it's being forced into a different move - Choice items (Multi)")
-TO_DO_BATTLE_TEST("Dancer tries to copy a move but fails if it's being forced into a different move - Encore (Multi)")
-TO_DO_BATTLE_TEST("Dancer tries to copy a status move but fails if it's under Taunt's effect (Multi)")
-TO_DO_BATTLE_TEST("Dancer can still copy status moves if the user is holding an Assault Vest (Multi)")
-TO_DO_BATTLE_TEST("Dancer copies Lunar Dance after the original user faints, but before the replacement is sent out (Multi)")
-TO_DO_BATTLE_TEST("Dancer doesn't activate Feather Dance if it was reflected by Magic Bounce/Coat (Multi)")
+TO_DO_BATTLE_TEST("Dancer-called damaging moves are considered for Counter/Mirror Coat/Metal Burst (Traits)")
+TO_DO_BATTLE_TEST("Dancer copies a status Z-Move's base move without gaining an additional Z-Power effect (Traits)")
+TO_DO_BATTLE_TEST("Dancer user may hit itself in confusion instead of copying a move if it's confused (Traits)")
+TO_DO_BATTLE_TEST("Dancer tries to copy a move but fails if it's being forced into a different move - Rampage move (Traits)") // Test with Petal Dance, Thrash
+TO_DO_BATTLE_TEST("Dancer tries to copy a move but fails if it's being forced into a different move - Rollout (Traits)")
+TO_DO_BATTLE_TEST("Dancer tries to copy a move but fails if it's being forced into a different move - Choice items (Traits)")
+TO_DO_BATTLE_TEST("Dancer tries to copy a move but fails if it's being forced into a different move - Encore (Traits)")
+TO_DO_BATTLE_TEST("Dancer tries to copy a status move but fails if it's under Taunt's effect (Traits)")
+TO_DO_BATTLE_TEST("Dancer can still copy status moves if the user is holding an Assault Vest (Traits)")
+TO_DO_BATTLE_TEST("Dancer copies Lunar Dance after the original user faints, but before the replacement is sent out (Traits)")
+TO_DO_BATTLE_TEST("Dancer doesn't activate Feather Dance if it was reflected by Magic Bounce/Coat (Traits)")
 #endif

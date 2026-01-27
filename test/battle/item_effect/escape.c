@@ -50,7 +50,7 @@ WILD_BATTLE_TEST("Poke Toy lets the player escape from a wild battle even if an 
 }
 
 #if MAX_MON_TRAITS > 1
-WILD_BATTLE_TEST("Poke Toy lets the player escape from a wild battle even if an ability forbid them to (Multi)")
+WILD_BATTLE_TEST("Poke Toy lets the player escape from a wild battle even if an ability forbid them to (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);

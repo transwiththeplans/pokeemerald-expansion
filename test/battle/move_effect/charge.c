@@ -156,7 +156,7 @@ SINGLE_BATTLE_TEST("Charge will expire if user flinches while using an electric 
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Charge's effect does not stack with Electromorphosis or Wind Power (Multi)")
+SINGLE_BATTLE_TEST("Charge's effect does not stack with Electromorphosis or Wind Power (Traits)")
 {
     u32 species;
     enum Ability ability;

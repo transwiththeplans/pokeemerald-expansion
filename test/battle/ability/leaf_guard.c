@@ -165,7 +165,7 @@ SINGLE_BATTLE_TEST("Leaf Guard doesn't prevent Rest if Cloud Nine/Air Lock is on
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Leaf Guard prevents non-volatile status conditions in sun (Multi)")
+SINGLE_BATTLE_TEST("Leaf Guard prevents non-volatile status conditions in sun (Traits)")
 {
     u32 move;
     u16 status;
@@ -195,7 +195,7 @@ SINGLE_BATTLE_TEST("Leaf Guard prevents non-volatile status conditions in sun (M
     }
 }
 
-SINGLE_BATTLE_TEST("Leaf Guard doesn't prevent non-volatile status conditions if Cloud Nine/Air Lock is on the field (Multi)")
+SINGLE_BATTLE_TEST("Leaf Guard doesn't prevent non-volatile status conditions if Cloud Nine/Air Lock is on the field (Traits)")
 {
     u32 move, species, ability;
     u16 status;
@@ -231,7 +231,7 @@ SINGLE_BATTLE_TEST("Leaf Guard doesn't prevent non-volatile status conditions if
     }
 }
 
-SINGLE_BATTLE_TEST("Leaf Guard prevents status conditions from Flame Orb and Toxic Orb (Multi)")
+SINGLE_BATTLE_TEST("Leaf Guard prevents status conditions from Flame Orb and Toxic Orb (Traits)")
 {
     u32 item;
     PARAMETRIZE { item = ITEM_FLAME_ORB; }
@@ -253,7 +253,7 @@ SINGLE_BATTLE_TEST("Leaf Guard prevents status conditions from Flame Orb and Tox
     }
 }
 
-SINGLE_BATTLE_TEST("Leaf Guard doesn't prevent status conditions from Flame Orb and Toxic Orb if Cloud Nine/Air Lock is on the field (Multi)")
+SINGLE_BATTLE_TEST("Leaf Guard doesn't prevent status conditions from Flame Orb and Toxic Orb if Cloud Nine/Air Lock is on the field (Traits)")
 {
     u32 item, species, ability;
     PARAMETRIZE { item = ITEM_FLAME_ORB; species = SPECIES_GOLDUCK;  ability = ABILITY_CLOUD_NINE; }
@@ -279,7 +279,7 @@ SINGLE_BATTLE_TEST("Leaf Guard doesn't prevent status conditions from Flame Orb 
     }
 }
 
-SINGLE_BATTLE_TEST("Leaf Guard prevents Rest during sun (Gen 5+) (Multi)")
+SINGLE_BATTLE_TEST("Leaf Guard prevents Rest during sun (Gen 5+) (Traits)")
 {
     u32 gen;
     PARAMETRIZE { gen = GEN_4; }
@@ -307,7 +307,7 @@ SINGLE_BATTLE_TEST("Leaf Guard prevents Rest during sun (Gen 5+) (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Leaf Guard doesn't prevent Rest if Cloud Nine/Air Lock is on the field (Multi)")
+SINGLE_BATTLE_TEST("Leaf Guard doesn't prevent Rest if Cloud Nine/Air Lock is on the field (Traits)")
 {
     u32 species, ability;
     PARAMETRIZE { species = SPECIES_GOLDUCK;  ability = ABILITY_CLOUD_NINE; }

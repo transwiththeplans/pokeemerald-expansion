@@ -81,7 +81,7 @@ SINGLE_BATTLE_TEST("Immunity cures existing poison on turn 0")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Immunity prevents Poison Sting poison (Multi)")
+SINGLE_BATTLE_TEST("Immunity prevents Poison Sting poison (Traits)")
 {
     GIVEN {
         ASSUME(MoveHasAdditionalEffect(MOVE_POISON_STING, MOVE_EFFECT_POISON) == TRUE);
@@ -95,7 +95,7 @@ SINGLE_BATTLE_TEST("Immunity prevents Poison Sting poison (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Immunity prevents Toxic bad poison (Multi)")
+SINGLE_BATTLE_TEST("Immunity prevents Toxic bad poison (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_TOXIC) == EFFECT_NON_VOLATILE_STATUS);
@@ -112,7 +112,7 @@ SINGLE_BATTLE_TEST("Immunity prevents Toxic bad poison (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Immunity prevents Toxic Spikes poison (Multi)")
+SINGLE_BATTLE_TEST("Immunity prevents Toxic Spikes poison (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_TOXIC_SPIKES) == EFFECT_TOXIC_SPIKES);
@@ -127,7 +127,7 @@ SINGLE_BATTLE_TEST("Immunity prevents Toxic Spikes poison (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Immunity doesn't prevent Pokémon from being poisoned by Toxic Spikes on switch-in if forced in by phazing with Mold Breaker, but it cures it immediately (Multi)")
+SINGLE_BATTLE_TEST("Immunity doesn't prevent Pokémon from being poisoned by Toxic Spikes on switch-in if forced in by phazing with Mold Breaker, but it cures it immediately (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_DRAGON_TAIL) == EFFECT_HIT_SWITCH_TARGET);
@@ -144,7 +144,7 @@ SINGLE_BATTLE_TEST("Immunity doesn't prevent Pokémon from being poisoned by Tox
     }
 }
 
-SINGLE_BATTLE_TEST("Immunity cures existing poison on turn 0 (Multi)")
+SINGLE_BATTLE_TEST("Immunity cures existing poison on turn 0 (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_ZANGOOSE) {

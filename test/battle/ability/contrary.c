@@ -272,7 +272,7 @@ AI_SINGLE_BATTLE_TEST("AI sees Contrary-effected moves correctly in MoveEffectIn
 TO_DO_BATTLE_TEST("Contrary does not invert stat changes that have been Baton-passed")
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Contrary raises Attack when Intimidated in a single battle (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Contrary raises Attack when Intimidated in a single battle (Traits)", s16 damage)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_CONTRARY; }
@@ -299,7 +299,7 @@ SINGLE_BATTLE_TEST("Contrary raises Attack when Intimidated in a single battle (
     }
 }
 
-DOUBLE_BATTLE_TEST("Contrary raises Attack when Intimidated in a double battle (Multi)", s16 damageLeft, s16 damageRight)
+DOUBLE_BATTLE_TEST("Contrary raises Attack when Intimidated in a double battle (Traits)", s16 damageLeft, s16 damageRight)
 {
     enum Ability abilityLeft, abilityRight;
 
@@ -342,7 +342,7 @@ DOUBLE_BATTLE_TEST("Contrary raises Attack when Intimidated in a double battle (
     }
 }
 
-SINGLE_BATTLE_TEST("Contrary raises stats after using a move which would normally lower them: Overheat (Multi)", s16 damageBefore, s16 damageAfter)
+SINGLE_BATTLE_TEST("Contrary raises stats after using a move which would normally lower them: Overheat (Traits)", s16 damageBefore, s16 damageAfter)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_CONTRARY; }
@@ -386,7 +386,7 @@ SINGLE_BATTLE_TEST("Contrary raises stats after using a move which would normall
     }
 }
 
-SINGLE_BATTLE_TEST("Contrary lowers a stat after using a move which would normally raise it: Swords Dance (Multi)", s16 damageBefore, s16 damageAfter)
+SINGLE_BATTLE_TEST("Contrary lowers a stat after using a move which would normally raise it: Swords Dance (Traits)", s16 damageBefore, s16 damageAfter)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_CONTRARY; }
@@ -423,7 +423,7 @@ SINGLE_BATTLE_TEST("Contrary lowers a stat after using a move which would normal
     }
 }
 
-SINGLE_BATTLE_TEST("Contrary raises a stat after using a move which would normally lower it: Growl (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Contrary raises a stat after using a move which would normally lower it: Growl (Traits)", s16 damage)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_CONTRARY; }
@@ -454,7 +454,7 @@ SINGLE_BATTLE_TEST("Contrary raises a stat after using a move which would normal
     }
 }
 
-SINGLE_BATTLE_TEST("Contrary lowers a stat after using a move which would normally raise it: Belly Drum (Multi)", s16 damageBefore, s16 damageAfter)
+SINGLE_BATTLE_TEST("Contrary lowers a stat after using a move which would normally raise it: Belly Drum (Traits)", s16 damageBefore, s16 damageAfter)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_CONTRARY; }
@@ -488,7 +488,7 @@ SINGLE_BATTLE_TEST("Contrary lowers a stat after using a move which would normal
     }
 }
 
-SINGLE_BATTLE_TEST("Sticky Web raises Speed by 1 for Contrary mon on switch-in (Multi)")
+SINGLE_BATTLE_TEST("Sticky Web raises Speed by 1 for Contrary mon on switch-in (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -508,7 +508,7 @@ SINGLE_BATTLE_TEST("Sticky Web raises Speed by 1 for Contrary mon on switch-in (
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI sees Contrary-effected moves correctly in MoveEffectInPlus instead of as a neutral effect (Multi)")
+AI_SINGLE_BATTLE_TEST("AI sees Contrary-effected moves correctly in MoveEffectInPlus instead of as a neutral effect (Traits)")
 {
     GIVEN{
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_OMNISCIENT);
@@ -535,5 +535,5 @@ AI_SINGLE_BATTLE_TEST("AI sees Contrary-effected moves correctly in MoveEffectIn
     }
 }
 
-TO_DO_BATTLE_TEST("Contrary does not invert stat changes that have been Baton-passed (Multi)")
+TO_DO_BATTLE_TEST("Contrary does not invert stat changes that have been Baton-passed (Traits)")
 #endif

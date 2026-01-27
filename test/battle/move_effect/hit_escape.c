@@ -209,7 +209,7 @@ SINGLE_BATTLE_TEST("Hit Escape: U-turn will fail to switch if the user faints")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Hit Escape: U-turn does not switch the user out if Wimp Out activates (Multi)")
+SINGLE_BATTLE_TEST("Hit Escape: U-turn does not switch the user out if Wimp Out activates (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -226,7 +226,7 @@ SINGLE_BATTLE_TEST("Hit Escape: U-turn does not switch the user out if Wimp Out 
     }
 }
 
-SINGLE_BATTLE_TEST("Hit Escape: U-turn switches the user out if Wimp Out fails to activate (Multi)")
+SINGLE_BATTLE_TEST("Hit Escape: U-turn switches the user out if Wimp Out fails to activate (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -242,7 +242,7 @@ SINGLE_BATTLE_TEST("Hit Escape: U-turn switches the user out if Wimp Out fails t
     }
 }
 
-SINGLE_BATTLE_TEST("Hit Escape: U-turn switches the user out after Ice Face activates (Multi)")
+SINGLE_BATTLE_TEST("Hit Escape: U-turn switches the user out after Ice Face activates (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveCategory(MOVE_U_TURN) == DAMAGE_CATEGORY_PHYSICAL);
@@ -260,7 +260,7 @@ SINGLE_BATTLE_TEST("Hit Escape: U-turn switches the user out after Ice Face acti
     }
 }
 
-SINGLE_BATTLE_TEST("Hit Escape: Held items are consumed immediately after a mon switched in by U-turn: player side (Multi)")
+SINGLE_BATTLE_TEST("Hit Escape: Held items are consumed immediately after a mon switched in by U-turn: player side (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_TAPU_KOKO) { Ability(ABILITY_ELECTRIC_SURGE); };
@@ -282,7 +282,7 @@ SINGLE_BATTLE_TEST("Hit Escape: Held items are consumed immediately after a mon 
     }
 }
 
-SINGLE_BATTLE_TEST("Hit Escape: Held items are consumed immediately after a mon switched in by U-turn: opposing side (Multi)")
+SINGLE_BATTLE_TEST("Hit Escape: Held items are consumed immediately after a mon switched in by U-turn: opposing side (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_TAPU_KOKO) { Ability(ABILITY_ELECTRIC_SURGE); };
@@ -304,7 +304,7 @@ SINGLE_BATTLE_TEST("Hit Escape: Held items are consumed immediately after a mon 
     }
 }
 
-SINGLE_BATTLE_TEST("Hit Escape: Electric Seed boost is received by the right Pokémon after U-turn and Intimidate (Multi)")
+SINGLE_BATTLE_TEST("Hit Escape: Electric Seed boost is received by the right Pokémon after U-turn and Intimidate (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_TAPU_KOKO) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_ELECTRIC_SURGE); };
@@ -325,7 +325,7 @@ SINGLE_BATTLE_TEST("Hit Escape: Electric Seed boost is received by the right Pok
     }
 }
 
-SINGLE_BATTLE_TEST("Hit Escape: U-turn triggers before Eject Pack (Multi)")
+SINGLE_BATTLE_TEST("Hit Escape: U-turn triggers before Eject Pack (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_EJECT_PACK); };

@@ -445,7 +445,7 @@ DOUBLE_BATTLE_TEST("Intimidate will not miss timing for competitive")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Intimidate (opponent) lowers player's attack after switch out (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Intimidate (opponent) lowers player's attack after switch out (Traits)", s16 damage)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_INTIMIDATE; }
@@ -470,7 +470,7 @@ SINGLE_BATTLE_TEST("Intimidate (opponent) lowers player's attack after switch ou
     }
 }
 
-SINGLE_BATTLE_TEST("Intimidate (opponent) lowers player's attack after KO (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Intimidate (opponent) lowers player's attack after KO (Traits)", s16 damage)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_INTIMIDATE; }
@@ -496,7 +496,7 @@ SINGLE_BATTLE_TEST("Intimidate (opponent) lowers player's attack after KO (Multi
     }
 }
 
-DOUBLE_BATTLE_TEST("Intimidate doesn't activate on an empty field in a double battle (Multi)")
+DOUBLE_BATTLE_TEST("Intimidate doesn't activate on an empty field in a double battle (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_EXPLOSION) == EFFECT_EXPLOSION);
@@ -543,7 +543,7 @@ DOUBLE_BATTLE_TEST("Intimidate doesn't activate on an empty field in a double ba
     }
 }
 
-SINGLE_BATTLE_TEST("Intimidate and Eject Button don't force the opponent to Attack (Multi)")
+SINGLE_BATTLE_TEST("Intimidate and Eject Button don't force the opponent to Attack (Traits)")
 {
     GIVEN {
         ASSUME(gItemsInfo[ITEM_EJECT_BUTTON].holdEffect == HOLD_EFFECT_EJECT_BUTTON);
@@ -570,7 +570,7 @@ SINGLE_BATTLE_TEST("Intimidate and Eject Button don't force the opponent to Atta
     }
 }
 
-DOUBLE_BATTLE_TEST("Intimidate activates on an empty slot (Multi)")
+DOUBLE_BATTLE_TEST("Intimidate activates on an empty slot (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -607,7 +607,7 @@ DOUBLE_BATTLE_TEST("Intimidate activates on an empty slot (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Intimidate activates immediately after the mon was switched in as long as one opposing mon is alive (Multi)")
+DOUBLE_BATTLE_TEST("Intimidate activates immediately after the mon was switched in as long as one opposing mon is alive (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_TAPU_KOKO) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_ELECTRIC_SURGE); };
@@ -630,7 +630,7 @@ DOUBLE_BATTLE_TEST("Intimidate activates immediately after the mon was switched 
     }
 }
 
-SINGLE_BATTLE_TEST("Intimidate can not further lower opponents Atk stat if it is at minimum stages (Multi)")
+SINGLE_BATTLE_TEST("Intimidate can not further lower opponents Atk stat if it is at minimum stages (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -656,7 +656,7 @@ SINGLE_BATTLE_TEST("Intimidate can not further lower opponents Atk stat if it is
     }
 }
 
-DOUBLE_BATTLE_TEST("Intimidate is not going to trigger if a mon switches out through u-turn and the opposing field is empty (Multi)")
+DOUBLE_BATTLE_TEST("Intimidate is not going to trigger if a mon switches out through u-turn and the opposing field is empty (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WYNAUT);
@@ -686,7 +686,7 @@ DOUBLE_BATTLE_TEST("Intimidate is not going to trigger if a mon switches out thr
     }
 }
 
-DOUBLE_BATTLE_TEST("Intimidate will correctly decrease the attack of the second mon after Protosynthesis activated (Multi)")
+DOUBLE_BATTLE_TEST("Intimidate will correctly decrease the attack of the second mon after Protosynthesis activated (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_EJECT_PACK); }
@@ -711,7 +711,7 @@ DOUBLE_BATTLE_TEST("Intimidate will correctly decrease the attack of the second 
     }
 }
 
-SINGLE_BATTLE_TEST("Intimidate does not lose timing after mega evolution and switch out by a hit escape move (Multi)")
+SINGLE_BATTLE_TEST("Intimidate does not lose timing after mega evolution and switch out by a hit escape move (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_U_TURN) == EFFECT_HIT_ESCAPE);
@@ -726,7 +726,7 @@ SINGLE_BATTLE_TEST("Intimidate does not lose timing after mega evolution and swi
     }
 }
 
-DOUBLE_BATTLE_TEST("Intimidate drop down both opposing atk before eject pack has the chance to activate (Multi)")
+DOUBLE_BATTLE_TEST("Intimidate drop down both opposing atk before eject pack has the chance to activate (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_EJECT_PACK); }
@@ -748,7 +748,7 @@ DOUBLE_BATTLE_TEST("Intimidate drop down both opposing atk before eject pack has
     }
 }
 
-DOUBLE_BATTLE_TEST("Intimidate will not miss timing for competitive (Multi)")
+DOUBLE_BATTLE_TEST("Intimidate will not miss timing for competitive (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_EJECT_PACK); }

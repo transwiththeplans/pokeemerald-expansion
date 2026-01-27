@@ -20,7 +20,7 @@ SINGLE_BATTLE_TEST("Speed Boost gradually boosts Speed")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Speed Boost gradually boosts Speed (Multi)")
+SINGLE_BATTLE_TEST("Speed Boost gradually boosts Speed (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_TORCHIC) { Ability(ABILITY_BLAZE); Innates(ABILITY_SPEED_BOOST); Speed(99); }

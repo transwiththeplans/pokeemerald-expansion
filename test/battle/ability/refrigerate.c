@@ -149,7 +149,7 @@ TO_DO_BATTLE_TEST("(DYNAMAX) Refrigerate turns Max Strike into Max Hailstorm whe
 
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Refrigerate turns a Normal-type move into a Ice-type move (Multi)")
+SINGLE_BATTLE_TEST("Refrigerate turns a Normal-type move into a Ice-type move (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_MEGANIUM);
@@ -162,7 +162,7 @@ SINGLE_BATTLE_TEST("Refrigerate turns a Normal-type move into a Ice-type move (M
     }
 }
 
-SINGLE_BATTLE_TEST("Refrigerate boosts power of affected moves by 20% (Gen7+) or 30% (Gen1-6) (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Refrigerate boosts power of affected moves by 20% (Gen7+) or 30% (Gen1-6) (Traits)", s16 damage)
 {
     enum Ability ability;
     u32 genConfig;
@@ -187,7 +187,7 @@ SINGLE_BATTLE_TEST("Refrigerate boosts power of affected moves by 20% (Gen7+) or
     }
 }
 
-SINGLE_BATTLE_TEST("Refrigerate doesn't affect Weather Ball's type (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Refrigerate doesn't affect Weather Ball's type (Traits)", s16 damage)
 {
     u16 move;
     enum Ability ability;
@@ -216,7 +216,7 @@ SINGLE_BATTLE_TEST("Refrigerate doesn't affect Weather Ball's type (Multi)", s16
     }
 }
 
-SINGLE_BATTLE_TEST("Refrigerate doesn't affect Natural Gift's type (Multi)")
+SINGLE_BATTLE_TEST("Refrigerate doesn't affect Natural Gift's type (Traits)")
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_SNOW_WARNING; }
@@ -235,7 +235,7 @@ SINGLE_BATTLE_TEST("Refrigerate doesn't affect Natural Gift's type (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Refrigerate doesn't affect Judgment / Techno Blast / Multi-Attack's type (Multi)")
+SINGLE_BATTLE_TEST("Refrigerate doesn't affect Judgment / Techno Blast / Multi-Attack's type (Traits)")
 {
     u16 move, item;
     PARAMETRIZE { move = MOVE_JUDGMENT; item = ITEM_ZAP_PLATE; }
@@ -262,7 +262,7 @@ SINGLE_BATTLE_TEST("Refrigerate doesn't affect Judgment / Techno Blast / Multi-A
     }
 }
 
-SINGLE_BATTLE_TEST("Refrigerate doesn't affect Hidden Power's type (Multi)")
+SINGLE_BATTLE_TEST("Refrigerate doesn't affect Hidden Power's type (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_HIDDEN_POWER) == EFFECT_HIDDEN_POWER);
@@ -278,14 +278,14 @@ SINGLE_BATTLE_TEST("Refrigerate doesn't affect Hidden Power's type (Multi)")
     }
 }
 
-TO_DO_BATTLE_TEST("Refrigerate doesn't override Electrify (Gen7+) (Multi)"); // No mon with Refrigerate exists in Gen8+, but probably behaves similar to Pixilate, which does.
-TO_DO_BATTLE_TEST("Refrigerate doesn't override Ion Deluge (Gen7+) (Multi)"); // Ion Deluge doesn't exist in Gen 8+, but we probably could assume it behaves similar to under Electrify. TODO: Test by hacking SV.
-TO_DO_BATTLE_TEST("Refrigerate overrides Electrify (Gen6) (Multi)")
-TO_DO_BATTLE_TEST("Refrigerate overrides Ion Deluge (Gen6) (Multi)")
-TO_DO_BATTLE_TEST("Refrigerate doesn't affect Tera Starstorm's type (Multi)");
-TO_DO_BATTLE_TEST("Refrigerate doesn't affect Max Strike's type (Multi)");
-TO_DO_BATTLE_TEST("Refrigerate doesn't affect Terrain Pulse's type (Multi)");
-TO_DO_BATTLE_TEST("Refrigerate doesn't affect damaging Z-Move types (Multi)");
-TO_DO_BATTLE_TEST("(DYNAMAX) Refrigerate turns Max Strike into Max Hailstorm when not used by Gigantamax Lapras (Multi)");
-//TO_DO_BATTLE_TEST("(DYNAMAX) Refrigerate doesn't turn Max Strike into Max Hailstorm when used by Gigantamax Lapras, instead becoming G-Max Resonance (Multi)"); // Marked in Bulbapedia as "needs research", so this assumes that it behaves like Pixilate.
+TO_DO_BATTLE_TEST("Refrigerate doesn't override Electrify (Gen7+) (Traits)"); // No mon with Refrigerate exists in Gen8+, but probably behaves similar to Pixilate, which does.
+TO_DO_BATTLE_TEST("Refrigerate doesn't override Ion Deluge (Gen7+) (Traits)"); // Ion Deluge doesn't exist in Gen 8+, but we probably could assume it behaves similar to under Electrify. TODO: Test by hacking SV.
+TO_DO_BATTLE_TEST("Refrigerate overrides Electrify (Gen6) (Traits)")
+TO_DO_BATTLE_TEST("Refrigerate overrides Ion Deluge (Gen6) (Traits)")
+TO_DO_BATTLE_TEST("Refrigerate doesn't affect Tera Starstorm's type (Traits)");
+TO_DO_BATTLE_TEST("Refrigerate doesn't affect Max Strike's type (Traits)");
+TO_DO_BATTLE_TEST("Refrigerate doesn't affect Terrain Pulse's type (Traits)");
+TO_DO_BATTLE_TEST("Refrigerate doesn't affect damaging Z-Move types (Traits)");
+TO_DO_BATTLE_TEST("(DYNAMAX) Refrigerate turns Max Strike into Max Hailstorm when not used by Gigantamax Lapras (Traits)");
+//TO_DO_BATTLE_TEST("(DYNAMAX) Refrigerate doesn't turn Max Strike into Max Hailstorm when used by Gigantamax Lapras, instead becoming G-Max Resonance (Traits)"); // Marked in Bulbapedia as "needs research", so this assumes that it behaves like Pixilate.
 #endif

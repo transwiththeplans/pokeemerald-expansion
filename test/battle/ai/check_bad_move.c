@@ -51,7 +51,7 @@ AI_DOUBLE_BATTLE_TEST("AI will not try to lower opposing stats if target is prot
 
 
 #if MAX_MON_TRAITS > 1
-AI_SINGLE_BATTLE_TEST("AI will not try to lower opposing stats if target is protected by it's ability (Multi)")
+AI_SINGLE_BATTLE_TEST("AI will not try to lower opposing stats if target is protected by it's ability (Traits)")
 {
     enum Ability ability;
     u32 species, move;
@@ -75,7 +75,7 @@ AI_SINGLE_BATTLE_TEST("AI will not try to lower opposing stats if target is prot
 }
 
 
-AI_DOUBLE_BATTLE_TEST("AI will not try to lower opposing stats if target is protected by Flower Veil (Multi)")
+AI_DOUBLE_BATTLE_TEST("AI will not try to lower opposing stats if target is protected by Flower Veil (Traits)")
 {
     u16 move;
 

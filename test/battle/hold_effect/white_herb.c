@@ -236,7 +236,7 @@ DOUBLE_BATTLE_TEST("White Herb is correctly displayed")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("White Herb restores stats after Attack was lowered by Intimidate in singles (Multi)")
+SINGLE_BATTLE_TEST("White Herb restores stats after Attack was lowered by Intimidate in singles (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_WHITE_HERB); }
@@ -254,7 +254,7 @@ SINGLE_BATTLE_TEST("White Herb restores stats after Attack was lowered by Intimi
     }
 }
 
-DOUBLE_BATTLE_TEST("White Herb restores stats after Attack was lowered by Intimidate in doubles (Multi)")
+DOUBLE_BATTLE_TEST("White Herb restores stats after Attack was lowered by Intimidate in doubles (Traits)")
 {
     GIVEN {
         OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_WHITE_HERB); }
@@ -281,7 +281,7 @@ DOUBLE_BATTLE_TEST("White Herb restores stats after Attack was lowered by Intimi
     }
 }
 
-SINGLE_BATTLE_TEST("White Herb restores stats after Attack was lowered by Intimidate while switching in (Multi)")
+SINGLE_BATTLE_TEST("White Herb restores stats after Attack was lowered by Intimidate while switching in (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_WHITE_HERB); }
@@ -306,7 +306,7 @@ SINGLE_BATTLE_TEST("White Herb restores stats after Attack was lowered by Intimi
     }
 }
 
-SINGLE_BATTLE_TEST("White Herb restores stats after all hits of a multi hit move happened (Multi)")
+SINGLE_BATTLE_TEST("White Herb restores stats after all hits of a multi hit move happened (Traits)")
 {
     u16 species;
     enum Ability ability;
@@ -336,7 +336,7 @@ SINGLE_BATTLE_TEST("White Herb restores stats after all hits of a multi hit move
     }
 }
 
-SINGLE_BATTLE_TEST("White Herb wont have time to activate if it is knocked off or stolen by Thief (Multi)")
+SINGLE_BATTLE_TEST("White Herb wont have time to activate if it is knocked off or stolen by Thief (Traits)")
 {
     u16 move;
 
@@ -371,7 +371,7 @@ SINGLE_BATTLE_TEST("White Herb wont have time to activate if it is knocked off o
     }
 }
 
-SINGLE_BATTLE_TEST("White Herb wont have time to activate if Magician steals it (Multi)")
+SINGLE_BATTLE_TEST("White Herb wont have time to activate if Magician steals it (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_SLUGMA) {  Ability(ABILITY_FLAME_BODY); Innates(ABILITY_WEAK_ARMOR); Item(ITEM_WHITE_HERB); }
@@ -396,7 +396,7 @@ SINGLE_BATTLE_TEST("White Herb wont have time to activate if Magician steals it 
     }
 }
 
-SINGLE_BATTLE_TEST("White Herb has correct interactions with Intimidate triggered Defiant and Competitive (Multi)")
+SINGLE_BATTLE_TEST("White Herb has correct interactions with Intimidate triggered Defiant and Competitive (Traits)")
 {
     u16 species;
     enum Ability ability;

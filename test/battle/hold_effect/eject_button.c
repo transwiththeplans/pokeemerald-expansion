@@ -252,7 +252,7 @@ SINGLE_BATTLE_TEST("Eject Button activates after Wandring Spirit")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Eject Button is not activated by a Sheer Force boosted move (Multi)")
+SINGLE_BATTLE_TEST("Eject Button is not activated by a Sheer Force boosted move (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_NIDOKING) { Ability(ABILITY_POISON_POINT); Innates(ABILITY_SHEER_FORCE); }
@@ -273,7 +273,7 @@ SINGLE_BATTLE_TEST("Eject Button is not activated by a Sheer Force boosted move 
     }
 }
 
-SINGLE_BATTLE_TEST("Eject Button is not blocked by trapping abilities or moves (Multi)")
+SINGLE_BATTLE_TEST("Eject Button is not blocked by trapping abilities or moves (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_DUGTRIO) { Ability(ABILITY_SAND_VEIL); Innates(ABILITY_ARENA_TRAP); }
@@ -292,7 +292,7 @@ SINGLE_BATTLE_TEST("Eject Button is not blocked by trapping abilities or moves (
     }
 }
 
-SINGLE_BATTLE_TEST("Eject Button is not triggered after given to player by Picketpocket (Multi)")
+SINGLE_BATTLE_TEST("Eject Button is not triggered after given to player by Picketpocket (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_REGIELEKI) { Item(ITEM_EJECT_BUTTON); }
@@ -312,7 +312,7 @@ SINGLE_BATTLE_TEST("Eject Button is not triggered after given to player by Picke
     }
 }
 
-SINGLE_BATTLE_TEST("Eject Button is activated before Emergency Exit (Multi)")
+SINGLE_BATTLE_TEST("Eject Button is activated before Emergency Exit (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_LATIAS);
@@ -330,7 +330,7 @@ SINGLE_BATTLE_TEST("Eject Button is activated before Emergency Exit (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Eject Button activation will not trigger an attack from the incoming mon (Multi)")
+DOUBLE_BATTLE_TEST("Eject Button activation will not trigger an attack from the incoming mon (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_TATSUGIRI) { Speed(10); Ability(ABILITY_COMMANDER); }
@@ -354,7 +354,7 @@ DOUBLE_BATTLE_TEST("Eject Button activation will not trigger an attack from the 
     }
 }
 
-SINGLE_BATTLE_TEST("Eject Button activates after Wandring Spirit (Multi)")
+SINGLE_BATTLE_TEST("Eject Button activates after Wandring Spirit (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_EKANS) { Ability(ABILITY_INTIMIDATE); }

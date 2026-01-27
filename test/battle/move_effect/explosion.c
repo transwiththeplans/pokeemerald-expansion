@@ -164,7 +164,7 @@ SINGLE_BATTLE_TEST("Explosion is blocked by Ability Damp")
 }
 
 #if MAX_MON_TRAITS > 1
-DOUBLE_BATTLE_TEST("Explosion boosted by Galvanize is correctly blocked by Volt Absorb (Multi)")
+DOUBLE_BATTLE_TEST("Explosion boosted by Galvanize is correctly blocked by Volt Absorb (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_GEODUDE_ALOLA) { Ability(ABILITY_MAGNET_PULL); Innates(ABILITY_GALVANIZE); }

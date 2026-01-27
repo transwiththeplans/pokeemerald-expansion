@@ -75,7 +75,7 @@ SINGLE_BATTLE_TEST("Synchronize will mirror back static activation")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Synchronize will mirror back non volatile status back at opposing mon (Multi)")
+SINGLE_BATTLE_TEST("Synchronize will mirror back non volatile status back at opposing mon (Traits)")
 {
 
     GIVEN {
@@ -96,7 +96,7 @@ SINGLE_BATTLE_TEST("Synchronize will mirror back non volatile status back at opp
     }
 }
 
-SINGLE_BATTLE_TEST("Synchronize will still show up the ability pop up even if it fails (Multi)")
+SINGLE_BATTLE_TEST("Synchronize will still show up the ability pop up even if it fails (Traits)")
 {
     GIVEN {
         WITH_CONFIG(CONFIG_PARALYZE_ELECTRIC, GEN_6);
@@ -119,7 +119,7 @@ SINGLE_BATTLE_TEST("Synchronize will still show up the ability pop up even if it
 }
 
 
-SINGLE_BATTLE_TEST("Synchronize will mirror back static activation (Multi)")
+SINGLE_BATTLE_TEST("Synchronize will mirror back static activation (Traits)")
 {
     GIVEN {
         ASSUME(MoveMakesContact(MOVE_TACKLE));

@@ -82,7 +82,7 @@ DOUBLE_BATTLE_TEST("Frisk triggers for opponent in a Double Battle after switchi
 }
 
 #if MAX_MON_TRAITS > 1
-DOUBLE_BATTLE_TEST("Frisk does not trigger when Pokémon hold no items (Multi)")
+DOUBLE_BATTLE_TEST("Frisk does not trigger when Pokémon hold no items (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_FURRET) { Ability(ABILITY_RUN_AWAY); Innates(ABILITY_FRISK); };
@@ -101,7 +101,7 @@ DOUBLE_BATTLE_TEST("Frisk does not trigger when Pokémon hold no items (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Frisk triggers in a Single Battle (Multi)")
+SINGLE_BATTLE_TEST("Frisk triggers in a Single Battle (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_FURRET) { Ability(ABILITY_RUN_AWAY); Innates(ABILITY_FRISK); Item(ITEM_POTION); };
@@ -116,7 +116,7 @@ SINGLE_BATTLE_TEST("Frisk triggers in a Single Battle (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Frisk triggers for player in a Double Battle after switching-in after fainting (Multi)")
+DOUBLE_BATTLE_TEST("Frisk triggers for player in a Double Battle after switching-in after fainting (Traits)")
 {
     struct BattlePokemon *target = NULL;
     PARAMETRIZE { target = playerLeft; }
@@ -139,7 +139,7 @@ DOUBLE_BATTLE_TEST("Frisk triggers for player in a Double Battle after switching
     }
 }
 
-DOUBLE_BATTLE_TEST("Frisk triggers for opponent in a Double Battle after switching-in after fainting (Multi)")
+DOUBLE_BATTLE_TEST("Frisk triggers for opponent in a Double Battle after switching-in after fainting (Traits)")
 {
     struct BattlePokemon *target = NULL;
     PARAMETRIZE { target = opponentLeft; }

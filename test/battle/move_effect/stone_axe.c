@@ -94,7 +94,7 @@ SINGLE_BATTLE_TEST("Stone Axe fails to set up hazards if user faints")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Stone Axe sets up hazards after any ability activation (Multi)")
+SINGLE_BATTLE_TEST("Stone Axe sets up hazards after any ability activation (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);

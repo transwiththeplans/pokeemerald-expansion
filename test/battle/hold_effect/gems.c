@@ -119,7 +119,7 @@ SINGLE_BATTLE_TEST("Gem is consumed if the move type is changed")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Gem is consumed if the move type is changed (Multi)")
+SINGLE_BATTLE_TEST("Gem is consumed if the move type is changed (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_DELCATTY) { Ability(ABILITY_CUTE_CHARM); Innates(ABILITY_NORMALIZE); Item(ITEM_NORMAL_GEM); };

@@ -219,7 +219,7 @@ SINGLE_BATTLE_TEST("Sticky Syrup is removed when the user faints")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Syrup Bomb is prevented by Bulletproof (Multi)")
+SINGLE_BATTLE_TEST("Syrup Bomb is prevented by Bulletproof (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -236,7 +236,7 @@ SINGLE_BATTLE_TEST("Syrup Bomb is prevented by Bulletproof (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Sticky Syrup speed reduction is prevented by Clear Body, White Smoke or Full Metal Body (Multi)")
+SINGLE_BATTLE_TEST("Sticky Syrup speed reduction is prevented by Clear Body, White Smoke or Full Metal Body (Traits)")
 {
     u32 species;
     enum Ability ability;

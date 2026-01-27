@@ -25,7 +25,7 @@ SINGLE_BATTLE_TEST("Neuroforce increases the strength of super-effective moves b
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Neuroforce increases the strength of super-effective moves by 25% (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Neuroforce increases the strength of super-effective moves by 25% (Traits)", s16 damage)
 {
     u32 move;
     enum Ability ability;

@@ -842,7 +842,7 @@ SINGLE_BATTLE_TEST("(TERA) All type indicators function correctly - Opponent")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("(TERA) Terastallization's 60 BP floor occurs after Technician (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("(TERA) Terastallization's 60 BP floor occurs after Technician (Traits)", s16 damage)
 {
     bool32 tera;
     PARAMETRIZE { tera = GIMMICK_NONE; }
@@ -863,7 +863,7 @@ SINGLE_BATTLE_TEST("(TERA) Terastallization's 60 BP floor occurs after Technicia
     }
 }
 
-SINGLE_BATTLE_TEST("(TERA) Terastallization's 60 BP floor occurs after Technician (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("(TERA) Terastallization's 60 BP floor occurs after Technician (Traits)", s16 damage)
 {
     bool32 tera;
     PARAMETRIZE { tera = GIMMICK_NONE; }
@@ -883,7 +883,7 @@ SINGLE_BATTLE_TEST("(TERA) Terastallization's 60 BP floor occurs after Technicia
     }
 }
 
-SINGLE_BATTLE_TEST("(TERA) Protean/Libero cannot change the type of a Terastallized Pokemon (Multi)")
+SINGLE_BATTLE_TEST("(TERA) Protean/Libero cannot change the type of a Terastallized Pokemon (Traits)")
 {
     u32 ability, species;
     PARAMETRIZE { ability = ABILITY_PROTEAN; species = SPECIES_GRENINJA; }
@@ -902,7 +902,7 @@ SINGLE_BATTLE_TEST("(TERA) Protean/Libero cannot change the type of a Terastalli
     }
 }
 
-SINGLE_BATTLE_TEST("(TERA) Stellar type's one-time boost factors in dynamically-typed moves (Multi)")
+SINGLE_BATTLE_TEST("(TERA) Stellar type's one-time boost factors in dynamically-typed moves (Traits)")
 {
     s16 damage[4];
     GIVEN {

@@ -137,7 +137,7 @@ SINGLE_BATTLE_TEST("Purifying Salt protects from secondary effect burn")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Purifying Salt halves damage from Ghost-type moves (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Purifying Salt halves damage from Ghost-type moves (Traits)", s16 damage)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_STURDY; }
@@ -155,7 +155,7 @@ SINGLE_BATTLE_TEST("Purifying Salt halves damage from Ghost-type moves (Multi)",
     }
 }
 
-SINGLE_BATTLE_TEST("Purifying Salt halves damage from dynamic Ghost-type moves (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Purifying Salt halves damage from dynamic Ghost-type moves (Traits)", s16 damage)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_STURDY; }
@@ -173,7 +173,7 @@ SINGLE_BATTLE_TEST("Purifying Salt halves damage from dynamic Ghost-type moves (
     }
 }
 
-SINGLE_BATTLE_TEST("Purifying Salt makes Rest fail (Multi)")
+SINGLE_BATTLE_TEST("Purifying Salt makes Rest fail (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_GARGANACL) { Ability(ABILITY_CLEAR_BODY); Innates(ABILITY_PURIFYING_SALT); HP(1); MaxHP(100);}
@@ -187,7 +187,7 @@ SINGLE_BATTLE_TEST("Purifying Salt makes Rest fail (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Purifying Salt grants immunity to status effects (Multi)")
+SINGLE_BATTLE_TEST("Purifying Salt grants immunity to status effects (Traits)")
 {
     u32 move;
     u16 status;
@@ -225,7 +225,7 @@ SINGLE_BATTLE_TEST("Purifying Salt grants immunity to status effects (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Purifying Salt user can't be poisoned by Toxic Spikes (Multi)")
+SINGLE_BATTLE_TEST("Purifying Salt user can't be poisoned by Toxic Spikes (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -241,7 +241,7 @@ SINGLE_BATTLE_TEST("Purifying Salt user can't be poisoned by Toxic Spikes (Multi
     }
 }
 
-SINGLE_BATTLE_TEST("Purifying Salt doesn't prevent Pokémon from being poisoned by Toxic Spikes on switch-in if forced in by phazing with Mold Breaker (Multi)")
+SINGLE_BATTLE_TEST("Purifying Salt doesn't prevent Pokémon from being poisoned by Toxic Spikes on switch-in if forced in by phazing with Mold Breaker (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_DRAGON_TAIL) == EFFECT_HIT_SWITCH_TARGET);
@@ -258,7 +258,7 @@ SINGLE_BATTLE_TEST("Purifying Salt doesn't prevent Pokémon from being poisoned 
     }
 }
 
-SINGLE_BATTLE_TEST("Purifying Salt protects from secondary effect burn (Multi)")
+SINGLE_BATTLE_TEST("Purifying Salt protects from secondary effect burn (Traits)")
 {
     GIVEN {
         ASSUME(MoveHasAdditionalEffect(MOVE_EMBER, MOVE_EFFECT_BURN));

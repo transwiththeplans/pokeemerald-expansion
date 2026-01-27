@@ -21,7 +21,7 @@ SINGLE_BATTLE_TEST("Liquid voice turns a sound move into a Water-type move")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Liquid voice turns a sound move into a Water-type move (Multi)")
+SINGLE_BATTLE_TEST("Liquid voice turns a sound move into a Water-type move (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_TYPHLOSION);

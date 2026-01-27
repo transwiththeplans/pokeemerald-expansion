@@ -33,7 +33,7 @@ SINGLE_BATTLE_TEST("Steelworker increases Steel-type move damage", s16 damage)
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Steelworker increases Steel-type move damage (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Steelworker increases Steel-type move damage (Traits)", s16 damage)
 {
     u32 move;
     enum Ability ability;

@@ -774,7 +774,7 @@ DOUBLE_BATTLE_TEST("Wide Guard is still activate even if user is switched out du
 }
 
 #if MAX_MON_TRAITS > 1
-DOUBLE_BATTLE_TEST("Protect is not transferred to a mon that is switched in due to Eject Button (Multi)")
+DOUBLE_BATTLE_TEST("Protect is not transferred to a mon that is switched in due to Eject Button (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_URSHIFU) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_UNSEEN_FIST); };

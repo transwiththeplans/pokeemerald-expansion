@@ -50,7 +50,7 @@ SINGLE_BATTLE_TEST("Chlorophyll doesn't double speed if they have an Utility Umb
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Chlorophyll doubles speed if it's sunny (Multi)")
+SINGLE_BATTLE_TEST("Chlorophyll doubles speed if it's sunny (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_VENUSAUR) { Ability(ABILITY_OVERGROW); Innates(ABILITY_CHLOROPHYLL); Speed(100); }
@@ -66,7 +66,7 @@ SINGLE_BATTLE_TEST("Chlorophyll doubles speed if it's sunny (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Chlorophyll doesn't double speed if Cloud Nine/Air Lock is on the field (Multi)")
+SINGLE_BATTLE_TEST("Chlorophyll doesn't double speed if Cloud Nine/Air Lock is on the field (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_VENUSAUR) { Ability(ABILITY_OVERGROW); Innates(ABILITY_CHLOROPHYLL); Speed(100); }
@@ -82,7 +82,7 @@ SINGLE_BATTLE_TEST("Chlorophyll doesn't double speed if Cloud Nine/Air Lock is o
     }
 }
 
-SINGLE_BATTLE_TEST("Chlorophyll doesn't double speed if they have an Utility Umbrella (Multi)")
+SINGLE_BATTLE_TEST("Chlorophyll doesn't double speed if they have an Utility Umbrella (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_VENUSAUR) { Ability(ABILITY_OVERGROW); Innates(ABILITY_CHLOROPHYLL); Speed(100); Item(ITEM_UTILITY_UMBRELLA); }

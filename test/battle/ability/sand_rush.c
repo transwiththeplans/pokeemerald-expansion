@@ -51,7 +51,7 @@ SINGLE_BATTLE_TEST("Sand Rush doesn't double speed if Cloud Nine/Air Lock is on 
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Sand Rush prevents damage from sandstorm (Multi)")
+SINGLE_BATTLE_TEST("Sand Rush prevents damage from sandstorm (Traits)")
 {
     enum Type type1 = GetSpeciesType(SPECIES_STOUTLAND, 0);
     enum Type type2 = GetSpeciesType(SPECIES_STOUTLAND, 1);
@@ -68,7 +68,7 @@ SINGLE_BATTLE_TEST("Sand Rush prevents damage from sandstorm (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Sand Rush doubles speed from sandstorm (Multi)")
+SINGLE_BATTLE_TEST("Sand Rush doubles speed from sandstorm (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_SANDSLASH) { Ability(ABILITY_SAND_VEIL); Innates(ABILITY_SAND_RUSH); Speed(100); }
@@ -84,7 +84,7 @@ SINGLE_BATTLE_TEST("Sand Rush doubles speed from sandstorm (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Sand Rush doesn't double speed if Cloud Nine/Air Lock is on the field (Multi)")
+SINGLE_BATTLE_TEST("Sand Rush doesn't double speed if Cloud Nine/Air Lock is on the field (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_SANDSLASH) { Ability(ABILITY_SAND_VEIL); Innates(ABILITY_SAND_RUSH); Speed(100); }

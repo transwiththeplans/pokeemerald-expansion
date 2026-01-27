@@ -50,7 +50,7 @@ SINGLE_BATTLE_TEST("Flame Body triggers 30% of the time")
 
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Flame Body inflicts burn on contact (Multi)")
+SINGLE_BATTLE_TEST("Flame Body inflicts burn on contact (Traits)")
 {
     u32 move;
     PARAMETRIZE { move = MOVE_SCRATCH; }
@@ -79,7 +79,7 @@ SINGLE_BATTLE_TEST("Flame Body inflicts burn on contact (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Flame Body triggers 30% of the time (Multi)")
+SINGLE_BATTLE_TEST("Flame Body triggers 30% of the time (Traits)")
 {
     PASSES_RANDOMLY(3, 10, RNG_FLAME_BODY);
     GIVEN {

@@ -64,7 +64,7 @@ DOUBLE_BATTLE_TEST("Aura Break inverts Dark Aura's effect")
 }
 
 #if MAX_MON_TRAITS > 1
-DOUBLE_BATTLE_TEST("Aura Break inverts Fairy Aura's effect (Multi)")
+DOUBLE_BATTLE_TEST("Aura Break inverts Fairy Aura's effect (Traits)")
 {
     s16 damage[3];
 
@@ -95,7 +95,7 @@ DOUBLE_BATTLE_TEST("Aura Break inverts Fairy Aura's effect (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Aura Break inverts Dark Aura's effect (Multi)")
+DOUBLE_BATTLE_TEST("Aura Break inverts Dark Aura's effect (Traits)")
 {
     s16 damage[3];
 

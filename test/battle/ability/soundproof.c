@@ -20,7 +20,7 @@ SINGLE_BATTLE_TEST("Soundproof makes sound moves fail against the ability user")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Soundproof makes sound moves fail against the ability user (Multi)")
+SINGLE_BATTLE_TEST("Soundproof makes sound moves fail against the ability user (Traits)")
 {
     GIVEN {
         ASSUME(IsSoundMove(MOVE_BOOMBURST));

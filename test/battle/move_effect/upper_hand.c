@@ -175,7 +175,7 @@ SINGLE_BATTLE_TEST("Upper Hand failing will prevent Protean activation")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Upper Hand fails if the target is not using a priority move (Multi)")
+SINGLE_BATTLE_TEST("Upper Hand fails if the target is not using a priority move (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveCategory(MOVE_DRAINING_KISS) == DAMAGE_CATEGORY_SPECIAL);
@@ -194,7 +194,7 @@ SINGLE_BATTLE_TEST("Upper Hand fails if the target is not using a priority move 
     }
 }
 
-SINGLE_BATTLE_TEST("Upper Hand succeeds if the target's move is boosted in priority by an Ability (Multi)")
+SINGLE_BATTLE_TEST("Upper Hand succeeds if the target's move is boosted in priority by an Ability (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveCategory(MOVE_DRAINING_KISS) == DAMAGE_CATEGORY_SPECIAL);
@@ -212,7 +212,7 @@ SINGLE_BATTLE_TEST("Upper Hand succeeds if the target's move is boosted in prior
     }
 }
 
-SINGLE_BATTLE_TEST("Upper Hand fails if the target moves first (Multi)")
+SINGLE_BATTLE_TEST("Upper Hand fails if the target moves first (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveCategory(MOVE_DRAINING_KISS) == DAMAGE_CATEGORY_SPECIAL);
@@ -232,7 +232,7 @@ SINGLE_BATTLE_TEST("Upper Hand fails if the target moves first (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Upper Hand is boosted by Sheer Force (Multi)")
+SINGLE_BATTLE_TEST("Upper Hand is boosted by Sheer Force (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveCategory(MOVE_EXTREME_SPEED) == DAMAGE_CATEGORY_PHYSICAL);
@@ -250,7 +250,7 @@ SINGLE_BATTLE_TEST("Upper Hand is boosted by Sheer Force (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Upper Hand failing will prevent Protean activation (Multi)")
+SINGLE_BATTLE_TEST("Upper Hand failing will prevent Protean activation (Traits)")
 {
     GIVEN {
         WITH_CONFIG(CONFIG_PROTEAN_LIBERO, GEN_6);

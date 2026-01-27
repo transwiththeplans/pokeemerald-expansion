@@ -1040,7 +1040,7 @@ AI_DOUBLE_BATTLE_TEST("AI won't be confused by player's previous priority moves 
 }
 
 #if MAX_MON_TRAITS > 1
-AI_SINGLE_BATTLE_TEST("AI prefers Water Gun over Bubble if it knows that foe has Contrary (Multi)")
+AI_SINGLE_BATTLE_TEST("AI prefers Water Gun over Bubble if it knows that foe has Contrary (Traits)")
 {
     enum Ability abilityAI;
 
@@ -1061,7 +1061,7 @@ AI_SINGLE_BATTLE_TEST("AI prefers Water Gun over Bubble if it knows that foe has
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI prefers moves with better accuracy, but only if they both require the same number of hits to ko (Multi)")
+AI_SINGLE_BATTLE_TEST("AI prefers moves with better accuracy, but only if they both require the same number of hits to ko (Traits)")
 {
     u16 move1 = MOVE_NONE, move2 = MOVE_NONE, move3 = MOVE_NONE, move4 = MOVE_NONE;
     u16 hp, expectedMove, turns, expectedMove2;
@@ -1145,7 +1145,7 @@ AI_SINGLE_BATTLE_TEST("AI prefers moves with better accuracy, but only if they b
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI prefers moves which deal more damage instead of moves which are super-effective but deal less damage (Multi)")
+AI_SINGLE_BATTLE_TEST("AI prefers moves which deal more damage instead of moves which are super-effective but deal less damage (Traits)")
 {
     u8 turns = 0;
     u16 move1 = MOVE_NONE, move2 = MOVE_NONE, move3 = MOVE_NONE, move4 = MOVE_NONE;
@@ -1187,7 +1187,7 @@ AI_SINGLE_BATTLE_TEST("AI prefers moves which deal more damage instead of moves 
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI chooses the safest option to faint the target, taking into account accuracy and move effect (Multi)")
+AI_SINGLE_BATTLE_TEST("AI chooses the safest option to faint the target, taking into account accuracy and move effect (Traits)")
 {
     u16 move1 = MOVE_NONE, move2 = MOVE_NONE, move3 = MOVE_NONE, move4 = MOVE_NONE;
     u16 expectedMove, expectedMove2 = MOVE_NONE;
@@ -1225,7 +1225,7 @@ AI_SINGLE_BATTLE_TEST("AI chooses the safest option to faint the target, taking 
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI chooses the safest option to faint the target, taking into account accuracy and move effect failing (Multi)")
+AI_SINGLE_BATTLE_TEST("AI chooses the safest option to faint the target, taking into account accuracy and move effect failing (Traits)")
 {
     u16 move1 = MOVE_NONE, move2 = MOVE_NONE, move3 = MOVE_NONE, move4 = MOVE_NONE;
     u16 expectedMove, expectedMove2 = MOVE_NONE;
@@ -1255,7 +1255,7 @@ AI_SINGLE_BATTLE_TEST("AI chooses the safest option to faint the target, taking 
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI won't use Solar Beam if there is no Sun up or the user is not holding Power Herb (Multi)")
+AI_SINGLE_BATTLE_TEST("AI won't use Solar Beam if there is no Sun up or the user is not holding Power Herb (Traits)")
 {
     enum Ability abilityAtk = ABILITY_NONE;
     u16 holdItemAtk = ITEM_NONE;
@@ -1288,7 +1288,7 @@ AI_SINGLE_BATTLE_TEST("AI won't use Solar Beam if there is no Sun up or the user
     }
 }
 
-AI_SINGLE_BATTLE_TEST("First Impression is not chosen if it's blocked by certain abilities (Multi)")
+AI_SINGLE_BATTLE_TEST("First Impression is not chosen if it's blocked by certain abilities (Traits)")
 {
     u16 species;
     enum Ability ability;
@@ -1310,10 +1310,10 @@ AI_SINGLE_BATTLE_TEST("First Impression is not chosen if it's blocked by certain
 }
 
 // Prediction flags pull from natural Abilities, these tests are basically Ability only
-TO_DO_BATTLE_TEST("AI will only choose Surf 1/3 times if the opposing mon has Volt Absorb (Multi)")
-TO_DO_BATTLE_TEST("AI will choose Thunderbolt then Surf 2/3 times if the opposing mon has Volt Absorb (Multi)")
+TO_DO_BATTLE_TEST("AI will only choose Surf 1/3 times if the opposing mon has Volt Absorb (Traits)")
+TO_DO_BATTLE_TEST("AI will choose Thunderbolt then Surf 2/3 times if the opposing mon has Volt Absorb (Traits)")
 
-AI_SINGLE_BATTLE_TEST("AI will choose Scratch over Power-up Punch with Contrary (Multi)")
+AI_SINGLE_BATTLE_TEST("AI will choose Scratch over Power-up Punch with Contrary (Traits)")
 {
     enum Ability ability;
 
@@ -1339,7 +1339,7 @@ AI_SINGLE_BATTLE_TEST("AI will choose Scratch over Power-up Punch with Contrary 
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI will choose Superpower over Outrage with Contrary (Multi)")
+AI_SINGLE_BATTLE_TEST("AI will choose Superpower over Outrage with Contrary (Traits)")
 {
     enum Ability ability;
 
@@ -1365,7 +1365,7 @@ AI_SINGLE_BATTLE_TEST("AI will choose Superpower over Outrage with Contrary (Mul
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI calculates guaranteed criticals and detects critical immunity (Multi)")
+AI_SINGLE_BATTLE_TEST("AI calculates guaranteed criticals and detects critical immunity (Traits)")
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_SWIFT_SWIM; }
@@ -1388,7 +1388,7 @@ AI_SINGLE_BATTLE_TEST("AI calculates guaranteed criticals and detects critical i
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI uses a guaranteed KO move instead of the move with the highest expected damage (Multi)")
+AI_SINGLE_BATTLE_TEST("AI uses a guaranteed KO move instead of the move with the highest expected damage (Traits)")
 {
     u32 flags;
 
@@ -1418,7 +1418,7 @@ AI_SINGLE_BATTLE_TEST("AI uses a guaranteed KO move instead of the move with the
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI stays choice locked into moves in spite of the player's ability disabling them (Multi)")
+AI_SINGLE_BATTLE_TEST("AI stays choice locked into moves in spite of the player's ability disabling them (Traits)")
 {
     u32 playerMon, aiMove;
     enum Ability ability;
@@ -1456,7 +1456,7 @@ AI_SINGLE_BATTLE_TEST("AI won't boost stats against opponent with Unaware")
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI won't use status moves against opponents that would benefit (Multi)")
+AI_SINGLE_BATTLE_TEST("AI won't use status moves against opponents that would benefit (Traits)")
 {
     u32 aiMove;
     PARAMETRIZE { aiMove = MOVE_WILL_O_WISP; }
@@ -1477,7 +1477,7 @@ AI_SINGLE_BATTLE_TEST("AI won't use status moves against opponents that would be
     }
 }
 
-AI_DOUBLE_BATTLE_TEST("AI sees opposing drain ability (Multi)")
+AI_DOUBLE_BATTLE_TEST("AI sees opposing drain ability (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveType(MOVE_THUNDERBOLT) == TYPE_ELECTRIC);
@@ -1495,7 +1495,7 @@ AI_DOUBLE_BATTLE_TEST("AI sees opposing drain ability (Multi)")
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI will not set up Weather if it wont have any affect (Multi)")
+AI_SINGLE_BATTLE_TEST("AI will not set up Weather if it wont have any affect (Traits)")
 {
     enum Ability ability;
 
@@ -1515,7 +1515,7 @@ AI_SINGLE_BATTLE_TEST("AI will not set up Weather if it wont have any affect (Mu
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI won't setup if it can KO through Sturdy effect (Multi)")
+AI_SINGLE_BATTLE_TEST("AI won't setup if it can KO through Sturdy effect (Traits)")
 {
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT);

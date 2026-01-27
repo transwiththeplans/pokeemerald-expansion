@@ -136,7 +136,7 @@ SINGLE_BATTLE_TEST("Berserk activates before the hp can be restored on non multi
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Berserk activates only if the target had more than 50% of its HP (Multi)")
+SINGLE_BATTLE_TEST("Berserk activates only if the target had more than 50% of its HP (Traits)")
 {
     bool32 activates = FALSE;
     u16 maxHp = 500, hp = 0;
@@ -168,7 +168,7 @@ SINGLE_BATTLE_TEST("Berserk activates only if the target had more than 50% of it
     }
 }
 
-SINGLE_BATTLE_TEST("Berserk raises Sp.Atk by 1 (Multi)")
+SINGLE_BATTLE_TEST("Berserk raises Sp.Atk by 1 (Traits)")
 {
     u16 maxHp = 500;
     GIVEN {
@@ -187,7 +187,7 @@ SINGLE_BATTLE_TEST("Berserk raises Sp.Atk by 1 (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Berserk activates after all hits from a multi-hit move (Multi)")
+SINGLE_BATTLE_TEST("Berserk activates after all hits from a multi-hit move (Traits)")
 {
     u32 j;
     u16 maxHp = 500;
@@ -209,7 +209,7 @@ SINGLE_BATTLE_TEST("Berserk activates after all hits from a multi-hit move (Mult
     }
 }
 
-SINGLE_BATTLE_TEST("Berserk does not activate if move is boosted by Sheer Force (Multi)")
+SINGLE_BATTLE_TEST("Berserk does not activate if move is boosted by Sheer Force (Traits)")
 {
     u16 maxHp = 500;
     GIVEN {
@@ -229,7 +229,7 @@ SINGLE_BATTLE_TEST("Berserk does not activate if move is boosted by Sheer Force 
     }
 }
 
-SINGLE_BATTLE_TEST("Berserk will not activate if the last multi hit move activates a restore berry (Multi)")
+SINGLE_BATTLE_TEST("Berserk will not activate if the last multi hit move activates a restore berry (Traits)")
 {
     u32 j;
     GIVEN {
@@ -252,7 +252,7 @@ SINGLE_BATTLE_TEST("Berserk will not activate if the last multi hit move activat
     }
 }
 
-SINGLE_BATTLE_TEST("Berserk activates before the hp can be restored on non multi hit moves (Multi)")
+SINGLE_BATTLE_TEST("Berserk activates before the hp can be restored on non multi hit moves (Traits)")
 {
     u16 maxHp = 500;
     GIVEN {

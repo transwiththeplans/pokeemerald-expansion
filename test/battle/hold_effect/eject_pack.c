@@ -363,7 +363,7 @@ DOUBLE_BATTLE_TEST("Eject Pack will trigger on the fastest mon at the end of the
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Eject Pack does not activate if there are no Pokémon left to battle (Multi)")
+SINGLE_BATTLE_TEST("Eject Pack does not activate if there are no Pokémon left to battle (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_EJECT_PACK); }
@@ -380,7 +380,7 @@ SINGLE_BATTLE_TEST("Eject Pack does not activate if there are no Pokémon left t
     }
 }
 
-SINGLE_BATTLE_TEST("Eject Pack will miss timing to switch out user if Emergency Exit was activated on target (Multi)")
+SINGLE_BATTLE_TEST("Eject Pack will miss timing to switch out user if Emergency Exit was activated on target (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_EJECT_PACK); }
@@ -403,7 +403,7 @@ SINGLE_BATTLE_TEST("Eject Pack will miss timing to switch out user if Emergency 
     }
 }
 
-SINGLE_BATTLE_TEST("Eject Pack activates once intimidate mon switches in (Multi)")
+SINGLE_BATTLE_TEST("Eject Pack activates once intimidate mon switches in (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_EJECT_PACK); }
@@ -419,7 +419,7 @@ SINGLE_BATTLE_TEST("Eject Pack activates once intimidate mon switches in (Multi)
     }
 }
 
-DOUBLE_BATTLE_TEST("Eject Pack will not trigger if the conditions are not met (Multi)")
+DOUBLE_BATTLE_TEST("Eject Pack will not trigger if the conditions are not met (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_EJECT_PACK); }
@@ -436,7 +436,7 @@ DOUBLE_BATTLE_TEST("Eject Pack will not trigger if the conditions are not met (M
     }
 }
 
-DOUBLE_BATTLE_TEST("Eject Pack: Only the fastest Eject Pack will activate after an ability stat drop (Multi)")
+DOUBLE_BATTLE_TEST("Eject Pack: Only the fastest Eject Pack will activate after an ability stat drop (Traits)")
 {
     u32 speed;
     u32 species, ability;
@@ -480,7 +480,7 @@ DOUBLE_BATTLE_TEST("Eject Pack: Only the fastest Eject Pack will activate after 
     }
 }
 
-DOUBLE_BATTLE_TEST("Eject Pack: Only the fastest Eject Pack will activate after intimidate (switch in after fainting) (Multi)")
+DOUBLE_BATTLE_TEST("Eject Pack: Only the fastest Eject Pack will activate after intimidate (switch in after fainting) (Traits)")
 {
     u32 speed;
 
@@ -518,7 +518,7 @@ DOUBLE_BATTLE_TEST("Eject Pack: Only the fastest Eject Pack will activate after 
     }
 }
 
-DOUBLE_BATTLE_TEST("Eject Pack: Only the fastest Eject Pack will activate after intimidate (switch in after 2 mons fainted) (Multi)")
+DOUBLE_BATTLE_TEST("Eject Pack: Only the fastest Eject Pack will activate after intimidate (switch in after 2 mons fainted) (Traits)")
 {
     u32 speed;
 
@@ -558,7 +558,7 @@ DOUBLE_BATTLE_TEST("Eject Pack: Only the fastest Eject Pack will activate after 
     }
 }
 
-SINGLE_BATTLE_TEST("Eject Pack does not activate if mon is switched in due to Eject Button (Multi)")
+SINGLE_BATTLE_TEST("Eject Pack does not activate if mon is switched in due to Eject Button (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_DUGTRIO) { Ability(ABILITY_SAND_VEIL); Innates(ABILITY_ARENA_TRAP); }

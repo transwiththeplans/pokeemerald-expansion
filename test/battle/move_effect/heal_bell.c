@@ -218,7 +218,7 @@ SINGLE_BATTLE_TEST("Aromatherapy cures inactive Soundproof Pokemon regardless of
 }
 
 #if MAX_MON_TRAITS > 1
-DOUBLE_BATTLE_TEST("Heal Bell does not cure Soundproof partners (Gen 4, Gen 6+) (Multi)")
+DOUBLE_BATTLE_TEST("Heal Bell does not cure Soundproof partners (Gen 4, Gen 6+) (Traits)")
 {
     enum Ability ability;
     u32 config;
@@ -247,7 +247,7 @@ DOUBLE_BATTLE_TEST("Heal Bell does not cure Soundproof partners (Gen 4, Gen 6+) 
     }
 }
 
-SINGLE_BATTLE_TEST("Heal Bell cures inactive Soundproof Pokemon (Gen5+) (Multi)")
+SINGLE_BATTLE_TEST("Heal Bell cures inactive Soundproof Pokemon (Gen5+) (Traits)")
 {
     u32 config;
     enum Ability ability;
@@ -277,7 +277,7 @@ SINGLE_BATTLE_TEST("Heal Bell cures inactive Soundproof Pokemon (Gen5+) (Multi)"
 }
 
 
-SINGLE_BATTLE_TEST("Heal Bell cures a Soundproof user (Gen5, Gen8+) (Multi)")
+SINGLE_BATTLE_TEST("Heal Bell cures a Soundproof user (Gen5, Gen8+) (Traits)")
 {
     u32 config;
     PARAMETRIZE { config = GEN_4; }
@@ -301,7 +301,7 @@ SINGLE_BATTLE_TEST("Heal Bell cures a Soundproof user (Gen5, Gen8+) (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Aromatherapy cure Soundproof battlers regardless of config (Multi)")
+DOUBLE_BATTLE_TEST("Aromatherapy cure Soundproof battlers regardless of config (Traits)")
 {
     u32 ability, config;
 
@@ -328,7 +328,7 @@ DOUBLE_BATTLE_TEST("Aromatherapy cure Soundproof battlers regardless of config (
     }
 }
 
-SINGLE_BATTLE_TEST("Aromatherapy cures inactive Soundproof Pokemon regardless of config (Multi)")
+SINGLE_BATTLE_TEST("Aromatherapy cures inactive Soundproof Pokemon regardless of config (Traits)")
 {
     u32 config, ability;
 

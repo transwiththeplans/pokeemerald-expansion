@@ -72,7 +72,7 @@ SINGLE_BATTLE_TEST("Electric Terrain lasts for 5 turns")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Electric Terrain protects grounded battlers from falling asleep (Multi)")
+SINGLE_BATTLE_TEST("Electric Terrain protects grounded battlers from falling asleep (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);

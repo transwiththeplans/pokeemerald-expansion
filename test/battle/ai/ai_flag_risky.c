@@ -93,5 +93,5 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_RISKY | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE: AI pr
 }
 
 #if MAX_MON_TRAITS > 1
-TO_DO_BATTLE_TEST("AI_FLAG_RISKY: Mid-battle switches prioritize offensive options (Multi)")
+TO_DO_BATTLE_TEST("AI_FLAG_RISKY: Mid-battle switches prioritize offensive options (Traits)")
 #endif

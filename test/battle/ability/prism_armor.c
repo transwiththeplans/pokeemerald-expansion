@@ -25,7 +25,7 @@ SINGLE_BATTLE_TEST("Prism Armor reduces damage to Super Effective moves by 0.75"
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Prism Armor reduces damage to Super Effective moves by 0.75 (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Prism Armor reduces damage to Super Effective moves by 0.75 (Traits)", s16 damage)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_LIGHT_METAL; }

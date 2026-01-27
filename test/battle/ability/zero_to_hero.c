@@ -183,7 +183,7 @@ SINGLE_BATTLE_TEST("Zero to Hero's message displays correctly after all battlers
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Zero to Hero transforms Palafin when it switches out (Multi)")
+SINGLE_BATTLE_TEST("Zero to Hero transforms Palafin when it switches out (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_PALAFIN_ZERO) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_ZERO_TO_HERO); }
@@ -202,7 +202,7 @@ SINGLE_BATTLE_TEST("Zero to Hero transforms Palafin when it switches out (Multi)
     } THEN { EXPECT_EQ(player->species, SPECIES_PALAFIN_HERO); }
 }
 
-SINGLE_BATTLE_TEST("Zero to Hero transforms both player and opponent (Multi)")
+SINGLE_BATTLE_TEST("Zero to Hero transforms both player and opponent (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_PALAFIN_ZERO) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_ZERO_TO_HERO); }
@@ -223,7 +223,7 @@ SINGLE_BATTLE_TEST("Zero to Hero transforms both player and opponent (Multi)")
         }
 }
 
-SINGLE_BATTLE_TEST("Zero to Hero will activate if a switch move is used (Multi)")
+SINGLE_BATTLE_TEST("Zero to Hero will activate if a switch move is used (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_FLIP_TURN) == EFFECT_HIT_ESCAPE);
@@ -240,7 +240,7 @@ SINGLE_BATTLE_TEST("Zero to Hero will activate if a switch move is used (Multi)"
     } THEN { EXPECT_EQ(player->species, SPECIES_PALAFIN_HERO); }
 }
 
-SINGLE_BATTLE_TEST("Transform doesn't apply the heroic transformation message when copying Palafin (Multi)")
+SINGLE_BATTLE_TEST("Transform doesn't apply the heroic transformation message when copying Palafin (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_PALAFIN_ZERO) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_ZERO_TO_HERO); }
@@ -258,7 +258,7 @@ SINGLE_BATTLE_TEST("Transform doesn't apply the heroic transformation message wh
     } THEN { EXPECT_EQ(player->species, SPECIES_PALAFIN_HERO); }
 }
 
-SINGLE_BATTLE_TEST("Imposter doesn't apply the heroic transformation message when copying Palafin (Multi)")
+SINGLE_BATTLE_TEST("Imposter doesn't apply the heroic transformation message when copying Palafin (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_PALAFIN_ZERO) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_ZERO_TO_HERO); }
@@ -280,7 +280,7 @@ SINGLE_BATTLE_TEST("Imposter doesn't apply the heroic transformation message whe
     } THEN { EXPECT_EQ(player->species, SPECIES_PALAFIN_HERO); }
 }
 
-SINGLE_BATTLE_TEST("Zero to Hero's message displays correctly after all battlers fainted - Player (Multi)")
+SINGLE_BATTLE_TEST("Zero to Hero's message displays correctly after all battlers fainted - Player (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_EXPLOSION) == EFFECT_EXPLOSION);
@@ -303,7 +303,7 @@ SINGLE_BATTLE_TEST("Zero to Hero's message displays correctly after all battlers
     }
 }
 
-SINGLE_BATTLE_TEST("Zero to Hero's message displays correctly after all battlers fainted - Opponent (Multi)")
+SINGLE_BATTLE_TEST("Zero to Hero's message displays correctly after all battlers fainted - Opponent (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_EXPLOSION) == EFFECT_EXPLOSION);

@@ -179,7 +179,7 @@ SINGLE_BATTLE_TEST("Desolate Land can be replaced by Primordial Sea")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Desolate Land prevents other weather abilities (Multi)")
+SINGLE_BATTLE_TEST("Desolate Land prevents other weather abilities (Traits)")
 {
     u16 ability, species;
     PARAMETRIZE { ability = ABILITY_DROUGHT;      species = SPECIES_NINETALES; }

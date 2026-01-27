@@ -205,7 +205,7 @@ TO_DO_BATTLE_TEST("Ability Shield protects against Wandering Spirit");
 TO_DO_BATTLE_TEST("Ability Shield protects against Mummy/Lingering Aroma");
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Ability Shield protects against Mold Breaker (no message) (Multi)")
+SINGLE_BATTLE_TEST("Ability Shield protects against Mold Breaker (no message) (Traits)")
 {
     u32 item;
 
@@ -233,7 +233,7 @@ SINGLE_BATTLE_TEST("Ability Shield protects against Mold Breaker (no message) (M
     }
 }
 
-SINGLE_BATTLE_TEST("Ability Shield protects against Mycelium Might (no message) (Multi)")
+SINGLE_BATTLE_TEST("Ability Shield protects against Mycelium Might (no message) (Traits)")
 {
     u32 item;
 

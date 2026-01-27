@@ -255,7 +255,7 @@ TO_DO_BATTLE_TEST("Prankster increases the priority of status Z-Moves by 1");
 TO_DO_BATTLE_TEST("Prankster increases the priority of Extreme Evoboost by 1");
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Prankster-affected moves don't affect Dark-type Pokémon (Gen7+) (Multi)")
+SINGLE_BATTLE_TEST("Prankster-affected moves don't affect Dark-type Pokémon (Gen7+) (Traits)")
 {
     u32 gen;
     PARAMETRIZE { gen = GEN_6; }
@@ -276,7 +276,7 @@ SINGLE_BATTLE_TEST("Prankster-affected moves don't affect Dark-type Pokémon (Ge
     }
 }
 
-SINGLE_BATTLE_TEST("Prankster-affected moves don't affect Dark-type Pokémon after they switch-in (Multi)")
+SINGLE_BATTLE_TEST("Prankster-affected moves don't affect Dark-type Pokémon after they switch-in (Traits)")
 {
     GIVEN {
         WITH_CONFIG(CONFIG_PRANKSTER_DARK_TYPES, GEN_7);
@@ -291,7 +291,7 @@ SINGLE_BATTLE_TEST("Prankster-affected moves don't affect Dark-type Pokémon aft
     }
 }
 
-DOUBLE_BATTLE_TEST("Prankster-affected moves affect Ally Dark-type Pokémon (Multi)")
+DOUBLE_BATTLE_TEST("Prankster-affected moves affect Ally Dark-type Pokémon (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_VOLBEAT) { Ability(ABILITY_ILLUMINATE); Innates(ABILITY_PRANKSTER); }
@@ -306,7 +306,7 @@ DOUBLE_BATTLE_TEST("Prankster-affected moves affect Ally Dark-type Pokémon (Mul
     }
 }
 
-SINGLE_BATTLE_TEST("Prankster-affected moves called via Assist don't affect Dark-type Pokémon (Gen 7+) (Multi)")
+SINGLE_BATTLE_TEST("Prankster-affected moves called via Assist don't affect Dark-type Pokémon (Gen 7+) (Traits)")
 {
     u32 gen;
     PARAMETRIZE { gen = GEN_6; }
@@ -329,7 +329,7 @@ SINGLE_BATTLE_TEST("Prankster-affected moves called via Assist don't affect Dark
 }
 
 // Tested on Showdown, even though Bulbapedia says otherwise.
-DOUBLE_BATTLE_TEST("Prankster-affected moves called via Instruct do not affect Dark-type Pokémon (Multi)")
+DOUBLE_BATTLE_TEST("Prankster-affected moves called via Instruct do not affect Dark-type Pokémon (Traits)")
 {
     u32 gen;
     PARAMETRIZE { gen = GEN_6; }
@@ -365,7 +365,7 @@ DOUBLE_BATTLE_TEST("Prankster-affected moves called via Instruct do not affect D
     }
 }
 
-SINGLE_BATTLE_TEST("Prankster increases the priority of moves by 1 (Multi)")
+SINGLE_BATTLE_TEST("Prankster increases the priority of moves by 1 (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Speed(10); }
@@ -378,7 +378,7 @@ SINGLE_BATTLE_TEST("Prankster increases the priority of moves by 1 (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Moves called via Prankster-affected After you affect Dark-type Pokémon (Multi)")
+DOUBLE_BATTLE_TEST("Moves called via Prankster-affected After you affect Dark-type Pokémon (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_VOLBEAT) { Speed(1); Ability(ABILITY_ILLUMINATE); Innates(ABILITY_PRANKSTER); }
@@ -398,7 +398,7 @@ DOUBLE_BATTLE_TEST("Moves called via Prankster-affected After you affect Dark-ty
     }
 }
 
-SINGLE_BATTLE_TEST("Prankster is blocked by Quick Guard in Gen5+ (Multi)")
+SINGLE_BATTLE_TEST("Prankster is blocked by Quick Guard in Gen5+ (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -412,7 +412,7 @@ SINGLE_BATTLE_TEST("Prankster is blocked by Quick Guard in Gen5+ (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Prankster-affected moves that target all Pokémon are successful regardless of the presence of Dark-type Pokémon (Multi)")
+DOUBLE_BATTLE_TEST("Prankster-affected moves that target all Pokémon are successful regardless of the presence of Dark-type Pokémon (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveTarget(MOVE_CAPTIVATE) == MOVE_TARGET_BOTH);
@@ -427,7 +427,7 @@ DOUBLE_BATTLE_TEST("Prankster-affected moves that target all Pokémon are succes
     }
 }
 
-SINGLE_BATTLE_TEST("Prankster-affected moves can still be bounced back by Dark-types using Magic Coat (Multi)")
+SINGLE_BATTLE_TEST("Prankster-affected moves can still be bounced back by Dark-types using Magic Coat (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_UMBREON);
@@ -443,7 +443,7 @@ SINGLE_BATTLE_TEST("Prankster-affected moves can still be bounced back by Dark-t
     }
 }
 
-SINGLE_BATTLE_TEST("Prankster-affected moves which are reflected by Magic Coat can affect Dark-type Pokémon, unless the Pokémon that bounced the move also has Prankster (Multi)")
+SINGLE_BATTLE_TEST("Prankster-affected moves which are reflected by Magic Coat can affect Dark-type Pokémon, unless the Pokémon that bounced the move also has Prankster (Traits)")
 {
     enum Ability sableyeAbility;
 
@@ -471,7 +471,7 @@ SINGLE_BATTLE_TEST("Prankster-affected moves which are reflected by Magic Coat c
     }
 }
 
-SINGLE_BATTLE_TEST("Prankster-affected moves can still be bounced back by a Dark-type with Magic Bounce (Multi)")
+SINGLE_BATTLE_TEST("Prankster-affected moves can still be bounced back by a Dark-type with Magic Bounce (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_ABSOL) { Item(ITEM_ABSOLITE); }
@@ -484,7 +484,7 @@ SINGLE_BATTLE_TEST("Prankster-affected moves can still be bounced back by a Dark
     }
 }
 
-SINGLE_BATTLE_TEST("Prankster-affected moves that are bounced back by Magic Bounce can affect Dark-type Pokémon (Multi)")
+SINGLE_BATTLE_TEST("Prankster-affected moves that are bounced back by Magic Bounce can affect Dark-type Pokémon (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_ABSOL) { Item(ITEM_ABSOLITE); }
@@ -498,7 +498,7 @@ SINGLE_BATTLE_TEST("Prankster-affected moves that are bounced back by Magic Boun
     }
 }
 
-TO_DO_BATTLE_TEST("Prankster-affected moves called via Nature Power don't affect Dark-type Pokémon (Multi)");
-TO_DO_BATTLE_TEST("Prankster increases the priority of status Z-Moves by 1 (Multi)");
-TO_DO_BATTLE_TEST("Prankster increases the priority of Extreme Evoboost by 1 (Multi)");
+TO_DO_BATTLE_TEST("Prankster-affected moves called via Nature Power don't affect Dark-type Pokémon (Traits)");
+TO_DO_BATTLE_TEST("Prankster increases the priority of status Z-Moves by 1 (Traits)");
+TO_DO_BATTLE_TEST("Prankster increases the priority of Extreme Evoboost by 1 (Traits)");
 #endif

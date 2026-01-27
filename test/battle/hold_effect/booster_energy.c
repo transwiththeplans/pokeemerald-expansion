@@ -333,7 +333,7 @@ DOUBLE_BATTLE_TEST("Booster Energy will not activate on terrain if user has Prot
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Booster Energy will activate Quark Drive after Electric Terrain ends (Multi)")
+SINGLE_BATTLE_TEST("Booster Energy will activate Quark Drive after Electric Terrain ends (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_IRON_MOTH) { Attack(100); Defense(100); Speed(100); SpAttack(110); SpDefense(100); Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_QUARK_DRIVE); Item(ITEM_BOOSTER_ENERGY); }
@@ -362,7 +362,7 @@ SINGLE_BATTLE_TEST("Booster Energy will activate Quark Drive after Electric Terr
     }
 }
 
-SINGLE_BATTLE_TEST("Booster Energy will activate Protosynthesis after harsh sunlight ends (Multi)")
+SINGLE_BATTLE_TEST("Booster Energy will activate Protosynthesis after harsh sunlight ends (Traits)")
 {
     GIVEN {
         WITH_CONFIG(CONFIG_ABILITY_WEATHER, GEN_6);
@@ -392,7 +392,7 @@ SINGLE_BATTLE_TEST("Booster Energy will activate Protosynthesis after harsh sunl
     }
 }
 
-SINGLE_BATTLE_TEST("Booster Energy's Protosynthesis boost is preserved when weather changes (Multi)")
+SINGLE_BATTLE_TEST("Booster Energy's Protosynthesis boost is preserved when weather changes (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_RAGING_BOLT) { Attack(110); Defense(100); Speed(100); SpAttack(100); SpDefense(100); Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_PROTOSYNTHESIS); Item(ITEM_BOOSTER_ENERGY); }
@@ -415,7 +415,7 @@ SINGLE_BATTLE_TEST("Booster Energy's Protosynthesis boost is preserved when weat
     }
 }
 
-SINGLE_BATTLE_TEST("Booster Energy activates Protosynthesis and increases highest stat (Multi)")
+SINGLE_BATTLE_TEST("Booster Energy activates Protosynthesis and increases highest stat (Traits)")
 {
     u32 attack, defense, speed, spAttack, spDefense;
 
@@ -449,7 +449,7 @@ SINGLE_BATTLE_TEST("Booster Energy activates Protosynthesis and increases highes
     }
 }
 
-SINGLE_BATTLE_TEST("Booster Energy activates Quark Drive and increases highest stat (Multi)")
+SINGLE_BATTLE_TEST("Booster Energy activates Quark Drive and increases highest stat (Traits)")
 {
     u32 attack, defense, speed, spAttack, spDefense;
 
@@ -481,7 +481,7 @@ SINGLE_BATTLE_TEST("Booster Energy activates Quark Drive and increases highest s
     }
 }
 
-SINGLE_BATTLE_TEST("Booster Energy's Quark Drive boost is preserved when terrain changes (Multi)")
+SINGLE_BATTLE_TEST("Booster Energy's Quark Drive boost is preserved when terrain changes (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_IRON_MOTH) { Attack(110); Defense(100); Speed(100); SpAttack(100); SpDefense(100); Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_QUARK_DRIVE); Item(ITEM_BOOSTER_ENERGY); Moves(MOVE_CELEBRATE); }
@@ -504,7 +504,7 @@ SINGLE_BATTLE_TEST("Booster Energy's Quark Drive boost is preserved when terrain
     }
 }
 
-SINGLE_BATTLE_TEST("Booster Energy increases special attack by 30% if it is the highest stat (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Booster Energy increases special attack by 30% if it is the highest stat (Traits)", s16 damage)
 {
     u32 species;
     enum Ability ability;
@@ -530,7 +530,7 @@ SINGLE_BATTLE_TEST("Booster Energy increases special attack by 30% if it is the 
     }
 }
 
-SINGLE_BATTLE_TEST("Booster Energy increases special defense by 30% if it is the highest stat (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Booster Energy increases special defense by 30% if it is the highest stat (Traits)", s16 damage)
 {
     u32 species;
     enum Ability ability;
@@ -556,7 +556,7 @@ SINGLE_BATTLE_TEST("Booster Energy increases special defense by 30% if it is the
     }
 }
 
-SINGLE_BATTLE_TEST("Booster Energy can't be flung if a Paradox species is involved (Multi)")
+SINGLE_BATTLE_TEST("Booster Energy can't be flung if a Paradox species is involved (Traits)")
 {
     GIVEN {
         ASSUME(gSpeciesInfo[SPECIES_IRON_MOTH].isParadox == TRUE);
@@ -570,7 +570,7 @@ SINGLE_BATTLE_TEST("Booster Energy can't be flung if a Paradox species is involv
     }
 }
 
-SINGLE_BATTLE_TEST("Booster Energy can't be tricked if a Paradox species is involved (Multi)")
+SINGLE_BATTLE_TEST("Booster Energy can't be tricked if a Paradox species is involved (Traits)")
 {
     GIVEN {
         ASSUME(gSpeciesInfo[SPECIES_IRON_MOTH].isParadox == TRUE);
@@ -584,7 +584,7 @@ SINGLE_BATTLE_TEST("Booster Energy can't be tricked if a Paradox species is invo
     }
 }
 
-DOUBLE_BATTLE_TEST("Booster Energy triggers correctly for all battlers if multiple fainted the previous turn (Multi)")
+DOUBLE_BATTLE_TEST("Booster Energy triggers correctly for all battlers if multiple fainted the previous turn (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -609,7 +609,7 @@ DOUBLE_BATTLE_TEST("Booster Energy triggers correctly for all battlers if multip
     }
 }
 
-DOUBLE_BATTLE_TEST("Booster Energy activates on any terrain (Multi)")
+DOUBLE_BATTLE_TEST("Booster Energy activates on any terrain (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_IRON_MOTH) { Speed(110); Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_QUARK_DRIVE); Item(ITEM_BOOSTER_ENERGY); }
@@ -625,7 +625,7 @@ DOUBLE_BATTLE_TEST("Booster Energy activates on any terrain (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Booster Energy activates on air locked sun (Multi)")
+DOUBLE_BATTLE_TEST("Booster Energy activates on air locked sun (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -642,7 +642,7 @@ DOUBLE_BATTLE_TEST("Booster Energy activates on air locked sun (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Booster Energy will not activate on terrain if user has Protosynthesis instead of Quark Drive (Multi)")
+DOUBLE_BATTLE_TEST("Booster Energy will not activate on terrain if user has Protosynthesis instead of Quark Drive (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_RAGING_BOLT) { Speed(110); Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_PROTOSYNTHESIS); Item(ITEM_BOOSTER_ENERGY); }

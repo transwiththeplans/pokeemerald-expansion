@@ -305,7 +305,7 @@ SINGLE_BATTLE_TEST("Berserker Gene confusion can be healed with used held items"
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Berserk Gene does not confuse a Pokemon with Own Tempo but still raises attack sharply in a single battle (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Berserk Gene does not confuse a Pokemon with Own Tempo but still raises attack sharply in a single battle (Traits)", s16 damage)
 {
     u16 item;
     PARAMETRIZE { item = ITEM_NONE; }
@@ -373,7 +373,7 @@ DOUBLE_BATTLE_TEST("Berserk Gene does not confuse a Pokemon with Own Tempo but s
     }
 }
 
-SINGLE_BATTLE_TEST("Berserk Gene does not confuse on Misty Terrain but still raises attack sharply (Multi)")
+SINGLE_BATTLE_TEST("Berserk Gene does not confuse on Misty Terrain but still raises attack sharply (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveCategory(MOVE_SCRATCH) == DAMAGE_CATEGORY_PHYSICAL);
@@ -390,7 +390,7 @@ SINGLE_BATTLE_TEST("Berserk Gene does not confuse on Misty Terrain but still rai
     }
 }
 
-SINGLE_BATTLE_TEST("Berserk Gene does not cause an infinite loop (Multi)")
+SINGLE_BATTLE_TEST("Berserk Gene does not cause an infinite loop (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_BESTOW) == EFFECT_BESTOW);

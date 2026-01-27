@@ -102,7 +102,7 @@ DOUBLE_BATTLE_TEST("Teraform Zero shouldn't cause Neutralizing Gas to show it's 
 }
 
 #if MAX_MON_TRAITS > 1
-DOUBLE_BATTLE_TEST("Teraform Zero clears weather and terrain upon activation (Multi)")
+DOUBLE_BATTLE_TEST("Teraform Zero clears weather and terrain upon activation (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_TERAPAGOS_TERASTAL) {Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_TERAFORM_ZERO); }

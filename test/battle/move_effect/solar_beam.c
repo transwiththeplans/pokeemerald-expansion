@@ -34,7 +34,7 @@ SINGLE_BATTLE_TEST("Solar Beam does not need a charging turn if Sun is up")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Solar Beam does not need a charging turn if Sun is up (Multi)")
+SINGLE_BATTLE_TEST("Solar Beam does not need a charging turn if Sun is up (Traits)")
 {
     enum Ability ability;
 

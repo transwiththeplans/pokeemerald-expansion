@@ -46,7 +46,7 @@ SINGLE_BATTLE_TEST("Magic Guard does not ignore speed stat changes caused by par
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Magic Guard prevents recoil damage to the user (Multi)")
+SINGLE_BATTLE_TEST("Magic Guard prevents recoil damage to the user (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveRecoil(MOVE_DOUBLE_EDGE) == 33);
@@ -61,7 +61,7 @@ SINGLE_BATTLE_TEST("Magic Guard prevents recoil damage to the user (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Magic Guard ignores immobilization that can be caused by paralysis (Multi)")
+SINGLE_BATTLE_TEST("Magic Guard ignores immobilization that can be caused by paralysis (Traits)")
 {
     if (B_MAGIC_GUARD == GEN_4)
         PASSES_RANDOMLY(1, 1, RNG_PARALYSIS);
@@ -77,7 +77,7 @@ SINGLE_BATTLE_TEST("Magic Guard ignores immobilization that can be caused by par
     }
 }
 
-SINGLE_BATTLE_TEST("Magic Guard does not ignore speed stat changes caused by paralysis (Multi)")
+SINGLE_BATTLE_TEST("Magic Guard does not ignore speed stat changes caused by paralysis (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_CLEFABLE) { Speed(100); Ability(ABILITY_CUTE_CHARM); Innates(ABILITY_MAGIC_GUARD); Status1(STATUS1_PARALYSIS);}

@@ -96,7 +96,7 @@ MULTI_BATTLE_TEST("Multi Battle Tests register partner's status1")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Forced abilities activate on switch-in (Multi)")
+SINGLE_BATTLE_TEST("Forced abilities activate on switch-in (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_ALAKAZAM);

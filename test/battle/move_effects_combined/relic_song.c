@@ -70,7 +70,7 @@ SINGLE_BATTLE_TEST("Relic Song is blocked by Throat Chop")
 
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Relic Song is prevented by Soundproof (Multi)")
+SINGLE_BATTLE_TEST("Relic Song is prevented by Soundproof (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -87,7 +87,7 @@ SINGLE_BATTLE_TEST("Relic Song is prevented by Soundproof (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Relic Song will become a Water-type move when used by a Pokémon with the Ability Liquid Voice (Multi)")
+SINGLE_BATTLE_TEST("Relic Song will become a Water-type move when used by a Pokémon with the Ability Liquid Voice (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_VULPIX);

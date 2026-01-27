@@ -356,7 +356,7 @@ TO_DO_BATTLE_TEST("Anticipation doesn't trigger from Counter, Metal Burst or Mir
 TO_DO_BATTLE_TEST("Anticipation treats Hidden Power as Normal Type (Gen4-5)");
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Anticipation causes notifies if an opponent has a super-effective move (Multi)")
+SINGLE_BATTLE_TEST("Anticipation causes notifies if an opponent has a super-effective move (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveType(MOVE_CLOSE_COMBAT) == TYPE_FIGHTING);
@@ -371,7 +371,7 @@ SINGLE_BATTLE_TEST("Anticipation causes notifies if an opponent has a super-effe
     }
 }
 
-SINGLE_BATTLE_TEST("Anticipation does not trigger even when a move is super effective on only 1 type (Multi)")
+SINGLE_BATTLE_TEST("Anticipation does not trigger even when a move is super effective on only 1 type (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WHISCASH) { Ability(ABILITY_OBLIVIOUS); Innates(ABILITY_ANTICIPATION); }
@@ -383,7 +383,7 @@ SINGLE_BATTLE_TEST("Anticipation does not trigger even when a move is super effe
     }
 }
 
-SINGLE_BATTLE_TEST("Anticipation causes notifies if an opponent has a One-hit KO move (Multi)")
+SINGLE_BATTLE_TEST("Anticipation causes notifies if an opponent has a One-hit KO move (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_FISSURE) == EFFECT_OHKO);
@@ -396,7 +396,7 @@ SINGLE_BATTLE_TEST("Anticipation causes notifies if an opponent has a One-hit KO
     }
 }
 
-SINGLE_BATTLE_TEST("Anticipation treats Self-Destruct and Explosion like all other Normal types (Gen5+) (Multi)")
+SINGLE_BATTLE_TEST("Anticipation treats Self-Destruct and Explosion like all other Normal types (Gen5+) (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_EXPLOSION) == EFFECT_EXPLOSION);
@@ -409,7 +409,7 @@ SINGLE_BATTLE_TEST("Anticipation treats Self-Destruct and Explosion like all oth
     }
 }
 
-SINGLE_BATTLE_TEST("Anticipation doesn't consider Normalize into their effectiveness (Gen5+) (Multi)")
+SINGLE_BATTLE_TEST("Anticipation doesn't consider Normalize into their effectiveness (Gen5+) (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveType(MOVE_CLOSE_COMBAT) == TYPE_FIGHTING);
@@ -424,7 +424,7 @@ SINGLE_BATTLE_TEST("Anticipation doesn't consider Normalize into their effective
     }
 }
 
-SINGLE_BATTLE_TEST("Anticipation doesn't consider Scrappy into their effectiveness (Gen5+) (Multi)")
+SINGLE_BATTLE_TEST("Anticipation doesn't consider Scrappy into their effectiveness (Gen5+) (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveType(MOVE_CLOSE_COMBAT) == TYPE_FIGHTING);
@@ -439,7 +439,7 @@ SINGLE_BATTLE_TEST("Anticipation doesn't consider Scrappy into their effectivene
     }
 }
 
-SINGLE_BATTLE_TEST("Anticipation doesn't consider Gravity into their effectiveness (Gen5+) (Multi)")
+SINGLE_BATTLE_TEST("Anticipation doesn't consider Gravity into their effectiveness (Gen5+) (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_SKARMORY) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_ANTICIPATION); }
@@ -452,7 +452,7 @@ SINGLE_BATTLE_TEST("Anticipation doesn't consider Gravity into their effectivene
     }
 }
 
-SINGLE_BATTLE_TEST("Anticipation counts Counter, Metal Burst or Mirror Coat as attacking moves of their types (Gen5+) (Multi)")
+SINGLE_BATTLE_TEST("Anticipation counts Counter, Metal Burst or Mirror Coat as attacking moves of their types (Gen5+) (Traits)")
 {
     u32 move, species;
     enum Type typeAtk, typeDef;
@@ -472,7 +472,7 @@ SINGLE_BATTLE_TEST("Anticipation counts Counter, Metal Burst or Mirror Coat as a
     }
 }
 
-SINGLE_BATTLE_TEST("Anticipation considers Synchronoise as an ordinary Psychic-type move (Multi)")
+SINGLE_BATTLE_TEST("Anticipation considers Synchronoise as an ordinary Psychic-type move (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveType(MOVE_SYNCHRONOISE) == TYPE_PSYCHIC);
@@ -489,7 +489,7 @@ SINGLE_BATTLE_TEST("Anticipation considers Synchronoise as an ordinary Psychic-t
     }
 }
 
-SINGLE_BATTLE_TEST("Anticipation considers Freeze-Dry as an ordinary Ice-type move (Multi)")
+SINGLE_BATTLE_TEST("Anticipation considers Freeze-Dry as an ordinary Ice-type move (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveType(MOVE_FREEZE_DRY) == TYPE_ICE);
@@ -504,7 +504,7 @@ SINGLE_BATTLE_TEST("Anticipation considers Freeze-Dry as an ordinary Ice-type mo
     }
 }
 
-SINGLE_BATTLE_TEST("Anticipation considers Flying Press as an ordinary Fighting-type move (Multi)")
+SINGLE_BATTLE_TEST("Anticipation considers Flying Press as an ordinary Fighting-type move (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveType(MOVE_FLYING_PRESS) == TYPE_FIGHTING);
@@ -519,7 +519,7 @@ SINGLE_BATTLE_TEST("Anticipation considers Flying Press as an ordinary Fighting-
     }
 }
 
-SINGLE_BATTLE_TEST("Anticipation considers Aura Wheel as an ordinary Electric-type move (Multi)")
+SINGLE_BATTLE_TEST("Anticipation considers Aura Wheel as an ordinary Electric-type move (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveType(MOVE_AURA_WHEEL) == TYPE_ELECTRIC);
@@ -538,7 +538,7 @@ SINGLE_BATTLE_TEST("Anticipation considers Aura Wheel as an ordinary Electric-ty
     }
 }
 
-SINGLE_BATTLE_TEST("Anticipation treats dynamic move types as their base type (Normal), Judgment (Multi)")
+SINGLE_BATTLE_TEST("Anticipation treats dynamic move types as their base type (Normal), Judgment (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_JUDGMENT) == EFFECT_CHANGE_TYPE_ON_ITEM);
@@ -553,7 +553,7 @@ SINGLE_BATTLE_TEST("Anticipation treats dynamic move types as their base type (N
     }
 }
 
-SINGLE_BATTLE_TEST("Anticipation treats dynamic move types as their base type (Normal), Weather Ball (Multi)")
+SINGLE_BATTLE_TEST("Anticipation treats dynamic move types as their base type (Normal), Weather Ball (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_WEATHER_BALL) == EFFECT_WEATHER_BALL);
@@ -569,7 +569,7 @@ SINGLE_BATTLE_TEST("Anticipation treats dynamic move types as their base type (N
     }
 }
 
-SINGLE_BATTLE_TEST("Anticipation treats dynamic move types as their base type (Normal), Natural Gift (Multi)")
+SINGLE_BATTLE_TEST("Anticipation treats dynamic move types as their base type (Normal), Natural Gift (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_NATURAL_GIFT) == EFFECT_NATURAL_GIFT);
@@ -584,7 +584,7 @@ SINGLE_BATTLE_TEST("Anticipation treats dynamic move types as their base type (N
     }
 }
 
-SINGLE_BATTLE_TEST("Anticipation treats dynamic move types as their base type (Normal), Techno Blast (Multi)")
+SINGLE_BATTLE_TEST("Anticipation treats dynamic move types as their base type (Normal), Techno Blast (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_TECHNO_BLAST) == EFFECT_CHANGE_TYPE_ON_ITEM);
@@ -599,7 +599,7 @@ SINGLE_BATTLE_TEST("Anticipation treats dynamic move types as their base type (N
     }
 }
 
-SINGLE_BATTLE_TEST("Anticipation treats dynamic move types as their base type (Normal), Revelation Dance (Multi)")
+SINGLE_BATTLE_TEST("Anticipation treats dynamic move types as their base type (Normal), Revelation Dance (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_REVELATION_DANCE) == EFFECT_REVELATION_DANCE);
@@ -615,7 +615,7 @@ SINGLE_BATTLE_TEST("Anticipation treats dynamic move types as their base type (N
     }
 }
 
-SINGLE_BATTLE_TEST("Anticipation treats dynamic move types as their base type (Normal), Multi-Attack (Multi)")
+SINGLE_BATTLE_TEST("Anticipation treats dynamic move types as their base type (Normal), Multi-Attack (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_MULTI_ATTACK) == EFFECT_CHANGE_TYPE_ON_ITEM);
@@ -630,7 +630,7 @@ SINGLE_BATTLE_TEST("Anticipation treats dynamic move types as their base type (N
     }
 }
 
-SINGLE_BATTLE_TEST("Anticipation does not consider Strong Winds on type matchups (Multi)")
+SINGLE_BATTLE_TEST("Anticipation does not consider Strong Winds on type matchups (Traits)")
 {
     GIVEN {
         ASSUME(GetSpeciesType(SPECIES_RAYQUAZA_MEGA, 0) == TYPE_DRAGON);
@@ -647,7 +647,7 @@ SINGLE_BATTLE_TEST("Anticipation does not consider Strong Winds on type matchups
     }
 }
 
-SINGLE_BATTLE_TEST("Anticipation does not consider ate-abilities (Multi)")
+SINGLE_BATTLE_TEST("Anticipation does not consider ate-abilities (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveType(MOVE_SCRATCH) == TYPE_NORMAL);
@@ -662,7 +662,7 @@ SINGLE_BATTLE_TEST("Anticipation does not consider ate-abilities (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Anticipation treats Hidden Power as its dynamic type (Gen6+) (Multi)")
+SINGLE_BATTLE_TEST("Anticipation treats Hidden Power as its dynamic type (Gen6+) (Traits)")
 {
     KNOWN_FAILING;
     GIVEN {
@@ -681,7 +681,7 @@ SINGLE_BATTLE_TEST("Anticipation treats Hidden Power as its dynamic type (Gen6+)
     }
 }
 
-SINGLE_BATTLE_TEST("Anticipation considers Inverse Battle types (Multi)")
+SINGLE_BATTLE_TEST("Anticipation considers Inverse Battle types (Traits)")
 {
     GIVEN {
         FLAG_SET(B_FLAG_INVERSE_BATTLE);
@@ -697,9 +697,9 @@ SINGLE_BATTLE_TEST("Anticipation considers Inverse Battle types (Multi)")
     }
 }
 
-TO_DO_BATTLE_TEST("Anticipation causes notifies if an opponent has a Self-Destruct or Explosion (Gen4) (Multi)");
-TO_DO_BATTLE_TEST("Anticipation considers Scrappy and Normalize into their effectiveness (Gen4) (Multi)");
-TO_DO_BATTLE_TEST("Anticipation considers Gravity into their effectiveness (Gen4) (Multi)");
-TO_DO_BATTLE_TEST("Anticipation doesn't trigger from Counter, Metal Burst or Mirror Coat (Gen4) (Multi)");
-TO_DO_BATTLE_TEST("Anticipation treats Hidden Power as Normal Type (Gen4-5) (Multi)");
+TO_DO_BATTLE_TEST("Anticipation causes notifies if an opponent has a Self-Destruct or Explosion (Gen4) (Traits)");
+TO_DO_BATTLE_TEST("Anticipation considers Scrappy and Normalize into their effectiveness (Gen4) (Traits)");
+TO_DO_BATTLE_TEST("Anticipation considers Gravity into their effectiveness (Gen4) (Traits)");
+TO_DO_BATTLE_TEST("Anticipation doesn't trigger from Counter, Metal Burst or Mirror Coat (Gen4) (Traits)");
+TO_DO_BATTLE_TEST("Anticipation treats Hidden Power as Normal Type (Gen4-5) (Traits)");
 #endif

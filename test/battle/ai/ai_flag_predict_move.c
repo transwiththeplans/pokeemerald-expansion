@@ -45,7 +45,7 @@ AI_SINGLE_BATTLE_TEST("AI won't use Sucker Punch if it expects a move of the sam
 
 
 #if MAX_MON_TRAITS > 1
-AI_SINGLE_BATTLE_TEST("AI_FLAG_PREDICT_MOVE: AI will predict player's move (Multi)")
+AI_SINGLE_BATTLE_TEST("AI_FLAG_PREDICT_MOVE: AI will predict player's move (Traits)")
 {
     PASSES_RANDOMLY(PREDICT_MOVE_CHANCE, 100, RNG_AI_PREDICT_MOVE);
     GIVEN {
@@ -58,7 +58,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_PREDICT_MOVE: AI will predict player's move (Mult
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI_FLAG_PREDICT_MOVE: AI will still attack you when it should (Multi)")
+AI_SINGLE_BATTLE_TEST("AI_FLAG_PREDICT_MOVE: AI will still attack you when it should (Traits)")
 {
     PASSES_RANDOMLY(PREDICT_MOVE_CHANCE, 100, RNG_AI_PREDICT_MOVE);
     GIVEN {

@@ -181,7 +181,7 @@ TO_DO_BATTLE_TEST("Aerilate doesn't affect damaging Z-Move types");
 TO_DO_BATTLE_TEST("(DYNAMAX) Aerilate turns Max Strike into Max Airstream"); // All other -ate abilities do this, so interpolating this as no Aerilate mon is available in a Dynamax game
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Aerilate boosts power of affected moves by 20% (Gen7+) or 30% (Gen1-6) (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Aerilate boosts power of affected moves by 20% (Gen7+) or 30% (Gen1-6) (Traits)", s16 damage)
 {
     u32 move, genConfig;
     PARAMETRIZE { move = MOVE_CELEBRATE;   genConfig = GEN_7; }
@@ -207,7 +207,7 @@ SINGLE_BATTLE_TEST("Aerilate boosts power of affected moves by 20% (Gen7+) or 30
     }
 }
 
-SINGLE_BATTLE_TEST("Aerilate doesn't affect Weather Ball's type (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Aerilate doesn't affect Weather Ball's type (Traits)", s16 damage)
 {
     u32 move1, move2;
     PARAMETRIZE { move1 = MOVE_CELEBRATE; move2 = MOVE_CELEBRATE; }
@@ -238,7 +238,7 @@ SINGLE_BATTLE_TEST("Aerilate doesn't affect Weather Ball's type (Multi)", s16 da
     }
 }
 
-SINGLE_BATTLE_TEST("Aerilate doesn't affect Hidden Power's type (Multi)")
+SINGLE_BATTLE_TEST("Aerilate doesn't affect Hidden Power's type (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_HIDDEN_POWER) == EFFECT_HIDDEN_POWER);
@@ -254,13 +254,13 @@ SINGLE_BATTLE_TEST("Aerilate doesn't affect Hidden Power's type (Multi)")
     }
 }
 
-TO_DO_BATTLE_TEST("Aerilate doesn't override Electrify (Gen7+) (Multi)"); // No mon with Aerilate exists in Gen8+, but probably behaves similar to Pixilate, which does.
-TO_DO_BATTLE_TEST("Aerilate doesn't override Ion Deluge (Gen7+) (Multi)"); // Ion Deluge doesn't exist in Gen 8+, but we probably could assume it behaves similar to under Electrify. TODO: Test by hacking SV.
-TO_DO_BATTLE_TEST("Aerilate overrides Electrify (Gen6) (Multi)")
-TO_DO_BATTLE_TEST("Aerilate overrides Ion Deluge (Gen6) (Multi)")
-TO_DO_BATTLE_TEST("Aerilate doesn't affect Tera Starstorm's type (Multi)");
-TO_DO_BATTLE_TEST("Aerilate doesn't affect Max Strike's type (Multi)");
-TO_DO_BATTLE_TEST("Aerilate doesn't affect Terrain Pulse's type (Multi)");
-TO_DO_BATTLE_TEST("Aerilate doesn't affect damaging Z-Move types (Multi)");
-TO_DO_BATTLE_TEST("(DYNAMAX) Aerilate turns Max Strike into Max Airstream (Multi)"); // All other -ate abilities do this, so interpolating this as no Aerilate mon is available in a Dynamax game
+TO_DO_BATTLE_TEST("Aerilate doesn't override Electrify (Gen7+) (Traits)"); // No mon with Aerilate exists in Gen8+, but probably behaves similar to Pixilate, which does.
+TO_DO_BATTLE_TEST("Aerilate doesn't override Ion Deluge (Gen7+) (Traits)"); // Ion Deluge doesn't exist in Gen 8+, but we probably could assume it behaves similar to under Electrify. TODO: Test by hacking SV.
+TO_DO_BATTLE_TEST("Aerilate overrides Electrify (Gen6) (Traits)")
+TO_DO_BATTLE_TEST("Aerilate overrides Ion Deluge (Gen6) (Traits)")
+TO_DO_BATTLE_TEST("Aerilate doesn't affect Tera Starstorm's type (Traits)");
+TO_DO_BATTLE_TEST("Aerilate doesn't affect Max Strike's type (Traits)");
+TO_DO_BATTLE_TEST("Aerilate doesn't affect Terrain Pulse's type (Traits)");
+TO_DO_BATTLE_TEST("Aerilate doesn't affect damaging Z-Move types (Traits)");
+TO_DO_BATTLE_TEST("(DYNAMAX) Aerilate turns Max Strike into Max Airstream (Traits)"); // All other -ate abilities do this, so interpolating this as no Aerilate mon is available in a Dynamax game
 #endif

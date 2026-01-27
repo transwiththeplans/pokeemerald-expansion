@@ -127,7 +127,7 @@ SINGLE_BATTLE_TEST("Shed Tail creates a Substitute with 1/4 of user maximum heal
 }
 
 #if MAX_MON_TRAITS > 1
-AI_SINGLE_BATTLE_TEST("AI will use Shed Tail to pivot to another mon while in damage stalemate with player rather than hard switching (Multi)")
+AI_SINGLE_BATTLE_TEST("AI will use Shed Tail to pivot to another mon while in damage stalemate with player rather than hard switching (Traits)")
 {
     u32 aiFlags;
     PARAMETRIZE { aiFlags = 0; }

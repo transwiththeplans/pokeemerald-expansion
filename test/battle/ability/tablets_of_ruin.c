@@ -75,7 +75,7 @@ SINGLE_BATTLE_TEST("Tablets of Ruin's message displays correctly after all battl
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Tablets of Ruin reduces Attack if opposing mon's ability doesn't match (Multi)")
+SINGLE_BATTLE_TEST("Tablets of Ruin reduces Attack if opposing mon's ability doesn't match (Traits)")
 {
     s16 damage[2];
 
@@ -99,7 +99,7 @@ SINGLE_BATTLE_TEST("Tablets of Ruin reduces Attack if opposing mon's ability doe
     }
 }
 
-SINGLE_BATTLE_TEST("Tablets of Ruin's message displays correctly after all battlers fainted - Player (Multi)")
+SINGLE_BATTLE_TEST("Tablets of Ruin's message displays correctly after all battlers fainted - Player (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_EXPLOSION) == EFFECT_EXPLOSION);
@@ -121,7 +121,7 @@ SINGLE_BATTLE_TEST("Tablets of Ruin's message displays correctly after all battl
     }
 }
 
-SINGLE_BATTLE_TEST("Tablets of Ruin's message displays correctly after all battlers fainted - Opponent (Multi)")
+SINGLE_BATTLE_TEST("Tablets of Ruin's message displays correctly after all battlers fainted - Opponent (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_EXPLOSION) == EFFECT_EXPLOSION);

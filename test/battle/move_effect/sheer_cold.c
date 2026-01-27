@@ -86,7 +86,7 @@ TO_DO_BATTLE_TEST("Sheer Cold's accuracy decreasaes by 10% if the user is not Ic
 TO_DO_BATTLE_TEST("Sheer Cold's ignores non-stage accuracy modifiers") // Gravity, Wide Lens, Compound Eyes
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Sheer Cold can hit semi-invulnerable mons when the user has No-Guard (Multi)")
+SINGLE_BATTLE_TEST("Sheer Cold can hit semi-invulnerable mons when the user has No-Guard (Traits)")
 {
     GIVEN {
         ASSUME(GetItemHoldEffect(ITEM_FOCUS_SASH) == HOLD_EFFECT_FOCUS_SASH);
@@ -101,7 +101,7 @@ SINGLE_BATTLE_TEST("Sheer Cold can hit semi-invulnerable mons when the user has 
     }
 }
 
-SINGLE_BATTLE_TEST("Sheer Cold can be endured by Sturdy (Multi)")
+SINGLE_BATTLE_TEST("Sheer Cold can be endured by Sturdy (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);

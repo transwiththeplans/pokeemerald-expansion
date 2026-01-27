@@ -198,7 +198,7 @@ DOUBLE_BATTLE_TEST("Aroma Veil prevents Psychic Noise's effect")
 //TO_DO_BATTLE_TEST("Aroma Veil prevents G-Max Meltdown's effect");
 
 #if MAX_MON_TRAITS > 1
-DOUBLE_BATTLE_TEST("Aroma Veil protects the Pokémon's side from Taunt (Multi)")
+DOUBLE_BATTLE_TEST("Aroma Veil protects the Pokémon's side from Taunt (Traits)")
 {
     struct BattlePokemon *moveTarget = NULL;
     PARAMETRIZE { moveTarget = playerLeft; }
@@ -219,7 +219,7 @@ DOUBLE_BATTLE_TEST("Aroma Veil protects the Pokémon's side from Taunt (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Aroma Veil protects the Pokémon's side from Torment (Multi)")
+DOUBLE_BATTLE_TEST("Aroma Veil protects the Pokémon's side from Torment (Traits)")
 {
     struct BattlePokemon *moveTarget = NULL;
     PARAMETRIZE { moveTarget = playerLeft; }
@@ -242,7 +242,7 @@ DOUBLE_BATTLE_TEST("Aroma Veil protects the Pokémon's side from Torment (Multi)
     }
 }
 
-DOUBLE_BATTLE_TEST("Aroma Veil protects the Pokémon's side from Encore (Multi)")
+DOUBLE_BATTLE_TEST("Aroma Veil protects the Pokémon's side from Encore (Traits)")
 {
     struct BattlePokemon *moveTarget = NULL;
     PARAMETRIZE { moveTarget = playerLeft; }
@@ -265,7 +265,7 @@ DOUBLE_BATTLE_TEST("Aroma Veil protects the Pokémon's side from Encore (Multi)"
     }
 }
 
-DOUBLE_BATTLE_TEST("Aroma Veil protects the Pokémon's side from Disable (Multi)")
+DOUBLE_BATTLE_TEST("Aroma Veil protects the Pokémon's side from Disable (Traits)")
 {
     struct BattlePokemon *moveTarget = NULL;
     PARAMETRIZE { moveTarget = playerLeft; }
@@ -288,7 +288,7 @@ DOUBLE_BATTLE_TEST("Aroma Veil protects the Pokémon's side from Disable (Multi)
     }
 }
 
-DOUBLE_BATTLE_TEST("Aroma Veil protects the Pokémon's side from Cursed Body (Multi)")
+DOUBLE_BATTLE_TEST("Aroma Veil protects the Pokémon's side from Cursed Body (Traits)")
 {
     GIVEN {
         ASSUME(MoveMakesContact(MOVE_PECK));
@@ -309,7 +309,7 @@ DOUBLE_BATTLE_TEST("Aroma Veil protects the Pokémon's side from Cursed Body (Mu
     }
 }
 
-DOUBLE_BATTLE_TEST("Aroma Veil protects the Pokémon's side from Heal Block (Multi)")
+DOUBLE_BATTLE_TEST("Aroma Veil protects the Pokémon's side from Heal Block (Traits)")
 {
     struct BattlePokemon *moveTarget = NULL;
     PARAMETRIZE { moveTarget = playerLeft; }
@@ -330,7 +330,7 @@ DOUBLE_BATTLE_TEST("Aroma Veil protects the Pokémon's side from Heal Block (Mul
     }
 }
 
-DOUBLE_BATTLE_TEST("Aroma Veil protects the Pokémon's side from Infatuation (Multi)")
+DOUBLE_BATTLE_TEST("Aroma Veil protects the Pokémon's side from Infatuation (Traits)")
 {
     struct BattlePokemon *moveTarget = NULL;
     PARAMETRIZE { moveTarget = playerLeft; }
@@ -350,7 +350,7 @@ DOUBLE_BATTLE_TEST("Aroma Veil protects the Pokémon's side from Infatuation (Mu
     }
 }
 
-DOUBLE_BATTLE_TEST("Aroma Veil does not protect the Pokémon's side from Imprison (Multi)")
+DOUBLE_BATTLE_TEST("Aroma Veil does not protect the Pokémon's side from Imprison (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_IMPRISON) == EFFECT_IMPRISON);
@@ -371,7 +371,7 @@ DOUBLE_BATTLE_TEST("Aroma Veil does not protect the Pokémon's side from Impriso
     }
 }
 
-DOUBLE_BATTLE_TEST("Aroma Veil prevents Psychic Noise's effect (Multi)")
+DOUBLE_BATTLE_TEST("Aroma Veil prevents Psychic Noise's effect (Traits)")
 {
     struct BattlePokemon *moveTarget = NULL;
     PARAMETRIZE { moveTarget = playerLeft; }
@@ -392,5 +392,5 @@ DOUBLE_BATTLE_TEST("Aroma Veil prevents Psychic Noise's effect (Multi)")
 }
 
 // Marked in Bulbapedia as need of research
-//TO_DO_BATTLE_TEST("Aroma Veil prevents G-Max Meltdown's effect (Multi)");
+//TO_DO_BATTLE_TEST("Aroma Veil prevents G-Max Meltdown's effect (Traits)");
 #endif

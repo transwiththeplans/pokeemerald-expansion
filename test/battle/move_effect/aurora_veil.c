@@ -63,7 +63,7 @@ TO_DO_BATTLE_TEST("Aurora Veil doesn't reduce damage done by moves that do direc
 
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Aurora Veil will prevent Protean activation if it fails due to no Snow/Hail (Multi)")
+SINGLE_BATTLE_TEST("Aurora Veil will prevent Protean activation if it fails due to no Snow/Hail (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_KECLEON) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_PROTEAN); }
@@ -76,7 +76,7 @@ SINGLE_BATTLE_TEST("Aurora Veil will prevent Protean activation if it fails due 
     }
 }
 
-SINGLE_BATTLE_TEST("Aurora Veil wont prevent Protean activation when it fails due to being set up already (Multi)")
+SINGLE_BATTLE_TEST("Aurora Veil wont prevent Protean activation when it fails due to being set up already (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);

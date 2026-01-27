@@ -202,7 +202,7 @@ SINGLE_BATTLE_TEST("Electric Seed doesn't activate on existing Electric Terrain 
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Electric Seed raises the holder's Defense on Electric Terrain (Multi)")
+SINGLE_BATTLE_TEST("Electric Seed raises the holder's Defense on Electric Terrain (Traits)")
 {
     enum Ability ability;
     u32 item;
@@ -234,7 +234,7 @@ SINGLE_BATTLE_TEST("Electric Seed raises the holder's Defense on Electric Terrai
     }
 }
 
-SINGLE_BATTLE_TEST("Grassy Seed raises the holder's Defense on Grassy Terrain (Multi)")
+SINGLE_BATTLE_TEST("Grassy Seed raises the holder's Defense on Grassy Terrain (Traits)")
 {
     enum Ability ability;
     u32 item;
@@ -266,7 +266,7 @@ SINGLE_BATTLE_TEST("Grassy Seed raises the holder's Defense on Grassy Terrain (M
     }
 }
 
-SINGLE_BATTLE_TEST("Misty Seed raises the holder's Sp. Defense on Misty Terrain (Multi)")
+SINGLE_BATTLE_TEST("Misty Seed raises the holder's Sp. Defense on Misty Terrain (Traits)")
 {
     enum Ability ability;
     u32 item;
@@ -298,7 +298,7 @@ SINGLE_BATTLE_TEST("Misty Seed raises the holder's Sp. Defense on Misty Terrain 
     }
 }
 
-SINGLE_BATTLE_TEST("Psychic Seed raises the holder's Sp. Defense on Psychic Terrain (Multi)")
+SINGLE_BATTLE_TEST("Psychic Seed raises the holder's Sp. Defense on Psychic Terrain (Traits)")
 {
     enum Ability ability;
     u32 item;
@@ -330,7 +330,7 @@ SINGLE_BATTLE_TEST("Psychic Seed raises the holder's Sp. Defense on Psychic Terr
     }
 }
 
-SINGLE_BATTLE_TEST("Seeds get consumed in Terrain even if holder is not affected by Terrain (Multi)")
+SINGLE_BATTLE_TEST("Seeds get consumed in Terrain even if holder is not affected by Terrain (Traits)")
 {
     u32 species, item;
     enum Ability ability;
@@ -352,7 +352,7 @@ SINGLE_BATTLE_TEST("Seeds get consumed in Terrain even if holder is not affected
     }
 }
 
-SINGLE_BATTLE_TEST("Electric Seed is consumed on Electric Terrain before other abilities change the terrain (Multi)")
+SINGLE_BATTLE_TEST("Electric Seed is consumed on Electric Terrain before other abilities change the terrain (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_TAPU_BULU) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_GRASSY_SURGE); Item(ITEM_ELECTRIC_SEED); Speed(5); }
@@ -369,7 +369,7 @@ SINGLE_BATTLE_TEST("Electric Seed is consumed on Electric Terrain before other a
     }
 }
 
-SINGLE_BATTLE_TEST("Electric Seed doesn't activate on existing Electric Terrain before user's ability changes the terrain (Multi)")
+SINGLE_BATTLE_TEST("Electric Seed doesn't activate on existing Electric Terrain before user's ability changes the terrain (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);

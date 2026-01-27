@@ -49,7 +49,7 @@ DOUBLE_BATTLE_TEST("Healer cures status condition before burn or poison damage i
 TO_DO_BATTLE_TEST("Healer has a 30% chance of curing each of its ally's status conditions independently");
 
 #if MAX_MON_TRAITS > 1
-DOUBLE_BATTLE_TEST("Healer cures adjacent ally's status condition 30% of the time (Multi)")
+DOUBLE_BATTLE_TEST("Healer cures adjacent ally's status condition 30% of the time (Traits)")
 {
     u16 status;
     PARAMETRIZE { status = STATUS1_SLEEP; }
@@ -72,7 +72,7 @@ DOUBLE_BATTLE_TEST("Healer cures adjacent ally's status condition 30% of the tim
     }
 }
 
-DOUBLE_BATTLE_TEST("Healer cures status condition before burn or poison damage is dealt (Multi)")
+DOUBLE_BATTLE_TEST("Healer cures status condition before burn or poison damage is dealt (Traits)")
 {
     u16 status;
     PARAMETRIZE { status = STATUS1_POISON; }
@@ -94,5 +94,5 @@ DOUBLE_BATTLE_TEST("Healer cures status condition before burn or poison damage i
 }
 
 // Triple battles
-TO_DO_BATTLE_TEST("Healer has a 30% chance of curing each of its ally's status conditions independently (Multi)");
+TO_DO_BATTLE_TEST("Healer has a 30% chance of curing each of its ally's status conditions independently (Traits)");
 #endif

@@ -139,7 +139,7 @@ SINGLE_BATTLE_TEST("Recoil: No recoil is taken if the move is blocked by Disguis
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Recoil: Flare Blitz is absorbed by Flash Fire and no recoil damage is dealt (Multi)")
+SINGLE_BATTLE_TEST("Recoil: Flare Blitz is absorbed by Flash Fire and no recoil damage is dealt (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveRecoil(MOVE_FLARE_BLITZ) > 0);
@@ -158,7 +158,7 @@ SINGLE_BATTLE_TEST("Recoil: Flare Blitz is absorbed by Flash Fire and no recoil 
     }
 }
 
-SINGLE_BATTLE_TEST("Recoil: No recoil is taken if the move is blocked by Disguise (Multi)")
+SINGLE_BATTLE_TEST("Recoil: No recoil is taken if the move is blocked by Disguise (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveRecoil(MOVE_FLARE_BLITZ) > 0);

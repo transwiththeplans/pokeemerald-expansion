@@ -20,7 +20,7 @@ SINGLE_BATTLE_TEST("Bulletproof makes ballistic moves fail against the ability u
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Bulletproof makes ballistic moves fail against the ability user (Multi)")
+SINGLE_BATTLE_TEST("Bulletproof makes ballistic moves fail against the ability user (Traits)")
 {
     GIVEN {
         ASSUME(IsBallisticMove(MOVE_ELECTRO_BALL));

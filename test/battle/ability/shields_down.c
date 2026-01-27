@@ -77,7 +77,7 @@ SINGLE_BATTLE_TEST("Shields Down protects Minior Meteor from status conditions")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Minior Core doesn't transform into Minior Meteor on switch-in if it has 1/2 or less health (Multi)")
+SINGLE_BATTLE_TEST("Minior Core doesn't transform into Minior Meteor on switch-in if it has 1/2 or less health (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WYNAUT);
@@ -95,7 +95,7 @@ SINGLE_BATTLE_TEST("Minior Core doesn't transform into Minior Meteor on switch-i
     }
 }
 
-SINGLE_BATTLE_TEST("Minior Core transforms into Minior Meteor on switch-in if it has more than 1/2 health (Multi)")
+SINGLE_BATTLE_TEST("Minior Core transforms into Minior Meteor on switch-in if it has more than 1/2 health (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WYNAUT);
@@ -111,7 +111,7 @@ SINGLE_BATTLE_TEST("Minior Core transforms into Minior Meteor on switch-in if it
     }
 }
 
-SINGLE_BATTLE_TEST("Minior Core transforms into Minior Meteor on battle start if it has more than 1/2 health (Multi)")
+SINGLE_BATTLE_TEST("Minior Core transforms into Minior Meteor on battle start if it has more than 1/2 health (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WYNAUT);
@@ -126,7 +126,7 @@ SINGLE_BATTLE_TEST("Minior Core transforms into Minior Meteor on battle start if
     }
 }
 
-SINGLE_BATTLE_TEST("Shields Down protects Minior Meteor from status conditions (Multi)")
+SINGLE_BATTLE_TEST("Shields Down protects Minior Meteor from status conditions (Traits)")
 {
     u32 species, hp;
     PARAMETRIZE { species = SPECIES_MINIOR_METEOR; hp = 300; }

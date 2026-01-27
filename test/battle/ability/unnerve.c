@@ -127,7 +127,7 @@ DOUBLE_BATTLE_TEST("Unnerve stops applying on death but applies on revive")
 
 // Remember to add a PARAMETRIZE for As One in the following tests:
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Unnerve prevents opposing Pokémon from eating their own berries (Multi)")
+SINGLE_BATTLE_TEST("Unnerve prevents opposing Pokémon from eating their own berries (Traits)")
 {
     u16 mon;
     enum Ability ability;
@@ -146,7 +146,7 @@ SINGLE_BATTLE_TEST("Unnerve prevents opposing Pokémon from eating their own ber
     }
 }
 
-SINGLE_BATTLE_TEST("Unnerve doesn't prevent opposing Pokémon from using Natural Gift (Multi)")
+SINGLE_BATTLE_TEST("Unnerve doesn't prevent opposing Pokémon from using Natural Gift (Traits)")
 {
     u16 mon;
     enum Ability ability;
@@ -164,7 +164,7 @@ SINGLE_BATTLE_TEST("Unnerve doesn't prevent opposing Pokémon from using Natural
     }
 }
 
-SINGLE_BATTLE_TEST("Unnerve prints the correct string (player) (Multi)")
+SINGLE_BATTLE_TEST("Unnerve prints the correct string (player) (Traits)")
 {
     u16 mon;
     enum Ability ability;
@@ -181,7 +181,7 @@ SINGLE_BATTLE_TEST("Unnerve prints the correct string (player) (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Unnerve prints the correct string (opponent) (Multi)")
+SINGLE_BATTLE_TEST("Unnerve prints the correct string (opponent) (Traits)")
 {
     u16 mon;
     enum Ability ability;
@@ -198,7 +198,7 @@ SINGLE_BATTLE_TEST("Unnerve prints the correct string (opponent) (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Unnerve stops applying on death but applies on revive (Multi)")
+DOUBLE_BATTLE_TEST("Unnerve stops applying on death but applies on revive (Traits)")
 {
     u16 mon;
     u16 ability;

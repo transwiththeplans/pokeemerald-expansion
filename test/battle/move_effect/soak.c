@@ -45,7 +45,7 @@ TO_DO_BATTLE_TEST("Soak/Magic Powder fails if the target is already Water/Psychi
 TO_DO_BATTLE_TEST("Soak/Magic Powder fails if the target has Multitype or RKS System");
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Soak/Magic Powder's type change is overwitten if the target changes form (Multi)")
+SINGLE_BATTLE_TEST("Soak/Magic Powder's type change is overwitten if the target changes form (Traits)")
 {
     u32 move;
     PARAMETRIZE { move = MOVE_SOAK; }

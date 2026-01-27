@@ -135,7 +135,7 @@ DOUBLE_BATTLE_TEST("Revival Blessing correctly updates battler absent flags")
 }
 
 #if MAX_MON_TRAITS > 1
-DOUBLE_BATTLE_TEST("Revival Blessing correctly updates battler absent flags (Multi)")
+DOUBLE_BATTLE_TEST("Revival Blessing correctly updates battler absent flags (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_SALAMENCE) { Level(40); }

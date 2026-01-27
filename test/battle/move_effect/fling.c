@@ -552,7 +552,7 @@ SINGLE_BATTLE_TEST("Fling deals damage based on a TM's move power")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Fling fails for Pokémon with Klutz ability (Multi)")
+SINGLE_BATTLE_TEST("Fling fails for Pokémon with Klutz ability (Traits)")
 {
     enum Ability ability;
 
@@ -576,7 +576,7 @@ SINGLE_BATTLE_TEST("Fling fails for Pokémon with Klutz ability (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Fling - Item does not get blocked by Unnerve if it isn't a berry (Multi)")
+SINGLE_BATTLE_TEST("Fling - Item does not get blocked by Unnerve if it isn't a berry (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_TAUNT) == EFFECT_TAUNT);
@@ -593,7 +593,7 @@ SINGLE_BATTLE_TEST("Fling - Item does not get blocked by Unnerve if it isn't a b
     }
 }
 
-SINGLE_BATTLE_TEST("Fling's secondary effects are blocked by Shield Dust (Multi)")
+SINGLE_BATTLE_TEST("Fling's secondary effects are blocked by Shield Dust (Traits)")
 {
     u16 item;
 

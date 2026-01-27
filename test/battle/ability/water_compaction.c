@@ -61,7 +61,7 @@ SINGLE_BATTLE_TEST("Water Compaction does not affect damage taken from Water typ
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Water Compaction raises Defense 2 stages when hit by a water type move (Multi)")
+SINGLE_BATTLE_TEST("Water Compaction raises Defense 2 stages when hit by a water type move (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveType(MOVE_WATER_GUN) == TYPE_WATER);
@@ -77,7 +77,7 @@ SINGLE_BATTLE_TEST("Water Compaction raises Defense 2 stages when hit by a water
     }
 }
 
-SINGLE_BATTLE_TEST("Water Compaction raises Defense 2 stages on each hit of a multi-hit Water type move (Multi)")
+SINGLE_BATTLE_TEST("Water Compaction raises Defense 2 stages on each hit of a multi-hit Water type move (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveType(MOVE_SURGING_STRIKES) == TYPE_WATER);
@@ -101,7 +101,7 @@ SINGLE_BATTLE_TEST("Water Compaction raises Defense 2 stages on each hit of a mu
     }
 }
 
-SINGLE_BATTLE_TEST("Water Compaction does not affect damage taken from Water type moves (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Water Compaction does not affect damage taken from Water type moves (Traits)", s16 damage)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_SAND_VEIL; }

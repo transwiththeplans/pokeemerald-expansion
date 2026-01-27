@@ -76,7 +76,7 @@ SINGLE_BATTLE_TEST("Curse applies to the opponent if user is afflicted by Trick-
 TO_DO_BATTLE_TEST("Baton Pass passes Cursed status");
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Curse applies to the user if used with Protean/Libero (Multi)")
+SINGLE_BATTLE_TEST("Curse applies to the user if used with Protean/Libero (Traits)")
 {
     u32 ability, species;
     PARAMETRIZE { ability = ABILITY_PROTEAN; species = SPECIES_KECLEON; }

@@ -141,7 +141,7 @@ DOUBLE_BATTLE_TEST("Bad Dreams faints both sleeping Pokemon on opponent side")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Bad Dreams causes Pokémon with Comatose to lose 1/8 of HP (Multi)")
+SINGLE_BATTLE_TEST("Bad Dreams causes Pokémon with Comatose to lose 1/8 of HP (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_DARKRAI);

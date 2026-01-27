@@ -26,7 +26,7 @@ SINGLE_BATTLE_TEST("Sharpness increases the power of slicing moves by 50%", s16 
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Sharpness increases the power of slicing moves by 50% (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Sharpness increases the power of slicing moves by 50% (Traits)", s16 damage)
 {
     u32 move;
     enum Ability ability;

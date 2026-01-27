@@ -15,7 +15,7 @@ SINGLE_BATTLE_TEST("Grassy Surge creates Grassy Terrain when entering the battle
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Grassy Surge creates Grassy Terrain when entering the battle (Multi)")
+SINGLE_BATTLE_TEST("Grassy Surge creates Grassy Terrain when entering the battle (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_TAPU_BULU) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_GRASSY_SURGE); }

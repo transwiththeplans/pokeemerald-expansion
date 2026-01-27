@@ -97,7 +97,7 @@ DOUBLE_BATTLE_TEST("Howl does not work on partner if it has Soundproof")
 }
 
 #if MAX_MON_TRAITS > 1
-DOUBLE_BATTLE_TEST("Howl does not work on partner if it has Soundproof (Multi)")
+DOUBLE_BATTLE_TEST("Howl does not work on partner if it has Soundproof (Traits)")
 {
     s16 damage[2];
 

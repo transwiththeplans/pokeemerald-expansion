@@ -312,7 +312,7 @@ DOUBLE_BATTLE_TEST("Pickup doesn't trigger more than once per turn")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Pickup grants an item used by another Pokémon (Multi)")
+SINGLE_BATTLE_TEST("Pickup grants an item used by another Pokémon (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_ZIGZAGOON) { Ability(ABILITY_RUN_AWAY); Innates(ABILITY_PICKUP); }
@@ -328,7 +328,7 @@ SINGLE_BATTLE_TEST("Pickup grants an item used by another Pokémon (Multi)")
     }
 }
 
-WILD_BATTLE_TEST("Pickup grants an item used by itself in wild battles (Gen9+) (Multi)")
+WILD_BATTLE_TEST("Pickup grants an item used by itself in wild battles (Gen9+) (Traits)")
 {
     GIVEN {
         WITH_CONFIG(CONFIG_PICKUP_WILD, GEN_9);
@@ -345,7 +345,7 @@ WILD_BATTLE_TEST("Pickup grants an item used by itself in wild battles (Gen9+) (
     }
 }
 
-SINGLE_BATTLE_TEST("Pickup doesn't grant the user their item outside wild battles (Multi)")
+SINGLE_BATTLE_TEST("Pickup doesn't grant the user their item outside wild battles (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -363,7 +363,7 @@ SINGLE_BATTLE_TEST("Pickup doesn't grant the user their item outside wild battle
     }
 }
 
-SINGLE_BATTLE_TEST("Pickup doesn't grant another Pokémon's popped Air Balloon (Multi)")
+SINGLE_BATTLE_TEST("Pickup doesn't grant another Pokémon's popped Air Balloon (Traits)")
 {
     GIVEN {
         ASSUME(gItemsInfo[ITEM_AIR_BALLOON].holdEffect == HOLD_EFFECT_AIR_BALLOON);
@@ -382,7 +382,7 @@ SINGLE_BATTLE_TEST("Pickup doesn't grant another Pokémon's popped Air Balloon (
     }
 }
 
-SINGLE_BATTLE_TEST("Pickup doesn't grant an item not used that turn (Multi)")
+SINGLE_BATTLE_TEST("Pickup doesn't grant an item not used that turn (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -403,7 +403,7 @@ SINGLE_BATTLE_TEST("Pickup doesn't grant an item not used that turn (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Pickup doesn't grant an item after its holder faints (Multi)")
+SINGLE_BATTLE_TEST("Pickup doesn't grant an item after its holder faints (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_ZIGZAGOON) { Ability(ABILITY_RUN_AWAY); Innates(ABILITY_PICKUP); }
@@ -422,7 +422,7 @@ SINGLE_BATTLE_TEST("Pickup doesn't grant an item after its holder faints (Multi)
     }
 }
 
-SINGLE_BATTLE_TEST("Pickup doesn't grant an used item if holder is replaced (Multi)")
+SINGLE_BATTLE_TEST("Pickup doesn't grant an used item if holder is replaced (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_PARTING_SHOT) == EFFECT_PARTING_SHOT);
@@ -447,7 +447,7 @@ SINGLE_BATTLE_TEST("Pickup doesn't grant an used item if holder is replaced (Mul
     }
 }
 
-SINGLE_BATTLE_TEST("Pickup doesn't grant an item if it destroyed the item with Incinerate (Multi)")
+SINGLE_BATTLE_TEST("Pickup doesn't grant an item if it destroyed the item with Incinerate (Traits)")
 {
     GIVEN {
         ASSUME(MoveHasAdditionalEffect(MOVE_INCINERATE, MOVE_EFFECT_INCINERATE));
@@ -466,7 +466,7 @@ SINGLE_BATTLE_TEST("Pickup doesn't grant an item if it destroyed the item with I
     }
 }
 
-SINGLE_BATTLE_TEST("Pickup doesn't grant an item if it knocked off that item (Multi)")
+SINGLE_BATTLE_TEST("Pickup doesn't grant an item if it knocked off that item (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_KNOCK_OFF) == EFFECT_KNOCK_OFF);
@@ -485,7 +485,7 @@ SINGLE_BATTLE_TEST("Pickup doesn't grant an item if it knocked off that item (Mu
     }
 }
 
-SINGLE_BATTLE_TEST("Pickup doesn't grant an item if the user eats it with Bug Bite/Pluck (Multi)")
+SINGLE_BATTLE_TEST("Pickup doesn't grant an item if the user eats it with Bug Bite/Pluck (Traits)")
 {
     GIVEN {
         ASSUME(MoveHasAdditionalEffect(MOVE_BUG_BITE, MOVE_EFFECT_BUG_BITE));
@@ -504,7 +504,7 @@ SINGLE_BATTLE_TEST("Pickup doesn't grant an item if the user eats it with Bug Bi
     }
 }
 
-SINGLE_BATTLE_TEST("Pickup doesn't grant an used item if its user already restored it (Multi)")
+SINGLE_BATTLE_TEST("Pickup doesn't grant an used item if its user already restored it (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_RECYCLE) == EFFECT_RECYCLE);
@@ -524,7 +524,7 @@ SINGLE_BATTLE_TEST("Pickup doesn't grant an used item if its user already restor
     }
 }
 
-SINGLE_BATTLE_TEST("Pickup restores an item that has been Flinged (Multi)")
+SINGLE_BATTLE_TEST("Pickup restores an item that has been Flinged (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_FLING) == EFFECT_FLING);
@@ -541,7 +541,7 @@ SINGLE_BATTLE_TEST("Pickup restores an item that has been Flinged (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Pickup restores an item that was used by Natural Gift (Multi)")
+SINGLE_BATTLE_TEST("Pickup restores an item that was used by Natural Gift (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_NATURAL_GIFT) == EFFECT_NATURAL_GIFT);
@@ -558,7 +558,7 @@ SINGLE_BATTLE_TEST("Pickup restores an item that was used by Natural Gift (Multi
     }
 }
 
-DOUBLE_BATTLE_TEST("Pickup triggers based on Speed order (Multi)")
+DOUBLE_BATTLE_TEST("Pickup triggers based on Speed order (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_ZIGZAGOON) { Speed(1); Ability(ABILITY_RUN_AWAY); Innates(ABILITY_PICKUP); }
@@ -577,7 +577,7 @@ DOUBLE_BATTLE_TEST("Pickup triggers based on Speed order (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Pickup grants a random item used by another Pokémon (Multi)")
+DOUBLE_BATTLE_TEST("Pickup grants a random item used by another Pokémon (Traits)")
 {
     PASSES_RANDOMLY(1, 3, RNG_PICKUP);
     GIVEN {
@@ -596,7 +596,7 @@ DOUBLE_BATTLE_TEST("Pickup grants a random item used by another Pokémon (Multi)
     }
 }
 
-DOUBLE_BATTLE_TEST("Pickup doesn't trigger more than once per turn (Multi)")
+DOUBLE_BATTLE_TEST("Pickup doesn't trigger more than once per turn (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_ZIGZAGOON) { HP(1); Ability(ABILITY_RUN_AWAY); Innates(ABILITY_PICKUP); }

@@ -118,7 +118,7 @@ AI_SINGLE_BATTLE_TEST("AI uses Stuff Cheeks")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Stuff Cheeks can be used even if Unnerve is present (Multi)")
+SINGLE_BATTLE_TEST("Stuff Cheeks can be used even if Unnerve is present (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_SKWOVET) { Item(ITEM_LIECHI_BERRY); }

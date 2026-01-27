@@ -172,7 +172,7 @@ TO_DO_BATTLE_TEST("(DYNAMAX) Galvanize turns Max Strike into Max Lightning when 
 
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Galvanize turns a normal type move into Electric (Multi)")
+SINGLE_BATTLE_TEST("Galvanize turns a normal type move into Electric (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_KRABBY);
@@ -185,7 +185,7 @@ SINGLE_BATTLE_TEST("Galvanize turns a normal type move into Electric (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Galvanize can not turn certain moves into Electric type moves (Multi)")
+SINGLE_BATTLE_TEST("Galvanize can not turn certain moves into Electric type moves (Traits)")
 {
     u32 move;
 
@@ -207,7 +207,7 @@ SINGLE_BATTLE_TEST("Galvanize can not turn certain moves into Electric type move
     }
 }
 
-SINGLE_BATTLE_TEST("Galvanize boosts power of affected moves by 20% (Gen7+) or 30% (Gen1-6) (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Galvanize boosts power of affected moves by 20% (Gen7+) or 30% (Gen1-6) (Traits)", s16 damage)
 {
     enum Ability ability;
     u32 genConfig;
@@ -232,7 +232,7 @@ SINGLE_BATTLE_TEST("Galvanize boosts power of affected moves by 20% (Gen7+) or 3
     }
 }
 
-SINGLE_BATTLE_TEST("Galvanize doesn't affect Weather Ball's type (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Galvanize doesn't affect Weather Ball's type (Traits)", s16 damage)
 {
     u16 move;
     enum Ability ability;
@@ -261,7 +261,7 @@ SINGLE_BATTLE_TEST("Galvanize doesn't affect Weather Ball's type (Multi)", s16 d
     }
 }
 
-SINGLE_BATTLE_TEST("Galvanize doesn't affect Natural Gift's type (Multi)")
+SINGLE_BATTLE_TEST("Galvanize doesn't affect Natural Gift's type (Traits)")
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_STURDY; }
@@ -280,7 +280,7 @@ SINGLE_BATTLE_TEST("Galvanize doesn't affect Natural Gift's type (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Galvanize doesn't affect Judgment / Techno Blast / Multi-Attack's type (Multi)")
+SINGLE_BATTLE_TEST("Galvanize doesn't affect Judgment / Techno Blast / Multi-Attack's type (Traits)")
 {
     u16 move, item;
     PARAMETRIZE { move = MOVE_JUDGMENT; item = ITEM_SPLASH_PLATE; }
@@ -312,7 +312,7 @@ SINGLE_BATTLE_TEST("Galvanize doesn't affect Judgment / Techno Blast / Multi-Att
     }
 }
 
-SINGLE_BATTLE_TEST("Galvanize doesn't affect Hidden Power's type (Multi)")
+SINGLE_BATTLE_TEST("Galvanize doesn't affect Hidden Power's type (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_HIDDEN_POWER) == EFFECT_HIDDEN_POWER);
@@ -328,10 +328,10 @@ SINGLE_BATTLE_TEST("Galvanize doesn't affect Hidden Power's type (Multi)")
     }
 }
 
-TO_DO_BATTLE_TEST("Galvanize doesn't affect Tera Starstorm's type (Multi)");
-TO_DO_BATTLE_TEST("Galvanize doesn't affect Max Strike's type (Multi)");
-TO_DO_BATTLE_TEST("Galvanize doesn't affect Terrain Pulse's type (Multi)");
-TO_DO_BATTLE_TEST("Galvanize doesn't affect damaging Z-Move types (Multi)");
-TO_DO_BATTLE_TEST("(DYNAMAX) Galvanize turns Max Strike into Max Lightning when not used by Gigantamax Pikachu/Toxtricity (Multi)");
+TO_DO_BATTLE_TEST("Galvanize doesn't affect Tera Starstorm's type (Traits)");
+TO_DO_BATTLE_TEST("Galvanize doesn't affect Max Strike's type (Traits)");
+TO_DO_BATTLE_TEST("Galvanize doesn't affect Terrain Pulse's type (Traits)");
+TO_DO_BATTLE_TEST("Galvanize doesn't affect damaging Z-Move types (Traits)");
+TO_DO_BATTLE_TEST("(DYNAMAX) Galvanize turns Max Strike into Max Lightning when not used by Gigantamax Pikachu/Toxtricity (Traits)");
 //TO_DO_BATTLE_TEST("(DYNAMAX) Galvanize doesn't turn Max Strike into Max Lightning when used by Gigantamax Pikachu/Toxtricity, instead becoming G-Max Volt Crash/Stun Shock"); // Marked in Bulbapedia as "needs research", so this assumes that it behaves like Pixilate.
 #endif

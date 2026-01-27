@@ -230,7 +230,7 @@ SINGLE_BATTLE_TEST("Mirror Armor reflects Obstruct defense drop")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Mirror Armor lowers a stat of the attacking Pokémon (Multi)")
+SINGLE_BATTLE_TEST("Mirror Armor lowers a stat of the attacking Pokémon (Traits)")
 {
     u16 move, statId;
 
@@ -280,7 +280,7 @@ SINGLE_BATTLE_TEST("Mirror Armor lowers a stat of the attacking Pokémon (Multi)
     }
 }
 
-SINGLE_BATTLE_TEST("Mirror Armor triggers even if the attacking Pokemon also has Mirror Armor ability (Multi)")
+SINGLE_BATTLE_TEST("Mirror Armor triggers even if the attacking Pokemon also has Mirror Armor ability (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_CORVIKNIGHT) { Ability(ABILITY_PRESSURE); Innates(ABILITY_MIRROR_ARMOR); }
@@ -299,7 +299,7 @@ SINGLE_BATTLE_TEST("Mirror Armor triggers even if the attacking Pokemon also has
     }
 }
 
-SINGLE_BATTLE_TEST("Mirror Armor doesn't lower the stats of an attacking Pokemon with the Clear Body ability (Multi)")
+SINGLE_BATTLE_TEST("Mirror Armor doesn't lower the stats of an attacking Pokemon with the Clear Body ability (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_CORVIKNIGHT) { Ability(ABILITY_PRESSURE); Innates(ABILITY_MIRROR_ARMOR); }
@@ -317,7 +317,7 @@ SINGLE_BATTLE_TEST("Mirror Armor doesn't lower the stats of an attacking Pokemon
     }
 }
 
-SINGLE_BATTLE_TEST("Mirror Armor lowers the Attack of Pokemon with Intimidate (Multi)")
+SINGLE_BATTLE_TEST("Mirror Armor lowers the Attack of Pokemon with Intimidate (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_CORVIKNIGHT) { Ability(ABILITY_MIRROR_ARMOR); }
@@ -335,7 +335,7 @@ SINGLE_BATTLE_TEST("Mirror Armor lowers the Attack of Pokemon with Intimidate (M
     }
 }
 
-SINGLE_BATTLE_TEST("Mirror Armor doesn't lower the stats of an attacking Pokemon behind Substitute (Multi)")
+SINGLE_BATTLE_TEST("Mirror Armor doesn't lower the stats of an attacking Pokemon behind Substitute (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_CORVIKNIGHT) { Ability(ABILITY_PRESSURE); Innates(ABILITY_MIRROR_ARMOR); }
@@ -355,7 +355,7 @@ SINGLE_BATTLE_TEST("Mirror Armor doesn't lower the stats of an attacking Pokemon
     }
 }
 
-SINGLE_BATTLE_TEST("Mirror Armor raises the stat of an attacking Pokemon with Contrary (Multi)")
+SINGLE_BATTLE_TEST("Mirror Armor raises the stat of an attacking Pokemon with Contrary (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_CORVIKNIGHT) {Ability(ABILITY_PRESSURE); Innates(ABILITY_MIRROR_ARMOR);}
@@ -373,7 +373,7 @@ SINGLE_BATTLE_TEST("Mirror Armor raises the stat of an attacking Pokemon with Co
     }
 }
 
-SINGLE_BATTLE_TEST("Mirror Armor doesn't lower the stat of the attacking Pokemon if it is already at -6 (Multi)")
+SINGLE_BATTLE_TEST("Mirror Armor doesn't lower the stat of the attacking Pokemon if it is already at -6 (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_CORVIKNIGHT) {Ability(ABILITY_PRESSURE); Innates(ABILITY_MIRROR_ARMOR);}
@@ -398,7 +398,7 @@ SINGLE_BATTLE_TEST("Mirror Armor doesn't lower the stat of the attacking Pokemon
 }
 
 // This behaviour needs to be verified in the actual games. Currently it's written to follow Showdown's logic.
-DOUBLE_BATTLE_TEST("Mirror Armor lowers Speed of the partner Pokemon after Court Change was used by the opponent after it set up Sticky Web (Multi)")
+DOUBLE_BATTLE_TEST("Mirror Armor lowers Speed of the partner Pokemon after Court Change was used by the opponent after it set up Sticky Web (Traits)")
 {
     KNOWN_FAILING;
     GIVEN {
@@ -427,7 +427,7 @@ DOUBLE_BATTLE_TEST("Mirror Armor lowers Speed of the partner Pokemon after Court
     }
 }
 
-SINGLE_BATTLE_TEST("Mirror Armor reflects Tangling Hair speed drop (Multi)")
+SINGLE_BATTLE_TEST("Mirror Armor reflects Tangling Hair speed drop (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_DUGTRIO) { Ability(ABILITY_SAND_RUSH); Innates(ABILITY_TANGLING_HAIR); }
@@ -443,7 +443,7 @@ SINGLE_BATTLE_TEST("Mirror Armor reflects Tangling Hair speed drop (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Mirror Armor reflects Obstruct defense drop (Multi)")
+SINGLE_BATTLE_TEST("Mirror Armor reflects Obstruct defense drop (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);

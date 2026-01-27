@@ -76,7 +76,7 @@ SINGLE_BATTLE_TEST("Damp prevents damage from Aftermath")
 //TO_DO_BATTLE_TEST("Damp affects non-adjacent Pokémon (triples)")
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Damp prevents explosion-like moves from enemies (Multi)")
+SINGLE_BATTLE_TEST("Damp prevents explosion-like moves from enemies (Traits)")
 {
     u32 move;
     PARAMETRIZE { move = MOVE_EXPLOSION; }
@@ -94,7 +94,7 @@ SINGLE_BATTLE_TEST("Damp prevents explosion-like moves from enemies (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Damp prevents explosion-like moves from enemies in a double battle (Multi)")
+DOUBLE_BATTLE_TEST("Damp prevents explosion-like moves from enemies in a double battle (Traits)")
 {
     u32 move;
     PARAMETRIZE { move = MOVE_EXPLOSION; }
@@ -114,7 +114,7 @@ DOUBLE_BATTLE_TEST("Damp prevents explosion-like moves from enemies in a double 
     }
 }
 
-SINGLE_BATTLE_TEST("Damp prevents explosion-like moves from self (Multi)")
+SINGLE_BATTLE_TEST("Damp prevents explosion-like moves from self (Traits)")
 {
     u32 move;
     PARAMETRIZE { move = MOVE_EXPLOSION; }
@@ -132,7 +132,7 @@ SINGLE_BATTLE_TEST("Damp prevents explosion-like moves from self (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Damp prevents damage from Aftermath (Multi)")
+SINGLE_BATTLE_TEST("Damp prevents damage from Aftermath (Traits)")
 {
     GIVEN {
         ASSUME(MoveMakesContact(MOVE_SCRATCH));

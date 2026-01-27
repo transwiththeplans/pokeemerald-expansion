@@ -156,7 +156,7 @@ SINGLE_BATTLE_TEST("Recoil if miss: Disguise doesn't prevent crash damage from J
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Recoil if miss: Supercell Slam causes recoil if it is absorbed (Multi)")
+SINGLE_BATTLE_TEST("Recoil if miss: Supercell Slam causes recoil if it is absorbed (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -171,7 +171,7 @@ SINGLE_BATTLE_TEST("Recoil if miss: Supercell Slam causes recoil if it is absorb
     }
 }
 
-SINGLE_BATTLE_TEST("Recoil if miss: Disguise doesn't prevent crash damage from Jump Kick into ghost types (Multi)")
+SINGLE_BATTLE_TEST("Recoil if miss: Disguise doesn't prevent crash damage from Jump Kick into ghost types (Traits)")
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_EARLY_BIRD; }

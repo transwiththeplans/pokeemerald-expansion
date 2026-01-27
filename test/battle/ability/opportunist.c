@@ -317,7 +317,7 @@ DOUBLE_BATTLE_TEST("Opportunist and Mirror Herb resolve correctly")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Opportunist only copies foe's positive stat changes in a turn (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Opportunist only copies foe's positive stat changes in a turn (Traits)", s16 damage)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_FRISK; }
@@ -350,7 +350,7 @@ SINGLE_BATTLE_TEST("Opportunist only copies foe's positive stat changes in a tur
     }
 }
 
-DOUBLE_BATTLE_TEST("Opportunist raises Attack only once when partner has Intimidate against Contrary foe in a double battle (Multi)", s16 damageLeft, s16 damageRight)
+DOUBLE_BATTLE_TEST("Opportunist raises Attack only once when partner has Intimidate against Contrary foe in a double battle (Traits)", s16 damageLeft, s16 damageRight)
 {
     enum Ability abilityLeft, abilityRight;
 
@@ -412,7 +412,7 @@ DOUBLE_BATTLE_TEST("Opportunist raises Attack only once when partner has Intimid
     }
 }
 
-SINGLE_BATTLE_TEST("Opportunist does not accumulate opposing mon's stat changes (Multi)")
+SINGLE_BATTLE_TEST("Opportunist does not accumulate opposing mon's stat changes (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -430,7 +430,7 @@ SINGLE_BATTLE_TEST("Opportunist does not accumulate opposing mon's stat changes 
     }
 }
 
-SINGLE_BATTLE_TEST("Opportunist copies each stat increase individually from ability and move (Multi)")
+SINGLE_BATTLE_TEST("Opportunist copies each stat increase individually from ability and move (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -449,7 +449,7 @@ SINGLE_BATTLE_TEST("Opportunist copies each stat increase individually from abil
     }
 }
 
-SINGLE_BATTLE_TEST("Opportunist doesn't copy foe stat increases gained via Opportunist (Multi)")
+SINGLE_BATTLE_TEST("Opportunist doesn't copy foe stat increases gained via Opportunist (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_ESPATHRA) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_OPPORTUNIST); }
@@ -465,7 +465,7 @@ SINGLE_BATTLE_TEST("Opportunist doesn't copy foe stat increases gained via Oppor
     }
 }
 
-SINGLE_BATTLE_TEST("Opportunist copies foe stat increase gained via Swagger and Flatter (Multi)")
+SINGLE_BATTLE_TEST("Opportunist copies foe stat increase gained via Swagger and Flatter (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_ESPATHRA) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_OPPORTUNIST); }
@@ -484,7 +484,7 @@ SINGLE_BATTLE_TEST("Opportunist copies foe stat increase gained via Swagger and 
     }
 }
 
-DOUBLE_BATTLE_TEST("Opportunist doesn't copy ally stat increases (Multi)")
+DOUBLE_BATTLE_TEST("Opportunist doesn't copy ally stat increases (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -501,7 +501,7 @@ DOUBLE_BATTLE_TEST("Opportunist doesn't copy ally stat increases (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Opportunist copies the stat increase of each opposing mon (Multi)")
+DOUBLE_BATTLE_TEST("Opportunist copies the stat increase of each opposing mon (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -520,7 +520,7 @@ DOUBLE_BATTLE_TEST("Opportunist copies the stat increase of each opposing mon (M
 }
 
 
-DOUBLE_BATTLE_TEST("Opportunist copies the stat of each Pokémon that were raised at the same time (Multi)")
+DOUBLE_BATTLE_TEST("Opportunist copies the stat of each Pokémon that were raised at the same time (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -541,7 +541,7 @@ DOUBLE_BATTLE_TEST("Opportunist copies the stat of each Pokémon that were raise
     }
 }
 
-SINGLE_BATTLE_TEST("Opportunist copies the increase not the stages (Multi)")
+SINGLE_BATTLE_TEST("Opportunist copies the increase not the stages (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -568,7 +568,7 @@ SINGLE_BATTLE_TEST("Opportunist copies the increase not the stages (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Opportunist copies the stat increase from the incoming mon (Multi)")
+SINGLE_BATTLE_TEST("Opportunist copies the stat increase from the incoming mon (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_ESPATHRA) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_OPPORTUNIST); }
@@ -585,7 +585,7 @@ SINGLE_BATTLE_TEST("Opportunist copies the stat increase from the incoming mon (
     }
 }
 
-SINGLE_BATTLE_TEST("Opportunist and Mirror Herb stack stat increases (Multi)")
+SINGLE_BATTLE_TEST("Opportunist and Mirror Herb stack stat increases (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_ZACIAN) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_INTREPID_SWORD); }
@@ -605,7 +605,7 @@ SINGLE_BATTLE_TEST("Opportunist and Mirror Herb stack stat increases (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Opportunist and Mirror Herb resolve correctly (Multi)")
+DOUBLE_BATTLE_TEST("Opportunist and Mirror Herb resolve correctly (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_ZACIAN) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_INTREPID_SWORD); }

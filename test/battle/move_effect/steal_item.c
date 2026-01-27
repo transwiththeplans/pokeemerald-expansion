@@ -187,7 +187,7 @@ SINGLE_BATTLE_TEST("Thief and Covet: Berries that activate on a Status activate 
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Thief and Covet: Berries that activate on a Status activate before the item can be stolen (Multi)")
+SINGLE_BATTLE_TEST("Thief and Covet: Berries that activate on a Status activate before the item can be stolen (Traits)")
 {
     u32 move;
     PARAMETRIZE { move = MOVE_THIEF; }

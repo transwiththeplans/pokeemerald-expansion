@@ -337,7 +337,7 @@ SINGLE_BATTLE_TEST("Competitive doesn't activate if the pokemon lowers it's own 
 }
 
 #if MAX_MON_TRAITS > 1
-DOUBLE_BATTLE_TEST("Competitive sharply raises player's Sp. Atk after Intimidate (Multi)")
+DOUBLE_BATTLE_TEST("Competitive sharply raises player's Sp. Atk after Intimidate (Traits)")
 {
     u32 abilityLeft, abilityRight;
 
@@ -394,7 +394,7 @@ DOUBLE_BATTLE_TEST("Competitive sharply raises player's Sp. Atk after Intimidate
 }
 
 // Same as above, but for opponent.
-DOUBLE_BATTLE_TEST("Competitive sharply raises opponent's Sp. Atk after Intimidate (Multi)")
+DOUBLE_BATTLE_TEST("Competitive sharply raises opponent's Sp. Atk after Intimidate (Traits)")
 {
     u32 abilityLeft, abilityRight;
 
@@ -450,7 +450,7 @@ DOUBLE_BATTLE_TEST("Competitive sharply raises opponent's Sp. Atk after Intimida
     }
 }
 
-SINGLE_BATTLE_TEST("Competitive activates after Sticky Web lowers Speed (Multi)")
+SINGLE_BATTLE_TEST("Competitive activates after Sticky Web lowers Speed (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -473,7 +473,7 @@ SINGLE_BATTLE_TEST("Competitive activates after Sticky Web lowers Speed (Multi)"
     }
 }
 
-SINGLE_BATTLE_TEST("Competitive doesn't activate after Sticky Web lowers Speed if Court Changed (gen8) (Multi)")
+SINGLE_BATTLE_TEST("Competitive doesn't activate after Sticky Web lowers Speed if Court Changed (gen8) (Traits)")
 {
     GIVEN {
         WITH_CONFIG(CONFIG_DEFIANT_STICKY_WEB, GEN_8);
@@ -500,7 +500,7 @@ SINGLE_BATTLE_TEST("Competitive doesn't activate after Sticky Web lowers Speed i
     }
 }
 
-SINGLE_BATTLE_TEST("Competitive correctly activates after Sticky Web lowers Speed if Court Changed (Gen8) (Multi)")
+SINGLE_BATTLE_TEST("Competitive correctly activates after Sticky Web lowers Speed if Court Changed (Gen8) (Traits)")
 {
     GIVEN {
         WITH_CONFIG(CONFIG_DEFIANT_STICKY_WEB, GEN_8);
@@ -535,7 +535,7 @@ SINGLE_BATTLE_TEST("Competitive correctly activates after Sticky Web lowers Spee
     }
 }
 
-DOUBLE_BATTLE_TEST("Competitive is activated by Cotton Down for non-ally pokemon (Multi)")
+DOUBLE_BATTLE_TEST("Competitive is activated by Cotton Down for non-ally pokemon (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_IGGLYBUFF) { Ability(ABILITY_CUTE_CHARM); Innates(ABILITY_COMPETITIVE); }
@@ -571,7 +571,7 @@ DOUBLE_BATTLE_TEST("Competitive is activated by Cotton Down for non-ally pokemon
     }
 }
 
-SINGLE_BATTLE_TEST("Competitive activates before White Herb (Multi)")
+SINGLE_BATTLE_TEST("Competitive activates before White Herb (Traits)")
 {
     u32 move;
 
@@ -610,7 +610,7 @@ SINGLE_BATTLE_TEST("Competitive activates before White Herb (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Competitive activates for each stat that is lowered (Multi)")
+SINGLE_BATTLE_TEST("Competitive activates for each stat that is lowered (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_TICKLE) == EFFECT_TICKLE);
@@ -637,7 +637,7 @@ SINGLE_BATTLE_TEST("Competitive activates for each stat that is lowered (Multi)"
     }
 }
 
-SINGLE_BATTLE_TEST("Competitive doesn't activate if the pokemon lowers it's own stats (Multi)")
+SINGLE_BATTLE_TEST("Competitive doesn't activate if the pokemon lowers it's own stats (Traits)")
 {
     u32 move;
 

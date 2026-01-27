@@ -95,7 +95,7 @@ SINGLE_BATTLE_TEST("Destiny Knot infatuates back when holder is attacking")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Destiny Knot procs but fails if the target is oblivious (Multi)")
+SINGLE_BATTLE_TEST("Destiny Knot procs but fails if the target is oblivious (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Gender(MON_MALE); Ability(ABILITY_SHADOW_TAG); Innates(ABILITY_OBLIVIOUS); }
@@ -111,7 +111,7 @@ SINGLE_BATTLE_TEST("Destiny Knot procs but fails if the target is oblivious (Mul
 }
 
 
-SINGLE_BATTLE_TEST("Destiny Knot procs but fails if the target is already infatuated (cute charm) (Multi)")
+SINGLE_BATTLE_TEST("Destiny Knot procs but fails if the target is already infatuated (cute charm) (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_CLEFAIRY) { Gender(MON_MALE); Ability(ABILITY_FRIEND_GUARD); Innates(ABILITY_CUTE_CHARM);}

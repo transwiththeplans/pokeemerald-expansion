@@ -121,7 +121,7 @@ SINGLE_BATTLE_TEST("Ball Fetch doesn't trigger in Trainer Battles")
 TO_DO_BATTLE_TEST("Ball Fetch doesn't trigger in Max Raid Battles");
 
 #if MAX_MON_TRAITS > 1
-WILD_BATTLE_TEST("Ball Fetch causes the Pokémon to pick up the last failed Ball at the end of the turn (Multi)")
+WILD_BATTLE_TEST("Ball Fetch causes the Pokémon to pick up the last failed Ball at the end of the turn (Traits)")
 {
     u32 item = 0;
 
@@ -150,7 +150,7 @@ WILD_BATTLE_TEST("Ball Fetch causes the Pokémon to pick up the last failed Ball
     }
 }
 
-WILD_BATTLE_TEST("Ball Fetch doesn't trigger if the Pokémon is already holding an item (Multi)")
+WILD_BATTLE_TEST("Ball Fetch doesn't trigger if the Pokémon is already holding an item (Traits)")
 {
     u32 item = 0;
 
@@ -185,7 +185,7 @@ WILD_BATTLE_TEST("Ball Fetch doesn't trigger if the Pokémon is already holding 
     }
 }
 
-WILD_BATTLE_TEST("Ball Fetch only picks up the first failed ball, once per battle (Multi)")
+WILD_BATTLE_TEST("Ball Fetch only picks up the first failed ball, once per battle (Traits)")
 {
     u32 item = 0;
     u32 item2 = 0;
@@ -216,7 +216,7 @@ WILD_BATTLE_TEST("Ball Fetch only picks up the first failed ball, once per battl
     }
 }
 
-SINGLE_BATTLE_TEST("Ball Fetch doesn't trigger in Trainer Battles (Multi)")
+SINGLE_BATTLE_TEST("Ball Fetch doesn't trigger in Trainer Battles (Traits)")
 {
     u32 item = 0;
 
@@ -238,5 +238,5 @@ SINGLE_BATTLE_TEST("Ball Fetch doesn't trigger in Trainer Battles (Multi)")
     }
 }
 
-TO_DO_BATTLE_TEST("Ball Fetch doesn't trigger in Max Raid Battles (Multi)");
+TO_DO_BATTLE_TEST("Ball Fetch doesn't trigger in Max Raid Battles (Traits)");
 #endif

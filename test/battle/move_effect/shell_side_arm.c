@@ -87,7 +87,7 @@ DOUBLE_BATTLE_TEST("Shell Side Arm chooses its category for each battler on the 
 }
 
 #if MAX_MON_TRAITS > 1
-DOUBLE_BATTLE_TEST("Shell Side Arm does not change category mid-turn (Multi)")
+DOUBLE_BATTLE_TEST("Shell Side Arm does not change category mid-turn (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_SCREECH) == EFFECT_DEFENSE_DOWN_2);

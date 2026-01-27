@@ -96,7 +96,7 @@ DOUBLE_BATTLE_TEST("Mycelium Might priority bracket will not change if the abili
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Mycelium Might causes the user to move last in the priority bracket if it uses a status move (Multi)")
+SINGLE_BATTLE_TEST("Mycelium Might causes the user to move last in the priority bracket if it uses a status move (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_TOEDSCOOL) { Speed(100); Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_MYCELIUM_MIGHT); }
@@ -110,7 +110,7 @@ SINGLE_BATTLE_TEST("Mycelium Might causes the user to move last in the priority 
     }
 }
 
-SINGLE_BATTLE_TEST("Mycelium Might will respect the speed if both battlers have the ability (Multi)")
+SINGLE_BATTLE_TEST("Mycelium Might will respect the speed if both battlers have the ability (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_TOEDSCOOL) { Speed(100); Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_MYCELIUM_MIGHT); }
@@ -125,7 +125,7 @@ SINGLE_BATTLE_TEST("Mycelium Might will respect the speed if both battlers have 
     }
 }
 
-SINGLE_BATTLE_TEST("Mycelium Might ignores opposing abilities (Multi)")
+SINGLE_BATTLE_TEST("Mycelium Might ignores opposing abilities (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_TOEDSCOOL) { Speed(100); Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_MYCELIUM_MIGHT); }
@@ -139,7 +139,7 @@ SINGLE_BATTLE_TEST("Mycelium Might ignores opposing abilities (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Mycelium Might vs Stall action order depends on speed (Multi)")
+SINGLE_BATTLE_TEST("Mycelium Might vs Stall action order depends on speed (Traits)")
 {
     u32 speed;
     PARAMETRIZE { speed = 99; }

@@ -102,7 +102,7 @@ SINGLE_BATTLE_TEST("Misty Terrain will fail if there is one already on the field
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Misty Terrain protects grounded battlers from non-volatile status conditions (Multi)")
+SINGLE_BATTLE_TEST("Misty Terrain protects grounded battlers from non-volatile status conditions (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);

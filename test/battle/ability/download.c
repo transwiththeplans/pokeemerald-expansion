@@ -121,7 +121,7 @@ DOUBLE_BATTLE_TEST("Download raises Sp.Attack if enemies have lower total Sp. De
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Download raises Attack if player has lower Def than Sp. Def (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Download raises Attack if player has lower Def than Sp. Def (Traits)", s16 damage)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_LIGHT_METAL; }
@@ -144,7 +144,7 @@ SINGLE_BATTLE_TEST("Download raises Attack if player has lower Def than Sp. Def 
     }
 }
 
-SINGLE_BATTLE_TEST("Download raises Sp.Attack if enemy has lower Sp. Def than Def (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Download raises Sp.Attack if enemy has lower Sp. Def than Def (Traits)", s16 damage)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_LIGHT_METAL; }
@@ -167,7 +167,7 @@ SINGLE_BATTLE_TEST("Download raises Sp.Attack if enemy has lower Sp. Def than De
     }
 }
 
-SINGLE_BATTLE_TEST("Download doesn't activate if target hasn't been sent out yet (Multi)", s16 damagePhysical, s16 damageSpecial)
+SINGLE_BATTLE_TEST("Download doesn't activate if target hasn't been sent out yet (Traits)", s16 damagePhysical, s16 damageSpecial)
 {
     enum Ability ability;
 
@@ -209,7 +209,7 @@ SINGLE_BATTLE_TEST("Download doesn't activate if target hasn't been sent out yet
     }
 }
 
-DOUBLE_BATTLE_TEST("Download raises Sp.Attack if enemies have lower total Sp. Def than Def (Multi)", s16 damage)
+DOUBLE_BATTLE_TEST("Download raises Sp.Attack if enemies have lower total Sp. Def than Def (Traits)", s16 damage)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_LIGHT_METAL; }

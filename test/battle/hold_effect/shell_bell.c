@@ -293,7 +293,7 @@ TO_DO_BATTLE_TEST("If a Pokémon steals a Shell Bell with Thief or Covet, it wil
 TO_DO_BATTLE_TEST("If a Pokémon steals a Shell Bell with Magician, it will recover HP for the use of that move that stole the Shell Bell")
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Shell Bell activates after Rough Skin (Multi)")
+SINGLE_BATTLE_TEST("Shell Bell activates after Rough Skin (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_SHELL_BELL); }
@@ -309,6 +309,6 @@ SINGLE_BATTLE_TEST("Shell Bell activates after Rough Skin (Multi)")
     }
 }
 
-TO_DO_BATTLE_TEST("If a Pokémon steals a Shell Bell with Thief or Covet, it will recover HP for the use of that move that stole the Shell Bell (Multi)")
-TO_DO_BATTLE_TEST("If a Pokémon steals a Shell Bell with Magician, it will recover HP for the use of that move that stole the Shell Bell (Multi)")
+TO_DO_BATTLE_TEST("If a Pokémon steals a Shell Bell with Thief or Covet, it will recover HP for the use of that move that stole the Shell Bell (Traits)")
+TO_DO_BATTLE_TEST("If a Pokémon steals a Shell Bell with Magician, it will recover HP for the use of that move that stole the Shell Bell (Traits)")
 #endif

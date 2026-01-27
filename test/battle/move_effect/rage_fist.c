@@ -397,7 +397,7 @@ SINGLE_BATTLE_TEST("Rage Fist counter will be updated correctly after absorb mov
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Rage Fist base power is increased if Disguise breaks (Gen7) (Multi)")
+SINGLE_BATTLE_TEST("Rage Fist base power is increased if Disguise breaks (Gen7) (Traits)")
 {
     s16 timesGotHit[2];
     u16 species = SPECIES_NONE;
@@ -424,7 +424,7 @@ SINGLE_BATTLE_TEST("Rage Fist base power is increased if Disguise breaks (Gen7) 
     }
 }
 
-SINGLE_BATTLE_TEST("Rage Fist base power is increased if Disguise breaks (Gen8+) (Multi)")
+SINGLE_BATTLE_TEST("Rage Fist base power is increased if Disguise breaks (Gen8+) (Traits)")
 {
     s16 timesGotHit[2];
     u16 species = SPECIES_NONE;

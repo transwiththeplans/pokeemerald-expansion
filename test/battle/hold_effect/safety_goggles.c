@@ -77,7 +77,7 @@ SINGLE_BATTLE_TEST("Safety Goggles blocks Effect Spore's effect")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Safety Goggles blocks Effect Spore's effect (Multi)")
+SINGLE_BATTLE_TEST("Safety Goggles blocks Effect Spore's effect (Traits)")
 {
     KNOWN_FAILING;
     PASSES_RANDOMLY(100, 100, RNG_EFFECT_SPORE);

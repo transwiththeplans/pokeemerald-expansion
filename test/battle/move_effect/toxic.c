@@ -93,7 +93,7 @@ AI_SINGLE_BATTLE_TEST("AI avoids toxic when it can not poison target")
 }
 
 #if MAX_MON_TRAITS > 1
-AI_SINGLE_BATTLE_TEST("AI avoids toxic when it can not poison target (Multi)")
+AI_SINGLE_BATTLE_TEST("AI avoids toxic when it can not poison target (Traits)")
 {
     u32 species;
     enum Ability ability;

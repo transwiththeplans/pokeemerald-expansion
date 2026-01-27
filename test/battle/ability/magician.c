@@ -55,7 +55,7 @@ DOUBLE_BATTLE_TEST("Magician steal the item from the fastest possible target")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Magician gets self-damage recoil after stealing Life Orb (Multi)")
+SINGLE_BATTLE_TEST("Magician gets self-damage recoil after stealing Life Orb (Traits)")
 {
     GIVEN {
         ASSUME(gItemsInfo[ITEM_LIFE_ORB].holdEffect == HOLD_EFFECT_LIFE_ORB);
@@ -79,7 +79,7 @@ SINGLE_BATTLE_TEST("Magician gets self-damage recoil after stealing Life Orb (Mu
     }
 }
 
-DOUBLE_BATTLE_TEST("Magician steal the item from the fastest possible target (Multi)")
+DOUBLE_BATTLE_TEST("Magician steal the item from the fastest possible target (Traits)")
 {
     u32 playerRightSpeed = 0;
     u32 opponentLeftSpeed = 0;

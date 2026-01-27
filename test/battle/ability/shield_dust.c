@@ -218,7 +218,7 @@ AI_SINGLE_BATTLE_TEST("AI will score secondary effects against shield dust corre
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Shield Dust blocks secondary effects (Multi)")
+SINGLE_BATTLE_TEST("Shield Dust blocks secondary effects (Traits)")
 {
     u16 move;
     PARAMETRIZE { move = MOVE_NUZZLE; }
@@ -257,7 +257,7 @@ SINGLE_BATTLE_TEST("Shield Dust blocks secondary effects (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Shield Dust does not block primary effects (Multi)")
+SINGLE_BATTLE_TEST("Shield Dust does not block primary effects (Traits)")
 {
     u16 move;
     PARAMETRIZE { move = MOVE_INFESTATION; }
@@ -301,7 +301,7 @@ SINGLE_BATTLE_TEST("Shield Dust does not block primary effects (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Shield Dust does not block self-targeting effects, primary or secondary (Multi)")
+SINGLE_BATTLE_TEST("Shield Dust does not block self-targeting effects, primary or secondary (Traits)")
 {
     u16 move;
     PARAMETRIZE { move = MOVE_POWER_UP_PUNCH; }
@@ -338,7 +338,7 @@ SINGLE_BATTLE_TEST("Shield Dust does not block self-targeting effects, primary o
     }
 }
 
-DOUBLE_BATTLE_TEST("Shield Dust does or does not block Sparkling Aria depending on number of targets hit (Multi)")
+DOUBLE_BATTLE_TEST("Shield Dust does or does not block Sparkling Aria depending on number of targets hit (Traits)")
 {
     u32 moveToUse;
     PARAMETRIZE { moveToUse = MOVE_FINAL_GAMBIT; }
@@ -364,7 +364,7 @@ DOUBLE_BATTLE_TEST("Shield Dust does or does not block Sparkling Aria depending 
     }
 }
 
-DOUBLE_BATTLE_TEST("Shield Dust blocks Sparkling Aria if all other targets avoid getting hit by (Multi)")
+DOUBLE_BATTLE_TEST("Shield Dust blocks Sparkling Aria if all other targets avoid getting hit by (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_PRIMARINA);
@@ -378,7 +378,7 @@ DOUBLE_BATTLE_TEST("Shield Dust blocks Sparkling Aria if all other targets avoid
     }
 }
 
-SINGLE_BATTLE_TEST("Shield Dust blocks Sparkling Aria in singles (Multi)")
+SINGLE_BATTLE_TEST("Shield Dust blocks Sparkling Aria in singles (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -394,7 +394,7 @@ SINGLE_BATTLE_TEST("Shield Dust blocks Sparkling Aria in singles (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Shield Dust does not prevent ability stat changes (Multi)")
+SINGLE_BATTLE_TEST("Shield Dust does not prevent ability stat changes (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_VIVILLON) { Ability(ABILITY_COMPOUND_EYES); Innates(ABILITY_SHIELD_DUST); }
@@ -406,7 +406,7 @@ SINGLE_BATTLE_TEST("Shield Dust does not prevent ability stat changes (Multi)")
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI will score secondary effects against shield dust correctly (Multi)")
+AI_SINGLE_BATTLE_TEST("AI will score secondary effects against shield dust correctly (Traits)")
 {
     AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_OMNISCIENT);
     GIVEN {
@@ -420,7 +420,7 @@ AI_SINGLE_BATTLE_TEST("AI will score secondary effects against shield dust corre
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI will score secondary effects against shield dust correctly when it has Mold Breaker (Multi)")
+AI_SINGLE_BATTLE_TEST("AI will score secondary effects against shield dust correctly when it has Mold Breaker (Traits)")
 {
     AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_OMNISCIENT);
     GIVEN {

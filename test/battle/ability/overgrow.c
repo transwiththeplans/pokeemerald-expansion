@@ -20,7 +20,7 @@ SINGLE_BATTLE_TEST("Overgrow boosts Grass-type moves in a pinch", s16 damage)
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Overgrow boosts Grass-type moves in a pinch (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Overgrow boosts Grass-type moves in a pinch (Traits)", s16 damage)
 {
     u16 hp;
     PARAMETRIZE { hp = 99; }

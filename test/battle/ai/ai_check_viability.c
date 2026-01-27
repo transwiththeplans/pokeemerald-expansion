@@ -485,7 +485,7 @@ AI_SINGLE_BATTLE_TEST("AI uses Sparkling Aria to cure an enemy with Guts")
 }
 
 #if MAX_MON_TRAITS > 1
-AI_SINGLE_BATTLE_TEST("AI chooses moves with secondary effect that have a 100% chance to trigger (Multi)")
+AI_SINGLE_BATTLE_TEST("AI chooses moves with secondary effect that have a 100% chance to trigger (Traits)")
 {
     enum Ability ability;
 
@@ -506,7 +506,7 @@ AI_SINGLE_BATTLE_TEST("AI chooses moves with secondary effect that have a 100% c
     }
 }
 
-AI_DOUBLE_BATTLE_TEST("AI chooses moves that cure self or partner (Multi)")
+AI_DOUBLE_BATTLE_TEST("AI chooses moves that cure self or partner (Traits)")
 {
     u32 status1_0, status1_1, partnerAbility, move;
 
@@ -541,9 +541,9 @@ AI_DOUBLE_BATTLE_TEST("AI chooses moves that cure self or partner (Multi)")
     }
 }
 
-TO_DO_BATTLE_TEST("AI chooses moves that cure inactive party members (Multi)")  // TODO: Innate parameters on reserve pokemon in Tests
+TO_DO_BATTLE_TEST("AI chooses moves that cure inactive party members (Traits)")  // TODO: Innate parameters on reserve pokemon in Tests
 
-AI_SINGLE_BATTLE_TEST("AI sees Shield Dust immunity to additional effects (Multi)")
+AI_SINGLE_BATTLE_TEST("AI sees Shield Dust immunity to additional effects (Traits)")
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_SHIELD_DUST; }
@@ -561,7 +561,7 @@ AI_SINGLE_BATTLE_TEST("AI sees Shield Dust immunity to additional effects (Multi
     }
 }
 
-AI_DOUBLE_BATTLE_TEST("AI sees type-changing moves as the correct type (Multi)")
+AI_DOUBLE_BATTLE_TEST("AI sees type-changing moves as the correct type (Traits)")
 {
     u32 species, fieldStatus, ability;
     u64 aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT;
@@ -590,7 +590,7 @@ AI_DOUBLE_BATTLE_TEST("AI sees type-changing moves as the correct type (Multi)")
     }
 }
 
-AI_SINGLE_BATTLE_TEST("AI uses Sparkling Aria to cure an enemy with Guts (Multi)")
+AI_SINGLE_BATTLE_TEST("AI uses Sparkling Aria to cure an enemy with Guts (Traits)")
 {
     u32 ability;
 

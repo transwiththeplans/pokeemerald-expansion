@@ -91,7 +91,7 @@ SINGLE_BATTLE_TEST("Thermal Exchange boosts attack if hit by a damaging fire typ
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Thermal Exchange makes Will-O-Wisp fail (Multi)")
+SINGLE_BATTLE_TEST("Thermal Exchange makes Will-O-Wisp fail (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_WILL_O_WISP) == EFFECT_NON_VOLATILE_STATUS);
@@ -109,7 +109,7 @@ SINGLE_BATTLE_TEST("Thermal Exchange makes Will-O-Wisp fail (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Thermal Exchange prevents the user from getting burned when hitting Flame Body (Multi)")
+SINGLE_BATTLE_TEST("Thermal Exchange prevents the user from getting burned when hitting Flame Body (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_BAXCALIBUR) { Ability(ABILITY_ICE_BODY); Innates(ABILITY_THERMAL_EXCHANGE); }
@@ -125,7 +125,7 @@ SINGLE_BATTLE_TEST("Thermal Exchange prevents the user from getting burned when 
     }
 }
 
-SINGLE_BATTLE_TEST("Thermal Exchange burn prevention can be bypassed with Mold Breaker but is cured after (Multi)")
+SINGLE_BATTLE_TEST("Thermal Exchange burn prevention can be bypassed with Mold Breaker but is cured after (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_WILL_O_WISP) == EFFECT_NON_VOLATILE_STATUS);
@@ -143,7 +143,7 @@ SINGLE_BATTLE_TEST("Thermal Exchange burn prevention can be bypassed with Mold B
     }
 }
 
-SINGLE_BATTLE_TEST("Thermal Exchange boosts attack if hit by a damaging fire type move (Multi)")
+SINGLE_BATTLE_TEST("Thermal Exchange boosts attack if hit by a damaging fire type move (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveType(MOVE_EMBER) == TYPE_FIRE);

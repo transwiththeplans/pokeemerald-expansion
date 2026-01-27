@@ -441,7 +441,7 @@ SINGLE_BATTLE_TEST("Knock Off does not activate if the item was previously consu
 // Knock Off triggers Unburden regardless of whether the item is fully removed (Gen 5+) or not.
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Knock Off triggers Unburden (Multi)")
+SINGLE_BATTLE_TEST("Knock Off triggers Unburden (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Speed(60); }
@@ -462,7 +462,7 @@ SINGLE_BATTLE_TEST("Knock Off triggers Unburden (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Knock Off doesn't remove item if it's prevented by Sticky Hold (Multi)")
+SINGLE_BATTLE_TEST("Knock Off doesn't remove item if it's prevented by Sticky Hold (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);

@@ -32,7 +32,7 @@ DOUBLE_BATTLE_TEST("Motor Drive absorbs moves that target all battlers but does 
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Motor Drive absorbs status moves (Multi)")
+SINGLE_BATTLE_TEST("Motor Drive absorbs status moves (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -44,7 +44,7 @@ SINGLE_BATTLE_TEST("Motor Drive absorbs status moves (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Motor Drive absorbs moves that target all battlers but does not redirect (Multi)")
+DOUBLE_BATTLE_TEST("Motor Drive absorbs moves that target all battlers but does not redirect (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveType(MOVE_DISCHARGE) == TYPE_ELECTRIC);

@@ -70,7 +70,7 @@ DOUBLE_BATTLE_TEST("Good as Gold protects from partner's status moves")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Good as Gold protects from status moves (Multi)")
+SINGLE_BATTLE_TEST("Good as Gold protects from status moves (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveCategory(MOVE_TOXIC) == DAMAGE_CATEGORY_STATUS);
@@ -85,7 +85,7 @@ SINGLE_BATTLE_TEST("Good as Gold protects from status moves (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Good as Gold doesn't protect the user from it's own moves (Multi)")
+SINGLE_BATTLE_TEST("Good as Gold doesn't protect the user from it's own moves (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveCategory(MOVE_NASTY_PLOT) == DAMAGE_CATEGORY_STATUS);
@@ -102,7 +102,7 @@ SINGLE_BATTLE_TEST("Good as Gold doesn't protect the user from it's own moves (M
     }
 }
 
-SINGLE_BATTLE_TEST("Good as Gold doesn't protect from moves that target the field (Multi)")
+SINGLE_BATTLE_TEST("Good as Gold doesn't protect from moves that target the field (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveCategory(MOVE_STEALTH_ROCK) == DAMAGE_CATEGORY_STATUS);
@@ -120,7 +120,7 @@ SINGLE_BATTLE_TEST("Good as Gold doesn't protect from moves that target the fiel
     }
 }
 
-DOUBLE_BATTLE_TEST("Good as Gold protects from partner's status moves (Multi)")
+DOUBLE_BATTLE_TEST("Good as Gold protects from partner's status moves (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveCategory(MOVE_HELPING_HAND) == DAMAGE_CATEGORY_STATUS);

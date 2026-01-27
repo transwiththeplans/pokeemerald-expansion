@@ -70,7 +70,7 @@ SINGLE_BATTLE_TEST("Pressure's effect doesn't apply to Sticky Web")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Pressure causes opponent's moves to use up 1 additional PP (Multi)")
+SINGLE_BATTLE_TEST("Pressure causes opponent's moves to use up 1 additional PP (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { MovesWithPP({MOVE_POUND, 35}); }
@@ -82,7 +82,7 @@ SINGLE_BATTLE_TEST("Pressure causes opponent's moves to use up 1 additional PP (
     }
 }
 
-DOUBLE_BATTLE_TEST("Pressure's effect stacks with multiple Pokémon (Multi)")
+DOUBLE_BATTLE_TEST("Pressure's effect stacks with multiple Pokémon (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { MovesWithPP({MOVE_SWIFT, 20}); }
@@ -96,7 +96,7 @@ DOUBLE_BATTLE_TEST("Pressure's effect stacks with multiple Pokémon (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Pressure's effect applies to Imprison and Snatch (Multi)")
+SINGLE_BATTLE_TEST("Pressure's effect applies to Imprison and Snatch (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { MovesWithPP({MOVE_IMPRISON, 10}, {MOVE_SNATCH, 10}); }
@@ -110,7 +110,7 @@ SINGLE_BATTLE_TEST("Pressure's effect applies to Imprison and Snatch (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Pressure's effect applies to Spikes, Stealth Rock and Toxic Spikes (Multi)")
+SINGLE_BATTLE_TEST("Pressure's effect applies to Spikes, Stealth Rock and Toxic Spikes (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { MovesWithPP({MOVE_SPIKES, 20}, {MOVE_STEALTH_ROCK, 20}, {MOVE_TOXIC_SPIKES, 20}); }
@@ -126,7 +126,7 @@ SINGLE_BATTLE_TEST("Pressure's effect applies to Spikes, Stealth Rock and Toxic 
     }
 }
 
-SINGLE_BATTLE_TEST("Pressure's effect doesn't apply to Sticky Web (Multi)")
+SINGLE_BATTLE_TEST("Pressure's effect doesn't apply to Sticky Web (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { MovesWithPP({MOVE_STICKY_WEB, 20}); }

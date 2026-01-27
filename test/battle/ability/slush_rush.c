@@ -66,7 +66,7 @@ SINGLE_BATTLE_TEST("Slush Rush doesn't prevent non-Ice types from taking damage 
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Slush Rush doubles speed from hail (Multi)")
+SINGLE_BATTLE_TEST("Slush Rush doubles speed from hail (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_CETITAN) { Ability(ABILITY_THICK_FAT); Innates(ABILITY_SLUSH_RUSH); Speed(100); }
@@ -82,7 +82,7 @@ SINGLE_BATTLE_TEST("Slush Rush doubles speed from hail (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Slush Rush doubles speed from snow (Multi)")
+SINGLE_BATTLE_TEST("Slush Rush doubles speed from snow (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_CETITAN) { Ability(ABILITY_THICK_FAT); Innates(ABILITY_SLUSH_RUSH); Speed(100); }
@@ -98,7 +98,7 @@ SINGLE_BATTLE_TEST("Slush Rush doubles speed from snow (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Slush Rush doesn't double speed if Cloud Nine/Air Lock is on the field (Multi)")
+SINGLE_BATTLE_TEST("Slush Rush doesn't double speed if Cloud Nine/Air Lock is on the field (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_CETITAN) { Ability(ABILITY_THICK_FAT); Innates(ABILITY_SLUSH_RUSH); Speed(100); }
@@ -114,7 +114,7 @@ SINGLE_BATTLE_TEST("Slush Rush doesn't double speed if Cloud Nine/Air Lock is on
     }
 }
 
-SINGLE_BATTLE_TEST("Slush Rush doesn't prevent non-Ice types from taking damage in Hail (Multi)")
+SINGLE_BATTLE_TEST("Slush Rush doesn't prevent non-Ice types from taking damage in Hail (Traits)")
 {
     GIVEN {
         ASSUME(GetSpeciesType(SPECIES_WOBBUFFET, 0) != TYPE_ICE);

@@ -317,7 +317,7 @@ DOUBLE_BATTLE_TEST("Powder damages a target using Shell Trap even if it wasn't h
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Powder doesn't damage target if it has Magic Guard (Multi)")
+SINGLE_BATTLE_TEST("Powder doesn't damage target if it has Magic Guard (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_ALAKAZAM) { Ability(ABILITY_INNER_FOCUS); Innates(ABILITY_MAGIC_GUARD); }
@@ -335,7 +335,7 @@ SINGLE_BATTLE_TEST("Powder doesn't damage target if it has Magic Guard (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Powder damages the target under heavy rain (Gen 6) (Multi)")
+SINGLE_BATTLE_TEST("Powder damages the target under heavy rain (Gen 6) (Traits)")
 {
     GIVEN {
         WITH_CONFIG(CONFIG_POWDER_RAIN, GEN_6);
@@ -352,7 +352,7 @@ SINGLE_BATTLE_TEST("Powder damages the target under heavy rain (Gen 6) (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Powder doesn't damage target under heavy rain (Gen 7+) (Multi)")
+SINGLE_BATTLE_TEST("Powder doesn't damage target under heavy rain (Gen 7+) (Traits)")
 {
     GIVEN {
         WITH_CONFIG(CONFIG_POWDER_RAIN, GEN_7);
@@ -371,7 +371,7 @@ SINGLE_BATTLE_TEST("Powder doesn't damage target under heavy rain (Gen 7+) (Mult
     }
 }
 
-SINGLE_BATTLE_TEST("Powder fails if the target has Overcoat (Gen6+) (Multi)")
+SINGLE_BATTLE_TEST("Powder fails if the target has Overcoat (Gen6+) (Traits)")
 {
     GIVEN {
         WITH_CONFIG(CONFIG_POWDER_OVERCOAT, GEN_6);
@@ -386,7 +386,7 @@ SINGLE_BATTLE_TEST("Powder fails if the target has Overcoat (Gen6+) (Multi)")
     }
 }
 
-SINGLE_BATTLE_TEST("Powder prevents Protean/Libero from changing its user to Fire type (Multi)")
+SINGLE_BATTLE_TEST("Powder prevents Protean/Libero from changing its user to Fire type (Traits)")
 {
     u32 ability, species;
     PARAMETRIZE { ability = ABILITY_PROTEAN; species = SPECIES_GRENINJA; }

@@ -78,7 +78,7 @@ SINGLE_BATTLE_TEST("Big Root increases damage from absorbing Liquid Ooze", s16 d
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Big Root increases damage from absorbing Liquid Ooze (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Big Root increases damage from absorbing Liquid Ooze (Traits)", s16 damage)
 {
     u32 item;
 

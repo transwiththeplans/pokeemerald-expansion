@@ -123,7 +123,7 @@ TO_DO_BATTLE_TEST("Costar's message displays correctly after all battlers fainte
 TO_DO_BATTLE_TEST("Costar's message displays correctly after all battlers fainted - Opponent");
 
 #if MAX_MON_TRAITS > 1
-DOUBLE_BATTLE_TEST("Costar copies an ally's stat stages upon entering battle (Multi)")
+DOUBLE_BATTLE_TEST("Costar copies an ally's stat stages upon entering battle (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -147,7 +147,7 @@ DOUBLE_BATTLE_TEST("Costar copies an ally's stat stages upon entering battle (Mu
     }
 }
 
-DOUBLE_BATTLE_TEST("Costar copies an ally's Dragon Cheer critical hit boost (Multi)")
+DOUBLE_BATTLE_TEST("Costar copies an ally's Dragon Cheer critical hit boost (Traits)")
 {
     PASSES_RANDOMLY(1, 8, RNG_CRITICAL_HIT);
     GIVEN {
@@ -170,7 +170,7 @@ DOUBLE_BATTLE_TEST("Costar copies an ally's Dragon Cheer critical hit boost (Mul
     }
 }
 
-DOUBLE_BATTLE_TEST("Costar copies an ally's lowered stat stages (Multi)")
+DOUBLE_BATTLE_TEST("Costar copies an ally's lowered stat stages (Traits)")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_GROWL].effect == EFFECT_ATTACK_DOWN);
@@ -191,7 +191,7 @@ DOUBLE_BATTLE_TEST("Costar copies an ally's lowered stat stages (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Costar copies an ally's Focus Energy critical hit boost (Multi)")
+DOUBLE_BATTLE_TEST("Costar copies an ally's Focus Energy critical hit boost (Traits)")
 {
     PASSES_RANDOMLY(1, 2, RNG_CRITICAL_HIT);
     GIVEN {
@@ -216,7 +216,7 @@ DOUBLE_BATTLE_TEST("Costar copies an ally's Focus Energy critical hit boost (Mul
     }
 }
 
-DOUBLE_BATTLE_TEST("Costar copies an ally's Dragon Cheer critical hit boost (Multi)")
+DOUBLE_BATTLE_TEST("Costar copies an ally's Dragon Cheer critical hit boost (Traits)")
 {
     PASSES_RANDOMLY(1, 8, RNG_CRITICAL_HIT);
     GIVEN {
@@ -241,8 +241,8 @@ DOUBLE_BATTLE_TEST("Costar copies an ally's Dragon Cheer critical hit boost (Mul
 }
 
 // Copy from Ruin ability tests
-TO_DO_BATTLE_TEST("Costar's message displays correctly after all battlers fainted - Player (Multi)");
-TO_DO_BATTLE_TEST("Costar's message displays correctly after all battlers fainted - Opponent (Multi)");
+TO_DO_BATTLE_TEST("Costar's message displays correctly after all battlers fainted - Player (Traits)");
+TO_DO_BATTLE_TEST("Costar's message displays correctly after all battlers fainted - Opponent (Traits)");
 
-TO_DO_BATTLE_TEST("Costar can copy an ally's critical hit ratio (Multi)");
+TO_DO_BATTLE_TEST("Costar can copy an ally's critical hit ratio (Traits)");
 #endif

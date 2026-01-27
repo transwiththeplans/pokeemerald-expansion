@@ -107,7 +107,7 @@ SINGLE_BATTLE_TEST("Maranga Berry doesn't trigger if the move was boosted by She
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Maranga Berry raises the holder's Sp. Def by two stages with Ripen when hit by a special move (Multi)")
+SINGLE_BATTLE_TEST("Maranga Berry raises the holder's Sp. Def by two stages with Ripen when hit by a special move (Traits)")
 {
     GIVEN {
         ASSUME(GetMoveCategory(MOVE_SWIFT) == DAMAGE_CATEGORY_SPECIAL);
@@ -125,7 +125,7 @@ SINGLE_BATTLE_TEST("Maranga Berry raises the holder's Sp. Def by two stages with
     }
 }
 
-SINGLE_BATTLE_TEST("Maranga Berry doesn't trigger if the move was boosted by Sheer Force (Multi)")
+SINGLE_BATTLE_TEST("Maranga Berry doesn't trigger if the move was boosted by Sheer Force (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_MARANGA_BERRY); }

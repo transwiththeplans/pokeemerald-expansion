@@ -88,7 +88,7 @@ TO_DO_BATTLE_TEST("OHKO moves's accuracy increases by 1% for every level the use
 TO_DO_BATTLE_TEST("OHKO moves's ignores non-stage accuracy modifiers") // Gravity, Wide Lens, Compound Eyes
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("OHKO moves can hit semi-invulnerable mons when the user has No-Guard (Multi)")
+SINGLE_BATTLE_TEST("OHKO moves can hit semi-invulnerable mons when the user has No-Guard (Traits)")
 {
     GIVEN {
         ASSUME(GetItemHoldEffect(ITEM_FOCUS_SASH) == HOLD_EFFECT_FOCUS_SASH);
@@ -103,7 +103,7 @@ SINGLE_BATTLE_TEST("OHKO moves can hit semi-invulnerable mons when the user has 
     }
 }
 
-SINGLE_BATTLE_TEST("OHKO moves can can be endured by Sturdy (Multi)")
+SINGLE_BATTLE_TEST("OHKO moves can can be endured by Sturdy (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);

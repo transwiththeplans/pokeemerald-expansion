@@ -226,7 +226,7 @@ DOUBLE_BATTLE_TEST("Revive force revived pokemon to replace absent battler immed
 TO_DO_BATTLE_TEST("Revive won't restore a battler's HP if it hasn't fainted")
 
 #if MAX_MON_TRAITS > 1
-DOUBLE_BATTLE_TEST("Revive can trigger switch-in abilities (Multi)")
+DOUBLE_BATTLE_TEST("Revive can trigger switch-in abilities (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_ARBOK) { Ability(ABILITY_UNNERVE); Innates(ABILITY_INTIMIDATE); HP(1); }
@@ -249,7 +249,7 @@ DOUBLE_BATTLE_TEST("Revive can trigger switch-in abilities (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Revive does reset abilities (Multi)")
+DOUBLE_BATTLE_TEST("Revive does reset abilities (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_ARBOK) { Ability(ABILITY_UNNERVE); Innates(ABILITY_INTIMIDATE); HP(1); }
@@ -272,7 +272,7 @@ DOUBLE_BATTLE_TEST("Revive does reset abilities (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Revive force revived pokemon to replace absent battler immediately (Multi)", s16 damage)
+DOUBLE_BATTLE_TEST("Revive force revived pokemon to replace absent battler immediately (Traits)", s16 damage)
 {
     u32 ability;
 

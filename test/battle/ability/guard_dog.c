@@ -28,7 +28,7 @@ SINGLE_BATTLE_TEST("Guard Dog raises Attack when intimidated", s16 damage)
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Guard Dog raises Attack when intimidated (Multi)", s16 damage)
+SINGLE_BATTLE_TEST("Guard Dog raises Attack when intimidated (Traits)", s16 damage)
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_INTIMIDATE; }

@@ -60,7 +60,7 @@ DOUBLE_BATTLE_TEST("Sweet Veil prevents Yawn activation")
 }
 
 #if MAX_MON_TRAITS > 1
-DOUBLE_BATTLE_TEST("Sweet Veil prevents Sleep on partner - right target (Multi)")
+DOUBLE_BATTLE_TEST("Sweet Veil prevents Sleep on partner - right target (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -76,7 +76,7 @@ DOUBLE_BATTLE_TEST("Sweet Veil prevents Sleep on partner - right target (Multi)"
     }
 }
 
-DOUBLE_BATTLE_TEST("Sweet Veil prevents Sleep on partner - left target (Multi)")
+DOUBLE_BATTLE_TEST("Sweet Veil prevents Sleep on partner - left target (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -92,7 +92,7 @@ DOUBLE_BATTLE_TEST("Sweet Veil prevents Sleep on partner - left target (Multi)")
     }
 }
 
-DOUBLE_BATTLE_TEST("Sweet Veil prevents Yawn activation (Multi)")
+DOUBLE_BATTLE_TEST("Sweet Veil prevents Yawn activation (Traits)")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);

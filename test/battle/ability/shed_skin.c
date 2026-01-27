@@ -21,7 +21,7 @@ SINGLE_BATTLE_TEST("Shed Skin triggers 33% of the time")
 }
 
 #if MAX_MON_TRAITS > 1
-SINGLE_BATTLE_TEST("Shed Skin triggers 33% of the time (Multi)")
+SINGLE_BATTLE_TEST("Shed Skin triggers 33% of the time (Traits)")
 {
     if (B_ABILITY_TRIGGER_CHANCE == GEN_4)
         PASSES_RANDOMLY(30, 100, RNG_SHED_SKIN);

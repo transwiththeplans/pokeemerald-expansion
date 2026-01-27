@@ -2,7 +2,7 @@
 #define GUARD_CONSTANTS_SPECIES_H
 
 // NOTE: The defines here are named in order to match Pokémon Showdown's naming conventions. This is done to avoid issues with trainerproc parsing species names. If a Pokémon does not have an entry on Showdown, use your best judgement.
-// Additionally, we have tried to reduce down to as few defines as possible, because programs like porymap do not always properly handle having multiple defines.
+// Additionally, we have tried to reduce down to as few defines as possible, because programs like porymap does not always properly handle having multiple defines.
 // Discussion: https://github.com/rh-hideout/pokeemerald-expansion/pull/5075#issuecomment-2384088602
 // Showdown: https://github.com/smogon/Pokemon-Showdown/blob/master/data/pokedex.ts
 
@@ -420,12 +420,12 @@
 #define SPECIES_RAMPARDOS                               409
 #define SPECIES_SHIELDON                                410
 #define SPECIES_BASTIODON                               411
-#define SPECIES_BURMY_COLD                              412
-#define SPECIES_BURMY                                   SPECIES_BURMY_COLD
-#define SPECIES_WORMADAM_COLD                           413
-#define SPECIES_WORMADAM                                SPECIES_WORMADAM_COLD
-#define SPECIES_MOTHIM_COLD                             414
-#define SPECIES_MOTHIM                                  SPECIES_MOTHIM_COLD
+#define SPECIES_BURMY_COLD                             412
+#define SPECIES_BURMY                                   SPECIES_BURMY_PLANT
+#define SPECIES_WORMADAM_COLD                          413
+#define SPECIES_WORMADAM                                SPECIES_WORMADAM_PLANT
+#define SPECIES_MOTHIM_COLD                            414
+#define SPECIES_MOTHIM                                  SPECIES_MOTHIM_PLANT
 #define SPECIES_COMBEE                                  415
 #define SPECIES_VESPIQUEN                               416
 #define SPECIES_PACHIRISU                               417
@@ -1126,23 +1126,16 @@
 #define SPECIES_DEOXYS_SPEED                            1056
 #define SPECIES_BURMY_PLASMA                            1057
 #define SPECIES_BURMY_BLASTER                           1058
-#define SPECIES_BURMY_PLANT                             SPECIES_BURMY_COLD
-#define SPECIES_BURMY_SANDY                             SPECIES_BURMY_PLASMA
-#define SPECIES_BURMY_TRASH                             SPECIES_BURMY_BLASTER
-#define SPECIES_WORMADAM_PLASMA                         1059
-#define SPECIES_WORMADAM_BLASTER                        1060
-#define SPECIES_WORMADAM_PLANT                          SPECIES_WORMADAM_COLD
-#define SPECIES_WORMADAM_SANDY                          SPECIES_WORMADAM_PLASMA
-#define SPECIES_WORMADAM_TRASH                          SPECIES_WORMADAM_BLASTER
+#define SPECIES_WORMADAM_PLASMA                          1059
+#define SPECIES_WORMADAM_BLASTER                          1060
 #define SPECIES_CHERRIM_SUNSHINE                        1061
 #define SPECIES_SHELLOS_EAST                            1062
 #define SPECIES_GASTRODON_EAST                          1063
 #define SPECIES_ROTOM_HEAT                              1064
 #define SPECIES_ROTOM_WASH                              1065
-#define SPECIES_ROTOM_MOW                               1066
+#define SPECIES_ROTOM_MOW                             1066
 #define SPECIES_ROTOM_FAN                               1067
-#define SPECIES_ROTOM_FREEZE                            1068
-#define SPECIES_ROTOM_FROST                             SPECIES_ROTOM_FREEZE
+#define SPECIES_ROTOM_FREEZE                               1068
 #define SPECIES_DIALGA_ORIGIN                           1069
 #define SPECIES_PALKIA_ORIGIN                           1070
 #define SPECIES_GIRATINA_ORIGIN                         1071
@@ -1553,9 +1546,6 @@
 #define SPECIES_LUGIA_SHADOW                            1435
 #define SPECIES_MOTHIM_BLASTER                          1436
 #define SPECIES_MOTHIM_PLASMA                           1437
-#define SPECIES_MOTHIM_PLANT                            SPECIES_MOTHIM_COLD
-#define SPECIES_MOTHIM_SANDY                            SPECIES_MOTHIM_PLASMA
-#define SPECIES_MOTHIM_TRASH                            SPECIES_MOTHIM_BLASTER
 #define SPECIES_SCATTERBUG_POLAR                        1438
 #define SPECIES_SCATTERBUG_TUNDRA                       1439
 #define SPECIES_SCATTERBUG_CONTINENTAL                  1440
@@ -1612,11 +1602,9 @@
 #define SPECIES_BLASTOISE_GMAX                          1490
 #define SPECIES_CHARIZARD_GMAX                          1491
 #define SPECIES_BUTTERFREE_MEGA                         1492
-#define SPECIES_BUTTERFREE_GMAX                         SPECIES_BUTTERFREE_MEGA
 #define SPECIES_PIKACHU_GMAX                            1493
 #define SPECIES_MEOWTH_GMAX                             1494
 #define SPECIES_MACHAMP_MEGA                            1495
-#define SPECIES_MACHAMP_GMAX                            SPECIES_MACHAMP_MEGA
 #define SPECIES_GENGAR_GMAX                             1496
 #define SPECIES_KINGLER_GMAX                            1497
 #define SPECIES_LAPRAS_GMAX                             1498
@@ -1630,9 +1618,7 @@
 #define SPECIES_CORVIKNIGHT_GMAX                        1506
 #define SPECIES_ORBEETLE_GMAX                           1507
 #define SPECIES_DREDNAW_MEGA                            1508
-#define SPECIES_DREDNAW_GMAX                            SPECIES_DREDNAW_MEGA
 #define SPECIES_COALOSSAL_MEGA                          1509
-#define SPECIES_COALOSSAL_GMAX                          SPECIES_COALOSSAL_MEGA
 #define SPECIES_FLAPPLE_GMAX                            1510
 #define SPECIES_APPLETUN_GMAX                           1511
 #define SPECIES_SANDACONDA_GMAX                         1512
@@ -1752,24 +1738,9 @@
 #define SPECIES_ALTARIA_MEGA_Z                          1620
 #define SPECIES_CUSTOM_29                               1621
 #define SPECIES_CUSTOM_30                               1622
-// Legends Z-A
-#define SPECIES_CLEFABLE_MEGA                           1623
-#define SPECIES_VICTREEBEL_MEGA                         1624
-#define SPECIES_FROSLASS_MEGA                           1625
-#define SPECIES_EXCADRILL_MEGA                          1626
-#define SPECIES_SCOLIPEDE_MEGA                          1627
-#define SPECIES_SCRAFTY_MEGA                            1628
-#define SPECIES_EELEKTROSS_MEGA                         1629
-#define SPECIES_PYROAR_MEGA                             1630
-#define SPECIES_DRAGALGE_MEGA                           1631
-#define SPECIES_HAWLUCHA_MEGA                           1632
-#define SPECIES_FLOETTE_MEGA                            1633
-#define SPECIES_ZYGARDE_MEGA                            1634
-
-#define SPECIES_LAST                                    2000 //To always have more space for new species if needed
 
 // Must always be last
-#define SPECIES_EGG                                     (SPECIES_LAST + 1)
+#define SPECIES_EGG                                     (SPECIES_CUSTOM_30 + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

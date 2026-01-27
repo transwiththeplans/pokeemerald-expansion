@@ -1,9 +1,7 @@
 //
 // DO NOT MODIFY THIS FILE! It is auto-generated from src/data/trainers.party
 //
-// If you want to modify this file set COMPETITIVE_PARTY_SYNTAX to FALSE
-// in include/config/general.h and remove this notice.
-// Use sed -i '/^#line/d' 'src/data/trainers.h' to remove #line markers.
+// If you want to modify this file see expansion PR #7154
 //
 
 #line 1 "src/data/trainers.party"
@@ -20,6 +18,8 @@
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 82
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HIKER,
         .partySize = 0,
         .party = (const struct TrainerMon[])
         {
@@ -41,6 +41,8 @@
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 91
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HIKER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -73,6 +75,8 @@
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 104
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -105,6 +109,8 @@
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 117
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -148,6 +154,8 @@
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 134
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -180,6 +188,8 @@
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 147
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -212,6 +222,8 @@
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 160
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -244,6 +256,8 @@
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 173
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -276,6 +290,8 @@
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 186
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -310,6 +326,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 199
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_BREEDER_F,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -397,6 +415,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 232
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -431,6 +451,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 246
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -474,6 +496,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 263
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BIRD_KEEPER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -517,6 +541,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 280
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COLLECTOR,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -562,6 +588,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 297
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -594,6 +622,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 310
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -626,6 +656,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 323
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -658,6 +690,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 336
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -701,6 +735,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 353
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -744,6 +780,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 370
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_M,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -798,6 +836,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 391
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_M,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -881,6 +921,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 427
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_M,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -964,6 +1006,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 463
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -996,6 +1040,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 476
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -1028,6 +1074,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 489
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -1060,6 +1108,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 502
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -1105,6 +1155,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 519
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -1139,6 +1191,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 532
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -1173,6 +1227,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 545
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -1205,6 +1261,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 558
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_EXPERT_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -1250,6 +1308,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 576
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_ADMIN_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -1293,6 +1353,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 593
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BLACK_BELT,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -1327,6 +1389,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 606
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_ADMIN_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -1372,6 +1436,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 623
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_ADMIN_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -1417,6 +1483,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 641
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_LEADER_ARCHIE,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -1473,6 +1541,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 662
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HEX_MANIAC,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -1507,6 +1577,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 675
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AROMA_LADY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -1554,6 +1626,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 692
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AROMA_LADY,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -1610,6 +1684,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 714
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -1664,6 +1740,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 734
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AROMA_LADY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -1709,6 +1787,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 751
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AROMA_LADY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -1754,6 +1834,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 768
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AROMA_LADY,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -1810,6 +1892,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 789
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AROMA_LADY,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -1866,6 +1950,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 810
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AROMA_LADY,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -1920,6 +2006,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 831
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUIN_MANIAC,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -1959,6 +2047,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 848
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUIN_MANIAC,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -2034,6 +2124,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 881
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUIN_MANIAC,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -2091,6 +2183,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 906
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUIN_MANIAC,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -2130,6 +2224,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 923
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUIN_MANIAC,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -2169,6 +2265,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 940
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUIN_MANIAC,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -2208,6 +2306,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 957
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUIN_MANIAC,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -2247,6 +2347,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 974
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_INTERVIEWER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -2290,6 +2392,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 991
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_INTERVIEWER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -2333,6 +2437,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 1008
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_INTERVIEWER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -2376,6 +2482,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 1025
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_INTERVIEWER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -2419,6 +2527,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 1042
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_INTERVIEWER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -2462,6 +2572,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 1059
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_INTERVIEWER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -2521,6 +2633,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1084
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TUBER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -2566,6 +2680,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1101
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TUBER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -2600,6 +2716,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1114
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TUBER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -2634,6 +2752,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1127
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TUBER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -2679,6 +2799,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1144
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TUBER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -2724,6 +2846,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1161
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TUBER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -2769,6 +2893,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1178
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TUBER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -2812,6 +2938,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1195
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TUBER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -2851,6 +2979,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1212
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TUBER_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -2894,6 +3024,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1229
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TUBER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -2926,6 +3058,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1242
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TUBER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -2965,6 +3099,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1259
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TUBER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -3004,6 +3140,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1276
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TUBER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -3043,6 +3181,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1293
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TUBER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -3084,6 +3224,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1311
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -3124,6 +3266,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1328
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -3164,6 +3308,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1345
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -3206,6 +3352,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1362
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -3245,6 +3393,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1378
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -3358,6 +3508,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1428
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -3414,6 +3566,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1450
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -3459,6 +3613,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1468
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -3515,6 +3671,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1490
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -3560,6 +3718,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1508
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -3605,6 +3765,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1526
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -3661,6 +3823,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1548
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -3728,6 +3892,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1574
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -3784,6 +3950,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1596
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -3840,6 +4008,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1618
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -3896,6 +4066,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1640
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -3952,6 +4124,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1662
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -4008,6 +4182,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1684
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -4055,6 +4231,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1702
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -4096,6 +4274,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1718
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -4138,6 +4318,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1735
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -4179,6 +4361,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1751
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -4258,6 +4442,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1785
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -4305,6 +4491,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1803
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -4363,6 +4551,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1825
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -4399,6 +4589,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1839
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -4435,6 +4627,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1853
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -4471,6 +4665,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1867
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -4529,6 +4725,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1889
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -4576,6 +4774,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1907
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -4634,6 +4834,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1929
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -4692,6 +4894,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1951
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -4750,6 +4954,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1973
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -4808,6 +5014,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1995
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -4864,6 +5072,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2016
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HEX_MANIAC,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -4909,6 +5119,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2033
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HEX_MANIAC,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -4954,6 +5166,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2050
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HEX_MANIAC,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -4999,6 +5213,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2067
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HEX_MANIAC,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -5033,6 +5249,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2080
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HEX_MANIAC,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -5067,6 +5285,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2093
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HEX_MANIAC,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -5112,6 +5332,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2110
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HEX_MANIAC,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -5157,6 +5379,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2127
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HEX_MANIAC,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -5202,6 +5426,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2144
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HEX_MANIAC,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -5260,6 +5486,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2166
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LADY,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -5324,6 +5552,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2188
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LADY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -5385,6 +5615,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2213
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -5443,6 +5675,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2235
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LADY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -5486,6 +5720,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2251
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LADY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -5524,6 +5760,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2265
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LADY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -5562,6 +5800,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2279
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LADY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -5600,6 +5840,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2293
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LADY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -5638,6 +5880,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2307
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LADY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -5676,6 +5920,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2321
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LADY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -5719,6 +5965,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2338
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BEAUTY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -5753,6 +6001,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2351
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BEAUTY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -5787,6 +6037,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2364
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BEAUTY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -5821,6 +6073,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2377
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BEAUTY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -5880,6 +6134,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2402
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BEAUTY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -5914,6 +6170,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2415
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BEAUTY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -5948,6 +6206,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2428
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BEAUTY,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -6024,6 +6284,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2460
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BEAUTY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -6069,6 +6331,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2477
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BEAUTY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -6128,6 +6392,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2502
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BEAUTY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -6187,6 +6453,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2527
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BEAUTY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -6246,6 +6514,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2552
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BEAUTY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -6305,6 +6575,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2578
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RICH_BOY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -6354,6 +6626,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2595
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_EXPERT_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -6399,6 +6673,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2613
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RICH_BOY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -6435,6 +6711,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2627
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RICH_BOY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -6471,6 +6749,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2641
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RICH_BOY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -6507,6 +6787,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2655
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RICH_BOY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -6543,6 +6825,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2669
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RICH_BOY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -6584,6 +6868,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2686
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMANIAC,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -6618,6 +6904,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2699
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BEAUTY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -6661,6 +6949,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2716
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMANIAC,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -6695,6 +6985,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2729
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -6727,6 +7019,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2742
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMANIAC,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -6759,6 +7053,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2755
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMANIAC,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -6802,6 +7098,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2772
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMANIAC,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -6845,6 +7143,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2789
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMANIAC,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -6888,6 +7188,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2806
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -6920,6 +7222,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2819
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -6952,6 +7256,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2832
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -6995,6 +7301,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2849
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -7049,6 +7357,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2870
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -7081,6 +7391,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2883
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -7113,6 +7425,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2896
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -7145,6 +7459,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2909
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -7188,6 +7504,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2926
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -7231,6 +7549,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2943
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -7263,6 +7583,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2956
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -7295,6 +7617,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2969
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -7327,6 +7651,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2982
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -7359,6 +7685,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2995
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -7413,6 +7741,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3016
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -7445,6 +7775,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3029
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -7477,6 +7809,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3042
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -7520,6 +7854,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3059
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -7563,6 +7899,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3076
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -7595,6 +7933,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3089
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -7627,6 +7967,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3102
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -7659,6 +8001,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3115
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -7691,6 +8035,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3128
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -7745,6 +8091,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3149
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -7788,6 +8136,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3166
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -7820,6 +8170,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3179
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -7852,6 +8204,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3192
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -7895,6 +8249,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3209
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -7938,6 +8294,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3226
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BLACK_BELT,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -7970,6 +8328,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3239
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BLACK_BELT,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -8013,6 +8373,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3256
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BLACK_BELT,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -8045,6 +8407,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3269
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BLACK_BELT,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -8088,6 +8452,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3286
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BLACK_BELT,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -8120,6 +8486,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3299
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BLACK_BELT,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -8152,6 +8520,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3312
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BLACK_BELT,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -8195,6 +8565,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3329
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BLACK_BELT,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -8249,6 +8621,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3350
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BLACK_BELT,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -8316,6 +8690,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3375
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BLACK_BELT,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -8359,6 +8735,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3392
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BLACK_BELT,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -8391,6 +8769,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3405
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BLACK_BELT,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -8423,6 +8803,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3418
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GUITARIST,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -8468,6 +8850,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3435
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -8511,6 +8895,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3452
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -8543,6 +8929,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3465
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GUITARIST,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -8602,6 +8990,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3490
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GUITARIST,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -8645,6 +9035,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3507
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GUITARIST,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -8688,6 +9080,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3524
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GUITARIST,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -8742,6 +9136,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3545
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GUITARIST,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -8796,6 +9192,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3566
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GUITARIST,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -8850,6 +9248,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3587
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GUITARIST,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -8904,6 +9304,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3608
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_KINDLER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -8936,6 +9338,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3621
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_KINDLER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -8979,6 +9383,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3638
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_KINDLER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -9011,6 +9417,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3651
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_KINDLER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -9043,6 +9451,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3664
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_KINDLER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -9075,6 +9485,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3677
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_KINDLER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -9118,6 +9530,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3694
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_KINDLER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -9161,6 +9575,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3711
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_KINDLER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -9204,6 +9620,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3728
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_KINDLER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -9247,6 +9665,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3745
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_KINDLER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -9290,6 +9710,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3762
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CAMPER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -9329,6 +9751,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3779
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CAMPER,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -9404,6 +9828,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3812
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CAMPER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -9436,6 +9862,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3825
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CAMPER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -9479,6 +9907,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3842
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CAMPER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -9511,6 +9941,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3855
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CAMPER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -9556,6 +9988,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3872
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PICNICKER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -9588,6 +10022,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3885
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CAMPER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -9620,6 +10056,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3898
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CAMPER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -9663,6 +10101,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3915
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CAMPER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -9706,6 +10146,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3932
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CAMPER,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -9760,6 +10202,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3953
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CAMPER,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -9814,6 +10258,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3974
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BUG_MANIAC,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -9846,6 +10292,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3987
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BUG_MANIAC,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -9900,6 +10348,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4008
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BUG_MANIAC,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -9954,6 +10404,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4029
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BUG_MANIAC,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -10008,6 +10460,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4050
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BUG_MANIAC,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -10051,6 +10505,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4067
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BUG_MANIAC,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -10105,6 +10561,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4088
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BUG_MANIAC,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -10159,6 +10617,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4109
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BUG_MANIAC,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -10224,6 +10684,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4134
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BUG_MANIAC,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -10302,6 +10764,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4163
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -10345,6 +10809,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4180
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -10377,6 +10843,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4193
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -10409,6 +10877,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4206
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -10441,6 +10911,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4219
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_M,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -10495,6 +10967,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4240
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -10538,6 +11012,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4257
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -10570,6 +11046,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4270
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -10613,6 +11091,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4287
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -10656,6 +11136,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4304
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -10699,6 +11181,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4321
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -10744,6 +11228,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4338
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -10778,6 +11264,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4351
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -10812,6 +11300,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4364
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -10846,6 +11336,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4377
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -10880,6 +11372,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4390
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_F,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -10936,6 +11430,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4411
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -10981,6 +11477,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4428
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -11026,6 +11524,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4445
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -11071,6 +11571,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4462
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -11116,6 +11618,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4479
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -11161,6 +11665,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4496
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -11204,6 +11710,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4513
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GENTLEMAN,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -11236,6 +11744,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4526
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GENTLEMAN,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -11279,6 +11789,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4543
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GENTLEMAN,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -11311,6 +11823,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4556
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GENTLEMAN,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -11343,6 +11857,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4569
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GENTLEMAN,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -11400,6 +11916,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4594
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GENTLEMAN,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -11456,6 +11974,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4618
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GENTLEMAN,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -11535,6 +12055,8 @@ F_TRAINER_FEMALE |
         .aiFlags = AI_FLAG_BASIC_TRAINER | AI_FLAG_FORCE_SETUP_FIRST_TURN,
 #line 4653
         .mugshotColor = MUGSHOT_COLOR_PURPLE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_ELITE_FOUR_SIDNEY,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -11654,6 +12176,8 @@ F_TRAINER_FEMALE |
         .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 4704
         .mugshotColor = MUGSHOT_COLOR_GREEN,
+#line 0
+        .trainerBackPic = TRAINER_PIC_ELITE_FOUR_PHOEBE,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -11773,6 +12297,8 @@ F_TRAINER_FEMALE |
         .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 4755
         .mugshotColor = MUGSHOT_COLOR_PINK,
+#line 0
+        .trainerBackPic = TRAINER_PIC_ELITE_FOUR_GLACIA,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -11890,6 +12416,8 @@ F_TRAINER_FEMALE |
         .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 4806
         .mugshotColor = MUGSHOT_COLOR_BLUE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_ELITE_FOUR_DRAKE,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -12007,6 +12535,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4856
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_ROXANNE,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -12112,6 +12642,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4902
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_BRAWLY,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -12217,6 +12749,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4948
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_WATTSON,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -12322,6 +12856,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4992
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_FLANNERY,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -12419,6 +12955,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5034
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_NORMAN,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -12518,6 +13056,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5076
         .aiFlags = AI_FLAG_BASIC_TRAINER | AI_FLAG_RISKY,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_WINONA,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -12633,6 +13173,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 5126
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -12732,6 +13274,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5168
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_JUAN,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -12845,6 +13389,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5217
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -12877,6 +13423,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5230
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -12909,6 +13457,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5243
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_M,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -12963,6 +13513,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5264
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -13006,6 +13558,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5281
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -13049,6 +13603,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5298
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -13092,6 +13648,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5315
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_M,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -13148,6 +13706,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5336
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -13182,6 +13742,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5349
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -13227,6 +13789,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5366
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -13272,6 +13836,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5383
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -13317,6 +13883,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5400
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -13362,6 +13930,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5417
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -13405,6 +13975,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 5434
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SR_AND_JR,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -13462,6 +14034,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 5459
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SR_AND_JR,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -13505,6 +14079,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 5476
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SR_AND_JR,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -13561,6 +14137,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 5500
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SR_AND_JR,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -13617,6 +14195,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 5524
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SR_AND_JR,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -13673,6 +14253,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 5548
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SR_AND_JR,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -13729,6 +14311,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5572
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEFAN_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -13776,6 +14360,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5589
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEFAN_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -13810,6 +14396,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5602
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEFAN_M,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -13951,6 +14539,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5659
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEFAN_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -13985,6 +14575,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5672
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEFAN_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -14019,6 +14611,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5685
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEFAN_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -14053,6 +14647,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5698
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEFAN_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -14089,6 +14685,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5711
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEFAN_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -14125,6 +14723,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5724
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEFAN_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -14161,6 +14761,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5737
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEFAN_F,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -14223,6 +14825,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5758
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEFAN_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -14272,6 +14876,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5775
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEFAN_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -14321,6 +14927,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5792
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEFAN_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -14370,6 +14978,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5809
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEFAN_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -14419,6 +15029,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5826
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEFAN_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -14466,6 +15078,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5843
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_EXPERT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -14498,6 +15112,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5856
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_EXPERT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -14537,6 +15153,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5873
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_EXPERT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -14576,6 +15194,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5890
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_EXPERT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -14615,6 +15235,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5907
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_EXPERT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -14656,6 +15278,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5924
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_EXPERT_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -14697,6 +15321,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5941
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_EXPERT_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -14742,6 +15368,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5958
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_EXPERT_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -14787,6 +15415,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5975
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_EXPERT_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -14832,6 +15462,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5992
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_EXPERT_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -14877,6 +15509,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6009
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_EXPERT_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -14920,6 +15554,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6026
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNGSTER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -14954,6 +15590,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6040
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNGSTER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -14997,6 +15635,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6057
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNGSTER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -15029,6 +15669,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6070
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNGSTER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -15072,6 +15714,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6087
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNGSTER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -15104,6 +15748,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6100
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNGSTER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -15163,6 +15809,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6126
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -15224,6 +15872,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6152
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -15281,6 +15931,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6177
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNGSTER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -15313,6 +15965,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6190
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNGSTER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -15345,6 +15999,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6203
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNGSTER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -15377,6 +16033,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6216
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNGSTER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -15420,6 +16078,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6233
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNGSTER,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -15474,6 +16134,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6254
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNGSTER,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -15528,6 +16190,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6275
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNGSTER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -15571,6 +16235,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6292
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNGSTER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -15614,6 +16280,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6309
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNGSTER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -15661,6 +16329,8 @@ F_TRAINER_FEMALE |
         .aiFlags = AI_FLAG_BASIC_TRAINER,
 #line 6328
         .mugshotColor = MUGSHOT_COLOR_YELLOW,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CHAMPION_WALLACE,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -15792,6 +16462,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6385
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_FISHERMAN,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -15846,6 +16518,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6406
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_FISHERMAN,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -15900,6 +16574,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6427
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_FISHERMAN,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -15954,6 +16630,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6448
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_FISHERMAN,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -16008,6 +16686,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6469
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_FISHERMAN,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -16040,6 +16720,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6482
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_FISHERMAN,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -16107,6 +16789,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6507
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_FISHERMAN,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -16139,6 +16823,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 6520
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_FISHERMAN,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -16184,6 +16870,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6537
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_FISHERMAN,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -16216,6 +16904,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6550
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_FISHERMAN,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -16259,6 +16949,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6567
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_FISHERMAN,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -16313,6 +17005,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6588
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_FISHERMAN,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -16378,6 +17072,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6613
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_FISHERMAN,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -16443,6 +17139,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6638
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT,
+#line 0
+        .trainerBackPic = TRAINER_PIC_FISHERMAN,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -16508,6 +17206,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6663
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_FISHERMAN,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -16595,6 +17295,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6696
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -16649,6 +17351,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6717
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -16692,6 +17396,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6734
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -16724,6 +17430,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6747
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -16756,6 +17464,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6760
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -16788,6 +17498,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6773
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -16820,6 +17532,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6786
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -16854,6 +17568,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6799
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CYCLING_TRIATHLETE_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -16888,6 +17604,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6812
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CYCLING_TRIATHLETE_F,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -16944,6 +17662,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6833
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CYCLING_TRIATHLETE_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -16978,6 +17698,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6846
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CYCLING_TRIATHLETE_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -17012,6 +17734,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6859
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CYCLING_TRIATHLETE_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -17046,6 +17770,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6872
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CYCLING_TRIATHLETE_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -17078,6 +17804,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6885
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUNNING_TRIATHLETE_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -17110,6 +17838,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6898
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUNNING_TRIATHLETE_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -17142,6 +17872,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6911
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUNNING_TRIATHLETE_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -17174,6 +17906,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6924
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUNNING_TRIATHLETE_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -17206,6 +17940,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6937
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUNNING_TRIATHLETE_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -17240,6 +17976,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6950
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUNNING_TRIATHLETE_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -17274,6 +18012,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6963
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUNNING_TRIATHLETE_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -17308,6 +18048,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6976
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUNNING_TRIATHLETE_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -17342,6 +18084,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6989
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUNNING_TRIATHLETE_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -17376,6 +18120,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7002
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUNNING_TRIATHLETE_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -17408,6 +18154,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7015
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -17451,6 +18199,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7032
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNGSTER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -17494,6 +18244,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7049
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -17526,6 +18278,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7062
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -17569,6 +18323,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7079
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -17612,6 +18368,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7096
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -17644,6 +18402,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7109
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -17676,6 +18436,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7122
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -17708,6 +18470,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7135
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -17742,6 +18506,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7148
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMING_TRIATHLETE_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -17776,6 +18542,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7161
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMING_TRIATHLETE_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -17821,6 +18589,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7178
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMING_TRIATHLETE_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -17855,6 +18625,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7191
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMING_TRIATHLETE_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -17889,6 +18661,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7204
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMING_TRIATHLETE_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -17934,6 +18708,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7221
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMING_TRIATHLETE_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -17968,6 +18744,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7234
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMING_TRIATHLETE_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -18002,6 +18780,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7247
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMING_TRIATHLETE_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -18036,6 +18816,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7260
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMING_TRIATHLETE_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -18068,6 +18850,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7273
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_DRAGON_TAMER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -18111,6 +18895,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7290
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_DRAGON_TAMER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -18154,6 +18940,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7307
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_DRAGON_TAMER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -18197,6 +18985,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7324
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_DRAGON_TAMER,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -18251,6 +19041,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7345
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_DRAGON_TAMER,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -18307,6 +19099,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7366
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_DRAGON_TAMER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -18346,6 +19140,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7383
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BIRD_KEEPER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -18378,6 +19174,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7396
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BIRD_KEEPER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -18421,6 +19219,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7413
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BIRD_KEEPER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -18453,6 +19253,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7426
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BIRD_KEEPER,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -18507,6 +19309,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7447
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BIRD_KEEPER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -18539,6 +19343,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7460
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BIRD_KEEPER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -18582,6 +19388,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7477
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BIRD_KEEPER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -18625,6 +19433,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7494
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BIRD_KEEPER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -18668,6 +19478,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7511
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BIRD_KEEPER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -18700,6 +19512,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7524
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BIRD_KEEPER,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -18754,6 +19568,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7545
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BIRD_KEEPER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -18797,6 +19613,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7562
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BIRD_KEEPER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -18840,6 +19658,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7579
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BIRD_KEEPER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -18883,6 +19703,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7596
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BIRD_KEEPER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -18926,6 +19748,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7613
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BIRD_KEEPER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -18969,6 +19793,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7630
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BIRD_KEEPER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -19012,6 +19838,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7647
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BIRD_KEEPER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -19044,6 +19872,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7660
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT,
+#line 0
+        .trainerBackPic = TRAINER_PIC_NINJA_BOY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -19076,6 +19906,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7673
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT,
+#line 0
+        .trainerBackPic = TRAINER_PIC_NINJA_BOY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -19121,6 +19953,8 @@ F_TRAINER_FEMALE |
         .items = { ITEM_FULL_RESTORE },
 #line 7690
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -19174,6 +20008,8 @@ F_TRAINER_FEMALE |
             TRAINER_ENCOUNTER_MUSIC_GIRL,
 #line 7710
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TUBER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -19204,6 +20040,8 @@ F_TRAINER_FEMALE |
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 7722
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_NINJA_BOY,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -19277,6 +20115,8 @@ F_TRAINER_FEMALE |
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 7754
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_NINJA_BOY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -19318,6 +20158,8 @@ F_TRAINER_FEMALE |
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 7770
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_NINJA_BOY,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -19406,6 +20248,8 @@ F_TRAINER_FEMALE |
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 7807
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_NINJA_BOY,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -19494,6 +20338,8 @@ F_TRAINER_FEMALE |
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 7844
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_NINJA_BOY,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -19580,6 +20426,8 @@ F_TRAINER_FEMALE |
             TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 7879
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_NINJA_BOY,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -19674,6 +20522,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7917
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BATTLE_GIRL,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -19708,6 +20558,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7930
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BATTLE_GIRL,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -19742,6 +20594,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7943
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BATTLE_GIRL,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -19787,6 +20641,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7960
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BATTLE_GIRL,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -19821,6 +20677,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7973
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BATTLE_GIRL,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -19855,6 +20713,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7986
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BATTLE_GIRL,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -19900,6 +20760,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8003
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BATTLE_GIRL,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -19945,6 +20807,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8020
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BATTLE_GIRL,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -19990,6 +20854,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8037
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BATTLE_GIRL,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -20035,6 +20901,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8054
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PARASOL_LADY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -20076,6 +20944,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8071
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PARASOL_LADY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -20121,6 +20991,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8088
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PARASOL_LADY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -20162,6 +21034,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8105
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PARASOL_LADY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -20203,6 +21077,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8122
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PARASOL_LADY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -20244,6 +21120,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8139
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PARASOL_LADY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -20303,6 +21181,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8164
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PARASOL_LADY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -20362,6 +21242,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8189
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -20407,6 +21289,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8206
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -20441,6 +21325,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8219
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -20475,6 +21361,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8232
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -20520,6 +21408,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8249
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -20554,6 +21444,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8262
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -20599,6 +21491,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8279
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -20633,6 +21527,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8292
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -20689,6 +21585,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8313
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -20723,6 +21621,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8326
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -20757,6 +21657,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8339
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -20791,6 +21693,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8352
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -20825,6 +21729,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8365
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -20870,6 +21776,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8382
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -20904,6 +21812,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8395
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -20949,6 +21859,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8412
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -20983,6 +21895,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8425
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -21017,6 +21931,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8438
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -21051,6 +21967,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8451
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -21096,6 +22014,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8468
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -21130,6 +22050,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8481
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -21175,6 +22097,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8498
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -21220,6 +22144,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8515
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -21265,6 +22191,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8532
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -21299,6 +22227,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8545
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -21333,6 +22263,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8558
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -21367,6 +22299,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8571
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -21412,6 +22346,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8588
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -21468,6 +22404,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8609
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PICNICKER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -21527,6 +22465,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8634
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PICNICKER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -21586,6 +22526,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8659
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PICNICKER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -21631,6 +22573,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8676
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PICNICKER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -21676,6 +22620,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8693
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PICNICKER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -21721,6 +22667,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8710
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PICNICKER,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -21775,6 +22723,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8731
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -21816,6 +22766,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8748
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PICNICKER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -21861,6 +22813,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8765
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PICNICKER,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -21917,6 +22871,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8786
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PICNICKER,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -21973,6 +22929,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8807
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PICNICKER,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -22029,6 +22987,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8828
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PICNICKER,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -22083,6 +23043,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 8849
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TWINS,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -22126,6 +23088,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 8866
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TWINS,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -22169,6 +23133,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 8883
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TWINS,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -22212,6 +23178,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 8900
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TWINS,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -22255,6 +23223,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 8917
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TWINS,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -22298,6 +23268,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 8934
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TWINS,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -22351,6 +23323,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 8955
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TWINS,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -22394,6 +23368,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 8972
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TWINS,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -22451,6 +23427,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 8997
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TWINS,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -22508,6 +23486,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9022
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SAILOR,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -22551,6 +23531,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9039
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SAILOR,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -22583,6 +23565,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9052
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SAILOR,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -22626,6 +23610,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9069
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SAILOR,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -22707,6 +23693,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9105
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SAILOR,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -22750,6 +23738,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9122
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SAILOR,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -22804,6 +23794,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9143
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SAILOR,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -22847,6 +23839,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9160
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SAILOR,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -22901,6 +23895,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9181
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SAILOR,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -22955,6 +23951,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9202
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SAILOR,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -23009,6 +24007,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9223
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SAILOR,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -23063,6 +24063,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9244
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HIKER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -23097,6 +24099,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9257
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEFAN_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -23162,6 +24166,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9283
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -23194,6 +24200,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9296
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_NINJA_BOY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -23235,6 +24243,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9313
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PARASOL_LADY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -23274,6 +24284,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9330
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_EXPERT_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -23317,6 +24329,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9347
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SAILOR,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -23364,6 +24378,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9365
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -23405,6 +24421,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9382
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BATTLE_GIRL,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -23448,6 +24466,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9399
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SAILOR,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -23480,6 +24500,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9412
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_EXPERT_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -23523,6 +24545,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9429
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COLLECTOR,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -23566,6 +24590,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9446
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COLLECTOR,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -23609,6 +24635,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9463
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_ADMIN,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -23663,6 +24691,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9484
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COLLECTOR,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -23706,6 +24736,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9501
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COLLECTOR,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -23749,6 +24781,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9518
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COLLECTOR,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -23792,6 +24826,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9535
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COLLECTOR,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -23837,6 +24873,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9553
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_WALLY,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -23948,6 +24986,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9602
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BRENDAN,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -24008,6 +25048,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9626
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BRENDAN,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -24135,6 +25177,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9680
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BRENDAN,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -24189,6 +25233,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9701
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BRENDAN,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -24249,6 +25295,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9725
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BRENDAN,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -24376,6 +25424,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9779
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BRENDAN,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -24430,6 +25480,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9800
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BRENDAN,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -24490,6 +25542,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9824
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BRENDAN,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -24617,6 +25671,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9878
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BRENDAN,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -24673,6 +25729,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9899
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAY,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -24735,6 +25793,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9923
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAY,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -24864,6 +25924,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9977
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAY,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -24920,6 +25982,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9998
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAY,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -24982,6 +26046,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10022
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAY,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -25111,6 +26177,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10076
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAY,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -25167,6 +26235,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10097
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAY,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -25229,6 +26299,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10121
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAY,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -25358,6 +26430,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10175
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAY,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -25412,6 +26486,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10196
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_BREEDER_M,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -25499,6 +26575,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10229
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BUG_CATCHER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -25531,6 +26609,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10242
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -25588,6 +26668,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10267
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_BREEDER_M,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -25675,6 +26757,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10300
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_BREEDER_M,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -25762,6 +26846,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10333
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_BREEDER_M,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -25849,6 +26935,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10366
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_BREEDER_M,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -25938,6 +27026,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10399
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_BREEDER_F,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -26029,6 +27119,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10433
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -26072,6 +27164,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10450
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUIN_MANIAC,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -26106,6 +27200,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10463
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_BREEDER_F,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -26195,6 +27291,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10496
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_BREEDER_F,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -26284,6 +27382,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10529
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_BREEDER_F,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -26373,6 +27473,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10562
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_BREEDER_F,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -26462,6 +27564,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10596
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_RANGER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -26496,6 +27600,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10610
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_RANGER_M,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -26552,6 +27658,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10632
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_RANGER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -26586,6 +27694,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10646
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_RANGER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -26620,6 +27730,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10660
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_RANGER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -26654,6 +27766,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10674
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_RANGER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -26688,6 +27802,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10688
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_RANGER_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -26735,6 +27851,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10706
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_RANGER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -26782,6 +27900,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10724
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_RANGER_F,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -26840,6 +27960,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10746
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_RANGER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -26887,6 +28009,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10764
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_RANGER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -26934,6 +28058,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10782
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_RANGER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -26981,6 +28107,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10800
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_RANGER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -27028,6 +28156,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10818
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_RANGER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -27071,6 +28201,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10835
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -27103,6 +28235,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10848
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -27148,6 +28282,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10865
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -27193,6 +28329,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10882
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -27236,6 +28374,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10899
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -27279,6 +28419,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10916
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HIKER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -27322,6 +28464,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10933
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SAILOR,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -27356,6 +28500,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10946
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BATTLE_GIRL,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -27388,6 +28534,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10959
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BLACK_BELT,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -27422,6 +28570,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10972
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HEX_MANIAC,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -27454,6 +28604,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10985
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -27490,6 +28642,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10999
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -27544,6 +28698,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11021
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -27576,6 +28732,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11034
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -27608,6 +28766,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11047
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -27642,6 +28802,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11060
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -27674,6 +28836,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11073
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GENTLEMAN,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -27708,6 +28872,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11086
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HEX_MANIAC,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -27740,6 +28906,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11099
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GENTLEMAN,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -27772,6 +28940,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11112
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -27806,6 +28976,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11125
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -27849,6 +29021,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11142
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -27881,6 +29055,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11155
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -27913,6 +29089,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11168
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -27945,6 +29123,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11181
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -27979,6 +29159,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11194
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -28011,6 +29193,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11207
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BRENDAN,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -28114,6 +29298,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11252
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BRENDAN,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -28217,6 +29403,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11297
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_EXPERT_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -28262,6 +29450,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11314
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMING_TRIATHLETE_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -28296,6 +29486,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11327
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -28339,6 +29531,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11344
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_ADMIN,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -28406,6 +29600,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11370
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -28449,6 +29645,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11387
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BRENDAN,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -28554,6 +29752,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11432
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAY,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -28659,6 +29859,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11478
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_LEADER_MAXIE,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -28715,6 +29917,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11500
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_LEADER_MAXIE,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -28771,6 +29975,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11521
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LASS,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -28816,6 +30022,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11538
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LASS,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -28861,6 +30069,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11555
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LASS,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -28895,6 +30105,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11568
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LASS,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -28951,6 +30163,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11589
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LASS,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -28996,6 +30210,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11606
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LASS,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -29041,6 +30257,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11623
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LASS,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -29086,6 +30304,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11640
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LASS,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -29142,6 +30362,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11661
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LASS,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -29187,6 +30409,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11678
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LASS,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -29243,6 +30467,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11699
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LASS,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -29277,6 +30503,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11712
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LASS,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -29320,6 +30548,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11729
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BUG_CATCHER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -29363,6 +30593,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11746
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BUG_CATCHER,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -29428,6 +30660,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11771
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BUG_CATCHER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -29471,6 +30705,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11788
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BUG_CATCHER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -29514,6 +30750,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11805
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BUG_CATCHER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -29557,6 +30795,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11822
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BUG_CATCHER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -29589,6 +30829,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11835
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BUG_CATCHER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -29632,6 +30874,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11852
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BUG_CATCHER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -29664,6 +30908,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11865
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BUG_CATCHER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -29707,6 +30953,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11882
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BUG_CATCHER,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -29761,6 +31009,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11903
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BUG_CATCHER,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -29826,6 +31076,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11928
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HIKER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -29869,6 +31121,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11945
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HIKER,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -29923,6 +31177,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11966
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HIKER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -29966,6 +31222,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11983
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HIKER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -30009,6 +31267,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12000
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HIKER,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -30063,6 +31323,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12021
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HIKER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -30106,6 +31368,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12038
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HIKER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -30149,6 +31413,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12055
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HIKER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -30186,6 +31452,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12070
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HIKER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -30239,6 +31507,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12091
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HIKER,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -30293,6 +31563,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12112
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HIKER,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -30358,6 +31630,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12137
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HIKER,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -30423,6 +31697,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12162
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HIKER,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -30488,6 +31764,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12187
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HIKER,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -30553,6 +31831,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 12212
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNG_COUPLE,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -30596,6 +31876,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 12229
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNG_COUPLE,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -30639,6 +31921,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 12246
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNG_COUPLE,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -30682,6 +31966,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 12263
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNG_COUPLE,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -30725,6 +32011,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 12280
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNG_COUPLE,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -30768,6 +32056,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 12297
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNG_COUPLE,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -30811,6 +32101,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 12314
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNG_COUPLE,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -30856,6 +32148,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12331
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BEAUTY,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -30912,6 +32206,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12353
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -30953,6 +32249,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12370
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BATTLE_GIRL,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -31014,6 +32312,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12395
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BATTLE_GIRL,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -31053,6 +32353,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12412
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT,
+#line 0
+        .trainerBackPic = TRAINER_PIC_NINJA_BOY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -31110,6 +32412,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12437
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT,
+#line 0
+        .trainerBackPic = TRAINER_PIC_NINJA_BOY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -31167,6 +32471,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12462
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT,
+#line 0
+        .trainerBackPic = TRAINER_PIC_NINJA_BOY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -31224,6 +32530,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12487
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CAMPER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -31269,6 +32577,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12504
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PICNICKER,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -31323,6 +32633,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12525
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_WALLY,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -31422,6 +32734,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12569
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_WALLY,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -31535,6 +32849,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12619
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_WALLY,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -31648,6 +32964,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12669
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_WALLY,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -31761,6 +33079,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12719
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_WALLY,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -31872,6 +33192,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12768
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BRENDAN,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -31937,6 +33259,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12793
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BRENDAN,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -32002,6 +33326,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12818
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BRENDAN,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -32069,6 +33395,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12843
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAY,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -32136,6 +33464,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12868
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAY,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -32203,6 +33533,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12893
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAY,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -32268,6 +33600,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12918
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_FISHERMAN,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -32322,6 +33656,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12939
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_FISHERMAN,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -32365,6 +33701,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12956
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_FISHERMAN,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -32423,6 +33761,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12978
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -32468,6 +33808,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 12996
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -32511,6 +33853,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13013
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BLACK_BELT,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -32543,6 +33887,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13026
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_FISHERMAN,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -32597,6 +33943,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13047
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BIRD_KEEPER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -32640,6 +33988,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13064
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -32685,6 +34035,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13081
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -32717,6 +34069,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 13094
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TWINS,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -32760,6 +34114,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 13111
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SR_AND_JR,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -32817,6 +34173,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 13136
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SR_AND_JR,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -32874,6 +34232,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 13161
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNG_COUPLE,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -32931,6 +34291,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 13186
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_OLD_COUPLE,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -32988,6 +34350,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 13211
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_OLD_COUPLE,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -33045,6 +34409,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 13236
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_OLD_COUPLE,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -33102,6 +34468,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 13261
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_FORCE_SETUP_FIRST_TURN,
+#line 0
+        .trainerBackPic = TRAINER_PIC_OLD_COUPLE,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -33159,6 +34527,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 13286
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_OLD_COUPLE,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -33216,6 +34586,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 13311
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SIS_AND_BRO,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -33259,6 +34631,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 13328
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SIS_AND_BRO,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -33302,6 +34676,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 13345
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SIS_AND_BRO,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -33345,6 +34721,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 13362
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SIS_AND_BRO,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -33388,6 +34766,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 13379
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SIS_AND_BRO,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -33431,6 +34811,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 13396
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SIS_AND_BRO,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -33474,6 +34856,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 13413
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SIS_AND_BRO,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -33517,6 +34901,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13430
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_FISHERMAN,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -33582,6 +34968,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13455
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RICH_BOY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -33633,6 +35021,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13473
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LADY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -33680,6 +35070,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13490
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_FISHERMAN,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -33714,6 +35106,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13503
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TUBER_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -33746,6 +35140,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13516
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_TUBER_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -33789,6 +35185,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13533
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEFAN_M,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -33849,6 +35247,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13554
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GUITARIST,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -33894,6 +35294,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13571
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CYCLING_TRIATHLETE_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -33926,6 +35328,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13584
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GUITARIST,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -33969,6 +35373,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13601
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BLACK_BELT,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -34001,6 +35407,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13614
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CAMPER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -34035,6 +35443,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13627
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AROMA_LADY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -34069,6 +35479,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13640
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PICNICKER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -34101,6 +35513,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13653
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_KINDLER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -34135,6 +35549,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13666
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PICNICKER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -34178,6 +35594,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13683
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BIRD_KEEPER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -34221,6 +35639,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13700
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CAMPER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -34264,6 +35684,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13717
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMANIAC,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -34309,6 +35731,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13734
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PICNICKER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -34352,6 +35776,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13751
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_FISHERMAN,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -34386,6 +35812,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13764
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PICNICKER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -34418,6 +35846,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13777
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNGSTER,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -34472,6 +35902,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13798
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -34504,6 +35936,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13811
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -34536,6 +35970,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13824
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -34568,6 +36004,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13837
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -34611,6 +36049,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13854
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -34654,6 +36094,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13871
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -34686,6 +36128,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13884
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -34718,6 +36162,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13897
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -34750,6 +36196,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13910
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -34782,6 +36230,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13923
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -34814,6 +36264,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13936
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -34846,6 +36298,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13949
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -34878,6 +36332,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13962
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -34912,6 +36368,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13975
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -34946,6 +36404,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 13988
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -34980,6 +36440,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14001
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_GRUNT_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -35012,6 +36474,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14014
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_ADMIN,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -35081,6 +36545,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14040
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -35124,6 +36590,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14057
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAGMA_LEADER_MAXIE,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -35178,6 +36646,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14078
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_M,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -35245,6 +36715,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14103
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMER_F,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -35310,6 +36782,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14128
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUIN_MANIAC,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -35353,6 +36827,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14145
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BIRD_KEEPER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -35396,6 +36872,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14162
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -35428,6 +36906,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14175
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SAILOR,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -35486,6 +36966,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14197
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -35540,6 +37022,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14218
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BIRD_KEEPER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -35585,6 +37069,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14235
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PICNICKER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -35628,6 +37114,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14252
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUIN_MANIAC,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -35671,6 +37159,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14269
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_CAMPER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -35714,6 +37204,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14286
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_KINDLER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -35759,6 +37251,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14303
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_AROMA_LADY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -35804,6 +37298,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14320
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUNNING_TRIATHLETE_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -35847,6 +37343,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14337
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_NINJA_BOY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -35892,6 +37390,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14354
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -35937,6 +37437,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14371
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BATTLE_GIRL,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -35982,6 +37484,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14388
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -36025,6 +37529,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14405
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HIKER,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -36079,6 +37585,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14426
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_YOUNGSTER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -36124,6 +37632,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14443
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUNNING_TRIATHLETE_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -36158,6 +37668,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14456
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -36203,6 +37715,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14473
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BATTLE_GIRL,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -36239,6 +37753,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14487
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_EXPERT_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -36282,6 +37798,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14504
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GUITARIST,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -36314,6 +37832,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14517
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_KINDLER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -36359,6 +37879,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14534
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PARASOL_LADY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -36393,6 +37915,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14548
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -36433,6 +37957,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14564
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BATTLE_GIRL,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -36476,6 +38002,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14581
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BUG_MANIAC,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -36519,6 +38047,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14598
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_BREEDER_M,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -36608,6 +38138,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14631
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_BREEDER_F,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -36699,6 +38231,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14665
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -36744,6 +38278,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14682
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAY,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -36849,6 +38385,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 14727
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_MAY,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -36956,6 +38494,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 14773
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_ROXANNE,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -37057,6 +38597,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 14815
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_ROXANNE,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -37176,6 +38718,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 14865
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_ROXANNE,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -37295,6 +38839,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 14915
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_ROXANNE,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -37430,6 +38976,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 14973
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_BRAWLY,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -37529,6 +39077,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 15015
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_BRAWLY,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -37628,6 +39178,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 15057
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_BRAWLY,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -37745,6 +39297,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 15107
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_BRAWLY,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -37880,6 +39434,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 15165
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_WATTSON,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -37979,6 +39535,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 15207
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_WATTSON,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -38096,6 +39654,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 15257
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_WATTSON,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -38213,6 +39773,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 15307
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_WATTSON,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -38350,6 +39912,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 15365
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_FLANNERY,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -38453,6 +40017,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 15407
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_FLANNERY,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -38574,6 +40140,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 15457
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_FLANNERY,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -38713,6 +40281,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 15515
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_FLANNERY,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -38850,6 +40420,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 15573
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_NORMAN,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -38949,6 +40521,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 15615
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_NORMAN,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -39066,6 +40640,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 15665
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_NORMAN,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -39183,6 +40759,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 15715
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_NORMAN,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -39320,6 +40898,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 15773
         .aiFlags = AI_FLAG_BASIC_TRAINER | AI_FLAG_RISKY,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_WINONA,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -39439,6 +41019,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 15823
         .aiFlags = AI_FLAG_BASIC_TRAINER | AI_FLAG_RISKY,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_WINONA,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -39576,6 +41158,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 15881
         .aiFlags = AI_FLAG_BASIC_TRAINER | AI_FLAG_RISKY,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_WINONA,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -39713,6 +41297,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 15939
         .aiFlags = AI_FLAG_BASIC_TRAINER | AI_FLAG_RISKY,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_WINONA,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -39848,6 +41434,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 15997
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -39967,6 +41555,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 16047
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -40104,6 +41694,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 16105
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -40241,6 +41833,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 16163
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -40378,6 +41972,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 16221
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_JUAN,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -40495,6 +42091,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 16271
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_JUAN,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -40612,6 +42210,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 16321
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_JUAN,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -40747,6 +42347,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 16379
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEADER_JUAN,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -40880,6 +42482,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16436
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BUG_MANIAC,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -40923,6 +42527,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16453
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BIRD_KEEPER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -40957,6 +42563,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16467
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_STEVEN,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -41090,6 +42698,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16524
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SALON_MAIDEN_ANABEL,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -41122,6 +42732,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16537
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_DOME_ACE_TUCKER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -41154,6 +42766,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16550
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PALACE_MAVEN_SPENSER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -41188,6 +42802,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16563
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_ARENA_TYCOON_GRETA,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -41220,6 +42836,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16576
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_FACTORY_HEAD_NOLAND,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -41254,6 +42872,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16589
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PIKE_QUEEN_LUCY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -41286,6 +42906,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16602
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PYRAMID_KING_BRANDON,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -41318,6 +42940,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16615
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUIN_MANIAC,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -41361,6 +42985,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16632
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUIN_MANIAC,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -41415,6 +43041,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16653
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUIN_MANIAC,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -41469,6 +43097,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16674
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RUIN_MANIAC,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -41523,6 +43153,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16695
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SAILOR,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -41577,6 +43209,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16716
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SAILOR,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -41631,6 +43265,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16737
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SAILOR,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -41685,6 +43321,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16758
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SAILOR,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -41739,6 +43377,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16779
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -41782,6 +43422,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16796
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -41836,6 +43478,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16817
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -41890,6 +43534,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16838
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -41944,6 +43590,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16859
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BLACK_BELT,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -41987,6 +43635,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16876
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BLACK_BELT,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -42041,6 +43691,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16897
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BLACK_BELT,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -42095,6 +43747,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16918
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BLACK_BELT,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -42153,6 +43807,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16940
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -42200,6 +43856,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16958
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -42258,6 +43916,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 16980
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -42316,6 +43976,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 17002
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -42370,6 +44032,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 17023
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GUITARIST,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -42424,6 +44088,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 17044
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GUITARIST,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -42478,6 +44144,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 17065
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GUITARIST,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -42532,6 +44200,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 17086
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GUITARIST,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -42586,6 +44256,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 17107
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HIKER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -42629,6 +44301,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 17124
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HIKER,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -42683,6 +44357,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 17145
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HIKER,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -42737,6 +44413,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 17166
         .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 0
+        .trainerBackPic = TRAINER_PIC_HIKER,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -42793,6 +44471,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 17187
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_BREEDER_F,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -42882,6 +44562,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 17220
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_BREEDER_F,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -42971,6 +44653,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 17253
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_BREEDER_F,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -43060,6 +44744,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 17286
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_POKEMON_BREEDER_F,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -43149,6 +44835,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 17319
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BEAUTY,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -43194,6 +44882,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 17336
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BEAUTY,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -43250,6 +44940,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 17357
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BEAUTY,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -43306,6 +44998,8 @@ F_TRAINER_FEMALE |
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 17378
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_BEAUTY,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -43360,6 +45054,8 @@ F_TRAINER_FEMALE |
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
 #line 17398
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_F,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -43390,6 +45086,8 @@ F_TRAINER_FEMALE |
             TRAINER_ENCOUNTER_MUSIC_INTENSE,
 #line 17410
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYCHIC_M,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {
@@ -43431,6 +45129,8 @@ F_TRAINER_FEMALE |
             TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 17426
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_GENTLEMAN,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -43461,6 +45161,8 @@ F_TRAINER_FEMALE |
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 17438
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RED,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -43493,6 +45195,8 @@ F_TRAINER_FEMALE |
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 17450
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_LEAF,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -43523,6 +45227,8 @@ F_TRAINER_FEMALE |
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 17462
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RS_BRENDAN,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -43555,6 +45261,8 @@ F_TRAINER_FEMALE |
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 17474
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RS_MAY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {

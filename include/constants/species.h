@@ -1689,10 +1689,10 @@
 #define SPECIES_BARBARACLE_MEGA                         1557
 #define SPECIES_HOUNDSTONE_MEGA                         1558
 #define SPECIES_DRAGONITE_MEGA                          1559
-#define SPECIES_DRATINI_BIG_CHILL                        1560
-#define SPECIES_DRAGONAIR_BIG_CHILL                      1561
-#define SPECIES_DRAGONITE_BIG_CHILL                      1562
-#define SPECIES_DRAGONITE_BIG_CHILL_MEGA                 1563
+#define SPECIES_DRATINI_BIG_CHILL                       1560
+#define SPECIES_DRAGONAIR_BIG_CHILL                     1561
+#define SPECIES_DRAGONITE_BIG_CHILL                     1562
+#define SPECIES_DRAGONITE_BIG_CHILL_MEGA                1563
 #define SPECIES_HATTERENE_MEGA                          1564
 #define SPECIES_CINDERACE_MEGA                          1565
 #define SPECIES_UNOWN_XERGE                             1566

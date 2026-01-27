@@ -16,6 +16,7 @@
 #include "constants/abilities.h"
 #include "contest_effect.h"
 #include "constants/trainers.h"
+#include "constants/pokedex.h"
 
 #define GET_BASE_SPECIES_ID(speciesId) (GetFormSpeciesId(speciesId, 0))
 #define FORM_SPECIES_END (0xffff)
@@ -441,8 +442,8 @@ struct SpeciesInfo /*0xC4*/
     // Pokédex data
     u8 categoryName[13];
     u8 speciesName[POKEMON_NAME_LENGTH + 1];
-    enum PokemonCry cryId;
-    enum NationalDexOrder natDexNum;
+    enum PokemonCry cryId:16;
+    enum NationalDexOrder natDexNum:16;
     u16 height; //in decimeters
     u16 weight; //in hectograms
     u16 pokemonScale;

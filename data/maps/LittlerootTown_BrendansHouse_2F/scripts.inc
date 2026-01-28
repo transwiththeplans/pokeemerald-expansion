@@ -712,13 +712,13 @@ LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Switch_4:
 
 LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Text_0:
 # 317 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "It's the AF Channel its showing the\n"
-	.string "news, do you want to change the\l"
+	.string "It's the AF Channel, showing the\n"
+	.string "news. Do you want to change the\l"
 	.string "channel?$"
 
 LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Text_1:
 # 336 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
-	.string "Grampa also likes this channel$"
+	.string "Grandpa also likes this channel!$"
 
 LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Switch_Text_0:
 # 344 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"

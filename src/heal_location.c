@@ -78,8 +78,12 @@ bool32 IsLastHealLocationPlayerHouse()
 
 u32 GetHealNpcLocalId(u32 healLocationId)
 {
-    if (healLocationId == HEAL_LOCATION_NONE || healLocationId >= NUM_HEAL_LOCATIONS)
+    if (healLocationId == HEAL_LOCATION_NONE)
         return LOCALID_NONE;
+
+	if (ARRAY_COUNT(sWhiteoutRespawnHealerNpcIds) == 0
+	 || healLocationId > ARRAY_COUNT(sWhiteoutRespawnHealerNpcIds))
+		return LOCALID_NONE;
 
     return sWhiteoutRespawnHealerNpcIds[healLocationId - 1];
 }
@@ -87,18 +91,27 @@ u32 GetHealNpcLocalId(u32 healLocationId)
 void SetWhiteoutRespawnWarpAndHealerNPC(struct WarpData *warp)
 {
     u32 healLocationId = GetHealLocationIndexByWarpData(&gSaveBlock1Ptr->lastHealLocation);
-    u32 healNpcLocalId = GetHealNpcLocalId(healLocationId);
 
+	if (healLocationId == HEAL_LOCATION_NONE
+	 || ARRAY_COUNT(sWhiteoutRespawnHealCenterMapIdxs) == 0
+	 || healLocationId > ARRAY_COUNT(sWhiteoutRespawnHealCenterMapIdxs))
+	{
+		*warp = gSaveBlock1Ptr->lastHealLocation;
+		return;
+	}
+
+    u32 healNpcLocalId = GetHealNpcLocalId(healLocationId);
     if (!healNpcLocalId)
     {
-        *(warp) = gSaveBlock1Ptr->lastHealLocation;
+        *warp = gSaveBlock1Ptr->lastHealLocation;
         return;
     }
 
     warp->mapGroup = sWhiteoutRespawnHealCenterMapIdxs[healLocationId - 1][0];
-    warp->mapNum = sWhiteoutRespawnHealCenterMapIdxs[healLocationId - 1][1];
-    warp->warpId = WARP_ID_NONE;
-    warp->x = sWhiteoutRespawnHealCenterMapIdxs[healLocationId - 1][2];
-    warp->y = sWhiteoutRespawnHealCenterMapIdxs[healLocationId - 1][3];
+    warp->mapNum   = sWhiteoutRespawnHealCenterMapIdxs[healLocationId - 1][1];
+    warp->warpId   = WARP_ID_NONE;
+    warp->x        = sWhiteoutRespawnHealCenterMapIdxs[healLocationId - 1][2];
+    warp->y        = sWhiteoutRespawnHealCenterMapIdxs[healLocationId - 1][3];
     gSpecialVar_LastTalked = healNpcLocalId;
 }
+

@@ -12,7 +12,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .baseSpeed     = 65,
         .baseSpAttack  = 45,
         .baseSpDefense = 45,
-        .types = MON_TYPES(TYPE_GRASS, TYPE_NORMAL),
+        .types = MON_TYPES(TYPE_GRASS),
         .catchRate = 45,
         .expYield = 62,
         .evYield_Speed = 1,
@@ -21,7 +21,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_GRASS),
-        .abilities = { ABILITY_LIMBER, ABILITY_SNIPER, ABILITY_TECHNICIAN },
+        .abilities = { ABILITY_SAP_SIPPER, ABILITY_TECHNICIAN, ABILITY_SNIPER },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Sprigatito"),
         .cryId = CRY_SPRIGATITO,
@@ -77,7 +77,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .baseSpeed     = 83,
         .baseSpAttack  = 60,
         .baseSpDefense = 63,
-        .types = MON_TYPES(TYPE_GRASS, TYPE_NORMAL),
+        .types = MON_TYPES(TYPE_GRASS, TYPE_DARK),
         .catchRate = 45,
         .expYield = 144,
         .evYield_Speed = 2,
@@ -86,7 +86,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_GRASS),
-        .abilities = { ABILITY_LIMBER, ABILITY_SNIPER, ABILITY_TECHNICIAN },
+        .abilities = { ABILITY_SAP_SIPPER, ABILITY_TECHNICIAN, ABILITY_SNIPER },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Floragato"),
         .cryId = CRY_FLORAGATO,
@@ -141,7 +141,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .baseSpeed     = 123,
         .baseSpAttack  = 81,
         .baseSpDefense = 70,
-        .types = MON_TYPES(TYPE_GRASS, TYPE_NORMAL),
+        .types = MON_TYPES(TYPE_GRASS, TYPE_DARK),
         .catchRate = 45,
         .expYield = 265,
         .evYield_Speed = 3,
@@ -150,7 +150,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_GRASS),
-        .abilities = { ABILITY_LIMBER, ABILITY_SNIPER, ABILITY_TECHNICIAN },
+        .abilities = { ABILITY_SAP_SIPPER, ABILITY_TECHNICIAN, ABILITY_SNIPER },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Meowscarada"),
         .cryId = CRY_MEOWSCARADA,
@@ -194,7 +194,77 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sMeowscaradaLevelUpLearnset,
         .teachableLearnset = sMeowscaradaTeachableLearnset,
+        .formSpeciesIdTable = sMeowscaradaFormSpeciesIdTable,
+        .formChangeTable = sMeowscaradaFormChangeTable,
     },
+	
+#if P_MEGA_EVOLUTIONS
+    [SPECIES_MEOWSCARADA_MEGA] =
+    {
+        .baseHP        = 76,
+        .baseAttack    = 131,
+        .baseDefense   = 65,
+        .baseSpeed     = 163,
+        .baseSpAttack  = 130,
+        .baseSpDefense = 65,
+        .types = MON_TYPES(TYPE_GRASS, TYPE_DARK),
+        .catchRate = 45,
+        .expYield = 265,
+        .evYield_Speed = 3,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_GRASS),
+        .abilities = { ABILITY_INNER_FOCUS, ABILITY_INNER_FOCUS, ABILITY_INNER_FOCUS },
+        .bodyColor = BODY_COLOR_GREEN,
+        .speciesName = _("Meowscarada"),
+        .cryId = CRY_MEOWSCARADA,
+        .natDexNum = NATIONAL_DEX_MEOWSCARADA,
+        .categoryName = _("Magician"),
+        .height = 15,
+        .weight = 312,
+        .description = COMPOUND_STRING(
+            "This Pokémon uses the reflective\n"
+            "fur lining its cape to camouflage the\n"
+            "stem of its flower, creating the\n"
+            "illusion that the flower is floating."),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_MeowscaradaMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_MeowscaradaMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_MeowscaradaMega,
+        .shinyPalette = gMonShinyPalette_MeowscaradaMega,
+        .iconSprite = gMonIcon_MeowscaradaMega,
+        .iconPalIndex = 1,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-3, 14, SHADOW_SIZE_S)
+        FOOTPRINT(Meowscarada)
+        OVERWORLD(
+            sPicTable_Meowscarada,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Meowscarada,
+            gShinyOverworldPalette_Meowscarada
+        )
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sMeowscaradaLevelUpLearnset,
+        .teachableLearnset = sMeowscaradaTeachableLearnset,
+        .formSpeciesIdTable = sMeowscaradaFormSpeciesIdTable,
+        .formChangeTable = sMeowscaradaFormChangeTable,
+    },
+#endif//P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_SPRIGATITO
 
 #if P_FAMILY_FUECOCO
@@ -388,7 +458,8 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sSkeledirgeLevelUpLearnset,
         .teachableLearnset = sSkeledirgeTeachableLearnset,
-		.formChangeTable = sSkeledirgeFormChangeTable,
+        .formSpeciesIdTable = sSkeledirgeFormSpeciesIdTable,
+        .formChangeTable = sSkeledirgeFormChangeTable,
     },
 	
 #if P_MEGA_EVOLUTIONS

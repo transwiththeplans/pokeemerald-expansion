@@ -24997,6 +24997,13 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u16 gOverworldPalette_Meowscarada[] = INCBIN_U16("graphics/pokemon/meowscarada/overworld_normal.gbapal");
     const u16 gShinyOverworldPalette_Meowscarada[] = INCBIN_U16("graphics/pokemon/meowscarada/overworld_shiny.gbapal");
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_MeowscaradaMega[] = INCBIN_U32("graphics/pokemon/meowscarada/mega/front.4bpp.smol");
+    const u16 gMonPalette_MeowscaradaMega[] = INCBIN_U16("graphics/pokemon/meowscarada/mega/normal.gbapal");
+    const u32 gMonBackPic_MeowscaradaMega[] = INCBIN_U32("graphics/pokemon/meowscarada/mega/back.4bpp.smol");
+    const u16 gMonShinyPalette_MeowscaradaMega[] = INCBIN_U16("graphics/pokemon/meowscarada/mega/shiny.gbapal");
+    const u8 gMonIcon_MeowscaradaMega[] = INCBIN_U8("graphics/pokemon/meowscarada/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_SPRIGATITO

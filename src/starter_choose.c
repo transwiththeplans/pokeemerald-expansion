@@ -126,7 +126,7 @@ static const u16 sStarterMon_OS[STARTER_MON_COUNT] =
 
 static const u16 sStarterMon_UA[STARTER_MON_COUNT] =
 {
-    SPECIES_CHESPIN,
+    SPECIES_SPRIGATITO,
     SPECIES_TEPIG,
     SPECIES_POPPLIO,
 };

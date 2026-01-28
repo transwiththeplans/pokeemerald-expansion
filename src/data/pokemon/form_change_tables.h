@@ -2000,6 +2000,15 @@ static const struct FormChange sEnamorusFormChangeTable[] =
 };
 #endif //P_FAMILY_ENAMORUS
 
+#if P_FAMILY_SPRIGATITO
+static const struct FormChange sMeowscaradaFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_MEOWSCARADA_MEGA, ITEM_ULTIMATRIX_SYMBOL},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_FAMILY_SPRIGATITO
+
 #if P_FAMILY_FUECOCO
 static const struct FormChange sSkeledirgeFormChangeTable[] = {
 #if P_MEGA_EVOLUTIONS

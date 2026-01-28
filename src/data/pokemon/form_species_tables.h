@@ -2512,6 +2512,16 @@ static const u16 sEnamorusFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_ENAMORUS
 
+#if P_FAMILY_SPRIGATITO
+static const u16 sMeowscaradaFormSpeciesIdTable[] = {
+    SPECIES_MEOWSCARADA,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_MEOWSCARADA_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_SPRIGATITO
+
 #if P_FAMILY_FUECOCO
 static const u16 sSkeledirgeFormSpeciesIdTable[] = {
     SPECIES_SKELEDIRGE,

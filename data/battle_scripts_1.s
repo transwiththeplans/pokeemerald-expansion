@@ -4129,7 +4129,7 @@ BattleScript_EffectMagicCoat::
 
 BattleScript_EffectRecycle::
 	attackcanceler
-	tryrecycleitem BattleScript_ButItFailed
+	tryrecycleitem RECYCLE_ITEM_RECYCLE BattleScript_ButItFailed
 	attackanimation
 	waitanimation
 	printstring STRINGID_XFOUNDONEY
@@ -6617,7 +6617,7 @@ BattleScript_CheekPouchActivates::
 
 BattleScript_PickupActivates::
 	pause 5
-	tryrecycleitem BattleScript_PickupActivatesEnd
+	tryrecycleitem RECYCLE_ITEM_PICKUP BattleScript_PickupActivatesEnd
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_XFOUNDONEY
 	waitmessage B_WAIT_TIME_LONG
@@ -6627,7 +6627,7 @@ BattleScript_PickupActivatesEnd:
 
 BattleScript_HarvestActivates::
 	pause 5
-	tryrecycleitem BattleScript_HarvestActivatesEnd
+	tryrecycleitem RECYCLE_ITEM_HARVEST BattleScript_HarvestActivatesEnd
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_HARVESTBERRY
 	waitmessage B_WAIT_TIME_LONG

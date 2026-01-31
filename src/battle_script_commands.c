@@ -13491,11 +13491,11 @@ static void Cmd_jumpifsubstituteblocks(void)
 
 static void Cmd_tryrecycleitem(void)
 {
-    CMD_ARGS(const u8 *failInstr);
+    CMD_ARGS(u8 type, const u8 *failInstr);
 
     u16 *usedHeldItem;
 
-    if (gCurrentMove == MOVE_NONE && BattlerHasTrait(gBattlerAttacker, ABILITY_PICKUP))
+    if (gCurrentMove == MOVE_NONE && cmd->type == RECYCLE_ITEM_PICKUP)
         usedHeldItem = &GetBattlerPartyState(gBattlerTarget)->usedHeldItem;
     else
         usedHeldItem = &GetBattlerPartyState(gBattlerAttacker)->usedHeldItem;

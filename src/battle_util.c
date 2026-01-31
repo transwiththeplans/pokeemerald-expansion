@@ -4641,15 +4641,56 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
     case ABILITYEFFECT_ENDTURN:
         if (IsBattlerAlive(battler))
         {
+            u8 itemTraitType = 0;
             gBattlerAttacker = battler;
 
-            if ((traitCheck = SearchTraits(battlerTraits, ABILITY_PICKUP)) && !gSpecialStatuses[battler].endTurnTraitDone[traitCheck - 1])
+            // Item abilities have additional conitions which might conflict with following Else statements
+            // Harvest, Pickup, and Ball Fetch do their item availability checks first independantly
+            // then just their activations are included in the If Else statements of the rest of the abilities.
+            // If affecting the same slot at the same time, priority is Harvest, Pickup, Ball Fetch (Ball Fetch is last because it seeks an empty slot)
+
+            if ((traitCheck = SearchTraits(battlerTraits, ABILITY_HARVEST)) && !gSpecialStatuses[battler].endTurnTraitDone[traitCheck - 1]
+             && (IsBattlerWeatherAffected(battler, B_WEATHER_SUN) || RandomPercentage(RNG_HARVEST, 50))
+             && gBattleMons[battler].item == ITEM_NONE
+             && gBattleStruct->changedItems[battler] == ITEM_NONE   // Will not inherit an item
+             && GetItemPocket(GetBattlerPartyState(battler)->usedHeldItem) == POCKET_BERRIES
+             && itemTraitType == 0)
             {
-                gSpecialStatuses[battler].endTurnTraitDone[traitCheck - 1] = TRUE;
+                itemTraitType = TRIGGER_HARVEST;
+            }
+            if ((traitCheck = SearchTraits(battlerTraits, ABILITY_PICKUP)) && !gSpecialStatuses[battler].endTurnTraitDone[traitCheck - 1]
+             && itemTraitType == 0)
+            {
                 if (gBattleMons[battler].item == ITEM_NONE
                  && gBattleStruct->changedItems[battler] == ITEM_NONE   // Will not inherit an item
                  && PickupHasValidTarget(battler))
                 {
+                    itemTraitType = TRIGGER_PICKUP;
+                }
+            }
+            if ((traitCheck = SearchTraits(battlerTraits, ABILITY_BALL_FETCH)) && !gSpecialStatuses[battler].endTurnTraitDone[traitCheck - 1]
+             && gBattleMons[battler].item == ITEM_NONE
+             && gBattleResults.catchAttempts[ItemIdToBallId(gLastUsedBall)] >= 1
+             && !gHasFetchedBall
+             && itemTraitType == 0)
+            {
+                itemTraitType = TRIGGER_BALL_FETCH;
+            }
+
+            if (itemTraitType != 0)
+            {
+                if (itemTraitType == TRIGGER_HARVEST)
+                {
+                    gSpecialStatuses[battler].endTurnTraitDone[SearchTraits(battlerTraits, ABILITY_HARVEST) - 1] = TRUE;
+                    gLastUsedItem = GetBattlerPartyState(battler)->usedHeldItem;
+                    PushTraitStack(battler, ABILITY_HARVEST);
+                    BattleScriptExecute(BattleScript_HarvestActivates);
+                    effect++;
+                    break;
+                }
+                else if (itemTraitType == TRIGGER_PICKUP)
+                {
+                    gSpecialStatuses[battler].endTurnTraitDone[SearchTraits(battlerTraits, ABILITY_PICKUP) - 1] = TRUE;
                     gBattlerTarget = RandomUniformExcept(RNG_PICKUP, 0, gBattlersCount - 1, CantPickupItem);
                     gLastUsedItem = GetBattlerPartyState(gBattlerTarget)->usedHeldItem;
                     PushTraitStack(battler, ABILITY_PICKUP);
@@ -4657,59 +4698,23 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
                     effect++;
                     break;
                 }
-            }
-            else if ((traitCheck = SearchTraits(battlerTraits, ABILITY_HARVEST)) && !gSpecialStatuses[battler].endTurnTraitDone[traitCheck - 1]
-             && (IsBattlerWeatherAffected(battler, B_WEATHER_SUN) || RandomPercentage(RNG_HARVEST, 50))
-             && gBattleMons[battler].item == ITEM_NONE
-             && gBattleStruct->changedItems[battler] == ITEM_NONE   // Will not inherit an item
-             && GetItemPocket(GetBattlerPartyState(battler)->usedHeldItem) == POCKET_BERRIES)
-            {
-                gSpecialStatuses[battler].endTurnTraitDone[traitCheck - 1] = TRUE;
-                gLastUsedItem = GetBattlerPartyState(battler)->usedHeldItem;
-                PushTraitStack(battler, ABILITY_HARVEST);
-                BattleScriptExecute(BattleScript_HarvestActivates);
-                effect++;
-                break;
-            }
-            else if ((traitCheck = SearchTraits(battlerTraits, ABILITY_BALL_FETCH)) && !gSpecialStatuses[battler].endTurnTraitDone[traitCheck - 1]
-             && gBattleMons[battler].item == ITEM_NONE
-             && gBattleResults.catchAttempts[ItemIdToBallId(gLastUsedBall)] >= 1
-             && !gHasFetchedBall)
-            {
-                gSpecialStatuses[battler].endTurnTraitDone[traitCheck - 1] = TRUE;
-                gLastUsedItem = gLastUsedBall;
-                gBattleScripting.battler = battler;
-                gBattleMons[battler].item = gLastUsedItem;
-                BtlController_EmitSetMonData(battler, B_COMM_TO_CONTROLLER, REQUEST_HELDITEM_BATTLE, 0, 2, &gLastUsedItem);
-                MarkBattlerForControllerExec(battler);
-                gHasFetchedBall = TRUE;
-                PushTraitStack(battler, ABILITY_BALL_FETCH);
-                BattleScriptExecute(BattleScript_BallFetch);
-                effect++;
-                break;
-            }
-            else if ((traitCheck = SearchTraits(battlerTraits, ABILITY_CUD_CHEW)) && !gSpecialStatuses[battler].endTurnTraitDone[traitCheck - 1])
-			{
-                if (gDisableStructs[battler].cudChew == TRUE)
+                else if (itemTraitType == TRIGGER_BALL_FETCH)
                 {
-                    gSpecialStatuses[battler].endTurnTraitDone[traitCheck - 1] = TRUE;
+                    gSpecialStatuses[battler].endTurnTraitDone[SearchTraits(battlerTraits, ABILITY_BALL_FETCH) - 1] = TRUE;
+                    gLastUsedItem = gLastUsedBall;
                     gBattleScripting.battler = battler;
-                    gDisableStructs[battler].cudChew = FALSE;
-                    gLastUsedItem = GetBattlerPartyState(battler)->usedHeldItem;
-                    GetBattlerPartyState(battler)->usedHeldItem = ITEM_NONE;
-                    PushTraitStack(battler, ABILITY_CUD_CHEW);
-                    BattleScriptExecute(BattleScript_CudChewActivates);
+                    gBattleMons[battler].item = gLastUsedItem;
+                    BtlController_EmitSetMonData(battler, B_COMM_TO_CONTROLLER, REQUEST_HELDITEM_BATTLE, 0, 2, &gLastUsedItem);
+                    MarkBattlerForControllerExec(battler);
+                    gHasFetchedBall = TRUE;
+                    PushTraitStack(battler, ABILITY_BALL_FETCH);
+                    BattleScriptExecute(BattleScript_BallFetch);
                     effect++;
                     break;
                 }
-                    else if (!gDisableStructs[battler].cudChew && GetItemPocket(GetBattlerPartyState(battler)->usedHeldItem) == POCKET_BERRIES)
-                {
-                    gDisableStructs[battler].cudChew = TRUE;
-                }
-			}
-
+            }
             else if ((traitCheck = SearchTraits(battlerTraits, ABILITY_SPEED_BOOST)) && !gSpecialStatuses[battler].endTurnTraitDone[traitCheck - 1]
-                && CompareStat(battler, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN) && gDisableStructs[battler].isFirstTurn != 2)
+             && CompareStat(battler, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN) && gDisableStructs[battler].isFirstTurn != 2)
             {
                 gSpecialStatuses[battler].endTurnTraitDone[traitCheck - 1] = TRUE;
                 SaveBattlerAttacker(gBattlerAttacker);
@@ -4778,6 +4783,26 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
                 effect++;
                 break;
             }
+            // Cud Chew moved to the bottom because it has additional IF conditions so it could block the Else on abilities coming after (Multi)
+            else if ((traitCheck = SearchTraits(battlerTraits, ABILITY_CUD_CHEW)) && !gSpecialStatuses[battler].endTurnTraitDone[traitCheck - 1])
+			{
+                if (gDisableStructs[battler].cudChew == TRUE)
+                {
+                    gSpecialStatuses[battler].endTurnTraitDone[traitCheck - 1] = TRUE;
+                    gBattleScripting.battler = battler;
+                    gDisableStructs[battler].cudChew = FALSE;
+                    gLastUsedItem = GetBattlerPartyState(battler)->usedHeldItem;
+                    GetBattlerPartyState(battler)->usedHeldItem = ITEM_NONE;
+                    PushTraitStack(battler, ABILITY_CUD_CHEW);
+                    BattleScriptExecute(BattleScript_CudChewActivates);
+                    effect++;
+                    break;
+                }
+                    else if (!gDisableStructs[battler].cudChew && GetItemPocket(GetBattlerPartyState(battler)->usedHeldItem) == POCKET_BERRIES)
+                {
+                    gDisableStructs[battler].cudChew = TRUE;
+                }
+			}
         }
         break;
     case ABILITYEFFECT_ENDTURN_WEATHER:  

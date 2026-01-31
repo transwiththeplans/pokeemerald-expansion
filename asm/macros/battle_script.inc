@@ -1252,8 +1252,9 @@
 	.4byte \jumpInstr
 	.endm
 
-	.macro tryrecycleitem failInstr:req
+	.macro tryrecycleitem type:req, failInstr:req
 	.byte 0xea
+	.byte \type
 	.4byte \failInstr
 	.endm
 

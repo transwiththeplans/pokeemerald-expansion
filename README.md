@@ -1,3 +1,5 @@
+<img width="480" height="320" alt="image" src="https://github.com/user-attachments/assets/68460785-37b4-4562-bea1-d85ceed3b8ff" />
+
 # Trait System (Release 1.14.2)
 
 This is the full release of the Multi-Ability function I'm calling the Trait System!

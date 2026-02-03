@@ -518,6 +518,20 @@ void CreateWildMon(u16 species, u8 level)
 #define TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildPokemon, type, ability, ptr, count) TryGetAbilityInfluencedWildMonIndex(wildPokemon, type, ability, ptr)
 #endif
 
+static u8 GetPlayerPartyNumber(void){
+    u8 i;
+    u8 num = 0;
+
+    if(!FlagGet(FLAG_SYS_POKEMON_GET))
+        return num;
+
+    for(i = 0; i < PARTY_SIZE; i++)
+        if(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES, NULL) != SPECIES_NONE)
+            num++;
+
+    return num;
+}
+
 static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, enum WildPokemonArea area, u8 flags)
 {
     u8 wildMonIndex = 0;
@@ -567,6 +581,8 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, enum 
     }
 
     level = ChooseWildMonLevel(wildMonInfo->wildPokemon, wildMonIndex, area);
+    if (GetPlayerPartyNumber() == 0) //Failsafe for when you encounter wild grass with no Pokémon
+        return FALSE;
     if (flags & WILD_CHECK_REPEL && !IsWildLevelAllowedByRepel(level))
         return FALSE;
     if (gMapHeader.mapLayoutId != LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS && flags & WILD_CHECK_KEEN_EYE && !IsAbilityAllowingEncounter(level))

@@ -260,8 +260,8 @@
     },
     {
       "type": "trigger",
-      "x": 13,
-      "y": 10,
+      "x": 12,
+      "y": 8,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
       "var_value": "3",
@@ -270,7 +270,7 @@
     {
       "type": "trigger",
       "x": 13,
-      "y": 9,
+      "y": 8,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
       "var_value": "3",
@@ -279,7 +279,7 @@
     {
       "type": "trigger",
       "x": 10,
-      "y": 9,
+      "y": 8,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
       "var_value": "3",
@@ -288,7 +288,7 @@
     {
       "type": "trigger",
       "x": 11,
-      "y": 9,
+      "y": 8,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
       "var_value": "3",
@@ -296,8 +296,8 @@
     },
     {
       "type": "trigger",
-      "x": 10,
-      "y": 2,
+      "x": 8,
+      "y": 8,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
       "var_value": "3",
@@ -305,8 +305,8 @@
     },
     {
       "type": "trigger",
-      "x": 11,
-      "y": 2,
+      "x": 9,
+      "y": 8,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
       "var_value": "3",

@@ -1395,6 +1395,7 @@ static u32 GetBattlerMonData(u32 battler, struct Pokemon *party, u32 monId, u8 *
     s16 data16;
     u32 data32;
     s32 size = 0;
+    u32 i;
 
     switch (gBattleResources->bufferA[battler][1])
     {
@@ -1432,6 +1433,21 @@ static u32 GetBattlerMonData(u32 battler, struct Pokemon *party, u32 monId, u8 *
         GetMonData(&party[monId], MON_DATA_NICKNAME, nickname);
         StringCopy_Nickname(battleMon.nickname, nickname);
         GetMonData(&party[monId], MON_DATA_OT_NAME, battleMon.otName);
+
+         for (i = 0; i < MAX_MON_INNATES; i++)
+         {
+             #if TESTING
+             if (gTestRunnerEnabled)
+             {
+                 u32 array = (!IsPartnerMonFromSameTrainer(battler)) ? battler : GetBattlerSide(battler);
+                 battleMon.innates[i] = TestRunner_Battle_GetForcedInnates(array, monId, i);
+                 gBattleMons[battler].innates[i] = TestRunner_Battle_GetForcedInnates(array, monId, i);
+             }
+             #else
+                 battleMon.innates[i] = GetSpeciesInnate(battleMon.species, i + 1);
+             #endif
+         }
+
         src = (u8 *)&battleMon;
         for (size = 0; size < sizeof(battleMon); size++)
             dst[size] = src[size];

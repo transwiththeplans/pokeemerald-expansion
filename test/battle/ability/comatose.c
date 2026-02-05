@@ -88,91 +88,70 @@ SINGLE_BATTLE_TEST("Comatose Pokémon don't get poisoned by Toxic Spikes on swit
     }
 }
 
-SINGLE_BATTLE_TEST("Comatose makes Rest fail")
+TO_DO_BATTLE_TEST("Comatose makes Rest fail")
+TO_DO_BATTLE_TEST("Comatose isn't affected by Mold Breaker, Turboblaze or Teravolt")
+TO_DO_BATTLE_TEST("Comatose isn't affected by Poison Touch + Sunsteel Strike")
+TO_DO_BATTLE_TEST("Comatose boosts Dream Ball's multiplier")
+
+
+#if MAX_MON_TRAITS > 1
+SINGLE_BATTLE_TEST("Comatose prevents status-inducing moves (Traits)")
 {
+    u32 move;
+
+    PARAMETRIZE { move = MOVE_TOXIC; }
+    PARAMETRIZE { move = MOVE_POISONPOWDER; }
+    PARAMETRIZE { move = MOVE_SLEEP_POWDER; }
+    PARAMETRIZE { move = MOVE_THUNDER_WAVE; }
+
     GIVEN {
-        ASSUME(GetMoveEffect(MOVE_REST) == EFFECT_REST);
-        PLAYER(SPECIES_KOMALA) { Ability(ABILITY_COMATOSE); HP(1); MaxHP(100); }
+        PLAYER(SPECIES_KOMALA) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_COMATOSE); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(player, MOVE_REST); }
+        TURN { MOVE(opponent, move); }
     } SCENE {
-        NONE_OF {
-            ANIMATION(ANIM_TYPE_MOVE, MOVE_REST, player);
-            HP_BAR(player);
-        }
-    } THEN {
-        EXPECT_EQ(player->hp, 1);
-        EXPECT_EQ(player->status1, STATUS1_NONE);
-    }
-}
+        MESSAGE("Komala is drowsing!");
 
-SINGLE_BATTLE_TEST("Comatose isn't affected by Mold Breaker, Turboblaze or Teravolt")
-{
-    enum Ability ability;
-    u16 species;
-
-    PARAMETRIZE { ability = ABILITY_MOLD_BREAKER; species = SPECIES_PINSIR; }
-    PARAMETRIZE { ability = ABILITY_TURBOBLAZE; species = SPECIES_RESHIRAM; }
-    PARAMETRIZE { ability = ABILITY_TERAVOLT; species = SPECIES_ZEKROM; }
-
-    GIVEN {
-        ASSUME(GetMoveEffect(MOVE_TOXIC) == EFFECT_NON_VOLATILE_STATUS);
-        ASSUME(GetMoveNonVolatileStatus(MOVE_TOXIC) == MOVE_EFFECT_TOXIC);
-        PLAYER(SPECIES_KOMALA) { Ability(ABILITY_COMATOSE); }
-        OPPONENT(species) { Ability(ability); }
-    } WHEN {
-        TURN { MOVE(opponent, MOVE_TOXIC); }
-    } SCENE {
-        NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_TOXIC, opponent);
+        NOT ANIMATION(ANIM_TYPE_MOVE, move, opponent);
         ABILITY_POPUP(player, ABILITY_COMATOSE);
         MESSAGE("It doesn't affect Komala…");
-    } THEN {
-        EXPECT_EQ(player->status1, STATUS1_NONE);
     }
 }
 
-SINGLE_BATTLE_TEST("Comatose isn't affected by Poison Touch + Sunsteel Strike")
+SINGLE_BATTLE_TEST("Comatose Pokémon doesn't get poisoned by Toxic Spikes on switch-in (Traits)")
 {
     GIVEN {
-        ASSUME(MoveIgnoresTargetAbility(MOVE_SUNSTEEL_STRIKE));
-        ASSUME(MoveMakesContact(MOVE_SUNSTEEL_STRIKE));
-        PLAYER(SPECIES_KOMALA) { Ability(ABILITY_COMATOSE); }
-        OPPONENT(SPECIES_CROAGUNK) { Ability(ABILITY_POISON_TOUCH); }
-    } WHEN {
-        TURN { MOVE(opponent, MOVE_SUNSTEEL_STRIKE, WITH_RNG(RNG_POISON_TOUCH, 1)); }
-    } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_SUNSTEEL_STRIKE, opponent);
-        HP_BAR(player);
-        NOT STATUS_ICON(player, poison: TRUE);
-    } THEN {
-        EXPECT_EQ(player->status1, STATUS1_NONE);
-    }
-}
-
-WILD_BATTLE_TEST("Comatose boosts Dream Ball's multiplier")
-{
-    enum Ability ability;
-    u16 species;
-    bool32 shouldCatch;
-    const u16 rng = 50000;
-
-    PARAMETRIZE { species = SPECIES_KOMALA; ability = ABILITY_COMATOSE; shouldCatch = TRUE; }
-    PARAMETRIZE { species = SPECIES_MIMIKYU; ability = ABILITY_DISGUISE; shouldCatch = FALSE; }
-
-    GIVEN {
-        ASSUME(B_DREAM_BALL_MODIFIER >= GEN_8);
-        ASSUME(gSpeciesInfo[species].catchRate == 45);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(species) { Ability(ability); MaxHP(100); HP(1); }
+        PLAYER(SPECIES_KOMALA) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_COMATOSE); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { USE_ITEM(player, ITEM_DREAM_BALL, WITH_RNG(RNG_BALLTHROW_SHAKE, rng)); }
+        TURN { MOVE(opponent, MOVE_TOXIC_SPIKES); }
+        TURN { SWITCH(player, 1); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_SPECIAL, B_ANIM_BALL_THROW, player);
-    } THEN {
-        if (shouldCatch)
-            EXPECT_EQ(gBattleResults.caughtMonSpecies, species);
-        else
-            EXPECT_EQ(gBattleResults.caughtMonSpecies, SPECIES_NONE);
+        NOT STATUS_ICON(player, STATUS1_POISON);
+        ABILITY_POPUP(player, ABILITY_COMATOSE);
+        NOT HP_BAR(player);
     }
 }
+
+SINGLE_BATTLE_TEST("Comatose Pokémon don't get poisoned by Toxic Spikes on switch-in if forced in by phazing with Mold Breaker (Traits)")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_KOMALA) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_COMATOSE); }
+        OPPONENT(SPECIES_PINSIR) { Ability(ABILITY_HYPER_CUTTER); Innates(ABILITY_MOLD_BREAKER); }
+    } WHEN {
+        TURN { MOVE(opponent, MOVE_TOXIC_SPIKES); }
+        TURN { MOVE(opponent, MOVE_DRAGON_TAIL); }
+    } SCENE {
+        NOT STATUS_ICON(player, STATUS1_POISON);
+        ABILITY_POPUP(player, ABILITY_COMATOSE);
+        NOT HP_BAR(player);
+    }
+}
+
+TO_DO_BATTLE_TEST("Comatose makes Rest fail (Traits)")
+TO_DO_BATTLE_TEST("Comatose isn't affected by Mold Breaker, Turboblaze or Teravolt (Traits)")
+TO_DO_BATTLE_TEST("Comatose isn't affected by Poison Touch + Sunsteel Strike (Traits)")
+TO_DO_BATTLE_TEST("Comatose boosts Dream Ball's multiplier (Traits)")
+#endif

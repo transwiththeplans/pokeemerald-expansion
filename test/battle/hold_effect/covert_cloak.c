@@ -202,3 +202,17 @@ SINGLE_BATTLE_TEST("Covert Cloak does not prevent ability stat changes")
         MESSAGE("Wobbuffet's Speed fell!");
     }
 }
+
+#if MAX_MON_TRAITS > 1
+SINGLE_BATTLE_TEST("Covert Cloak does not prevent ability stat changes (Traits)")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_COVERT_CLOAK); }
+        OPPONENT(SPECIES_ELDEGOSS) { Ability(ABILITY_REGENERATOR); Innates(ABILITY_COTTON_DOWN); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_SCRATCH); }
+    } SCENE {
+        MESSAGE("Wobbuffet's Speed fell!");
+    }
+}
+#endif

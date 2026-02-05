@@ -94,3 +94,22 @@ MULTI_BATTLE_TEST("Multi Battle Tests register partner's status1")
         STATUS_ICON(playerRight, STATUS1_BURN);
     }
 }
+
+#if MAX_MON_TRAITS > 1
+SINGLE_BATTLE_TEST("Forced abilities activate on switch-in (Traits)")
+{
+    GIVEN {
+        PLAYER(SPECIES_ALAKAZAM);
+        PLAYER(SPECIES_KADABRA) { Ability(ABILITY_INNER_FOCUS); Innates(ABILITY_QUARK_DRIVE); SpAttack(400);}
+        OPPONENT(SPECIES_ARON);
+        OPPONENT(SPECIES_ALAKAZAM) { Ability(ABILITY_INNER_FOCUS); Innates(ABILITY_ELECTRIC_SURGE); };
+    } WHEN {
+        TURN { SWITCH(player, 1); SWITCH(opponent, 1);}
+    } SCENE {
+        ABILITY_POPUP(opponent, ABILITY_ELECTRIC_SURGE);
+        ABILITY_POPUP(player, ABILITY_QUARK_DRIVE);
+        MESSAGE("The Electric Terrain activated Kadabra's Quark Drive!");
+        MESSAGE("Kadabra's Sp. Atk was heightened!");
+    }
+}
+#endif

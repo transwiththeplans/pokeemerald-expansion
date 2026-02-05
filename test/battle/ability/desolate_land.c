@@ -177,3 +177,26 @@ SINGLE_BATTLE_TEST("Desolate Land can be replaced by Primordial Sea")
         EXPECT(gBattleWeather & B_WEATHER_RAIN_PRIMAL);
     }
 }
+
+#if MAX_MON_TRAITS > 1
+SINGLE_BATTLE_TEST("Desolate Land prevents other weather abilities (Traits)")
+{
+    u16 ability, species;
+    PARAMETRIZE { ability = ABILITY_DROUGHT;      species = SPECIES_NINETALES; }
+    PARAMETRIZE { ability = ABILITY_DRIZZLE;      species = SPECIES_POLITOED; }
+    PARAMETRIZE { ability = ABILITY_SAND_STREAM;  species = SPECIES_HIPPOWDON; }
+    PARAMETRIZE { ability = ABILITY_SNOW_WARNING; species = SPECIES_ABOMASNOW; }
+
+    GIVEN {
+        PLAYER(SPECIES_GROUDON) { Item(ITEM_RED_ORB); }
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(species) { Ability(ABILITY_LIGHT_METAL); Innates(ability); }
+    } WHEN {
+        TURN { SWITCH(opponent, 1); }
+    } SCENE {
+        ABILITY_POPUP(opponent, ability);
+    } THEN {
+        EXPECT(gBattleWeather & B_WEATHER_SUN_PRIMAL);
+    }
+}
+#endif

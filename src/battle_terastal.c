@@ -1,5 +1,6 @@
 #include "global.h"
 #include "battle.h"
+#include "battle_ai_main.h"
 #include "battle_anim.h"
 #include "battle_controllers.h"
 #include "battle_interface.h"
@@ -134,6 +135,7 @@ bool32 IsTypeStellarBoosted(u32 battler, enum Type type)
 uq4_12_t GetTeraMultiplier(struct DamageContext *ctx)
 {
     enum Type teraType = GetBattlerTeraType(ctx->battlerAtk);
+    bool32 hasAdaptability = (BattlerHasTrait(ctx->battlerAtk, ABILITY_ADAPTABILITY));
 
     // Safety check.
     if (GetActiveGimmick(ctx->battlerAtk) != GIMMICK_TERA)
@@ -158,7 +160,7 @@ uq4_12_t GetTeraMultiplier(struct DamageContext *ctx)
     // Base and Tera type.
     if (ctx->moveType == teraType && IS_BATTLER_OF_BASE_TYPE(ctx->battlerAtk, ctx->moveType))
     {
-        if (ctx->abilityAtk == ABILITY_ADAPTABILITY)
+        if (hasAdaptability)
             return UQ_4_12(2.25);
         else
             return UQ_4_12(2.0);
@@ -167,7 +169,7 @@ uq4_12_t GetTeraMultiplier(struct DamageContext *ctx)
     else if ((ctx->moveType == teraType && !IS_BATTLER_OF_BASE_TYPE(ctx->battlerAtk, ctx->moveType))
              || (ctx->moveType != teraType && IS_BATTLER_OF_BASE_TYPE(ctx->battlerAtk, ctx->moveType)))
     {
-        if (ctx->abilityAtk == ABILITY_ADAPTABILITY)
+        if (hasAdaptability)
             return UQ_4_12(2.0);
         else
             return UQ_4_12(1.5);

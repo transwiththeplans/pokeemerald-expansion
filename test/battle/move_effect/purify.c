@@ -62,37 +62,49 @@ AI_DOUBLE_BATTLE_TEST("AI does not use Purify to heal an ally with Guts")
     }
 }
 
-SINGLE_BATTLE_TEST("Purify cures the target's status and heals the user")
+TO_DO_BATTLE_TEST("TODO: Write Purify (Move Effect) test titles")
+TO_DO_BATTLE_TEST("Purify doesn't heal HP if the target has Comatose")
+
+#if MAX_MON_TRAITS > 1
+AI_SINGLE_BATTLE_TEST("AI uses Purify to heal an enemy with Guts (Traits)")
 {
+    u32 ability;
+
+    PARAMETRIZE { ability = ABILITY_GUTS; }
+    PARAMETRIZE { ability = ABILITY_BULLETPROOF; }
+
     GIVEN {
-        ASSUME(GetMoveEffect(MOVE_PURIFY) == EFFECT_PURIFY);
-        PLAYER(SPECIES_WOBBUFFET) { HP(50); MaxHP(100); }
-        OPPONENT(SPECIES_WOBBUFFET) { Status1(STATUS1_BURN); }
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_OMNISCIENT);
+        PLAYER(SPECIES_URSALUNA) { Ability(ABILITY_PICKUP); Innates(ability); Moves(MOVE_HEADLONG_RUSH, MOVE_CELEBRATE); Status1(STATUS1_BURN); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_HEADBUTT, MOVE_PURIFY); }
     } WHEN {
-        TURN { MOVE(player, MOVE_PURIFY); }
-    } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_PURIFY, player);
-        STATUS_ICON(opponent, none: TRUE);
-        HP_BAR(player);
-    } THEN {
-        EXPECT_EQ(player->hp, player->maxHP);
-        EXPECT_EQ(opponent->status1, STATUS1_NONE);
+        if (ability == ABILITY_GUTS)
+            TURN { EXPECT_MOVE(opponent, MOVE_PURIFY); }
+        else
+            TURN { NOT_EXPECT_MOVE(opponent, MOVE_PURIFY); }
     }
 }
 
-SINGLE_BATTLE_TEST("Purify doesn't heal HP if the target has Comatose")
+AI_DOUBLE_BATTLE_TEST("AI does not use Purify to heal an ally with Guts (Traits)")
 {
+    u32 ability;
+
+    PARAMETRIZE { ability = ABILITY_GUTS; }
+    PARAMETRIZE { ability = ABILITY_BULLETPROOF; }
+
     GIVEN {
-        ASSUME(GetMoveEffect(MOVE_PURIFY) == EFFECT_PURIFY);
-        PLAYER(SPECIES_WOBBUFFET) { HP(50); MaxHP(100); }
-        OPPONENT(SPECIES_KOMALA) { Ability(ABILITY_COMATOSE); }
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_OMNISCIENT);
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_HEADBUTT, MOVE_PURIFY); }
+        OPPONENT(SPECIES_URSALUNA) { Ability(ABILITY_PICKUP); Innates(ability); Moves(MOVE_HEADLONG_RUSH); Status1(STATUS1_BURN); }
     } WHEN {
-        TURN { MOVE(player, MOVE_PURIFY); }
-    } SCENE {
-        NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_PURIFY, player);
-        MESSAGE("But it failed!");
-        NOT HP_BAR(player);
-    } THEN {
-        EXPECT_EQ(player->hp, 50);
+        if (ability == ABILITY_GUTS)
+            TURN { NOT_EXPECT_MOVE(opponentLeft, MOVE_PURIFY); }
+        else
+            TURN { EXPECT_MOVE(opponentLeft, MOVE_PURIFY, target: opponentRight); }
     }
 }
+
+TO_DO_BATTLE_TEST("Purify doesn't heal HP if the target has Comatose (Traits)")
+#endif

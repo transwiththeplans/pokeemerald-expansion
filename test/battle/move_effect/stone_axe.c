@@ -92,3 +92,19 @@ SINGLE_BATTLE_TEST("Stone Axe fails to set up hazards if user faints")
         NOT MESSAGE("Pointed stones float in the air around the opposing team!");
     }
 }
+
+#if MAX_MON_TRAITS > 1
+SINGLE_BATTLE_TEST("Stone Axe sets up hazards after any ability activation (Traits)")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_SKARMORY) { Ability(ABILITY_LIGHT_METAL); Innates(ABILITY_WEAK_ARMOR); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_STONE_AXE); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_STONE_AXE, player);
+        ABILITY_POPUP(opponent, ABILITY_WEAK_ARMOR);
+        MESSAGE("Pointed stones float in the air around the opposing team!");
+    }
+}
+#endif

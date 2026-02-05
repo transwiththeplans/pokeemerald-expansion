@@ -751,6 +751,7 @@ struct BattleTestData
     u8 nature;
     bool8 isShiny;
     enum Ability forcedAbilities[MAX_BATTLERS_COUNT][PARTY_SIZE];
+    enum Ability forcedInnates[MAX_BATTLERS_COUNT][PARTY_SIZE][MAX_MON_INNATES];
     u8 chosenGimmick[NUM_BATTLE_SIDES][PARTY_SIZE];
     u8 forcedEnvironment;
 
@@ -982,6 +983,7 @@ struct moveWithPP {
 #define Gender(gender) Gender_(__LINE__, gender)
 #define Nature(nature) Nature_(__LINE__, nature)
 #define Ability(ability) Ability_(__LINE__, ability)
+#define Innates(innate1, ... ) do { enum Ability innates_[MAX_MON_INNATES] = {innate1, __VA_ARGS__}; Innates_(__LINE__, innates_); } while(0)
 #define Level(level) Level_(__LINE__, level)
 #define MaxHP(maxHP) MaxHP_(__LINE__, maxHP)
 #define HP(hp) HP_(__LINE__, hp)
@@ -1023,6 +1025,7 @@ void AILogScores(u32 sourceLine);
 void Gender_(u32 sourceLine, u32 gender);
 void Nature_(u32 sourceLine, u32 nature);
 void Ability_(u32 sourceLine, enum Ability ability);
+void Innates_(u32 sourceLine, enum Ability innates[MAX_MON_INNATES]);
 void Level_(u32 sourceLine, u32 level);
 void MaxHP_(u32 sourceLine, u32 maxHP);
 void HP_(u32 sourceLine, u32 hp);

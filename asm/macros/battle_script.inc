@@ -1252,8 +1252,9 @@
 	.4byte \jumpInstr
 	.endm
 
-	.macro tryrecycleitem failInstr:req
+	.macro tryrecycleitem type:req, failInstr:req
 	.byte 0xea
+	.byte \type
 	.4byte \failInstr
 	.endm
 
@@ -2468,4 +2469,10 @@
 	@ Absorbs Toxic Spikes when a grounded Poison-type faints to entry hazards.
 	.macro tryabsorbtoxicspikesonfaint
 	callnative BS_TryAbsorbToxicSpikesOnFaint
+	.endm
+
+	.macro pushtraitstack battler:req, ability:req
+	callnative BS_PushTraitStack
+	.byte \battler
+	.2byte \ability
 	.endm

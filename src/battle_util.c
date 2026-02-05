@@ -4397,14 +4397,14 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
         if ((traitCheck = SearchTraits(battlerTraits, ABILITY_TIME_WARP)) && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1] && SetStartingFieldStatus(STATUS_FIELD_TRICK_ROOM, B_MSG_SET_TRICK_ROOM, B_ANIM_TRICK_ROOM, &gFieldTimers.trickRoomTimer))
             effect += CommonSwitchInAbilities(battler, ABILITY_TIME_WARP, traitCheck, BattleScript_TimeDistortActivates);
 
-        if ((traitCheck = SearchTraits(battlerTraits, ABILITY_WEB_DOWN)) && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1] && && !IsHazardOnSide(targetSide, HAZARDS_STICKY_WEB)){
+        if ((traitCheck = SearchTraits(battlerTraits, ABILITY_WEB_DOWN)) && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1] && !IsHazardOnSide(GetBattlerSide(BATTLE_OPPOSITE(battler)), HAZARDS_STICKY_WEB)){
             //effect += CommonSwitchInAbilities(battler, ABILITY_WEB_DOWN, traitCheck, BattleScript_WebDownActivated);
 
 			gBattleScripting.savedBattler = gBattlerAttacker;
 			gBattlerAttacker = battler;
 			gBattlerTarget = BATTLE_OPPOSITE(battler);
             gSpecialStatuses[battler].switchInAbilityDone = TRUE;
-            PushHazardTypeToQueue(targetSide, HAZARDS_STICKY_WEB);
+            PushHazardTypeToQueue(GetBattlerSide(gBattlerTarget), HAZARDS_STICKY_WEB);
             BattleScriptPushCursorAndCallback(BattleScript_WebDownActivated);
             effect++;
         }
@@ -4435,7 +4435,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
 
             gSpecialStatuses[battler].switchInAbilityDone = TRUE;
 
-            if (CompareStat(battler, statId, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility))
+            if (CompareStat(battler, statId, MAX_STAT_STAGE, CMP_LESS_THAN))
             {
                 SET_STATCHANGER(statId, 1, FALSE);
                 gBattlerAttacker = battler;
@@ -8757,12 +8757,12 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct DamageContext *ctx)
     
     if (SearchTraits(battlerTraits, ABILITY_SHADOW_POWER))
     {
-        if (ctx->moveType == TYPE_FIRE && !IsBattleMoveSpecial(ctx->battlerAtk, ctx->battlerDef, ctx->holdEffectAtk, ctx->move))
+        if (ctx->moveType == TYPE_FIRE && !IsBattleMoveSpecial(ctx->move))
         {
             RecordAbilityBattle(ctx->battlerAtk, ABILITY_SHADOW_POWER);    
             modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
         }
-        if (ctx->moveType != TYPE_FIRE && IsBattleMoveSpecial(ctx->battlerAtk, ctx->battlerDef, ctx->holdEffectAtk, ctx->move))
+        if (ctx->moveType != TYPE_FIRE && IsBattleMoveSpecial(ctx->move))
         {
             RecordAbilityBattle(ctx->battlerAtk, ABILITY_SHADOW_POWER);    
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));  
@@ -9400,19 +9400,17 @@ uq4_12_t GetOverworldTypeEffectiveness(struct Pokemon *mon, enum Type moveType)
      || CanAbilityAbsorbMove(0, ctx.battlerDef, MOVE_NONE, moveType, CHECK_TRIGGER))
         modifier = UQ_4_12(0.0);
 
-		if ((modifier <= UQ_4_12(1.0)     && abilityDef == ABILITY_WONDER_GUARD)
-			|| (moveType == TYPE_FIRE     && abilityDef == ABILITY_FLASH_FIRE)
-			|| (moveType == TYPE_GRASS    && abilityDef == ABILITY_SAP_SIPPER)
-			|| (moveType == TYPE_GROUND   && (abilityDef == ABILITY_LEVITATE      || abilityDef == ABILITY_EARTH_EATER || abilityDef == ABILITY_POWER_METAL))
-			|| (moveType == TYPE_WATER    && (abilityDef == ABILITY_WATER_ABSORB  || abilityDef == ABILITY_DRY_SKIN    || abilityDef == ABILITY_STORM_DRAIN))
-			|| (moveType == TYPE_ELECTRIC && (abilityDef == ABILITY_LIGHTNING_ROD || abilityDef == ABILITY_VOLT_ABSORB || abilityDef == ABILITY_MOTOR_DRIVE))
-			|| (moveType == TYPE_FIGHTING && abilityDef == ABILITY_COUNTERPROOF)
-			|| (moveType == TYPE_POISON   && abilityDef == ABILITY_FILTH_FEEDER)
-			|| (moveType == TYPE_STEEL    && abilityDef == ABILITY_METAL_MUNCHER))
-        {
-            modifier = UQ_4_12(0.0);
-        }
-    }
+	if ((modifier <= UQ_4_12(1.0)     && MonHasTrait(mon, ABILITY_WONDER_GUARD))
+		|| (moveType == TYPE_FIRE     && MonHasTrait(mon, ABILITY_FLASH_FIRE))
+		|| (moveType == TYPE_GRASS    && MonHasTrait(mon, ABILITY_SAP_SIPPER))
+		|| (moveType == TYPE_GROUND   && (MonHasTrait(mon, ABILITY_LEVITATE)      || MonHasTrait(mon, ABILITY_EARTH_EATER) || MonHasTrait(mon, ABILITY_POWER_METAL)))
+		|| (moveType == TYPE_WATER    && (MonHasTrait(mon, ABILITY_WATER_ABSORB)  || MonHasTrait(mon, ABILITY_DRY_SKIN)    || MonHasTrait(mon, ABILITY_STORM_DRAIN)))
+		|| (moveType == TYPE_ELECTRIC && (MonHasTrait(mon, ABILITY_LIGHTNING_ROD) || MonHasTrait(mon, ABILITY_VOLT_ABSORB) || MonHasTrait(mon, ABILITY_MOTOR_DRIVE)))
+		|| (moveType == TYPE_FIGHTING && MonHasTrait(mon, ABILITY_COUNTERPROOF))
+		|| (moveType == TYPE_POISON   && MonHasTrait(mon, ABILITY_FILTH_FEEDER))
+		|| (moveType == TYPE_STEEL    && MonHasTrait(mon, ABILITY_METAL_MUNCHER)))
+        modifier = UQ_4_12(0.0);
+    
     return modifier;
 }
 

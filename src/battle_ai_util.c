@@ -1969,7 +1969,7 @@ bool32 IsAllyProtectingFromMove(u32 battlerAtk, u32 attackerMove, u32 allyMove)
     case PROTECT_KINGS_SHIELD:
         return !IsBattleMoveStatus(attackerMove);
     case PROTECT_QUICK_GUARD:
-        return (GetChosenMovePriority(battlerAtk, gAiLogicData->abilities[battlerAtk]) > 0);
+        return (GetChosenMovePriority(battlerAtk) > 0); 
     case PROTECT_MAT_BLOCK:
         return !IsBattleMoveStatus(attackerMove);
     default:

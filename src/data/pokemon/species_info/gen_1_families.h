@@ -22,6 +22,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_GRASS),
         .abilities = { ABILITY_OVERGROW, ABILITY_NATURAL_CURE, ABILITY_FLASH_FIRE },
+        .innates = { ABILITY_PIXILATE, ABILITY_SOUNDPROOF, ABILITY_TECHNICIAN }, //Innate Example
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Bulbasaur"),
         .cryId = CRY_BULBASAUR,

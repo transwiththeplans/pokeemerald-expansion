@@ -286,7 +286,6 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
         .abilities = { ABILITY_BLAZE, ABILITY_SOUNDPROOF, ABILITY_TECHNICIAN },
-        .innates = { ABILITY_PIXILATE, ABILITY_SOUNDPROOF, ABILITY_TECHNICIAN },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Fuecoco"),
         .cryId = CRY_FUECOCO,

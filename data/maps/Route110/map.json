@@ -176,7 +176,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
       "x": 3,
-      "y": 39,
+      "y": 33,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -201,8 +201,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MANIAC",
-      "x": 31,
-      "y": 42,
+      "x": 32,
+      "y": 45,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -214,8 +214,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
-      "x": 10,
-      "y": 19,
+      "x": 8,
+      "y": 22,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -266,7 +266,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 30,
+      "x": 32,
       "y": 69,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -385,7 +385,7 @@
     {
       "local_id": "LOCALID_ROUTE110_RIVAL",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
-      "x": 34,
+      "x": 35,
       "y": 54,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
@@ -399,7 +399,7 @@
     {
       "local_id": "LOCALID_ROUTE110_RIVAL_ON_BIKE",
       "graphics_id": "OBJ_EVENT_GFX_VAR_3",
-      "x": 34,
+      "x": 35,
       "y": 54,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -412,8 +412,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
-      "x": 33,
-      "y": 69,
+      "x": 34,
+      "y": 70,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
       "movement_range_x": 0,
@@ -451,7 +451,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F",
-      "x": 10,
+      "x": 8,
       "y": 39,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -464,8 +464,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_5",
-      "x": 31,
-      "y": 38,
+      "x": 28,
+      "y": 39,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
@@ -477,8 +477,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 6,
-      "y": 38,
+      "x": 5,
+      "y": 33,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -501,6 +501,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
       "flag": "FLAG_HIDE_ROUTE_110_BIRCH"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
+      "x": 48,
+      "y": 32,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
+      "x": 44,
+      "y": 28,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -695,7 +721,7 @@
     },
     {
       "type": "sign",
-      "x": 33,
+      "x": 31,
       "y": 39,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -703,8 +729,8 @@
     },
     {
       "type": "sign",
-      "x": 37,
-      "y": 70,
+      "x": 36,
+      "y": 67,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route110_EventScript_TrainerTipsRegisterItems"
@@ -719,7 +745,7 @@
     },
     {
       "type": "sign",
-      "x": 32,
+      "x": 30,
       "y": 93,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -727,8 +753,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 35,
-      "y": 39,
+      "x": 23,
+      "y": 42,
       "elevation": 3,
       "item": "ITEM_REVIVE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_110_REVIVE"
@@ -744,15 +770,15 @@
     {
       "type": "hidden_item",
       "x": 4,
-      "y": 35,
+      "y": 39,
       "elevation": 3,
       "item": "ITEM_POKE_BALL",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_110_POKE_BALL"
     },
     {
       "type": "hidden_item",
-      "x": 37,
-      "y": 67,
+      "x": 43,
+      "y": 61,
       "elevation": 3,
       "item": "ITEM_FULL_HEAL",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_110_FULL_HEAL"

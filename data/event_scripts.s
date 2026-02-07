@@ -1172,3 +1172,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Parents_Room/scripts.inc"
 
 	.include "data/maps/MaysParentsRoom/scripts.inc"
+
+	.include "data/maps/NPC_House_One/scripts.inc"

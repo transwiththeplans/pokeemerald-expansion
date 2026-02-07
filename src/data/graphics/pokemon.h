@@ -16213,7 +16213,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //P_FAMILY_SNIVY
 
 #if P_FAMILY_TEPIG
-    const u32 gMonFrontPic_Tepig[] = INCBIN_U32("graphics/pokemon/tepig/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Tepig[] = INCBIN_U32("graphics/pokemon/tepig/front.4bpp.smol");
     const u16 gMonPalette_Tepig[] = INCBIN_U16("graphics/pokemon/tepig/normal.gbapal");
     const u32 gMonBackPic_Tepig[] = INCBIN_U32("graphics/pokemon/tepig/back.4bpp.smol");
     const u16 gMonShinyPalette_Tepig[] = INCBIN_U16("graphics/pokemon/tepig/shiny.gbapal");
@@ -16229,7 +16229,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-    const u32 gMonFrontPic_Pignite[] = INCBIN_U32("graphics/pokemon/pignite/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Pignite[] = INCBIN_U32("graphics/pokemon/pignite/front.4bpp.smol");
     const u16 gMonPalette_Pignite[] = INCBIN_U16("graphics/pokemon/pignite/normal.gbapal");
     const u32 gMonBackPic_Pignite[] = INCBIN_U32("graphics/pokemon/pignite/back.4bpp.smol");
     const u16 gMonShinyPalette_Pignite[] = INCBIN_U16("graphics/pokemon/pignite/shiny.gbapal");
@@ -16245,7 +16245,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-    const u32 gMonFrontPic_Emboar[] = INCBIN_U32("graphics/pokemon/emboar/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Emboar[] = INCBIN_U32("graphics/pokemon/emboar/front.4bpp.smol");
     const u16 gMonPalette_Emboar[] = INCBIN_U16("graphics/pokemon/emboar/normal.gbapal");
     const u32 gMonBackPic_Emboar[] = INCBIN_U32("graphics/pokemon/emboar/back.4bpp.smol");
     const u16 gMonShinyPalette_Emboar[] = INCBIN_U16("graphics/pokemon/emboar/shiny.gbapal");
@@ -19466,7 +19466,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //P_FAMILY_FENNEKIN
 
 #if P_FAMILY_FROAKIE
-    const u32 gMonFrontPic_Froakie[] = INCBIN_U32("graphics/pokemon/froakie/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Froakie[] = INCBIN_U32("graphics/pokemon/froakie/front.4bpp.smol");
     const u16 gMonPalette_Froakie[] = INCBIN_U16("graphics/pokemon/froakie/normal.gbapal");
     const u32 gMonBackPic_Froakie[] = INCBIN_U32("graphics/pokemon/froakie/back.4bpp.smol");
     const u16 gMonShinyPalette_Froakie[] = INCBIN_U16("graphics/pokemon/froakie/shiny.gbapal");
@@ -19482,7 +19482,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-    const u32 gMonFrontPic_Frogadier[] = INCBIN_U32("graphics/pokemon/frogadier/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Frogadier[] = INCBIN_U32("graphics/pokemon/frogadier/front.4bpp.smol");
     const u16 gMonPalette_Frogadier[] = INCBIN_U16("graphics/pokemon/frogadier/normal.gbapal");
     const u32 gMonBackPic_Frogadier[] = INCBIN_U32("graphics/pokemon/frogadier/back.4bpp.smol");
     const u16 gMonShinyPalette_Frogadier[] = INCBIN_U16("graphics/pokemon/frogadier/shiny.gbapal");

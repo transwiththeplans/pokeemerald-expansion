@@ -4487,9 +4487,19 @@
       "width": 15,
       "height": 15,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
+      "secondary_tileset": "gTileset_UnionRoom",
       "border_filepath": "data/layouts/NPC_House_One/border.bin",
       "blockdata_filepath": "data/layouts/NPC_House_One/map.bin"
+    },
+    {
+      "id": "LAYOUT_LITTLEROOT_MARKET",
+      "name": "LittlerootMarket_Layout",
+      "width": 15,
+      "height": 15,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_UnionRoom",
+      "border_filepath": "data/layouts/LittlerootMarket/border.bin",
+      "blockdata_filepath": "data/layouts/LittlerootMarket/map.bin"
     }
   ]
 }

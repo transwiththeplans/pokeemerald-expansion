@@ -4485,9 +4485,9 @@
       "id": "LAYOUT_NPC_HOUSE_ONE",
       "name": "NPC_House_One_Layout",
       "width": 15,
-      "height": 15,
+      "height": 12,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_UnionRoom",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/NPC_House_One/border.bin",
       "blockdata_filepath": "data/layouts/NPC_House_One/map.bin"
     },

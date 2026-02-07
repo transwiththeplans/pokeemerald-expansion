@@ -9,7 +9,7 @@
   "map_type": "MAP_TYPE_INDOOR",
   "allow_cycling": false,
   "allow_escaping": false,
-  "allow_running": false,
+  "allow_running": true,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
@@ -43,8 +43,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VIGOROTH_CARRYING_BOX",
-      "x": 9,
-      "y": 3,
+      "x": 8,
+      "y": 4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
       "movement_range_x": 3,
@@ -85,8 +85,8 @@
     {
       "local_id": "LOCALID_RIVALS_HOUSE_1F_RIVAL",
       "graphics_id": "OBJ_EVENT_GFX_RIVAL_MAY_NORMAL",
-      "x": 2,
-      "y": 8,
+      "x": 12,
+      "y": 11,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 1,
@@ -99,32 +99,46 @@
   ],
   "warp_events": [
     {
-      "x": 1,
-      "y": 8,
+      "x": 11,
+      "y": 11,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN",
       "dest_warp_id": "0"
     },
     {
-      "x": 2,
-      "y": 8,
+      "x": 12,
+      "y": 11,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN",
       "dest_warp_id": "0"
     },
     {
-      "x": 2,
-      "y": 2,
+      "x": 17,
+      "y": 4,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 14,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_MAYS_PARENTS_ROOM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 15,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_MAYS_PARENTS_ROOM",
       "dest_warp_id": "0"
     }
   ],
   "coord_events": [
     {
       "type": "trigger",
-      "x": 2,
-      "y": 8,
+      "x": 12,
+      "y": 11,
       "elevation": 0,
       "var": "VAR_LITTLEROOT_INTRO_STATE",
       "var_value": "4",
@@ -132,7 +146,7 @@
     },
     {
       "type": "trigger",
-      "x": 1,
+      "x": 16,
       "y": 3,
       "elevation": 0,
       "var": "VAR_LITTLEROOT_RIVAL_STATE",
@@ -141,8 +155,8 @@
     },
     {
       "type": "trigger",
-      "x": 2,
-      "y": 4,
+      "x": 16,
+      "y": 5,
       "elevation": 0,
       "var": "VAR_LITTLEROOT_RIVAL_STATE",
       "var_value": "2",
@@ -150,8 +164,8 @@
     },
     {
       "type": "trigger",
-      "x": 3,
-      "y": 3,
+      "x": 16,
+      "y": 4,
       "elevation": 0,
       "var": "VAR_LITTLEROOT_RIVAL_STATE",
       "var_value": "2",

@@ -1,0 +1,35 @@
+{
+  "id": "MAP_PARENTS_ROOM",
+  "name": "Parents_Room",
+  "layout": "LAYOUT_PARENTS_ROOM",
+  "music": "MUS_LITTLEROOT",
+  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 12,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 13,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
+      "dest_warp_id": "4"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

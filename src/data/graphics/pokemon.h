@@ -14251,7 +14251,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //P_FAMILY_TURTWIG
 
 #if P_FAMILY_CHIMCHAR
-    const u32 gMonFrontPic_Chimchar[] = INCBIN_U32("graphics/pokemon/chimchar/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Chimchar[] = INCBIN_U32("graphics/pokemon/chimchar/front.4bpp.smol");
     const u16 gMonPalette_Chimchar[] = INCBIN_U16("graphics/pokemon/chimchar/normal.gbapal");
     const u32 gMonBackPic_Chimchar[] = INCBIN_U32("graphics/pokemon/chimchar/back.4bpp.smol");
     const u16 gMonShinyPalette_Chimchar[] = INCBIN_U16("graphics/pokemon/chimchar/shiny.gbapal");
@@ -14267,7 +14267,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-    const u32 gMonFrontPic_Monferno[] = INCBIN_U32("graphics/pokemon/monferno/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Monferno[] = INCBIN_U32("graphics/pokemon/monferno/front.4bpp.smol");
     const u16 gMonPalette_Monferno[] = INCBIN_U16("graphics/pokemon/monferno/normal.gbapal");
     const u32 gMonBackPic_Monferno[] = INCBIN_U32("graphics/pokemon/monferno/back.4bpp.smol");
     const u16 gMonShinyPalette_Monferno[] = INCBIN_U16("graphics/pokemon/monferno/shiny.gbapal");
@@ -14283,7 +14283,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-    const u32 gMonFrontPic_Infernape[] = INCBIN_U32("graphics/pokemon/infernape/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Infernape[] = INCBIN_U32("graphics/pokemon/infernape/front.4bpp.smol");
     const u16 gMonPalette_Infernape[] = INCBIN_U16("graphics/pokemon/infernape/normal.gbapal");
     const u32 gMonBackPic_Infernape[] = INCBIN_U32("graphics/pokemon/infernape/back.4bpp.smol");
     const u16 gMonShinyPalette_Infernape[] = INCBIN_U16("graphics/pokemon/infernape/shiny.gbapal");
@@ -16163,7 +16163,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //P_FAMILY_VICTINI
 
 #if P_FAMILY_SNIVY
-    const u32 gMonFrontPic_Snivy[] = INCBIN_U32("graphics/pokemon/snivy/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Snivy[] = INCBIN_U32("graphics/pokemon/snivy/front.4bpp.smol");
     const u16 gMonPalette_Snivy[] = INCBIN_U16("graphics/pokemon/snivy/normal.gbapal");
     const u32 gMonBackPic_Snivy[] = INCBIN_U32("graphics/pokemon/snivy/back.4bpp.smol");
     const u16 gMonShinyPalette_Snivy[] = INCBIN_U16("graphics/pokemon/snivy/shiny.gbapal");
@@ -16179,7 +16179,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-    const u32 gMonFrontPic_Servine[] = INCBIN_U32("graphics/pokemon/servine/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Servine[] = INCBIN_U32("graphics/pokemon/servine/front.4bpp.smol");
     const u16 gMonPalette_Servine[] = INCBIN_U16("graphics/pokemon/servine/normal.gbapal");
     const u32 gMonBackPic_Servine[] = INCBIN_U32("graphics/pokemon/servine/back.4bpp.smol");
     const u16 gMonShinyPalette_Servine[] = INCBIN_U16("graphics/pokemon/servine/shiny.gbapal");
@@ -16195,7 +16195,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-    const u32 gMonFrontPic_Serperior[] = INCBIN_U32("graphics/pokemon/serperior/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Serperior[] = INCBIN_U32("graphics/pokemon/serperior/front.4bpp.smol");
     const u16 gMonPalette_Serperior[] = INCBIN_U16("graphics/pokemon/serperior/normal.gbapal");
     const u32 gMonBackPic_Serperior[] = INCBIN_U32("graphics/pokemon/serperior/back.4bpp.smol");
     const u16 gMonShinyPalette_Serperior[] = INCBIN_U16("graphics/pokemon/serperior/shiny.gbapal");

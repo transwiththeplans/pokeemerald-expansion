@@ -98,12 +98,12 @@
     "TandemausMeadows",
     "Parents_Room",
     "MaysParentsRoom",
-    "NPC_House_One",
-    "LittlerootMarket"
+    "NPC_House_One"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
     "LittlerootTown_BrendansHouse_2F",
+    "LittlerootTown_Market",
     "LittlerootTown_MaysHouse_1F",
     "LittlerootTown_MaysHouse_2F",
     "LittlerootTown_ProfessorBirchsLab"

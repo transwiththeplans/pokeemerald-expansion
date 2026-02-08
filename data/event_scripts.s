@@ -1175,4 +1175,4 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/NPC_House_One/scripts.inc"
 
-	.include "data/maps/LittlerootMarket/scripts.inc"
+	.include "data/maps/LittlerootTown_Market/scripts.inc"

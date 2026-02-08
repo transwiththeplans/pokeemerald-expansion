@@ -1,0 +1,58 @@
+mapscripts LittlerootTown_Market_MapScripts {}
+
+script LittlerootTown_Market_EventScript_Clerk {
+	lock
+	message(gText_HowMayIServeYou)
+	waitmessage
+	pokemart(LittlerootTown_Market_Pokemart)
+	msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+mart LittlerootTown_Market_Pokemart {
+	ITEM_POTION
+	ITEM_POKE_BALL
+	ITEM_LEVEL_BALL
+	ITEM_LURE_BALL
+	ITEM_MOON_BALL
+	ITEM_FRIEND_BALL
+	ITEM_LOVE_BALL
+	ITEM_FAST_BALL
+	ITEM_HEAVY_BALL
+}
+
+script LittlerootTown_Market_EventScript_Woman_1 {
+	msgbox(format("I'm buying a treat for my TANDEMAUS."), MSGBOX_NPC)
+	end
+}
+
+script LittlerootTown_Market_EventScript_Woman_3 {
+	msgbox(format("I've been looking for apricorn balls forever!"), MSGBOX_NPC)
+	end
+}
+
+script LittlerootTown_Market_EventScript_Gentleman {
+	msgbox(format("This shop has many fine items."), MSGBOX_NPC)
+	end
+}
+
+script LittlerootTown_Market_EventScript_Bug_Catcher {
+	msgbox(format("This store is always well stocked."), MSGBOX_NPC)
+	end
+}
+
+script LittlerootTown_Market_EventScript_Little_Girl {
+	msgbox(format("I want one of everything!"), MSGBOX_NPC)
+	end
+}
+
+script LittlerootTown_Market_EventScript_Sale_Woman {
+	msgbox(format("These are flying off the shelves these days."), MSGBOX_NPC)
+	end
+}
+
+script LittlerootTown_Market_EventScript_Camper {
+	msgbox(format("I never leave home without POTIONS."), MSGBOX_NPC)
+	end
+}

@@ -1,4 +1,4 @@
-mapscripts LittlerootMarket_MapScripts {}
+mapscripts LittlerootTown_Market_MapScripts {}
 
 script LittlerootTown_Market_EventScript_Clerk {
 	lock

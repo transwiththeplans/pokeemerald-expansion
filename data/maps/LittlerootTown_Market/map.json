@@ -1,7 +1,7 @@
 {
-  "id": "MAP_LITTLEROOT_MARKET",
-  "name": "LittlerootMarket",
-  "layout": "LAYOUT_LITTLEROOT_MARKET",
+  "id": "MAP_LITTLEROOT_TOWN_MARKET",
+  "name": "LittlerootTown_Market",
+  "layout": "LAYOUT_LITTLEROOT_TOWN_MARKET",
   "music": "MUS_POKE_MART",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,

@@ -4785,8 +4785,6 @@ BattleScript_ActionSwitch::
 	end2
 
 BattleScript_DoSwitchOut::
-	undodynamax BS_ATTACKER
-	waitstate
 	returnatktoball
 	waitstate
 	switchoutabilities BS_ATTACKER

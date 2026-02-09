@@ -18309,6 +18309,8 @@ void BS_UndoDynamax(void)
         BattleScriptCall(BattleScript_DynamaxEnds_Ret);
         return;
     }
+
+    gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
 void BS_PushTraitStack(void)

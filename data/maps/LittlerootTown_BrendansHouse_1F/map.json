@@ -114,13 +114,13 @@
     },
     {
       "x": 17,
-      "y": 4,
+      "y": 3,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
       "dest_warp_id": "0"
     },
     {
-      "x": 13,
+      "x": 14,
       "y": 3,
       "elevation": 0,
       "dest_map": "MAP_PARENTS_ROOM",
@@ -147,7 +147,7 @@
     {
       "type": "trigger",
       "x": 16,
-      "y": 3,
+      "y": 4,
       "elevation": 0,
       "var": "VAR_LITTLEROOT_RIVAL_STATE",
       "var_value": "2",
@@ -155,8 +155,8 @@
     },
     {
       "type": "trigger",
-      "x": 16,
-      "y": 5,
+      "x": 18,
+      "y": 4,
       "elevation": 0,
       "var": "VAR_LITTLEROOT_RIVAL_STATE",
       "var_value": "2",
@@ -164,7 +164,7 @@
     },
     {
       "type": "trigger",
-      "x": 16,
+      "x": 17,
       "y": 4,
       "elevation": 0,
       "var": "VAR_LITTLEROOT_RIVAL_STATE",

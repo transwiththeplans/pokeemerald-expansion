@@ -270,8 +270,8 @@
     },
     {
       "type": "sign",
-      "x": 6,
-      "y": 3,
+      "x": 1,
+      "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool"

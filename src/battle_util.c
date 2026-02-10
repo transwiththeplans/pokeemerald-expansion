@@ -11864,11 +11864,15 @@ enum Ability GetBattlerTrait(u8 battlerId, u8 traitNum, u32 ignoreMoldBreaker)
 //Returns the slot the Innate is found in accouting for randomization and ability disabling. Assumes the Ability is already slot 1.  Returns 0 if not found.
 u8 BattlerHasInnate(u8 battlerId, enum Ability ability)
 {
+    bool8 innateUnlocked = gBattleMons[battlerId].innateUnlocked;
     /*if (BattlerIgnoresAbility(gBattlerAttacker, battlerId, ability) && B_MOLD_BREAKER_WORKS_ON_INNATES == TRUE)
         return 0;
     else if (BattlerAbilityWasRemoved(battlerId, ability) && B_NEUTRALIZING_GAS_WORKS_ON_INNATES == TRUE)
         return 0;
     else*/
+
+    if(!innateUnlocked)
+        return 0;
 
     //Check for Mold Breaker type negation
     if (battlerId != gBattlerAttacker

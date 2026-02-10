@@ -2017,7 +2017,6 @@ const struct Item gItemsInfo[] =
     },
 
 // Candy
-
     [ITEM_RARE_CANDY] =
     {
         .name = ITEM_NAME("Rare Candy"),
@@ -2035,6 +2034,25 @@ const struct Item gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_RareCandy,
         .iconPalette = gItemIconPalette_RareCandy,
+    },
+
+    [ITEM_INNATE_CANDY] =
+    {
+        .name = ITEM_NAME("Innate Candy"),
+        .pluralName = ITEM_PLURAL_NAME("Innate Candies"),
+        .price = (I_PRICE >= GEN_7) ? 10000 : 4800,
+        .description = COMPOUND_STRING(
+            "Unlocks the\n"
+            "innate of a\n"
+            "mon after use."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_InnateCandy,
+        .effect = gItemEffect_RareCandy,
+        .flingPower = 30,
+        .iconPic = gItemIcon_DynamaxCandy,
+        .iconPalette = gItemIconPalette_DynamaxCandy,
     },
 
     [ITEM_EXP_CANDY_XS] =

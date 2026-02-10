@@ -130,6 +130,7 @@ enum MonData {
     MON_DATA_INNATE1,
     MON_DATA_INNATE2,
     MON_DATA_INNATE3,
+    MON_DATA_INNATE_UNLOCKED,
 };
 
 struct PokemonSubstruct0
@@ -220,7 +221,7 @@ struct PokemonSubstruct3
     u32 earthRibbon:1;    // Given to teams that have beaten Mt. Battle's 100-battle challenge in Colosseum/XD.
     u32 worldRibbon:1;    // Distributed during Pokémon Festa '04 and '05 to tournament winners.
     u32 isShadow:1;
-    u32 unused_0B:1;
+    u32 innateUnlock:1;   // Checks if an innate is unlocked or not
     u32 abilityNum:2;
 
     // The functionality of this bit changed in FRLG:
@@ -396,6 +397,8 @@ struct BattlePokemon
     /*0x61*/ u8 metLevel;
     /*0x62*/ bool8 isShiny;
     /*0x64*/ enum Ability innates[MAX_MON_INNATES_INTERNAL];
+    /*0x66*/ u16 innateUnlocked:1;
+    /*0x66*/ u16 filler:15;
 };
 
 struct EvolutionParam
@@ -443,6 +446,7 @@ struct SpeciesInfo /*0xC4*/
     enum Ability abilities[NUM_ABILITY_SLOTS]; // 3 abilities, no longer u8 because we have over 255 abilities now.
     u8 safariZoneFleeRate;
     enum Ability innates[MAX_MON_INNATES_INTERNAL];
+    u8 innateUnlockLevel;
 
     // Pokédex data
     u8 categoryName[13];

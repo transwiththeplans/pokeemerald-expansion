@@ -175,6 +175,7 @@ static EWRAM_DATA struct PokemonSummaryScreenData
         enum Type teraType;
         u8 mintNature;
         u8 innates[MAX_MON_INNATES];
+        bool8 innateUnlock;
     } summary;
     u16 bgTilemapBuffers[PSS_PAGE_COUNT][2][0x400];
     u8 mode;
@@ -677,7 +678,7 @@ static const struct WindowTemplate sPageTraitsTemplate[] =
 		.tilemapLeft = 11,
 		.tilemapTop = 4,
 		.width = 18,
-		.height = 4,
+		.height = 8,
 		.paletteNum = 6,
 		.baseBlock = 467 + offset,  
 	},
@@ -686,7 +687,7 @@ static const struct WindowTemplate sPageTraitsTemplate[] =
 		.tilemapLeft = 11,
 		.tilemapTop = 12,
 		.width = 18,
-		.height = 4,
+		.height = 8,
 		.paletteNum = 6,
 		.baseBlock = 611 + offset,
 	},
@@ -1613,6 +1614,7 @@ static bool8 ExtractMonDataToSummaryStruct(struct Pokemon *mon)
         sum->item = GetMonData(mon, MON_DATA_HELD_ITEM);
         sum->pid = GetMonData(mon, MON_DATA_PERSONALITY);
         sum->sanity = GetMonData(mon, MON_DATA_SANITY_IS_BAD_EGG);
+        sum->innateUnlock = GetMonData(mon, MON_DATA_INNATE_UNLOCKED);
 
         if (sum->sanity)
             sum->isEgg = TRUE;
@@ -3968,10 +3970,16 @@ static void Task_PrintTraits(u8 taskId)
     data[0]++;
 }
 
+
+const u8 sText_InnateLockedUntilLevel[] = _("This POKéMON innate is\ncurrently locked until\nlevel {STR_VAR_1}.");
+
 static void PrintMonTraits(u8 innateIndex)
 {
     u16 trait = 0;
     struct PokeSummary* sum = &sMonSummaryScreen->summary;
+    u8 unlockLevel = gSpeciesInfo[sum->species].innateUnlockLevel;
+    u8 level = sum->level;
+    bool8 innateUnlock = sum->innateUnlock;
 
     if (innateIndex == 0)
         trait = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum);
@@ -3988,8 +3996,18 @@ static void PrintMonTraits(u8 innateIndex)
     }
     else
     {
-        PrintTextOnWindow(AddWindowFromTemplateList(sPageTraitsTemplate, innateIndex), gAbilitiesInfo[trait].name,        x,  1, 0, 1);
-        PrintTextOnWindow(AddWindowFromTemplateList(sPageTraitsTemplate, innateIndex), gAbilitiesInfo[trait].description, 0, 17, 0, 0);
+        if(innateUnlock || innateIndex == 0 || unlockLevel < level){
+            //Unlocked
+            PrintTextOnWindow(AddWindowFromTemplateList(sPageTraitsTemplate, innateIndex), gAbilitiesInfo[trait].name,        x,  1, 0, 1);
+            PrintTextOnWindow(AddWindowFromTemplateList(sPageTraitsTemplate, innateIndex), gAbilitiesInfo[trait].description, 0, 17, 0, 0);
+        }
+        else{
+            ConvertIntToDecimalStringN(gStringVar1, unlockLevel, STR_CONV_MODE_LEFT_ALIGN, 3);
+            StringExpandPlaceholders(gStringVar4, sText_InnateLockedUntilLevel);
+
+            PrintTextOnWindow(AddWindowFromTemplateList(sPageTraitsTemplate, innateIndex), gAbilitiesInfo[trait].name,        x,  1, 0, 1);
+            PrintTextOnWindow(AddWindowFromTemplateList(sPageTraitsTemplate, innateIndex), gStringVar4, 0, 17, 0, 0);
+        }
     }
 }
 

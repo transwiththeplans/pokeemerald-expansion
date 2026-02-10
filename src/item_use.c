@@ -864,6 +864,12 @@ void ItemUseOutOfBattle_AbilityCapsule(u8 taskId)
     SetUpItemUseCallback(taskId);
 }
 
+void ItemUseOutOfBattle_InnateCandy(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_InnateCandy;
+    SetUpItemUseCallback(taskId);
+}
+
 void ItemUseOutOfBattle_AbilityPatch(u8 taskId)
 {
     gItemUseCB = ItemUseCB_AbilityPatch;

@@ -1075,8 +1075,9 @@
 #define ITEM_ZYGARDITE 906
 #define ITEM_DRAMPANITE 907
 #define ITEM_FALINKSITE 908
+#define ITEM_INNATE_CANDY 909
 
-#define ITEMS_COUNT 909
+#define ITEMS_COUNT 910
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

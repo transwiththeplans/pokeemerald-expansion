@@ -1400,6 +1400,8 @@ static u32 GetBattlerMonData(u32 battler, struct Pokemon *party, u32 monId, u8 *
     switch (gBattleResources->bufferA[battler][1])
     {
     case REQUEST_ALL_BATTLE:
+        u8 unlockLevel;
+
         battleMon.species = GetMonData(&party[monId], MON_DATA_SPECIES);
         battleMon.item = GetMonData(&party[monId], MON_DATA_HELD_ITEM);
         for (size = 0; size < MAX_MON_MOVES; size++)
@@ -1433,6 +1435,13 @@ static u32 GetBattlerMonData(u32 battler, struct Pokemon *party, u32 monId, u8 *
         GetMonData(&party[monId], MON_DATA_NICKNAME, nickname);
         StringCopy_Nickname(battleMon.nickname, nickname);
         GetMonData(&party[monId], MON_DATA_OT_NAME, battleMon.otName);
+
+        unlockLevel = gSpeciesInfo[battleMon.species].innateUnlockLevel;
+
+        if(battleMon.level > unlockLevel || GetMonData(&party[monId], MON_DATA_INNATE_UNLOCKED))
+            battleMon.innateUnlocked = TRUE;
+        else
+            battleMon.innateUnlocked = FALSE;
 
          for (i = 0; i < MAX_MON_INNATES; i++)
          {

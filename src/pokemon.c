@@ -2743,6 +2743,9 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
                 }.combinedValue;
             }
             break;
+        case MON_DATA_INNATE_UNLOCKED:
+            retVal = GetSubstruct3(boxMon)->innateUnlock;
+            break;
         default:
             break;
         }
@@ -3160,6 +3163,9 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         case MON_DATA_TERA_TYPE:
             SET8(GetSubstruct0(boxMon)->teraType);
             break;
+        case MON_DATA_INNATE_UNLOCKED:
+            SET32(GetSubstruct3(boxMon)->innateUnlock);
+        break;
         case MON_DATA_EVOLUTION_TRACKER:
         {
             union EvolutionTracker evoTracker;
@@ -7577,7 +7583,7 @@ bool8 MonHasTrait(struct Pokemon *mon, u16 ability)
 enum Ability GetSpeciesInnate(u16 species, u8 traitNum)
 {
     if (MAX_MON_INNATES > 0)
-            return gSpeciesInfo[species].innates[traitNum - 1];
+        return gSpeciesInfo[species].innates[traitNum - 1];
     else
         return 0;
 }

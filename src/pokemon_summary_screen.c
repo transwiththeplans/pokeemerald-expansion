@@ -684,13 +684,31 @@ static const struct WindowTemplate sPageTraitsTemplate[] =
     [PSS_DATA_WINDOW_TRAITS2] = {
 		.bg = 0,
 		.tilemapLeft = 11,
-		.tilemapTop = 8,
+		.tilemapTop = 12,
 		.width = 18,
 		.height = 4,
 		.paletteNum = 6,
-		.baseBlock = 539 + offset,
+		.baseBlock = 611 + offset,
 	},
     [PSS_DATA_WINDOW_TRAITS3] = {
+		.bg = 0,
+		.tilemapLeft = 0,
+		.tilemapTop = 0,
+		.width = 0,
+		.height = 0,
+		.paletteNum = 6,
+		.baseBlock = 611 + offset,
+	},
+    [PSS_DATA_WINDOW_TRAITS4] = {
+		.bg = 0,
+		.tilemapLeft = 0,
+		.tilemapTop = 0,
+		.width = 0,
+		.height = 0,
+		.paletteNum = 6,
+		.baseBlock = 683 + offset,
+	},
+    /*[PSS_DATA_WINDOW_TRAITS3] = {
 		.bg = 0,
 		.tilemapLeft = 11,
 		.tilemapTop = 12,
@@ -707,7 +725,7 @@ static const struct WindowTemplate sPageTraitsTemplate[] =
 		.height = 4,
 		.paletteNum = 6,
 		.baseBlock = 683 + offset,
-	},
+	},*/
 };
 static const struct WindowTemplate sPageSkillsTemplate[] =
 {
@@ -3944,12 +3962,6 @@ static void Task_PrintTraits(u8 taskId)
         PrintMonTraits(1);
         break;
     case 3:
-        PrintMonTraits(2);
-        break;
-    case 4:
-        PrintMonTraits(3);
-        break;
-    case 5:
         DestroyTask(taskId);
         return;
     }
@@ -3964,19 +3976,19 @@ static void PrintMonTraits(u8 innateIndex)
     if (innateIndex == 0)
         trait = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum);
     else if (innateIndex <= MAX_MON_INNATES)
-        trait = gSpeciesInfo[sum->species].innates[innateIndex-1];
+        trait = gSpeciesInfo[sum->species].innates[innateIndex - 1];
         
     int x = GetStringRightAlignXOffset(FONT_NORMAL, gAbilitiesInfo[trait].name, 18*8);
 
     if (trait == 0)
     {
         StringCopy(gStringVar1, gText_Blank);
-        PrintTextOnWindow(AddWindowFromTemplateList(sPageTraitsTemplate, innateIndex), gStringVar1, x, 1, 0, 1);
+        PrintTextOnWindow(AddWindowFromTemplateList(sPageTraitsTemplate, innateIndex), gStringVar1, x,  1, 0, 1);
         PrintTextOnWindow(AddWindowFromTemplateList(sPageTraitsTemplate, innateIndex), gStringVar1, 0, 17, 0, 0);
     }
     else
     {
-        PrintTextOnWindow(AddWindowFromTemplateList(sPageTraitsTemplate, innateIndex), gAbilitiesInfo[trait].name, x, 1, 0, 1);
+        PrintTextOnWindow(AddWindowFromTemplateList(sPageTraitsTemplate, innateIndex), gAbilitiesInfo[trait].name,        x,  1, 0, 1);
         PrintTextOnWindow(AddWindowFromTemplateList(sPageTraitsTemplate, innateIndex), gAbilitiesInfo[trait].description, 0, 17, 0, 0);
     }
 }

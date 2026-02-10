@@ -8704,6 +8704,11 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct DamageContext *ctx)
         RecordAbilityBattle(ctx->battlerAtk, ABILITY_FILTER);
         modifier = uq4_12_multiply(modifier, UQ_4_12(0.75));
     }
+    if (SearchTraits(battlerTraits, ABILITY_CUTE_CHARM)) //check if this works
+    {
+        RecordAbilityBattle(ctx->battlerAtk, ABILITY_CUTE_CHARM);
+        modifier = uq4_12_multiply(modifier, UQ_4_12(0.90));
+    }
     if (SearchTraits(battlerTraits, ABILITY_SOLID_ROCK) && ctx->typeEffectivenessModifier >= UQ_4_12(2.0))
     {
         RecordAbilityBattle(ctx->battlerAtk, ABILITY_SOLID_ROCK);
@@ -8741,8 +8746,7 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct DamageContext *ctx)
         modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
     }
 
-    if (SearchTraits(battlerTraits, ABILITY_JUGGERNAUT) 
-     && ctx->typeEffectivenessModifier >= UQ_4_12(2.0))
+    if (SearchTraits(battlerTraits, ABILITY_JUGGERNAUT)) //check if this works
     {
         RecordAbilityBattle(ctx->battlerAtk, ABILITY_JUGGERNAUT);    
         modifier = uq4_12_multiply(modifier, UQ_4_12(0.65));
@@ -8751,7 +8755,7 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct DamageContext *ctx)
     if (SearchTraits(battlerTraits, ABILITY_CHROME_COAT) 
      && IsBattleMoveSpecial(ctx->move))
     {
-        RecordAbilityBattle(ctx->battlerAtk, ABILITY_SHADOW_POWER);    
+        RecordAbilityBattle(ctx->battlerAtk, ABILITY_CHROME_COAT);    
         modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
     }
     

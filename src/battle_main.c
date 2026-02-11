@@ -2014,6 +2014,11 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 enum Type data = partyData[monIndex].teraType;
                 SetMonData(&party[i], MON_DATA_TERA_TYPE, &data);
             }
+            if (partyData[monIndex].innateUnlocked)
+            {
+                bool32 data = TRUE;
+                SetMonData(&party[i], MON_DATA_INNATE_UNLOCKED, &data);
+            }
             CalculateMonStats(&party[i]);
 
             if (B_TRAINER_CLASS_POKE_BALLS >= GEN_7 && ball == -1)

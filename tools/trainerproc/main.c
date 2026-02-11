@@ -93,6 +93,9 @@ struct Pokemon
     struct String tags[MAX_MON_TAGS];
     int tags_n;
     int tags_line;
+
+    bool innate_unlocked;
+    int innate_unlocked_line;
 };
 
 struct Trainer
@@ -1492,9 +1495,17 @@ static bool parse_trainer(struct Parser *p, const struct Parsed *parsed, struct 
                 if (!token_human_identifiers(p, &value, pokemon->tags, &pokemon->tags_n, MAX_MON_TAGS))
                     any_error = !show_parse_error(p);
             }
+            else if (is_literal_token(&key, "Innate Unlocked"))
+            {
+                if (pokemon->innate_unlocked_line)
+                    any_error = !set_show_parse_error(p, key.location, "duplicate 'Innate Unlocked'");
+                pokemon->innate_unlocked_line = value.location.line;
+                if (!token_bool(p, &value, &pokemon->innate_unlocked))
+                    any_error = !show_parse_error(p);
+            }
             else
             {
-                any_error = !set_show_parse_error(p, key.location, "expected one of 'EVs', 'IVs', 'Ability', 'Level', 'Ball', 'Happiness', 'Nature', 'Shiny', 'Dynamax Level', 'Gigantamax', or 'Tera Type'");
+                any_error = !set_show_parse_error(p, key.location, "expected one of 'EVs', 'IVs', 'Ability', 'Level', 'Ball', 'Happiness', 'Nature', 'Shiny', 'Dynamax Level', 'Gigantamax', 'Tera Type' or 'Innate Unlocked'");
             }
         }
 
@@ -2077,6 +2088,14 @@ static void fprint_trainers(const char *output_path, FILE *f, struct Parsed *par
                         fprintf(f, " | ");
                     fprint_constant(f, "MON_POOL_TAG", pokemon->tags[i]);
                 }
+                fprintf(f, ",\n");
+            }
+
+            if (pokemon->innate_unlocked_line)
+            {
+                fprintf(f, "#line %d\n", pokemon->innate_unlocked_line);
+                fprintf(f, "            .innateUnlocked = ");
+                fprint_bool(f, pokemon->innate_unlocked);
                 fprintf(f, ",\n");
             }
 

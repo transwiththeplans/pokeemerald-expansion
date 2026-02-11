@@ -4858,7 +4858,7 @@ AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Roggenrola
 Level: 13
-Ability: Power Spot
+Ability: Sturdy
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Rock Ripple
 - Fairy Wind
@@ -4885,7 +4885,8 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Nosepass @ Oran Berry
 Level: 15
-Ability: Gravity Well
+Ability: Solid Rock
+Innate Unlocked: Yes
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Ancient Power
 - Slowdown
@@ -4905,6 +4906,7 @@ AI: Check Bad Move / Try To Faint / Force Setup First Turn
 Aipom
 Level: 20
 Ability: Iron Fist
+Innate Unlocked: Yes
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Mach Punch
 - Brutal Swing
@@ -4932,6 +4934,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Gurdurr @ Sitrus Berry
 Level: 22
 Ability: Iron Fist
+Innate Unlocked: Yes
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Thunder Punch
 - Bulk Up
@@ -4961,21 +4964,24 @@ Hattrem
 Level: 28
 Ability: Illuminate
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Volt Switch
+- Charge Beam
 - Draining Kiss
 - Water Pulse
 - Light Screen
 
-Drakloak
+Luxio
 Level: 29
+Ability: Anger Point
+Innate Unlocked: Yes
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
-- Volt Switch
-- Dragon Breath
-- Charge
-- Work Up
+- Zing Zap
+- Fire Fang
+- Ice Fang
+- Mach Punch
 
 Abomasnow @ Ultimatrix Symbol
 Level: 30
+Innate Unlocked: Yes
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Thunder Punch
 - Giga Drain

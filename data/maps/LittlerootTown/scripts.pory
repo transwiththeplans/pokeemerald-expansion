@@ -1188,3 +1188,8 @@ script LittlerootTown_EventScript_GiveRunningShoes{
 	delay(30)
 	return
 }
+
+script LittlerootTown_EventScript_MarketSign {
+	msgbox(format("Baumann's"), MSGBOX_SIGN)
+	end
+}

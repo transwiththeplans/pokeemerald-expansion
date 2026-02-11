@@ -124,14 +124,7 @@
       "y": 3,
       "elevation": 0,
       "dest_map": "MAP_PARENTS_ROOM",
-      "dest_warp_id": "2"
-    },
-    {
-      "x": 14,
-      "y": 3,
-      "elevation": 0,
-      "dest_map": "MAP_PARENTS_ROOM",
-      "dest_warp_id": "1"
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

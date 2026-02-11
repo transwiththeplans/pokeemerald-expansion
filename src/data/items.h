@@ -2040,7 +2040,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Innate Candy"),
         .pluralName = ITEM_PLURAL_NAME("Innate Candies"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 4800,
+        .price = 8000,
         .description = COMPOUND_STRING(
             "Unlocks the\n"
             "innate of a\n"

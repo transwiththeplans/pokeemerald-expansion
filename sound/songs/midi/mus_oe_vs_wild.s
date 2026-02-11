@@ -22,7 +22,16 @@ mus_oe_vs_wild_1:
 	.byte		VOICE , 48
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte		N03   , Fs2 , v044
 	.byte	W03
 	.byte		        Gn2 
@@ -121,7 +130,6 @@ mus_oe_vs_wild_1:
 mus_oe_vs_wild_1_B1:
 @ 004   ----------------------------------------
 	.byte		VOICE , 56
-	.byte		VOL   , 127*mus_oe_vs_wild_mvl/mxv
 	.byte	W12
 	.byte		N06   , Bn3 , v116
 	.byte	W06
@@ -253,7 +261,6 @@ mus_oe_vs_wild_1_B1:
 	.byte	W96
 @ 018   ----------------------------------------
 	.byte		VOICE , 48
-	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
 	.byte		N18   , Bn3 , v056
 	.byte	W18
 	.byte		        Cs4 
@@ -364,7 +371,7 @@ mus_oe_vs_wild_1_B1:
 	.byte	W18
 	.byte		N66   , Dn4 
 	.byte	W72
-	.byte		N06   , Dn3 , v112
+	.byte		N06   , Dn3 , v104
 	.byte	W06
 @ 030   ----------------------------------------
 	.byte		        En3 
@@ -405,7 +412,7 @@ mus_oe_vs_wild_1_B1:
 	.byte		N12   , Dn4 
 	.byte	W12
 @ 032   ----------------------------------------
-	.byte		        Bn3 , v100
+	.byte		        Bn3 
 	.byte	W96
 @ 033   ----------------------------------------
 	.byte	W96
@@ -430,9 +437,13 @@ mus_oe_vs_wild_1_B1:
 mus_oe_vs_wild_1_B2:
 @ 039   ----------------------------------------
 	.byte		VOICE , 48
+	.byte		        48
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
 	.byte	FINE
 
 @**************** Track 2 (Midi-Chn.3) ****************@
@@ -443,12 +454,21 @@ mus_oe_vs_wild_2:
 	.byte		VOICE , 60
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte	W84
 	.byte		N12   , Dn3 , v096
 	.byte	W12
 @ 001   ----------------------------------------
-	.byte		N09   , Bn2 , v124
+	.byte		N09   , Bn2 , v116
 	.byte	W18
 	.byte		        Dn3 
 	.byte	W18
@@ -554,9 +574,8 @@ mus_oe_vs_wild_2_B1:
 	.byte	W96
 @ 016   ----------------------------------------
 	.byte		VOICE , 30
-	.byte		VOL   , 127*mus_oe_vs_wild_mvl/mxv
 	.byte	W12
-	.byte		N06   , Bn2 , v127
+	.byte		N06   , Bn2 , v120
 	.byte	W06
 	.byte		        An2 
 	.byte	W06
@@ -575,7 +594,7 @@ mus_oe_vs_wild_2_B1:
 	.byte		        An2 
 	.byte	W12
 @ 017   ----------------------------------------
-	.byte		N04   , An3 , v127
+	.byte		N04   , An3 , v124
 	.byte	W04
 	.byte		        Fs3 
 	.byte	W04
@@ -589,7 +608,7 @@ mus_oe_vs_wild_2_B1:
 	.byte	W04
 	.byte		N06   , Bn2 , v108
 	.byte	W06
-	.byte		        Dn3 , v116
+	.byte		        Dn3 , v112
 	.byte	W06
 	.byte		        En3 , v116
 	.byte	W06
@@ -597,7 +616,7 @@ mus_oe_vs_wild_2_B1:
 	.byte	W54
 @ 018   ----------------------------------------
 	.byte	W06
-	.byte		N06   , Dn3 , v127
+	.byte		N06   , Dn3 
 	.byte	W06
 	.byte		        En3 
 	.byte	W06
@@ -638,7 +657,7 @@ mus_oe_vs_wild_2_B1:
 	.byte	W30
 @ 020   ----------------------------------------
 	.byte	W12
-	.byte		N12   , Bn3 , v127
+	.byte		N12   , Bn3 , v112
 	.byte	W12
 	.byte		        Fs3 
 	.byte	W12
@@ -678,25 +697,24 @@ mus_oe_vs_wild_2_B1:
 	.byte		        Fs2 
 	.byte	W12
 @ 023   ----------------------------------------
-	.byte		N06   , Fs3 , v116
+	.byte		N06   , Fs3 , v108
 	.byte	W06
-	.byte		        En3 , v100
+	.byte		        En3 , v092
 	.byte	W06
 	.byte		        Fs3 
 	.byte	W06
-	.byte		        En3 , v104
+	.byte		        En3 , v096
 	.byte	W06
-	.byte		        Fs3 , v108
+	.byte		        Fs3 , v100
 	.byte	W06
 	.byte		        En3 
 	.byte	W06
-	.byte		        Fs3 , v112
+	.byte		        Fs3 , v104
 	.byte	W06
 	.byte		N54   , An3 
 	.byte	W54
 @ 024   ----------------------------------------
 	.byte		VOICE , 60
-	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
 	.byte		N09   , Bn3 , v108
 	.byte	W18
 	.byte		        Dn4 
@@ -747,7 +765,6 @@ mus_oe_vs_wild_2_025:
 	.byte	W96
 @ 033   ----------------------------------------
 	.byte		VOICE , 30
-	.byte		VOL   , 127*mus_oe_vs_wild_mvl/mxv
 	.byte		N09   , Dn2 
 	.byte	W12
 	.byte		N09   
@@ -789,9 +806,13 @@ mus_oe_vs_wild_2_025:
 mus_oe_vs_wild_2_B2:
 @ 039   ----------------------------------------
 	.byte		VOICE , 60
+	.byte		        60
+	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
 	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
 	.byte	FINE
 
 @**************** Track 3 (Midi-Chn.4) ****************@
@@ -801,8 +822,17 @@ mus_oe_vs_wild_3:
 @ 000   ----------------------------------------
 	.byte		VOICE , 33
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 112*mus_oe_vs_wild_mvl/mxv
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte		N12   , Bn1 , v048
 	.byte	W12
 	.byte		N06   , Bn1 , v052
@@ -830,7 +860,6 @@ mus_oe_vs_wild_3:
 @ 001   ----------------------------------------
 mus_oe_vs_wild_3_001:
 	.byte		VOICE , 30
-	.byte		VOL   , 127*mus_oe_vs_wild_mvl/mxv
 	.byte		N12   , Bn1 , v100
 	.byte	W12
 	.byte		N06   
@@ -1256,7 +1285,10 @@ mus_oe_vs_wild_3_B2:
 @ 039   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
 	.byte	FINE
 
 @**************** Track 4 (Midi-Chn.7) ****************@
@@ -1267,8 +1299,18 @@ mus_oe_vs_wild_4:
 	.byte		VOICE , 85
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
-	.byte		BENDR , 3
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte		N12   , An2 , v060
 	.byte	W12
 	.byte		        Cs3 
@@ -1280,87 +1322,87 @@ mus_oe_vs_wild_4:
 	.byte		N36   , Fs4 
 	.byte	W48
 @ 001   ----------------------------------------
-	.byte		N06   , Bn1 
+	.byte		N06   , Bn0 
 	.byte	W06
-	.byte		        Fs2 
+	.byte		        Fs1 
 	.byte	W06
-	.byte		        Bn1 
+	.byte		        Bn0 
 	.byte	W06
-	.byte		        Fs2 
+	.byte		        Fs1 
 	.byte	W06
-	.byte		        Bn1 
+	.byte		        Bn0 
 	.byte	W06
-	.byte		        Fs2 
+	.byte		        Fs1 
 	.byte	W06
-	.byte		        Bn1 
+	.byte		        Bn0 
 	.byte	W06
-	.byte		        Fs2 
+	.byte		        Fs1 
 	.byte	W06
-	.byte		        Bn1 
+	.byte		        Bn0 
 	.byte	W06
-	.byte		        Fs2
+	.byte		        Fs1 
 	.byte	W06
-	.byte		        Bn1 
+	.byte		        Bn0 
 	.byte	W06
-	.byte		        Fs2 
+	.byte		        Fs1 
 	.byte	W06
-	.byte		        Bn1 
+	.byte		        Bn0 
 	.byte	W06
-	.byte		        Fs2
+	.byte		        Fs1 
 	.byte	W06
-	.byte		        Bn1 
+	.byte		        Bn0 
 	.byte	W06
-	.byte		        Fs2 
+	.byte		        Fs1 
 	.byte	W06
 @ 002   ----------------------------------------
-	.byte		        Dn2 
+	.byte		        Dn1 
 	.byte	W06
-	.byte		        An2
+	.byte		        An1 
 	.byte	W06
-	.byte		        Dn2
+	.byte		        Dn1 
 	.byte	W06
-	.byte		        An2 
+	.byte		        An1 
 	.byte	W06
-	.byte		        Dn2 
+	.byte		        Dn1 
 	.byte	W06
-	.byte		        An2 
+	.byte		        An1 
 	.byte	W06
-	.byte		        Dn2 
+	.byte		        Dn1 
 	.byte	W06
-	.byte		        An2 
+	.byte		        An1 
 	.byte	W06
-	.byte		        Dn2 
+	.byte		        Dn1 
 	.byte	W06
-	.byte		        An2 
+	.byte		        An1 
 	.byte	W06
-	.byte		        Dn2 
+	.byte		        Dn1 
 	.byte	W06
-	.byte		        An2 
+	.byte		        An1 
 	.byte	W06
-	.byte		        Dn2 
+	.byte		        Dn1 
 	.byte	W06
-	.byte		        An2 
+	.byte		        An1 
 	.byte	W06
-	.byte		        Dn2 
+	.byte		        Dn1 
 	.byte	W06
-	.byte		        An2 
+	.byte		        An1 
 	.byte	W06
 @ 003   ----------------------------------------
-	.byte		        En2 
+	.byte		        En1 
 	.byte	W06
-	.byte		        Bn2 
+	.byte		        Bn1 
 	.byte	W06
-	.byte		        En2 
+	.byte		        En1 
 	.byte	W06
-	.byte		        Bn2 
+	.byte		        Bn1 
 	.byte	W06
-	.byte		        En2 
+	.byte		        En1 
 	.byte	W06
-	.byte		        Bn2 
+	.byte		        Bn1 
 	.byte	W06
-	.byte		        En2 
+	.byte		        En1 
 	.byte	W06
-	.byte		        Cs3 
+	.byte		        Cs2 
 	.byte	W06
 	.byte		N03   , Cs4 , v056
 	.byte	W03
@@ -1436,72 +1478,72 @@ mus_oe_vs_wild_4_B1:
 	.byte	W12
 @ 016   ----------------------------------------
 mus_oe_vs_wild_4_016:
-	.byte		N03   , Bn1 , v068
+	.byte		N03   , Bn0 , v068
 	.byte	W06
-	.byte		        Fs2 
+	.byte		        Fs1 
 	.byte	W06
-	.byte		        Bn1 
+	.byte		        Bn0 
 	.byte	W06
-	.byte		        Fs2 
+	.byte		        Fs1 
 	.byte	W06
-	.byte		        Bn1 
+	.byte		        Bn0 
 	.byte	W06
-	.byte		        Fs2  
+	.byte		        Fs1 
 	.byte	W06
-	.byte		        Bn1 
+	.byte		        Bn0 
 	.byte	W06
-	.byte		        Fs2  
+	.byte		        Fs1 
 	.byte	W06
-	.byte		        Bn1 
+	.byte		        Bn0 
 	.byte	W06
-	.byte		        Fs2  
+	.byte		        Fs1 
 	.byte	W06
-	.byte		        Bn1 
+	.byte		        Bn0 
 	.byte	W06
-	.byte		        Fs2  
+	.byte		        Fs1 
 	.byte	W06
-	.byte		        Bn1 
+	.byte		        Bn0 
 	.byte	W06
-	.byte		        Fs2 
+	.byte		        Fs1 
 	.byte	W06
-	.byte		        Bn1 
+	.byte		        Bn0 
 	.byte	W06
-	.byte		        Fs2 
+	.byte		        Fs1 
 	.byte	W06
 	.byte	PEND
 @ 017   ----------------------------------------
 mus_oe_vs_wild_4_017:
-	.byte		N03   , Dn2 , v068
+	.byte		N03   , Dn1 , v068
 	.byte	W06
-	.byte		        An2 
+	.byte		        An1 
 	.byte	W06
-	.byte		        Dn2 
+	.byte		        Dn1 
 	.byte	W06
-	.byte		        An2 
+	.byte		        An1 
 	.byte	W06
-	.byte		        Dn2 
+	.byte		        Dn1 
 	.byte	W06
-	.byte		        An2 
+	.byte		        An1 
 	.byte	W06
-	.byte		        Dn2 
+	.byte		        Dn1 
 	.byte	W06
-	.byte		        An2 
+	.byte		        An1 
 	.byte	W06
-	.byte		        Dn2 
+	.byte		        Dn1 
 	.byte	W06
-	.byte		        An2 
+	.byte		        An1 
 	.byte	W06
-	.byte		        Dn2 
+	.byte		        Dn1 
 	.byte	W06
-	.byte		        An2 
+	.byte		        An1 
 	.byte	W06
-	.byte		        Dn2 
+	.byte		        Dn1 
 	.byte	W06
-	.byte		        An2 
+	.byte		        An1 
 	.byte	W06
-	.byte		        Dn2 
+	.byte		        Dn1 
 	.byte	W06
-	.byte		        An2 
+	.byte		        An1 
 	.byte	W06
 	.byte	PEND
 @ 018   ----------------------------------------
@@ -1530,37 +1572,37 @@ mus_oe_vs_wild_4_017:
 	 .word	mus_oe_vs_wild_4_017
 @ 026   ----------------------------------------
 mus_oe_vs_wild_4_026:
-	.byte		N03   , En2 , v068
+	.byte		N03   , En1 , v068
 	.byte	W06
-	.byte		        Bn2 
+	.byte		        Bn1 
 	.byte	W06
-	.byte		        En2 
+	.byte		        En1 
 	.byte	W06
-	.byte		        Bn2 
+	.byte		        Bn1 
 	.byte	W06
-	.byte		        En2 
+	.byte		        En1 
 	.byte	W06
-	.byte		        Bn2 
+	.byte		        Bn1 
 	.byte	W06
-	.byte		        En2 
+	.byte		        En1 
 	.byte	W06
-	.byte		        Bn2 
+	.byte		        Bn1 
 	.byte	W06
-	.byte		        En2 
+	.byte		        En1 
 	.byte	W06
-	.byte		        Bn2 
+	.byte		        Bn1 
 	.byte	W06
-	.byte		        En2 
+	.byte		        En1 
 	.byte	W06
-	.byte		        Bn2 
+	.byte		        Bn1 
 	.byte	W06
-	.byte		        En2 
+	.byte		        En1 
 	.byte	W06
-	.byte		        Bn2 
+	.byte		        Bn1 
 	.byte	W06
-	.byte		        En2 
+	.byte		        En1 
 	.byte	W06
-	.byte		        Bn2 
+	.byte		        Bn1 
 	.byte	W06
 	.byte	PEND
 @ 027   ----------------------------------------
@@ -1747,9 +1789,13 @@ mus_oe_vs_wild_4_026:
 mus_oe_vs_wild_4_B2:
 @ 039   ----------------------------------------
 	.byte		VOICE , 85
+	.byte		        85
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
 	.byte	FINE
 
 @**************** Track 5 (Midi-Chn.8) ****************@
@@ -1757,11 +1803,21 @@ mus_oe_vs_wild_4_B2:
 mus_oe_vs_wild_5:
 	.byte	KEYSH , mus_oe_vs_wild_key+0
 @ 000   ----------------------------------------
-	.byte		VOICE , 84
+	.byte		VOICE , 83
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
-	.byte		BENDR , 3
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte		N06   , Bn1 , v052
 	.byte	W06
 	.byte		        Fs2 
@@ -2306,9 +2362,13 @@ mus_oe_vs_wild_5_008:
 mus_oe_vs_wild_5_B2:
 @ 039   ----------------------------------------
 	.byte		VOICE , 83
+	.byte		        83
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
 	.byte	FINE
 
 @**************** Track 6 (Midi-Chn.9) ****************@
@@ -2318,10 +2378,24 @@ mus_oe_vs_wild_6:
 @ 000   ----------------------------------------
 	.byte		VOICE , 88
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 112*mus_oe_vs_wild_mvl/mxv
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
 	.byte		MOD   , 0
-	.byte		BENDR , 12
+	.byte		        0
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
+	.byte		MOD   , 0
+	.byte		        0
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
+	.byte		MOD   , 0
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte		N12   , An3 , v088
 	.byte	W12
 	.byte		        Cs4 
@@ -2330,7 +2404,7 @@ mus_oe_vs_wild_6:
 	.byte	W12
 	.byte		        Cs5 
 	.byte	W12
-	.byte		MOD   , 3
+	.byte		MOD   , 4
 	.byte		N48   , Fs5 
 	.byte	W48
 @ 001   ----------------------------------------
@@ -2364,7 +2438,7 @@ mus_oe_vs_wild_6_B1:
 	.byte	W12
 	.byte		N36   , Bn4 , v092, gtp3
 	.byte	W12
-	.byte		MOD   , 5
+	.byte		MOD   , 6
 	.byte	W24
 	.byte		        0
 	.byte	W12
@@ -2467,8 +2541,7 @@ mus_oe_vs_wild_6_B1:
 @ 019   ----------------------------------------
 	.byte	W96
 @ 020   ----------------------------------------
-	.byte		VOICE , 87
-	.byte		VOL   , 127*mus_oe_vs_wild_mvl/mxv
+	.byte		VOICE , 89
 	.byte		N06   , Bn3 , v108
 	.byte	W18
 	.byte		        Dn4 
@@ -2519,7 +2592,7 @@ mus_oe_vs_wild_6_B1:
 	.byte		N30   , An4 
 	.byte	W30
 @ 024   ----------------------------------------
-	.byte		N06   , Bn3  , v112
+	.byte		N06   , Bn3 
 	.byte	W18
 	.byte		        Dn4 
 	.byte	W18
@@ -2534,9 +2607,9 @@ mus_oe_vs_wild_6_B1:
 @ 025   ----------------------------------------
 	.byte		N18   , Bn4 
 	.byte	W18
-	.byte		        An4 , v120
+	.byte		        An4 , v112
 	.byte	W18
-	.byte		        En4 , v127
+	.byte		        En4 , v120
 	.byte	W18
 	.byte		        Dn4 
 	.byte	W18
@@ -2655,66 +2728,66 @@ mus_oe_vs_wild_6_B1:
 @ 032   ----------------------------------------
 	.byte		N78   , Fs4 , v084
 	.byte	W24
-	.byte		MOD   , 5
+	.byte		MOD   , 6
 	.byte	W54
 	.byte		        0
 	.byte	W18
 @ 033   ----------------------------------------
 	.byte	W96
 @ 034   ----------------------------------------
-	.byte		N12   , Bn1 , v124
+	.byte		N12   , Bn0 , v124
 	.byte	W12
 	.byte		N06   
 	.byte	W06
-	.byte		        An1 
+	.byte		        An0 
 	.byte	W06
-	.byte		N12   , Bn1 
+	.byte		N12   , Bn0 
 	.byte	W12
 	.byte		N06   
 	.byte	W06
-	.byte		        An1 
+	.byte		        An0 
 	.byte	W06
-	.byte		N12   , Bn1
+	.byte		N12   , Bn0 
 	.byte	W12
 	.byte		N06   
 	.byte	W06
-	.byte		        An1
+	.byte		        An0 
 	.byte	W06
-	.byte		        Bn1 
+	.byte		        Bn0 
 	.byte	W06
-	.byte		        An1 
+	.byte		        An0 
 	.byte	W06
-	.byte		N12   , Fs2 
+	.byte		N12   , Fs1 
 	.byte	W12
 @ 035   ----------------------------------------
-	.byte		        Dn2 
+	.byte		        Dn1 
 	.byte	W12
 	.byte		N06   
 	.byte	W06
-	.byte		        Bn1 
+	.byte		        Bn0 
 	.byte	W06
-	.byte		N12   , Dn2 
+	.byte		N12   , Dn1 
 	.byte	W12
 	.byte		N06   
 	.byte	W06
-	.byte		        Bn1
+	.byte		        Bn0 
 	.byte	W06
-	.byte		N12   , Dn2
+	.byte		N12   , Dn1 
 	.byte	W12
 	.byte		N06   
 	.byte	W06
-	.byte		        Bn1
+	.byte		        Bn0 
 	.byte	W06
-	.byte		        Dn2
+	.byte		        Dn1 
 	.byte	W06
-	.byte		        En2 
+	.byte		        En1 
 	.byte	W06
-	.byte		        Dn2 
+	.byte		        Dn1 
 	.byte	W06
-	.byte		        Cs2 
+	.byte		        Cs1 
 	.byte	W06
 @ 036   ----------------------------------------
-	.byte		N12   , En1
+	.byte		N12   , En0 
 	.byte	W12
 	.byte		N09   
 	.byte	W24
@@ -2725,7 +2798,6 @@ mus_oe_vs_wild_6_B1:
 	.byte	W03
 @ 037   ----------------------------------------
 	.byte		VOICE , 88
-	.byte		VOL   , 112*mus_oe_vs_wild_mvl/mxv
 	.byte	W12
 	.byte		N09   , Bn4 , v104
 	.byte	W12
@@ -2863,12 +2935,12 @@ mus_oe_vs_wild_6_B1:
 	.byte	W01
 @ 038   ----------------------------------------
 	.byte		        c_v+0
-	.byte		N10   , En2 , v088
+	.byte		N10   , En1 , v088
 	.byte	W36
 	.byte	W01
 	.byte		N10   
 	.byte	W11
-	.byte		MOD   , 7
+	.byte		MOD   , 5
 	.byte		N48   , Fs5 , v100
 	.byte	W44
 	.byte	W03
@@ -2882,7 +2954,11 @@ mus_oe_vs_wild_6_B2:
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
 	.byte		MOD   , 5
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
+	.byte		MOD   , 5
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
 	.byte	FINE
 
 @**************** Track 7 (Midi-Chn.10) ****************@
@@ -2893,7 +2969,16 @@ mus_oe_vs_wild_7:
 	.byte		VOICE , 0
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte	W48
 	.byte		N06   , Dn1 , v088
 	.byte	W06
@@ -3617,9 +3702,13 @@ mus_oe_vs_wild_7_024:
 mus_oe_vs_wild_7_B2:
 @ 039   ----------------------------------------
 	.byte		VOICE , 0
+	.byte		        0
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_wild_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
 	.byte	FINE
 
 @**************** Track 8 (Midi-Chn.12) ****************@
@@ -3630,7 +3719,16 @@ mus_oe_vs_wild_8:
 	.byte		VOICE , 127
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 44*mus_oe_vs_wild_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 44*mus_oe_vs_wild_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 44*mus_oe_vs_wild_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 44*mus_oe_vs_wild_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte	W96
 @ 001   ----------------------------------------
 	.byte	W96
@@ -3646,33 +3744,33 @@ mus_oe_vs_wild_8_B1:
 @ 006   ----------------------------------------
 mus_oe_vs_wild_8_006:
 	.byte	W12
-	.byte		N11   , An4 , v064
+	.byte		N12   , An4 , v064
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
 	.byte	PEND
 @ 007   ----------------------------------------
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W36
 @ 008   ----------------------------------------
 	.byte	W96
@@ -3685,38 +3783,38 @@ mus_oe_vs_wild_8_006:
 	 .word	mus_oe_vs_wild_8_006
 @ 012   ----------------------------------------
 mus_oe_vs_wild_8_012:
-	.byte		N11   , An4 , v064
+	.byte		N12   , An4 , v064
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W24
 	.byte	PEND
 @ 013   ----------------------------------------
 	.byte	PATT
 	 .word	mus_oe_vs_wild_8_006
 @ 014   ----------------------------------------
-	.byte		N11   , An4 , v064
+	.byte		N12   , An4 , v064
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
 	.byte		N06   
 	.byte	W06
@@ -3726,17 +3824,17 @@ mus_oe_vs_wild_8_012:
 	.byte	W03
 @ 015   ----------------------------------------
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W24
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
 @ 016   ----------------------------------------
 	.byte	PATT
@@ -3754,31 +3852,31 @@ mus_oe_vs_wild_8_012:
 	.byte	PATT
 	 .word	mus_oe_vs_wild_8_006
 @ 021   ----------------------------------------
-	.byte		N11   , An4 , v064
+	.byte		N12   , An4 , v064
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
 @ 022   ----------------------------------------
 	.byte	PATT
 	 .word	mus_oe_vs_wild_8_006
 @ 023   ----------------------------------------
-	.byte		N11   , An4 , v064
+	.byte		N12   , An4 , v064
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
-	.byte		N11   
+	.byte		N12   
 	.byte	W12
 	.byte		N06   
 	.byte	W06
@@ -3966,9 +4064,13 @@ mus_oe_vs_wild_8_034:
 mus_oe_vs_wild_8_B2:
 @ 039   ----------------------------------------
 	.byte		VOICE , 127
+	.byte		        127
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 44*mus_oe_vs_wild_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 44*mus_oe_vs_wild_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
 	.byte	FINE
 
 @******************************************************@

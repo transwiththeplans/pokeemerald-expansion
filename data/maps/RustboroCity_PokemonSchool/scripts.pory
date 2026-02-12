@@ -351,3 +351,50 @@ RustboroCity_PokemonSchool_Text_ScottMetAlreadyStoneBadge:
 	.string "a TRAINER from a LEAGUE BADGE.$"
 
 `
+
+script RustboroCity_EventScript_GymGuide{
+	lock
+	faceplayer
+	msgbox(format("The Gym Leader is currently teaching at the {PKMN} School, maybe you should go and learn a little for your gym battle!"), MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script RustboroCity_PokemonSchool_EventScript_Roxanne{
+	lock
+	faceplayer
+	msgbox(format("Do you know about Innate abilities?, they are recently discovered abilities gained thanks to all the mutations happening in Pokémon, your Pokémon should reach a certain level to be able to use them but I know something that can speed this process!"), MSGBOX_DEFAULT)
+	giveitem(ITEM_INNATE_CANDY, 1)
+	msgbox(format("Make sure to use it on your upcoming Gym battle since you will need it, I will wait for you at the Gym!"), MSGBOX_DEFAULT)
+	closemessage
+	//goto(RustboroCity_PokemonSchool_EventScript_Roxanne_Exit)
+	fadescreen(1)
+	playse(SE_EXIT)
+	removeobject(LOCALID_ROXANNE)
+	delay(30)
+	fadescreen(0)
+	setflag(FLAG_LEARNED_ABOUT_INNATES)
+	release
+	end
+}
+
+
+script RustboroCity_PokemonSchool_EventScript_Roxanne_Exit{
+    applymovement(LOCALID_PLAYER, moves(
+        walk_right
+        face_left
+    ))
+	waitmovement(0)
+    applymovement(LOCALID_ROXANNE, moves(
+        walk_right
+        walk_down * 2
+        walk_left
+        walk_down * 5
+    ))
+	waitmovement(0)
+	delay(30)
+	removeobject(LOCALID_ROXANNE)
+	setflag(FLAG_LEARNED_ABOUT_INNATES)
+	release
+	end
+}

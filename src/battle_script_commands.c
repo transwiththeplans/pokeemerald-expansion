@@ -1191,7 +1191,7 @@ static void Cmd_attackcanceler(void)
         return;
 
     if (gSpecialStatuses[gBattlerAttacker].parentalBondState == PARENTAL_BOND_OFF
-     && BattlerHasTrait(ctx.battlerAtk, ABILITY_PARENTAL_BOND)
+     && (BattlerHasTrait(ctx.battlerAtk, ABILITY_PARENTAL_BOND) || (BattlerHasTrait(ctx.battlerAtk, ABILITY_DOPPLER_EFFECT) && IsSoundMove(gCurrentMove)))
      && IsMoveAffectedByParentalBond(gCurrentMove, gBattlerAttacker)
      && !(gAbsentBattlerFlags & (1u << gBattlerTarget))
      && GetActiveGimmick(gBattlerAttacker) != GIMMICK_Z_MOVE)
@@ -3436,7 +3436,7 @@ void SetMoveEffect(u32 battler, u32 effectBattler, enum MoveEffect moveEffect, c
         s32 recoil = (gBattleMons[gEffectBattler].maxHP) / 4;
         if (recoil == 0)
             recoil = 1;
-        if (SearchTraits(battlerTraits, ABILITY_PARENTAL_BOND))
+        if (SearchTraits(battlerTraits, ABILITY_PARENTAL_BOND) || SearchTraits(battlerTraits, ABILITY_DOPPLER_EFFECT))
             recoil *= 2;
         SetPassiveDamageAmount(gEffectBattler, recoil);
         TryUpdateEvolutionTracker(IF_RECOIL_DAMAGE_GE, gBattleStruct->passiveHpUpdate[gBattlerAttacker], MOVE_NONE);

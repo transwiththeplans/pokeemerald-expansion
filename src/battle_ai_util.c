@@ -827,7 +827,7 @@ static inline void CalcDynamicMoveDamage(struct DamageContext *ctx, u16 *medianD
         maximum *= strikeCount;
     }
 
-    if (BattlerHasTrait(ctx->battlerAtk, ABILITY_PARENTAL_BOND)
+    if ((BattlerHasTrait(ctx->battlerAtk, ABILITY_PARENTAL_BOND) || (BattlerHasTrait(ctx->battlerAtk, ABILITY_DOPPLER_EFFECT) && IsSoundMove(ctx->move)))
         && !strikeCount
         && effect != EFFECT_TRIPLE_KICK
         && effect != EFFECT_MULTI_HIT
@@ -1438,7 +1438,7 @@ s32 AI_WhoStrikesFirst(u32 battlerAI, u32 battler, u32 aiMoveConsidered, u32 pla
 bool32 CanEndureHit(u32 battler, u32 battlerTarget, u32 move)
 {
     enum BattleMoveEffects effect = GetMoveEffect(move);
-    if (!AI_BattlerAtMaxHp(battlerTarget) || effect == EFFECT_MULTI_HIT || AI_BATTLER_HAS_TRAIT(battler, ABILITY_PARENTAL_BOND))
+    if (!AI_BattlerAtMaxHp(battlerTarget) || effect == EFFECT_MULTI_HIT || AI_BATTLER_HAS_TRAIT(battler, ABILITY_PARENTAL_BOND) || (BattlerHasTrait(battler, ABILITY_DOPPLER_EFFECT) && IsSoundMove(move)))
         return FALSE;
     if (GetMoveStrikeCount(move) > 1 && !(effect == EFFECT_DRAGON_DARTS && !HasTwoOpponents(battler)))
         return FALSE;

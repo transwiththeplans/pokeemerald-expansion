@@ -185,6 +185,10 @@ static const struct SpriteFrameImage sPicTable_Youngster[] = {
     overworld_ascending_frames(gObjectEventPic_Youngster, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Youngster2[] = {
+    overworld_ascending_frames(gObjectEventPic_Youngster2, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_BugCatcher[] = {
     overworld_ascending_frames(gObjectEventPic_BugCatcher, 2, 4),
 };

@@ -1395,11 +1395,18 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Moves hit twice."),
         .aiRating = 10,
     },
-    
+
     [ABILITY_DOPPLER_EFFECT] =
     {
         .name = _("Doppler Effect"),
         .description = COMPOUND_STRING("Sound moves hit twice."),
+        .aiRating = 10,
+    },
+    
+    [ABILITY_SEED_DISPERSAL] =
+    {
+        .name = _("Seed Dispersal"),
+        .description = COMPOUND_STRING("Sets Leech Seed on hit."),
         .aiRating = 10,
     },
 

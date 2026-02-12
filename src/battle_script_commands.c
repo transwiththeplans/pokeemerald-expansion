@@ -3474,7 +3474,8 @@ void SetMoveEffect(u32 battler, u32 effectBattler, enum MoveEffect moveEffect, c
     case MOVE_EFFECT_FLAME_BURST:
         if (IsBattlerAlive(BATTLE_PARTNER(gBattlerTarget))
          && !IsSemiInvulnerable(BATTLE_PARTNER(gBattlerTarget), CHECK_ALL)
-         && !BattlerHasTrait(BATTLE_PARTNER(gBattlerTarget), ABILITY_MAGIC_GUARD))
+         && !BattlerHasTrait(BATTLE_PARTNER(gBattlerTarget), ABILITY_MAGIC_GUARD) 
+         && !BattlerHasTrait(BATTLE_PARTNER(gBattlerTarget), ABILITY_IMPENETRABLE))
         {
             u32 partnerTarget = BATTLE_PARTNER(gBattlerTarget);
             gBattleScripting.battler = partnerTarget;
@@ -6038,6 +6039,7 @@ static bool32 HandleMoveEndMoveBlock(u32 moveEffect)
         if (IsBattlerTurnDamaged(gBattlerTarget) && IsBattlerAlive(gBattlerAttacker) && gBattleStruct->moveDamage[gBattlerTarget] > 0)
         {
             if (IsAbilityAndRecord(gBattlerAttacker, ABILITY_ROCK_HEAD)
+             || IsAbilityAndRecord(gBattlerAttacker, ABILITY_IMPENETRABLE)
              || IsAbilityAndRecord(gBattlerAttacker, ABILITY_MAGIC_GUARD))
                 break;
 
@@ -6059,7 +6061,8 @@ static bool32 HandleMoveEndMoveBlock(u32 moveEffect)
     case EFFECT_MAX_HP_50_RECOIL:
         if (IsBattlerAlive(gBattlerAttacker)
          && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_FAILED)
-         && !IsAbilityAndRecord(gBattlerAttacker, ABILITY_MAGIC_GUARD))
+         && !IsAbilityAndRecord(gBattlerAttacker, ABILITY_MAGIC_GUARD)
+         && !IsAbilityAndRecord(gBattlerAttacker, ABILITY_IMPENETRABLE))
         {
             s32 recoil = (GetNonDynamaxMaxHP(gBattlerAttacker) + 1) / 2; // Half of Max HP Rounded UP
             SetPassiveDamageAmount(gBattlerAttacker, recoil);
@@ -6072,7 +6075,8 @@ static bool32 HandleMoveEndMoveBlock(u32 moveEffect)
         if (IsBattlerTurnDamaged(gBattlerTarget) && IsBattlerAlive(gBattlerAttacker))
         {
             if (IsAbilityAndRecord(gBattlerAttacker, ABILITY_ROCK_HEAD)
-             || IsAbilityAndRecord(gBattlerAttacker, ABILITY_MAGIC_GUARD))
+             || IsAbilityAndRecord(gBattlerAttacker, ABILITY_MAGIC_GUARD)
+             || IsAbilityAndRecord(gBattlerAttacker, ABILITY_IMPENETRABLE))
                 break;
 
             s32 recoil = (GetNonDynamaxMaxHP(gBattlerAttacker) + 1) / 2; // Half of Max HP Rounded UP
@@ -6178,7 +6182,8 @@ static void Cmd_moveend(void)
                 case PROTECT_SPIKY_SHIELD:
                     if (moveEffect != EFFECT_COUNTER
                      && !IsProtectivePadsProtected(gBattlerAttacker, GetBattlerHoldEffect(gBattlerAttacker))
-                     && !IsAbilityAndRecord(gBattlerAttacker, ABILITY_MAGIC_GUARD))
+                     && !IsAbilityAndRecord(gBattlerAttacker, ABILITY_MAGIC_GUARD)
+                     && !IsAbilityAndRecord(gBattlerAttacker, ABILITY_IMPENETRABLE))
                     {
                         gProtectStructs[gBattlerAttacker].touchedProtectLike = FALSE;
                         SetPassiveDamageAmount(gBattlerAttacker, GetNonDynamaxMaxHP(gBattlerAttacker) / 8);
@@ -7979,7 +7984,8 @@ void TryHazardsOnSwitchIn(u32 battler, u32 side, enum Hazards hazardType)
     case HAZARDS_NONE:
         break;
     case HAZARDS_SPIKES:
-        if (!SearchTraits(battlerTraits, ABILITY_MAGIC_GUARD)
+        if (!SearchTraits(battlerTraits, ABILITY_MAGIC_GUARD) 
+         && !SearchTraits(battlerTraits, ABILITY_IMPENETRABLE)
          && IsBattlerAffectedByHazards(battler, FALSE)
          && IsBattlerGrounded(battler, GetBattlerHoldEffect(battler)))
         {
@@ -8028,7 +8034,7 @@ void TryHazardsOnSwitchIn(u32 battler, u32 side, enum Hazards hazardType)
         }
         break;
     case HAZARDS_STEALTH_ROCK:
-        if (IsBattlerAffectedByHazards(battler, FALSE) && !SearchTraits(battlerTraits, ABILITY_MAGIC_GUARD))
+        if (IsBattlerAffectedByHazards(battler, FALSE) && !SearchTraits(battlerTraits, ABILITY_MAGIC_GUARD) && !SearchTraits(battlerTraits, ABILITY_IMPENETRABLE))
         {
             gBattleStruct->passiveHpUpdate[battler] = GetStealthHazardDamage(TYPE_SIDE_HAZARD_POINTED_STONES, battler);
             if (gBattleStruct->passiveHpUpdate[battler] != 0)
@@ -8036,7 +8042,7 @@ void TryHazardsOnSwitchIn(u32 battler, u32 side, enum Hazards hazardType)
         }
         break;
     case HAZARDS_STEELSURGE:
-        if (IsBattlerAffectedByHazards(battler, FALSE) && !SearchTraits(battlerTraits, ABILITY_MAGIC_GUARD))
+        if (IsBattlerAffectedByHazards(battler, FALSE) && !SearchTraits(battlerTraits, ABILITY_MAGIC_GUARD) && !SearchTraits(battlerTraits, ABILITY_IMPENETRABLE))
         {
             gBattleStruct->passiveHpUpdate[battler] = GetStealthHazardDamage(TYPE_SIDE_HAZARD_SHARP_STEEL, battler);
             if (gBattleStruct->passiveHpUpdate[battler] != 0)
@@ -15755,7 +15761,7 @@ void BS_TryActivateGulpMissile(void)
         && BattlerHasTrait(gBattlerTarget, ABILITY_GULP_MISSILE))
     {
         PushTraitStack(gBattlerAttacker, ABILITY_GULP_MISSILE);
-        if (!BattlerHasTrait(gBattlerAttacker, ABILITY_MAGIC_GUARD))
+        if (!BattlerHasTrait(gBattlerAttacker, ABILITY_MAGIC_GUARD) && !BattlerHasTrait(gBattlerAttacker, ABILITY_IMPENETRABLE))
             SetPassiveDamageAmount(gBattlerTarget, GetNonDynamaxMaxHP(gBattlerAttacker) / 4);
 
         switch(gBattleMons[gBattlerTarget].species)

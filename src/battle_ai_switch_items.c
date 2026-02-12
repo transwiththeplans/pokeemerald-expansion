@@ -732,7 +732,7 @@ static bool32 ShouldSwitchIfBadlyStatused(u32 battler)
         }
 
         // Secondary Damage
-        if (!AI_BATTLER_HAS_TRAIT(battler, ABILITY_MAGIC_GUARD)
+        if (!AI_BATTLER_HAS_TRAIT(battler, ABILITY_MAGIC_GUARD) && !AI_BATTLER_HAS_TRAIT(battler, ABILITY_IMPENETRABLE)
             && !AiExpectsToFaintPlayer(battler)
             && gAiLogicData->mostSuitableMonId[battler] != PARTY_SIZE)
         {
@@ -1560,7 +1560,7 @@ static u32 GetSwitchinHazardsDamage(u32 battler, struct BattlePokemon *battleMon
     u32 side = GetBattlerSide(battler);
 
     // Check ways mon might avoid all hazards
-    if ((ability != ABILITY_MAGIC_GUARD && !SpeciesHasInnate(species, ABILITY_MAGIC_GUARD)) || (heldItemEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS &&
+    if ((ability != ABILITY_MAGIC_GUARD && !SpeciesHasInnate(species, ABILITY_MAGIC_GUARD) && ability != ABILITY_IMPENETRABLE && !SpeciesHasInnate(species, ABILITY_IMPENETRABLE)) || (heldItemEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS &&
         !((gFieldStatuses & STATUS_FIELD_MAGIC_ROOM) || (ability == ABILITY_LEVITATE || SpeciesHasInnate(species, ABILITY_LEVITATE)))))
     {
         // Stealth Rock
@@ -1619,7 +1619,7 @@ static s32 GetSwitchinWeatherImpact(void)
     if (HasWeatherEffect())
     {
         // Damage
-        if (holdEffect != HOLD_EFFECT_SAFETY_GOGGLES && (ability != ABILITY_MAGIC_GUARD && !SpeciesHasInnate(species, ABILITY_MAGIC_GUARD)) && (ability != ABILITY_OVERCOAT && !SpeciesHasInnate(species, ABILITY_OVERCOAT)))
+        if (holdEffect != HOLD_EFFECT_SAFETY_GOGGLES && (ability != ABILITY_MAGIC_GUARD && !SpeciesHasInnate(species, ABILITY_MAGIC_GUARD) && ability != ABILITY_IMPENETRABLE && !SpeciesHasInnate(species, ABILITY_IMPENETRABLE)) && (ability != ABILITY_OVERCOAT && !SpeciesHasInnate(species, ABILITY_OVERCOAT)))
         {
             if ((gBattleWeather & B_WEATHER_HAIL)
              && (gAiLogicData->switchinCandidate.battleMon.types[0] != TYPE_ICE || gAiLogicData->switchinCandidate.battleMon.types[1] != TYPE_ICE)
@@ -1721,7 +1721,7 @@ static u32 GetSwitchinRecurringDamage(void)
     enum HoldEffect holdEffect = GetItemHoldEffect(gAiLogicData->switchinCandidate.battleMon.item);
 
     // Items
-    if ((ability != ABILITY_MAGIC_GUARD && !SpeciesHasInnate(species, ABILITY_MAGIC_GUARD)) && (ability != ABILITY_KLUTZ && !SpeciesHasInnate(species, ABILITY_KLUTZ)))
+    if ((ability != ABILITY_MAGIC_GUARD && !SpeciesHasInnate(species, ABILITY_MAGIC_GUARD)) && (ability != ABILITY_IMPENETRABLE && !SpeciesHasInnate(species, ABILITY_IMPENETRABLE)) && (ability != ABILITY_KLUTZ && !SpeciesHasInnate(species, ABILITY_KLUTZ)))
     {
         if (holdEffect == HOLD_EFFECT_BLACK_SLUDGE && gAiLogicData->switchinCandidate.battleMon.types[0] != TYPE_POISON && gAiLogicData->switchinCandidate.battleMon.types[1] != TYPE_POISON)
         {
@@ -1756,7 +1756,7 @@ static u32 GetSwitchinStatusDamage(u32 battler)
     u32 statusDamage = 0;
 
     // Status condition damage
-    if ((status != 0) && (ability != ABILITY_MAGIC_GUARD && !SpeciesHasInnate(species, ABILITY_MAGIC_GUARD)))
+    if ((status != 0) && (ability != ABILITY_MAGIC_GUARD && !SpeciesHasInnate(species, ABILITY_MAGIC_GUARD) && ability != ABILITY_IMPENETRABLE && !SpeciesHasInnate(species, ABILITY_IMPENETRABLE)))
     {
         if (status & STATUS1_BURN)
         {

@@ -134,7 +134,7 @@ static bool32 DoesBattlerBenefitFromWeather(u32 battler, u32 weather)
 
     if (AISearchTraits(AIBattlerTraits, ABILITY_FORECAST))
         return (weather & (B_WEATHER_RAIN | B_WEATHER_SUN | B_WEATHER_ICY_ANY));
-    if (AISearchTraits(AIBattlerTraits, ABILITY_MAGIC_GUARD)
+    if (AISearchTraits(AIBattlerTraits, ABILITY_MAGIC_GUARD) || AISearchTraits(AIBattlerTraits, ABILITY_IMPENETRABLE)
      || AISearchTraits(AIBattlerTraits, ABILITY_OVERCOAT))
         return (weather & B_WEATHER_DAMAGING_ANY);
     if (AISearchTraits(AIBattlerTraits, ABILITY_SAND_FORCE)

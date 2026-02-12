@@ -3739,7 +3739,7 @@ void SetMoveEffect(bool32 primary, bool32 certain)
             case MOVE_EFFECT_FLAME_BURST:
                 if (IsBattlerAlive(BATTLE_PARTNER(gBattlerTarget))
                  && !(gStatuses3[BATTLE_PARTNER(gBattlerTarget)] & STATUS3_SEMI_INVULNERABLE)
-                 && GetBattlerAbility(BATTLE_PARTNER(gBattlerTarget)) != ABILITY_MAGIC_GUARD)
+                 && GetBattlerAbility(BATTLE_PARTNER(gBattlerTarget)) != ABILITY_MAGIC_GUARD && GetBattlerAbility(BATTLE_PARTNER(gBattlerTarget)) != ABILITY_IMPENETRABLE)
                 {
                     i = BATTLE_PARTNER(gBattlerTarget);
                     gBattleScripting.savedBattler = i;
@@ -7022,7 +7022,7 @@ static void Cmd_moveend(void)
             case EFFECT_MIND_BLOWN:
                 if (IsBattlerAlive(gBattlerAttacker)
                  && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_FAILED)
-                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD)
+                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD && GetBattlerAbility(gBattlerAttacker) != ABILITY_IMPENETRABLE)
                 {
                     gBattleStruct->moveDamage[gBattlerAttacker] = (GetNonDynamaxMaxHP(gBattlerAttacker) + 1) / 2; // Half of Max HP Rounded UP
                     BattleScriptPushCursor();
@@ -8225,7 +8225,7 @@ static bool32 DoSwitchInEffectsForBattler(u32 battler)
     }
     else if (!(gDisableStructs[battler].spikesDone)
         && (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SPIKES)
-        && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD
+        && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD && GetBattlerAbility(battler) != ABILITY_IMPENETRABLE
         && IsBattlerAffectedByHazards(battler, FALSE)
         && IsBattlerGrounded(battler))
     {
@@ -8240,7 +8240,7 @@ static bool32 DoSwitchInEffectsForBattler(u32 battler)
     else if (!(gDisableStructs[battler].stealthRockDone)
         && (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_STEALTH_ROCK)
         && IsBattlerAffectedByHazards(battler, FALSE)
-        && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD)
+        && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD && GetBattlerAbility(battler) != ABILITY_IMPENETRABLE)
     {
         gDisableStructs[battler].stealthRockDone = TRUE;
         gBattleStruct->moveDamage[battler] = GetStealthHazardDamage(TYPE_SIDE_HAZARD_POINTED_STONES, battler);
@@ -8298,7 +8298,7 @@ static bool32 DoSwitchInEffectsForBattler(u32 battler)
     else if (!(gDisableStructs[battler].steelSurgeDone)
         && (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_STEELSURGE)
         && IsBattlerAffectedByHazards(battler, FALSE)
-        && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD)
+        && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD && GetBattlerAbility(battler) != ABILITY_IMPENETRABLE)
     {
         gDisableStructs[battler].steelSurgeDone = TRUE;
         gBattleStruct->moveDamage[battler] = GetStealthHazardDamage(TYPE_SIDE_HAZARD_SHARP_STEEL, battler);
@@ -17820,7 +17820,7 @@ void BS_TryActivateGulpMissile(void)
         && gBattleMons[gBattlerTarget].species != SPECIES_CRAMORANT
         && GetBattlerAbility(gBattlerTarget) == ABILITY_GULP_MISSILE)
     {
-        if (GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD)
+        if (GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD && GetBattlerAbility(gBattlerAttacker) != ABILITY_IMPENETRABLE)
         {
             gBattleStruct->moveDamage[gBattlerTarget] = GetNonDynamaxMaxHP(gBattlerAttacker) / 4;
             if (gBattleStruct->moveDamage[gBattlerTarget] == 0)

@@ -2598,6 +2598,7 @@ BattleScript_CantMakeAsleep::
 BattleScript_EffectAbsorbLiquidOoze::
 	call BattleScript_AbilityPopUpTarget
 	jumpifability BS_ATTACKER, ABILITY_MAGIC_GUARD, BattleScript_EffectAbsorbRet
+	jumpifability BS_ATTACKER, ABILITY_IMPENETRABLE, BattleScript_EffectAbsorbRet
 	goto BattleScript_EffectAbsorb
 
 BattleScript_EffectAbsorb::
@@ -2914,6 +2915,7 @@ BattleScript_RecoilIfMiss::
 	printstring STRINGID_PKMNCRASHED
 	waitmessage B_WAIT_TIME_LONG
 	jumpifability BS_ATTACKER, ABILITY_MAGIC_GUARD, BattleScript_RecoilEnd
+	jumpifability BS_ATTACKER, ABILITY_IMPENETRABLE, BattleScript_RecoilEnd
 	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
 	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
 	tryfaintmon BS_ATTACKER
@@ -5000,6 +5002,7 @@ BattleScript_LeechSeedTurnDrainLiquidOoze::
 	call BattleScript_AbilityPopUp
 	copybyte gBattlerAttacker, gBattlerTarget   @ needed to get liquid ooze message correct
 	jumpifability BS_TARGET, ABILITY_MAGIC_GUARD, BattleScript_LeechSeedTurnDrainHealBlockEnd2
+	jumpifability BS_TARGET, ABILITY_IMPENETRABLE, BattleScript_LeechSeedTurnDrainHealBlockEnd2
 	goto BattleScript_LeechSeedTurnDrainGainHp
 
 BattleScript_LeechSeedTurnDrainHealBlock::
@@ -5326,6 +5329,7 @@ BattleScript_GulpMissileGorging::
 	hitanimation BS_ATTACKER
 	waitstate
 	jumpifability BS_ATTACKER, ABILITY_MAGIC_GUARD, BattleScript_GulpMissileNoDmgGorging
+	jumpifability BS_ATTACKER, ABILITY_IMPENETRABLE, BattleScript_GulpMissileNoDmgGorging
 	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
 	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
 	tryfaintmon BS_ATTACKER
@@ -5352,6 +5356,7 @@ BattleScript_GulpMissileGulping::
 	hitanimation BS_ATTACKER
 	waitstate
 	jumpifability BS_ATTACKER, ABILITY_MAGIC_GUARD, BattleScript_GulpMissileNoDmgGulping
+	jumpifability BS_ATTACKER, ABILITY_IMPENETRABLE, BattleScript_GulpMissileNoDmgGulping
 	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
 	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
 	tryfaintmon BS_ATTACKER
@@ -6095,6 +6100,7 @@ BattleScript_AftermathDmg::
 	pause B_WAIT_TIME_SHORT
 	call BattleScript_AbilityPopUpScripting
 	jumpifability BS_ATTACKER, ABILITY_MAGIC_GUARD, BattleScript_AftermathDmgRet
+	jumpifability BS_ATTACKER, ABILITY_IMPENETRABLE, BattleScript_AftermathDmgRet
 	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
 	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
 	printstring STRINGID_AFTERMATHDMG
@@ -6107,6 +6113,7 @@ BattleScript_InnardsOutDmg::
 	pause B_WAIT_TIME_SHORT
 	call BattleScript_AbilityPopUpScripting
 	jumpifability BS_ATTACKER, ABILITY_MAGIC_GUARD, BattleScript_InnardsOutDmgRet
+	jumpifability BS_ATTACKER, ABILITY_IMPENETRABLE, BattleScript_InnardsOutDmgRet
 	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
 	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
 	printstring STRINGID_AFTERMATHDMG
@@ -6313,6 +6320,7 @@ BattleScript_PrintPayDayMoneyString::
 
 BattleScript_WrapTurnDmg::
 	jumpifability BS_ATTACKER, ABILITY_MAGIC_GUARD, BattleScript_DoTurnDmgEnd
+	jumpifability BS_ATTACKER, ABILITY_IMPENETRABLE, BattleScript_DoTurnDmgEnd
 	playanimation BS_ATTACKER, B_ANIM_TURN_TRAP, sB_ANIM_ARG1
 	printstring STRINGID_PKMNHURTBY
 	waitmessage B_WAIT_TIME_LONG
@@ -7208,6 +7216,7 @@ BattleScript_BadDreamsActivates::
 BattleScript_BadDreamsLoop:
 	jumpiftargetally BattleScript_BadDreamsIncrement
 	jumpifability BS_TARGET, ABILITY_MAGIC_GUARD, BattleScript_BadDreamsIncrement
+	jumpifability BS_TARGET, ABILITY_IMPENETRABLE, BattleScript_BadDreamsIncrement
 	jumpifability BS_TARGET, ABILITY_COMATOSE, BattleScript_BadDreams_Dmg
 	jumpifstatus BS_TARGET, STATUS1_SLEEP, BattleScript_BadDreams_Dmg
 	goto BattleScript_BadDreamsIncrement

@@ -145,7 +145,7 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
          && gBattleMons[battler].volatiles.semiInvulnerable != STATE_UNDERGROUND
          && gBattleMons[battler].volatiles.semiInvulnerable != STATE_UNDERWATER
          && GetBattlerHoldEffect(battler) != HOLD_EFFECT_SAFETY_GOGGLES
-         && !IsAbilityAndRecord(battler, ABILITY_MAGIC_GUARD))
+         && !IsAbilityAndRecord(battler, ABILITY_MAGIC_GUARD) && !IsAbilityAndRecord(battler, ABILITY_IMPENETRABLE))
         {
             SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / 16);
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SANDSTORM;
@@ -168,7 +168,7 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
              && gBattleMons[battler].volatiles.semiInvulnerable != STATE_UNDERGROUND
              && gBattleMons[battler].volatiles.semiInvulnerable != STATE_UNDERWATER
              && GetBattlerHoldEffect(battler) != HOLD_EFFECT_SAFETY_GOGGLES
-             && !IsAbilityAndRecord(battler, ABILITY_MAGIC_GUARD))
+             && !IsAbilityAndRecord(battler, ABILITY_MAGIC_GUARD) && !IsAbilityAndRecord(battler, ABILITY_IMPENETRABLE))
             {
                 SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / 16);
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_HAIL;
@@ -313,7 +313,7 @@ static bool32 HandleEndTurnFirstEventBlock(u32 battler)
         if (gSideStatuses[side] & SIDE_STATUS_DAMAGE_NON_TYPES)
         {
             if (!IS_BATTLER_OF_TYPE(battler, gSideTimers[side].damageNonTypesType)
-             && !IsAbilityAndRecord(battler, ABILITY_MAGIC_GUARD))
+             && !IsAbilityAndRecord(battler, ABILITY_MAGIC_GUARD) && !IsAbilityAndRecord(battler, ABILITY_IMPENETRABLE))
             {
                 SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / 6);
                 ChooseDamageNonTypesString(gSideTimers[side].damageNonTypesType);
@@ -440,7 +440,7 @@ static bool32 HandleEndTurnLeechSeed(u32 battler)
     if (gBattleMons[battler].volatiles.leechSeed
      && IsBattlerAlive(gBattleMons[battler].volatiles.leechSeed - 1)
      && IsBattlerAlive(battler)
-     && !IsAbilityAndRecord(battler, ABILITY_MAGIC_GUARD))
+     && !IsAbilityAndRecord(battler, ABILITY_MAGIC_GUARD) && !IsAbilityAndRecord(battler, ABILITY_IMPENETRABLE))
     {
         gBattlerTarget = gBattleMons[battler].volatiles.leechSeed - 1; // leech seed receiver
         gBattleScripting.animArg1 = gBattlerTarget;
@@ -480,7 +480,7 @@ static bool32 HandleEndTurnPoison(u32 battler)
 
     if ((gBattleMons[battler].status1 & STATUS1_POISON || gBattleMons[battler].status1 & STATUS1_TOXIC_POISON)
      && IsBattlerAlive(battler)
-     && !IsAbilityAndRecord(battler, ABILITY_MAGIC_GUARD))
+     && !IsAbilityAndRecord(battler, ABILITY_MAGIC_GUARD) && !IsAbilityAndRecord(battler, ABILITY_IMPENETRABLE))
     {
         if (BattlerHasTrait(battler, ABILITY_POISON_HEAL))
         {
@@ -520,7 +520,7 @@ static bool32 HandleEndTurnBurn(u32 battler)
 
     if (gBattleMons[battler].status1 & STATUS1_BURN
      && IsBattlerAlive(battler)
-     && !IsAbilityAndRecord(battler, ABILITY_MAGIC_GUARD))
+     && !IsAbilityAndRecord(battler, ABILITY_MAGIC_GUARD) && !IsAbilityAndRecord(battler, ABILITY_IMPENETRABLE))
     {
         s32 burnDamage = GetNonDynamaxMaxHP(battler) / ((GetConfig(CONFIG_BURN_DAMAGE) >= GEN_7 || GetConfig(CONFIG_BURN_DAMAGE) == GEN_1) ? 16 : 8);
         if (BattlerHasTrait(battler, ABILITY_HEATPROOF))
@@ -546,7 +546,7 @@ static bool32 HandleEndTurnFrostbite(u32 battler)
 
     if (gBattleMons[battler].status1 & STATUS1_FROSTBITE
      && IsBattlerAlive(battler)
-     && !IsAbilityAndRecord(battler, ABILITY_MAGIC_GUARD))
+     && !IsAbilityAndRecord(battler, ABILITY_MAGIC_GUARD) && !IsAbilityAndRecord(battler, ABILITY_IMPENETRABLE))
     {
         SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / ((GetConfig(CONFIG_BURN_DAMAGE) >= GEN_7 || GetConfig(CONFIG_BURN_DAMAGE) == GEN_1) ? 16 : 8));
         BattleScriptExecute(BattleScript_FrostbiteTurnDmg);
@@ -564,7 +564,7 @@ static bool32 HandleEndTurnNightmare(u32 battler)
 
     if (gBattleMons[battler].volatiles.nightmare
      && IsBattlerAlive(battler)
-     && !IsAbilityAndRecord(battler, ABILITY_MAGIC_GUARD))
+     && !IsAbilityAndRecord(battler, ABILITY_MAGIC_GUARD) && !IsAbilityAndRecord(battler, ABILITY_IMPENETRABLE))
     {
         if (gBattleMons[battler].status1 & STATUS1_SLEEP || GetBattlerAbility(battler) == ABILITY_COMATOSE)
         {
@@ -589,7 +589,7 @@ static bool32 HandleEndTurnCurse(u32 battler)
 
     if (gBattleMons[battler].volatiles.cursed
      && IsBattlerAlive(battler)
-     && !IsAbilityAndRecord(battler, ABILITY_MAGIC_GUARD))
+     && !IsAbilityAndRecord(battler, ABILITY_MAGIC_GUARD) && !IsAbilityAndRecord(battler, ABILITY_IMPENETRABLE))
     {
         SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / 4);
         BattleScriptExecute(BattleScript_CurseTurnDmg);
@@ -610,7 +610,7 @@ static bool32 HandleEndTurnWrap(u32 battler)
         if (gDisableStructs[battler].wrapTurns != 0)
         {
             gDisableStructs[battler].wrapTurns--;
-            if (IsAbilityAndRecord(battler, ABILITY_MAGIC_GUARD))
+            if (IsAbilityAndRecord(battler, ABILITY_MAGIC_GUARD) || IsAbilityAndRecord(battler, ABILITY_IMPENETRABLE))
                 return effect;
 
             gBattleScripting.animArg1 = gBattleMons[battler].volatiles.wrappedMove;
@@ -644,7 +644,7 @@ static bool32 HandleEndTurnSaltCure(u32 battler)
 
     if (gBattleMons[battler].volatiles.saltCure
      && IsBattlerAlive(battler)
-     && !IsAbilityAndRecord(battler, ABILITY_MAGIC_GUARD))
+     && !IsAbilityAndRecord(battler, ABILITY_MAGIC_GUARD) && !IsAbilityAndRecord(battler, ABILITY_IMPENETRABLE))
     {
         s32 saltCureDamage = 0;
         if (IS_BATTLER_ANY_TYPE(battler, TYPE_STEEL, TYPE_WATER))

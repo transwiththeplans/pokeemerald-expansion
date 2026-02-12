@@ -746,6 +746,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 9,
     },
 
+    [ABILITY_IMPENETRABLE] =
+    {
+        .name = _("Impenetrable"),
+        .description = COMPOUND_STRING("Only damaged by attacks."),
+        .aiRating = 9,
+    },
+
     [ABILITY_NO_GUARD] =
     {
         .name = _("No Guard"),

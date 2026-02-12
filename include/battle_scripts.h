@@ -417,6 +417,7 @@ extern const u8 BattleScript_BattlerAbilityStatRaiseOnSwitchInEmbodyAspectCorner
 extern const u8 BattleScript_CottonDownActivates[];
 extern const u8 BattleScript_BallFetch[];
 extern const u8 BattleScript_SandSpitActivates[];
+extern const u8 BattleScript_TyphoonActivates[];
 extern const u8 BattleScript_PerishBodyActivates[];
 extern const u8 BattleScript_ActivateAsOne[];
 extern const u8 BattleScript_RaiseStatOnFaintingTargetMoxie[];

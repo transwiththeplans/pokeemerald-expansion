@@ -1895,6 +1895,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 5,
     },
 
+    [ABILITY_TYPHOON] =
+    {
+        .name = _("Thyphoon"),
+        .description = COMPOUND_STRING("Creates rain if hit."),
+        .aiRating = 5,
+    },
+
     [ABILITY_ICE_SCALES] =
     {
         .name = _("Ice Scales"),

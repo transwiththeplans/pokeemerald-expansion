@@ -5590,6 +5590,25 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
                 effect++;
             }
         }
+        if (SearchTraits(battlerTraits, ABILITY_TYPHOON)
+         && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+         && IsBattlerTurnDamaged(gBattlerTarget)
+         && !(gBattleWeather & B_WEATHER_RAIN && HasWeatherEffect()))
+        {
+            if (gBattleWeather & B_WEATHER_PRIMAL_ANY && HasWeatherEffect())
+            {
+                PushTraitStack(battler, ABILITY_TYPHOON);
+                BattleScriptCall(BattleScript_BlockedByPrimalWeatherRet);
+                effect++;
+            }
+            else if (TryChangeBattleWeather(battler, BATTLE_WEATHER_RAIN, TRUE))
+            {
+                PushTraitStack(battler, ABILITY_TYPHOON);
+                gBattleScripting.battler = battler;
+                BattleScriptCall(BattleScript_TyphoonActivates);
+                effect++;
+            }
+        }
         if (SearchTraits(battlerTraits, ABILITY_SNOW_SPEW)
          && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
          && IsBattlerTurnDamaged(gBattlerTarget)

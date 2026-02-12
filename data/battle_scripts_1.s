@@ -6750,11 +6750,11 @@ BattleScript_TyphoonActivates::
 BattleScript_SnowSpewActivates::
 	pause B_WAIT_TIME_SHORT
 	call BattleScript_AbilityPopUp
-	printstring STRINGID_SNOWWARNINGHAIL
+	printstring STRINGID_SNOWWARNINGSNOW
 	waitstate
-	playanimation BS_BATTLER_0, B_ANIM_HAIL_CONTINUES
+	playanimation BS_BATTLER_0, B_ANIM_SNOW_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
-	end3
+	return
 
 BattleScript_ShedSkinActivates::
 	call BattleScript_AbilityPopUp

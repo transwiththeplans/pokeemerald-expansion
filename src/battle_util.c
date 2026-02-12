@@ -3753,6 +3753,15 @@ bool32 CanAbilityAbsorbMove(u32 battlerAtk, u32 battlerDef, u32 move, enum Type 
         effect = MOVE_ABSORBED_BY_STAT_INCREASE_ABILITY;
         statId = STAT_DEF;
     }
+    if ((gAiLogicData->aiCalcInProgress ? AISearchTraits(AIBattlerTraits, ABILITY_AERODYNAMICS) : SearchTraits(battlerTraits, ABILITY_AERODYNAMICS) || abilityDef == ABILITY_AERODYNAMICS)
+     && GetConfig(CONFIG_REDIRECT_ABILITY_IMMUNITY) >= GEN_5 && moveType == TYPE_FLYING && GetBattlerMoveTargetType(battlerAtk, move) != MOVE_TARGET_ALL_BATTLERS)
+    {
+        abilityDef = ABILITY_AERODYNAMICS;
+        PushTraitStack(battlerDef, ABILITY_AERODYNAMICS);
+        effect = MOVE_ABSORBED_BY_STAT_INCREASE_ABILITY;
+        statId = STAT_SPEED;
+    }
+
     if ((gAiLogicData->aiCalcInProgress ? AISearchTraits(AIBattlerTraits, ABILITY_STORM_DRAIN) : SearchTraits(battlerTraits, ABILITY_STORM_DRAIN) || abilityDef == ABILITY_STORM_DRAIN)
      && GetConfig(CONFIG_REDIRECT_ABILITY_IMMUNITY) >= GEN_5 && moveType == TYPE_WATER)
     {

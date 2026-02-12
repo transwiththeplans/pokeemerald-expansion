@@ -5783,13 +5783,29 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
         else if (SearchTraits(battlerTraits, ABILITY_SEED_DISPERSAL)
          && IsBattlerAlive(gBattlerTarget)
          && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
-         && !CanBattlerAvoidContactEffects(gBattlerAttacker, gBattlerTarget, GetBattlerHoldEffect(gBattlerAttacker), move)
+         && !CanBattlerAvoidContactEffects(gBattlerAttacker, gBattlerTarget, GetBattlerHoldEffect(gBattlerAttacker), move) //Contact moves
          && RandomChance(RNG_SEED_DISPERSAL, 2, 10) //20%
          && !IS_BATTLER_OF_TYPE(battler, TYPE_GRASS)
          && IsBattlerTurnDamaged(gBattlerTarget)
          && !MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_LEECH_SEED))
         {
             SetMoveEffect(gBattlerAttacker, gBattlerTarget, MOVE_EFFECT_LEECH_SEED, gBattlescriptCurrInstr, EFFECT_PRIMARY);
+            effect++;
+        }
+        else if (SearchTraits(battlerTraits, ABILITY_HEAT_LIGHTNING)
+         && IsBattlerAlive(gBattlerTarget)
+         && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+         && CanBeBurned(gBattlerAttacker, gBattlerTarget)
+         && IsBattlerTurnDamaged(gBattlerTarget) // Need to actually hit the target
+         && moveType == TYPE_ELECTRIC
+         && RandomPercentage(RNG_HEAT_LIGHTING, 20)) //20%
+        {
+            gEffectBattler = gBattlerTarget;
+            gBattleScripting.battler = gBattlerAttacker;
+            gBattleScripting.moveEffect = MOVE_EFFECT_BURN;
+            gLastUsedAbility = ABILITY_HEAT_LIGHTNING;
+            PushTraitStack(gBattlerAttacker, ABILITY_HEAT_LIGHTNING);
+            BattleScriptCall(BattleScript_AbilityStatusEffectAtk);
             effect++;
         }
     break;

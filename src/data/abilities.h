@@ -1409,6 +1409,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Sets Leech Seed on hit."),
         .aiRating = 10,
     },
+    
+    [ABILITY_HEAT_LIGHTNING] =
+    {
+        .name = _("Heat Lightning"),
+        .description = COMPOUND_STRING("Electric moves can burn."),
+        .aiRating = 10,
+    },
 
     [ABILITY_DARK_AURA] =
     {

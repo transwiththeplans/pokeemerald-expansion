@@ -17161,274 +17161,151 @@
     "EggMoves": [],
     "TutorMoves": []
   },
-  "HOUNDOUR": {
-    "LevelMoves": [
-      {
-        "Level": 1,
-        "Move": "MOVE_LEER"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_EMBER"
-      },
-      {
-        "Level": 4,
-        "Move": "MOVE_HOWL"
-      },
-      {
-        "Level": 8,
-        "Move": "MOVE_SMOG"
-      },
-      {
-        "Level": 13,
-        "Move": "MOVE_ROAR"
-      },
-      {
-        "Level": 16,
-        "Move": "MOVE_BITE"
-      },
-      {
-        "Level": 20,
-        "Move": "MOVE_INCINERATE"
-      },
-      {
-        "Level": 25,
-        "Move": "MOVE_BEAT_UP"
-      },
-      {
-        "Level": 28,
-        "Move": "MOVE_FIRE_FANG"
-      },
-      {
-        "Level": 32,
-        "Move": "MOVE_TORMENT"
-      },
-      {
-        "Level": 37,
-        "Move": "MOVE_COMEUPPANCE"
-      },
-      {
-        "Level": 40,
-        "Move": "MOVE_FOUL_PLAY"
-      },
-      {
-        "Level": 44,
-        "Move": "MOVE_FLAMETHROWER"
-      },
-      {
-        "Level": 49,
-        "Move": "MOVE_CRUNCH"
-      },
-      {
-        "Level": 52,
-        "Move": "MOVE_NASTY_PLOT"
-      },
-      {
-        "Level": 56,
-        "Move": "MOVE_INFERNO"
-      }
-    ],
-    "PreEvoMoves": [],
-    "TMMoves": [
-      "MOVE_TAKE_DOWN",
-      "MOVE_MUD_SLAP",
-      "MOVE_SCARY_FACE",
-      "MOVE_PROTECT",
-      "MOVE_FIRE_FANG",
-      "MOVE_THUNDER_FANG",
-      "MOVE_THIEF",
-      "MOVE_TRAILBLAZE",
-      "MOVE_FIRE_SPIN",
-      "MOVE_FACADE",
-      "MOVE_SNARL",
-      "MOVE_MUD_SHOT",
-      "MOVE_FLAME_CHARGE",
-      "MOVE_ENDURE",
-      "MOVE_SUNNY_DAY",
-      "MOVE_RAIN_DANCE",
-      "MOVE_FOUL_PLAY",
-      "MOVE_PSYCHIC_FANGS",
-      "MOVE_BODY_SLAM",
-      "MOVE_SLEEP_TALK",
-      "MOVE_REST",
-      "MOVE_TAUNT",
-      "MOVE_DARK_PULSE",
-      "MOVE_SUBSTITUTE",
-      "MOVE_WILL_O_WISP",
-      "MOVE_CRUNCH",
-      "MOVE_SHADOW_BALL",
-      "MOVE_HYPER_VOICE",
-      "MOVE_HEAT_WAVE",
-      "MOVE_FLAMETHROWER",
-      "MOVE_HELPING_HAND",
-      "MOVE_REVERSAL",
-      "MOVE_NASTY_PLOT",
-      "MOVE_FIRE_BLAST",
-      "MOVE_SLUDGE_BOMB",
-      "MOVE_OVERHEAT",
-      "MOVE_FLARE_BLITZ",
-      "MOVE_SOLAR_BEAM",
-      "MOVE_TERA_BLAST",
-      "MOVE_ROAR",
-      "MOVE_TOXIC",
-      "MOVE_SPITE",
-      "MOVE_SUPER_FANG",
-      "MOVE_BURNING_JEALOUSY",
-      "MOVE_LASH_OUT",
-      "MOVE_PAIN_SPLIT",
-      "MOVE_DOUBLE_EDGE",
-      "MOVE_TEMPER_FLARE"
-    ],
-    "EggMoves": [
-      "MOVE_COUNTER",
-      "MOVE_DESTINY_BOND",
-      "MOVE_FEINT",
-      "MOVE_FIRE_SPIN",
-      "MOVE_REVERSAL",
-      "MOVE_SPITE",
-      "MOVE_SUCKER_PUNCH",
-      "MOVE_THUNDER_FANG"
-    ],
-    "TutorMoves": []
-  },
-  "HOUNDOOM": {
-    "LevelMoves": [
-      {
-        "Level": 1,
-        "Move": "MOVE_LEER"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_EMBER"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_SMOG"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_THUNDER_FANG"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_HOWL"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_NASTY_PLOT"
-      },
-      {
-        "Level": 13,
-        "Move": "MOVE_ROAR"
-      },
-      {
-        "Level": 16,
-        "Move": "MOVE_BITE"
-      },
-      {
-        "Level": 20,
-        "Move": "MOVE_INCINERATE"
-      },
-      {
-        "Level": 26,
-        "Move": "MOVE_BEAT_UP"
-      },
-      {
-        "Level": 30,
-        "Move": "MOVE_FIRE_FANG"
-      },
-      {
-        "Level": 35,
-        "Move": "MOVE_TORMENT"
-      },
-      {
-        "Level": 41,
-        "Move": "MOVE_COMEUPPANCE"
-      },
-      {
-        "Level": 45,
-        "Move": "MOVE_FOUL_PLAY"
-      },
-      {
-        "Level": 50,
-        "Move": "MOVE_FLAMETHROWER"
-      },
-      {
-        "Level": 56,
-        "Move": "MOVE_CRUNCH"
-      },
-      {
-        "Level": 62,
-        "Move": "MOVE_INFERNO"
-      }
-    ],
-    "PreEvoMoves": [],
-    "TMMoves": [
-      "MOVE_TAKE_DOWN",
-      "MOVE_MUD_SLAP",
-      "MOVE_SCARY_FACE",
-      "MOVE_PROTECT",
-      "MOVE_FIRE_FANG",
-      "MOVE_THUNDER_FANG",
-      "MOVE_THIEF",
-      "MOVE_TRAILBLAZE",
-      "MOVE_FIRE_SPIN",
-      "MOVE_FACADE",
-      "MOVE_SNARL",
-      "MOVE_MUD_SHOT",
-      "MOVE_FLAME_CHARGE",
-      "MOVE_ENDURE",
-      "MOVE_SUNNY_DAY",
-      "MOVE_RAIN_DANCE",
-      "MOVE_FOUL_PLAY",
-      "MOVE_PSYCHIC_FANGS",
-      "MOVE_BODY_SLAM",
-      "MOVE_SLEEP_TALK",
-      "MOVE_REST",
-      "MOVE_TAUNT",
-      "MOVE_DARK_PULSE",
-      "MOVE_SUBSTITUTE",
-      "MOVE_WILL_O_WISP",
-      "MOVE_CRUNCH",
-      "MOVE_SHADOW_BALL",
-      "MOVE_HYPER_VOICE",
-      "MOVE_HEAT_WAVE",
-      "MOVE_FLAMETHROWER",
-      "MOVE_HELPING_HAND",
-      "MOVE_REVERSAL",
-      "MOVE_NASTY_PLOT",
-      "MOVE_FIRE_BLAST",
-      "MOVE_SLUDGE_BOMB",
-      "MOVE_GIGA_IMPACT",
-      "MOVE_OVERHEAT",
-      "MOVE_HYPER_BEAM",
-      "MOVE_FLARE_BLITZ",
-      "MOVE_SOLAR_BEAM",
-      "MOVE_TERA_BLAST",
-      "MOVE_ROAR",
-      "MOVE_TOXIC",
-      "MOVE_SPITE",
-      "MOVE_SUPER_FANG",
-      "MOVE_BURNING_JEALOUSY",
-      "MOVE_LASH_OUT",
-      "MOVE_PAIN_SPLIT",
-      "MOVE_DOUBLE_EDGE",
-      "MOVE_ENDEAVOR",
-      "MOVE_TEMPER_FLARE",
-      "MOVE_THROAT_CHOP"
-    ],
-    "EggMoves": [
-      "MOVE_COUNTER",
-      "MOVE_DESTINY_BOND",
-      "MOVE_FEINT",
-      "MOVE_FIRE_SPIN",
-      "MOVE_REVERSAL",
-      "MOVE_SPITE",
-      "MOVE_SUCKER_PUNCH",
-      "MOVE_THUNDER_FANG"
-    ],
-    "TutorMoves": []
-  },
+"HOUNDOUR": {
+  "LevelMoves": [
+    { "Level": 1,  "Move": "MOVE_LEER" },
+    { "Level": 1,  "Move": "MOVE_EMBER" },
+    { "Level": 4,  "Move": "MOVE_HOWL" },
+    { "Level": 8,  "Move": "MOVE_SMOG" },
+    { "Level": 13, "Move": "MOVE_ROAR" },
+    { "Level": 16, "Move": "MOVE_BITE" },
+    { "Level": 20, "Move": "MOVE_INCINERATE" },
+    { "Level": 25, "Move": "MOVE_BEAT_UP" },
+    { "Level": 28, "Move": "MOVE_FIRE_FANG" },
+    { "Level": 32, "Move": "MOVE_TORMENT" },
+    { "Level": 37, "Move": "MOVE_SUCKER_PUNCH" },
+    { "Level": 40, "Move": "MOVE_SIZZLY_SLIDE" },
+    { "Level": 44, "Move": "MOVE_FLAMETHROWER" },
+    { "Level": 49, "Move": "MOVE_FIRE_LASH" },
+    { "Level": 52, "Move": "MOVE_NASTY_PLOT" },
+    { "Level": 56, "Move": "MOVE_BURN_UP" }
+  ],
+  "PreEvoMoves": [],
+  "TMMoves": [
+    "MOVE_ROAR",
+    "MOVE_TOXIC",
+    "MOVE_SUNNY_DAY",
+    "MOVE_TAUNT",
+    "MOVE_PROTECT",
+    "MOVE_RETURN",
+    "MOVE_DIG",
+    "MOVE_DOUBLE_TEAM",
+    "MOVE_FACADE",
+    "MOVE_SECRET_POWER",
+    "MOVE_REST",
+    "MOVE_THIEF",
+	"MOVE_MUD_SHOT",
+    "MOVE_SNARL",
+    "MOVE_WILL_O_WISP",
+    "MOVE_TRAILBLAZE",
+    "MOVE_HEX",
+    "MOVE_SUBSTITUTE",
+    "MOVE_DARK_PULSE",
+    "MOVE_SHADOW_BALL",
+    "MOVE_SHADOW_CLAW",
+    "MOVE_CRUNCH",
+    "MOVE_KNOCK_OFF",
+    "MOVE_FLAMETHROWER",
+    "MOVE_PLAY_ROUGH",
+    "MOVE_FIRE_BLAST",
+    "MOVE_OVERHEAT",
+    "MOVE_FIRE_FANG",
+    "MOVE_THUNDER_FANG",
+    "MOVE_POISON_FANG",
+    "MOVE_SLUDGE_BOMB"
+  ],
+  "EggMoves": [],
+  "TutorMoves": []
+},
+
+"HOUNDOOM": {
+  "LevelMoves": [
+    { "Level": 0,  "Move": "MOVE_CRUNCH" },
+    { "Level": 1,  "Move": "MOVE_CRUNCH" },
+    { "Level": 1,  "Move": "MOVE_LEER" },
+    { "Level": 1,  "Move": "MOVE_EMBER" },
+    { "Level": 1,  "Move": "MOVE_SMOG" },
+    { "Level": 1,  "Move": "MOVE_FANGS_OF_STEEL" },
+    { "Level": 1,  "Move": "MOVE_STALAG_BITE" },
+    { "Level": 1,  "Move": "MOVE_TITAN_FANG" },
+    { "Level": 1,  "Move": "MOVE_POISON_FANG" },
+    { "Level": 1,  "Move": "MOVE_THUNDER_FANG" },
+    { "Level": 1,  "Move": "MOVE_HOWL" },
+    { "Level": 1,  "Move": "MOVE_NASTY_PLOT" },
+    { "Level": 13, "Move": "MOVE_ROAR" },
+    { "Level": 16, "Move": "MOVE_BITE" },
+    { "Level": 20, "Move": "MOVE_INCINERATE" },
+    { "Level": 26, "Move": "MOVE_BEAT_UP" },
+    { "Level": 30, "Move": "MOVE_FIRE_FANG" },
+    { "Level": 35, "Move": "MOVE_TORMENT" },
+    { "Level": 41, "Move": "MOVE_SUCKER_PUNCH" },
+    { "Level": 45, "Move": "MOVE_SIZZLY_SLIDE" },
+    { "Level": 50, "Move": "MOVE_FLAMETHROWER" },
+    { "Level": 56, "Move": "MOVE_FIRE_LASH" },
+    { "Level": 62, "Move": "MOVE_BURN_UP" }
+  ],
+  "PreEvoMoves": [
+    "MOVE_HOWL",
+    "MOVE_SMOG",
+    "MOVE_ROAR",
+    "MOVE_BITE",
+    "MOVE_INCINERATE",
+    "MOVE_BEAT_UP",
+    "MOVE_FIRE_FANG",
+    "MOVE_TORMENT",
+    "MOVE_SUCKER_PUNCH",
+    "MOVE_SIZZLY_SLIDE",
+    "MOVE_FLAMETHROWER",
+    "MOVE_FIRE_LASH",
+    "MOVE_NASTY_PLOT",
+    "MOVE_BURN_UP"
+  ],
+  "TMMoves": [
+    "MOVE_POWER_UP_PUNCH",
+    "MOVE_BULK_UP",
+    "MOVE_ROAR",
+    "MOVE_TOXIC",
+    "MOVE_SUNNY_DAY",
+    "MOVE_TAUNT",
+    "MOVE_PROTECT",
+    "MOVE_RETURN",
+    "MOVE_DIG",
+    "MOVE_EARTHQUAKE",
+    "MOVE_BRICK_BREAK",
+    "MOVE_BODY_PRESS",
+    "MOVE_DRAIN_PUNCH",
+    "MOVE_TRAILBLAZE",
+    "MOVE_DOUBLE_TEAM",
+    "MOVE_FACADE",
+    "MOVE_SECRET_POWER",
+    "MOVE_REST",
+    "MOVE_THIEF",
+    "MOVE_MUD_SHOT",
+    "MOVE_SNARL",
+    "MOVE_WILL_O_WISP",
+    "MOVE_HEX",
+    "MOVE_SUBSTITUTE",
+    "MOVE_DARK_PULSE",
+    "MOVE_PLAY_ROUGH",
+    "MOVE_SHADOW_BALL",
+    "MOVE_SHADOW_CLAW",
+    "MOVE_CRUNCH",
+    "MOVE_KNOCK_OFF",
+    "MOVE_PSYCHIC_FANGS",
+    "MOVE_FLAMETHROWER",
+    "MOVE_FIRE_BLAST",
+    "MOVE_OVERHEAT",
+    "MOVE_FIRE_FANG",
+    "MOVE_THUNDER_FANG",
+    "MOVE_POISON_FANG",
+    "MOVE_SLUDGE_BOMB",
+    "MOVE_IRON_DEFENSE",
+    "MOVE_IRON_HEAD",
+    "MOVE_DRAGON_CLAW"
+  ],
+  "EggMoves": [],
+  "TutorMoves": []
+},
   "KINGDRA": {
     "LevelMoves": [
       {

@@ -428,7 +428,8 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_CUTE_CHARM] =
     {
         .name = _("Cute Charm"),
-        .description = COMPOUND_STRING("Infatuates on contact, reduces damage."),
+        .description = COMPOUND_STRING("Infatuates on contact,\n"
+		"reduces damage."),
         .aiRating = 2,
     },
 

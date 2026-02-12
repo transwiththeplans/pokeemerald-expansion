@@ -34,6 +34,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Picnicker;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man3;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman5;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Youngster;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Youngster2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BugCatcher;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PsychicM;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SchoolKidM;
@@ -287,6 +288,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_MAN_3] =                    &gObjectEventGraphicsInfo_Man3,
     [OBJ_EVENT_GFX_WOMAN_5] =                  &gObjectEventGraphicsInfo_Woman5,
     [OBJ_EVENT_GFX_YOUNGSTER] =                &gObjectEventGraphicsInfo_Youngster,
+    [OBJ_EVENT_GFX_YOUNGSTER_2] =              &gObjectEventGraphicsInfo_Youngster2,
     [OBJ_EVENT_GFX_BUG_CATCHER] =              &gObjectEventGraphicsInfo_BugCatcher,
     [OBJ_EVENT_GFX_PSYCHIC_M] =                &gObjectEventGraphicsInfo_PsychicM,
     [OBJ_EVENT_GFX_SCHOOL_KID_M] =             &gObjectEventGraphicsInfo_SchoolKidM,

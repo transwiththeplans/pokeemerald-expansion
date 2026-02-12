@@ -5808,6 +5808,22 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
             BattleScriptCall(BattleScript_AbilityStatusEffectAtk);
             effect++;
         }
+        else if (SearchTraits(battlerTraits, ABILITY_COLD_CURRENT)
+         && IsBattlerAlive(gBattlerTarget)
+         && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+         && CanBeFrozen(gBattlerAttacker, gBattlerTarget)
+         && IsBattlerTurnDamaged(gBattlerTarget) // Need to actually hit the target
+         && moveType == TYPE_ELECTRIC
+         && RandomPercentage(RNG_HEAT_LIGHTING, 20)) //20%
+        {
+            gEffectBattler = gBattlerTarget;
+            gBattleScripting.battler = gBattlerAttacker;
+            gBattleScripting.moveEffect = MOVE_EFFECT_FROSTBITE;
+            gLastUsedAbility = ABILITY_COLD_CURRENT;
+            PushTraitStack(gBattlerAttacker, ABILITY_COLD_CURRENT);
+            BattleScriptCall(BattleScript_AbilityStatusEffectAtk);
+            effect++;
+        }
     break;
     case ABILITYEFFECT_MOVE_END_OTHER: // Abilities that activate on *another* battler's moveend: Dancer, Soul-Heart, Receiver, Symbiosis
         if (SearchTraits(battlerTraits, ABILITY_DANCER)

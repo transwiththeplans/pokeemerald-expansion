@@ -1416,6 +1416,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Electric moves can burn."),
         .aiRating = 10,
     },
+    
+    [ABILITY_COLD_CURRENT] =
+    {
+        .name = _("Cold Current"),
+        .description = COMPOUND_STRING("Electric moves can frostbite."),
+        .aiRating = 10,
+    },
 
     [ABILITY_DARK_AURA] =
     {

@@ -9209,6 +9209,13 @@ static inline void MulByTypeEffectiveness(struct DamageContext *ctx, uq4_12_t *m
         else if (SearchTraits(battlerTraits, ABILITY_MINDS_EYE))
             RecordAbilityBattle(ctx->battlerAtk, ABILITY_MINDS_EYE);
     }
+    else if (ctx->moveType == TYPE_PSYCHIC && defType == TYPE_DARK
+        && SearchTraits(battlerTraits, ABILITY_GENIUS)
+        && mod == UQ_4_12(0.0) && !ctx->isAnticipation) // Anticipation ignores Scrappy and Minds Eye
+    {
+        mod = UQ_4_12(1.0);
+        RecordAbilityBattle(ctx->battlerAtk, ABILITY_GENIUS);
+    }
 
     if (ctx->moveType == TYPE_PSYCHIC && defType == TYPE_DARK && gBattleMons[ctx->battlerDef].volatiles.miracleEye && mod == UQ_4_12(0.0))
         mod = UQ_4_12(1.0);

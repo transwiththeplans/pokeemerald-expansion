@@ -847,6 +847,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 6,
     },
 
+    [ABILITY_GENIUS] =
+    {
+        .name = _("Genius"),
+        .description = COMPOUND_STRING("Psychic hits Dark-type Pokémon."),
+        .aiRating = 6,
+    },
+
     [ABILITY_STORM_DRAIN] =
     {
         .name = _("Storm Drain"),

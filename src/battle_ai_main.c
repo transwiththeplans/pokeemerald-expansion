@@ -4392,7 +4392,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         if (!IS_BATTLER_OF_TYPE(battlerAtk, GetMoveType(gBattleMons[battlerAtk].moves[0])))
         {
             ADJUST_SCORE(WEAK_EFFECT);
-            if (AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_ADAPTABILITY))
+            if (AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_ADAPTABILITY) || AI_BATTLER_HAS_TRAIT(battlerAtk, ABILITY_FUSION_POWER))
                 ADJUST_SCORE(WEAK_EFFECT);
             if (IsConsideringZMove(battlerAtk, battlerDef, move))
                 ADJUST_SCORE(BEST_EFFECT);

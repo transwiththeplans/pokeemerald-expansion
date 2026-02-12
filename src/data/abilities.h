@@ -690,6 +690,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 8,
     },
 
+    [ABILITY_FUSION_POWER] =
+    {
+        .name = _("Fusion Power"),
+        .description = COMPOUND_STRING("Boosts same type attacks."),
+        .aiRating = 8,
+    },
+
     [ABILITY_SKILL_LINK] =
     {
         .name = _("Skill Link"),

@@ -8604,10 +8604,10 @@ static inline uq4_12_t GetSameTypeAttackBonusModifier(struct DamageContext *ctx)
     if (ctx->moveType == TYPE_MYSTERY)
         return UQ_4_12(1.0);
     else if (gBattleStruct->pledgeMove && IS_BATTLER_OF_TYPE(BATTLE_PARTNER(ctx->battlerAtk), ctx->moveType))
-        return (BattlerHasTrait(ctx->battlerAtk, ABILITY_ADAPTABILITY)) ? UQ_4_12(2.0) : UQ_4_12(1.5);
+        return (BattlerHasTrait(ctx->battlerAtk, ABILITY_ADAPTABILITY) || BattlerHasTrait(ctx->battlerAtk, ABILITY_FUSION_POWER)) ? UQ_4_12(2.0) : UQ_4_12(1.5);
     else if (!IS_BATTLER_OF_TYPE(ctx->battlerAtk, ctx->moveType) || ctx->move == MOVE_STRUGGLE || ctx->move == MOVE_NONE)
         return UQ_4_12(1.0);
-    return (BattlerHasTrait(ctx->battlerAtk, ABILITY_ADAPTABILITY)) ? UQ_4_12(2.0) : UQ_4_12(1.5);
+    return (BattlerHasTrait(ctx->battlerAtk, ABILITY_ADAPTABILITY) || BattlerHasTrait(ctx->battlerAtk, ABILITY_FUSION_POWER)) ? UQ_4_12(2.0) : UQ_4_12(1.5);
 }
 
 // Utility Umbrella holders take normal damage from what would be rain- and sun-weakened attacks.

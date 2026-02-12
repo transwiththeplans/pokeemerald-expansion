@@ -135,7 +135,7 @@ bool32 IsTypeStellarBoosted(u32 battler, enum Type type)
 uq4_12_t GetTeraMultiplier(struct DamageContext *ctx)
 {
     enum Type teraType = GetBattlerTeraType(ctx->battlerAtk);
-    bool32 hasAdaptability = (BattlerHasTrait(ctx->battlerAtk, ABILITY_ADAPTABILITY));
+    bool32 hasAdaptability = (BattlerHasTrait(ctx->battlerAtk, ABILITY_ADAPTABILITY) || BattlerHasTrait(ctx->battlerAtk, ABILITY_FUSION_POWER));
 
     // Safety check.
     if (GetActiveGimmick(ctx->battlerAtk) != GIMMICK_TERA)

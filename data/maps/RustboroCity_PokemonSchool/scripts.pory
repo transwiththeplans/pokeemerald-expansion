@@ -355,7 +355,7 @@ RustboroCity_PokemonSchool_Text_ScottMetAlreadyStoneBadge:
 script RustboroCity_EventScript_GymGuide{
 	lock
 	faceplayer
-	msgbox(format("The Gym Leader is currently teaching at the {PKMN} School, maybe you should go and learn a little for your gym battle!"), MSGBOX_DEFAULT)
+	msgbox(format("The Gym Leader is currently teaching at the {PKMN} School next door, maybe you should go and learn a little for your Gym battle!"), MSGBOX_DEFAULT)
 	release
 	end
 }

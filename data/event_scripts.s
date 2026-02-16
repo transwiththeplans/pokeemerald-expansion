@@ -1169,10 +1169,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
 
-	.include "data/maps/Parents_Room/scripts.inc"
-
-	.include "data/maps/MaysParentsRoom/scripts.inc"
-
-	.include "data/maps/NPC_House_One/scripts.inc"
-
+	.include "data/maps/LittlerootTown_BrendansHouse_ParentsRoom/scripts.inc"
+	.include "data/maps/LittlerootTown_MaysHouse_ParentsRoom/scripts.inc"
+	.include "data/maps/LittlerootTown_House1/scripts.inc"
 	.include "data/maps/LittlerootTown_Market/scripts.inc"

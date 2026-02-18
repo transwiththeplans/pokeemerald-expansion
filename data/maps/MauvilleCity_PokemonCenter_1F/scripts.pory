@@ -54,3 +54,14 @@ MauvilleCity_PokemonCenter_1F_Text_RecordCornerSoundsFun:
 	.string "sounds fun. I'll go check it out!$"
 
 `
+
+script MauvilleCity_PokemonCenter_1F_EventScript_ClerkAdoption {
+	lock
+	faceplayer
+	message(gText_HowMayIServeYou)
+	waitmessage
+	adoptionmenu
+	msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+	release
+	end
+}

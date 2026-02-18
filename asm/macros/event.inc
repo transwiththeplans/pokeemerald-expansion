@@ -2710,3 +2710,9 @@
 	callnative ScrCmd_istmrelearneractive, requests_effects=1
 	.4byte \destination
 	.endm
+
+	@ Opens the adoption system.
+	.macro adoptionmenu
+	callnative ScrCmd_adoptionmenu, requests_effects=1
+	waitstate
+	.endm

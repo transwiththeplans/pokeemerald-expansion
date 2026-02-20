@@ -5891,7 +5891,9 @@ enum Type TrySetAteType(u32 move, u32 battlerAtk, enum Ability attackerAbility)
     else if (BattlerHasTrait(battlerAtk, ABILITY_METAL_MORPH))
         ateType = TYPE_STEEL;
     else if (BattlerHasTrait(battlerAtk, ABILITY_IMMOLATE))
-        ateType = TYPE_FIRE;
+        ateType = TYPE_FIRE;    
+	else if (BattlerHasTrait(battlerAtk, ABILITY_SPECTRALIZE))
+        ateType = TYPE_GHOST;
 
     return ateType;
 }

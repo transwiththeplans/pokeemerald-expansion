@@ -2746,4 +2746,11 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 5,
         .breakable = TRUE,
     },
+	
+	[ABILITY_SPECTRALIZE] =
+    {
+        .name = _("Spectralize"),
+        .description = COMPOUND_STRING("Normal moves become Ghost."),
+        .aiRating = 7,
+    },
 };

@@ -22755,6 +22755,30 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_AcidArmor,
     },
+	
+	[MOVE_SPIRIT_HAMMER] =
+    {
+        .name = COMPOUND_STRING("Spirit Hammer"),
+        .description = COMPOUND_STRING(
+            "A s-risking tackle that\n"
+            "also hurts the user."),
+        .effect = EFFECT_RECOIL,
+        .power = B_UPDATED_MOVE_DATA >= GEN_2 ? 120 : 100,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .argument = { .recoilPercentage = B_UPDATED_MOVE_DATA >= GEN_3 ? 33 : 25 },
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_USER_MORE_EASILY_STARTLED,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_FOCUS_ENERGY, COMBO_STARTER_HARDEN},
+        .battleAnimScript = gBattleAnimMove_DoubleEdge,
+        .validApprenticeMove = TRUE,
+    },
 
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =

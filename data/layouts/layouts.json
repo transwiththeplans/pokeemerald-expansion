@@ -957,7 +957,7 @@
       "width": 12,
       "height": 9,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/RustboroCity_House/border.bin",
       "blockdata_filepath": "data/layouts/RustboroCity_House/map.bin"
     },
@@ -967,7 +967,7 @@
       "width": 13,
       "height": 8,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/RustboroCity_House1/border.bin",
       "blockdata_filepath": "data/layouts/RustboroCity_House1/map.bin"
     },
@@ -977,7 +977,7 @@
       "width": 11,
       "height": 9,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/RustboroCity_CuttersHouse/border.bin",
       "blockdata_filepath": "data/layouts/RustboroCity_CuttersHouse/map.bin"
     },
@@ -2937,7 +2937,7 @@
       "width": 14,
       "height": 9,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/RustboroCity_Flat2_1F/border.bin",
       "blockdata_filepath": "data/layouts/RustboroCity_Flat2_1F/map.bin"
     },
@@ -2947,7 +2947,7 @@
       "width": 14,
       "height": 9,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/RustboroCity_Flat2_2F/border.bin",
       "blockdata_filepath": "data/layouts/RustboroCity_Flat2_2F/map.bin"
     },
@@ -2957,7 +2957,7 @@
       "width": 14,
       "height": 9,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/RustboroCity_Flat2_3F/border.bin",
       "blockdata_filepath": "data/layouts/RustboroCity_Flat2_3F/map.bin"
     },
@@ -3127,7 +3127,7 @@
       "width": 14,
       "height": 8,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/RustboroCity_Flat1_1F/border.bin",
       "blockdata_filepath": "data/layouts/RustboroCity_Flat1_1F/map.bin"
     },
@@ -3137,7 +3137,7 @@
       "width": 14,
       "height": 8,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/RustboroCity_Flat1_2F/border.bin",
       "blockdata_filepath": "data/layouts/RustboroCity_Flat1_2F/map.bin"
     },
@@ -4462,34 +4462,34 @@
       "blockdata_filepath": "data/layouts/TandemausMeadows/map.bin"
     },
     {
-      "id": "LAYOUT_PARENTS_ROOM",
-      "name": "Parents_Room_Layout",
+      "id": "LAYOUT_LITTLEROOT_TOWN_BREDANS_HOUSE_PARENTS_ROOM",
+      "name": "LittlerootTown_BrendansHouse_ParentsRoom_Layout",
       "width": 20,
       "height": 15,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
-      "border_filepath": "data/layouts/Parents_Room/border.bin",
-      "blockdata_filepath": "data/layouts/Parents_Room/map.bin"
+      "border_filepath": "data/layouts/LittlerootTown_BrendansHouse_ParentsRoom/border.bin",
+      "blockdata_filepath": "data/layouts/LittlerootTown_BrendansHouse_ParentsRoom/map.bin"
     },
     {
-      "id": "LAYOUT_MAYS_PARENTS_ROOM",
-      "name": "MaysParentsRoom_Layout",
+      "id": "LAYOUT_LITTLEROOT_TOWN_MAYS_HOUSE_PARENTS_ROOM",
+      "name": "LittlerootTown_MaysHouse_ParentsRoom_Layout",
       "width": 20,
       "height": 13,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
-      "border_filepath": "data/layouts/MaysParentsRoom/border.bin",
-      "blockdata_filepath": "data/layouts/MaysParentsRoom/map.bin"
+      "border_filepath": "data/layouts/LittlerootTown_MaysHouse_ParentsRoom/border.bin",
+      "blockdata_filepath": "data/layouts/LittlerootTown_MaysHouse_ParentsRoom/map.bin"
     },
     {
-      "id": "LAYOUT_NPC_HOUSE_ONE",
-      "name": "NPC_House_One_Layout",
+      "id": "LAYOUT_LITTLEROOT_TOWN_HOUSE1",
+      "name": "LittlerootTown_House1_Layout",
       "width": 15,
       "height": 12,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
-      "border_filepath": "data/layouts/NPC_House_One/border.bin",
-      "blockdata_filepath": "data/layouts/NPC_House_One/map.bin"
+      "border_filepath": "data/layouts/LittlerootTown_House1/border.bin",
+      "blockdata_filepath": "data/layouts/LittlerootTown_House1/map.bin"
     },
     {
       "id": "LAYOUT_LITTLEROOT_TOWN_MARKET",

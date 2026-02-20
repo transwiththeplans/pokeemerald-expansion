@@ -95,17 +95,17 @@
     "Underwater_Route125",
     "PetalbergFields",
     "DewfordGarden",
-    "TandemausMeadows",
-    "Parents_Room",
-    "MaysParentsRoom",
-    "NPC_House_One"
+    "TandemausMeadows"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
     "LittlerootTown_BrendansHouse_2F",
-    "LittlerootTown_Market",
+    "LittlerootTown_BrendansHouse_ParentsRoom",
     "LittlerootTown_MaysHouse_1F",
     "LittlerootTown_MaysHouse_2F",
+    "LittlerootTown_MaysHouse_ParentsRoom",
+    "LittlerootTown_House1",
+    "LittlerootTown_Market",
     "LittlerootTown_ProfessorBirchsLab"
   ],
   "gMapGroup_IndoorOldale": [

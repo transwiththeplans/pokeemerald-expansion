@@ -459,6 +459,30 @@ MauvilleCity_EventScript_RegisterWallyCall::
 	releaseall
 	end
 
+MauvilleCity_EventScript_TrashCanSign::
+	msgbox MauvilleCity_Text_TrashCanSign, MSGBOX_SIGN
+	end
+
+MauvilleCity_Text_TrashCanSign:
+	.string "Nope, there's\n"
+	.string "only trash here.$"
+
+MauvilleCity_EventScript_StairsSign::
+	msgbox MauvilleCity_Text_StairsSign, MSGBOX_SIGN
+	end
+
+MauvilleCity_Text_StairsSign:
+	.string "To visit the second\n"
+	.string "floor use the stairs.$"
+
+MauvilleCity_EventScript_ElevatorSign::
+	msgbox MauvilleCity_Text_ElevatorSign, MSGBOX_SIGN
+	end
+
+MauvilleCity_Text_ElevatorSign:
+	.string "To visit another\n"
+	.string "floor use the elevator.$"
+
 MauvilleCity_Text_UncleHesTooPeppy:
 	.string "UNCLE: It's because of POKéMON that\n"
 	.string "this boy's got more pep, I suppose…\l"

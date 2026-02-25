@@ -146,6 +146,7 @@ Debug_EventScript_Text_DefensiveIVs:
 	.string "HP IVs: {STR_VAR_1}, DEF IVs: {STR_VAR_2}, SPDEF IVs: {STR_VAR_3}$"
 
 Debug_EventScript_Script_1::
+	warp MAP_MAUVILLE_CITY_INSIDE, 36, 30
 	release
 	end
 

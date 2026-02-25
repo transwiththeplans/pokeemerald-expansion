@@ -1,0 +1,72 @@
+raw `
+MauvilleCity_Inside_MapScripts::
+	.byte 0
+`
+
+script MauvilleCity_EventScript_TrashCanSign{
+	msgbox(MauvilleCity_Text_TrashCanSign, MSGBOX_SIGN)
+	end
+}
+
+text MauvilleCity_Text_TrashCanSign{
+	"Nope, there's\n"
+	"only trash here."
+}
+
+script MauvilleCity_EventScript_StairsSign{
+	msgbox(MauvilleCity_Text_StairsSign, MSGBOX_SIGN)
+	end
+}
+
+script MauvilleCity_EventScript_StairsSign2{
+	msgbox(MauvilleCity_Text_StairsSign2, MSGBOX_SIGN)
+	end
+}
+
+text MauvilleCity_Text_StairsSign{
+	"To visit the second\n"
+	"floor use the stairs."
+}
+
+text MauvilleCity_Text_StairsSign2{
+	"To visit the third\n"
+	"floor use the stairs."
+}
+
+script MauvilleCity_EventScript_ElevatorSign{
+	msgbox(MauvilleCity_Text_ElevatorSign, MSGBOX_SIGN)
+	end
+}
+
+text MauvilleCity_Text_ElevatorSign{
+	"To visit another\n"
+	"floor use the elevator.$"
+}
+
+script MauvilleCity_EventScript_AdoptionCenter_Sign{
+	msgbox(format("Adoption Center - Adopt a random Egg for a fair price."), MSGBOX_SIGN)
+	end
+}
+
+script MauvilleCity_EventScript_LumioseTower_Sign{
+	msgbox(format("Its a replica of the Prism Tower in Kalos."), MSGBOX_SIGN)
+	end
+}
+
+script MauvilleCity_EventScript_ResidentialAreaSign{
+	msgbox(format("Residential area, area not open to the public."), MSGBOX_SIGN)
+	end
+}
+
+script MauvilleCity_EventScript_RestArea_Sign{
+	msgbox(format("Please keep this rest area clean."), MSGBOX_SIGN)
+	end
+}
+
+script MauvilleCity_EventScript_Generic_NPC{
+    lock
+    faceplayer
+	msgbox(format("Don't mind me, I'm just an NPC."), MSGBOX_SIGN)
+    release
+	end
+}

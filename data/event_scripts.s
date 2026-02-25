@@ -1173,3 +1173,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/LittlerootTown_MaysHouse_ParentsRoom/scripts.inc"
 	.include "data/maps/LittlerootTown_House1/scripts.inc"
 	.include "data/maps/LittlerootTown_Market/scripts.inc"
+
+	.include "data/maps/MauvilleCity_Inside/scripts.inc"
+
+	.include "data/maps/MauvilleCity_Inside_2F/scripts.inc"

@@ -4500,6 +4500,26 @@
       "secondary_tileset": "gTileset_UnionRoom",
       "border_filepath": "data/layouts/LittlerootTown_Market/border.bin",
       "blockdata_filepath": "data/layouts/LittlerootTown_Market/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_INSIDE",
+      "name": "MauvilleCity_Inside_Layout",
+      "width": 80,
+      "height": 80,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville_Inside",
+      "border_filepath": "data/layouts/MauvilleCity_Inside/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_Inside/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_INSIDE_2F",
+      "name": "MauvilleCity_Inside_2F_Layout",
+      "width": 59,
+      "height": 65,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville_Inside",
+      "border_filepath": "data/layouts/MauvilleCity_Inside_2F/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_Inside_2F/map.bin"
     }
   ]
 }

@@ -1,0 +1,389 @@
+{
+  "id": "MAP_MAUVILLE_CITY_INSIDE_2F",
+  "name": "MauvilleCity_Inside_2F",
+  "layout": "LAYOUT_MAUVILLE_CITY_INSIDE_2F",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_MAUVILLE_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_NONE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+      "x": 50,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "x": 13,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MauvilleCity_EventScript_Generic_NPC",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "x": 30,
+      "y": 13,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MauvilleCity_EventScript_Generic_NPC",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+      "x": 31,
+      "y": 13,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MauvilleCity_EventScript_Generic_NPC",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+      "x": 47,
+      "y": 50,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MauvilleCity_EventScript_Generic_NPC",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GAMEBOY_KID",
+      "x": 10,
+      "y": 32,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MauvilleCity_EventScript_Generic_NPC",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
+      "x": 47,
+      "y": 57,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MauvilleCity_EventScript_Generic_NPC",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GAMEBOY_KID",
+      "x": 50,
+      "y": 32,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MauvilleCity_EventScript_Generic_NPC",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 11,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 11,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 49,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE",
+      "dest_warp_id": "7"
+    },
+    {
+      "x": 49,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 9,
+      "y": 62,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE",
+      "dest_warp_id": "9"
+    },
+    {
+      "x": 9,
+      "y": 63,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 51,
+      "y": 62,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE",
+      "dest_warp_id": "11"
+    },
+    {
+      "x": 51,
+      "y": 63,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE",
+      "dest_warp_id": "12"
+    },
+    {
+      "x": 20,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE",
+      "dest_warp_id": "13"
+    },
+    {
+      "x": 40,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE",
+      "dest_warp_id": "14"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 30,
+      "y": 20,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_TrashCanSign"
+    },
+    {
+      "type": "sign",
+      "x": 42,
+      "y": 46,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_TrashCanSign"
+    },
+    {
+      "type": "sign",
+      "x": 30,
+      "y": 53,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_TrashCanSign"
+    },
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 46,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_TrashCanSign"
+    },
+    {
+      "type": "sign",
+      "x": 49,
+      "y": 54,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_TrashCanSign"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 54,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_TrashCanSign"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_StairsSign2"
+    },
+    {
+      "type": "sign",
+      "x": 54,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_StairsSign2"
+    },
+    {
+      "type": "sign",
+      "x": 54,
+      "y": 46,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_StairsSign"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 46,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_StairsSign"
+    },
+    {
+      "type": "sign",
+      "x": 16,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_ElevatorSign"
+    },
+    {
+      "type": "sign",
+      "x": 44,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_ElevatorSign"
+    },
+    {
+      "type": "sign",
+      "x": 25,
+      "y": 47,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_ResidentialAreaSign"
+    },
+    {
+      "type": "sign",
+      "x": 35,
+      "y": 47,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_ResidentialAreaSign"
+    },
+    {
+      "type": "sign",
+      "x": 35,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_ResidentialAreaSign"
+    },
+    {
+      "type": "sign",
+      "x": 25,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_ResidentialAreaSign"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_StairsSign"
+    },
+    {
+      "type": "sign",
+      "x": 48,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_StairsSign"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 61,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_StairsSign"
+    },
+    {
+      "type": "sign",
+      "x": 50,
+      "y": 61,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_StairsSign"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 32,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_RestArea_Sign"
+    },
+    {
+      "type": "sign",
+      "x": 49,
+      "y": 32,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_RestArea_Sign"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 32,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_TrashCanSign"
+    },
+    {
+      "type": "sign",
+      "x": 52,
+      "y": 32,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_TrashCanSign"
+    }
+  ]
+}

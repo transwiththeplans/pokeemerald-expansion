@@ -210,3 +210,6 @@ const u16 gMetatileAttributes_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/
 
 const u16 gMetatiles_PetalburgRevamp[] = INCBIN_U16("data/tilesets/secondary/petalburg_revamp/metatiles.bin");
 const u16 gMetatileAttributes_PetalburgRevamp[] = INCBIN_U16("data/tilesets/secondary/petalburg_revamp/metatile_attributes.bin");
+
+const u16 gMetatiles_Mauville_Inside[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/metatiles.bin");
+const u16 gMetatileAttributes_Mauville_Inside[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/metatile_attributes.bin");

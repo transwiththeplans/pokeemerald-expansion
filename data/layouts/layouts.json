@@ -4520,6 +4520,16 @@
       "secondary_tileset": "gTileset_Mauville_Inside",
       "border_filepath": "data/layouts/MauvilleCity_Inside_2F/border.bin",
       "blockdata_filepath": "data/layouts/MauvilleCity_Inside_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_INSIDE_ROOFTOP",
+      "name": "MauvilleCity_Inside_Rooftop_Layout",
+      "width": 56,
+      "height": 65,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville_Rooftop",
+      "border_filepath": "data/layouts/MauvilleCity_Inside_Rooftop/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_Inside_Rooftop/map.bin"
     }
   ]
 }

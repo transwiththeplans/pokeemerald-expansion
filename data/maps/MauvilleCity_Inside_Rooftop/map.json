@@ -1,0 +1,77 @@
+{
+  "id": "MAP_MAUVILLE_CITY_INSIDE_ROOFTOP",
+  "name": "MauvilleCity_Inside_Rooftop",
+  "layout": "LAYOUT_MAUVILLE_CITY_INSIDE_ROOFTOP",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_MAUVILLE_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_NONE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 10,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 10,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F",
+      "dest_warp_id": "11"
+    },
+    {
+      "x": 45,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F",
+      "dest_warp_id": "12"
+    },
+    {
+      "x": 45,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F",
+      "dest_warp_id": "13"
+    },
+    {
+      "x": 10,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F",
+      "dest_warp_id": "14"
+    },
+    {
+      "x": 10,
+      "y": 42,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F",
+      "dest_warp_id": "15"
+    },
+    {
+      "x": 45,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F",
+      "dest_warp_id": "16"
+    },
+    {
+      "x": 45,
+      "y": 42,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F",
+      "dest_warp_id": "17"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

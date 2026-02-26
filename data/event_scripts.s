@@ -1177,3 +1177,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/MauvilleCity_Inside/scripts.inc"
 
 	.include "data/maps/MauvilleCity_Inside_2F/scripts.inc"
+
+	.include "data/maps/MauvilleCity_Inside_Rooftop/scripts.inc"

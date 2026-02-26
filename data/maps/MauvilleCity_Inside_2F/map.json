@@ -189,6 +189,62 @@
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_INSIDE",
       "dest_warp_id": "14"
+    },
+    {
+      "x": 7,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_ROOFTOP",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 7,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_ROOFTOP",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 53,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_ROOFTOP",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 53,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_ROOFTOP",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 7,
+      "y": 47,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_ROOFTOP",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 7,
+      "y": 48,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_ROOFTOP",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 53,
+      "y": 47,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_ROOFTOP",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 53,
+      "y": 48,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_ROOFTOP",
+      "dest_warp_id": "7"
     }
   ],
   "coord_events": [],

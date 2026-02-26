@@ -1,4 +1,5 @@
 #include "global.h"
+#include "adoption.h"
 #include "frontier_util.h"
 #include "battle_setup.h"
 #include "berry.h"
@@ -3290,4 +3291,13 @@ bool8 ScrCmd_istmrelearneractive(struct ScriptContext *ctx)
         ScriptCall(ctx, ptr);
 
     return FALSE;
+}
+
+bool8 ScrCmd_adoptionmenu(struct ScriptContext *ctx)
+{
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
+    CreateAdoptionMenu();
+    ScriptContext_Stop();
+    return TRUE;
 }

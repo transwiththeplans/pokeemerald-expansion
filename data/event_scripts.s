@@ -1179,3 +1179,13 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/MauvilleCity_Inside_2F/scripts.inc"
 
 	.include "data/maps/MauvilleCity_Inside_Rooftop/scripts.inc"
+
+	.include "data/maps/MauvilleCity_Inside_Rooftop_2/scripts.inc"
+
+	.include "data/maps/MauvilleCity_Inside_Rooftop_3/scripts.inc"
+
+	.include "data/maps/MauvilleCity_Inside_Rooftop_4/scripts.inc"
+
+	.include "data/maps/MauvilleCity_Inside_Rooftop_5/scripts.inc"
+
+	.include "data/maps/MauvilleCity_Inside_Rooftop_6/scripts.inc"

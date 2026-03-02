@@ -4530,6 +4530,56 @@
       "secondary_tileset": "gTileset_Mauville_Rooftop",
       "border_filepath": "data/layouts/MauvilleCity_Inside_Rooftop/border.bin",
       "blockdata_filepath": "data/layouts/MauvilleCity_Inside_Rooftop/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_INSIDE_ROOFTOP_2",
+      "name": "MauvilleCity_Inside_Rooftop_2_Layout",
+      "width": 56,
+      "height": 65,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville_Rooftop",
+      "border_filepath": "data/layouts/MauvilleCity_Inside_Rooftop_2/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_Inside_Rooftop_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_INSIDE_ROOFTOP_3",
+      "name": "MauvilleCity_Inside_Rooftop_3_Layout",
+      "width": 56,
+      "height": 65,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville_Rooftop",
+      "border_filepath": "data/layouts/MauvilleCity_Inside_Rooftop_3/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_Inside_Rooftop_3/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_INSIDE_ROOFTOP_4",
+      "name": "MauvilleCity_Inside_Rooftop_4_Layout",
+      "width": 56,
+      "height": 65,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville_Rooftop",
+      "border_filepath": "data/layouts/MauvilleCity_Inside_Rooftop_4/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_Inside_Rooftop_4/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_INSIDE_ROOFTOP_5",
+      "name": "MauvilleCity_Inside_Rooftop_5_Layout",
+      "width": 56,
+      "height": 65,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville_Rooftop",
+      "border_filepath": "data/layouts/MauvilleCity_Inside_Rooftop_5/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_Inside_Rooftop_5/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_INSIDE_ROOFTOP_6",
+      "name": "MauvilleCity_Inside_Rooftop_6_Layout",
+      "width": 56,
+      "height": 65,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville_Rooftop",
+      "border_filepath": "data/layouts/MauvilleCity_Inside_Rooftop_6/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_Inside_Rooftop_6/map.bin"
     }
   ]
 }

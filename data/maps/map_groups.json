@@ -98,7 +98,12 @@
     "TandemausMeadows",
     "MauvilleCity_Inside",
     "MauvilleCity_Inside_2F",
-    "MauvilleCity_Inside_Rooftop"
+    "MauvilleCity_Inside_Rooftop",
+    "MauvilleCity_Inside_Rooftop_2",
+    "MauvilleCity_Inside_Rooftop_3",
+    "MauvilleCity_Inside_Rooftop_4",
+    "MauvilleCity_Inside_Rooftop_5",
+    "MauvilleCity_Inside_Rooftop_6"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

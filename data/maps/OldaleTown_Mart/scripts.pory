@@ -95,3 +95,140 @@ OldaleTown_Mart_Pokemart_TMs:
 	.2byte ITEM_TM_SUBSTITUTE
 	pokemartlistend
 `
+
+script OldaleTown_Mart_EventScript_Man {
+	lock
+	faceplayer
+	if (flag(FLAG_RECEIVED_SINISTEA)) {
+		msgbox(format("No returns."))
+	} else {
+		setvar(VAR_TEMP_0, 0)
+		goto(OldaleTown_Mart_EventScript_AskWantSinistea)
+	}
+	release
+	end
+}
+
+script OldaleTown_Mart_EventScript_AskWantSinistea
+{
+	switch (var(VAR_TEMP_0)) {
+		case 0:
+			msgbox(format(
+				"Hey! You there! Yes, YOU!\N"
+				"You look like someone with EXCELLENT taste!\p"
+				"I have something you absolutely NEED!\N"
+				"A very special Sinistea.\N"
+				"And ONLY today it's yours for just ¥500!\p"
+				"So tell me…\N"
+				"Will you take this Sinistea home for ¥500?"
+			), MSGBOX_YESNO)
+			if (var(VAR_RESULT)) {
+				goto(OldaleTown_Mart_EventScript_BuySinistea)
+			} else {
+				addvar(VAR_TEMP_0, 1)
+				goto(OldaleTown_Mart_EventScript_AskWantSinistea)
+			}
+			break
+		case 1:
+			msgbox(format(
+				"NO?! I don't think I heard you correctly.\p"
+				"This is a PREMIUM Sinistea!\N"
+				"And it is ONLY ¥500!\N"
+				"Let me ask you again…\p"
+				"Will you buy this Sinistea for only ¥500?"
+			), MSGBOX_YESNO)
+			if (var(VAR_RESULT)) {
+				goto(OldaleTown_Mart_EventScript_BuySinistea)
+			} else {
+				addvar(VAR_TEMP_0, 1)
+				goto(OldaleTown_Mart_EventScript_AskWantSinistea)
+			}
+			break
+		case 2:
+			msgbox(format(
+				"Opportunities like this do NOT come twice!\p"
+				"This Sinistea chose YOU!\N"
+				"¥500. Final offer!\p"
+				"Will you buy this Sinistea for ONLY ¥500?"
+			), MSGBOX_YESNO)
+			if (var(VAR_RESULT)) {
+				goto(OldaleTown_Mart_EventScript_BuySinistea)
+			} else {
+				addvar(VAR_TEMP_0, 1)
+				goto(OldaleTown_Mart_EventScript_AskWantSinistea)
+			}
+			break
+		default:
+			msgbox(format(
+				"I see…\N"
+				"Fine! Keep your ¥500!\N"
+				"But don’t come crying to me when someone else buys it!"
+			))
+			break
+	}
+	release
+	end
+}
+
+script OldaleTown_Mart_EventScript_BuySinistea {
+	checkmoney(500)
+	if (var(VAR_RESULT)) {
+		msgbox(format("Excellent decision!\nYou won't regret it."))
+		playse(SE_SHOP)
+		removemoney(500)
+		goto(OldaleTown_Mart_EventScript_GiveSinistea)
+	} else {
+		msgbox(format(
+			"Wait! what?!\N"
+			"You don't even HAVE ¥500?!\N"
+			"It’s only ¥500!\N"
+			"Come back when you’re prepared!"
+		))
+	}
+	release
+	end
+}
+
+script OldaleTown_Mart_EventScript_GiveSinistea {
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SINISTEA)
+	givemon(SPECIES_SINISTEA, 5)
+	switch (var(VAR_RESULT)) {
+		case MON_GIVEN_TO_PARTY:
+			call(OldaleTown_Mart_EventScript_ReceivedSinisteaFanfare)
+			msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+			if (var(VAR_RESULT)) {
+				call(Common_EventScript_GetGiftMonPartySlot)
+				call(Common_EventScript_NameReceivedPartyMon)
+			}
+			goto(OldateTown_Mart_EventScript_ReceivedSinistea)
+			break
+		case MON_GIVEN_TO_PC:
+			call(OldaleTown_Mart_EventScript_ReceivedSinisteaFanfare)
+			msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+			if (var(VAR_RESULT)) {
+				call(Common_EventScript_NameReceivedBoxMon)
+			}
+			call(Common_EventScript_TransferredToPC)
+			goto(OldateTown_Mart_EventScript_ReceivedSinistea)
+			break
+		default:
+			goto(Common_EventScript_NoMoreRoomForPokemon)
+			break
+	}
+	end
+}
+
+script OldaleTown_Mart_EventScript_ReceivedSinisteaFanfare {
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(format("{PLAYER} obtained a SINISTEA."))
+	waitmessage
+	waitfanfare
+	bufferspeciesname(STR_VAR_1, SPECIES_SINISTEA)
+	return
+}
+
+script OldateTown_Mart_EventScript_ReceivedSinistea {
+	setflag(FLAG_RECEIVED_SINISTEA)
+	release
+	end
+}

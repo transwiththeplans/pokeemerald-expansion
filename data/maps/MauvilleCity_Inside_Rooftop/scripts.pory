@@ -14,7 +14,7 @@ script MauvilleCity_Inside_Rooftop_Eventscript_1{
 	msgbox(format("Do you want me to change the biome type?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		msgbox(format("What type of biome do you want?"))
-		multichoice(0, 0, MULTI_BIOME_TYPE, FALSE)
+		multichoice(0, 0, MULTI_BIOME_TYPE, TRUE)
 		switch (var(VAR_RESULT)) {
 			case 0: // Normal
                 if(var(VAR_MAUVILLE_BIOME) != 0){
@@ -28,7 +28,7 @@ script MauvilleCity_Inside_Rooftop_Eventscript_1{
                 }
 			case 1: // Grassy
                 if(var(VAR_MAUVILLE_BIOME) != 1){
-                    msgbox(format("Grassy biome it is! Hold on tight!"))
+                    msgbox(format("Grassy fields biome it is! Hold on tight!"))
                     warp(MAP_MAUVILLE_CITY_INSIDE_ROOFTOP_2, 26, 38)
                     setvar(VAR_MAUVILLE_BIOME, 1)
                     waitstate
@@ -38,7 +38,7 @@ script MauvilleCity_Inside_Rooftop_Eventscript_1{
                 }
 			case 2: // Winter
                 if(var(VAR_MAUVILLE_BIOME) != 2){
-                    msgbox(format("Winter biome it is! Hold on tight!"))
+                    msgbox(format("Snowy forest biome it is! Hold on tight!"))
                     warp(MAP_MAUVILLE_CITY_INSIDE_ROOFTOP_3, 26, 38)
                     setvar(VAR_MAUVILLE_BIOME, 2)
                     waitstate
@@ -48,7 +48,7 @@ script MauvilleCity_Inside_Rooftop_Eventscript_1{
                 }
 			case 3: // Rocky
                 if(var(VAR_MAUVILLE_BIOME) != 3){
-                    msgbox(format("Rocky biome it is! Hold on tight!"))
+                    msgbox(format("Badlands biome it is! Hold on tight!"))
                     warp(MAP_MAUVILLE_CITY_INSIDE_ROOFTOP_4, 26, 38)
                     setvar(VAR_MAUVILLE_BIOME, 3)
                     waitstate
@@ -68,7 +68,7 @@ script MauvilleCity_Inside_Rooftop_Eventscript_1{
                 }
 			case 5: // Fall
                 if(var(VAR_MAUVILLE_BIOME) != 5){
-                    msgbox(format("Fall biome it is! Hold on tight!"))
+                    msgbox(format("Autumn forest biome it is! Hold on tight!"))
                     warp(MAP_MAUVILLE_CITY_INSIDE_ROOFTOP_6, 26, 38)
                     setvar(VAR_MAUVILLE_BIOME, 5)
                     waitstate
@@ -78,10 +78,10 @@ script MauvilleCity_Inside_Rooftop_Eventscript_1{
                 }
 			default: // Exit
 			case MULTI_B_PRESSED:
-				msgbox(format("Okay comen't with me"))
+				msgbox(format("Okay, if you want to change the biome just tell me."))
 		}
 	} else {
-		msgbox(format("Okay comen't with me"))
+		msgbox(format("Okay, if you want to change the biome just tell me."))
 	}
 	release
 	end

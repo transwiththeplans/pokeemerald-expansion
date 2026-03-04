@@ -790,13 +790,12 @@ static const struct MenuAction MultichoiceList_StarterPools[] =
 
 static const struct MenuAction MultichoiceList_BiomeType[] =
 {
-    {COMPOUND_STRING("NORMAL")},
-    {COMPOUND_STRING("GRASSY")},
-    {COMPOUND_STRING("WINTER")},
-    {COMPOUND_STRING("ROCKY")},
-    {COMPOUND_STRING("LAKE")},
-    {COMPOUND_STRING("FALL")},
-    {gText_Exit},
+    {COMPOUND_STRING("Normal")},
+    {COMPOUND_STRING("Grassy fields")},
+    {COMPOUND_STRING("Snowy forest")},
+    {COMPOUND_STRING("Badlands")},
+    {COMPOUND_STRING("Lake")},
+    {COMPOUND_STRING("Autumn forest")},
 };
 
 static const struct MenuAction MultichoiceList_Exit[] =

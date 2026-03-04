@@ -1,4 +1,8 @@
-mapscripts MauvilleCity_Inside_Rooftop_MapScripts {}
+mapscripts MauvilleCity_Inside_Rooftop_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_MAUVILLE_BIOME, 0)
+    }
+}
 
 const BIOME_NORMAL = 0;
 const BIOME_GRASSY = 1;

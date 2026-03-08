@@ -21576,7 +21576,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //P_FAMILY_CUTIEFLY
 
 #if P_FAMILY_ROCKRUFF
-    const u32 gMonFrontPic_Rockruff[] = INCBIN_U32("graphics/pokemon/rockruff/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Rockruff[] = INCBIN_U32("graphics/pokemon/rockruff/front.4bpp.smol");
     const u16 gMonPalette_Rockruff[] = INCBIN_U16("graphics/pokemon/rockruff/normal.gbapal");
     const u32 gMonBackPic_Rockruff[] = INCBIN_U32("graphics/pokemon/rockruff/back.4bpp.smol");
     const u16 gMonShinyPalette_Rockruff[] = INCBIN_U16("graphics/pokemon/rockruff/shiny.gbapal");
@@ -21592,7 +21592,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-    const u32 gMonFrontPic_LycanrocMidday[] = INCBIN_U32("graphics/pokemon/lycanroc/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_LycanrocMidday[] = INCBIN_U32("graphics/pokemon/lycanroc/front.4bpp.smol");
     const u16 gMonPalette_LycanrocMidday[] = INCBIN_U16("graphics/pokemon/lycanroc/normal.gbapal");
     const u32 gMonBackPic_LycanrocMidday[] = INCBIN_U32("graphics/pokemon/lycanroc/back.4bpp.smol");
     const u16 gMonShinyPalette_LycanrocMidday[] = INCBIN_U16("graphics/pokemon/lycanroc/shiny.gbapal");
@@ -21608,7 +21608,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-    const u32 gMonFrontPic_LycanrocMidnight[] = INCBIN_U32("graphics/pokemon/lycanroc/midnight/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_LycanrocMidnight[] = INCBIN_U32("graphics/pokemon/lycanroc/midnight/front.4bpp.smol");
     const u16 gMonPalette_LycanrocMidnight[] = INCBIN_U16("graphics/pokemon/lycanroc/midnight/normal.gbapal");
     const u32 gMonBackPic_LycanrocMidnight[] = INCBIN_U32("graphics/pokemon/lycanroc/midnight/back.4bpp.smol");
     const u16 gMonShinyPalette_LycanrocMidnight[] = INCBIN_U16("graphics/pokemon/lycanroc/midnight/shiny.gbapal");
@@ -21621,7 +21621,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-    const u32 gMonFrontPic_LycanrocDusk[] = INCBIN_U32("graphics/pokemon/lycanroc/dusk/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_LycanrocDusk[] = INCBIN_U32("graphics/pokemon/lycanroc/dusk/front.4bpp.smol");
     const u16 gMonPalette_LycanrocDusk[] = INCBIN_U16("graphics/pokemon/lycanroc/dusk/normal.gbapal");
     const u32 gMonBackPic_LycanrocDusk[] = INCBIN_U32("graphics/pokemon/lycanroc/dusk/back.4bpp.smol");
     const u16 gMonShinyPalette_LycanrocDusk[] = INCBIN_U16("graphics/pokemon/lycanroc/dusk/shiny.gbapal");

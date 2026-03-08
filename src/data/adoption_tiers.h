@@ -136,8 +136,8 @@ static const u16 sAdoptionTierSupreme[] =
     SPECIES_MUDKIP,
     SPECIES_ROWLET,
     SPECIES_LITTEN,
-    SPECIES_PIKACHU_PARTNER,
-    // SPECIES_EEVEE_PARTNER,
+    SPECIES_PIKACHU_STARTER,
+    SPECIES_EEVEE_STARTER,
     SPECIES_CYCLIZAR,
     SPECIES_DRACOZOLT,
     SPECIES_ARCTOZOLT,
@@ -190,7 +190,7 @@ static const struct AdoptionTierInfo sAdoptionTiersInfo[ADOPTION_TIER_COUNT] =
     [ADOPTION_TIER_MEDIUM] =
     {
         .name = COMPOUND_STRING("Medium"),
-        .price = 200,
+        .price = 500,
         .description = COMPOUND_STRING("Medium tier"),
         .species = sAdoptionTierMedium,
         .speciesCount = sizeof(sAdoptionTierMedium),
@@ -198,7 +198,7 @@ static const struct AdoptionTierInfo sAdoptionTiersInfo[ADOPTION_TIER_COUNT] =
     [ADOPTION_TIER_TOP] =
     {
         .name = COMPOUND_STRING("Top"),
-        .price = 300,
+        .price = 1000,
         .description = COMPOUND_STRING("Top tier"),
         .species = sAdoptionTierTop,
         .speciesCount = sizeof(sAdoptionTierTop),
@@ -206,7 +206,7 @@ static const struct AdoptionTierInfo sAdoptionTiersInfo[ADOPTION_TIER_COUNT] =
     [ADOPTION_TIER_SUPREME] =
     {
         .name = COMPOUND_STRING("Supreme"),
-        .price = 400,
+        .price = 2000,
         .description = COMPOUND_STRING("Supreme tier"),
         .species = sAdoptionTierSupreme,
         .speciesCount = sizeof(sAdoptionTierSupreme),
@@ -214,7 +214,7 @@ static const struct AdoptionTierInfo sAdoptionTiersInfo[ADOPTION_TIER_COUNT] =
     [ADOPTION_TIER_LEGENDARY] =
     {
         .name = COMPOUND_STRING("Legendary"),
-        .price = 500,
+        .price = 10000,
         .description = COMPOUND_STRING("Legendary tier"),
         .species = sAdoptionTierLegendary,
         .speciesCount = sizeof(sAdoptionTierLegendary),
@@ -222,7 +222,7 @@ static const struct AdoptionTierInfo sAdoptionTiersInfo[ADOPTION_TIER_COUNT] =
     [ADOPTION_TIER_SEVII] =
     {
         .name = COMPOUND_STRING("Sevii"),
-        .price = 600,
+        .price = 6000,
         .description = COMPOUND_STRING("Sevii tier"),
         .species = sAdoptionTierSevii,
         .speciesCount = sizeof(sAdoptionTierSevii),

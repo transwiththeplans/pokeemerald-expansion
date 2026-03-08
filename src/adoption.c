@@ -176,10 +176,10 @@ static const struct ListMenuItem sAdoptionMenuListMenuItems[] =
         .name = sAdoptionTiersInfo[ADOPTION_TIER_LEGENDARY].name,
         .id = ADOPTION_TIER_LEGENDARY,
     },
-    {
-        .name = sAdoptionTiersInfo[ADOPTION_TIER_SEVII].name,
-        .id = ADOPTION_TIER_SEVII,
-    },
+//    {
+//        .name = sAdoptionTiersInfo[ADOPTION_TIER_SEVII].name,
+//        .id = ADOPTION_TIER_SEVII,
+//    },
     {
         .name = gText_Cancel2,
         .id = LIST_CANCEL,

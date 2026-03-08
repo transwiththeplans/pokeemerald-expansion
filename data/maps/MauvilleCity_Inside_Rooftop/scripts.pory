@@ -1,1 +1,88 @@
-mapscripts MauvilleCity_Inside_Rooftop_MapScripts {}
+mapscripts MauvilleCity_Inside_Rooftop_MapScripts {
+}
+
+const BIOME_NORMAL = 0;
+const BIOME_GRASSY = 1;
+const BIOME_WINTER = 2;
+const BIOME_ROCKY = 3;
+const BIOME_LAKE = 4;
+const BIOME_FALL = 5;
+
+script MauvilleCity_Inside_Rooftop_Eventscript_1{
+	lock
+	faceplayer
+	msgbox(format("Do you want me to change the biome type?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		msgbox(format("What type of biome do you want?"))
+		multichoice(0, 0, MULTI_BIOME_TYPE, TRUE)
+		switch (var(VAR_RESULT)) {
+			case 0: // Normal
+                if(var(VAR_MAUVILLE_BIOME) != 0){
+                    msgbox(format("Normal biome it is! Hold on tight!"))
+                    warp(MAP_MAUVILLE_CITY_INSIDE_ROOFTOP, 26, 38)
+                    setvar(VAR_MAUVILLE_BIOME, 0)
+                    waitstate
+                }
+                else{
+                    msgbox(format("We already have that biome!"))
+                }
+			case 1: // Grassy
+                if(var(VAR_MAUVILLE_BIOME) != 1){
+                    msgbox(format("Grassy fields biome it is! Hold on tight!"))
+                    warp(MAP_MAUVILLE_CITY_INSIDE_ROOFTOP_2, 26, 38)
+                    setvar(VAR_MAUVILLE_BIOME, 1)
+                    waitstate
+                }
+                else{
+                    msgbox(format("We already have that biome!"))
+                }
+			case 2: // Winter
+                if(var(VAR_MAUVILLE_BIOME) != 2){
+                    msgbox(format("Snowy forest biome it is! Hold on tight!"))
+                    warp(MAP_MAUVILLE_CITY_INSIDE_ROOFTOP_3, 26, 38)
+                    setvar(VAR_MAUVILLE_BIOME, 2)
+                    waitstate
+                }
+                else{
+                    msgbox(format("We already have that biome!"))
+                }
+			case 3: // Rocky
+                if(var(VAR_MAUVILLE_BIOME) != 3){
+                    msgbox(format("Badlands biome it is! Hold on tight!"))
+                    warp(MAP_MAUVILLE_CITY_INSIDE_ROOFTOP_4, 26, 38)
+                    setvar(VAR_MAUVILLE_BIOME, 3)
+                    waitstate
+                }
+                else{
+                    msgbox(format("We already have that biome!"))
+                }
+			case 4: // Lake
+                if(var(VAR_MAUVILLE_BIOME) != 4){
+                    msgbox(format("Lake biome it is! Hold on tight!"))
+                    warp(MAP_MAUVILLE_CITY_INSIDE_ROOFTOP_5, 26, 38)
+                    setvar(VAR_MAUVILLE_BIOME, 4)
+                    waitstate
+                }
+                else{
+                    msgbox(format("We already have that biome!"))
+                }
+			case 5: // Fall
+                if(var(VAR_MAUVILLE_BIOME) != 5){
+                    msgbox(format("Autumn forest biome it is! Hold on tight!"))
+                    warp(MAP_MAUVILLE_CITY_INSIDE_ROOFTOP_6, 26, 38)
+                    setvar(VAR_MAUVILLE_BIOME, 5)
+                    waitstate
+                }
+                else{
+                    msgbox(format("We already have that biome!"))
+                }
+			default: // Exit
+			case MULTI_B_PRESSED:
+				msgbox(format("Okay, if you want to change the biome just tell me."))
+		}
+	} else {
+		msgbox(format("Okay, if you want to change the biome just tell me."))
+	}
+	release
+	end
+}

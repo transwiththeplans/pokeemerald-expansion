@@ -788,6 +788,16 @@ static const struct MenuAction MultichoiceList_StarterPools[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_BiomeType[] =
+{
+    {COMPOUND_STRING("Normal")},
+    {COMPOUND_STRING("Grassy fields")},
+    {COMPOUND_STRING("Snowy forest")},
+    {COMPOUND_STRING("Badlands")},
+    {COMPOUND_STRING("Lake")},
+    {COMPOUND_STRING("Autumn forest")},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -917,6 +927,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
     [MULTI_BERRY_PLOT]                 = MULTICHOICE(MultichoiceList_BerryPlot),
     [MULTI_STARTER_POOL]               = MULTICHOICE(MultichoiceList_StarterPools),
+    [MULTI_BIOME_TYPE]                 = MULTICHOICE(MultichoiceList_BiomeType),
 };
 
 const u8 *const gStdStrings[] =

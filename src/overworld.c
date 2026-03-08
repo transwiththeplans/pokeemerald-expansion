@@ -686,6 +686,12 @@ void SetWarpDestination(s8 mapGroup, s8 mapNum, s8 warpId, s8 x, s8 y)
 
 void SetWarpDestinationToMapWarp(s8 mapGroup, s8 mapNum, s8 warpId)
 {
+    //Mauville Rooftop Warp Handling
+    if(mapGroup == MAP_GROUP(MAP_MAUVILLE_CITY_INSIDE_ROOFTOP) && mapNum == MAP_NUM(MAP_MAUVILLE_CITY_INSIDE_ROOFTOP)){
+        u8 biome = VarGet(VAR_MAUVILLE_BIOME);
+        mapNum = MAP_NUM(MAP_MAUVILLE_CITY_INSIDE_ROOFTOP) + biome;
+    }
+    
     SetWarpDestination(mapGroup, mapNum, warpId, -1, -1);
 }
 

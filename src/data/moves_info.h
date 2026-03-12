@@ -14621,7 +14621,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_PHANTOM_FORCE] =
     {
-        .name = COMPOUND_STRING("Phantom Force"),
+        .name = COMPOUND_STRING("Phantom Dive"),
         .description = sShadowForceDescription,
         .effect = EFFECT_SEMI_INVULNERABLE,
         .power = 90,

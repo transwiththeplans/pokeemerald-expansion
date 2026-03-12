@@ -11393,7 +11393,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if !P_GBA_STYLE_SPECIES_GFX
-    const u32 gMonFrontPic_Lairon[] = INCBIN_U32("graphics/pokemon/lairon/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Lairon[] = INCBIN_U32("graphics/pokemon/lairon/front.4bpp.smol");
     const u16 gMonPalette_Lairon[] = INCBIN_U16("graphics/pokemon/lairon/normal.gbapal");
     const u32 gMonBackPic_Lairon[] = INCBIN_U32("graphics/pokemon/lairon/back.4bpp.smol");
     const u16 gMonShinyPalette_Lairon[] = INCBIN_U16("graphics/pokemon/lairon/shiny.gbapal");
@@ -11420,7 +11420,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if !P_GBA_STYLE_SPECIES_GFX
-    const u32 gMonFrontPic_Aggron[] = INCBIN_U32("graphics/pokemon/aggron/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Aggron[] = INCBIN_U32("graphics/pokemon/aggron/front.4bpp.smol");
     const u16 gMonPalette_Aggron[] = INCBIN_U16("graphics/pokemon/aggron/normal.gbapal");
     const u32 gMonBackPic_Aggron[] = INCBIN_U32("graphics/pokemon/aggron/back.4bpp.smol");
     const u16 gMonShinyPalette_Aggron[] = INCBIN_U16("graphics/pokemon/aggron/shiny.gbapal");

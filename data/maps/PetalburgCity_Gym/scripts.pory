@@ -37,7 +37,7 @@ PetalburgCity_Gym_EventScript_UnlockAllDoors::
 	return
 
 PetalburgCity_Gym_OnTransition:
-	call_if_eq VAR_PETALBURG_GYM_STATE, 1, PetalburgCity_Gym_EventScript_MoveWallyToEntrance
+	call_if_eq VAR_PETALBURG_GYM_STATE, 0, PetalburgCity_Gym_EventScript_MeetGrandpaRivalAndKevin
 	call_if_lt VAR_PETALBURG_GYM_STATE, 6, PetalburgCity_Gym_EventScript_MoveNormanToEntrance
 	call_if_set FLAG_SYS_GAME_CLEAR, PetalburgCity_Gym_EventScript_CheckNormanForRematch
 	end
@@ -113,6 +113,7 @@ PetalburgCity_Gym_EventScript_Norman::
 	case 8, PetalburgCity_Gym_EventScript_NormanRematch
 	msgbox PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon, MSGBOX_DEFAULT
 	closemessage
+	goto PetalburgCity_Gym_EventScript_RivalArrive
 	switch VAR_FACING
 	case DIR_SOUTH, PetalburgCity_Gym_EventScript_BeginWallyTutorialSouth
 	case DIR_NORTH, PetalburgCity_Gym_EventScript_BeginWallyTutorialNorth
@@ -1594,3 +1595,228 @@ PetalburgCity_Gym_Text_NormanRematchNeedTwoMons:
 	.string "with at least two POKéMON.$"
 
 `
+
+script PetalburgCity_Gym_EventScript_MeetGrandpaRivalAndKevin
+{
+       call(Common_EventScript_SetupRivalGfxId)
+       return
+}
+
+script PetalburgCity_Gym_EventScript_RivalArrive {
+       addobject(LOCALID_PETALBURG_GYM_RIVAL)
+       playse(SE_DOOR)
+       copyvar(VAR_0x8008, VAR_FACING)
+       switch(var(VAR_FACING)) {
+       case DIR_NORTH:
+		applymovement(LOCALID_PETALBURG_GYM_RIVAL, moves(
+			delay_16
+			walk_up * 2
+			walk_right
+			walk_up * 2
+			walk_in_place_faster_left
+		))
+		waitmovement(0)
+		applymovement(LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_WalkInPlaceFasterRight)
+		applymovement(LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight)
+		waitmovement(0)
+		break
+       case DIR_SOUTH:
+       case DIR_WEST:
+       case DIR_EAST:
+		applymovement(LOCALID_PETALBURG_GYM_RIVAL, moves(
+			delay_16
+			walk_up * 3
+		))
+		waitmovement(0)
+		applymovement(LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_WalkInPlaceFasterDown)
+		if (var(VAR_FACING) != DIR_SOUTH) {
+			applymovement(LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown)
+		}
+		waitmovement(0)
+	}
+	if (checkplayergender == MALE) {
+		msgbox(format("GWEN: Grandpa Max! {PLAYER}!"))
+		msgbox(format("GRANDPA: Gwen! Glad to see you too.\N"
+			      "It's nice to see both of you together."))
+		msgbox(format("GWEN: Don't get the wrong idea, Grandpa.\N"
+			      "I'm just making sure this dweeb doesn't get in trouble."))
+	} else {
+		msgbox(format("BEN: Grandpa Max! {PLAYER}!"))
+		msgbox(format("GRANDPA: Ben! Glad to see you too.\N"
+			      "It's nice to see both of you together."))
+		msgbox(format("BEN: Don't get the wrong idea, Grandpa.\N"
+			      "I'm just making sure this dweeb doesn't get in trouble."))
+	}
+	closemessage
+	goto(PetalburgCity_Gym_EventScript_KevinArrive)
+	end
+}
+
+script PetalburgCity_Gym_EventScript_KevinArrive
+{
+	addobject(LOCALID_PETALBURG_GYM_WALLY)
+	playse(SE_DOOR)
+	switch(var(VAR_0x8008)) {
+	case DIR_NORTH:
+		applymovement(LOCALID_PETALBURG_GYM_WALLY, moves(
+			delay_16
+			walk_up * 2
+		))
+		waitmovement(0)
+		applymovement(LOCALID_PETALBURG_GYM_WALLY, moves(
+		       walk_up
+		))
+		applymovement(LOCALID_PLAYER, moves(
+		       walk_fast_right
+		       walk_in_place_faster_left
+		))
+		waitmovement(0)
+		break
+	case DIR_SOUTH:
+	case DIR_EAST:
+	case DIR_WEST:
+		applymovement(LOCALID_PETALBURG_GYM_WALLY, moves(
+			delay_16
+			walk_up * 2
+		))
+		waitmovement(0)
+		applymovement(LOCALID_PETALBURG_GYM_WALLY, moves(
+		       walk_up
+		))
+		applymovement(LOCALID_PETALBURG_GYM_RIVAL, moves(
+		       walk_fast_right
+		       walk_in_place_faster_left
+		))
+		waitmovement(0)
+	}
+	applymovement(LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_WalkInPlaceFasterDown)
+	waitmovement(0)
+	if (checkplayergender == MALE) {
+		msgbox(format("KEVIN: Hey, old man. I'm here for my training."))
+		msgbox(format("GRANDPA: Ah, good timing. Kids, this is Kevin-"
+			      "he's the kid of and old friend of mine."))
+		msgbox(format("GWEN: You're training this guy, Grandpa?\N"
+			      "He looks like a kind of… a punk."))
+		msgbox(format("KEVIN: I got ears, y'know."))
+		msgbox(format("GRANDPA: Trust me. Kevin's got a big heart for his Pokémon."))
+		msgbox(format("KEVIN: It's true. I'm a BIG softie."))
+		msgbox(format("GWEN: Yeah… I totally believe that."))
+		msgbox(format("KEVIN: Speaking about my Pokemon…“it” started "
+			      "acting up again. I got it to calm down, but…"))
+		applymovement(LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_ExclamationMark)
+		waitmovement(0)
+		msgbox(format("GRANDPA: Oh…oh, I see."))
+		msgbox(format("GWEN: What started acting up?"))
+		msgbox(format("GRANDPA: Oh, don’t worry about it.\N"
+			      "I do need to attend to this immediately, though…"))
+		msgbox(format("GWEN: Whaaaat? But we just got here, Grandpa!"))
+		msgbox(format("GRANDPA: I know, I know…it's just that this is "
+			      "a very serious matter. How about we meet up in "
+			      "Rustboro later on?"))
+		msgbox(format("GWEN: Rustboro…that’s the city over from here.\N"
+			       "That’s also where the first gym is, too…"))
+		msgbox(format("GRANDPA: Even more reason to go!\N"
+			       "I’ll see you both there, okay?"))
+	} else {
+		msgbox(format("KEVIN: Hey, old man. I'm here for my training."))
+		msgbox(format("GRANDPA: Ah, good timing. Kids, this is Kevin-"
+			      "he's the kid of and old friend of mine."))
+		msgbox(format("BEN: You're training this guy, Grandpa?\N"
+			      "He looks like a kind of… a punk."))
+		msgbox(format("KEVIN: I got ears, y'know."))
+		msgbox(format("GRANDPA: Trust me. Kevin's got a big heart for his Pokémon."))
+		msgbox(format("KEVIN: It's true. I'm a BIG softie."))
+		msgbox(format("BEN: Yeah… I totally believe that."))
+		msgbox(format("KEVIN: Speaking about my Pokemon…“it” started "
+			      "acting up again. I got it to calm down, but…"))
+		applymovement(LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_ExclamationMark)
+		waitmovement(0)
+		msgbox(format("GRANDPA: Oh…oh, I see."))
+		msgbox(format("BEN: What started acting up?"))
+		msgbox(format("GRANDPA: Oh, don’t worry about it.\N"
+			      "I do need to attend to this immediately, though…"))
+		msgbox(format("BEN: Whaaaat? But we just got here, Grandpa!"))
+		msgbox(format("GRANDPA: I know, I know…it's just that this is "
+			      "a very serious matter. How about we meet up in "
+			      "Rustboro later on?"))
+		msgbox(format("BEN: Rustboro…that’s the city over from here.\N"
+			      "That’s also where the first gym is, too…"))
+		msgbox(format("GRANDPA: Even more reason to go!\N"
+			      "I’ll see you both there, okay?"))
+	}
+	closemessage
+	delay(30)
+	goto(PetalburgCity_Gym_EventScript_GrandpaExitWithKevin)
+	end
+}
+
+script PetalburgCity_Gym_EventScript_GrandpaExitWithKevin {
+	applymovement(LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_WalkInPlaceFasterDown)
+	applymovement(LOCALID_PETALBURG_GYM_WALLY, Common_Movement_WalkLeftFast)
+	waitmovement(0)
+	applymovement(LOCALID_PETALBURG_GYM_NORMAN, moves(
+		walk_fast_down * 4
+		delay_16
+	))
+	applymovement(LOCALID_PETALBURG_GYM_WALLY, moves(
+		walk_in_place_fast_right
+		walk_fast_right
+		walk_fast_down * 2
+		delay_16
+	))
+	waitmovement(0)
+	removeobject(LOCALID_PETALBURG_GYM_NORMAN)
+	playse(SE_DOOR)
+	applymovement(LOCALID_PETALBURG_GYM_WALLY, moves(
+		walk_fast_down
+		delay_16
+	))
+	waitmovement(0)
+	removeobject(LOCALID_PETALBURG_GYM_WALLY)
+	playse(SE_DOOR)
+	delay(40)
+	goto(PetalburgCity_Gym_EventScript_RivalExit)
+	end
+}
+
+script PetalburgCity_Gym_EventScript_RivalExit {
+       applymovement(LOCALID_PETALBURG_GYM_RIVAL, moves(
+	       delay_16
+	       face_player
+       ))
+       waitmovement(0)
+       if (checkplayergender == MALE) {
+	       msgbox(format("GWEN: That was weird…\N"
+			     "Anyway, see you in Rustboro, dweeb!"))
+       } else {
+	       msgbox(format("BEN: That was weird…\N"
+			     "Anyway, see you in Rustboro, dweeb!"))
+       }
+       closemessage
+       switch(var(VAR_0x8008)){
+       case DIR_NORTH:
+	       applymovement(LOCALID_PETALBURG_GYM_RIVAL, moves(
+		       delay_16
+		       walk_fast_left
+		       walk_fast_down * 4
+		       delay_16
+	       ))
+	       waitmovement(0)
+	       break
+       case DIR_SOUTH:
+       case DIR_EAST:
+       case DIR_WEST:
+	       applymovement(LOCALID_PETALBURG_GYM_RIVAL, moves(
+		       delay_16
+		       walk_fast_left
+		       walk_fast_down * 3
+		       delay_16
+	       ))
+	       waitmovement(0)
+       }
+       removeobject(LOCALID_PETALBURG_GYM_RIVAL)
+       playse(SE_DOOR)
+       setvar(VAR_PETALBURG_CITY_STATE, 1)
+       release
+       end
+}

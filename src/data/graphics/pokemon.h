@@ -1907,7 +1907,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if !P_GBA_STYLE_SPECIES_GFX
-    const u32 gMonFrontPic_Parasect[] = INCBIN_U32("graphics/pokemon/parasect/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Parasect[] = INCBIN_U32("graphics/pokemon/parasect/front.4bpp.smol");
     const u16 gMonPalette_Parasect[] = INCBIN_U16("graphics/pokemon/parasect/normal.gbapal");
     const u32 gMonBackPic_Parasect[] = INCBIN_U32("graphics/pokemon/parasect/back.4bpp.smol");
     const u16 gMonShinyPalette_Parasect[] = INCBIN_U16("graphics/pokemon/parasect/shiny.gbapal");
@@ -2233,7 +2233,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if !P_GBA_STYLE_SPECIES_GFX
-    const u32 gMonFrontPic_Golduck[] = INCBIN_U32("graphics/pokemon/golduck/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Golduck[] = INCBIN_U32("graphics/pokemon/golduck/front.4bpp.smol");
     const u16 gMonPalette_Golduck[] = INCBIN_U16("graphics/pokemon/golduck/normal.gbapal");
     const u32 gMonBackPic_Golduck[] = INCBIN_U32("graphics/pokemon/golduck/back.4bpp.smol");
     const u16 gMonShinyPalette_Golduck[] = INCBIN_U16("graphics/pokemon/golduck/shiny.gbapal");
@@ -8160,7 +8160,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 
 #if P_FAMILY_GIRAFARIG
 #if !P_GBA_STYLE_SPECIES_GFX
-    const u32 gMonFrontPic_Girafarig[] = INCBIN_U32("graphics/pokemon/girafarig/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Girafarig[] = INCBIN_U32("graphics/pokemon/girafarig/front.4bpp.smol");
     const u16 gMonPalette_Girafarig[] = INCBIN_U16("graphics/pokemon/girafarig/normal.gbapal");
     const u32 gMonBackPic_Girafarig[] = INCBIN_U32("graphics/pokemon/girafarig/back.4bpp.smol");
     const u16 gMonShinyPalette_Girafarig[] = INCBIN_U16("graphics/pokemon/girafarig/shiny.gbapal");
@@ -8187,7 +8187,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GENDER_DIFFERENCES
-    const u32 gMonFrontPic_GirafarigF[] = INCBIN_U32("graphics/pokemon/girafarig/anim_frontf.4bpp.smol");
+    const u32 gMonFrontPic_GirafarigF[] = INCBIN_U32("graphics/pokemon/girafarig/front.4bpp.smol");
     const u32 gMonBackPic_GirafarigF[] = INCBIN_U32("graphics/pokemon/girafarig/backf.4bpp.smol");
 #if OW_POKEMON_OBJECT_EVENTS
     const u32 gObjectEventPic_GirafarigF[] = INCBIN_COMP("graphics/pokemon/girafarig/overworldf.4bpp");
@@ -8325,7 +8325,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 
 #if P_FAMILY_GLIGAR
 #if !P_GBA_STYLE_SPECIES_GFX
-    const u32 gMonFrontPic_Gligar[] = INCBIN_U32("graphics/pokemon/gligar/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Gligar[] = INCBIN_U32("graphics/pokemon/gligar/front.4bpp.smol");
     const u16 gMonPalette_Gligar[] = INCBIN_U16("graphics/pokemon/gligar/normal.gbapal");
     const u32 gMonBackPic_Gligar[] = INCBIN_U32("graphics/pokemon/gligar/back.4bpp.smol");
     const u16 gMonShinyPalette_Gligar[] = INCBIN_U16("graphics/pokemon/gligar/shiny.gbapal");
@@ -8352,7 +8352,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GENDER_DIFFERENCES
-    const u32 gMonFrontPic_GligarF[] = INCBIN_U32("graphics/pokemon/gligar/anim_frontf.4bpp.smol");
+    const u32 gMonFrontPic_GligarF[] = INCBIN_U32("graphics/pokemon/gligar/front.4bpp.smol");
     const u32 gMonBackPic_GligarF[] = INCBIN_U32("graphics/pokemon/gligar/backf.4bpp.smol");
 #if OW_POKEMON_OBJECT_EVENTS
     const u32 gObjectEventPic_GligarF[] = INCBIN_COMP("graphics/pokemon/gligar/overworldf.4bpp");
@@ -8360,7 +8360,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //P_GENDER_DIFFERENCES
 
 #if P_GEN_4_CROSS_EVOS
-    const u32 gMonFrontPic_Gliscor[] = INCBIN_U32("graphics/pokemon/gliscor/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Gliscor[] = INCBIN_U32("graphics/pokemon/gliscor/front.4bpp.smol");
     const u16 gMonPalette_Gliscor[] = INCBIN_U16("graphics/pokemon/gliscor/normal.gbapal");
     const u32 gMonBackPic_Gliscor[] = INCBIN_U32("graphics/pokemon/gliscor/back.4bpp.smol");
     const u16 gMonShinyPalette_Gliscor[] = INCBIN_U16("graphics/pokemon/gliscor/shiny.gbapal");
@@ -8892,7 +8892,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //P_GENDER_DIFFERENCES
 
 #if P_GEN_4_CROSS_EVOS
-    const u32 gMonFrontPic_Mamoswine[] = INCBIN_U32("graphics/pokemon/mamoswine/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Mamoswine[] = INCBIN_U32("graphics/pokemon/mamoswine/front.4bpp.smol");
     const u16 gMonPalette_Mamoswine[] = INCBIN_U16("graphics/pokemon/mamoswine/normal.gbapal");
     const u32 gMonBackPic_Mamoswine[] = INCBIN_U32("graphics/pokemon/mamoswine/back.4bpp.smol");
     const u16 gMonShinyPalette_Mamoswine[] = INCBIN_U16("graphics/pokemon/mamoswine/shiny.gbapal");
@@ -8909,7 +8909,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_GENDER_DIFFERENCES
-    const u32 gMonFrontPic_MamoswineF[] = INCBIN_U32("graphics/pokemon/mamoswine/anim_frontf.4bpp.smol");
+    const u32 gMonFrontPic_MamoswineF[] = INCBIN_U32("graphics/pokemon/mamoswine/front.4bpp.smol");
 #if OW_POKEMON_OBJECT_EVENTS
     const u32 gObjectEventPic_MamoswineF[] = INCBIN_COMP("graphics/pokemon/mamoswine/overworldf.4bpp");
 #endif //OW_POKEMON_OBJECT_EVENTS
@@ -11218,7 +11218,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 
 #if P_FAMILY_SKITTY
 #if !P_GBA_STYLE_SPECIES_GFX
-    const u32 gMonFrontPic_Skitty[] = INCBIN_U32("graphics/pokemon/skitty/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Skitty[] = INCBIN_U32("graphics/pokemon/skitty/front.4bpp.smol");
     const u16 gMonPalette_Skitty[] = INCBIN_U16("graphics/pokemon/skitty/normal.gbapal");
     const u32 gMonBackPic_Skitty[] = INCBIN_U32("graphics/pokemon/skitty/back.4bpp.smol");
     const u16 gMonShinyPalette_Skitty[] = INCBIN_U16("graphics/pokemon/skitty/shiny.gbapal");
@@ -11245,7 +11245,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if !P_GBA_STYLE_SPECIES_GFX
-    const u32 gMonFrontPic_Delcatty[] = INCBIN_U32("graphics/pokemon/delcatty/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Delcatty[] = INCBIN_U32("graphics/pokemon/delcatty/front.4bpp.smol");
     const u16 gMonPalette_Delcatty[] = INCBIN_U16("graphics/pokemon/delcatty/normal.gbapal");
     const u32 gMonBackPic_Delcatty[] = INCBIN_U32("graphics/pokemon/delcatty/back.4bpp.smol");
     const u16 gMonShinyPalette_Delcatty[] = INCBIN_U16("graphics/pokemon/delcatty/shiny.gbapal");
@@ -11680,7 +11680,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 
 #if P_FAMILY_VOLBEAT_ILLUMISE
 #if !P_GBA_STYLE_SPECIES_GFX
-    const u32 gMonFrontPic_Volbeat[] = INCBIN_U32("graphics/pokemon/volbeat/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Volbeat[] = INCBIN_U32("graphics/pokemon/volbeat/front.4bpp.smol");
     const u16 gMonPalette_Volbeat[] = INCBIN_U16("graphics/pokemon/volbeat/normal.gbapal");
     const u32 gMonBackPic_Volbeat[] = INCBIN_U32("graphics/pokemon/volbeat/back.4bpp.smol");
     const u16 gMonShinyPalette_Volbeat[] = INCBIN_U16("graphics/pokemon/volbeat/shiny.gbapal");
@@ -11707,7 +11707,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if !P_GBA_STYLE_SPECIES_GFX
-    const u32 gMonFrontPic_Illumise[] = INCBIN_U32("graphics/pokemon/illumise/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Illumise[] = INCBIN_U32("graphics/pokemon/illumise/front.4bpp.smol");
     const u16 gMonPalette_Illumise[] = INCBIN_U16("graphics/pokemon/illumise/normal.gbapal");
     const u32 gMonBackPic_Illumise[] = INCBIN_U32("graphics/pokemon/illumise/back.4bpp.smol");
     const u16 gMonShinyPalette_Illumise[] = INCBIN_U16("graphics/pokemon/illumise/shiny.gbapal");
@@ -14843,7 +14843,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_GENDER_DIFFERENCES
 
-    const u32 gMonFrontPic_Floatzel[] = INCBIN_U32("graphics/pokemon/floatzel/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Floatzel[] = INCBIN_U32("graphics/pokemon/floatzel/front.4bpp.smol");
     const u16 gMonPalette_Floatzel[] = INCBIN_U16("graphics/pokemon/floatzel/normal.gbapal");
     const u32 gMonBackPic_Floatzel[] = INCBIN_U32("graphics/pokemon/floatzel/back.4bpp.smol");
     const u16 gMonShinyPalette_Floatzel[] = INCBIN_U16("graphics/pokemon/floatzel/shiny.gbapal");
@@ -15303,7 +15303,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-    const u32 gMonFrontPic_Lucario[] = INCBIN_U32("graphics/pokemon/lucario/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Lucario[] = INCBIN_U32("graphics/pokemon/lucario/front.4bpp.smol");
     const u16 gMonPalette_Lucario[] = INCBIN_U16("graphics/pokemon/lucario/normal.gbapal");
     const u32 gMonBackPic_Lucario[] = INCBIN_U32("graphics/pokemon/lucario/back.4bpp.smol");
     const u16 gMonShinyPalette_Lucario[] = INCBIN_U16("graphics/pokemon/lucario/shiny.gbapal");
@@ -20255,7 +20255,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //P_FAMILY_ESPURR
 
 #if P_FAMILY_HONEDGE
-    const u32 gMonFrontPic_Honedge[] = INCBIN_U32("graphics/pokemon/honedge/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Honedge[] = INCBIN_U32("graphics/pokemon/honedge/front.4bpp.smol");
     const u16 gMonPalette_Honedge[] = INCBIN_U16("graphics/pokemon/honedge/normal.gbapal");
     const u32 gMonBackPic_Honedge[] = INCBIN_U32("graphics/pokemon/honedge/back.4bpp.smol");
     const u16 gMonShinyPalette_Honedge[] = INCBIN_U16("graphics/pokemon/honedge/shiny.gbapal");
@@ -20271,7 +20271,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-    const u32 gMonFrontPic_Doublade[] = INCBIN_U32("graphics/pokemon/doublade/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Doublade[] = INCBIN_U32("graphics/pokemon/doublade/front.4bpp.smol");
     const u16 gMonPalette_Doublade[] = INCBIN_U16("graphics/pokemon/doublade/normal.gbapal");
     const u32 gMonBackPic_Doublade[] = INCBIN_U32("graphics/pokemon/doublade/back.4bpp.smol");
     const u16 gMonShinyPalette_Doublade[] = INCBIN_U16("graphics/pokemon/doublade/shiny.gbapal");
@@ -20287,7 +20287,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-    const u32 gMonFrontPic_AegislashShield[] = INCBIN_U32("graphics/pokemon/aegislash/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_AegislashShield[] = INCBIN_U32("graphics/pokemon/aegislash/front.4bpp.smol");
     const u16 gMonPalette_AegislashShield[] = INCBIN_U16("graphics/pokemon/aegislash/normal.gbapal");
     const u32 gMonBackPic_AegislashShield[] = INCBIN_U32("graphics/pokemon/aegislash/back.4bpp.smol");
     const u16 gMonShinyPalette_AegislashShield[] = INCBIN_U16("graphics/pokemon/aegislash/shiny.gbapal");
@@ -20303,7 +20303,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-    const u32 gMonFrontPic_AegislashBlade[] = INCBIN_U32("graphics/pokemon/aegislash/blade/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_AegislashBlade[] = INCBIN_U32("graphics/pokemon/aegislash/blade/front.4bpp.smol");
     const u16 gMonPalette_AegislashBlade[] = INCBIN_U16("graphics/pokemon/aegislash/blade/normal.gbapal");
     const u32 gMonBackPic_AegislashBlade[] = INCBIN_U32("graphics/pokemon/aegislash/blade/back.4bpp.smol");
     const u16 gMonShinyPalette_AegislashBlade[] = INCBIN_U16("graphics/pokemon/aegislash/blade/shiny.gbapal");
@@ -23469,7 +23469,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //P_FAMILY_YAMPER
 
 #if P_FAMILY_ROLYCOLY
-    const u32 gMonFrontPic_Rolycoly[] = INCBIN_U32("graphics/pokemon/rolycoly/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Rolycoly[] = INCBIN_U32("graphics/pokemon/rolycoly/front.4bpp.smol");
     const u16 gMonPalette_Rolycoly[] = INCBIN_U16("graphics/pokemon/rolycoly/normal.gbapal");
     const u32 gMonBackPic_Rolycoly[] = INCBIN_U32("graphics/pokemon/rolycoly/back.4bpp.smol");
     const u16 gMonShinyPalette_Rolycoly[] = INCBIN_U16("graphics/pokemon/rolycoly/shiny.gbapal");
@@ -23485,7 +23485,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-    const u32 gMonFrontPic_Carkol[] = INCBIN_U32("graphics/pokemon/carkol/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Carkol[] = INCBIN_U32("graphics/pokemon/carkol/front.4bpp.smol");
     const u16 gMonPalette_Carkol[] = INCBIN_U16("graphics/pokemon/carkol/normal.gbapal");
     const u32 gMonBackPic_Carkol[] = INCBIN_U32("graphics/pokemon/carkol/back.4bpp.smol");
     const u16 gMonShinyPalette_Carkol[] = INCBIN_U16("graphics/pokemon/carkol/shiny.gbapal");
@@ -23501,7 +23501,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-    const u32 gMonFrontPic_Coalossal[] = INCBIN_U32("graphics/pokemon/coalossal/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Coalossal[] = INCBIN_U32("graphics/pokemon/coalossal/front.4bpp.smol");
     const u16 gMonPalette_Coalossal[] = INCBIN_U16("graphics/pokemon/coalossal/normal.gbapal");
     const u32 gMonBackPic_Coalossal[] = INCBIN_U32("graphics/pokemon/coalossal/back.4bpp.smol");
     const u16 gMonShinyPalette_Coalossal[] = INCBIN_U16("graphics/pokemon/coalossal/shiny.gbapal");

@@ -364,6 +364,47 @@ script RustboroCity_PokemonSchool_EventScript_Roxanne{
 	lock
 	faceplayer
 	msgbox(format("Do you know about Innate abilities?, they are recently discovered abilities gained thanks to all the mutations happening in Pokémon, your Pokémon should reach a certain level to be able to use them but I know something that can speed this process!"), MSGBOX_DEFAULT)
+	msgbox(format("I believe the best way to learn is through practice.\pWould you like to have an exhibition match?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(format("Oh… that's a shame.\NIf you change your mind, come talk to me again!"), MSGBOX_DEFAULT)
+		closemessage
+		release
+		end
+	}
+	msgbox(format("That's great!\NBut you won't battle me yet.\NOne of the students will battle you first!"))
+	msgbox(format("Jonesy, come here please!"))
+	closemessage
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown)
+	waitmovement(0)
+	applymovement(LOCALID_YOUNGSTER, moves(
+		delay_16
+		walk_faster_left
+		delay_16
+		walk_faster_up * 6
+		delay_16
+	))
+	waitmovement(0)
+	trainerbattle_single(TRAINER_JONESY, format("I'll battle you!"), format("I still learning."), RustboroCity_PokemonSchool_EventScript_YoungsterDefeated)
+	release
+	end
+}
+
+script RustboroCity_PokemonSchool_EventScript_YoungsterDefeated {
+	lock
+	msgbox(format("Well done Jonesy!.\NPlease return to your seat."))
+	closemessage
+	applymovement(LOCALID_YOUNGSTER, moves(
+		delay_16
+		walk_faster_down * 6
+		delay_16
+		walk_faster_right
+		walk_in_place_fast_up
+		delay_16
+	))
+	waitmovement(0)
+	applymovement(LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft)
+	waitmovement(0)
+	msgbox(format("Please take this."))
 	giveitem(ITEM_INNATE_CANDY, 1)
 	msgbox(format("Make sure to use it on your upcoming Gym battle since you will need it, I will wait for you at the Gym!"), MSGBOX_DEFAULT)
 	closemessage
@@ -377,7 +418,6 @@ script RustboroCity_PokemonSchool_EventScript_Roxanne{
 	release
 	end
 }
-
 
 script RustboroCity_PokemonSchool_EventScript_Roxanne_Exit{
     applymovement(LOCALID_PLAYER, moves(
@@ -396,5 +436,10 @@ script RustboroCity_PokemonSchool_EventScript_Roxanne_Exit{
 	removeobject(LOCALID_ROXANNE)
 	setflag(FLAG_LEARNED_ABOUT_INNATES)
 	release
+	end
+}
+
+script RustboroCity_PokemonSchool_EventScript_Youngster {
+	msgbox(format("I want to learn more about Innate abilities."), MSGBOX_NPC)
 	end
 }

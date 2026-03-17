@@ -4432,14 +4432,14 @@
       "blockdata_filepath": "data/layouts/DiglettGrotto/map.bin"
     },
     {
-      "id": "LAYOUT_PETALBERG_FIELDS",
-      "name": "PetalbergFields_Layout",
+      "id": "LAYOUT_PETALBURG_FIELDS",
+      "name": "PetalburgFields_Layout",
       "width": 35,
       "height": 40,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/PetalbergFields/border.bin",
-      "blockdata_filepath": "data/layouts/PetalbergFields/map.bin"
+      "border_filepath": "data/layouts/PetalburgFields/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgFields/map.bin"
     },
     {
       "id": "LAYOUT_DEWFORD_GARDEN",

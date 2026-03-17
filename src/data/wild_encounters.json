@@ -12076,8 +12076,8 @@
           }
         },
         {
-          "map": "MAP_PETALBERG_FIELDS",
-          "base_label": "gPetalbergFields",
+          "map": "MAP_PETALBURG_FIELDS",
+          "base_label": "gPetalburgFields",
           "land_mons": {
             "encounter_rate": 10,
             "mons": [

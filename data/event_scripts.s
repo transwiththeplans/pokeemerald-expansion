@@ -584,7 +584,7 @@ gStdScripts_End::
 	.include "data/maps/Route119_WeatherInstitute_2F/scripts.inc"
 	.include "data/maps/Route119_House/scripts.inc"
 	.include "data/maps/Route124_DivingTreasureHuntersHouse/scripts.inc"
-	.include "data/maps/PetalbergFields/scripts.inc"
+	.include "data/maps/PetalburgFields/scripts.inc"
 	.include "data/maps/DewfordGarden/scripts.inc"
 	.include "data/maps/NewRusturfTunnel/scripts.inc"
 	.include "data/maps/DiglettGrotto/scripts.inc"

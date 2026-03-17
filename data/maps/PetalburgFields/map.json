@@ -1,7 +1,7 @@
 {
-  "id": "MAP_PETALBERG_FIELDS",
-  "name": "PetalbergFields",
-  "layout": "LAYOUT_PETALBERG_FIELDS",
+  "id": "MAP_PETALBURG_FIELDS",
+  "name": "PetalburgFields",
+  "layout": "LAYOUT_PETALBURG_FIELDS",
   "music": "MUS_PETALBURG",
   "region_map_section": "MAPSEC_PETALBURG_CITY",
   "requires_flash": false,

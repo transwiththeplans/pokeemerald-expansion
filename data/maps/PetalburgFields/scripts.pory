@@ -1,0 +1,4 @@
+raw `
+PetalburgFields_MapScripts::
+    .byte 0
+`

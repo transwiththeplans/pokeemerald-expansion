@@ -1,4 +1,46 @@
-raw `
-PetalburgFields_MapScripts::
-    .byte 0
-`
+mapscripts PetalburgFields_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        if (flag(FLAG_DEFEATED_RUSTBORO_GYM) && !defeated(TRAINER_KEVIN_PETALBURG_FIELDS)) {
+            clearflag(FLAG_HIDE_PETALBURG_FIELDS_KEVIN)
+        } else {
+            setflag(FLAG_HIDE_PETALBURG_FIELDS_KEVIN)
+        }
+    }
+}
+
+script PetalburgFields_EventScript_Kevin {
+    lockall
+    faceplayer
+    msgbox(format(
+        "…oh. It's you. What are you doing here?\p"
+        "Your grandpa sent you? To train with ME?\p"
+        "Ugh. Fine. I'll take you on. You're lucky my partner's in a good mood today."
+    ))
+    closemessage
+    trainerbattle_no_intro(TRAINER_KEVIN_PETALBURG_FIELDS,  format("This isn't over."))
+    msgbox(format(
+        "…wow. You're good.\p"
+        "I’m not being sarcastic either. My partner's in a good mood…\p"
+        "What is my partner? Good question. According to your Grandpa, this is ‘Type: Null’ - some fancy corporation a few regions over developed one of these to fight some weird pokemon- at least that’s what he knows.\p"
+        "I found him lurking around my mom's place in Verdanturf a while ago. I've been raising him ever since…he's a little temperamental, but…he's mine, I guess.\p"
+        "…I guess you're alright, then. Thanks. See ya."
+    ))
+    closemessage
+    applymovement(LOCALID_PLAYER, moves(
+        walk_faster_right
+        walk_in_place_faster_left
+        walk_in_place_faster_up
+    ))
+    applymovement(LOCALID_PETALBURG_FIELDS_KEVIN, moves(
+        walk_faster_up * 3
+    ))
+    waitmovement(0)
+    applymovement(LOCALID_PETALBURG_FIELDS_KEVIN, moves(
+        walk_faster_up * 4
+    ))
+    waitmovement(0)
+    removeobject(LOCALID_PETALBURG_FIELDS_KEVIN)
+    delay(30)
+    releaseall
+    end
+}

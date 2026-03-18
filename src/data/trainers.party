@@ -12536,6 +12536,52 @@ Swablu
 Level: 27
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
+=== TRAINER_KEVIN_PETALBURG_FIELDS ===
+Name: KEVIN
+Class: Rival
+Pic: Wally
+Gender: Male
+Music: Male
+Items: Super Potion
+Double Battle: No
+AI: Basic Trainer
+
+Fletchinder
+Level: 18
+Ability: Keen Eye
+IVs: 0 HP / 0 Atk / 0 Def / 0  SpA / 0 SpD / 0 Spe
+- Kindling
+- Air Cutter
+- Flame Wheel
+- Wing Attack
+
+Yungoos
+Level: 18
+Ability: Stakeout
+IVs: 0 HP / 0 Atk / 0 Def / 0  SpA / 0 SpD / 0 Spe
+- Pursuit
+- Scratch
+- Payback
+- Leer
+
+Machop
+Level: 18
+Ability: Defiant
+IVs: 0 HP / 0 Atk / 0 Def / 0  SpA / 0 SpD / 0 Spe
+- Bulldoze
+- Low Kick
+- Power Up Punch
+- Rock Tomb
+
+Type Null
+Level: 19
+Ability: Battle Armor
+IVs: 0 HP / 0 Atk / 0 Def / 0  SpA / 0 SpD / 0 Spe
+- Aerial Ace
+- Double Hit
+- Bulk Up
+- Rock Tomb
+
 === TRAINER_WALLY_MAUVILLE ===
 Name: WALLY
 Class: Rival

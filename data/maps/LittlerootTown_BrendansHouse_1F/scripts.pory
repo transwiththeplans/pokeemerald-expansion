@@ -11,8 +11,9 @@ LittlerootTown_BrendansHouse_1F_OnLoad:
 	end
 
 LittlerootTown_BrendansHouse_1F_EventScript_SetMovingBoxes::
-	setmetatile 5, 4, METATILE_BrendansMaysHouse_MovingBox_Open, TRUE
-	setmetatile 5, 2, METATILE_BrendansMaysHouse_MovingBox_Closed, TRUE
+	@ Missing box tiles
+	@ setmetatile 5, 4, METATILE_BrendansMaysHouse_MovingBox_Open, TRUE
+	@ setmetatile 5, 2, METATILE_BrendansMaysHouse_MovingBox_Closed, TRUE
 	return
 
 LittlerootTown_BrendansHouse_1F_EventScript_CheckShowShoesManual::
@@ -21,7 +22,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_CheckShowShoesManual::
 	return
 
 LittlerootTown_BrendansHouse_1F_EventScript_ShowRunningShoesManual::
-	setmetatile 3, 7, METATILE_BrendansMaysHouse_BookOnTable, TRUE
+	setmetatile 3, 8, METATILE_BrendansMaysHouse_BookOnTable, TRUE
 	return
 
 LittlerootTown_BrendansHouse_1F_OnTransition:
@@ -31,17 +32,17 @@ LittlerootTown_BrendansHouse_1F_OnTransition:
 	end
 
 LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToStairs::
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 8, 4
+	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 17, 5
 	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_UP
 	return
 
 LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToTV::
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 4, 5
+	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 4, 6
 	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_UP
 	return
 
 LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToDoor::
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 9, 8
+	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 13, 11
 	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_UP
 	return
 
@@ -62,7 +63,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_GoUpstairsToSetClock::
 	applymovement LOCALID_PLAYER, LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs
 	applymovement LOCALID_PLAYERS_HOUSE_1F_MOM, LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs
 	waitmovement 0
-	warp MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 7, 1
+	warp MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 12, 3
 	waitstate
 	releaseall
 	end
@@ -118,6 +119,11 @@ LittlerootTown_BrendansHouse_1F_EventScript_GoSeeRoom::
 	applymovement VAR_0x8004, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	goto PlayersHouse_1F_EventScript_MomGoSeeRoom
+	end
+
+LittlerootTown_BrendansHouse_1F_EventScript_GoSeeRoom2::
+	lockall
+	goto PlayersHouse_1F_EventScript_MomGoSeeRoom2
 	end
 
 LittlerootTown_BrendansHouse_1F_EventScript_MeetRival0::

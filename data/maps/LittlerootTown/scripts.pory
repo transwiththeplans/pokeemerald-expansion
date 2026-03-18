@@ -106,7 +106,7 @@ LittlerootTown_EventScript_StepOffTruckMale::
 	setvar VAR_0x8005, 8
 	call LittlerootTown_EventScript_GoInsideWithMom
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK
-	warpsilent MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F, 8, 8
+	warpsilent MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F, 12, 11
 	waitstate
 	releaseall
 	end

@@ -40,6 +40,14 @@ PlayersHouse_1F_EventScript_MomGoSeeRoom::
 	releaseall
 	end
 
+PlayersHouse_1F_EventScript_MomGoSeeRoom2::
+	msgbox PlayersHouse_1F_Text_ArentYouInterestedInRoom, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, PlayersHouse_1F_Movement_MovePlayerAwayFromDoor2
+	waitmovement 0
+	releaseall
+	end
+
 LittlerootTown_BrendansHouse_2F_EventScript_WallClock::
 	lockall
 	setvar VAR_0x8004, MALE
@@ -389,8 +397,17 @@ PlayersHouse_1F_EventScript_Vigoroth2::
 
 PlayersHouse_1F_Movement_PlayerApproachTVForGymMale:
 	walk_down
-	walk_down
 	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
 	walk_left
 	walk_left
 	step_end
@@ -413,6 +430,10 @@ PlayersHouse_1F_Movement_PlayerMoveToTVFemale:
 
 PlayersHouse_1F_Movement_MovePlayerAwayFromDoor:
 	walk_up
+	step_end
+
+PlayersHouse_1F_Movement_MovePlayerAwayFromDoor2:
+	walk_down
 	step_end
 
 PlayersHouse_1F_EventScript_GetSSTicketAndSeeLatiTV::

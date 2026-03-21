@@ -18428,7 +18428,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-    const u32 gMonFrontPic_Chandelure[] = INCBIN_U32("graphics/pokemon/chandelure/anim_front.4bpp.smol");
+    const u32 gMonFrontPic_Chandelure[] = INCBIN_U32("graphics/pokemon/chandelure/front.4bpp.smol");
     const u16 gMonPalette_Chandelure[] = INCBIN_U16("graphics/pokemon/chandelure/normal.gbapal");
     const u32 gMonBackPic_Chandelure[] = INCBIN_U32("graphics/pokemon/chandelure/back.4bpp.smol");
     const u16 gMonShinyPalette_Chandelure[] = INCBIN_U16("graphics/pokemon/chandelure/shiny.gbapal");

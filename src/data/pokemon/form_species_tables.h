@@ -489,8 +489,8 @@ static const u16 sSteelixFormSpeciesIdTable[] = {
 #if P_FAMILY_KRABBY
 static const u16 sKinglerFormSpeciesIdTable[] = {
     SPECIES_KINGLER,
-#if P_GIGANTAMAX_FORMS
-    SPECIES_KINGLER_GMAX,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_KINGLER_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -2288,8 +2288,8 @@ static const u16 sToxtricityFormSpeciesIdTable[] = {
 #if P_FAMILY_SIZZLIPEDE
 static const u16 sCentiskorchFormSpeciesIdTable[] = {
     SPECIES_CENTISKORCH,
-#if P_GIGANTAMAX_FORMS
-    SPECIES_CENTISKORCH_GMAX,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_CENTISKORCH_MEGA,
 #endif
     FORM_SPECIES_END,
 };

@@ -1618,7 +1618,7 @@
 #define SPECIES_MACHAMP_MEGA                            1495
 #define SPECIES_MACHAMP_GMAX                            SPECIES_MACHAMP_MEGA
 #define SPECIES_GENGAR_GMAX                             1496
-#define SPECIES_KINGLER_GMAX                            1497
+#define SPECIES_KINGLER_MEGA                            1497
 #define SPECIES_LAPRAS_GMAX                             1498
 #define SPECIES_EEVEE_GMAX                              1499
 #define SPECIES_SNORLAX_GMAX                            1500
@@ -1638,7 +1638,7 @@
 #define SPECIES_SANDACONDA_GMAX                         1512
 #define SPECIES_TOXTRICITY_AMPED_GMAX                   1513
 #define SPECIES_TOXTRICITY_LOW_KEY_GMAX                 1514
-#define SPECIES_CENTISKORCH_GMAX                        1515
+#define SPECIES_CENTISKORCH_MEGA                        1515
 #define SPECIES_HATTERENE_GMAX                          1516
 #define SPECIES_GRIMMSNARL_GMAX                         1517
 #define SPECIES_ALCREMIE_GMAX                           1518

@@ -3698,9 +3698,9 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
     {
         .baseHP        = 50,
         .baseAttack    = 65,
-        .baseDefense   = 45,
+        .baseDefense   = 50,
         .baseSpeed     = 45,
-        .baseSpAttack  = 50,
+        .baseSpAttack  = 45,
         .baseSpDefense = 50,
         .types = MON_TYPES(TYPE_FIRE, TYPE_BUG),
         .catchRate = 190,
@@ -3766,9 +3766,9 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
     {
         .baseHP        = 100,
         .baseAttack    = 115,
-        .baseDefense   = 65,
+        .baseDefense   = 90,
         .baseSpeed     = 65,
-        .baseSpAttack  = 90,
+        .baseSpAttack  = 65,
         .baseSpDefense = 90,
         .types = MON_TYPES(TYPE_FIRE, TYPE_BUG),
         .catchRate = 75,
@@ -3831,8 +3831,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .formChangeTable = sCentiskorchFormChangeTable,
     },
 
-#if P_GIGANTAMAX_FORMS
-    [SPECIES_CENTISKORCH_GMAX] =
+#if P_MEGA_EVOLUTION
+    [SPECIES_CENTISKORCH_MEGA] =
     {
         .baseHP        = 100,
         .baseAttack    = 115,
@@ -3882,13 +3882,13 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(6, 9, SHADOW_SIZE_L)
         FOOTPRINT(Centiskorch)
-        .isGigantamax = TRUE,
+        .isMegaEvolution = TRUE,
         .levelUpLearnset = sCentiskorchLevelUpLearnset,
         .teachableLearnset = sCentiskorchTeachableLearnset,
         .formSpeciesIdTable = sCentiskorchFormSpeciesIdTable,
         .formChangeTable = sCentiskorchFormChangeTable,
     },
-#endif //P_GIGANTAMAX_FORMS
+#endif //P_MEGA_EVOLUTION
 #endif //P_FAMILY_SIZZLIPEDE
 
 #if P_FAMILY_CLOBBOPUS

@@ -4255,7 +4255,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
             PushTraitStack(battler, ABILITY_SCARE);
             SaveBattlerAttacker(gBattlerAttacker);
             gBattlerAttacker = battler;
-            effect += CommonSwitchInAbilities(battler, ABILITY_SCARE, traitCheck, BattleScript_IntimidateActivates);
+            effect += CommonSwitchInAbilities(battler, ABILITY_SCARE, traitCheck, BattleScript_ScareActivates);
         }
         if ((traitCheck = SearchTraits(battlerTraits, ABILITY_SUPERSWEET_SYRUP)) && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1]
          && !GetBattlerPartyState(battler)->supersweetSyrup
@@ -8186,6 +8186,8 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
         case EFFECT_FOUL_PLAY:
             statBattler = battlerDef;
         break;
+        default:
+        break;
     }
 
     if(forcedStat == NUM_STATS){
@@ -8193,6 +8195,8 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
             case TYPE_FIGHTING:
                 if (IsBattleMovePhysical(move) && BattlerHasTrait(battlerAtk, ABILITY_AURA_SHIFT))
                     forcedStat = STAT_SPATK;
+            break;
+            default:
             break;
         }
     }
@@ -8210,6 +8214,8 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
             break;
             case STAT_SPDEF:
                 forcedStat = STAT_DEF;
+            break;
+            default:
             break;
         }
     }
@@ -8232,7 +8238,7 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
             atkStage = gBattleMons[statBattler].statStages[STAT_SPDEF];
         break;
         case STAT_SPEED:
-            atkStat = gBattleMons[statBattler].Speed;
+            atkStat = gBattleMons[statBattler].speed;
             atkStage = gBattleMons[statBattler].statStages[STAT_SPEED];
         break;
         default:

@@ -6791,6 +6791,8 @@ BattleScript_TryIntimidateHoldEffects:
 BattleScript_TryIntimidateHoldEffectsRet:
 	return
 
+@Intimidate ------------------------------------------------------------------------------------------------------------------------
+
 BattleScript_IntimidateActivates::
 	savetarget
 	call BattleScript_AbilityPopUp
@@ -6849,33 +6851,23 @@ BattleScript_IntimidateInReverse::
 	call BattleScript_TryIntimidateHoldEffects
 	goto BattleScript_IntimidateLoopIncrement
 
-BattleScript_TryScareHoldEffects:
-	jumpifnoholdeffect BS_TARGET, HOLD_EFFECT_ADRENALINE_ORB, BattleScript_TryScareHoldEffectsRet
-	jumpifstat BS_TARGET, CMP_EQUAL, STAT_SPEED, MAX_STAT_STAGE, BattleScript_TryScareHoldEffectsRet
-	setstatchanger STAT_SPEED, 1, FALSE
-	playanimation BS_TARGET, B_ANIM_HELD_ITEM_EFFECT
-	statbuffchange BS_TARGET, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_CERTAIN | STAT_CHANGE_ALLOW_PTR, BattleScript_TryScareHoldEffectsRet
-	copybyte sBATTLER, gBattlerTarget
-	setlastuseditem BS_TARGET
-	printstring STRINGID_USINGITEMSTATOFPKMNROSE
-	waitmessage B_WAIT_TIME_LONG
-	removeitem BS_TARGET
-BattleScript_TryScareHoldEffectsRet:
-	return
+@Scare ------------------------------------------------------------------------------------------------------------------------
 
-BattleScript_ScareActivates:
+BattleScript_ScareActivates::
 	savetarget
 	call BattleScript_AbilityPopUp
 	setbyte gBattlerTarget, 0
 BattleScript_ScareLoop:
+	sethword gDisplayAbility ABILITY_SCARE
 	jumpiftargetally BattleScript_ScareLoopIncrement
 	jumpifabsent BS_TARGET, BattleScript_ScareLoopIncrement
 	jumpifvolatile BS_TARGET, VOLATILE_SUBSTITUTE, BattleScript_ScareLoopIncrement
 	jumpifintimidateabilityprevented
 BattleScript_ScareEffect:
 	copybyte sBATTLER, gBattlerAttacker
-	setstatchanger STAT_ATK, 1, TRUE
+	setstatchanger STAT_SPATK, 1, TRUE
 	statbuffchange BS_TARGET, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_ScareLoopIncrement
+	jumpifability BS_TARGET, ABILITY_CONTRARY, BattleScript_ScareContrary
 	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_ScareWontDecrease
 	printstring STRINGID_PKMNCUTSSPATKWITH
 BattleScript_ScareEffect_WaitString:
@@ -6905,6 +6897,34 @@ BattleScript_ScarePrevented::
 BattleScript_ScareWontDecrease:
 	printstring STRINGID_STATSWONTDECREASE
 	goto BattleScript_ScareEffect_WaitString
+
+BattleScript_ScareContrary:
+	pushtraitstack BS_TARGET ABILITY_CONTRARY
+	printstring STRINGID_PKMNINTIMIDATECONTRARYRATTLED
+	goto BattleScript_ScareEffect_WaitString
+
+BattleScript_ScareInReverse::
+	copybyte sBATTLER, gBattlerTarget
+	call BattleScript_AbilityPopUpTarget
+	pause B_WAIT_TIME_SHORT
+	modifybattlerstatstage BS_TARGET, STAT_SPATK, INCREASE, 1, BattleScript_ScareLoopIncrement, ANIM_ON
+	call BattleScript_TryScareHoldEffects
+	goto BattleScript_ScareLoopIncrement
+
+BattleScript_TryScareHoldEffects:
+	jumpifnoholdeffect BS_TARGET, HOLD_EFFECT_ADRENALINE_ORB, BattleScript_TryScareHoldEffectsRet
+	jumpifstat BS_TARGET, CMP_EQUAL, STAT_SPEED, MAX_STAT_STAGE, BattleScript_TryScareHoldEffectsRet
+	setstatchanger STAT_SPEED, 1, FALSE
+	playanimation BS_TARGET, B_ANIM_HELD_ITEM_EFFECT
+	statbuffchange BS_TARGET, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_CERTAIN | STAT_CHANGE_ALLOW_PTR, BattleScript_TryScareHoldEffectsRet
+	copybyte sBATTLER, gBattlerTarget
+	setlastuseditem BS_TARGET
+	printstring STRINGID_USINGITEMSTATOFPKMNROSE
+	waitmessage B_WAIT_TIME_LONG
+	removeitem BS_TARGET
+BattleScript_TryScareHoldEffectsRet:
+	return
+@Scare ------------------------------------------------------------------------------------------------------------------------
 
 BattleScript_SupersweetSyrupActivates::
  	savetarget

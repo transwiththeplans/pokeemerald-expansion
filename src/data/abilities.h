@@ -2753,4 +2753,67 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Normal moves become Ghost."),
         .aiRating = 7,
     },
+
+    [ABILITY_SHOOTING_STAR] =
+    {
+        .name = _("Shooting Star"),
+        .description = COMPOUND_STRING("Activates wish when at half health, once per battle."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_HUBRIS] =
+    {
+        .name = _("Hubris"),
+        .description = COMPOUND_STRING("KOs raise SpAtk by one stage."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_ALGAE_BLOOM] =
+    {
+        .name = _("Algae Bloom"),
+        .description = COMPOUND_STRING("Rain causes Grassy Terrain to spawn."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_AURA_SHIFT] =
+    {
+        .name = _("Aura Shift"),
+        .description = COMPOUND_STRING("Fighting-type moves use special attack."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_DREAM_WORLD] =
+    {
+        .name = _("Dream World"),
+        .description = COMPOUND_STRING("Makes everybody Drowsy when sent out, even itself."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_ROOTED] =
+    {
+        .name = _("Rooted"),
+        .description = COMPOUND_STRING("Plants its roots at the start of battle."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_OPPOSITE_DAY] =
+    {
+        .name = _("Opposite day"),
+        .description = COMPOUND_STRING("The Pokémon summons Inverse Room when it enters the battlefield."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_TOTTERING_STEP] =
+    {
+        .name = _("Tottering Steps"),
+        .description = COMPOUND_STRING("When attacking this Pokémon may cause the target to become confused."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_PREDATOR] =
+    {
+        .name = _("Predator"),
+        .description = COMPOUND_STRING("Dealing a KO heals 1/8 of this Pokémon's max HP."),
+        .aiRating = 8,
+    },
 };

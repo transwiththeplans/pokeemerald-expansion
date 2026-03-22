@@ -8167,6 +8167,8 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
     u32 battlerAtk = ctx->battlerAtk;
     u32 battlerDef = ctx->battlerDef;
     u32 move = ctx->move;
+    u8 forcedStat = NUM_STATS;
+    u8 statBattler = battlerAtk;
     enum Type moveType = ctx->moveType;
     enum BattleMoveEffects moveEffect = GetMoveEffect(move);
     enum Ability battlerTraits[MAX_MON_TRAITS];
@@ -8174,48 +8176,77 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
 
     atkBaseSpeciesId = GET_BASE_SPECIES_ID(gBattleMons[battlerAtk].species);
 
-    if (moveEffect == EFFECT_FOUL_PLAY)
-    {
-        if (IsBattleMovePhysical(move))
-        {
-            atkStat = gBattleMons[battlerDef].attack;
-            atkStage = gBattleMons[battlerDef].statStages[STAT_ATK];
-        }
-        else
-        {
-            atkStat = gBattleMons[battlerDef].spAttack;
-            atkStage = gBattleMons[battlerDef].statStages[STAT_SPATK];
-        }
-    }
-    else if (moveEffect == EFFECT_BODY_PRESS)
-    {
-        if (IsBattleMovePhysical(move))
-        {
-            atkStat = gBattleMons[battlerAtk].defense;
-            // Edge case: Body Press used during Wonder Room. For some reason, it still uses Defense over Sp.Def, but uses Sp.Def stat changes
-            if (gFieldStatuses & STATUS_FIELD_WONDER_ROOM)
-                atkStage = gBattleMons[battlerAtk].statStages[STAT_SPDEF];
+    switch(moveEffect){
+        case EFFECT_BODY_PRESS:
+            if (IsBattleMovePhysical(move))
+                forcedStat = STAT_DEF;
             else
-                atkStage = gBattleMons[battlerAtk].statStages[STAT_DEF];
-        }
-        else
-        {
-            atkStat = gBattleMons[battlerAtk].spDefense;
-            atkStage = gBattleMons[battlerAtk].statStages[STAT_SPDEF];
+                forcedStat = STAT_SPDEF;
+        break;
+        case EFFECT_FOUL_PLAY:
+            statBattler = battlerDef;
+        break;
+    }
+
+    if(forcedStat == NUM_STATS){
+        switch(moveType){
+            case TYPE_FIGHTING:
+                if (IsBattleMovePhysical(move) && BattlerHasTrait(battlerAtk, ABILITY_AURA_SHIFT))
+                    forcedStat = STAT_SPATK;
+            break;
         }
     }
-    else
-    {
-        if (IsBattleMovePhysical(move))
-        {
-            atkStat = gBattleMons[battlerAtk].attack;
-            atkStage = gBattleMons[battlerAtk].statStages[STAT_ATK];
+
+    if (gFieldStatuses & STATUS_FIELD_WONDER_ROOM){
+        switch(forcedStat){
+            case STAT_ATK:
+                forcedStat = STAT_SPATK;
+            break;
+            case STAT_DEF:
+                forcedStat = STAT_SPDEF;
+            break;
+            case STAT_SPATK:
+                forcedStat = STAT_ATK;
+            break;
+            case STAT_SPDEF:
+                forcedStat = STAT_DEF;
+            break;
         }
-        else
-        {
-            atkStat = gBattleMons[battlerAtk].spAttack;
-            atkStage = gBattleMons[battlerAtk].statStages[STAT_SPATK];
-        }
+    }
+
+    switch(forcedStat){
+        case STAT_ATK:
+            atkStat = gBattleMons[statBattler].attack;
+            atkStage = gBattleMons[statBattler].statStages[STAT_ATK];
+        break;
+        case STAT_DEF:
+            atkStat = gBattleMons[statBattler].defense;
+            atkStage = gBattleMons[statBattler].statStages[STAT_DEF];
+        break;
+        case STAT_SPATK:
+            atkStat = gBattleMons[statBattler].spAttack;
+            atkStage = gBattleMons[statBattler].statStages[STAT_SPATK];
+        break;
+        case STAT_SPDEF:
+            atkStat = gBattleMons[statBattler].spDefense;
+            atkStage = gBattleMons[statBattler].statStages[STAT_SPDEF];
+        break;
+        case STAT_SPEED:
+            atkStat = gBattleMons[statBattler].Speed;
+            atkStage = gBattleMons[statBattler].statStages[STAT_SPEED];
+        break;
+        default:
+            if (IsBattleMovePhysical(move))
+            {
+                atkStat = gBattleMons[statBattler].attack;
+                atkStage = gBattleMons[statBattler].statStages[STAT_ATK];
+            }
+            else
+            {
+                atkStat = gBattleMons[statBattler].spAttack;
+                atkStage = gBattleMons[statBattler].statStages[STAT_SPATK];
+            }
+        break;
     }
 
     // critical hits ignore attack stat's stage drops

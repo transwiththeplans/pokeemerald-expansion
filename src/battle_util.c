@@ -5799,6 +5799,22 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
             BattleScriptCall(BattleScript_AbilityStatusEffectAtk);
             effect++;
         }
+        else if (SearchTraits(battlerTraits, ABILITY_TOTTERING_STEP)
+         && IsBattlerAlive(gBattlerTarget)
+         && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+         && CanBeConfused(gBattlerTarget)
+         && !CanBattlerAvoidContactEffects(gBattlerAttacker, gBattlerTarget, GetBattlerHoldEffect(gBattlerAttacker), move)
+         && IsBattlerTurnDamaged(gBattlerTarget) // Need to actually hit the target
+         && RandomPercentage(RNG_POISON_TOUCH, 30))
+        {
+            gEffectBattler = gBattlerTarget;
+            gBattleScripting.battler = gBattlerAttacker;
+            gBattleScripting.moveEffect = MOVE_EFFECT_CONFUSION;
+            gLastUsedAbility = ABILITY_TOTTERING_STEP;
+            PushTraitStack(gBattlerAttacker, ABILITY_TOTTERING_STEP);
+            BattleScriptCall(BattleScript_AbilityStatusEffectAtk);
+            effect++;
+        }
         else if (SearchTraits(battlerTraits, ABILITY_STENCH)
          && IsBattlerAlive(gBattlerTarget)
          && !gProtectStructs[gBattlerAttacker].confusionSelfDmg

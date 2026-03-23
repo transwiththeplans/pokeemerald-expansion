@@ -5705,6 +5705,14 @@ BattleScript_WishComesTrue::
 	waitmessage B_WAIT_TIME_LONG
 	end2
 
+BattleScript_PredatorActivate::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PKMNSXRESTOREDHPALITTLE2
+	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	waitmessage B_WAIT_TIME_LONG
+	end2
+
 BattleScript_WishButFullHp::
 	printstring STRINGID_PKMNWISHCAMETRUE
 	waitmessage B_WAIT_TIME_LONG

@@ -5730,7 +5730,7 @@ static bool32 HandleMoveEndAbilityBlock(u32 battlerAtk, u32 battlerDef, u32 move
                 }
             }
         }
-if (SearchTraits(battlerTraits, ABILITY_MOXIE))
+    if (SearchTraits(battlerTraits, ABILITY_MOXIE))
     {
         if (IsBattlerAlive(battlerAtk) && !NoAliveMonsForEitherParty())
         {
@@ -5813,6 +5813,23 @@ if (SearchTraits(battlerTraits, ABILITY_MOXIE))
                 BattleScriptCall(BattleScript_RaiseStatOnFaintingTargetBeastBoost);
                 effect = TRUE;
             }
+        }
+    }
+    if (SearchTraits(battlerTraits, ABILITY_PREDATOR))
+    {
+        if (IsBattlerAlive(battlerAtk) 
+            && !NoAliveMonsForEitherParty()
+            && !IsBattlerAtMaxHp(battlerDef) 
+            && gBattleMons[battlerDef].volatiles.healBlock == FALSE
+            && NumFaintedBattlersByAttacker(battlerAtk) != 0)
+        {
+            u8 healAmount = gBattleMons[battlerAtk].maxHP / 8;
+            SetHealAmount(gBattlerAttacker, healAmount);
+                
+            gLastUsedAbility = ABILITY_PREDATOR;
+            PushTraitStack(battlerAtk, ABILITY_PREDATOR);
+            BattleScriptCall(BattleScript_PredatorActivate);
+            effect = TRUE;
         }
     }
     if (SearchTraits(battlerTraits, ABILITY_BATTLE_BOND))

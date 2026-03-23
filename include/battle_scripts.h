@@ -106,6 +106,7 @@ extern const u8 BattleScript_SelectingNotAllowedMoveTauntInPalace[];
 extern const u8 BattleScript_WishButHealBlocked[];
 extern const u8 BattleScript_WishButFullHp[];
 extern const u8 BattleScript_WishComesTrue[];
+extern const u8 BattleScript_PredatorActivate[];
 extern const u8 BattleScript_IngrainTurnHeal[];
 extern const u8 BattleScript_AtkDefDown[];
 extern const u8 BattleScript_DefSpDefDown[];

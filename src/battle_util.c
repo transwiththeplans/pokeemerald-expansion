@@ -4542,6 +4542,12 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
             if(TryChangeBattleTerrain(battler, STATUS_FIELD_PSYCHIC_TERRAIN))
                 effect += CommonSwitchInAbilities(battler, ABILITY_PSYCHIC_SURGE, traitCheck, BattleScript_PsychicSurgeActivates);
         }
+        if ((traitCheck = SearchTraits(battlerTraits, ABILITY_ALGAE_BLOOM)) && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1])
+        {
+            gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1] = TRUE;
+            if (IsBattlerWeatherAffected(battler, B_WEATHER_RAIN) && TryChangeBattleTerrain(battler, STATUS_FIELD_GRASSY_TERRAIN))
+                effect += CommonSwitchInAbilities(battler, ABILITY_ALGAE_BLOOM, traitCheck, BattleScript_GrassySurgeActivates);
+        }
         if ((traitCheck = SearchTraits(battlerTraits, ABILITY_CLOUD_NINE)) && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1])
             effect += CommonSwitchInAbilities(battler, ABILITY_CLOUD_NINE, traitCheck, BattleScript_AnnounceAirLockCloudNine);
 
@@ -6156,6 +6162,19 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
             PushTraitStack(battler, ABILITY_PROTOSYNTHESIS);
             BattleScriptPushCursorAndCallback(BattleScript_ProtosynthesisActivates);
             effect++;
+       }
+       if (SearchTraits(battlerTraits, ABILITY_ALGAE_BLOOM)
+        && !gDisableStructs[battler].weatherAbilityDone
+        && IsBattlerWeatherAffected(battler, B_WEATHER_RAIN))
+       {
+            if (TryChangeBattleTerrain(battler, STATUS_FIELD_GRASSY_TERRAIN))
+            {
+                gDisableStructs[battler].weatherAbilityDone = TRUE;
+                gBattleScripting.battler = battler;
+                PushTraitStack(battler, ABILITY_ALGAE_BLOOM);
+                BattleScriptPushCursorAndCallback(BattleScript_GrassySurgeActivates);
+                effect++;
+            }
        }
        break;
     case ABILITYEFFECT_ON_TERRAIN:  // For ability effects that activate when the field terrain changes.

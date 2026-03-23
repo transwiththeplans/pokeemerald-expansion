@@ -17339,14 +17339,17 @@ void BS_TryActivateSoulheart(void)
     while (gBattleStruct->soulheartBattlerId < gBattlersCount)
     {
         gBattleScripting.battler = gBattleStruct->soulheartBattlerId++;
-        if (BattlerHasTrait(gBattleScripting.battler, ABILITY_SOUL_HEART)
+        if ((BattlerHasTrait(gBattleScripting.battler, ABILITY_SOUL_HEART) || BattlerHasTrait(gBattleScripting.battler, ABILITY_HUBRIS))
             && IsBattlerAlive(gBattleScripting.battler)
             && !NoAliveMonsForEitherParty()
             && CompareStat(gBattleScripting.battler, STAT_SPATK, MAX_STAT_STAGE, CMP_LESS_THAN))
         {
             SET_STATCHANGER(STAT_SPATK, 1, FALSE);
             PREPARE_STAT_BUFFER(gBattleTextBuff1, STAT_SPATK);
-            PushTraitStack(gBattleScripting.battler, ABILITY_SOUL_HEART);
+            if(BattlerHasTrait(gBattleScripting.battler, ABILITY_HUBRIS))
+                PushTraitStack(gBattleScripting.battler, ABILITY_HUBRIS);
+            else
+                PushTraitStack(gBattleScripting.battler, ABILITY_SOUL_HEART);
             BattleScriptCall(BattleScript_ScriptingAbilityStatRaise);
             return;
         }

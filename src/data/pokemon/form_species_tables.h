@@ -1089,6 +1089,9 @@ static const u16 sAbsolFormSpeciesIdTable[] = {
 #if P_MEGA_EVOLUTIONS
     SPECIES_ABSOL_MEGA,
 #endif
+#if P_GEN_9_MEGA_EVOLUTIONS
+    SPECIES_ABSOL_MEGA_Z,
+#endif
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_ABSOL
@@ -1344,6 +1347,16 @@ static const u16 sGiratinaFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_GIRATINA
+
+#if P_FAMILY_DARKRAI
+static const u16 sDarkraiFormSpeciesIdTable[] = {
+    SPECIES_DARKRAI,
+#if P_GEN_9_MEGA_EVOLUTIONS
+    SPECIES_DARKRAI_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_DARKRAI
 
 #if P_FAMILY_SHAYMIN
 static const u16 sShayminFormSpeciesIdTable[] = {

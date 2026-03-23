@@ -10707,6 +10707,77 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .formChangeTable = sAbsolFormChangeTable,
     },
 #endif //P_MEGA_EVOLUTIONS
+
+#if P_GEN_9_MEGA_EVOLUTIONS
+    [SPECIES_ABSOL_MEGA_Z] =
+    {
+        .baseHP        = 65,
+        .baseAttack    = 150,
+        .baseDefense   = 60,
+        .baseSpeed     = 115,
+        .baseSpAttack  = 115,
+        .baseSpDefense = 60,
+        .types = MON_TYPES(TYPE_DARK),
+        .catchRate = 30,
+        .expYield = 198,
+        .evYield_Attack = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 25,
+        .friendship = 35,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_MAGIC_BOUNCE, ABILITY_MAGIC_BOUNCE, ABILITY_MAGIC_BOUNCE },
+        .innates = {ABILITY_DARK_AURA},
+        .innateUnlockLevel = 40,
+        .bodyColor = BODY_COLOR_WHITE,
+        .noFlip = TRUE,
+        .speciesName = _("Absol"),
+        .cryId = CRY_ABSOL_MEGA,
+        .natDexNum = NATIONAL_DEX_ABSOL,
+        .categoryName = _("Disaster"),
+        .height = 12,
+        .weight = 490,
+        .description = COMPOUND_STRING(
+            "Every Pokemon it has been forced to\n"
+            "battle. It senses impending natural\n"
+            "disasters."),
+        .pokemonScale = 301,
+        .pokemonOffset = 3,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_AbsolMegaZ,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 2,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .backPic = gMonBackPic_AbsolMegaZ,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
+        .palette = gMonPalette_AbsolMegaZ,
+        .shinyPalette = gMonShinyPalette_AbsolMegaZ,
+        .iconSprite = gMonIcon_AbsolMegaZ,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(1, 7, SHADOW_SIZE_L)
+        FOOTPRINT(Absol)
+    #if OW_BATTLE_ONLY_FORMS
+        OVERWORLD(
+            sPicTable_AbsolMegaZ,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_AbsolMegaZ,
+            gShinyOverworldPalette_AbsolMegaZ
+        )
+    #endif //OW_BATTLE_ONLY_FORMS
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sAbsolLevelUpLearnset,
+        .teachableLearnset = sAbsolTeachableLearnset,
+        .formSpeciesIdTable = sAbsolFormSpeciesIdTable,
+        .formChangeTable = sAbsolFormChangeTable,
+    },
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_ABSOL
 
 #if P_FAMILY_SNORUNT

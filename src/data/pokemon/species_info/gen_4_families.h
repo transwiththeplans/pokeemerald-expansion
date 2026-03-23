@@ -7942,7 +7942,82 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sDarkraiLevelUpLearnset,
         .teachableLearnset = sDarkraiTeachableLearnset,
+        .formSpeciesIdTable = sDarkraiFormSpeciesIdTable,
+        .formChangeTable = sDarkraiFormChangeTable,
     },
+
+#if P_GEN_9_MEGA_EVOLUTIONS
+    [SPECIES_DARKRAI_MEGA] =
+    {
+        .baseHP        = 70,
+        .baseAttack    = 90,
+        .baseDefense   = 90,
+        .baseSpeed     = 125,
+        .baseSpAttack  = 135,
+        .baseSpDefense = 90,
+        .types = MON_TYPES(TYPE_DARK),
+        .catchRate = 3,
+        .expYield = 300,
+        .evYield_Speed = 1,
+        .evYield_SpAttack = 2,
+        .genderRatio = MON_GENDERLESS,
+        .eggCycles = 120,
+        .friendship = 0,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_BAD_DREAMS, ABILITY_BAD_DREAMS, ABILITY_BAD_DREAMS },
+        .bodyColor = BODY_COLOR_BLACK,
+        .speciesName = _("Darkrai"),
+        .cryId = CRY_DARKRAI,
+        .natDexNum = NATIONAL_DEX_DARKRAI,
+        .categoryName = _("Pitch-Black"),
+        .height = 15,
+        .weight = 505,
+        .description = COMPOUND_STRING(
+            "It can lull people to sleep and make\n"
+            "them dream. It is active during nights\n"
+            "of the new moon."),
+        .pokemonScale = 268,
+        .pokemonOffset = 2,
+        .trainerScale = 271,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_DarkraiMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 3,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .enemyMonElevation = 4,
+        .backPic = gMonBackPic_DarkraiMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
+        .palette = gMonPalette_DarkraiMega,
+        .shinyPalette = gMonShinyPalette_DarkraiMega,
+        .iconSprite = gMonIcon_DarkraiMega,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(4, 12, SHADOW_SIZE_M)
+        FOOTPRINT(Darkrai)
+    #if OW_BATTLE_ONLY_FORMS
+        OVERWORLD(
+            sPicTable_DarkraiMega,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_DarkraiMega,
+            gShinyOverworldPalette_DarkraiMega
+        )
+    #endif //OW_BATTLE_ONLY_FORMS
+        .isMegaEvolution = TRUE,
+        .isMythical = TRUE,
+        .isFrontierBanned = TRUE,
+        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
+        .levelUpLearnset = sDarkraiLevelUpLearnset,
+        .teachableLearnset = sDarkraiTeachableLearnset,
+        .formSpeciesIdTable = sDarkraiFormSpeciesIdTable,
+        .formChangeTable = sDarkraiFormChangeTable,
+    },
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_DARKRAI
 
 #if P_FAMILY_SHAYMIN

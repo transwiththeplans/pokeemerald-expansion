@@ -747,6 +747,9 @@ static const struct FormChange sAbsolFormChangeTable[] =
 #if P_MEGA_EVOLUTIONS
     {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_ABSOL_MEGA, ITEM_ULTIMATRIX_SYMBOL},
 #endif
+#if P_GEN_9_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_ABSOL_MEGA_Z, ITEM_ULTIMATRIX_SYMBOL_Z},
+#endif
     {FORM_CHANGE_END_BATTLE,                    SPECIES_ABSOL},
     {FORM_CHANGE_TERMINATOR},
 };
@@ -1061,6 +1064,17 @@ static const struct FormChange sGiratinaFormChangeTable[] =
     {FORM_CHANGE_TERMINATOR},
 };
 #endif //P_FAMILY_GIRATINA
+
+#if P_FAMILY_DARKRAI
+static const struct FormChange sDarkraiFormChangeTable[] =
+{
+#if P_GEN_9_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_DARKRAI_MEGA, ITEM_ULTIMATRIX_SYMBOL},
+#endif
+    {FORM_CHANGE_END_BATTLE,                    SPECIES_DARKRAI},
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_FAMILY_DARKRAI
 
 #if P_FAMILY_SHAYMIN
 static const struct FormChange sShayminFormChangeTable[] =

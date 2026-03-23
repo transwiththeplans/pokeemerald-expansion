@@ -1850,7 +1850,76 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         )
         .levelUpLearnset = sPyroarLevelUpLearnset,
         .teachableLearnset = sPyroarTeachableLearnset,
+        .formSpeciesIdTable = sPyroarFormSpeciesIdTable,
+        .formChangeTable = sPyroarFormChangeTable,
     },
+
+#if P_GEN_9_MEGA_EVOLUTIONS
+    [SPECIES_PYROAR_MEGA] =
+    {
+        .baseHP        = 86,
+        .baseAttack    = 68,
+        .baseDefense   = 72,
+        .baseSpeed     = 106,
+        .baseSpAttack  = 109,
+        .baseSpDefense = 66,
+        .types = MON_TYPES(TYPE_FIRE, TYPE_NORMAL),
+        .catchRate = 65,
+        .expYield = 177,
+        .evYield_SpAttack = 2,
+        .genderRatio = PERCENT_FEMALE(87.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_RIVALRY, ABILITY_RIVALRY, ABILITY_RIVALRY },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("Pyroar"),
+        .cryId = CRY_PYROAR,
+        .natDexNum = NATIONAL_DEX_PYROAR,
+        .categoryName = _("Royal"),
+        .height = 15,
+        .weight = 815,
+        .description = COMPOUND_STRING(
+            "The male with the largest mane of fire\n"
+            "is the leader of the pride."),
+        .pokemonScale = 268,
+        .pokemonOffset = 2,
+        .trainerScale = 271,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_PyroarMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .backPic = gMonBackPic_PyroarMega,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 3,
+        .backAnimId = BACK_ANIM_H_STRETCH,
+        .palette = gMonPalette_PyroarMega,
+        .shinyPalette = gMonShinyPalette_PyroarMega,
+        .iconSprite = gMonIcon_PyroarMega,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 11, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Pyroar)
+    #if OW_BATTLE_ONLY_FORMS
+        OVERWORLD(
+            sPicTable_PyroarMega,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_PyroarMega,
+            gShinyOverworldPalette_PyroarMega
+        )
+    #endif //OW_BATTLE_ONLY_FORMS
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sPyroarLevelUpLearnset,
+        .teachableLearnset = sPyroarTeachableLearnset,
+        .formSpeciesIdTable = sPyroarFormSpeciesIdTable,
+        .formChangeTable = sPyroarFormChangeTable,
+    },
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_LITLEO
 
 #if P_FAMILY_FLABEBE
@@ -4682,7 +4751,83 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .levelUpLearnset = sHawluchaLevelUpLearnset,
         .teachableLearnset = sHawluchaTeachableLearnset,
         .eggMoveLearnset = sHawluchaEggMoveLearnset,
+        .formSpeciesIdTable = sHawluchaFormSpeciesIdTable,
+        .formChangeTable = sHawluchaFormChangeTable,
     },
+
+#if P_GEN_9_MEGA_EVOLUTIONS
+    [SPECIES_HAWLUCHA_MEGA] =
+    {
+        .baseHP        = 78,
+        .baseAttack    = 92,
+        .baseDefense   = 75,
+        .baseSpeed     = 118,
+        .baseSpAttack  = 74,
+        .baseSpDefense = 63,
+        .types = MON_TYPES(TYPE_FIGHTING, TYPE_FLYING),
+        .catchRate = 100,
+        .expYield = 175,
+        .evYield_Attack = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+    #if P_UPDATED_EGG_GROUPS >= GEN_8
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING, EGG_GROUP_HUMAN_LIKE),
+    #else
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
+    #endif
+        .abilities = { ABILITY_LIMBER, ABILITY_LIMBER, ABILITY_LIMBER },
+        .innates = {ABILITY_AERODYNAMICS},
+        .innateUnlockLevel = 40,
+        .bodyColor = BODY_COLOR_GREEN,
+        .speciesName = _("Hawlucha"),
+        .cryId = CRY_HAWLUCHA,
+        .natDexNum = NATIONAL_DEX_HAWLUCHA,
+        .categoryName = _("Wrestling"),
+        .height = 8,
+        .weight = 215,
+        .description = COMPOUND_STRING(
+            "Although its body is small, its proficient\n"
+            "fighting skills enable it to keep up\n"
+            "with big bruisers."),
+        .pokemonScale = 366,
+        .pokemonOffset = 7,
+        .trainerScale = 257,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_HawluchaMega,
+        .frontPicSize = MON_COORDS_SIZE(64, 56),
+        .frontPicYOffset = 8,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .backPic = gMonBackPic_HawluchaMega,
+        .backPicSize = MON_COORDS_SIZE(64, 48),
+        .backPicYOffset = 10,
+        .backAnimId = BACK_ANIM_GROW_STUTTER,
+        .palette = gMonPalette_HawluchaMega,
+        .shinyPalette = gMonShinyPalette_HawluchaMega,
+        .iconSprite = gMonIcon_HawluchaMega,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(3, 6, SHADOW_SIZE_S)
+        FOOTPRINT(Hawlucha)
+    #if OW_BATTLE_ONLY_FORMS
+        OVERWORLD(
+            sPicTable_HawluchaMega,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_HawluchaMega,
+            gShinyOverworldPalette_HawluchaMega
+        )
+    #endif //OW_BATTLE_ONLY_FORMS
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sHawluchaLevelUpLearnset,
+        .teachableLearnset = sHawluchaTeachableLearnset,
+        .formSpeciesIdTable = sHawluchaFormSpeciesIdTable,
+        .formChangeTable = sHawluchaFormChangeTable,
+    },
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_HAWLUCHA
 
 #if P_FAMILY_DEDENNE

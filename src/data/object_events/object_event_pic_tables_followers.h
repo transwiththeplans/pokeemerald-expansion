@@ -324,6 +324,13 @@ static const struct SpriteFrameImage sPicTable_Clefairy[] = {
 static const struct SpriteFrameImage sPicTable_Clefable[] = {
     overworld_ascending_frames(gObjectEventPic_Clefable, 4, 4),
 };
+#if OW_BATTLE_ONLY_FORMS
+#if P_GEN_9_MEGA_EVOLUTIONS
+static const struct SpriteFrameImage sPicTable_ClefableMega[] = {
+    overworld_ascending_frames(gObjectEventPic_ClefableMega, 4, 4),
+};
+#endif // P_GEN_9_MEGA_EVOLUTIONS
+#endif // OW_BATTLE_ONLY_FORMS
 #endif //P_FAMILY_CLEFAIRY
 
 #if P_FAMILY_VULPIX
@@ -2865,6 +2872,11 @@ static const struct SpriteFrameImage sPicTable_AbsolMega[] = {
     overworld_ascending_frames(gObjectEventPic_AbsolMega, 4, 4),
 };
 #endif // P_MEGA_EVOLUTIONS
+#if P_GEN_9_MEGA_EVOLUTIONS
+static const struct SpriteFrameImage sPicTable_AbsolMegaZ[] = {
+    overworld_ascending_frames(gObjectEventPic_AbsolMegaZ, 4, 4),
+};
+#endif // P_GEN_9_MEGA_EVOLUTIONS
 #endif // OW_BATTLE_ONLY_FORMS
 #endif //P_FAMILY_ABSOL
 
@@ -3618,6 +3630,13 @@ static const struct SpriteFrameImage sPicTable_Manaphy[] = {
 static const struct SpriteFrameImage sPicTable_Darkrai[] = {
     overworld_ascending_frames(gObjectEventPic_Darkrai, 4, 4),
 };
+#if OW_BATTLE_ONLY_FORMS
+#if P_GEN_9_MEGA_EVOLUTIONS
+static const struct SpriteFrameImage sPicTable_DarkraiMega[] = {
+    overworld_ascending_frames(gObjectEventPic_DarkraiMega, 4, 4),
+};
+#endif // P_GEN_9_MEGA_EVOLUTIONS
+#endif // OW_BATTLE_ONLY_FORMS
 #endif //P_FAMILY_DARKRAI
 
 #if P_FAMILY_SHAYMIN
@@ -4699,6 +4718,13 @@ static const struct SpriteFrameImage sPicTable_PyroarF[] = {
     overworld_ascending_frames(gObjectEventPic_PyroarF, 4, 4),
 };
 #endif //P_GENDER_DIFFERENCES
+#if OW_BATTLE_ONLY_FORMS
+#if P_GEN_9_MEGA_EVOLUTIONS
+static const struct SpriteFrameImage sPicTable_PyroarMega[] = {
+    overworld_ascending_frames(gObjectEventPic_PyroarMega, 4, 4),
+};
+#endif // P_GEN_9_MEGA_EVOLUTIONS
+#endif // OW_BATTLE_ONLY_FORMS
 #endif //P_FAMILY_LITLEO
 
 #if P_FAMILY_FLABEBE
@@ -4917,6 +4943,13 @@ static const struct SpriteFrameImage sPicTable_Aurorus[] = {
 static const struct SpriteFrameImage sPicTable_Hawlucha[] = {
     overworld_ascending_frames(gObjectEventPic_Hawlucha, 4, 4),
 };
+#if OW_BATTLE_ONLY_FORMS
+#if P_GEN_9_MEGA_EVOLUTIONS
+static const struct SpriteFrameImage sPicTable_HawluchaMega[] = {
+    overworld_ascending_frames(gObjectEventPic_HawluchaMega, 4, 4),
+};
+#endif // P_GEN_9_MEGA_EVOLUTIONS
+#endif // OW_BATTLE_ONLY_FORMS
 #endif //P_FAMILY_HAWLUCHA
 
 #if P_FAMILY_DEDENNE

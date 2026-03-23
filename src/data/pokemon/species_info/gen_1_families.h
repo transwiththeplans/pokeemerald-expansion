@@ -5364,7 +5364,80 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sClefableLevelUpLearnset,
         .teachableLearnset = sClefableTeachableLearnset,
+        .formSpeciesIdTable = sClefableFormSpeciesIdTable,
+        .formChangeTable = sClefableFormChangeTable,
     },
+
+#if P_GEN_9_MEGA_EVOLUTIONS
+    [SPECIES_CLEFABLE_MEGA] =
+    {
+        .baseHP        = 95,
+        .baseAttack    = 70,
+        .baseDefense   = 70,
+        .baseSpeed     = 60,
+        .baseSpAttack  = 105,
+        .baseSpDefense = 100,
+        .types = MON_TYPES(TYPE_NORMAL),
+        .catchRate = 25,
+        .expYield = 242,
+        .evYield_HP = 3,
+        .genderRatio = PERCENT_FEMALE(75),
+        .eggCycles = 10,
+        .friendship = 140,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY),
+        .abilities = { ABILITY_DAZZLING, ABILITY_DAZZLING, ABILITY_DAZZLING },
+        .innates = { ABILITY_TERA_SHELL },
+        .innateUnlockLevel = 40,
+        .bodyColor = BODY_COLOR_PINK,
+        .noFlip = TRUE,
+        .speciesName = _("Clefable"),
+        .cryId = CRY_CLEFABLE,
+        .natDexNum = NATIONAL_DEX_CLEFABLE,
+        .categoryName = _("Fairy"),
+        .height = 13,
+        .weight = 400,
+        .description = COMPOUND_STRING(
+            "A timid fairy Pokémon that is rarely\n"
+            "seen. It will run and hide the moment\n"
+            "it senses people."),
+        .pokemonScale = 256,
+        .pokemonOffset = 5,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_ClefableMega,
+        .frontPicSize = MON_COORDS_SIZE(56, 56),
+        .frontPicYOffset = 6,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .backPic = gMonBackPic_ClefableMega,
+        .backPicSize = MON_COORDS_SIZE(64, 48),
+        .backPicYOffset = 10,
+        .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
+        .palette = gMonPalette_ClefableMega,
+        .shinyPalette = gMonShinyPalette_ClefableMega,
+        .iconSprite = gMonIcon_ClefableMega,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(0, 7, SHADOW_SIZE_M)
+        FOOTPRINT(Clefable)
+    #if OW_BATTLE_ONLY_FORMS
+        OVERWORLD(
+            sPicTable_ClefableMega,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_ClefableMega,
+            gShinyOverworldPalette_ClefableMega
+        )
+    #endif //OW_BATTLE_ONLY_FORMS
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sClefableLevelUpLearnset,
+        .teachableLearnset = sClefableTeachableLearnset,
+        .formSpeciesIdTable = sClefableFormSpeciesIdTable,
+        .formChangeTable = sClefableFormChangeTable,
+    },
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_CLEFAIRY
 
 #if P_FAMILY_VULPIX

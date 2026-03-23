@@ -21,8 +21,17 @@ mus_oe_vs_trainer_1:
 	.byte	TEMPO , 144*mus_oe_vs_trainer_tbs/2
 	.byte		VOICE , 17
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 112*mus_oe_vs_trainer_mvl/mxv
+	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte	W96
 @ 001   ----------------------------------------
 	.byte	W84
@@ -169,9 +178,9 @@ mus_oe_vs_trainer_1_010:
 	.byte		N12   , Ds3 , v116
 	.byte	W12
 	.byte		        Cs3 , v096
-	.byte	W24
+	.byte	W12
 	.byte		VOICE , 56
-	.byte		VOL   , 127*mus_oe_vs_trainer_mvl/mxv
+	.byte	W12
 	.byte		N12   , Gs3 , v127
 	.byte	W12
 @ 014   ----------------------------------------
@@ -210,9 +219,9 @@ mus_oe_vs_trainer_1_010:
 	.byte	W24
 @ 016   ----------------------------------------
 	.byte		N18   
-	.byte	W48
+	.byte	W24
 	.byte		VOICE , 48
-	.byte		VOL   , 112*mus_oe_vs_trainer_mvl/mxv
+	.byte	W24
 	.byte		N48   , Gs2 , v036
 	.byte	W48
 @ 017   ----------------------------------------
@@ -393,9 +402,13 @@ mus_oe_vs_trainer_1_019:
 mus_oe_vs_trainer_1_B2:
 @ 042   ----------------------------------------
 	.byte		VOICE , 17
+	.byte		        17
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 112*mus_oe_vs_trainer_mvl/mxv
+	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
 	.byte	FINE
 
 @**************** Track 2 (Midi-Chn.2) ****************@
@@ -406,7 +419,16 @@ mus_oe_vs_trainer_2:
 	.byte		VOICE , 48
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte		N96   , Ds2 , v052
 	.byte	W96
 @ 001   ----------------------------------------
@@ -738,9 +760,13 @@ mus_oe_vs_trainer_2_010:
 mus_oe_vs_trainer_2_B2:
 @ 042   ----------------------------------------
 	.byte		VOICE , 48
+	.byte		        48
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
 	.byte	FINE
 
 @**************** Track 3 (Midi-Chn.3) ****************@
@@ -751,7 +777,16 @@ mus_oe_vs_trainer_3:
 	.byte		VOICE , 48
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte		N96   , Ds1 , v068
 	.byte	W96
 @ 001   ----------------------------------------
@@ -1137,7 +1172,10 @@ mus_oe_vs_trainer_3_B2:
 @ 042   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
 	.byte	FINE
 
 @**************** Track 4 (Midi-Chn.4) ****************@
@@ -1146,9 +1184,17 @@ mus_oe_vs_trainer_4:
 	.byte	KEYSH , mus_oe_vs_trainer_key+0
 @ 000   ----------------------------------------
 	.byte		VOICE , 85
-	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_oe_vs_trainer_mvl/mxv
 	.byte		PAN   , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte		N06   , Ds3 , v096
 	.byte	W06
 	.byte		        Fs3 , v088
@@ -1706,8 +1752,11 @@ mus_oe_vs_trainer_4_038:
 mus_oe_vs_trainer_4_B2:
 @ 042   ----------------------------------------
 	.byte		VOICE , 85
+	.byte		        85
 	.byte		PAN   , c_v+0
+	.byte		        c_v+0
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
 	.byte	FINE
 
 @**************** Track 5 (Midi-Chn.5) ****************@
@@ -1716,9 +1765,17 @@ mus_oe_vs_trainer_5:
 	.byte	KEYSH , mus_oe_vs_trainer_key+0
 @ 000   ----------------------------------------
 	.byte		VOICE , 82
-	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_oe_vs_trainer_mvl/mxv
 	.byte		PAN   , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte	W96
 @ 001   ----------------------------------------
 	.byte		N09   , As2 , v080
@@ -2198,8 +2255,11 @@ mus_oe_vs_trainer_5_038:
 mus_oe_vs_trainer_5_B2:
 @ 042   ----------------------------------------
 	.byte		VOICE , 82
+	.byte		        82
 	.byte		PAN   , c_v+0
+	.byte		        c_v+0
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
 	.byte	FINE
 
 @**************** Track 6 (Midi-Chn.6) ****************@
@@ -2210,9 +2270,21 @@ mus_oe_vs_trainer_6:
 	.byte		VOICE , 88
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
-	.byte		BENDR , 3
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		        c_v+0
+	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		        c_v+0
+	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
 	.byte		BEND  , c_v+0
-	.byte		N24   , Ds5 , v084
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		N24   , Ds5 , v080
 	.byte	W24
 	.byte		        As5 
 	.byte	W24
@@ -2224,94 +2296,125 @@ mus_oe_vs_trainer_6:
 	.byte		N96   , Fs5 
 	.byte	W36
 	.byte		BEND  , c_v-1
+	.byte		        c_v-1
+	.byte		        c_v-1
+	.byte		        c_v-1
+	.byte	W01
+	.byte		        c_v-1
+	.byte		        c_v-1
 	.byte		        c_v-2
+	.byte		        c_v-2
+	.byte	W01
+	.byte		        c_v-2
+	.byte		        c_v-2
+	.byte		        c_v-2
+	.byte		        c_v-2
+	.byte	W01
+	.byte		        c_v-3
+	.byte		        c_v-3
+	.byte		        c_v-3
 	.byte		        c_v-3
 	.byte	W01
+	.byte		        c_v-3
+	.byte		        c_v-3
 	.byte		        c_v-4
+	.byte		        c_v-4
+	.byte	W01
+	.byte		        c_v-4
+	.byte		        c_v-4
+	.byte		        c_v-4
+	.byte		        c_v-4
+	.byte	W01
 	.byte		        c_v-5
+	.byte		        c_v-5
+	.byte		        c_v-5
+	.byte		        c_v-5
+	.byte	W01
+	.byte		        c_v-5
+	.byte		        c_v-5
+	.byte		        c_v-6
+	.byte		        c_v-6
+	.byte	W01
+	.byte		        c_v-6
+	.byte		        c_v-6
+	.byte		        c_v-6
 	.byte		        c_v-6
 	.byte	W01
 	.byte		        c_v-7
+	.byte		        c_v-7
+	.byte		        c_v-7
+	.byte		        c_v-7
+	.byte	W01
+	.byte		        c_v-7
+	.byte		        c_v-7
 	.byte		        c_v-8
+	.byte		        c_v-8
+	.byte	W01
+	.byte		        c_v-8
+	.byte		        c_v-8
+	.byte		        c_v-8
+	.byte		        c_v-8
+	.byte	W01
+	.byte		        c_v-9
+	.byte		        c_v-9
+	.byte		        c_v-9
 	.byte		        c_v-9
 	.byte	W01
+	.byte		        c_v-9
+	.byte		        c_v-10
+	.byte		        c_v-10
+	.byte		        c_v-10
+	.byte	W01
+	.byte		        c_v-10
+	.byte		        c_v-10
 	.byte		        c_v-10
 	.byte		        c_v-11
+	.byte	W01
+	.byte		        c_v-11
+	.byte		        c_v-11
+	.byte		        c_v-11
+	.byte		        c_v-11
+	.byte	W01
+	.byte		        c_v-11
 	.byte		        c_v-12
+	.byte		        c_v-12
+	.byte		        c_v-12
+	.byte	W01
+	.byte		        c_v-12
+	.byte		        c_v-12
+	.byte		        c_v-12
+	.byte		        c_v-13
+	.byte	W01
+	.byte		        c_v-13
+	.byte		        c_v-13
+	.byte		        c_v-13
+	.byte		        c_v-13
 	.byte	W01
 	.byte		        c_v-13
 	.byte		        c_v-14
+	.byte		        c_v-14
+	.byte		        c_v-14
+	.byte	W01
+	.byte		        c_v-14
+	.byte		        c_v-14
+	.byte		        c_v-14
 	.byte		        c_v-15
 	.byte	W01
+	.byte		        c_v-15
+	.byte		        c_v-15
+	.byte		        c_v-15
+	.byte		        c_v-15
+	.byte	W01
+	.byte		        c_v-15
 	.byte		        c_v-16
-	.byte		        c_v-17
-	.byte		        c_v-18
+	.byte		        c_v-16
+	.byte		        c_v-16
 	.byte	W01
-	.byte		        c_v-19
-	.byte		        c_v-20
-	.byte		        c_v-21
-	.byte	W01
-	.byte		        c_v-22
-	.byte		        c_v-23
-	.byte		        c_v-24
-	.byte	W01
-	.byte		        c_v-25
-	.byte		        c_v-26
-	.byte		        c_v-27
-	.byte	W01
-	.byte		        c_v-28
-	.byte		        c_v-29
-	.byte		        c_v-30
-	.byte	W01
-	.byte		        c_v-31
-	.byte		        c_v-32
-	.byte		        c_v-33
-	.byte	W01
-	.byte		        c_v-34
-	.byte		        c_v-35
-	.byte		        c_v-36
-	.byte	W01
-	.byte		        c_v-37
-	.byte		        c_v-38
-	.byte		        c_v-39
-	.byte	W01
-	.byte		        c_v-40
-	.byte		        c_v-41
-	.byte		        c_v-42
-	.byte	W01
-	.byte		        c_v-43
-	.byte		        c_v-44
-	.byte		        c_v-45
-	.byte	W01
-	.byte		        c_v-46
-	.byte		        c_v-47
-	.byte		        c_v-48
-	.byte	W01
-	.byte		        c_v-49
-	.byte		        c_v-50
-	.byte		        c_v-51
-	.byte	W01
-	.byte		        c_v-52
-	.byte		        c_v-53
-	.byte		        c_v-54
-	.byte	W01
-	.byte		        c_v-55
-	.byte		        c_v-56
-	.byte		        c_v-57
-	.byte	W01
-	.byte		        c_v-58
-	.byte		        c_v-59
-	.byte		        c_v-60
-	.byte	W01
-	.byte		        c_v-61
-	.byte		        c_v-62
-	.byte		        c_v-63
-	.byte	W01
-	.byte		        c_v-64
-	.byte	W01
-	.byte	W01
-	.byte	W01
+	.byte		        c_v-16
+	.byte		        c_v-16
+	.byte		        c_v-16
 	.byte	W36
+	.byte	W01
 mus_oe_vs_trainer_6_B1:
 @ 002   ----------------------------------------
 	.byte		VOICE , 87
@@ -2442,7 +2545,7 @@ mus_oe_vs_trainer_6_013:
 	.byte		        Cs6 , v076
 	.byte	W48
 @ 018   ----------------------------------------
-	.byte		TIE   , Bn5 , v076
+	.byte		TIE   , Bn5 , v084
 	.byte	W96
 @ 019   ----------------------------------------
 	.byte	W48
@@ -2689,9 +2792,13 @@ mus_oe_vs_trainer_6_013:
 mus_oe_vs_trainer_6_B2:
 @ 042   ----------------------------------------
 	.byte		VOICE , 88
+	.byte		        88
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
 	.byte	FINE
 
 @**************** Track 7 (Midi-Chn.7) ****************@
@@ -2702,7 +2809,16 @@ mus_oe_vs_trainer_7:
 	.byte		VOICE , 127
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 38*mus_oe_vs_trainer_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 38*mus_oe_vs_trainer_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 38*mus_oe_vs_trainer_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 38*mus_oe_vs_trainer_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte	W96
 @ 001   ----------------------------------------
 	.byte	W96
@@ -2932,9 +3048,13 @@ mus_oe_vs_trainer_7_019:
 mus_oe_vs_trainer_7_B2:
 @ 042   ----------------------------------------
 	.byte		VOICE , 127
+	.byte		        127
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 38*mus_oe_vs_trainer_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 38*mus_oe_vs_trainer_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
 	.byte	FINE
 
 @**************** Track 8 (Midi-Chn.10) ****************@
@@ -2945,7 +3065,16 @@ mus_oe_vs_trainer_8:
 	.byte		VOICE , 0
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte	W84
 	.byte		N06   , En1 , v100
 	.byte	W06
@@ -3359,9 +3488,13 @@ mus_oe_vs_trainer_8_035:
 mus_oe_vs_trainer_8_B2:
 @ 042   ----------------------------------------
 	.byte		VOICE , 0
+	.byte		        0
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_trainer_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
 	.byte	FINE
 
 @******************************************************@

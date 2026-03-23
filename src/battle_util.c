@@ -4687,6 +4687,25 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
             gBattleMons[gEffectBattler].volatiles.root = TRUE;
             effect += CommonSwitchInAbilities(battler, ABILITY_ROOTED, traitCheck, BattleScript_RootedActivates);
         }
+        if ((traitCheck = SearchTraits(battlerTraits, ABILITY_DREAM_WORLD))
+         && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1])
+        {
+            u8 i;
+            bool8 activate = FALSE;
+
+            for(i = 0; i < MAX_BATTLERS_COUNT; i++){
+                u8 target = i;
+                if(IsBattlerAlive(target) && CanBeSlept(target, target, BLOCKED_BY_SLEEP_CLAUSE)){
+                    gBattleMons[target].volatiles.yawn = 2; //2 Turns
+                    activate = TRUE;
+                }
+            }
+
+            if(activate){
+                gEffectBattler = battler;
+                effect += CommonSwitchInAbilities(battler, ABILITY_DREAM_WORLD, traitCheck, BattleScript_DreamWorldActivates);
+            }
+        }
         if ((traitCheck = SearchTraits(battlerTraits, ABILITY_EMBODY_ASPECT_TEAL_MASK)) && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1])
         {
             enum Stat stat = STAT_SPEED;

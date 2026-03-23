@@ -4687,6 +4687,23 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
             gBattleMons[gEffectBattler].volatiles.root = TRUE;
             effect += CommonSwitchInAbilities(battler, ABILITY_ROOTED, traitCheck, BattleScript_RootedActivates);
         }
+        if ((traitCheck = SearchTraits(battlerTraits, ABILITY_OPPOSITE_DAY))
+         && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1])
+        {
+            gEffectBattler = battler;
+            
+            if (gFieldStatuses & STATUS_FIELD_INVERSE_ROOM)
+            {
+                gFieldStatuses &= ~STATUS_FIELD_INVERSE_ROOM;
+            }
+            else
+            {
+                gFieldStatuses |= STATUS_FIELD_INVERSE_ROOM;
+                gFieldTimers.inverseRoomTimer = 5;
+            }
+
+            effect += CommonSwitchInAbilities(battler, ABILITY_OPPOSITE_DAY, traitCheck, BattleScript_OppositeDayActivates);
+        }
         if ((traitCheck = SearchTraits(battlerTraits, ABILITY_DREAM_WORLD))
          && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1])
         {
@@ -9589,7 +9606,12 @@ uq4_12_t GetOverworldTypeEffectiveness(struct Pokemon *mon, enum Type moveType)
 
 uq4_12_t GetTypeModifier(enum Type atkType, enum Type defType)
 {
-    if (B_FLAG_INVERSE_BATTLE != 0 && FlagGet(B_FLAG_INVERSE_BATTLE))
+    bool8 reverseTypeEffectiveness = (B_FLAG_INVERSE_BATTLE != 0 && FlagGet(B_FLAG_INVERSE_BATTLE));
+
+    if (gFieldStatuses & STATUS_FIELD_INVERSE_ROOM)
+        reverseTypeEffectiveness = !reverseTypeEffectiveness;
+
+    if (reverseTypeEffectiveness)
         return GetInverseTypeMultiplier(gTypeEffectivenessTable[atkType][defType]);
     return gTypeEffectivenessTable[atkType][defType];
 }

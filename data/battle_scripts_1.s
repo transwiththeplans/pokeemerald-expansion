@@ -7853,6 +7853,12 @@ BattleScript_RootedActivates::
 	waitmessage B_WAIT_TIME_LONG
 	end3
 
+BattleScript_OppositeDayActivates::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PKMNTWISTEDDIMENSIONS
+	waitmessage B_WAIT_TIME_LONG
+	end3
+
 BattleScript_DreamWorldActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_DREAMWORLDMESSAGE

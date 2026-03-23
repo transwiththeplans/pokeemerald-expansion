@@ -312,6 +312,7 @@ extern const u8 BattleScript_ComatoseActivates[];
 extern const u8 BattleScript_ScreenCleanerActivates[];
 extern const u8 BattleScript_BlowAwayActivates[];
 extern const u8 BattleScript_RootedActivates[];
+extern const u8 BattleScript_OppositeDayActivates[];
 extern const u8 BattleScript_DreamWorldActivates[];
 extern const u8 BattleScript_CuriousMedicineActivates[];
 extern const u8 BattleScript_PasteVeilActivates[];

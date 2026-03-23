@@ -232,6 +232,7 @@ struct FieldTimer
     u16 waterSportTimer;
     u16 wonderRoomTimer;
     u16 magicRoomTimer;
+    u16 inverseRoomTimer;
     u16 trickRoomTimer;
     u16 terrainTimer;
     u16 gravityTimer;

@@ -118,7 +118,7 @@ struct DisableStruct
     u8 tryEjectPack:1;
     u8 octolockedBy:3;
     u8 paradoxBoostedStat:4;
-    u8 padding2:1;
+    u8 usedShootingStar:1;
 };
 
 // Fully Cleared each turn after end turn effects are done. A few things are cleared before end turn effects

@@ -6756,6 +6756,12 @@ BattleScript_SnowSpewActivates::
 	call BattleScript_ActivateWeatherAbilities
 	return
 
+BattleScript_ShootingStarActivates::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_SHOOTINGSTARTACTIVATED
+	waitmessage B_WAIT_TIME_LONG
+	return
+
 BattleScript_ShedSkinActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_PKMNSXCUREDYPROBLEM

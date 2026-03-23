@@ -5623,6 +5623,20 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
             BattleScriptCall(BattleScript_TargetAbilityStatRaiseRetSteam);
             effect++;
         }
+        if (SearchTraits(battlerTraits, ABILITY_SHOOTING_STAR)
+         && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+         && IsBattlerTurnDamaged(gBattlerTarget)
+         && gWishFutureKnock.wishCounter[gBattlerTarget] == 0 
+         && gBattleMons[gBattlerTarget].hp < (gBattleMons[gBattlerTarget].maxHP / 2)
+         && IsBattlerAlive(gBattlerTarget)
+         && !gDisableStructs[gBattlerTarget].usedShootingStar)
+        {
+            gDisableStructs[battler].usedShootingStar = TRUE;
+            gWishFutureKnock.wishCounter[gBattlerTarget] = 2; //Procs until the next turn
+            PushTraitStack(battler, ABILITY_SHOOTING_STAR);
+            BattleScriptCall(BattleScript_ShootingStarActivates);
+            effect++;
+        }
         if (SearchTraits(battlerTraits, ABILITY_SAND_SPIT)
          && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
          && IsBattlerTurnDamaged(gBattlerTarget)

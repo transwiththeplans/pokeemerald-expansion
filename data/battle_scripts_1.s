@@ -7841,6 +7841,12 @@ BattleScript_ScreenCleanerActivates::
 	waitmessage B_WAIT_TIME_LONG
 	end3
 
+BattleScript_BlowAwayActivates::
+	call BattleScript_AbilityPopUp
+	trydefog TRUE, BattleScript_BlowAwayEnd
+BattleScript_BlowAwayEnd:
+	end3
+
 BattleScript_CuriousMedicineActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_CURIOUSMEDICINEENTERS

@@ -1560,14 +1560,14 @@ static u32 GetSwitchinHazardsDamage(u32 battler, struct BattlePokemon *battleMon
     u32 side = GetBattlerSide(battler);
 
     // Check ways mon might avoid all hazards
-    if ((ability != ABILITY_MAGIC_GUARD && !SpeciesHasInnate(species, ABILITY_MAGIC_GUARD) && ability != ABILITY_IMPENETRABLE && !SpeciesHasInnate(species, ABILITY_IMPENETRABLE)) || (heldItemEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS &&
+    if ((ability != ABILITY_MAGIC_GUARD && !SpeciesHasInnate(species, ABILITY_MAGIC_GUARD) && ability != ABILITY_IMPENETRABLE && !SpeciesHasInnate(species, ABILITY_IMPENETRABLE) && !SpeciesHasInnate(species, ABILITY_BLOW_AWAY)) || (heldItemEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS &&
         !((gFieldStatuses & STATUS_FIELD_MAGIC_ROOM) || (ability == ABILITY_LEVITATE || SpeciesHasInnate(species, ABILITY_LEVITATE)))))
     {
         // Stealth Rock
-        if (IsHazardOnSide(side, HAZARDS_STEALTH_ROCK) && heldItemEffect != HOLD_EFFECT_HEAVY_DUTY_BOOTS)
+        if (IsHazardOnSide(side, HAZARDS_STEALTH_ROCK) && heldItemEffect != HOLD_EFFECT_HEAVY_DUTY_BOOTS && !SpeciesHasInnate(species, ABILITY_BLOW_AWAY))
             hazardDamage += GetStealthHazardDamageByTypesAndHP(TYPE_SIDE_HAZARD_POINTED_STONES, defType1, defType2, battleMon->maxHP);
         // G-Max Steelsurge
-        if (IsHazardOnSide(side, HAZARDS_STEELSURGE) && heldItemEffect != HOLD_EFFECT_HEAVY_DUTY_BOOTS)
+        if (IsHazardOnSide(side, HAZARDS_STEELSURGE) && heldItemEffect != HOLD_EFFECT_HEAVY_DUTY_BOOTS && !SpeciesHasInnate(species, ABILITY_BLOW_AWAY))
             hazardDamage += GetStealthHazardDamageByTypesAndHP(TYPE_SIDE_HAZARD_SHARP_STEEL, defType1, defType2, battleMon->maxHP);
         // Spikes
         if (IsHazardOnSide(side, HAZARDS_SPIKES) && IsMonGrounded(heldItemEffect, ability, defType1, defType2, species))
@@ -1798,7 +1798,7 @@ static u32 GetSwitchinStatusDamage(u32 battler)
     // Apply hypothetical poisoning from Toxic Spikes, which means the first turn of damage already added in GetSwitchinHazardsDamage
     // Do this last to skip one iteration of Poison / Toxic damage, and start counting Toxic damage one turn later.
     if (tSpikesLayers != 0 && (defType1 != TYPE_POISON && defType2 != TYPE_POISON
-        && (ability != ABILITY_IMMUNITY && !SpeciesHasInnate(species, ABILITY_IMMUNITY)) && (ability != ABILITY_POISON_HEAL && !SpeciesHasInnate(species, ABILITY_POISON_HEAL))
+        && (ability != ABILITY_IMMUNITY && !SpeciesHasInnate(species, ABILITY_IMMUNITY)) && (ability != ABILITY_POISON_HEAL && !SpeciesHasInnate(species, ABILITY_POISON_HEAL)) && (ability != ABILITY_BLOW_AWAY && !SpeciesHasInnate(species, ABILITY_BLOW_AWAY))
         && status == 0
         && !(heldItemEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS
             && (((gFieldStatuses & STATUS_FIELD_MAGIC_ROOM) || (ability == ABILITY_KLUTZ || SpeciesHasInnate(species, ABILITY_KLUTZ)))))

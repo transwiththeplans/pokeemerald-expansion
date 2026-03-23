@@ -4672,6 +4672,13 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
                 effect += CommonSwitchInAbilities(battler, ABILITY_HOSPITALITY, traitCheck, BattleScript_HospitalityActivates);
             }
         }
+        if ((traitCheck = SearchTraits(battlerTraits, ABILITY_BLOW_AWAY))
+         && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1]
+         && TryDefogClear(battler, FALSE))
+        {
+            gEffectBattler = battler;
+            effect += CommonSwitchInAbilities(battler, ABILITY_BLOW_AWAY, traitCheck, BattleScript_BlowAwayActivates);
+        }
         if ((traitCheck = SearchTraits(battlerTraits, ABILITY_EMBODY_ASPECT_TEAL_MASK)) && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1])
         {
             enum Stat stat = STAT_SPEED;
@@ -10557,6 +10564,8 @@ bool32 IsBattlerAffectedByHazards(u32 battler, bool32 toxicSpikes)
 {
     bool32 ret = TRUE;
     enum HoldEffect holdEffect = GetBattlerHoldEffect(battler);
+    if(BattlerHasTrait(battler, ABILITY_BLOW_AWAY))
+        return FALSE;
     if (toxicSpikes && holdEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS && !IS_BATTLER_OF_TYPE(battler, TYPE_POISON))
     {
         ret = FALSE;

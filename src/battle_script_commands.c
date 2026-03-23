@@ -9502,7 +9502,7 @@ static bool32 DefogClearHazards(u32 saveBattler, u32 side, bool32 clear)
     return FALSE;
 }
 
-static bool32 TryDefogClear(u32 battlerAtk, bool32 clear)
+bool32 TryDefogClear(u32 battlerAtk, bool32 clear)
 {
     s32 i;
     u8 saveBattler = gBattlerAttacker;

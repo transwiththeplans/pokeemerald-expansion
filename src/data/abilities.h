@@ -2816,4 +2816,11 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Dealing a KO heals 1/8 of this Pokémon's max HP."),
         .aiRating = 8,
     },
+
+    [ABILITY_BLOW_AWAY] =
+    {
+        .name = _("Blow Away"),
+        .description = COMPOUND_STRING("Uses Defog upon switch in."),
+        .aiRating = 8,
+    },
 };

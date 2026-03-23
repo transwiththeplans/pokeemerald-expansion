@@ -68,6 +68,7 @@ void StealTargetItem(u8 battlerStealer, u8 battlerItem);
 u8 GetCatchingBattler(void);
 bool32 ProteanTryChangeType(u32 battler, u32 move, enum Type moveType);
 bool32 IsMoveNotAllowedInSkyBattles(u32 move);
+bool32 TryDefogClear(u32 battlerAtk, bool32 clear);
 bool32 DoSwitchInAbilities(u32 battlerId);
 u8 GetFirstFaintedPartyIndex(u8 battlerId);
 bool32 IsMoveAffectedByParentalBond(u32 move, u32 battler);

@@ -1789,7 +1789,8 @@ u32 AI_GetSwitchinWeather(struct BattlePokemon battleMon)
     if (!AI_WeatherHasEffect())
         return B_WEATHER_NONE;
     if ((ability == ABILITY_CLOUD_NINE || BattlerHasInnate(battleMon.species, ABILITY_CLOUD_NINE))
-     || (ability == ABILITY_AIR_LOCK || SpeciesHasInnate(battleMon.species, ABILITY_AIR_LOCK)))
+     || (ability == ABILITY_AIR_LOCK || SpeciesHasInnate(battleMon.species, ABILITY_AIR_LOCK))
+     || (ability == ABILITY_DEAD_SPACE || SpeciesHasInnate(battleMon.species, ABILITY_DEAD_SPACE)))
         return B_WEATHER_NONE;
     if (gBattleWeather & B_WEATHER_PRIMAL_ANY)
         return gBattleWeather;

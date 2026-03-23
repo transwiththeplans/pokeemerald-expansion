@@ -4718,7 +4718,9 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
 
             for(i = 0; i < MAX_BATTLERS_COUNT; i++){
                 u8 target = i;
-                if(IsBattlerAlive(target) && CanBeSlept(target, target, BLOCKED_BY_SLEEP_CLAUSE)){
+                if(IsBattlerAlive(target)
+                && CanBeSlept(target, target, BLOCKED_BY_SLEEP_CLAUSE) 
+                && GetBattlerSide(battler) != GetBattlerSide(target)){
                     gBattleMons[target].volatiles.yawn = 2; //2 Turns
                     activate = TRUE;
                 }
@@ -6077,6 +6079,18 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
                 effect++;
             }
         }
+        if (SearchTraits(battlerTraits, ABILITY_DEAD_SPACE) && !gDisableStructs[battler].neutralizingGas
+         && IsBattlerAlive(battler) && !gSpecialStatuses[battler].neutralizingGasRemoved)
+        {
+            gDisableStructs[battler].neutralizingGas = TRUE;
+            gBattlerAbility = battler;
+            PushTraitStack(battler, ABILITY_DEAD_SPACE);
+            if (caseID == ABILITYEFFECT_NEUTRALIZINGGAS_FIRST_TURN)
+                BattleScriptPushCursorAndCallback(BattleScript_DeadSpaceActivates);
+            else
+                BattleScriptCall(BattleScript_DeadSpaceActivatesRet);
+            effect++;
+        }
         break;
     case ABILITYEFFECT_ON_WEATHER: // For ability effects that activate when the battle weather changes.
         if (!IsBattlerAlive(battler))
@@ -6322,7 +6336,8 @@ u32 GetBattlerAbilityInternal(u32 battler, u32 ignoreMoldBreaker, u32 noAbilityS
 
     if (!hasAbilityShield
      && IsNeutralizingGasOnField()
-     && (gBattleMons[battler].ability != ABILITY_NEUTRALIZING_GAS || gBattleMons[battler].volatiles.gastroAcid)) // Neutralizing Gas should be a Main Ability
+     && (gBattleMons[battler].ability != ABILITY_NEUTRALIZING_GAS || gBattleMons[battler].volatiles.gastroAcid) // Neutralizing Gas should be a Main Ability
+     && (gBattleMons[battler].ability != ABILITY_DEAD_SPACE || gBattleMons[battler].volatiles.gastroAcid))
         return ABILITY_NONE;
 
     if (CanBreakThroughAbility(gBattlerAttacker, battler, ABILITY_NONE, hasAbilityShield, ignoreMoldBreaker))
@@ -6452,6 +6467,15 @@ bool32 IsBattlerTerrainAffected(u32 battler, enum HoldEffect holdEffect, u32 ter
         return FALSE;
     if (IsSemiInvulnerable(battler, CHECK_ALL))
         return FALSE;
+
+    // Dead Space passively nullifies terrain effects
+    for (u32 i = 0; i < gBattlersCount; i++)
+    {
+        if (!IsBattlerAlive(i))
+            continue;
+        if (BattlerHasTrait(i, ABILITY_DEAD_SPACE))
+            return FALSE;
+    }
 
     return IsBattlerGrounded(battler, holdEffect);
 }
@@ -8372,6 +8396,8 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
         return uq4_12_multiply_by_int_half_down(ApplyOffensiveBadgeBoost(modifier, battlerAtk, move), atkStat);
 
     // attacker's abilities
+    if (SearchTraits(battlerTraits, ABILITY_BELLICUS))
+        modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
     if (SearchTraits(battlerTraits, ABILITY_HUGE_POWER)
      && IsBattleMovePhysical(move))
         modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
@@ -8636,6 +8662,12 @@ static inline u32 CalcDefenseStat(struct DamageContext *ctx)
         modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         if (ctx->updateFlags)
             RecordAbilityBattle(battlerDef, ABILITY_MARVEL_SCALE);
+    }
+    if (SearchTraits(battlerTraits, ABILITY_SERENA))
+    {
+        modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+        if (ctx->updateFlags)
+            RecordAbilityBattle(battlerDef, ABILITY_SERENA);
     }
     if (SearchTraits(battlerTraits, ABILITY_FUR_COAT)
      && usesDefStat)
@@ -11323,7 +11355,8 @@ bool32 HasWeatherEffect(void)
             continue;
 
         if (BattlerHasTrait(battler, ABILITY_CLOUD_NINE)
-         || BattlerHasTrait(battler, ABILITY_AIR_LOCK))
+         || BattlerHasTrait(battler, ABILITY_AIR_LOCK)
+         || BattlerHasTrait(battler, ABILITY_DEAD_SPACE))
             return FALSE;
     }
 

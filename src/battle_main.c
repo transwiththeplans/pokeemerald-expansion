@@ -4813,6 +4813,8 @@ u32 GetBattlerTotalSpeedStat(u32 battler, enum HoldEffect holdEffect)
     }
 
     // other abilities
+    if (SearchTraits(battlerTraits, ABILITY_BELLICUS) || SearchTraits(battlerTraits, ABILITY_SERENA))
+        speed /= 2;
     if (SearchTraits(battlerTraits, ABILITY_QUICK_FEET) && gBattleMons[battler].status1 & STATUS1_ANY)
         speed += baseSpeed / 2;
     if (SearchTraits(battlerTraits, ABILITY_SURGE_SURFER) && gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)

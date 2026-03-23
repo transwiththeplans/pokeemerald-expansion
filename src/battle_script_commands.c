@@ -4323,11 +4323,12 @@ static void Cmd_tryfaintmon(void)
          && !(gAbsentBattlerFlags & (1u << battler))
          && !IsBattlerAlive(battler))
         {
+            bool32 isDeadSpace = BattlerHasTraitPlain(battler, ABILITY_DEAD_SPACE);
             gDisableStructs[battler].neutralizingGas = FALSE;
             if (!IsNeutralizingGasOnField())
             {
                 BattleScriptPush(gBattlescriptCurrInstr);
-                gBattlescriptCurrInstr = BattleScript_NeutralizingGasExits;
+                gBattlescriptCurrInstr = isDeadSpace ? BattleScript_DeadSpaceExits : BattleScript_NeutralizingGasExits;
                 return;
             }
         }
@@ -13333,16 +13334,20 @@ static void Cmd_switchoutabilities(void)
     CMD_ARGS(u8 battler);
 
     u32 battler = GetBattlerForBattleScript(cmd->battler);
-    if (gDisableStructs[battler].neutralizingGas)
+    if (gDisableStructs[battler].neutralizingGas && !gSpecialStatuses[battler].neutralizingGasRemoved)
     {
+        bool32 isDeadSpace = BattlerHasTraitPlain(battler, ABILITY_DEAD_SPACE);
         gDisableStructs[battler].neutralizingGas = FALSE;
+        gSpecialStatuses[battler].neutralizingGasRemoved = TRUE;
         if (!IsNeutralizingGasOnField())
         {
             BattleScriptPush(gBattlescriptCurrInstr);
-            gBattlescriptCurrInstr = BattleScript_NeutralizingGasExits;
+            gBattlescriptCurrInstr = isDeadSpace ? BattleScript_DeadSpaceExits : BattleScript_NeutralizingGasExits;
             return;
         }
     }
+    // Clear flag in case exit script re-activated Dead Space on this battler via innate
+    gDisableStructs[battler].neutralizingGas = FALSE;
 
     if (BattlerHasTrait(battler, ABILITY_NATURAL_CURE))
         {
@@ -16673,6 +16678,7 @@ void BS_JumpIfAbilityCantBeReactivated(void)
     case ABILITY_NEUTRALIZING_GAS:
     case ABILITY_AIR_LOCK:
     case ABILITY_CLOUD_NINE:
+    case ABILITY_DEAD_SPACE:
         gBattlescriptCurrInstr = cmd->jumpInstr;
         break;
     default:
@@ -18069,12 +18075,13 @@ void BS_TryEndNeutralizingGas(void)
     NATIVE_ARGS();
     if (gSpecialStatuses[gBattlerTarget].neutralizingGasRemoved)
     {
+        bool32 isDeadSpace = BattlerHasTraitPlain(gBattlerTarget, ABILITY_DEAD_SPACE);
         gSpecialStatuses[gBattlerTarget].neutralizingGasRemoved = FALSE;
         gDisableStructs[gBattlerTarget].neutralizingGas = FALSE;
         if (!IsNeutralizingGasOnField())
         {
             BattleScriptPush(cmd->nextInstr);
-            gBattlescriptCurrInstr = BattleScript_NeutralizingGasExits;
+            gBattlescriptCurrInstr = isDeadSpace ? BattleScript_DeadSpaceExits : BattleScript_NeutralizingGasExits;
             return;
         }
     }

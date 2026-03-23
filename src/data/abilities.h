@@ -2823,4 +2823,26 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Uses Defog upon switch in."),
         .aiRating = 8,
     },
+
+    [ABILITY_BELLICUS] =
+    {
+        .name = _("Bellicus"),
+        .description = COMPOUND_STRING("50% boost to attacks, 50% drop in speed."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_SERENA] =
+    {
+        .name = _("Serena"),
+        .description = COMPOUND_STRING("50% boost to defense, 50% drop in speed."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_DEAD_SPACE] =
+    {
+        .name = _("Dead Space"),
+        .description = COMPOUND_STRING("Nullifies terrain, weather and abilities."),
+        .aiRating = 8,
+        .cantBeSuppressed = TRUE,
+    },
 };

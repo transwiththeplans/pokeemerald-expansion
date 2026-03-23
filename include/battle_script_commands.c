@@ -4624,13 +4624,14 @@ static void Cmd_tryfaintmon(void)
     }
     else
     {
-        if (gBattleMons[battler].ability == ABILITY_NEUTRALIZING_GAS
+        if ((gBattleMons[battler].ability == ABILITY_NEUTRALIZING_GAS || BattlerHasTraitPlain(battler, ABILITY_DEAD_SPACE))
          && !(gAbsentBattlerFlags & (1u << battler))
          && !IsBattlerAlive(battler))
         {
+            bool32 isDeadSpace = BattlerHasTraitPlain(battler, ABILITY_DEAD_SPACE);
             gBattleMons[battler].ability = ABILITY_NONE;
             BattleScriptPush(gBattlescriptCurrInstr);
-            gBattlescriptCurrInstr = BattleScript_NeutralizingGasExits;
+            gBattlescriptCurrInstr = isDeadSpace ? BattleScript_DeadSpaceExits : BattleScript_NeutralizingGasExits;
             return;
         }
         if (cmd->battler == BS_ATTACKER)
@@ -11372,9 +11373,10 @@ static void Cmd_various(void)
         VARIOUS_ARGS();
         if (gSpecialStatuses[battler].neutralizingGasRemoved)
         {
+            bool32 isDeadSpace = BattlerHasTraitPlain(battler, ABILITY_DEAD_SPACE);
             gSpecialStatuses[battler].neutralizingGasRemoved = FALSE;
             BattleScriptPush(cmd->nextInstr);
-            gBattlescriptCurrInstr = BattleScript_NeutralizingGasExits;
+            gBattlescriptCurrInstr = isDeadSpace ? BattleScript_DeadSpaceExits : BattleScript_NeutralizingGasExits;
             return;
         }
         break;
@@ -15289,11 +15291,12 @@ static void Cmd_switchoutabilities(void)
     CMD_ARGS(u8 battler);
 
     u32 battler = GetBattlerForBattleScript(cmd->battler);
-    if (gBattleMons[battler].ability == ABILITY_NEUTRALIZING_GAS)
+    if (gBattleMons[battler].ability == ABILITY_NEUTRALIZING_GAS || BattlerHasTraitPlain(battler, ABILITY_DEAD_SPACE))
     {
+        bool32 isDeadSpace = BattlerHasTraitPlain(battler, ABILITY_DEAD_SPACE);
         gBattleMons[battler].ability = ABILITY_NONE;
         BattleScriptPush(gBattlescriptCurrInstr);
-        gBattlescriptCurrInstr = BattleScript_NeutralizingGasExits;
+        gBattlescriptCurrInstr = isDeadSpace ? BattleScript_DeadSpaceExits : BattleScript_NeutralizingGasExits;
     }
     else
     {

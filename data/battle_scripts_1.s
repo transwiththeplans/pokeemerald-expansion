@@ -7744,6 +7744,18 @@ BattleScript_NeutralizingGasActivatesRet::
 	waitmessage B_WAIT_TIME_LONG
 	return
 
+BattleScript_DeadSpaceActivates::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_DEADSPACEENTERS
+	waitmessage B_WAIT_TIME_LONG
+	end3
+
+BattleScript_DeadSpaceActivatesRet::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_DEADSPACEENTERS
+	waitmessage B_WAIT_TIME_LONG
+	return
+
 BattleScript_ActivateAsOne::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_ASONEENTERS
@@ -8561,7 +8573,6 @@ BattleScript_ApplyTotemVarBoost:
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_TotemVar_Ret  @loop until stats bitfield is empty
 
-
 BattleScript_AnnounceAirLockCloudNine::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_AIRLOCKACTIVATES
@@ -8938,6 +8949,26 @@ BattleScript_NeutralizingGasExitsLoop:
 BattleScript_NeutralizingGasExitsLoopIncrement:
 	addbyte gBattlerAttacker, 1
 	jumpifbytenotequal gBattlerAttacker, gBattlersCount, BattleScript_NeutralizingGasExitsLoop
+	restoreattacker
+	restoretarget
+	return
+
+BattleScript_DeadSpaceExits::
+	saveattacker
+	savetarget
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_DEADSPACEOVER
+	waitmessage B_WAIT_TIME_LONG
+	setbyte gBattlerAttacker, 0
+BattleScript_DeadSpaceExitsLoop:
+	copyarraywithindex gBattlerTarget, gBattlerByTurnOrder, gBattlerAttacker, 1
+	jumpifabilitycantbereactivated BS_TARGET, BattleScript_DeadSpaceExitsLoopIncrement
+	saveattacker
+	switchinabilities BS_TARGET
+	restoreattacker
+BattleScript_DeadSpaceExitsLoopIncrement:
+	addbyte gBattlerAttacker, 1
+	jumpifbytenotequal gBattlerAttacker, gBattlersCount, BattleScript_DeadSpaceExitsLoop
 	restoreattacker
 	restoretarget
 	return

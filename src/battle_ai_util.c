@@ -3271,7 +3271,7 @@ static bool32 PartyBattlerShouldAvoidHazards(u32 currBattler, u32 switchBattler)
         holdEffect = HOLD_EFFECT_NONE;
     else
         holdEffect = gItemsInfo[GetMonData(mon, MON_DATA_HELD_ITEM)].holdEffect;
-    if (holdEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS || BattlerHasTrait(switchBattler, ABILITY_BLOW_AWAY))
+    if (holdEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS || BattlerHasTrait(switchBattler, ABILITY_BLOW_AWAY) || BattlerHasTrait(switchBattler, ABILITY_MOUNTAINEER))
         return FALSE;
 
     if (IsHazardOnSide(side, HAZARDS_STEALTH_ROCK))

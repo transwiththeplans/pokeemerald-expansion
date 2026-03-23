@@ -2845,4 +2845,11 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 8,
         .cantBeSuppressed = TRUE,
     },
+
+    [ABILITY_MOUNTAINEER] =
+    {
+        .name = _("Mountaineer"),
+        .description = COMPOUND_STRING("Not hit by Rock-type moves, ignores hazards."),
+        .aiRating = 8,
+    },
 };

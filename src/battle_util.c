@@ -9507,10 +9507,17 @@ static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(struct DamageCont
             RecordAbilityBattle(ctx->battlerDef, ABILITY_LEVITATE);
         }
     }
-	if (ctx->moveType == TYPE_FIGHTING && ctx->abilityDef == ABILITY_COUNTERPROOF)
+	if (ctx->moveType == TYPE_FIGHTING && SearchTraits(battlerTraits, ABILITY_COUNTERPROOF))
 	{
 		modifier = UQ_4_12(0.0);
 		gLastUsedAbility = ABILITY_COUNTERPROOF;
+		gBattleStruct->missStringId[ctx->battlerDef] = B_MSG_FIGHT_MISS;
+		
+    }
+    else if (ctx->moveType == TYPE_ROCK && SearchTraits(battlerTraits, ABILITY_MOUNTAINEER))
+	{
+		modifier = UQ_4_12(0.0);
+		gLastUsedAbility = ABILITY_MOUNTAINEER;
 		gBattleStruct->missStringId[ctx->battlerDef] = B_MSG_FIGHT_MISS;
 		
     }
@@ -9662,6 +9669,7 @@ uq4_12_t GetOverworldTypeEffectiveness(struct Pokemon *mon, enum Type moveType)
 		|| (moveType == TYPE_WATER    && (MonHasTrait(mon, ABILITY_WATER_ABSORB)  || MonHasTrait(mon, ABILITY_DRY_SKIN)    || MonHasTrait(mon, ABILITY_STORM_DRAIN)))
 		|| (moveType == TYPE_ELECTRIC && (MonHasTrait(mon, ABILITY_LIGHTNING_ROD) || MonHasTrait(mon, ABILITY_VOLT_ABSORB) || MonHasTrait(mon, ABILITY_MOTOR_DRIVE)))
 		|| (moveType == TYPE_FIGHTING && MonHasTrait(mon, ABILITY_COUNTERPROOF))
+		|| (moveType == TYPE_ROCK     && MonHasTrait(mon, ABILITY_MOUNTAINEER))
 		|| (moveType == TYPE_POISON   && MonHasTrait(mon, ABILITY_FILTH_FEEDER))
 		|| (moveType == TYPE_STEEL    && MonHasTrait(mon, ABILITY_METAL_MUNCHER)))
         modifier = UQ_4_12(0.0);
@@ -10678,7 +10686,7 @@ bool32 IsBattlerAffectedByHazards(u32 battler, bool32 toxicSpikes)
 {
     bool32 ret = TRUE;
     enum HoldEffect holdEffect = GetBattlerHoldEffect(battler);
-    if(BattlerHasTrait(battler, ABILITY_BLOW_AWAY))
+    if(BattlerHasTrait(battler, ABILITY_BLOW_AWAY) || BattlerHasTrait(battler, ABILITY_MOUNTAINEER))
         return FALSE;
     if (toxicSpikes && holdEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS && !IS_BATTLER_OF_TYPE(battler, TYPE_POISON))
     {

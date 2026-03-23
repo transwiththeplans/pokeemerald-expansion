@@ -4679,6 +4679,14 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
             gEffectBattler = battler;
             effect += CommonSwitchInAbilities(battler, ABILITY_BLOW_AWAY, traitCheck, BattleScript_BlowAwayActivates);
         }
+        if ((traitCheck = SearchTraits(battlerTraits, ABILITY_ROOTED))
+         && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1]
+         && !gBattleMons[battler].volatiles.root)
+        {
+            gEffectBattler = battler;
+            gBattleMons[gEffectBattler].volatiles.root = TRUE;
+            effect += CommonSwitchInAbilities(battler, ABILITY_ROOTED, traitCheck, BattleScript_RootedActivates);
+        }
         if ((traitCheck = SearchTraits(battlerTraits, ABILITY_EMBODY_ASPECT_TEAL_MASK)) && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1])
         {
             enum Stat stat = STAT_SPEED;

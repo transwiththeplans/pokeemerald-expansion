@@ -311,6 +311,7 @@ extern const u8 BattleScript_AuraBreakActivates[];
 extern const u8 BattleScript_ComatoseActivates[];
 extern const u8 BattleScript_ScreenCleanerActivates[];
 extern const u8 BattleScript_BlowAwayActivates[];
+extern const u8 BattleScript_RootedActivates[];
 extern const u8 BattleScript_CuriousMedicineActivates[];
 extern const u8 BattleScript_PasteVeilActivates[];
 extern const u8 BattleScript_SelectingNotAllowedMoveAssaultVest[];

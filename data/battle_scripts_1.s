@@ -7847,6 +7847,12 @@ BattleScript_BlowAwayActivates::
 BattleScript_BlowAwayEnd:
 	end3
 
+BattleScript_RootedActivates::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PKMNPLANTEDROOTS
+	waitmessage B_WAIT_TIME_LONG
+	end3
+
 BattleScript_CuriousMedicineActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_CURIOUSMEDICINEENTERS

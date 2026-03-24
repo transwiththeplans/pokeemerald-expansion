@@ -2603,6 +2603,14 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 6,
     },
 
+    [ABILITY_AIRBORNE] =
+    {
+        .name = _("Airborne"),
+        .description = COMPOUND_STRING("Floats until hit. Immune to Ground."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+
     [ABILITY_CRYONICS] =
     {
         .name = _("Cryonics"),
@@ -2852,4 +2860,5 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Not hit by Rock-type moves, ignores hazards."),
         .aiRating = 8,
     },
+
 };

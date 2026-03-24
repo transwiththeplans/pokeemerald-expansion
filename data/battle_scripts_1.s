@@ -8258,6 +8258,21 @@ BattleScript_AirBalloonMsgPop::
 	removeitem BS_TARGET
 	return
 
+BattleScript_AirborneMsgIn::
+	printstring STRINGID_AIRBORNEFLOAT
+	waitmessage B_WAIT_TIME_LONG
+	end3
+
+BattleScript_AirborneMsgInRet::
+	printstring STRINGID_AIRBORNEFLOAT
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+BattleScript_AirborneBroken::
+	printstring STRINGID_AIRBORNEBROKEN
+	waitmessage B_WAIT_TIME_LONG
+	return
+
 BattleScript_ItemHurtRet::
 	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
 	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE

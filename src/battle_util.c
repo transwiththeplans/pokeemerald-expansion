@@ -4793,6 +4793,12 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
                 MarkBattlerForControllerExec(battler);
                 effect += CommonSwitchInAbilities(battler, ABILITY_COMMANDER, traitCheck, BattleScript_CommanderActivates);
         }
+        if ((traitCheck = SearchTraits(battlerTraits, ABILITY_AIRBORNE))
+         && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1])
+        {
+            gBattleMons[battler].volatiles.airborne = 1;
+            effect += CommonSwitchInAbilities(battler, ABILITY_AIRBORNE, traitCheck, BattleScript_AirborneMsgIn);
+        }
         break;
     case ABILITYEFFECT_ENDTURN:
         if (IsBattlerAlive(battler))
@@ -5270,6 +5276,15 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
             PREPARE_MOVE_BUFFER(gBattleTextBuff3, gChosenMove);
             PushTraitStack(battler, ABILITY_CURSED_BODY);
             BattleScriptCall(BattleScript_CursedBodyActivates);
+            effect++;
+        }
+        if (SearchTraits(battlerTraits, ABILITY_AIRBORNE)
+         && IsBattlerTurnDamaged(battler)
+         && gBattleMons[battler].volatiles.airborne)
+        {
+            gBattleMons[battler].volatiles.airborne = 0;
+            PushTraitStack(battler, ABILITY_AIRBORNE);
+            BattleScriptCall(BattleScript_AirborneBroken);
             effect++;
         }
         // Mummy and Lingering Aroma use the same battlescript since they can't both activate at the same time (Trait)
@@ -7396,6 +7411,8 @@ static bool32 IsBattlerGroundedInverseCheck(u32 battler, enum HoldEffect holdEff
     if (gBattleMons[battler].volatiles.magnetRise)
         return FALSE;
     if (holdEffect == HOLD_EFFECT_AIR_BALLOON)
+        return FALSE;
+    if (gBattleMons[battler].volatiles.airborne)
         return FALSE;
     if (hasLevitate)
         return FALSE;

@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "local_id": "LOCALID_MAUVILLE_INSIDE_WALLY",
+      "local_id": "LOCALID_MAUVILLE_WALLY",
       "graphics_id": "OBJ_EVENT_GFX_WALLY",
       "x": 34,
       "y": 17,
@@ -29,7 +29,7 @@
       "flag": "FLAG_HIDE_MAUVILLE_CITY_WALLY"
     },
     {
-      "local_id": "LOCALID_MAUVILLE_INSIDE_WALLYS_UNCLE",
+      "local_id": "LOCALID_MAUVILLE_WALLYS_UNCLE",
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
       "x": 35,
       "y": 17,
@@ -337,7 +337,7 @@
       "y": 16,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_GAME_CORNER",
-      "dest_warp_id": "0"
+      "dest_warp_id": "1"
     },
     {
       "x": 17,
@@ -408,6 +408,83 @@
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F",
       "dest_warp_id": "9"
+    },
+    {
+      "x": 41,
+      "y": 72,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 42,
+      "y": 72,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 7,
+      "y": 38,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 7,
+      "y": 37,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 76,
+      "y": 38,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY",
+      "dest_warp_id": "7"
+    },
+    {
+      "x": 76,
+      "y": 37,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 40,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 41,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY",
+      "dest_warp_id": "11"
+    },
+    {
+      "x": 42,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY",
+      "dest_warp_id": "11"
+    },
+    {
+      "x": 43,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY",
+      "dest_warp_id": "12"
+    },
+    {
+      "x": 46,
+      "y": 29,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_MART",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

@@ -2091,5 +2091,16 @@ static const struct FormChange sTerapagosFormChangeTable[] =
 };
 #endif //P_FAMILY_TERAPAGOS
 
+#if P_FAMILY_GOLETT
+static const struct FormChange sGolurkFormChangeTable[] =
+{
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_GOLURK_MEGA, ITEM_ULTIMATRIX_SYMBOL},
+#endif
+    {FORM_CHANGE_END_BATTLE,                    SPECIES_GOLURK},
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_FAMILY_GOLETT
+
 #undef WHEN_LEARNED
 #undef WHEN_FORGOTTEN

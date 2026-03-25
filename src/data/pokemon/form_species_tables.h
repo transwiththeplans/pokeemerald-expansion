@@ -2745,3 +2745,13 @@ static const u16 sDragoniteFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_DRATINI
 
+#if P_FAMILY_GOLETT
+static const u16 sGolurkFormSpeciesIdTable[] = {
+    SPECIES_GOLURK,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_GOLURK_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_GOLETT
+

@@ -27,8 +27,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
-      "x": 18,
-      "y": 68,
+      "x": 16,
+      "y": 66,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -184,7 +184,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
       "x": 31,
-      "y": 64,
+      "y": 63,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -197,7 +197,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
       "x": 31,
-      "y": 65,
+      "y": 64,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -300,8 +300,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 26,
-      "y": 67,
+      "x": 31,
+      "y": 68,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -348,8 +348,8 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 30,
-      "y": 72,
+      "x": 19,
+      "y": 75,
       "elevation": 0,
       "dest_map": "MAP_DIGLETT_GROTTO",
       "dest_warp_id": "0"

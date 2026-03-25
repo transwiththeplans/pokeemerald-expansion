@@ -4386,6 +4386,13 @@ static const struct SpriteFrameImage sPicTable_Golett[] = {
 static const struct SpriteFrameImage sPicTable_Golurk[] = {
     overworld_ascending_frames(gObjectEventPic_Golurk, 4, 4),
 };
+#if OW_BATTLE_ONLY_FORMS
+#if P_MEGA_EVOLUTIONS
+static const struct SpriteFrameImage sPicTable_GolurkMega[] = {
+    overworld_ascending_frames(gObjectEventPic_GolurkMega, 4, 4),
+};
+#endif // P_MEGA_EVOLUTIONS
+#endif // OW_BATTLE_ONLY_FORMS
 #endif //P_FAMILY_GOLETT
 
 #if P_FAMILY_PAWNIARD

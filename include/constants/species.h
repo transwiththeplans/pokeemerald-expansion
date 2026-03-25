@@ -1767,6 +1767,7 @@
 #define SPECIES_ZYGARDE_MEGA                            1634
 #define SPECIES_DARKRAI_MEGA                            1635
 #define SPECIES_ABSOL_MEGA_Z                            1636
+#define SPECIES_GOLURK_MEGA                             1637
 
 #define SPECIES_LAST                                    2000 //To always have more space for new species if needed
 

@@ -92,7 +92,7 @@ LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor::
 	waitmovement 0
 	applymovement LOCALID_RIVALS_HOUSE_1F_MOM, Common_Movement_Delay48
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	applymovement LOCALID_RIVALS_HOUSE_1F_MOM, LittlerootTown_MaysHouse_1F_Movement_RivalMomApproach
 	waitmovement 0
 	special GetRivalSonDaughterString
@@ -104,11 +104,15 @@ LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor::
 
 LittlerootTown_MaysHouse_1F_Movement_RivalMomApproach:
 	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_in_place_faster_right
 	step_end
 
 RivalsHouse_1F_EventScript_RivalMom::
@@ -176,6 +180,7 @@ LittlerootTown_MaysHouse_1F_EventScript_MeetRival::
 	addobject LOCALID_RIVALS_HOUSE_1F_RIVAL
 	delay 30
 	playse SE_PIN
+	call LittlerootTown_MaysHouse_1F_EventScript_MayApproachEnterHouse
 	applymovement LOCALID_RIVALS_HOUSE_1F_RIVAL, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_RIVALS_HOUSE_1F_RIVAL, Common_Movement_Delay48
@@ -203,6 +208,16 @@ LittlerootTown_MaysHouse_1F_EventScript_MeetRival::
 	releaseall
 	end
 
+LittlerootTown_MaysHouse_1F_EventScript_MayApproachEnterHouse::
+	applymovement LOCALID_RIVALS_HOUSE_1F_RIVAL, LittlerootTown_MaysHouse_1F_Movement_MayApproachEnterHouse
+	waitmovement 0
+	return
+
+LittlerootTown_MaysHouse_1F_Movement_MayApproachEnterHouse:
+	walk_up
+	walk_up
+	step_end
+
 LittlerootTown_MaysHouse_1F_EventScript_PlayerFaceMay::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
@@ -224,8 +239,11 @@ LittlerootTown_MaysHouse_1F_EventScript_MayApproachPlayer2::
 	return
 
 LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer0:
-	walk_in_place_faster_left
-	walk_left
+	walk_in_place_faster_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	walk_in_place_faster_up
 	walk_up
 	walk_up
@@ -234,19 +252,35 @@ LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer0:
 	step_end
 
 LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer1:
+	walk_in_place_faster_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_in_place_faster_up
 	walk_up
 	walk_up
 	walk_up
+	walk_in_place_faster_right
+	walk_right
+	walk_in_place_faster_up
 	step_end
 
 LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer2:
 	walk_in_place_faster_right
+	walk_right
+	walk_right
+	walk_right
 	walk_right
 	walk_in_place_faster_up
 	walk_up
 	walk_up
 	walk_up
 	walk_up
+	walk_in_place_faster_right
+	walk_right
+	walk_right
+	walk_in_place_faster_up
 	step_end
 
 LittlerootTown_MaysHouse_1F_EventScript_MayGoUpstairs0::

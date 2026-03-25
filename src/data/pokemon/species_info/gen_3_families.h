@@ -11084,8 +11084,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         )
         .levelUpLearnset = sFroslassLevelUpLearnset,
         .teachableLearnset = sFroslassTeachableLearnset,
+        .formSpeciesIdTable = sFroslassFormSpeciesIdTable,
+        .formChangeTable = sFroslassFormChangeTable,
     },
 
+#if P_MEGA_EVOLUTIONS
     [SPECIES_FROSLASS_MEGA] =
     {
         .baseHP        = 70,
@@ -11122,7 +11125,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .pokemonOffset = 3,
         .trainerScale = 256,
         .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Froslass,
+        .frontPic = gMonFrontPic_FroslassMega,
         .frontPicSize = MON_COORDS_SIZE(48, 48),
         .frontPicYOffset = 8,
         .frontAnimFrames = ANIM_FRAMES(
@@ -11132,12 +11135,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         ),
         .frontAnimId = ANIM_V_SLIDE_WOBBLE,
         .enemyMonElevation = 7,
-        .backPic = gMonBackPic_Froslass,
+        .backPic = gMonBackPic_FroslassMega,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 3,
         .backAnimId = BACK_ANIM_CONVEX_DOUBLE_ARC,
-        .palette = gMonPalette_Froslass,
-        .shinyPalette = gMonShinyPalette_Froslass,
+        .palette = gMonPalette_FroslassMega,
+        .shinyPalette = gMonShinyPalette_FroslassMega,
         .iconSprite = gMonIcon_Froslass,
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
@@ -11152,9 +11155,13 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
             gOverworldPalette_Froslass,
             gShinyOverworldPalette_Froslass
         )
+		.isMegaEvolution = TRUE,
         .levelUpLearnset = sFroslassLevelUpLearnset,
         .teachableLearnset = sFroslassTeachableLearnset,
+        .formSpeciesIdTable = sFroslassFormSpeciesIdTable,
+        .formChangeTable = sFroslassFormChangeTable,
     },
+#endif //P_MEGA_EVOLUTIONS
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_SNORUNT
 

@@ -88,6 +88,8 @@ LittlerootTown_BrendansHouse_1F_EventScript_PetalburgGymReport::
 
 LittlerootTown_BrendansHouse_1F_EventScript_YoureNewNeighbor::
 	lockall
+	addobject LOCALID_RIVALS_HOUSE_1F_MOM
+	setobjectxy LOCALID_RIVALS_HOUSE_1F_MOM, 4, 9
 	playse SE_PIN
 	applymovement LOCALID_RIVALS_HOUSE_1F_MOM, Common_Movement_ExclamationMark
 	waitmovement 0
@@ -104,12 +106,16 @@ LittlerootTown_BrendansHouse_1F_EventScript_YoureNewNeighbor::
 	end
 
 LittlerootTown_BrendansHouse_1F_Movement_RivalMomApproach:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
+	walk_down
+	walk_in_place_faster_right
 	step_end
 
 LittlerootTown_BrendansHouse_1F_EventScript_GoSeeRoom::
@@ -150,6 +156,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_MeetRival::
 	addobject LOCALID_RIVALS_HOUSE_1F_RIVAL
 	delay 30
 	playse SE_PIN
+	call LittlerootTown_BrendansHouse_1F_EventScript_BrendanApproachEnterHouse
 	applymovement LOCALID_RIVALS_HOUSE_1F_RIVAL, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_RIVALS_HOUSE_1F_RIVAL, Common_Movement_Delay48
@@ -177,6 +184,16 @@ LittlerootTown_BrendansHouse_1F_EventScript_MeetRival::
 	releaseall
 	end
 
+LittlerootTown_BrendansHouse_1F_EventScript_BrendanApproachEnterHouse::
+	applymovement LOCALID_RIVALS_HOUSE_1F_RIVAL, LittlerootTown_BrendansHouse_1F_Movement_BrendanApproachEnterHouse
+	waitmovement 0
+	return
+
+LittlerootTown_BrendansHouse_1F_Movement_BrendanApproachEnterHouse:
+	walk_up
+	walk_up
+	step_end
+
 LittlerootTown_BrendansHouse_1F_EventScript_PlayerFaceBrendan::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
@@ -198,8 +215,11 @@ LittlerootTown_BrendansHouse_1F_EventScript_BrendanApproachPlayer2::
 	return
 
 LittlerootTown_BrendansHouse_1F_Movement_BrendanApproachPlayer0:
-	walk_in_place_faster_left
-	walk_left
+	walk_in_place_faster_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	walk_in_place_faster_up
 	walk_up
 	walk_up
@@ -208,6 +228,13 @@ LittlerootTown_BrendansHouse_1F_Movement_BrendanApproachPlayer0:
 	step_end
 
 LittlerootTown_BrendansHouse_1F_Movement_BrendanApproachPlayer1:
+	walk_in_place_faster_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_in_place_faster_up
 	walk_up
 	walk_up
 	walk_up
@@ -216,11 +243,18 @@ LittlerootTown_BrendansHouse_1F_Movement_BrendanApproachPlayer1:
 LittlerootTown_BrendansHouse_1F_Movement_BrendanApproachPlayer2:
 	walk_in_place_faster_right
 	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	walk_in_place_faster_up
 	walk_up
 	walk_up
 	walk_up
 	walk_up
+	walk_in_place_faster_right
+	walk_right
+	walk_in_place_faster_up
 	step_end
 
 LittlerootTown_BrendansHouse_1F_EventScript_BrendanGoUpstairs0::
@@ -250,7 +284,7 @@ LittlerootTown_BrendansHouse_1F_Movement_PlayerWatchBrendanExit0:
 LittlerootTown_BrendansHouse_1F_Movement_PlayerWatchBrendanExit1:
 	delay_16
 	delay_8
-	walk_in_place_faster_right
+	walk_in_place_faster_left
 	delay_16
 	delay_16
 	walk_in_place_faster_up
@@ -271,13 +305,13 @@ LittlerootTown_BrendansHouse_1F_Movement_BrendanGoUpstairs0:
 	step_end
 
 LittlerootTown_BrendansHouse_1F_Movement_BrendanGoUpstairs1:
-	walk_in_place_faster_right
-	walk_right
+	walk_in_place_faster_left
+	walk_left
 	walk_in_place_faster_up
 	walk_up
 	walk_up
-	walk_in_place_faster_left
-	walk_left
+	walk_in_place_faster_right
+	walk_right
 	walk_in_place_faster_up
 	walk_up
 	step_end

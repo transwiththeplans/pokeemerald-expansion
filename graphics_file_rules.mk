@@ -32,7 +32,7 @@ $(TILESETGFXDIR)/secondary/petalburg/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 159 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/rustboro/tiles.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -num_tiles 498 -Wnum_tiles
+	$(GFX) $< $@ -num_tiles 504 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/dewford/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 503 -Wnum_tiles

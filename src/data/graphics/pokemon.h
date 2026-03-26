@@ -18763,6 +18763,21 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
     const u16 gShinyOverworldPalette_Golurk[] = INCBIN_U16("graphics/pokemon/golurk/overworld_shiny.gbapal");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
+
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_GolurkMega[] = INCBIN_U32("graphics/pokemon/golurk/mega/front.4bpp.smol");
+    const u16 gMonPalette_GolurkMega[] = INCBIN_U16("graphics/pokemon/golurk/mega/normal.gbapal");
+    const u32 gMonBackPic_GolurkMega[] = INCBIN_U32("graphics/pokemon/golurk/mega/back.4bpp.smol");
+    const u16 gMonShinyPalette_GolurkMega[] = INCBIN_U16("graphics/pokemon/golurk/mega/shiny.gbapal");
+    const u8 gMonIcon_GolurkMega[] = INCBIN_U8("graphics/pokemon/golurk/mega/icon.4bpp");
+#if OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
+    const u32 gObjectEventPic_GolurkMega[] = INCBIN_COMP("graphics/pokemon/golurk/mega/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_GolurkMega[] = INCBIN_U16("graphics/pokemon/golurk/mega/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_GolurkMega[] = INCBIN_U16("graphics/pokemon/golurk/mega/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
+#endif //P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_GOLETT
 
 #if P_FAMILY_PAWNIARD

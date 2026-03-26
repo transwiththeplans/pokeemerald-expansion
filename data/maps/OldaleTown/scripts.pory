@@ -22,7 +22,7 @@ OldaleTown_EventScript_BlockWestEntrance::
 	return
 
 OldaleTown_EventScript_MoveMartEmployee::
-	setobjectxyperm LOCALID_OLDALE_MART_EMPLOYEE, 13, 14
+	setobjectxyperm LOCALID_OLDALE_MART_EMPLOYEE, 8, 14
 	setobjectmovementtype LOCALID_OLDALE_MART_EMPLOYEE, MOVEMENT_TYPE_FACE_DOWN
 	return
 
@@ -96,6 +96,12 @@ OldaleTown_Movement_EmployeeEast:
 	walk_up
 	walk_up
 	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_in_place_faster_down
+	step_end
 	walk_up
 	walk_up
 	walk_up
@@ -103,6 +109,18 @@ OldaleTown_Movement_EmployeeEast:
 	step_end
 
 OldaleTown_Movement_EmployeeSouth:
+	walk_left
+	walk_up
+	walk_up
+	walk_right
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_in_place_faster_down
+	step_end
 	walk_left
 	walk_up
 	walk_up
@@ -120,6 +138,12 @@ OldaleTown_Movement_EmployeeNorth:
 	walk_up
 	walk_up
 	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_in_place_faster_down
+	step_end
 	walk_up
 	walk_up
 	walk_up
@@ -148,7 +172,11 @@ OldaleTown_Movement_PlayerEast:
 	walk_up
 	walk_up
 	walk_up
-	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_in_place_faster_up
+	step_end
 	walk_up
 	step_end
 
@@ -160,7 +188,11 @@ OldaleTown_Movement_PlayerSouth:
 	walk_up
 	walk_up
 	walk_up
-	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_in_place_faster_up
+	step_end
 	walk_up
 	step_end
 
@@ -169,6 +201,12 @@ OldaleTown_Movement_PlayerNorth:
 	walk_up
 	walk_up
 	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_in_place_faster_up
+	step_end
 	walk_up
 	walk_up
 	walk_up

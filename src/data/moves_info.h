@@ -9024,6 +9024,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
+        .slicingMove = TRUE,
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_HIGHLY_APPEALING : CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
@@ -21306,6 +21307,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         }),
         .battleAnimScript = gBattleAnimMove_MalignantChain,
     },
+	
 	[MOVE_AIR_BOMB] =
 	{
 		.name = COMPOUND_STRING("Air Bomb"),
@@ -21451,6 +21453,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 		.metronomeBanned = TRUE,
 		.battleAnimScript = gBattleAnimMove_SeedBomb,
 	},
+	
     [MOVE_DUST_DEVIL] =
     {
         .name = COMPOUND_STRING("Dust Devil"),
@@ -21805,7 +21808,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Mania"),
         .description = COMPOUND_STRING(
             "A headache that hits all\n"
-            "targets. Causes sleep."),
+            "targets. Causes drowsiness."),
         .effect = EFFECT_HIT,
         .power = 95,
         .type = TYPE_PSYCHIC,
@@ -21816,7 +21819,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .metronomeBanned = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_SLEEP,
+            .moveEffect = MOVE_EFFECT_YAWN_FOE,
             .chance = 100,
         }),
         .battleAnimScript = gBattleAnimMove_Confusion,
@@ -21842,7 +21845,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_SkyUppercut,
     },
 	
-	    [MOVE_PHANTOM_BREEZE] =
+	[MOVE_PHANTOM_BREEZE] =
     {
         .name = COMPOUND_STRING("Phantom Breeze"),
         .description = COMPOUND_STRING(
@@ -22258,7 +22261,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Death Growl"),
         .description = COMPOUND_STRING(
             "A metallic shriek that\n"
-            "damages and terrifies."),
+            "may cause flinch."),
         .effect = EFFECT_HIT,
         .power = 90,
         .type = TYPE_STEEL,
@@ -22612,8 +22615,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Cryosleep"),
         .description = COMPOUND_STRING(
-			"User freezes the target into a deep\n"
-			"sleep."),
+			"User freezes the target/n" 
+			"into a deep sleep."),
         .effect = EFFECT_HIT,
         .power = 65,
         .type = TYPE_ICE,
@@ -22772,14 +22775,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
-        .argument = { .recoilPercentage = B_UPDATED_MOVE_DATA >= GEN_3 ? 33 : 25 },
+        .argument = { .recoilPercentage = 25 },
         .makesContact = TRUE,
         .contestEffect = CONTEST_EFFECT_USER_MORE_EASILY_STARTLED,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_FOCUS_ENERGY, COMBO_STARTER_HARDEN},
         .battleAnimScript = gBattleAnimMove_DoubleEdge,
-        .validApprenticeMove = TRUE,
     },
 
     // Z-Moves

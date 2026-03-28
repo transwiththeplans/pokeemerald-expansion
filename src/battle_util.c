@@ -5906,7 +5906,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
         else if (SearchTraits(battlerTraits, ABILITY_STENCH)
          && IsBattlerAlive(gBattlerTarget)
          && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
-         && RandomChance(RNG_STENCH, 1, 10)
+         && RandomChance(RNG_STENCH, 2, 10)
          && IsBattlerTurnDamaged(gBattlerTarget)
          && !MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_FLINCH))
         {

@@ -5686,231 +5686,116 @@
   "EggMoves": [],
   "TutorMoves": []
 },
-  "SHELLDER": {
-    "LevelMoves": [
-      {
-        "Level": 1,
-        "Move": "MOVE_TACKLE"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_WATER_GUN"
-      },
-      {
-        "Level": 4,
-        "Move": "MOVE_WITHDRAW"
-      },
-      {
-        "Level": 8,
-        "Move": "MOVE_ICE_SHARD"
-      },
-      {
-        "Level": 12,
-        "Move": "MOVE_LEER"
-      },
-      {
-        "Level": 16,
-        "Move": "MOVE_WHIRLPOOL"
-      },
-      {
-        "Level": 20,
-        "Move": "MOVE_SUPERSONIC"
-      },
-      {
-        "Level": 24,
-        "Move": "MOVE_AURORA_BEAM"
-      },
-      {
-        "Level": 28,
-        "Move": "MOVE_PROTECT"
-      },
-      {
-        "Level": 32,
-        "Move": "MOVE_RAZOR_SHELL"
-      },
-      {
-        "Level": 36,
-        "Move": "MOVE_IRON_DEFENSE"
-      },
-      {
-        "Level": 40,
-        "Move": "MOVE_ICE_BEAM"
-      },
-      {
-        "Level": 44,
-        "Move": "MOVE_SHELL_SMASH"
-      },
-      {
-        "Level": 48,
-        "Move": "MOVE_HYDRO_PUMP"
-      }
-    ],
-    "PreEvoMoves": [],
-    "TMMoves": [
-      "MOVE_TAKE_DOWN",
-      "MOVE_PROTECT",
-      "MOVE_WATER_PULSE",
-      "MOVE_CHILLING_WATER",
-      "MOVE_FACADE",
-      "MOVE_SWIFT",
-      "MOVE_ICY_WIND",
-      "MOVE_MUD_SHOT",
-      "MOVE_AVALANCHE",
-      "MOVE_ENDURE",
-      "MOVE_RAIN_DANCE",
-      "MOVE_SNOWSCAPE",
-      "MOVE_SLEEP_TALK",
-      "MOVE_ROCK_BLAST",
-      "MOVE_WATERFALL",
-      "MOVE_REST",
-      "MOVE_SPIKES",
-      "MOVE_TOXIC_SPIKES",
-      "MOVE_SUBSTITUTE",
-      "MOVE_IRON_DEFENSE",
-      "MOVE_LIQUIDATION",
-      "MOVE_SURF",
-      "MOVE_ICE_SPINNER",
-      "MOVE_HELPING_HAND",
-      "MOVE_ICE_BEAM",
-      "MOVE_HYDRO_PUMP",
-      "MOVE_BLIZZARD",
-      "MOVE_TERA_BLAST",
-      "MOVE_ICICLE_SPEAR",
-      "MOVE_WHIRLPOOL"
-    ],
-    "EggMoves": [
-      "MOVE_AQUA_RING",
-      "MOVE_BUBBLE_BEAM",
-      "MOVE_LIFE_DEW",
-      "MOVE_WATER_PULSE"
-    ],
-    "TutorMoves": []
-  },
-  "CLOYSTER": {
-    "LevelMoves": [
-      {
-        "Level": 0,
-        "Move": "MOVE_ICICLE_SPEAR"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_ICICLE_CRASH"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_SHELL_SMASH"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_ICE_SHARD"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_TOXIC_SPIKES"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_IRON_DEFENSE"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_WHIRLPOOL"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_SPIKES"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_PROTECT"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_WITHDRAW"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_AURORA_BEAM"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_ICE_BEAM"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_HYDRO_PUMP"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_WATER_GUN"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_SUPERSONIC"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_LEER"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_TACKLE"
-      },
-      {
-        "Level": 5,
-        "Move": "MOVE_RAZOR_SHELL"
-      }
-    ],
-    "PreEvoMoves": [],
-    "TMMoves": [
-      "MOVE_TAKE_DOWN",
-      "MOVE_SCARY_FACE",
-      "MOVE_PROTECT",
-      "MOVE_WATER_PULSE",
-      "MOVE_CHILLING_WATER",
-      "MOVE_FACADE",
-      "MOVE_SWIFT",
-      "MOVE_ICY_WIND",
-      "MOVE_MUD_SHOT",
-      "MOVE_AVALANCHE",
-      "MOVE_ENDURE",
-      "MOVE_RAIN_DANCE",
-      "MOVE_SNOWSCAPE",
-      "MOVE_SMART_STRIKE",
-      "MOVE_BODY_SLAM",
-      "MOVE_SLEEP_TALK",
-      "MOVE_LIGHT_SCREEN",
-      "MOVE_ROCK_BLAST",
-      "MOVE_WATERFALL",
-      "MOVE_POISON_JAB",
-      "MOVE_REST",
-      "MOVE_SPIKES",
-      "MOVE_TOXIC_SPIKES",
-      "MOVE_SUBSTITUTE",
-      "MOVE_IRON_DEFENSE",
-      "MOVE_DRILL_RUN",
-      "MOVE_LIQUIDATION",
-      "MOVE_SURF",
-      "MOVE_ICE_SPINNER",
-      "MOVE_HELPING_HAND",
-      "MOVE_ICE_BEAM",
-      "MOVE_HYDRO_PUMP",
-      "MOVE_BLIZZARD",
-      "MOVE_GIGA_IMPACT",
-      "MOVE_HYPER_BEAM",
-      "MOVE_TERA_BLAST",
-      "MOVE_ICICLE_SPEAR",
-      "MOVE_WEATHER_BALL",
-      "MOVE_WHIRLPOOL"
-    ],
-    "EggMoves": [
-      "MOVE_AQUA_RING",
-      "MOVE_BUBBLE_BEAM",
-      "MOVE_LIFE_DEW",
-      "MOVE_WATER_PULSE"
-    ],
-    "TutorMoves": []
-  },
+	"SHELLDER": {
+	  "LevelMoves": [
+		{ "Level": 1,  "Move": "MOVE_TACKLE" },
+		{ "Level": 1,  "Move": "MOVE_ROCK_THROW" },
+		{ "Level": 4,  "Move": "MOVE_WITHDRAW" },
+		{ "Level": 8,  "Move": "MOVE_ICE_SHARD" },
+		{ "Level": 12, "Move": "MOVE_LEER" },
+		{ "Level": 16, "Move": "MOVE_ANCIENT_POWER" },
+		{ "Level": 20, "Move": "MOVE_SUPERSONIC" },
+		{ "Level": 24, "Move": "MOVE_AURORA_BEAM" },
+		{ "Level": 28, "Move": "MOVE_PROTECT" },
+		{ "Level": 32, "Move": "MOVE_ROCK_BLAST" },
+		{ "Level": 36, "Move": "MOVE_IRON_DEFENSE" },
+		{ "Level": 40, "Move": "MOVE_ICE_BEAM" },
+		{ "Level": 44, "Move": "MOVE_SHELL_SMASH" },
+		{ "Level": 48, "Move": "MOVE_POWER_GEM" }
+	  ],
+	  "PreEvoMoves": [],
+	  "TMMoves": [
+		"MOVE_TOXIC",
+		"MOVE_SNOWSCAPE",
+		"MOVE_PROTECT",
+		"MOVE_ICE_BEAM",
+		"MOVE_BLIZZARD",
+		"MOVE_ROCK_TOMB",
+		"MOVE_ROCK_SLIDE",
+		"MOVE_POWER_GEM",
+		"MOVE_ASTEROID_BELT",
+		"MOVE_FLASH_CANNON",
+		"MOVE_SMART_STRIKE",
+		"MOVE_IRON_DEFENSE",
+		"MOVE_SUBSTITUTE",
+		"MOVE_REST",
+		"MOVE_FACADE",
+		"MOVE_DOUBLE_TEAM",
+		"MOVE_SECRET_POWER",
+		"MOVE_SPIKES",
+		"MOVE_TOXIC_SPIKES",
+		"MOVE_ICE_SPINNER",
+		"MOVE_GLACIATE"
+	  ],
+	  "EggMoves": [],
+	  "TutorMoves": []
+	},
+	"CLOYSTER": {
+	  "LevelMoves": [
+		{ "Level": 0,  "Move": "MOVE_ICICLE_SPEAR" },
+		{ "Level": 1,  "Move": "MOVE_ICICLE_CRASH" },
+		{ "Level": 1,  "Move": "MOVE_SHELL_SMASH" },
+		{ "Level": 1,  "Move": "MOVE_ICE_SHARD" },
+		{ "Level": 1,  "Move": "MOVE_TOXIC_SPIKES" },
+		{ "Level": 1,  "Move": "MOVE_IRON_DEFENSE" },
+		{ "Level": 1,  "Move": "MOVE_ANCIENT_POWER" },
+		{ "Level": 1,  "Move": "MOVE_SPIKES" },
+		{ "Level": 1,  "Move": "MOVE_PROTECT" },
+		{ "Level": 1,  "Move": "MOVE_WITHDRAW" },
+		{ "Level": 1,  "Move": "MOVE_AURORA_BEAM" },
+		{ "Level": 1,  "Move": "MOVE_ICE_BEAM" },
+		{ "Level": 1,  "Move": "MOVE_POWER_GEM" },
+		{ "Level": 1,  "Move": "MOVE_ROCK_THROW" },
+		{ "Level": 1,  "Move": "MOVE_SUPERSONIC" },
+		{ "Level": 1,  "Move": "MOVE_LEER" },
+		{ "Level": 1,  "Move": "MOVE_TACKLE" },
+		{ "Level": 5,  "Move": "MOVE_ROCK_BLAST" },
+		{ "Level": 50, "Move": "MOVE_BLIZZARD" },
+		{ "Level": 56, "Move": "MOVE_STONE_EDGE" }
+	  ],
+	  "PreEvoMoves": [
+		"MOVE_ROCK_THROW",
+		"MOVE_ANCIENT_POWER",
+		"MOVE_AURORA_BEAM",
+		"MOVE_ROCK_BLAST",
+		"MOVE_ICE_BEAM",
+		"MOVE_SHELL_SMASH",
+		"MOVE_POWER_GEM"
+	  ],
+	  "TMMoves": [
+		"MOVE_TOXIC",
+		"MOVE_SNOWSCAPE",
+		"MOVE_PROTECT",
+		"MOVE_ICE_BEAM",
+		"MOVE_BLIZZARD",
+		"MOVE_ROCK_TOMB",
+		"MOVE_ROCK_SLIDE",
+		"MOVE_STEALTH_ROCK",
+		"MOVE_POWER_GEM",
+		"MOVE_ASTEROID_BELT",
+		"MOVE_FLASH_CANNON",
+		"MOVE_SMART_STRIKE",
+		"MOVE_IRON_HEAD",
+		"MOVE_IRON_DEFENSE",
+		"MOVE_BARB_BARRAGE",
+		"MOVE_PIN_MISSILE",
+		"MOVE_FLASH_VOLLEY",
+		"MOVE_BODY_PRESS",
+		"MOVE_SUBSTITUTE",
+		"MOVE_REST",
+		"MOVE_FACADE",
+		"MOVE_DOUBLE_TEAM",
+		"MOVE_SECRET_POWER",
+		"MOVE_SPIKES",
+		"MOVE_TOXIC_SPIKES",
+		"MOVE_ICE_SPINNER",
+		"MOVE_GLACIATE",
+		"MOVE_TRIPLE_AXEL",
+		"MOVE_GYRO_BALL"
+	  ],
+	  "EggMoves": [],
+	  "TutorMoves": []
+	},
   "GASTLY": {
     "LevelMoves": [
       {

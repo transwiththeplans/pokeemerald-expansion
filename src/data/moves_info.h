@@ -8820,10 +8820,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "A chilling attack that\n"
             "causes frostbite on impact."),
-        .effect = EFFECT_OHKO,
+        .effect = EFFECT_HIT,
         .power = 120,
         .type = TYPE_ICE,
-        .accuracy = 85,
+        .accuracy = 75,
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,

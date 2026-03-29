@@ -1204,6 +1204,16 @@ static const u16 sDeoxysFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_DEOXYS
 
+#if P_FAMILY_STARLY
+static const u16 sStaraptorFormSpeciesIdTable[] = {
+    SPECIES_STARAPTOR,
+#if P_GEN_9_MEGA_EVOLUTIONS
+    SPECIES_STARAPTOR_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_STARLY
+
 #if P_FAMILY_BUIZEL
 static const u16 sFloatzelFormSpeciesIdTable[] = {
     SPECIES_FLOATZEL,

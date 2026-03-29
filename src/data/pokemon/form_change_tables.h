@@ -921,6 +921,16 @@ static const struct FormChange sDeoxysSpeedFormChangeTable[] =
 };
 #endif //P_FAMILY_DEOXYS
 
+#if P_FAMILY_STARLY
+static const struct FormChange sStaraptorFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_STARAPTOR_MEGA, ITEM_ULTIMATRIX_SYMBOL},
+#endif
+    {FORM_CHANGE_END_BATTLE,                    SPECIES_STARAPTOR},
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_FAMILY_STARLY
+
 #if P_FAMILY_BUIZEL
 static const struct FormChange sFloatzelFormChangeTable[] = {
 #if P_MEGA_EVOLUTIONS

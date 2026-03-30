@@ -8404,7 +8404,9 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_SCARE, ABILITY_SHADOW_POWER, ABILITY_DREAM_WORLD },
+        .innates = {ABILITY_LEVITATE},
+        .innateUnlockLevel = 35,
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Lunatone"),
         .cryId = CRY_LUNATONE,
@@ -8484,7 +8486,9 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_ILLUMINATE, ABILITY_FIREPOWER, ABILITY_SOLAR_POWER },
+        .innates = {ABILITY_LEVITATE},
+        .innateUnlockLevel = 35,
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Solrock"),
         .cryId = CRY_SOLROCK,
@@ -10092,11 +10096,9 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = 35,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-    #if P_UPDATED_ABILITIES >= GEN_6
-        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_FRISK },
-    #else
-        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
-    #endif
+        .abilities = { ABILITY_SOUL_FEED, ABILITY_PRESSURE, ABILITY_INFILTRATOR },
+        .innates = {ABILITY_MAGIC_GUARD},
+        .innateUnlockLevel = 45,
         .bodyColor = BODY_COLOR_BLACK,
         .speciesName = _("Duskull"),
         .cryId = CRY_DUSKULL,
@@ -10170,11 +10172,9 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = 35,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-    #if P_UPDATED_ABILITIES >= GEN_6
-        .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_FRISK },
-    #else
-        .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_NONE },
-    #endif
+        .abilities = { ABILITY_SOUL_FEED, ABILITY_PRESSURE, ABILITY_INFILTRATOR },
+        .innates = {ABILITY_MAGIC_GUARD},
+        .innateUnlockLevel = 45,
         .bodyColor = BODY_COLOR_BLACK,
         .speciesName = _("Dusclops"),
         .cryId = CRY_DUSCLOPS,
@@ -10255,11 +10255,9 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = 35,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-    #if P_UPDATED_ABILITIES >= GEN_6
-        .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_FRISK },
-    #else
-        .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_NONE },
-    #endif
+        .abilities = { ABILITY_SOUL_FEED, ABILITY_PRESSURE, ABILITY_INFILTRATOR },
+        .innates = {ABILITY_MAGIC_GUARD},
+        .innateUnlockLevel = 45,
         .bodyColor = BODY_COLOR_BLACK,
         .speciesName = _("Dusknoir"),
         .cryId = CRY_DUSKNOIR,

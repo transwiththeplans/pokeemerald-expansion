@@ -1818,7 +1818,9 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_HUSTLE, ABILITY_SERENE_GRACE, ABILITY_SUPER_LUCK },
+        .abilities = { ABILITY_HOSPITALITY, ABILITY_SUPER_LUCK, ABILITY_DAZZLING },
+        .innates = {ABILITY_SERENE_GRACE},
+        .innateUnlockLevel = 30,
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Togepi"),
         .cryId = CRY_TOGEPI,
@@ -1887,7 +1889,9 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING, EGG_GROUP_FAIRY),
-        .abilities = { ABILITY_HUSTLE, ABILITY_SERENE_GRACE, ABILITY_SUPER_LUCK },
+        .abilities = { ABILITY_HOSPITALITY, ABILITY_SUPER_LUCK, ABILITY_DAZZLING },
+        .innates = {ABILITY_SERENE_GRACE},
+        .innateUnlockLevel = 30,
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Togetic"),
         .cryId = CRY_TOGETIC,
@@ -1963,7 +1967,9 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING, EGG_GROUP_FAIRY),
-        .abilities = { ABILITY_HUSTLE, ABILITY_SERENE_GRACE, ABILITY_SUPER_LUCK },
+        .abilities = { ABILITY_HOSPITALITY, ABILITY_SUPER_LUCK, ABILITY_DAZZLING },
+        .innates = {ABILITY_SERENE_GRACE},
+        .innateUnlockLevel = 30,
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = TRUE,
         .speciesName = _("Togekiss"),
@@ -4822,12 +4828,12 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
     [SPECIES_PINECO] =
     {
         .baseHP        = 50,
-        .baseAttack    = 15,
+        .baseAttack    = 65,
         .baseDefense   = 90,
-        .baseSpeed     = 35,
-        .baseSpAttack  = 65,
+        .baseSpeed     = 15,
+        .baseSpAttack  = 35,
         .baseSpDefense = 35,
-        .types = MON_TYPES(TYPE_FLYING),
+        .types = MON_TYPES(TYPE_BUG),
         .catchRate = 190,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 58 : 60,
         .evYield_Defense = 1,
@@ -4836,7 +4842,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_WIND_BLOWER, ABILITY_NONE, ABILITY_SHELL_ARMOR },
+        .abilities = { ABILITY_STURDY, ABILITY_NONE, ABILITY_OVERCOAT },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Pineco"),
         .cryId = CRY_PINECO,
@@ -4845,10 +4851,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .height = 6,
         .weight = 72,
         .description = COMPOUND_STRING(
-            "Its hollow body spins rapidly to create\n"
-            "a vacuum. This suction pulls food toward\n"
-            "it from far away. Trainers must beware\n"
-            "of its sudden spinning fits."),
+            "A Pineco hangs from a tree branch and\n"
+            "waits for prey. While eating, if it is\n"
+            "disturbed by someone shaking its tree, it\n"
+            "falls on the ground and suddenly explodes."),
         .pokemonScale = 445,
         .pokemonOffset = 2,
         .trainerScale = 256,
@@ -4890,18 +4896,18 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sPinecoLevelUpLearnset,
         .teachableLearnset = sPinecoTeachableLearnset,
         .eggMoveLearnset = sPinecoEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_FORRETRESS}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 31, SPECIES_FORRETRESS}),
     },
 
     [SPECIES_FORRETRESS] =
     {
         .baseHP        = 75,
-        .baseAttack    = 50,
+        .baseAttack    = 90,
         .baseDefense   = 140,
-        .baseSpeed     = 65,
-        .baseSpAttack  = 95,
+        .baseSpeed     = 40,
+        .baseSpAttack  = 60,
         .baseSpDefense = 60,
-        .types = MON_TYPES(TYPE_FLYING),
+        .types = MON_TYPES(TYPE_BUG, TYPE_STEEL),
         .catchRate = 75,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 163 : 118,
         .evYield_Defense = 2,
@@ -4910,7 +4916,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_WIND_BLOWER, ABILITY_NONE, ABILITY_SHELL_ARMOR },
+        .abilities = { ABILITY_STURDY, ABILITY_NONE, ABILITY_OVERCOAT },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Forretress"),
         .cryId = CRY_FORRETRESS,
@@ -4919,10 +4925,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .height = 12,
         .weight = 1258,
         .description = COMPOUND_STRING(
-            "It fires bursts of compressed air when\n"
-            "threatened. Its calm nature makes it a\n"
-            "peaceful species, despite its strong\n"
-            "defenses and heavy armor."),
+            "It keeps itself inside its steel shell.\n"
+            "The shell is opened when it is catching\n"
+            "prey, but it is so quick that the shell's\n"
+            "inside cannot be seen."),
         .pokemonScale = 293,
         .pokemonOffset = 5,
         .trainerScale = 256,
@@ -5128,6 +5134,8 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
         .abilities = { ABILITY_RATTLED, ABILITY_DRY_SKIN, ABILITY_SWIFT_SWIM },
+		.innates = {ABILITY_TYPHOON},
+		.innateUnlockLevel = 35,
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Dudunsparce"),
         .cryId = CRY_DUDUNSPARCE,

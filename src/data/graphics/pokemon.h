@@ -22877,8 +22877,21 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u16 gOverworldPalette_MagearnaOriginal[] = INCBIN_U16("graphics/pokemon/magearna/original_color/overworld_normal.gbapal");
     const u16 gShinyOverworldPalette_MagearnaOriginal[] = INCBIN_U16("graphics/pokemon/magearna/original_color/overworld_shiny.gbapal");
+#if P_GEN_9_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_MagearnaMega[] = INCBIN_U32("graphics/pokemon/magearna/mega/front.4bpp.smol");
+    const u16 gMonPalette_MagearnaMega[] = INCBIN_U16("graphics/pokemon/magearna/mega/normal.gbapal");
+    const u32 gMonBackPic_MagearnaMega[] = INCBIN_U32("graphics/pokemon/magearna/mega/back.4bpp.smol");
+    const u16 gMonShinyPalette_MagearnaMega[] = INCBIN_U16("graphics/pokemon/magearna/mega/shiny.gbapal");
+    const u8 gMonIcon_MagearnaMega[] = INCBIN_U8("graphics/pokemon/magearna/mega/icon.4bpp");
+	
+    const u32 gMonFrontPic_MagearnaOriginalMega[] = INCBIN_U32("graphics/pokemon/magearna/mega/front.4bpp.smol");
+    const u16 gMonPalette_MagearnaOriginalMega[] = INCBIN_U16("graphics/pokemon/magearna/mega/normal.gbapal");
+    const u32 gMonBackPic_MagearnaOriginalMega[] = INCBIN_U32("graphics/pokemon/magearna/mega/back.4bpp.smol");
+    const u16 gMonShinyPalette_MagearnaOriginalMega[] = INCBIN_U16("graphics/pokemon/magearna/mega/shiny.gbapal");
+    const u8 gMonIcon_MagearnaOriginalMega[] = INCBIN_U8("graphics/pokemon/magearna/mega/icon.4bpp");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
-#endif //OW_POKEMON_OBJECT_EVENTS
+#endif //OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_MAGEARNA
 
 #if P_FAMILY_MARSHADOW

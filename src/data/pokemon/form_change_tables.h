@@ -1710,6 +1710,24 @@ static const struct FormChange sNecrozmaUltraFormChangeTable[] =
 };
 #endif //P_FAMILY_NECROZMA
 
+#if P_FAMILY_MAGEARNA
+static const struct FormChange sMagearnaFormChangeTable[] = {
+#if P_GEN_9_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_MAGEARNA_MEGA, ITEM_ULTIMATRIX_SYMBOL_Z},
+#endif
+    {FORM_CHANGE_END_BATTLE,                    SPECIES_MAGEARNA},
+    {FORM_CHANGE_TERMINATOR},
+};
+
+static const struct FormChange sMagearnaOriginalFormChangeTable[] = {
+#if P_GEN_9_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_MAGEARNA_ORIGINAL_MEGA, ITEM_ULTIMATRIX_SYMBOL_Z},
+#endif
+    {FORM_CHANGE_END_BATTLE,                    SPECIES_MAGEARNA_ORIGINAL},
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //P_FAMILY_MAGEARNA
+
 #if P_FAMILY_MELTAN
 static const struct FormChange sMelmetalFormChangeTable[] =
 {

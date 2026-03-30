@@ -4779,11 +4779,11 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     [SPECIES_HAWLUCHA_MEGA] =
     {
         .baseHP        = 78,
-        .baseAttack    = 92,
-        .baseDefense   = 75,
+        .baseAttack    = 137,
+        .baseDefense   = 100,
         .baseSpeed     = 118,
         .baseSpAttack  = 74,
-        .baseSpDefense = 63,
+        .baseSpDefense = 93,
         .types = MON_TYPES(TYPE_FIGHTING, TYPE_FLYING),
         .catchRate = 100,
         .expYield = 175,
@@ -4797,7 +4797,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     #else
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
     #endif
-        .abilities = { ABILITY_LIMBER, ABILITY_LIMBER, ABILITY_LIMBER },
+        .abilities = { ABILITY_SCRAPPY, ABILITY_SCRAPPY, ABILITY_SCRAPPY },
         .innates = {ABILITY_AERODYNAMICS},
         .innateUnlockLevel = 40,
         .bodyColor = BODY_COLOR_GREEN,

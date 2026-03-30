@@ -2150,6 +2150,10 @@ static const u16 sNecrozmaFormSpeciesIdTable[] = {
 static const u16 sMagearnaFormSpeciesIdTable[] = {
     SPECIES_MAGEARNA,
     SPECIES_MAGEARNA_ORIGINAL,
+#if P_GEN_9_MEGA_EVOLUTIONS
+    SPECIES_MAGEARNA_MEGA,
+    SPECIES_MAGEARNA_ORIGINAL_MEGA,
+#endif
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_MAGEARNA

@@ -2793,7 +2793,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_DREAM_WORLD] =
     {
         .name = _("Dream World"),
-        .description = COMPOUND_STRING("Makes everybody Drowsy when sent out, even itself."),
+        .description = COMPOUND_STRING("Makes everybody Drowsy when sent out."),
         .aiRating = 8,
     },
 

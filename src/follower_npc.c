@@ -443,6 +443,7 @@ static bool32 IsPlayerForcedOntoSameTile(u8 metatileBehavior, u8 direction)
     case MB_SLIDE_SOUTH:
     case MB_SOUTHWARD_CURRENT:
     case MB_MUDDY_SLOPE:
+    case MB_SLOPE:
     case MB_WATERFALL:
         oppositeDirection = DIR_NORTH;
         break;
@@ -959,7 +960,7 @@ u32 DetermineFollowerNPCState(struct ObjectEvent *follower, u32 state, u32 direc
         if (GetFollowerNPCData(FNPC_DATA_CURRENT_SPRITE) == FOLLOWER_NPC_SPRITE_INDEX_SURF && GetFollowerNPCSprite() == GetFollowerNPCData(FNPC_DATA_GFX_ID))
             RETURN_STATE(MOVEMENT_ACTION_SURF_STILL_DOWN, direction);
 
-        if (MetatileBehavior_IsMuddySlope(follower->currentMetatileBehavior))
+        if (MetatileBehavior_IsMuddySlope(follower->currentMetatileBehavior) || MetatileBehavior_IsSlope(follower->currentMetatileBehavior))
             follower->facingDirectionLocked = TRUE;
 
         RETURN_STATE(MOVEMENT_ACTION_WALK_FAST_DOWN, direction);

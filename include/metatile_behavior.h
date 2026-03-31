@@ -124,6 +124,7 @@ bool8 MetatileBehavior_IsMtPyreHole(u8 metatileBehavior);
 bool8 MetatileBehavior_IsCrackedFloorHole(u8 metatileBehavior);
 bool8 MetatileBehavior_IsCrackedFloor(u8 metatileBehavior);
 bool8 MetatileBehavior_IsMuddySlope(u8 metatileBehavior);
+bool8 MetatileBehavior_IsSlope(u8 metatileBehavior);
 bool8 MetatileBehavior_IsBumpySlope(u8 metatileBehavior);
 bool8 MetatileBehavior_IsIsolatedVerticalRail(u8 metatileBehavior);
 bool8 MetatileBehavior_IsIsolatedHorizontalRail(u8 metatileBehavior);

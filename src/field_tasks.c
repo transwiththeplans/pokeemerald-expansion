@@ -930,6 +930,10 @@ static void Task_MuddySlope(u8 taskId)
                 }
             }
         }
+        else if(MetatileBehavior_IsSlope(MapGridGetMetatileBehaviorAt(x, y)))
+        {
+            //Nothing
+        }
         break;
     }
 

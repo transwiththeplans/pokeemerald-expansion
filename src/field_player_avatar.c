@@ -35,7 +35,7 @@
 #include "constants/songs.h"
 #include "constants/trainer_types.h"
 
-#define NUM_FORCED_MOVEMENTS 18
+#define NUM_FORCED_MOVEMENTS 19
 #define NUM_ACRO_BIKE_COLLISIONS 5
 
 enum SpinDirection
@@ -169,6 +169,7 @@ static bool8 (*const sForcedMovementTestFuncs[NUM_FORCED_MOVEMENTS])(u8) =
     MetatileBehavior_IsSecretBaseJumpMat,
     MetatileBehavior_IsSecretBaseSpinMat,
     MetatileBehavior_IsMuddySlope,
+    MetatileBehavior_IsSlope,
 };
 
 // + 1 for ForcedMovement_None, which is excluded above
@@ -192,6 +193,7 @@ static bool8 (*const sForcedMovementFuncs[NUM_FORCED_MOVEMENTS + 1])(void) =
     ForcedMovement_PushedSouthByCurrent,
     ForcedMovement_MatJump,
     ForcedMovement_MatSpin,
+    ForcedMovement_MuddySlope,
     ForcedMovement_MuddySlope,
 };
 
@@ -1239,8 +1241,8 @@ void PlayerOnBikeCollide(u8 direction)
         struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
 
         if (npcFollower->invisible == FALSE
-         && player->currentMetatileBehavior != MB_MUDDY_SLOPE
-         && npcFollower->currentMetatileBehavior == MB_MUDDY_SLOPE)
+         && player->currentMetatileBehavior != MB_MUDDY_SLOPE && player->currentMetatileBehavior != MB_SLOPE
+         && (npcFollower->currentMetatileBehavior == MB_MUDDY_SLOPE || npcFollower->currentMetatileBehavior == MB_SLOPE))
         {
             gPlayerAvatar.preventStep = TRUE;
             ObjectEventSetHeldMovement(npcFollower, MOVEMENT_ACTION_WALK_FAST_UP);

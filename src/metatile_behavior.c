@@ -349,6 +349,7 @@ bool8 MetatileBehavior_IsForcedMovementTile(u8 metatileBehavior)
     if ((metatileBehavior >= MB_WALK_EAST && metatileBehavior <= MB_TRICK_HOUSE_PUZZLE_8_FLOOR)
      || (metatileBehavior >= MB_EASTWARD_CURRENT && metatileBehavior <= MB_SOUTHWARD_CURRENT)
      || metatileBehavior == MB_MUDDY_SLOPE
+     || metatileBehavior == MB_SLOPE
      || metatileBehavior == MB_CRACKED_FLOOR
      || metatileBehavior == MB_WATERFALL
      || metatileBehavior == MB_ICE
@@ -1211,6 +1212,14 @@ bool8 MetatileBehavior_IsCrackedFloor(u8 metatileBehavior)
 bool8 MetatileBehavior_IsMuddySlope(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_MUDDY_SLOPE)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsSlope(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_SLOPE)
         return TRUE;
     else
         return FALSE;

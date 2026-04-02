@@ -9472,11 +9472,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     [SPECIES_CASTFORM_NORMAL] =
     {
         .baseHP        = 70,
-        .baseAttack    = 70,
-        .baseDefense   = 70,
+        .baseAttack    = 75,
+        .baseDefense   = 100,
         .baseSpeed     = 70,
-        .baseSpAttack  = 70,
-        .baseSpDefense = 70,
+        .baseSpAttack  = 75,
+        .baseSpDefense = 100,
         .types = MON_TYPES(TYPE_NORMAL),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 147 : 145,

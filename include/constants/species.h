@@ -1771,6 +1771,7 @@
 #define SPECIES_STARAPTOR_MEGA                          1638
 #define SPECIES_MAGEARNA_MEGA                           1639
 #define SPECIES_MAGEARNA_ORIGINAL_MEGA                  1640
+#define SPECIES_LAPRAS_MEGA                             1641
 
 #define SPECIES_LAST                                    2000 //To always have more space for new species if needed
 

@@ -2861,4 +2861,11 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 8,
     },
 
+    [ABILITY_ENCHANTING_VOICE] =
+    {
+        .name = _("Mountaineer"),
+        .description = COMPOUND_STRING("Boosts the power of sound moves."),
+        .aiRating = 8,
+    },
+
 };

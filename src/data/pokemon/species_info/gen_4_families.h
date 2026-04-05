@@ -3875,10 +3875,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     [SPECIES_STUNKY] =
     {
         .baseHP        = 63,
-        .baseAttack    = 63,
+        .baseAttack    = 41,
         .baseDefense   = 47,
         .baseSpeed     = 74,
-        .baseSpAttack  = 41,
+        .baseSpAttack  = 63,
         .baseSpDefense = 41,
         .types = MON_TYPES(TYPE_POISON, TYPE_DARK),
         .catchRate = 225,
@@ -3948,10 +3948,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     [SPECIES_SKUNTANK] =
     {
         .baseHP        = 103,
-        .baseAttack    = 93,
+        .baseAttack    = 71,
         .baseDefense   = 67,
         .baseSpeed     = 84,
-        .baseSpAttack  = 71,
+        .baseSpAttack  = 93,
         .baseSpDefense = 61,
         .types = MON_TYPES(TYPE_POISON, TYPE_DARK),
         .catchRate = 60,

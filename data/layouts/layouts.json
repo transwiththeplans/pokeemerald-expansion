@@ -267,7 +267,7 @@
       "width": 50,
       "height": 140,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mauville",
+      "secondary_tileset": "gTileset_Mauville_Desert",
       "border_filepath": "data/layouts/Route111/border.bin",
       "blockdata_filepath": "data/layouts/Route111/map.bin"
     },
@@ -4580,6 +4580,16 @@
       "secondary_tileset": "gTileset_Mauville_Rooftop",
       "border_filepath": "data/layouts/MauvilleCity_Inside_Rooftop_6/border.bin",
       "blockdata_filepath": "data/layouts/MauvilleCity_Inside_Rooftop_6/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE111_SLEEPY_DUNES",
+      "name": "Route111_Sleepy_Dunes_Layout",
+      "width": 60,
+      "height": 60,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville_Desert",
+      "border_filepath": "data/layouts/Route111_Sleepy_Dunes/border.bin",
+      "blockdata_filepath": "data/layouts/Route111_Sleepy_Dunes/map.bin"
     }
   ]
 }

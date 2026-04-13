@@ -11502,6 +11502,7 @@ static const struct LevelUpMove sGarchompLevelUpLearnset[] = {
     LEVEL_UP_MOVE(54, MOVE_WAVE_CRASH),
     LEVEL_UP_MOVE(60, MOVE_JAW_LOCK),
     LEVEL_UP_MOVE(65, MOVE_DRAGON_RUSH),
+    LEVEL_UP_MOVE(72, MOVE_HYDRO_PUMP),
     LEVEL_UP_END
 };
 #endif //P_FAMILY_GIBLE

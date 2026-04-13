@@ -2863,8 +2863,15 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_ENCHANTING_VOICE] =
     {
-        .name = _("Mountaineer"),
+        .name = _("Enchanting Voice"),
         .description = COMPOUND_STRING("Boosts the power of sound moves."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_DRAGONIZE] =
+    {
+        .name = _("Dragonize"),
+        .description = COMPOUND_STRING("Turns Normal moves into Dragon."),
         .aiRating = 8,
     },
 

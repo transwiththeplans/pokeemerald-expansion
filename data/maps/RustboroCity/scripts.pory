@@ -1390,3 +1390,67 @@ RustboroCity_Text_YouCanHave2On2Battle:
 	.string "Don't you think it'd be cool if you\n"
 	.string "could beat two TRAINERS by yourself?$"
 `
+
+script RustboroCity_EventScript_MeetKai {
+    lockall
+    msgbox(format(
+        "Roxanne: …yes, yes. I'd say you're more than ready for your first "
+        "challenger. I don't think I can offer you any more advice.\p"
+        "Kai: Are you sure?\p"
+        "Roxanne: Of course! I don't know why you're so worried.\p"
+        "Kai: …I guess you're right…sorry, just-\p"
+        "Roxanne: I know. First fight jitters. Happens to all of us.\p"
+        "Kai: I just need to get…fired up, like Grandpa used to say. Thanks again, Rox.\p"
+        "Roxanne: Of course. Good luck!"
+    ))
+    closemessage
+    applymovement(LOCALID_RUSTBORO_KAI, moves(
+        delay_16
+        walk_in_place_faster_left
+        delay_16
+        walk_fast_left * 6
+        set_invisible
+    ))
+    waitmovement(0)
+    applymovement(LOCALID_RUSTBORO_ROXANNE, moves(
+        delay_16
+        emote_exclamation_mark
+        walk_in_place_faster_right
+        delay_16
+    ))
+    waitmovement(0)
+    msgbox(format(
+        "Roxanne: Sorry about that. One of my star pupils just became a "
+        "Gym Leader herself. It’s harder than it looks. I’ll be inside, waiting for you!"
+    ))
+    closemessage
+    applymovement(LOCALID_RUSTBORO_ROXANNE, moves(
+        walk_in_place_faster_up
+        delay_16
+        walk_fast_up * 3
+    ))
+    waitmovement(0)
+    opendoor(55, 14)
+    waitdooranim
+    applymovement(LOCALID_RUSTBORO_ROXANNE, moves(
+        walk_up
+        set_invisible
+    ))
+    waitmovement(0)
+    closedoor(55, 14)
+    waitdooranim
+    setflag(FLAG_HIDE_KAI_IN_RUSTBORO)
+    setvar(VAR_KAI_STATE, 2)
+    releaseall
+}
+
+script RustboroCity_EventScript_MeetKai2 {
+    lock
+    applymovement(LOCALID_PLAYER, moves(
+        walk_left
+        walk_down * 3
+        walk_in_place_faster_left
+    ))
+    waitmovement(0)
+    goto(RustboroCity_EventScript_MeetKai)
+}

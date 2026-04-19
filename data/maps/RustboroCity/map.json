@@ -334,6 +334,34 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RustboroCity_EventScript_GymGuide",
       "flag": "FLAG_LEARNED_ABOUT_INNATES"
+    },
+    {
+      "local_id": "LOCALID_RUSTBORO_ROXANNE",
+      "graphics_id": "OBJ_EVENT_GFX_ROXANNE",
+      "x": 55,
+      "y": 18,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_KAI_IN_RUSTBORO"
+    },
+    {
+      "local_id": "LOCALID_RUSTBORO_KAI",
+      "graphics_id": "OBJ_EVENT_GFX_FLANNERY",
+      "x": 54,
+      "y": 18,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_KAI_IN_RUSTBORO"
     }
   ],
   "warp_events": [
@@ -647,6 +675,51 @@
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "2",
       "script": "RustboroCity_EventScript_HelpGetGoodsTrigger5"
+    },
+    {
+      "type": "trigger",
+      "x": 58,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_KAI_STATE",
+      "var_value": "1",
+      "script": "RustboroCity_EventScript_MeetKai2"
+    },
+    {
+      "type": "trigger",
+      "x": 58,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_KAI_STATE",
+      "var_value": "1",
+      "script": "RustboroCity_EventScript_MeetKai"
+    },
+    {
+      "type": "trigger",
+      "x": 58,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_KAI_STATE",
+      "var_value": "1",
+      "script": "RustboroCity_EventScript_MeetKai"
+    },
+    {
+      "type": "trigger",
+      "x": 58,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_KAI_STATE",
+      "var_value": "1",
+      "script": "RustboroCity_EventScript_MeetKai"
+    },
+    {
+      "type": "trigger",
+      "x": 58,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_KAI_STATE",
+      "var_value": "1",
+      "script": "RustboroCity_EventScript_MeetKai"
     }
   ],
   "bg_events": [

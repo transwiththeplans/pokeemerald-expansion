@@ -415,6 +415,8 @@ script RustboroCity_PokemonSchool_EventScript_YoungsterDefeated {
 	delay(30)
 	fadescreen(0)
 	setflag(FLAG_LEARNED_ABOUT_INNATES)
+	clearflag(FLAG_HIDE_KAI_IN_RUSTBORO)
+	setvar(VAR_KAI_STATE, 1)
 	release
 	end
 }

@@ -491,10 +491,11 @@
 #define MUS_RG_SLOW_PALLET          557 // MUS_RG_SLOWMASARA
 #define MUS_RG_TEACHY_TV_MENU       558 // MUS_RG_TVNOIZE
 
-//Omniversal Emerald Music
+// Omniversal Emerald Music
 #define MUS_OE_VS_WILD              610
 #define MUS_OE_VS_TRAINER           611
-#define END_MUS                     MUS_OE_VS_TRAINER
+#define MUS_OE_VS_GYM_LEADER        612
+#define END_MUS                     MUS_OE_VS_GYM_LEADER
 
 // These PH_* constants are phoneme sounds used by the "bard" NPC (see src/bard_music.c and src/mauville_old_man.c).
 // Each comes in a triplet of PH_*_BLEND, PH_*_HELD, and PH_*_SOLO, and the name of each triplet incorporates the English phonetic sound it represents.

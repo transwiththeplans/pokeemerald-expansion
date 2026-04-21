@@ -8091,6 +8091,8 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         modifier = uq4_12_multiply(modifier, UQ_4_12(GetConfig(CONFIG_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3));    
 	if (SearchTraits(battlerTraits, ABILITY_SPECTRALIZE) && moveType == TYPE_GHOST && gBattleStruct->battlerState[battlerAtk].ateBoost)
         modifier = uq4_12_multiply(modifier, UQ_4_12(GetConfig(CONFIG_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3));
+	if (SearchTraits(battlerTraits, ABILITY_DRAGONIZE) && moveType == TYPE_DRAGON && gBattleStruct->battlerState[battlerAtk].ateBoost)
+        modifier = uq4_12_multiply(modifier, UQ_4_12(GetConfig(CONFIG_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3));
     if (SearchTraits(battlerTraits, ABILITY_FOSSILIZE) && moveType == TYPE_ROCK && gBattleStruct->battlerState[battlerAtk].ateBoost)
         modifier = uq4_12_multiply(modifier, UQ_4_12(GetConfig(CONFIG_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3));
     if (SearchTraits(battlerTraits, ABILITY_EMANATE) && moveType == TYPE_PSYCHIC && gBattleStruct->battlerState[battlerAtk].ateBoost)

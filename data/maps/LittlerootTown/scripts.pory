@@ -344,8 +344,6 @@ LittlerootTown_Movement_TwinApproachPlayerRight:
 	jump_in_place_right
 	delay_8
 	walk_fast_right
-	walk_fast_right
-	walk_fast_right
 	walk_fast_up
 	walk_fast_up
 	walk_fast_right
@@ -355,8 +353,6 @@ LittlerootTown_Movement_TwinApproachPlayerRight:
 LittlerootTown_Movement_TwinReturnRight:
 	walk_left
 	walk_down
-	walk_left
-	walk_left
 	walk_left
 	walk_in_place_faster_down
 	step_end

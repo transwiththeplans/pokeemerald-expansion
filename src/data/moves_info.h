@@ -22853,6 +22853,32 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .moveEffect = MOVE_EFFECT_AURORA_VEIL,
         }),
     },
+	
+	[MOVE_HEAT_RAY] =
+    {
+        .name = COMPOUND_STRING("Evaporate"),
+        .description = COMPOUND_STRING(
+            "Double effective on Steel-\n"
+            "types. May lower Sp. Def."),
+        .effect = EFFECT_SUPER_EFFECTIVE_ON_ARG,
+        .power = 120,
+        .type = TYPE_FIRE,
+        .accuracy = 90,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .argument = { .type = TYPE_STEEL },
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SPD_MINUS_1,
+            .chance = 20,
+        }),
+        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_HyperBeam,
+    },
 
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =

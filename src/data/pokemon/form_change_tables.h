@@ -363,7 +363,7 @@ static const struct FormChange sPinsirFormChangeTable[] =
 static const struct FormChange sGyaradosFormChangeTable[] =
 {
 #if P_MEGA_EVOLUTIONS
-    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_GYARADOS_MEGA, ITEM_GYARADOSITE},
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_GYARADOS_MEGA, ITEM_ULTIMATRIX_SYMBOL},
 #endif
     {FORM_CHANGE_END_BATTLE,                    SPECIES_GYARADOS},
     {FORM_CHANGE_TERMINATOR},

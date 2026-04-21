@@ -618,6 +618,7 @@ gSongTable::
 	song ph_nurse_solo, MUSIC_PLAYER_SE2, 2
 	song mus_oe_vs_wild, MUSIC_PLAYER_BGM, 0
 	song mus_oe_vs_trainer, MUSIC_PLAYER_BGM, 0
+	song mus_oe_vs_gym_leader, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:

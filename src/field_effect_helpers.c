@@ -16,6 +16,8 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 
+extern const struct SpritePalette gSpritePalette_GeneralFieldEffect2;
+
 #define OBJ_EVENT_PAL_TAG_NONE 0x11FF // duplicate of define in event_object_movement.c
 #define PAL_TAG_REFLECTION_OFFSET 0x2000 // reflection tag value is paletteTag + 0x2000
 #define PAL_RAW_REFLECTION_OFFSET 0x4000 // raw reflection tag is paletteNum + 0x4000
@@ -705,6 +707,23 @@ u32 FldEff_SandFootprints(void)
     return 0;
 }
 
+u32 FldEff_DarkSandFootprints(void)
+{
+    u8 spriteId;
+
+    SetSpritePosToOffsetMapCoords((s16 *)&gFieldEffectArguments[0], (s16 *)&gFieldEffectArguments[1], 8, 8);
+    spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_DARK_SAND_FOOTPRINTS], gFieldEffectArguments[0], gFieldEffectArguments[1], gFieldEffectArguments[2]);
+    if (spriteId != MAX_SPRITES)
+    {
+        struct Sprite *sprite = &gSprites[spriteId];
+        sprite->coordOffsetEnabled = TRUE;
+        sprite->oam.priority = gFieldEffectArguments[3];
+        sprite->sFldEff = FLDEFF_DARK_SAND_FOOTPRINTS;
+        StartSpriteAnim(sprite, gFieldEffectArguments[4]);
+    }
+    return 0;
+}
+
 u32 FldEff_DeepSandFootprints(void)
 {
     u8 spriteId;
@@ -717,6 +736,24 @@ u32 FldEff_DeepSandFootprints(void)
         sprite->coordOffsetEnabled = TRUE;
         sprite->oam.priority = gFieldEffectArguments[3];
         sprite->sFldEff = FLDEFF_DEEP_SAND_FOOTPRINTS;
+        StartSpriteAnim(sprite, gFieldEffectArguments[4]);
+    }
+    return spriteId;
+}
+
+u32 FldEff_DeepDarkSandFootprints(void)
+{
+    u8 spriteId;
+
+    SetSpritePosToOffsetMapCoords((s16 *)&gFieldEffectArguments[0], (s16 *)&gFieldEffectArguments[1], 8, 8);
+    spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_DEEP_SAND_FOOTPRINTS], gFieldEffectArguments[0], gFieldEffectArguments[1], gFieldEffectArguments[2]);
+    if (spriteId != MAX_SPRITES)
+    {
+        struct Sprite *sprite = &gSprites[spriteId];
+        sprite->oam.paletteNum = IndexOfSpritePaletteTag(FLDEFF_PAL_TAG_GENERAL_2);
+        sprite->coordOffsetEnabled = TRUE;
+        sprite->oam.priority = gFieldEffectArguments[3];
+        sprite->sFldEff = FLDEFF_DEEP_DARK_SAND_FOOTPRINTS;
         StartSpriteAnim(sprite, gFieldEffectArguments[4]);
     }
     return spriteId;
@@ -1423,6 +1460,15 @@ u32 FldEff_SandPile(void)
     {
         const struct ObjectEventGraphicsInfo *graphicsInfo = GetObjectEventGraphicsInfo(objectEvent->graphicsId);
         struct Sprite *sprite = &gSprites[spriteId];
+        if (MetatileBehavior_IsDarkSand(objectEvent->currentMetatileBehavior))
+        {
+            u8 normalPaletteNum = sprite->oam.paletteNum;
+
+            sprite->oam.paletteNum = LoadSpritePalette(&gSpritePalette_GeneralFieldEffect2);
+            SetPaletteColorMapType(sprite->oam.paletteNum + 16, COLOR_MAP_DARK_CONTRAST);
+            UpdateSpritePaletteWithWeather(sprite->oam.paletteNum, TRUE);
+            FieldEffectFreePaletteIfUnused(normalPaletteNum);
+        }
         sprite->coordOffsetEnabled = TRUE;
         sprite->oam.priority = gSprites[objectEvent->spriteId].oam.priority;
         sprite->sLocalId = gFieldEffectArguments[0];

@@ -199,6 +199,7 @@ const struct FollowerMsgInfoExtended gFollowerConditionalMessages[COND_MSG_COUNT
         .conditions =
         {
             MATCH_ON_MB(MB_SAND, MB_DEEP_SAND),
+            MATCH_ON_MB(MB_SAND, MB_DEEP_SAND_DARK),
         },
     },
     [COND_MSG_GRASS] =

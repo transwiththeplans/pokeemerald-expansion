@@ -658,7 +658,7 @@ static bool8 WildEncounterCheck(u32 encounterRate, bool8 ignoreAbility)
             encounterRate /= 2;
         else if (MonHasTrait(&gPlayerParty[0], ABILITY_ARENA_TRAP))
             encounterRate *= 2;
-        else if (MonHasTrait(&gPlayerParty[0], ABILITY_SAND_VEIL) && gSaveBlock1Ptr->weather == WEATHER_SANDSTORM)
+        else if (MonHasTrait(&gPlayerParty[0], ABILITY_SAND_VEIL) && (gSaveBlock1Ptr->weather == WEATHER_SANDSTORM || gSaveBlock1Ptr->weather == WEATHER_DARK_SANDSTORM))
             encounterRate /= 2;
         else if (MonHasTrait(&gPlayerParty[0], ABILITY_SNOW_CLOAK) && gSaveBlock1Ptr->weather == WEATHER_SNOW)
             encounterRate /= 2;

@@ -681,7 +681,7 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
     }
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE113) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE113))
         return BATTLE_ENVIRONMENT_SAND;
-    if (GetSavedWeather() == WEATHER_SANDSTORM)
+    if (GetSavedWeather() == WEATHER_SANDSTORM || GetSavedWeather() == WEATHER_DARK_SANDSTORM)
         return BATTLE_ENVIRONMENT_SAND;
 
     return BATTLE_ENVIRONMENT_PLAIN;

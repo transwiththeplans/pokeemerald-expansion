@@ -4585,7 +4585,7 @@
       "id": "LAYOUT_ROUTE111_SLEEPY_DUNES",
       "name": "Route111_Sleepy_Dunes_Layout",
       "width": 60,
-      "height": 60,
+      "height": 85,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville_Desert",
       "border_filepath": "data/layouts/Route111_Sleepy_Dunes/border.bin",

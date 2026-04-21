@@ -30,7 +30,7 @@
     },
     {
       "map": "MAP_ROUTE111_SLEEPY_DUNES",
-      "offset": 0,
+      "offset": -25,
       "direction": "right"
     }
   ],
@@ -157,35 +157,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_HIKER",
-      "x": 29,
-      "y": 52,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_LEFT_UP_RIGHT",
-      "movement_range_x": 2,
-      "movement_range_y": 2,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "2",
-      "script": "Route111_EventScript_Dusty",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
-      "x": 23,
-      "y": 45,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "4",
-      "script": "Route111_EventScript_Beau",
-      "flag": "0"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-      "x": 25,
-      "y": 57,
+      "x": 40,
+      "y": 35,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
       "movement_range_x": 0,
@@ -264,8 +238,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 33,
-      "y": 104,
+      "x": 39,
+      "y": 79,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -540,22 +514,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_HIKER",
-      "x": 32,
-      "y": 77,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "7",
-      "script": "Route111_EventScript_Bryan",
-      "flag": "0"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-      "x": 25,
-      "y": 77,
+      "x": 22,
+      "y": 74,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 1,
@@ -567,7 +528,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
-      "x": 31,
+      "x": 32,
       "y": 91,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -606,8 +567,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FOSSIL",
-      "x": 20,
-      "y": 53,
+      "x": 29,
+      "y": 65,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
@@ -620,8 +581,8 @@
     {
       "local_id": "LOCALID_ROUTE111_PLAYER_FALLING",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
-      "x": 19,
-      "y": 53,
+      "x": 29,
+      "y": 65,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
@@ -644,19 +605,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route111_EventScript_RockSmashTipFatMan",
       "flag": "FLAG_HIDE_ROUTE_111_ROCK_SMASH_TIP_GUY"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
-      "x": 32,
-      "y": 97,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 2,
-      "trainer_type": "TRAINER_TYPE_BURIED",
-      "trainer_sight_or_berry_tree_id": "5",
-      "script": "NULL",
-      "flag": "0"
     }
   ],
   "warp_events": [
@@ -669,7 +617,7 @@
     },
     {
       "x": 29,
-      "y": 87,
+      "y": 85,
       "elevation": 0,
       "dest_map": "MAP_DESERT_RUINS",
       "dest_warp_id": "0"
@@ -682,8 +630,8 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 19,
-      "y": 58,
+      "x": 29,
+      "y": 70,
       "elevation": 0,
       "dest_map": "MAP_MIRAGE_TOWER_1F",
       "dest_warp_id": "0"
@@ -708,8 +656,8 @@
     },
     {
       "type": "trigger",
-      "x": 11,
-      "y": 61,
+      "x": 10,
+      "y": 60,
       "elevation": 3,
       "var": "VAR_TEMP_3",
       "var_value": "0",
@@ -771,8 +719,8 @@
     },
     {
       "type": "trigger",
-      "x": 16,
-      "y": 40,
+      "x": 19,
+      "y": 37,
       "elevation": 3,
       "var": "VAR_TEMP_3",
       "var_value": "0",
@@ -825,8 +773,8 @@
     },
     {
       "type": "trigger",
-      "x": 17,
-      "y": 39,
+      "x": 20,
+      "y": 37,
       "elevation": 3,
       "var": "VAR_TEMP_3",
       "var_value": "0",
@@ -834,8 +782,8 @@
     },
     {
       "type": "trigger",
-      "x": 18,
-      "y": 38,
+      "x": 19,
+      "y": 37,
       "elevation": 3,
       "var": "VAR_TEMP_3",
       "var_value": "0",
@@ -907,7 +855,7 @@
     {
       "type": "trigger",
       "x": 10,
-      "y": 61,
+      "y": 60,
       "elevation": 3,
       "var": "TRIGGER_RUN_IMMEDIATELY",
       "var_value": "0",
@@ -915,8 +863,8 @@
     },
     {
       "type": "trigger",
-      "x": 11,
-      "y": 62,
+      "x": 9,
+      "y": 60,
       "elevation": 3,
       "var": "TRIGGER_RUN_IMMEDIATELY",
       "var_value": "0",
@@ -942,8 +890,8 @@
     },
     {
       "type": "trigger",
-      "x": 17,
-      "y": 38,
+      "x": 19,
+      "y": 37,
       "elevation": 3,
       "var": "TRIGGER_RUN_IMMEDIATELY",
       "var_value": "0",
@@ -951,8 +899,8 @@
     },
     {
       "type": "trigger",
-      "x": 16,
-      "y": 39,
+      "x": 19,
+      "y": 37,
       "elevation": 3,
       "var": "TRIGGER_RUN_IMMEDIATELY",
       "var_value": "0",
@@ -961,7 +909,7 @@
     {
       "type": "trigger",
       "x": 15,
-      "y": 40,
+      "y": 41,
       "elevation": 3,
       "var": "TRIGGER_RUN_IMMEDIATELY",
       "var_value": "0",
@@ -1040,7 +988,7 @@
     {
       "type": "secret_base",
       "x": 24,
-      "y": 36,
+      "y": 35,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_YELLOW_CAVE2_1"
     },
@@ -1054,7 +1002,7 @@
     {
       "type": "secret_base",
       "x": 30,
-      "y": 34,
+      "y": 33,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_YELLOW_CAVE1_1"
     },
@@ -1119,8 +1067,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 19,
-      "y": 55,
+      "x": 20,
+      "y": 50,
       "elevation": 0,
       "item": "ITEM_PROTEIN",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_111_PROTEIN"

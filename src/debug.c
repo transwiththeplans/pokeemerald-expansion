@@ -243,6 +243,7 @@ static void DebugTask_HandleMenuInput_General(u8 taskId);
 
 static void DebugAction_Util_Fly(u8 taskId);
 static void DebugAction_Util_Warp_Warp(u8 taskId);
+static void DebugAction_Util_RestartMap(u8 taskId);
 static void DebugAction_Util_Warp_SelectMapGroup(u8 taskId);
 static void DebugAction_Util_Warp_SelectMap(u8 taskId);
 static void DebugAction_Util_Warp_SelectWarp(u8 taskId);
@@ -532,6 +533,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
 {
     { COMPOUND_STRING("Fly to map…"),       DebugAction_Util_Fly },
     { COMPOUND_STRING("Warp to map warp…"), DebugAction_Util_Warp_Warp },
+    { COMPOUND_STRING("Reload Map"),        DebugAction_Util_RestartMap },
     { COMPOUND_STRING("Set weather…"),      DebugAction_Util_Weather },
     { COMPOUND_STRING("Font Test…"),        DebugAction_ExecuteScript, Debug_EventScript_FontTest },
     { COMPOUND_STRING("Time Functions…"),   DebugAction_OpenSubMenu, sDebugMenu_Actions_TimeMenu, },
@@ -1247,6 +1249,19 @@ static void DebugAction_Util_Fly(u8 taskId)
 #define tWarp      data[7]
 
 #define LAST_MAP_GROUP (MAP_GROUPS_COUNT - 1)
+
+static void DebugAction_Util_RestartMap(u8 taskId)
+{
+    s16 posX, posY;
+
+    posX = gSaveBlock1Ptr->pos.x;
+    posY = gSaveBlock1Ptr->pos.y;
+
+    SetWarpDestination(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum, WARP_ID_NONE, posX, posY);
+    DoWarp();
+    ResetInitialPlayerAvatarState();
+    DebugAction_DestroyExtraWindow(taskId);
+}
 
 static void DebugAction_Util_Warp_Warp(u8 taskId)
 {

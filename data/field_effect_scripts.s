@@ -84,6 +84,8 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_UseRockClimb              @ FLDEFF_USE_ROCK_CLIMB
 	.4byte gFieldEffectScript_RockClimbDust             @ FLDEFF_ROCK_CLIMB_DUST
 	.4byte gFieldEffectScript_ORASDowse                 @ FLDEFF_ORAS_DOWSE
+	.4byte gFieldEffectScript_DarkSandFootprints        @ FLDEFF_DARK_SAND_FOOTPRINTS
+	.4byte gFieldEffectScript_DeepDarkSandFootprints    @ FLDEFF_DEEP_DARK_SAND_FOOTPRINTS
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -141,6 +143,10 @@ gFieldEffectScript_SandFootprints::
 	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_SandFootprints
 	field_eff_end
 
+gFieldEffectScript_DarkSandFootprints::
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect2, FldEff_DarkSandFootprints
+	field_eff_end
+
 gFieldEffectScript_JumpBigSplash::
 	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_JumpBigSplash
 	field_eff_end
@@ -183,6 +189,10 @@ gFieldEffectScript_BerryTreeGrowthSparkle::
 
 gFieldEffectScript_DeepSandFootprints::
 	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_DeepSandFootprints
+	field_eff_end
+
+gFieldEffectScript_DeepDarkSandFootprints::
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect2, FldEff_DeepDarkSandFootprints
 	field_eff_end
 
 gFieldEffectScript_PokeCenterHeal::
@@ -399,4 +409,3 @@ gFieldEffectScript_RockClimbDust:: @ 82DBB28
 gFieldEffectScript_ORASDowse::
 	field_eff_callnative FldEff_ORASDowsing
 	field_eff_end
-

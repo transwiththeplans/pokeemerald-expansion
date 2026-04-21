@@ -4082,6 +4082,7 @@ bool32 TryFieldEffects(enum FieldEffectCases caseId)
                 }
                 break;
             case WEATHER_SANDSTORM:
+            case WEATHER_DARK_SANDSTORM:
                 if (!(gBattleWeather & B_WEATHER_SANDSTORM))
                 {
                     gBattleWeather = B_WEATHER_SANDSTORM;

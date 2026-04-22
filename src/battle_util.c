@@ -4451,6 +4451,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
                 SET_STATCHANGER(statId, 1, FALSE);
                 gBattlerAttacker = battler;
                 PREPARE_STAT_BUFFER(gBattleTextBuff1, statId);
+                PushTraitStack(battler, ABILITY_CURL_UP);
                 BattleScriptPushCursorAndCallback(BattleScript_AttackerAbilityStatRaiseEnd3);
                 effect++;
             }

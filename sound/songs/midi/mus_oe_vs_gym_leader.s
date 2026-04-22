@@ -22,7 +22,18 @@ mus_oe_vs_gym_leader_1:
 	.byte		VOICE , 48
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 99*mus_oe_vs_gym_leader_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 99*mus_oe_vs_gym_leader_mvl/mxv
+	.byte		        99*mus_oe_vs_gym_leader_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 99*mus_oe_vs_gym_leader_mvl/mxv
+	.byte		        99*mus_oe_vs_gym_leader_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 99*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte	W24
 	.byte		N05   , Gn3 , v080
 	.byte	W06
@@ -345,7 +356,6 @@ mus_oe_vs_gym_leader_1_019:
 	.byte	W96
 @ 038   ----------------------------------------
 	.byte		VOICE , 56
-	.byte		VOL   , 127*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		N02   , Gs3 , v076
 	.byte	W06
 	.byte		N02   
@@ -431,7 +441,6 @@ mus_oe_vs_gym_leader_1_019:
 	.byte	W96
 @ 048   ----------------------------------------
 	.byte		VOICE , 48
-	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		TIE   , Fn4 , v076
 	.byte	W96
 @ 049   ----------------------------------------
@@ -589,7 +598,6 @@ mus_oe_vs_gym_leader_1_019:
 	.byte	W96
 @ 078   ----------------------------------------
 	.byte		VOICE , 56
-	.byte		VOL   , 112*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		N44   , Gn4 , v127, gtp3
 	.byte	W48
 	.byte		        Cn4 , v127, gtp3
@@ -644,7 +652,6 @@ mus_oe_vs_gym_leader_1_019:
 	.byte	W01
 @ 086   ----------------------------------------
 	.byte		VOICE , 48
-	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		N44   , En4 , v100, gtp3
 	.byte	W48
 	.byte		        Dn4 , v100, gtp3
@@ -693,9 +700,13 @@ mus_oe_vs_gym_leader_1_019:
 mus_oe_vs_gym_leader_1_B2:
 @ 094   ----------------------------------------
 	.byte		VOICE , 48
+	.byte		        48
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 99*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 99*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
 	.byte	FINE
 
 @**************** Track 2 (Midi-Chn.2) ****************@
@@ -706,7 +717,16 @@ mus_oe_vs_gym_leader_2:
 	.byte		VOICE , 33
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte		N23   , Cn2 , v108
 	.byte	W24
 	.byte		        Cn1 
@@ -1350,9 +1370,13 @@ mus_oe_vs_gym_leader_2_054:
 mus_oe_vs_gym_leader_2_B2:
 @ 094   ----------------------------------------
 	.byte		VOICE , 33
+	.byte		        33
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
 	.byte	FINE
 
 @**************** Track 3 (Midi-Chn.3) ****************@
@@ -1363,7 +1387,16 @@ mus_oe_vs_gym_leader_3:
 	.byte		VOICE , 60
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte	W96
 @ 001   ----------------------------------------
 	.byte	W96
@@ -1508,7 +1541,6 @@ mus_oe_vs_gym_leader_3_B1:
 	.byte	W60
 @ 026   ----------------------------------------
 	.byte		VOICE , 56
-	.byte		VOL   , 127*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		N44   , As3 , v127, gtp3
 	.byte	W48
 	.byte		        An3 , v127, gtp3
@@ -1534,7 +1566,6 @@ mus_oe_vs_gym_leader_3_B1:
 	.byte	W24
 @ 030   ----------------------------------------
 	.byte		VOICE , 60
-	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		N44   , Dn4 , v100, gtp3
 	.byte	W48
 	.byte		        Cn4 , v100, gtp3
@@ -1798,7 +1829,6 @@ mus_oe_vs_gym_leader_3_B1:
 	.byte		N44   , Cn3 , v080, gtp3
 	.byte	W48
 	.byte		VOICE , 56
-	.byte		VOL   , 127*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		N05   , Gs4 , v127
 	.byte	W12
 	.byte		        Gn4 
@@ -1810,7 +1840,6 @@ mus_oe_vs_gym_leader_3_B1:
 	.byte	W48
 @ 090   ----------------------------------------
 	.byte		VOICE , 60
-	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		N44   , Cn4 , v080, gtp3
 	.byte	W48
 	.byte		        Cn3 , v080, gtp3
@@ -1829,9 +1858,13 @@ mus_oe_vs_gym_leader_3_B1:
 mus_oe_vs_gym_leader_3_B2:
 @ 094   ----------------------------------------
 	.byte		VOICE , 60
+	.byte		        60
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
 	.byte	FINE
 
 @**************** Track 4 (Midi-Chn.4) ****************@
@@ -1842,7 +1875,15 @@ mus_oe_vs_gym_leader_4:
 	.byte		VOICE , 5
 	.byte		VOL   , 72*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		PAN   , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte		N05   , Gn2 , v096
 	.byte	W06
 	.byte		        Cn3 
@@ -2817,8 +2858,11 @@ mus_oe_vs_gym_leader_4_071:
 mus_oe_vs_gym_leader_4_B2:
 @ 094   ----------------------------------------
 	.byte		VOICE , 5
+	.byte		        5
 	.byte		PAN   , c_v+0
+	.byte		        c_v+0
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
 	.byte	FINE
 
 @**************** Track 5 (Midi-Chn.5) ****************@
@@ -2829,7 +2873,15 @@ mus_oe_vs_gym_leader_5:
 	.byte		VOICE , 4
 	.byte		VOL   , 72*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		PAN   , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte		N05   , Gn5 , v080
 	.byte	W06
 	.byte		        Gs5 
@@ -4045,8 +4097,11 @@ mus_oe_vs_gym_leader_5_071:
 mus_oe_vs_gym_leader_5_B2:
 @ 094   ----------------------------------------
 	.byte		VOICE , 4
+	.byte		        4
 	.byte		PAN   , c_v+0
+	.byte		        c_v+0
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
 	.byte	FINE
 
 @**************** Track 6 (Midi-Chn.6) ****************@
@@ -4057,7 +4112,16 @@ mus_oe_vs_gym_leader_6:
 	.byte		VOICE , 81
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte		N05   , Cn6 , v072
 	.byte	W06
 	.byte		        Bn5 
@@ -4772,9 +4836,13 @@ mus_oe_vs_gym_leader_6_066:
 mus_oe_vs_gym_leader_6_B2:
 @ 094   ----------------------------------------
 	.byte		VOICE , 81
+	.byte		        81
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
 	.byte	FINE
 
 @**************** Track 7 (Midi-Chn.10) ****************@
@@ -4785,7 +4853,16 @@ mus_oe_vs_gym_leader_7:
 	.byte		VOICE , 0
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
+	.byte		        c_v+0
 	.byte		N76   , Gn2 , v127, gtp1
 	.byte	W96
 @ 001   ----------------------------------------
@@ -5256,9 +5333,13 @@ mus_oe_vs_gym_leader_7_081:
 mus_oe_vs_gym_leader_7_B2:
 @ 094   ----------------------------------------
 	.byte		VOICE , 0
+	.byte		        0
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		VOL   , 100*mus_oe_vs_gym_leader_mvl/mxv
 	.byte		BEND  , c_v+0
+	.byte		        c_v+0
 	.byte	FINE
 
 @******************************************************@

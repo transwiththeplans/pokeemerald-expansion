@@ -11088,6 +11088,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
+        .slicingMove = TRUE,
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = C_UPDATED_MOVE_CATEGORIES >= GEN_6 ? CONTEST_CATEGORY_COOL : CONTEST_CATEGORY_CUTE,
         .contestComboStarterId = 0,

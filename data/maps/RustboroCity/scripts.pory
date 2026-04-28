@@ -1395,14 +1395,14 @@ script RustboroCity_EventScript_MeetKai {
     lockall
     msgbox(format(
         "Roxanne: …yes, yes. I'd say you're more than ready for your first "
-        "challenger. I don't think I can offer you any more advice.\p"
-        "Kai: Are you sure?\p"
-        "Roxanne: Of course! I don't know why you're so worried.\p"
-        "Kai: …I guess you're right…sorry, just-\p"
-        "Roxanne: I know. First fight jitters. Happens to all of us.\p"
-        "Kai: I just need to get…fired up, like Grandpa used to say. Thanks again, Rox.\p"
-        "Roxanne: Of course. Good luck!"
+        "challenger. I don't think I can offer you any more advice."
     ))
+    msgbox(format("Kai: Are you sure?"))
+    msgbox(format("Roxanne: Of course! I don't know why you're so worried."))
+    msgbox(format("Kai: …I guess you're right…sorry, just-"))
+    msgbox(format("Roxanne: I know. First fight jitters. Happens to all of us."))
+    msgbox(format("Kai: I just need to get…fired up, like Grandpa used to say. Thanks again, Rox."))
+    msgbox(format("Roxanne: Of course. Good luck!"))
     closemessage
     applymovement(LOCALID_RUSTBORO_KAI, moves(
         delay_16
@@ -1412,6 +1412,7 @@ script RustboroCity_EventScript_MeetKai {
         set_invisible
     ))
     waitmovement(0)
+    removeobject(LOCALID_RUSTBORO_KAI)
     applymovement(LOCALID_RUSTBORO_ROXANNE, moves(
         delay_16
         emote_exclamation_mark
@@ -1439,13 +1440,14 @@ script RustboroCity_EventScript_MeetKai {
     waitmovement(0)
     closedoor(55, 14)
     waitdooranim
+    removeobject(LOCALID_RUSTBORO_ROXANNE)
     setflag(FLAG_HIDE_KAI_IN_RUSTBORO)
     setvar(VAR_KAI_STATE, 2)
     releaseall
 }
 
 script RustboroCity_EventScript_MeetKai2 {
-    lock
+    lockall
     applymovement(LOCALID_PLAYER, moves(
         walk_left
         walk_down * 3

@@ -214,7 +214,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "RustboroCity_EventScript_Rival",
+      "script": "RustboroCity_EventScript_FamilyMeetup",
       "flag": "FLAG_HIDE_RUSTBORO_CITY_RIVAL"
     },
     {
@@ -362,6 +362,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_HIDE_KAI_IN_RUSTBORO"
+    },
+    {
+      "local_id": "LOCALID_RUSTBORO_MAX",
+      "graphics_id": "OBJ_EVENT_GFX_NORMAN",
+      "x": 46,
+      "y": 50,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "RustboroCity_EventScript_FamilyMeetup",
+      "flag": "FLAG_HIDE_RUSTBORO_CITY_RIVAL"
     }
   ],
   "warp_events": [
@@ -575,7 +589,7 @@
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "7",
-      "script": "RustboroCity_EventScript_RivalTrigger0"
+      "script": "RustboroCity_EventScript_FamilyMeetupTrigger0"
     },
     {
       "type": "trigger",
@@ -584,7 +598,7 @@
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "7",
-      "script": "RustboroCity_EventScript_RivalTrigger1"
+      "script": "RustboroCity_EventScript_FamilyMeetupTrigger1"
     },
     {
       "type": "trigger",
@@ -593,7 +607,7 @@
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "7",
-      "script": "RustboroCity_EventScript_RivalTrigger2"
+      "script": "RustboroCity_EventScript_FamilyMeetupTrigger2"
     },
     {
       "type": "trigger",
@@ -602,7 +616,7 @@
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "7",
-      "script": "RustboroCity_EventScript_RivalTrigger3"
+      "script": "RustboroCity_EventScript_FamilyMeetupTrigger3"
     },
     {
       "type": "trigger",
@@ -611,7 +625,7 @@
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "7",
-      "script": "RustboroCity_EventScript_RivalTrigger4"
+      "script": "RustboroCity_EventScript_FamilyMeetupTrigger4"
     },
     {
       "type": "trigger",
@@ -620,7 +634,7 @@
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "7",
-      "script": "RustboroCity_EventScript_RivalTrigger5"
+      "script": "RustboroCity_EventScript_FamilyMeetupTrigger5"
     },
     {
       "type": "trigger",
@@ -629,7 +643,7 @@
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "7",
-      "script": "RustboroCity_EventScript_RivalTrigger6"
+      "script": "RustboroCity_EventScript_FamilyMeetupTrigger6"
     },
     {
       "type": "trigger",
@@ -638,7 +652,7 @@
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "7",
-      "script": "RustboroCity_EventScript_RivalTrigger7"
+      "script": "RustboroCity_EventScript_FamilyMeetupTrigger7"
     },
     {
       "type": "trigger",

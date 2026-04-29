@@ -1456,3 +1456,293 @@ script RustboroCity_EventScript_MeetKai2 {
     waitmovement(0)
     goto(RustboroCity_EventScript_MeetKai)
 }
+
+script RustboroCity_EventScript_FamilyMeetupTrigger0 {
+    lock
+    applymovement(LOCALID_RUSTBORO_MAX, Common_Movement_WalkInPlaceFasterDown)
+    applymovement(LOCALID_RUSTBORO_RIVAL, Common_Movement_WalkInPlaceFasterDown)
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(
+        emote_exclamation_mark
+        walk_in_place_faster_right
+        walk_fast_right * 3
+        walk_in_place_faster_up
+        walk_fast_up * 2
+    ))
+    waitmovement(0)
+    goto(RustboroCity_EventScript_FamilyMeetup)
+}
+
+script RustboroCity_EventScript_FamilyMeetupTrigger1 {
+    lock
+    applymovement(LOCALID_RUSTBORO_MAX, Common_Movement_WalkInPlaceFasterDown)
+    applymovement(LOCALID_RUSTBORO_RIVAL, Common_Movement_WalkInPlaceFasterDown)
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(
+        emote_exclamation_mark
+        walk_in_place_faster_right
+        walk_fast_right * 2
+        walk_in_place_faster_up
+        walk_fast_up * 2
+    ))
+    waitmovement(0)
+    goto(RustboroCity_EventScript_FamilyMeetup)
+}
+
+script RustboroCity_EventScript_FamilyMeetupTrigger2 {
+    lock
+    applymovement(LOCALID_RUSTBORO_MAX, Common_Movement_WalkInPlaceFasterDown)
+    applymovement(LOCALID_RUSTBORO_RIVAL, Common_Movement_WalkInPlaceFasterDown)
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(
+        emote_exclamation_mark
+        walk_in_place_faster_right
+        walk_fast_right
+        walk_in_place_faster_up
+        walk_fast_up * 2
+    ))
+    waitmovement(0)
+    goto(RustboroCity_EventScript_FamilyMeetup)
+}
+
+script RustboroCity_EventScript_FamilyMeetupTrigger3 {
+    lock
+    applymovement(LOCALID_RUSTBORO_MAX, Common_Movement_WalkInPlaceFasterDown)
+    applymovement(LOCALID_RUSTBORO_RIVAL, Common_Movement_WalkInPlaceFasterDown)
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(
+        emote_exclamation_mark
+        walk_in_place_faster_up
+        walk_fast_up * 2
+    ))
+    waitmovement(0)
+    goto(RustboroCity_EventScript_FamilyMeetup)
+}
+
+script RustboroCity_EventScript_FamilyMeetupTrigger4 {
+    lock
+    applymovement(LOCALID_RUSTBORO_MAX, Common_Movement_WalkInPlaceFasterDown)
+    applymovement(LOCALID_RUSTBORO_RIVAL, Common_Movement_WalkInPlaceFasterDown)
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(
+        emote_exclamation_mark
+        walk_in_place_faster_left
+        walk_fast_left
+        walk_in_place_faster_up
+        walk_fast_up * 2
+    ))
+    waitmovement(0)
+    goto(RustboroCity_EventScript_FamilyMeetup)
+}
+
+script RustboroCity_EventScript_FamilyMeetupTrigger5 {
+    lock
+    applymovement(LOCALID_RUSTBORO_MAX, Common_Movement_WalkInPlaceFasterDown)
+    applymovement(LOCALID_RUSTBORO_RIVAL, Common_Movement_WalkInPlaceFasterDown)
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(
+        emote_exclamation_mark
+        walk_in_place_faster_left
+        walk_fast_left * 2
+        walk_in_place_faster_up
+        walk_fast_up * 2
+    ))
+    waitmovement(0)
+    goto(RustboroCity_EventScript_FamilyMeetup)
+}
+
+script RustboroCity_EventScript_FamilyMeetupTrigger6 {
+    lock
+    applymovement(LOCALID_RUSTBORO_MAX, Common_Movement_WalkInPlaceFasterDown)
+    applymovement(LOCALID_RUSTBORO_RIVAL, Common_Movement_WalkInPlaceFasterDown)
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(
+        emote_exclamation_mark
+        walk_in_place_faster_left
+        walk_fast_left * 3
+        walk_in_place_faster_up
+        walk_fast_up * 2
+    ))
+    waitmovement(0)
+    goto(RustboroCity_EventScript_FamilyMeetup)
+}
+
+script RustboroCity_EventScript_FamilyMeetupTrigger7 {
+    lock
+    applymovement(LOCALID_RUSTBORO_MAX, Common_Movement_WalkInPlaceFasterDown)
+    applymovement(LOCALID_RUSTBORO_RIVAL, Common_Movement_WalkInPlaceFasterDown)
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(
+        emote_exclamation_mark
+        walk_in_place_faster_left
+        walk_fast_left * 4
+        walk_in_place_faster_up
+        walk_fast_up * 2
+    ))
+    waitmovement(0)
+    goto(RustboroCity_EventScript_FamilyMeetup)
+}
+
+script RustboroCity_EventScript_FamilyMeetup {
+    lockall
+
+    setvar(VAR_RUSTBORO_CITY_STATE, 8)
+    setvar(VAR_ROUTE104_STATE, 2)
+
+    getobjectfacingdirection(LOCALID_PLAYER, VAR_0x8008)
+    switch(var(VAR_0x8008)) {
+        case DIR_NORTH:
+             applymovement(LOCALID_RUSTBORO_MAX, Common_Movement_FaceDown)
+             applymovement(LOCALID_RUSTBORO_RIVAL, Common_Movement_FaceDown)
+        case DIR_SOUTH:
+             applymovement(LOCALID_RUSTBORO_MAX, Common_Movement_FaceUp)
+             applymovement(LOCALID_RUSTBORO_RIVAL, Common_Movement_FaceUp)
+        case DIR_EAST:
+             applymovement(LOCALID_RUSTBORO_MAX, Common_Movement_FaceLeft)
+             applymovement(LOCALID_RUSTBORO_RIVAL, moves(
+                 walk_up
+                 walk_in_place_faster_left
+                 walk_left
+             ))
+        case DIR_WEST:
+             applymovement(LOCALID_RUSTBORO_MAX, moves(
+                 walk_up
+                 walk_in_place_faster_right
+                 walk_right
+             ))
+             applymovement(LOCALID_RUSTBORO_RIVAL, Common_Movement_FaceRight)
+    }
+    waitmovement(0)
+
+    if (checkplayergender() == MALE) {
+        msgbox(format("Max: {PLAYER}! There you are!"))
+        msgbox(format("Gwen: There you are, dweeb! What was so important you couldn't hang out with us?"))
+    } else {
+        msgbox(format("Max: {PLAYER}! There you are!"))
+        msgbox(format("Ben: There you are, dweeb! What was so important you couldn't hang out with us?"))
+    }
+    closemessage
+    delay(30)
+    playse(SE_PIN)
+    applymovement(LOCALID_RUSTBORO_MAX, moves(emote_exclamation_mark))
+    applymovement(LOCALID_RUSTBORO_RIVAL, moves(emote_exclamation_mark))
+    waitmovement(0)
+    delay(30)
+    if (checkplayergender() == MALE) {
+        msgbox(format("Gwen: You?! Beat Roxanne? Beginner's luck."))
+        msgbox(format("Max: Well done. I've known Roxanne since she was a beginner trainer- she may be the first gym leader, but there's many more challenges to come."))
+        msgbox(format("Gwen: Argh…now I wanna battle her…{PLAYER}! Let me knock you down a peg to see if I'm ready!"))
+    } else {
+        msgbox(format("Ben: You?! Beat Roxanne? Beginner's luck."))
+        msgbox(format("Max: Well done. I've known Roxanne since she was a beginner trainer- she may be the first gym leader, but there's many more challenges to come."))
+        msgbox(format("Ben: Argh…now I wanna battle her…{PLAYER}! Let me knock you down a peg to see if I'm ready!"))
+    }
+    closemessage
+
+    goto(RustboroCity_EventScript_FamilyMeetupRivalBattle)
+}
+
+script RustboroCity_EventScript_FamilyMeetupRivalBattle {
+    if (checkplayergender() == FEMALE) {
+        switch(var(VAR_STARTER_MON)) {
+            case 0:
+	        trainerbattle_no_intro(TRAINER_BRENDAN_RUSTBORO_TREECKO, RustboroCity_Text_BrendanDefeat)
+            case 1:
+                trainerbattle_no_intro(TRAINER_BRENDAN_RUSTBORO_TORCHIC, RustboroCity_Text_BrendanDefeat)
+            case 2:
+                trainerbattle_no_intro(TRAINER_BRENDAN_RUSTBORO_MUDKIP, RustboroCity_Text_BrendanDefeat)
+        }
+    } else {
+        switch(var(VAR_STARTER_MON)) {
+            case 0:
+	        trainerbattle_no_intro(TRAINER_MAY_RUSTBORO_TREECKO, RustboroCity_Text_MayDefeat)
+            case 1:
+                trainerbattle_no_intro(TRAINER_MAY_RUSTBORO_TORCHIC, RustboroCity_Text_MayDefeat)
+            case 2:
+                trainerbattle_no_intro(TRAINER_MAY_RUSTBORO_MUDKIP, RustboroCity_Text_MayDefeat)
+        }
+    }
+    setflag(FLAG_DEFEATED_RIVAL_RUSTBORO)
+
+    goto(RustboroCity_EventScript_FamilyMeetupAfterBattle)
+}
+
+script RustboroCity_EventScript_FamilyMeetupAfterBattle {
+    lockall
+
+    if (checkplayergender() == MALE) {
+        msgbox(format("Gwen: …"))
+        msgbox(format("Max: Well, good to know my trainer skills passed on to the both of you! Well done."))
+        msgbox(format("Gwen: I thought the first time was just dumb luck…"))
+        msgbox(format("Max: …now, Gwen…look at it this way."))
+        msgbox(format("Gwen: And that is…?"))
+        msgbox(format("Max: You don't learn anything when you win. You can let that one loss define you… or you can learn from it."))
+        msgbox(format("Gwen: …wow. That's…"))
+        msgbox(format("Max: I'm not some old fuddy duddy, y'know. You showed plenty of promise in that battle- in fact, I'd say you're more than ready to fight Roxanne. Go heal your team and I'll take you to the gym."))
+        msgbox(format("Gwen: R-really? Okay! I'll meet you at the Pokemon Center!"))
+    } else {
+        msgbox(format("Ben: …"))
+        msgbox(format("Max: Well, good to know my trainer skills passed on to the both of you! Well done."))
+        msgbox(format("Ben: I thought the first time was just dumb luck…"))
+        msgbox(format("Max: …now, Ben…look at it this way."))
+        msgbox(format("Ben: And that is…?"))
+        msgbox(format("Max: You don't learn anything when you win. You can let that one loss define you… or you can learn from it."))
+        msgbox(format("Ben: …wow. That's…"))
+        msgbox(format("Max: I'm not some old fuddy duddy, y'know. You showed plenty of promise in that battle- in fact, I'd say you're more than ready to fight Roxanne. Go heal your team and I'll take you to the gym."))
+        msgbox(format("Ben: R-really? Okay! I'll meet you at the Pokemon Center!"))
+    }
+    closemessage
+
+    // rival runs off
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(LOCALID_RUSTBORO_RIVAL)
+    delay(30)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+
+    msgbox(format("Max: …"))
+    msgbox(format("Max: Now, {PLAYER}…about that run in you had with Team Aqua…"))
+    msgbox(format("Max: They're usually just direct action activists…why would they pester a Devon Corp employee…?"))
+    msgbox(format("Max: Sorry. I'm just thinking out loud. But try to steer clear of that lot."))
+    msgbox(format("Max: Oh, hey! Is that a POKéNAV? Why don't we exchange numbers…if that's what you kids are calling it nowadays."))
+    closemessage
+
+    // register Max to NAV
+    delay(30)
+    playfanfare(MUS_REGISTER_MATCH_CALL)
+    msgbox(format("Registered MAX\nin the POKéNAV."))
+    waitfanfare
+    closemessage
+    delay(30)
+    setflag(FLAG_ENABLE_NORMAN_MATCH_CALL)
+
+    msgbox(format("Max: …Oh! That's right. I sent your cousin ahead to heal up."))
+    msgbox(format("Max: Here, I'll add their contact for you."))
+
+    // register rival to NAV
+    delay(30)
+    playfanfare(MUS_REGISTER_MATCH_CALL)
+    msgbox(format("Registered GWEN\nin the POKéNAV."))
+    waitfanfare
+    closemessage
+    delay(30)
+    setflag(FLAG_ENABLE_RIVAL_MATCH_CALL)
+
+    msgbox(format("Max: I should go meet up with your cousin- why don't you go to Dewford? The next Gym Leader, Brawly, should be a real test of your talents."))
+    msgbox(format("Max: I'll see you around, {PLAYER}! Keep at it!"))
+    closemessage
+
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(LOCALID_RUSTBORO_MAX)
+    delay(30)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+
+    releaseall
+}

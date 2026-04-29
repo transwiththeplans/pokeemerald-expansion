@@ -273,5 +273,6 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_SKY_PILLAR_WALLACE
 	setflag FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL
 	setflag FLAG_HIDE_KAI_IN_RUSTBORO
+	setflag FLAG_HIDE_ROUTE_104_MR_BRINEY2
 	call EventScript_ResetAllBerries
 	end

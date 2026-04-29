@@ -41,6 +41,7 @@ script PetalburgFields_EventScript_Kevin {
     waitmovement(0)
     removeobject(LOCALID_PETALBURG_FIELDS_KEVIN)
     delay(30)
+    setflag(FLAG_HIDE_ROUTE_104_MR_BRINEY2)
     releaseall
     end
 }

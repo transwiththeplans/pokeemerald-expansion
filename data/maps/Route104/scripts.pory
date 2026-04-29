@@ -1170,3 +1170,22 @@ Route104_Text_BrendanPostBattle:
 	.string "Like MR. BRINEY, it's important to\n"
 	.string "become friends with your POKéMON.$"
 `
+
+script Route104_EventScript_PeekoTired {
+    if (!flag(FLAG_MR_BRINEY_PEEKO_INTRO)) {
+        setflag(FLAG_MR_BRINEY_PEEKO_INTRO)
+        msgbox(format(
+            "Oh, you! My hero…I know I promised you that
+             I would take you anywhere you needed, but my
+             darling Peeko needs some beauty sleep after
+             that run in with that lunatic! I had to turn
+             down some other boy earlier, but he went
+             storming off to the fields…"
+        ), MSGBOX_NPC)
+    } else {
+        msgbox(format(
+            "My Peeko is special, you know! It avoided the
+             effects of that nasty meteorite."
+        ), MSGBOX_NPC)
+    }
+}

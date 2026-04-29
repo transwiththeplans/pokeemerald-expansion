@@ -2,6 +2,11 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanNorm
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanMachBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanSurfing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanFieldMove;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brendan2Normal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brendan2MachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brendan2Surfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brendan2FieldMove;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brendan2AcroBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_QuintyPlump;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NinjaBoy;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Twin;
@@ -92,6 +97,11 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayMachBike
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayAcroBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MaySurfing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayFieldMove;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_May2Normal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_May2MachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_May2AcroBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_May2Surfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_May2FieldMove;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Truck;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_VigorothCarryingBox;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_VigorothFacingAway;
@@ -111,6 +121,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RivalMayFie
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cameraman;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanUnderwater;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayUnderwater;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brendan2Underwater;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_May2Underwater;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MovingBox;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CableCar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scientist2;
@@ -138,6 +150,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Animo;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RubySapphireLittleBoy;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanFishing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayFishing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brendan2Fishing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_May2Fishing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HotSpringsOldWoman;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SSTidal;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SubmarineShadow;
@@ -194,6 +208,10 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanWate
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayWatering;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanDecorating;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayDecorating;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brendan2Watering;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_May2Watering;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brendan2Decorating;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_May2Decorating;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Archie;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Maxie;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KyogreFront;
@@ -498,6 +516,24 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
     [OBJ_EVENT_GFX_APRICORN_TREE] =            &gObjectEventGraphicsInfo_ApricornTree,
+    [OBJ_EVENT_GFX_BRENDAN2_NORMAL] =          &gObjectEventGraphicsInfo_Brendan2Normal,
+    [OBJ_EVENT_GFX_BRENDAN2_MACH_BIKE] =       &gObjectEventGraphicsInfo_Brendan2MachBike,
+    [OBJ_EVENT_GFX_BRENDAN2_SURFING] =         &gObjectEventGraphicsInfo_Brendan2Surfing,
+    [OBJ_EVENT_GFX_BRENDAN2_FIELD_MOVE] =      &gObjectEventGraphicsInfo_Brendan2FieldMove,
+    [OBJ_EVENT_GFX_BRENDAN2_ACRO_BIKE] =       &gObjectEventGraphicsInfo_Brendan2AcroBike,
+    [OBJ_EVENT_GFX_MAY2_NORMAL] =              &gObjectEventGraphicsInfo_May2Normal,
+    [OBJ_EVENT_GFX_MAY2_MACH_BIKE] =           &gObjectEventGraphicsInfo_May2MachBike,
+    [OBJ_EVENT_GFX_MAY2_ACRO_BIKE] =           &gObjectEventGraphicsInfo_May2AcroBike,
+    [OBJ_EVENT_GFX_MAY2_SURFING] =             &gObjectEventGraphicsInfo_May2Surfing,
+    [OBJ_EVENT_GFX_MAY2_FIELD_MOVE] =          &gObjectEventGraphicsInfo_May2FieldMove,
+    [OBJ_EVENT_GFX_BRENDAN2_UNDERWATER] =      &gObjectEventGraphicsInfo_Brendan2Underwater,
+    [OBJ_EVENT_GFX_MAY2_UNDERWATER] =          &gObjectEventGraphicsInfo_May2Underwater,
+    [OBJ_EVENT_GFX_BRENDAN2_FISHING] =         &gObjectEventGraphicsInfo_Brendan2Fishing,
+    [OBJ_EVENT_GFX_MAY2_FISHING] =             &gObjectEventGraphicsInfo_May2Fishing,
+    [OBJ_EVENT_GFX_BRENDAN2_WATERING] =        &gObjectEventGraphicsInfo_Brendan2Watering,
+    [OBJ_EVENT_GFX_MAY2_WATERING] =            &gObjectEventGraphicsInfo_May2Watering,
+    [OBJ_EVENT_GFX_BRENDAN2_DECORATING] =      &gObjectEventGraphicsInfo_Brendan2Decorating,
+    [OBJ_EVENT_GFX_MAY2_DECORATING] =          &gObjectEventGraphicsInfo_May2Decorating,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

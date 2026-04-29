@@ -249,11 +249,29 @@
 #define OBJ_EVENT_GFX_APRICORN_TREE              242
 #define OBJ_EVENT_GFX_YOUNGSTER_2                243
 #define OBJ_EVENT_GFX_DR_ANIMO                   244
+#define OBJ_EVENT_GFX_BRENDAN2_NORMAL            245
+#define OBJ_EVENT_GFX_BRENDAN2_MACH_BIKE         246
+#define OBJ_EVENT_GFX_BRENDAN2_SURFING           247
+#define OBJ_EVENT_GFX_BRENDAN2_FIELD_MOVE        248
+#define OBJ_EVENT_GFX_BRENDAN2_ACRO_BIKE         249
+#define OBJ_EVENT_GFX_MAY2_NORMAL                250
+#define OBJ_EVENT_GFX_MAY2_MACH_BIKE             251
+#define OBJ_EVENT_GFX_MAY2_ACRO_BIKE             252
+#define OBJ_EVENT_GFX_MAY2_SURFING               253
+#define OBJ_EVENT_GFX_MAY2_FIELD_MOVE            254
+#define OBJ_EVENT_GFX_BRENDAN2_UNDERWATER        255
+#define OBJ_EVENT_GFX_MAY2_UNDERWATER            256
+#define OBJ_EVENT_GFX_BRENDAN2_FISHING           257
+#define OBJ_EVENT_GFX_MAY2_FISHING               258
+#define OBJ_EVENT_GFX_BRENDAN2_WATERING          259
+#define OBJ_EVENT_GFX_MAY2_WATERING              260
+#define OBJ_EVENT_GFX_BRENDAN2_DECORATING        261
+#define OBJ_EVENT_GFX_MAY2_DECORATING            262
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        245
+#define NUM_OBJ_EVENT_GFX                        263
 
 // These are dynamic object gfx ids.
 // They correspond with the values of the VAR_OBJ_GFX_ID_X vars.
@@ -386,6 +404,10 @@
 #define OBJ_EVENT_PAL_TAG_KAI                     0x1126
 #define OBJ_EVENT_PAL_TAG_ANIMO                   0x1127
 #define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1128
+#define OBJ_EVENT_PAL_TAG_BRENDAN2                0x1129
+#define OBJ_EVENT_PAL_TAG_BRENDAN2_REFLECTION     0x112A
+#define OBJ_EVENT_PAL_TAG_MAY2                    0x112B
+#define OBJ_EVENT_PAL_TAG_MAY2_REFLECTION         0x112C
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

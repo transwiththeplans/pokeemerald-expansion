@@ -632,6 +632,18 @@ static const struct SpriteFrameImage sPicTable_Tate[] = {
     overworld_frame(gObjectEventPic_Tate, 2, 4, 2),
 };
 
+static const struct SpriteFrameImage sPicTable_Animo[] = {
+    overworld_frame(gObjectEventPic_Animo, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Animo, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Animo, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Animo, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Animo, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Animo, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Animo, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Animo, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Animo, 2, 4, 2),
+};
+
 static const struct SpriteFrameImage sPicTable_Wallace[] = {
     overworld_ascending_frames(gObjectEventPic_Wallace, 2, 4),
 };

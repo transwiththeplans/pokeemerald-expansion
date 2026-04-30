@@ -45,3 +45,68 @@ script PetalburgFields_EventScript_Kevin {
     releaseall
     end
 }
+
+script PetalburgFields_EventScript_Sammy {
+    trainerbattle_single(
+        TRAINER_SAMMY,
+        format("I'm training to beat the Gym Leader here"),
+        format("I've still got a long ways to go, then…")
+    )
+    msgbox(
+        format("I'll train more!"),
+        MSGBOX_AUTOCLOSE
+    )
+    end
+}
+
+script PetalburgFields_EventScript_Marlin {
+    trainerbattle_single(
+        TRAINER_MARLIN,
+        format("I thought there'd be a pond here."),
+        format("Serves me right, I suppose.")
+    )
+    msgbox(
+        format("No water to fish in… what a mistake."),
+        MSGBOX_AUTOCLOSE
+    )
+    end
+}
+
+script PetalburgFields_EventScript_Emily {
+    trainerbattle_single(
+        TRAINER_EMILY,
+        format("Isn't the field so nice this time of day?"),
+        format("Oh, not even losing could spoil my mood.")
+    )
+    msgbox(
+        format("Flowers always cheer me up."),
+        MSGBOX_AUTOCLOSE
+    )
+    end
+}
+
+script PetalburgFields_EventScript_Vince {
+    trainerbattle_single(
+        TRAINER_VINCE,
+        format("I can't believe they won't let me camp here!"),
+        format("Perhaps I should stay at a hotel instead…")
+    )
+    msgbox(
+        format("I guess I can still enjoy nature without camping."),
+        MSGBOX_AUTOCLOSE
+    )
+    end
+}
+
+script PetalburgFields_EventScript_Evan {
+    trainerbattle_single(
+        TRAINER_EVAN,
+        format("I've been training here for a bit!"),
+        format("I guess I still have a lot to learn…")
+    )
+    msgbox(
+        format("I like how it looks from here."),
+        MSGBOX_AUTOCLOSE
+    )
+    end
+}

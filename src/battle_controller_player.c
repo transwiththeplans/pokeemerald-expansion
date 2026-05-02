@@ -12,6 +12,7 @@
 #include "battle_gimmick.h"
 #include "bg.h"
 #include "data.h"
+#include "event_data.h"
 #include "item.h"
 #include "item_menu.h"
 #include "link.h"
@@ -1856,12 +1857,21 @@ u32 LinkPlayerGetTrainerPicId(u32 multiplayerId)
 
 static u32 PlayerGetTrainerBackPicId(void)
 {
+    u8 costume = VarGet(VAR_COSTUME_NUM);
     u32 trainerPicId;
 
     if (gBattleTypeFlags & BATTLE_TYPE_LINK)
         trainerPicId = LinkPlayerGetTrainerPicId(GetMultiplayerId());
-    else
-        trainerPicId = gSaveBlock2Ptr->playerGender + TRAINER_BACK_PIC_BRENDAN;
+    else{
+        switch(costume){
+            case 1:
+                trainerPicId = gSaveBlock2Ptr->playerGender + TRAINER_BACK_PIC_BRENDAN2;
+            break;
+            default:
+                trainerPicId = gSaveBlock2Ptr->playerGender + TRAINER_BACK_PIC_BRENDAN;
+            break;
+        }
+    }
 
     return trainerPicId;
 }

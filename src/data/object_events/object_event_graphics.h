@@ -41,7 +41,7 @@ const u32 gObjectEventPic_Brendan2Fishing[]       = INCBIN_U32("graphics/object_
 const u32 gObjectEventPic_Brendan2Watering[]      = INCBIN_U32("graphics/object_events/pics/people/brendan2/watering.4bpp");
 const u32 gObjectEventPic_Brendan2Decorating[]    = INCBIN_U32("graphics/object_events/pics/people/brendan2/decorating.4bpp");
 const u32 gObjectEventPic_Brendan2Underwater[]    = INCBIN_U32("graphics/object_events/pics/people/brendan2/underwater.4bpp");
-const u16 gObjectEventPal_Brendan2[]              = INCBIN_U16("graphics/object_events/pics/people/brendan2/brendan2.gbapal");
+const u16 gObjectEventPal_Brendan2[]              = INCBIN_U16("graphics/object_events/pics/people/brendan2/walking.gbapal");
 const u16 gObjectEventPal_Brendan2Reflection[]    = INCBIN_U16("graphics/object_events/palettes/brendan2_reflection.gbapal");
 //May
 const u32 gObjectEventPic_MayDecorating[]     = INCBIN_U32("graphics/object_events/pics/people/may/decorating.4bpp");
@@ -65,7 +65,7 @@ const u32 gObjectEventPic_May2Surfing[]       = INCBIN_U32("graphics/object_even
 const u32 gObjectEventPic_May2FieldMove[]     = INCBIN_U32("graphics/object_events/pics/people/may2/field_move.4bpp");
 const u32 gObjectEventPic_May2Fishing[]       = INCBIN_U32("graphics/object_events/pics/people/may2/fishing.4bpp");
 const u32 gObjectEventPic_May2Watering[]      = INCBIN_U32("graphics/object_events/pics/people/may2/watering.4bpp");
-const u16 gObjectEventPal_May2[]              = INCBIN_U16("graphics/object_events/palettes/may2.gbapal");
+const u16 gObjectEventPal_May2[]              = INCBIN_U16("graphics/object_events/pics/people/may2/walking.gbapal");
 const u16 gObjectEventPal_May2Reflection[]    = INCBIN_U16("graphics/object_events/palettes/may2_reflection.gbapal");
 
 const u32 gObjectEventPic_RubySapphireMayNormal[] = INCBIN_U32("graphics/object_events/pics/people/ruby_sapphire_may/walking.4bpp");

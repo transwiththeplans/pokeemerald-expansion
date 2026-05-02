@@ -221,13 +221,13 @@ const u32 gTrainerFrontPic_Brendan[] = INCBIN_U32("graphics/trainers/front_pics/
 const u16 gTrainerPalette_Brendan[] = INCBIN_U16("graphics/trainers/palettes/brendan.gbapal");
 
 const u32 gTrainerFrontPic_Brendan2[] = INCBIN_U32("graphics/trainers/front_pics/brendan2/brendan.4bpp.smol");
-const u16 gTrainerPalette_Brendan2[] = INCBIN_U16("graphics/trainers/palettes/brendan2.gbapal");
+const u16 gTrainerPalette_Brendan2[] = INCBIN_U16("graphics/trainers/front_pics/brendan2/brendan.gbapal");
 
 const u32 gTrainerFrontPic_May[] = INCBIN_U32("graphics/trainers/front_pics/may.4bpp.smol");
 const u16 gTrainerPalette_May[] = INCBIN_U16("graphics/trainers/palettes/may.gbapal");
 
 const u32 gTrainerFrontPic_May2[] = INCBIN_U32("graphics/trainers/front_pics/may2/may.4bpp.smol");
-const u16 gTrainerPalette_May2[] = INCBIN_U16("graphics/trainers/palettes/may2.gbapal");
+const u16 gTrainerPalette_May2[] = INCBIN_U16("graphics/trainers/front_pics/may2/may.gbapal");
 
 const u32 gTrainerFrontPic_BugCatcher[] = INCBIN_U32("graphics/trainers/front_pics/bug_catcher.4bpp.smol");
 const u16 gTrainerPalette_BugCatcher[] = INCBIN_U16("graphics/trainers/front_pics/bug_catcher.gbapal");

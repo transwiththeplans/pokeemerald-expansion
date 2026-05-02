@@ -1893,11 +1893,15 @@ static void CreateTrainerCardTrainerPic(void)
     }
     else
     {
-        CreateTrainerCardTrainerPicSprite(FacilityClassToPicIndex(sTrainerPicFacilityClass[sData->cardType][sData->trainerCard.gender]),
-                    TRUE,
-                    sTrainerPicOffset[sData->isHoenn][sData->trainerCard.gender][0],
-                    sTrainerPicOffset[sData->isHoenn][sData->trainerCard.gender][1],
-                    8,
-                    WIN_TRAINER_PIC);
+        u8 costume = VarGet(VAR_COSTUME_NUM);
+        u16 trainerSprites = FacilityClassToPicIndex(sTrainerPicFacilityClass[sData->cardType][sData->trainerCard.gender]);
+
+        switch(costume){
+            case 1:
+                trainerSprites = TRAINER_PIC_BRENDAN2 + sData->trainerCard.gender;
+            break;
+        }
+
+        CreateTrainerCardTrainerPicSprite(trainerSprites, TRUE, sTrainerPicOffset[sData->isHoenn][sData->trainerCard.gender][0], sTrainerPicOffset[sData->isHoenn][sData->trainerCard.gender][1], 8, WIN_TRAINER_PIC);
     }
 }

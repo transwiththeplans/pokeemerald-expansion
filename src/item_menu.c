@@ -2,6 +2,7 @@
 #include "item_menu.h"
 #include "battle.h"
 #include "battle_controllers.h"
+#include "battle_script_commands.h"
 #include "battle_pyramid.h"
 #include "frontier_util.h"
 #include "battle_pyramid_bag.h"
@@ -930,6 +931,7 @@ static void LoadBagItemListBuffers(u8 pocketId)
     gMultiuseListMenuTemplate.maxShowed = gBagMenu->numShownItems[pocketId];
 }
 
+const u8 gText_Pokeball_Chance[] = _("{STR_VAR_1}({STR_VAR_2}.{STR_VAR_3}%)");
 static void GetItemNameFromPocket(u8 *dest, u16 itemId)
 {
     u8 *end;
@@ -956,6 +958,45 @@ static void GetItemNameFromPocket(u8 *dest, u16 itemId)
         end = CopyItemName(itemId, gStringVar2);
         PrependFontIdToFit(gStringVar2, end, FONT_NARROW, 61);
         StringExpandPlaceholders(dest, gText_NumberItem_TMBerry);
+        break;
+    case POCKET_POKE_BALLS:
+    {
+        if(gBagPosition.location == ITEMMENULOCATION_BATTLE && !(gBattleTypeFlags & BATTLE_TYPE_TRAINER)){
+            u32 chance = CalculateCatchChances(itemId, FALSE, gBattlerInMenuId, GetCatchingBattler());
+            u32 chanceWhole, chanceFrac;
+            chance = (chance * 1000) / 255;
+
+            if(chance >= 1000)
+                chance = 1000;
+            else if(chance < 10)
+                chance = 10;
+
+            chanceWhole = chance / 10;
+            chanceFrac = chance % 10;
+
+            CopyItemName(itemId, gStringVar1);
+            ConvertIntToDecimalStringN(gStringVar2, chanceWhole, STR_CONV_MODE_LEFT_ALIGN, 3);
+            ConvertIntToDecimalStringN(gStringVar3, chanceFrac, STR_CONV_MODE_LEFT_ALIGN, 1);
+            StringExpandPlaceholders(dest, gText_Pokeball_Chance);
+                
+            /*if(chance >= 100){
+                CopyItemName(itemId, gStringVar1);
+                StringExpandPlaceholders(dest, gText_Pokeball_Chance_100);
+            }
+            else if(chance <= 1){
+                CopyItemName(itemId, gStringVar1);
+                StringExpandPlaceholders(dest, gText_Pokeball_Chance_0_percent);
+            }
+            else{
+                CopyItemName(itemId, gStringVar1);
+                ConvertIntToDecimalStringN(gStringVar2, chance, STR_CONV_MODE_LEFT_ALIGN, 3);
+                StringExpandPlaceholders(dest, gText_Pokeball_Chance);
+            }*/
+        }
+        else{
+            CopyItemName(itemId, dest);
+        }
+    }
         break;
     default:
         end = CopyItemName(itemId, dest);

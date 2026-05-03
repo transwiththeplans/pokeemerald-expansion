@@ -66,6 +66,7 @@ bool32 TryResetBattlerStatChanges(u8 battler);
 bool32 CanCamouflage(u8 battlerId);
 void StealTargetItem(u8 battlerStealer, u8 battlerItem);
 u8 GetCatchingBattler(void);
+u32 CalculateCatchChances(u16 ball, bool8 usingItem, u8 attacker, u8 target);
 bool32 ProteanTryChangeType(u32 battler, u32 move, enum Type moveType);
 bool32 IsMoveNotAllowedInSkyBattles(u32 move);
 bool32 TryDefogClear(u32 battlerAtk, bool32 clear);

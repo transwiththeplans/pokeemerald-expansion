@@ -13720,6 +13720,206 @@ u8 GetCatchingBattler(void)
         return GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);
 }
 
+u32 CalculateCatchChances(u16 ball, bool8 usingItem, u8 attacker, u8 target)
+{
+    u16 ballMultiplier = 100;
+    s8 ballAddition = 0;
+    u32 odds;
+    u32 i;
+    u32 catchRate;
+    u32 ballId = ItemIdToBallId(ball);
+
+    if (gBattleTypeFlags & BATTLE_TYPE_SAFARI)
+        catchRate = gBattleStruct->safariCatchFactor * 1275 / 100;
+    else
+        catchRate = gSpeciesInfo[gBattleMons[target].species].catchRate;
+
+    if (gSpeciesInfo[gBattleMons[target].species].isUltraBeast)
+    {
+        if (ballId == BALL_BEAST)
+            ballMultiplier = 500;
+        else
+            ballMultiplier = 10;
+    }
+    else
+    {
+        switch (ballId)
+        {
+        case BALL_ULTRA:
+            ballMultiplier = 200;
+            break;
+        case BALL_SPORT:
+            if (B_SPORT_BALL_MODIFIER <= GEN_7)
+                ballMultiplier = 150;
+            break;
+        case BALL_GREAT:
+            ballMultiplier = 150;
+            break;
+        case BALL_SAFARI:
+            if (B_SAFARI_BALL_MODIFIER <= GEN_7)
+                ballMultiplier = 150;
+            else if (B_SAFARI_BALL_MODIFIER == GEN_1)
+                ballMultiplier = 200;
+            break;
+        case BALL_NET:
+            if (IS_BATTLER_ANY_TYPE(target, TYPE_WATER, TYPE_BUG))
+                ballMultiplier = B_NET_BALL_MODIFIER >= GEN_7 ? 350 : 300;
+            break;
+        case BALL_DIVE:
+            if (GetCurrentMapType() == MAP_TYPE_UNDERWATER
+                || (B_DIVE_BALL_MODIFIER >= GEN_4 && (gIsFishingEncounter || gIsSurfingEncounter)))
+                ballMultiplier = 350;
+            break;
+        case BALL_NEST:
+            if (B_NEST_BALL_MODIFIER >= GEN_6)
+            {
+                if (gBattleMons[target].level < 30)
+                    ballMultiplier = 410 - (gBattleMons[target].level * 10);
+            }
+            else if (B_NEST_BALL_MODIFIER >= GEN_5)
+            {
+                if (gBattleMons[target].level < 31)
+                    ballMultiplier = 410 - (gBattleMons[target].level * 10);
+            }
+            else if (gBattleMons[target].level < 40)
+            {
+                ballMultiplier = 400 - (gBattleMons[target].level * 10);
+                if (ballMultiplier <= 90)
+                    ballMultiplier = 100;
+            }
+            break;
+        case BALL_REPEAT:
+            if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[target].species), FLAG_GET_CAUGHT))
+                ballMultiplier = (B_REPEAT_BALL_MODIFIER >= GEN_7 ? 350 : 300);
+            break;
+        case BALL_TIMER:
+            ballMultiplier = 100 + (gBattleResults.battleTurnCounter * (B_TIMER_BALL_MODIFIER >= GEN_5 ? 30 : 10));
+            if (ballMultiplier > 400)
+                ballMultiplier = 400;
+            break;
+        case BALL_DUSK:
+            i = GetTimeOfDay();
+            if (i == TIME_EVENING || i == TIME_NIGHT || gMapHeader.cave || gMapHeader.mapType == MAP_TYPE_UNDERGROUND)
+                ballMultiplier = (B_DUSK_BALL_MODIFIER >= GEN_7 ? 300 : 350);
+            break;
+        case BALL_QUICK:
+            if (gBattleResults.battleTurnCounter == 0)
+                ballMultiplier = (B_QUICK_BALL_MODIFIER >= GEN_5 ? 500 : 400);
+            break;
+        case BALL_LEVEL:
+            if (gBattleMons[attacker].level >= 4 * gBattleMons[target].level)
+                ballMultiplier = 800;
+            else if (gBattleMons[attacker].level > 2 * gBattleMons[target].level)
+                ballMultiplier = 400;
+            else if (gBattleMons[attacker].level > gBattleMons[target].level)
+                ballMultiplier = 200;
+            break;
+        case BALL_LURE:
+            if (gIsFishingEncounter)
+            {
+                if (B_LURE_BALL_MODIFIER >= GEN_8)
+                    ballMultiplier = 400;
+                else if (B_LURE_BALL_MODIFIER >= GEN_7)
+                    ballMultiplier = 500;
+                else
+                    ballMultiplier = 300;
+            }
+            break;
+        case BALL_MOON:
+        {
+            const struct Evolution *evolutions = GetSpeciesEvolutions(gBattleMons[target].species);
+            if (evolutions == NULL)
+                break;
+            for (i = 0; evolutions[i].method != EVOLUTIONS_END; i++)
+            {
+                if (evolutions[i].method == EVO_ITEM
+                    && evolutions[i].param == ITEM_MOON_STONE)
+                    ballMultiplier = 400;
+            }
+        }
+            break;
+        case BALL_LOVE:
+            if (gBattleMons[target].species == gBattleMons[attacker].species)
+            {
+                u8 gender1 = GetMonGender(GetBattlerMon(target));
+                u8 gender2 = GetMonGender(GetBattlerMon(attacker));
+
+                if (gender1 != gender2 && gender1 != MON_GENDERLESS && gender2 != MON_GENDERLESS)
+                    ballMultiplier = 800;
+            }
+            break;
+        case BALL_FAST:
+            if (GetSpeciesBaseSpeed(gBattleMons[target].species) >= 100)
+                ballMultiplier = 400;
+            break;
+        case BALL_HEAVY:
+            i = GetSpeciesWeight(gBattleMons[target].species);
+            if (B_HEAVY_BALL_MODIFIER >= GEN_7)
+            {
+                if (i < 1000)
+                    ballAddition = -20;
+                else if (i < 2000)
+                    ballAddition = 0;
+                else if (i < 3000)
+                    ballAddition = 20;
+                else
+                    ballAddition = 30;
+            }
+            else if (B_HEAVY_BALL_MODIFIER >= GEN_4)
+            {
+                if (i < 2048)
+                    ballAddition = -20;
+                else if (i < 3072)
+                    ballAddition = 20;
+                else if (i < 4096)
+                    ballAddition = 30;
+                else
+                    ballAddition = 40;
+            }
+            else
+            {
+                if (i < 1024)
+                    ballAddition = -20;
+                else if (i < 2048)
+                    ballAddition = 0;
+                else if (i < 3072)
+                    ballAddition = 20;
+                else if (i < 4096)
+                    ballAddition = 30;
+                else
+                    ballAddition = 40;
+            }
+            break;
+        case BALL_DREAM:
+            if (B_DREAM_BALL_MODIFIER >= GEN_8 && (gBattleMons[target].status1 & STATUS1_SLEEP || BattlerHasTrait(target, ABILITY_COMATOSE)))
+                ballMultiplier = 400;
+            break;
+        case BALL_BEAST:
+            ballMultiplier = 10;
+            break;
+        }
+    }
+
+    if (catchRate < 21 && ballAddition == -20)
+        catchRate = 1;
+    else
+        catchRate = catchRate + ballAddition;
+
+    odds = (catchRate * ballMultiplier / 100)
+        * (gBattleMons[target].maxHP * 3 - gBattleMons[target].hp * 2)
+        / (3 * gBattleMons[target].maxHP);
+
+    if (gBattleMons[target].status1 & STATUS1_INCAPACITATED)
+        odds *= 2;
+    if (gBattleMons[target].status1 & STATUS1_CAN_MOVE)
+        odds = (odds * 15) / 10;
+
+    if (odds > 255)
+        odds = 255;
+
+    return odds;
+}
+
 static void Cmd_handleballthrow(void)
 {
     CMD_ARGS();

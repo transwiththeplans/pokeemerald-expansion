@@ -4420,8 +4420,8 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
             effect++;
         }
 
-        if ((traitCheck = SearchTraits(battlerTraits, ABILITY_CURL_UP)) && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1]){
-            //effect += CommonSwitchInAbilities(battler, ABILITY_CURL_UP, traitCheck, BattleScript_AttackerAbilityStatRaiseEnd3);
+        if ((traitCheck = SearchTraits(battlerTraits, ABILITY_CURL_UP)) && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1])
+        {
             u32 statId, opposingBattler;
             u32 opposingAtk = 0, opposingSpAtk = 0;
 
@@ -4444,7 +4444,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
             else
                 statId = STAT_SPDEF;
 
-            gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+            gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1] = TRUE;
 
             if (CompareStat(battler, statId, MAX_STAT_STAGE, CMP_LESS_THAN))
             {

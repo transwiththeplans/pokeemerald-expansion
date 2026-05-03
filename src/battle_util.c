@@ -12125,16 +12125,16 @@ enum Ability GetBattlerTrait(u8 battlerId, u8 traitNum, u32 ignoreMoldBreaker)
     #endif
         
     if (traitNum == 0){
-        {
-            //DebugPrintf("ABILITY: %S", gAbilitiesInfo[GetBattlerAbility(battlerId)].name);
-            if (!ignoreMoldBreaker)
-                return GetBattlerAbility(battlerId);
-            else
-                return GetBattlerAbilityIgnoreMoldBreaker(battlerId);
-        }
+        //DebugPrintf("ABILITY: %S", gAbilitiesInfo[GetBattlerAbility(battlerId)].name);
+        if (!ignoreMoldBreaker)
+            return GetBattlerAbility(battlerId);
+        else
+            return GetBattlerAbilityIgnoreMoldBreaker(battlerId);
     }
     else
     {
+        if(!gBattleMons[battlerId].innateUnlocked)
+            return ABILITY_NONE;
         // Load natural Innate if not a Test
         if (ability == ABILITIES_COUNT)
             ability = GetSpeciesInnate(gBattleMons[battlerId].species, traitNum);

@@ -4590,6 +4590,16 @@
       "secondary_tileset": "gTileset_Mauville_Desert",
       "border_filepath": "data/layouts/Route111_Sleepy_Dunes/border.bin",
       "blockdata_filepath": "data/layouts/Route111_Sleepy_Dunes/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE111_METEOR_RESORT",
+      "name": "Route111_Meteor_Resort_Layout",
+      "width": 46,
+      "height": 53,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fallarbor",
+      "border_filepath": "data/layouts/Route111_Meteor_Resort/border.bin",
+      "blockdata_filepath": "data/layouts/Route111_Meteor_Resort/map.bin"
     }
   ]
 }

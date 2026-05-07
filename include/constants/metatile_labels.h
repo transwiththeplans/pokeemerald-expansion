@@ -358,6 +358,7 @@
 #define METATILE_Mauville_Inside_ElevatorDoorRight     0x2A2
 #define METATILE_Mauville_Inside_GameCornerDoor        0x31A
 #define METATILE_Mauville_Inside_GameCornerDoor_Right  0x31B
+#define METATILE_Mauville_Inside_GymDoor               0x273
 
 // gTileset_MeteorFalls
 #define METATILE_MeteorFalls_CaveEntrance_Bottom  0x24E

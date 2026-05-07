@@ -132,6 +132,7 @@ static const u16 sDoorNullPalette48[16] = {};
 static const u8 sDoorAnimTiles_TrainerHillRoofElevator[] = INCBIN_U8("graphics/door_anims/trainer_hill_roof_elevator.4bpp");
 static const u16 sDoorNullPalette49[16] = {};
 static const u8 sDoorAnimTiles_MauvilleDeptDoor[] = INCBIN_U8("graphics/door_anims/mauville_dept_door.4bpp");
+static const u8 sDoorAnimTiles_MauvilleGymDoor[] = INCBIN_U8("graphics/door_anims/mauville_gym.4bpp");
 static const u16 sDoorNullPalette50[16] = {};
 static const u8 sDoorAnimTiles_MauvilleGameCornerDoor[] = INCBIN_U8("graphics/door_anims/mauville_gamecorner.4bpp");
 static const u16 sDoorNullPalette51[16] = {};
@@ -265,6 +266,7 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
     {METATILE_Dewford_Door_BattleTower,                     DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleTowerOld, sDoorAnimPalettes_BattleTowerOld},
     {METATILE_BattleFrontier_Door_Elevator,                 DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleTowerElevator, sDoorAnimPalettes_BattleTowerElevator},
     {METATILE_Mauville_Inside_DepDoor,                      DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_MauvilleDeptDoor, sDoorAnimPalettes_MauvilleDeptDoor},
+    {METATILE_Mauville_Inside_GymDoor,                      DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_MauvilleGymDoor,  sDoorAnimPalettes_MauvilleDeptDoor},
     {METATILE_Mauville_Inside_GameCornerDoor,               DOOR_SOUND_SLIDING, 2, sDoorAnimTiles_MauvilleGameCornerDoor, sDoorAnimPalettes_MauvilleGameCornerDoor},
     {METATILE_Mauville_Inside_GameCornerDoor_Right,         DOOR_SOUND_SLIDING, 3, sDoorAnimTiles_MauvilleGameCornerDoor, sDoorAnimPalettes_MauvilleGameCornerDoor},
     {METATILE_Mauville_Inside_ElevatorDoor,                 DOOR_SOUND_SLIDING, 2, sDoorAnimTiles_MauvilleElevatorDoor, sDoorAnimPalettes_MauvilleDeptDoor},

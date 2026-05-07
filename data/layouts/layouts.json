@@ -4600,6 +4600,16 @@
       "secondary_tileset": "gTileset_Fallarbor",
       "border_filepath": "data/layouts/Route111_Meteor_Resort/border.bin",
       "blockdata_filepath": "data/layouts/Route111_Meteor_Resort/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_INSIDE_2F_BUILDINGS",
+      "name": "MauvilleCity_Inside_2F_Buildings_Layout",
+      "width": 60,
+      "height": 52,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_InsideOfTruck",
+      "border_filepath": "data/layouts/MauvilleCity_Inside_2F_Buildings/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_Inside_2F_Buildings/map.bin"
     }
   ]
 }

@@ -1193,3 +1193,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route111_Sleepy_Dunes/scripts.inc"
 
 	.include "data/maps/Route111_Meteor_Resort/scripts.inc"
+
+	.include "data/maps/MauvilleCity_Inside_2F_Buildings/scripts.inc"

@@ -245,6 +245,139 @@
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_INSIDE_ROOFTOP",
       "dest_warp_id": "7"
+    },
+    {
+      "x": 24,
+      "y": 47,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F_BUILDINGS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 34,
+      "y": 47,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F_BUILDINGS",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 24,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F_BUILDINGS",
+      "dest_warp_id": "16"
+    },
+    {
+      "x": 15,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F_BUILDINGS",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 15,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F_BUILDINGS",
+      "dest_warp_id": "7"
+    },
+    {
+      "x": 15,
+      "y": 36,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F_BUILDINGS",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 15,
+      "y": 37,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F_BUILDINGS",
+      "dest_warp_id": "9"
+    },
+    {
+      "x": 45,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F_BUILDINGS",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 45,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F_BUILDINGS",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 45,
+      "y": 36,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F_BUILDINGS",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 45,
+      "y": 37,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F_BUILDINGS",
+      "dest_warp_id": "11"
+    },
+    {
+      "x": 12,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F_BUILDINGS",
+      "dest_warp_id": "14"
+    },
+    {
+      "x": 12,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F_BUILDINGS",
+      "dest_warp_id": "15"
+    },
+    {
+      "x": 12,
+      "y": 36,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F_BUILDINGS",
+      "dest_warp_id": "12"
+    },
+    {
+      "x": 12,
+      "y": 37,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F_BUILDINGS",
+      "dest_warp_id": "13"
+    },
+    {
+      "x": 48,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F_BUILDINGS",
+      "dest_warp_id": "18"
+    },
+    {
+      "x": 48,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F_BUILDINGS",
+      "dest_warp_id": "19"
+    },
+    {
+      "x": 48,
+      "y": 36,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F_BUILDINGS",
+      "dest_warp_id": "20"
+    },
+    {
+      "x": 48,
+      "y": 37,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F_BUILDINGS",
+      "dest_warp_id": "21"
     }
   ],
   "coord_events": [],
@@ -440,6 +573,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "MauvilleCity_EventScript_TrashCanSign"
+    },
+    {
+      "type": "sign",
+      "x": 34,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MauvilleCity_EventScript_ResidentialAreaSign"
     }
   ]
 }

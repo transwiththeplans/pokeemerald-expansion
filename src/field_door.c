@@ -133,6 +133,7 @@ static const u8 sDoorAnimTiles_TrainerHillRoofElevator[] = INCBIN_U8("graphics/d
 static const u16 sDoorNullPalette49[16] = {};
 static const u8 sDoorAnimTiles_MauvilleDeptDoor[] = INCBIN_U8("graphics/door_anims/mauville_dept_door.4bpp");
 static const u8 sDoorAnimTiles_MauvilleGymDoor[] = INCBIN_U8("graphics/door_anims/mauville_gym.4bpp");
+static const u8 sDoorAnimTiles_MauvilleSmoothieDoor[] = INCBIN_U8("graphics/door_anims/mauville_smoothie_door.4bpp");
 static const u16 sDoorNullPalette50[16] = {};
 static const u8 sDoorAnimTiles_MauvilleGameCornerDoor[] = INCBIN_U8("graphics/door_anims/mauville_gamecorner.4bpp");
 static const u16 sDoorNullPalette51[16] = {};
@@ -227,6 +228,7 @@ static const u8 sDoorAnimPalettes_BattleTentInterior[] = {9, 9, 9, 9, 9, 9, 9, 9
 static const u8 sDoorAnimPalettes_TrainerHillLobbyElevator[] = {7, 7, 7, 7, 7, 7, 7, 7};
 static const u8 sDoorAnimPalettes_TrainerHillRoofElevator[] = {9, 9, 7, 7, 7, 7, 7, 7};
 static const u8 sDoorAnimPalettes_MauvilleDeptDoor[] = {6, 6, 6, 6, 6, 6, 6, 6};
+static const u8 sDoorAnimPalettes_MauvilleSmoothieDoor[] = {8, 8, 8, 8, 8, 8, 8, 8};
 static const u8 sDoorAnimPalettes_MauvilleGameCornerDoor[] = {9, 9, 9, 9, 9, 9, 9, 9};
 
 static const struct DoorGraphics sDoorAnimGraphicsTable[] =
@@ -267,6 +269,7 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
     {METATILE_BattleFrontier_Door_Elevator,                 DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleTowerElevator, sDoorAnimPalettes_BattleTowerElevator},
     {METATILE_Mauville_Inside_DepDoor,                      DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_MauvilleDeptDoor, sDoorAnimPalettes_MauvilleDeptDoor},
     {METATILE_Mauville_Inside_GymDoor,                      DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_MauvilleGymDoor,  sDoorAnimPalettes_MauvilleDeptDoor},
+    {METATILE_Mauville_Inside_SmoothieDoor,                 DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_MauvilleSmoothieDoor,  sDoorAnimPalettes_MauvilleSmoothieDoor},
     {METATILE_Mauville_Inside_GameCornerDoor,               DOOR_SOUND_SLIDING, 2, sDoorAnimTiles_MauvilleGameCornerDoor, sDoorAnimPalettes_MauvilleGameCornerDoor},
     {METATILE_Mauville_Inside_GameCornerDoor_Right,         DOOR_SOUND_SLIDING, 3, sDoorAnimTiles_MauvilleGameCornerDoor, sDoorAnimPalettes_MauvilleGameCornerDoor},
     {METATILE_Mauville_Inside_ElevatorDoor,                 DOOR_SOUND_SLIDING, 2, sDoorAnimTiles_MauvilleElevatorDoor, sDoorAnimPalettes_MauvilleDeptDoor},

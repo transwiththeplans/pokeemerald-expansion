@@ -177,14 +177,14 @@
       "dest_warp_id": "12"
     },
     {
-      "x": 20,
+      "x": 19,
       "y": 14,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_INSIDE",
       "dest_warp_id": "13"
     },
     {
-      "x": 40,
+      "x": 39,
       "y": 14,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_INSIDE",
@@ -378,6 +378,20 @@
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F_BUILDINGS",
       "dest_warp_id": "21"
+    },
+    {
+      "x": 20,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE",
+      "dest_warp_id": "27"
+    },
+    {
+      "x": 40,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE",
+      "dest_warp_id": "28"
     }
   ],
   "coord_events": [],

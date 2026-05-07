@@ -492,6 +492,20 @@
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_MART",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 26,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F",
+      "dest_warp_id": "37"
+    },
+    {
+      "x": 57,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_MAUVILLE_CITY_INSIDE_2F",
+      "dest_warp_id": "38"
     }
   ],
   "coord_events": [],

@@ -6001,6 +6001,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_SNOVER
 
 #if P_FAMILY_ROTOM
+#define ROTOM_FAMILY_TYPES { TYPE_ELECTRIC, TYPE_GHOST }
+
     [SPECIES_ROTOM] =
     {
         .baseHP        = 50,
@@ -6009,7 +6011,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .baseSpeed     = 91,
         .baseSpAttack  = 95,
         .baseSpDefense = 77,
-        .types = MON_TYPES(TYPE_ELECTRIC, TYPE_NORMAL),
+        .types = ROTOM_FAMILY_TYPES,
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 154 : 132,
         .evYield_Speed = 1,
@@ -6019,7 +6021,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_VOLT_ABSORB, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Rotom"),
         .cryId = CRY_ROTOM,
@@ -6071,6 +6073,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .levelUpLearnset = sRotomLevelUpLearnset,
         .teachableLearnset = sRotomTeachableLearnset,
         .formSpeciesIdTable = sRotomFormSpeciesIdTable,
+        .formChangeTable = sRotomFormChangeTable,
     },
 
 #if P_UPDATED_EXP_YIELDS >= GEN_7
@@ -6081,15 +6084,19 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     #define ROTOM_APPLIANCE_EXP_YIELD 132
 #endif
 
-	[SPECIES_ROTOM_SMACK] =
-	{
-		.baseHP        = 50,
-		.baseAttack    = 105,
-		.baseDefense   = 107,
-		.baseSpAttack  = 65,
-		.baseSpDefense = 107,
-		.baseSpeed     = 86,
-		.types = MON_TYPES(TYPE_ELECTRIC, TYPE_FIGHTING),
+    [SPECIES_ROTOM_HEAT] =
+    {
+        .baseHP        = 50,
+        .baseAttack    = 65,
+        .baseDefense   = 107,
+        .baseSpeed     = 86,
+        .baseSpAttack  = 105,
+        .baseSpDefense = 107,
+    #if P_UPDATED_TYPES >= GEN_5
+        .types = MON_TYPES(TYPE_ELECTRIC, TYPE_FIRE),
+    #else
+        .types = ROTOM_FAMILY_TYPES,
+    #endif
         .catchRate = 45,
         .expYield = ROTOM_APPLIANCE_EXP_YIELD,
         .evYield_Speed = 1,
@@ -6099,7 +6106,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_IRON_FIST, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Rotom"),
         .cryId = CRY_ROTOM,
@@ -6146,20 +6153,25 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_RotomHeat,
             gShinyOverworldPalette_RotomHeat
         )
-        .levelUpLearnset = sRotomSmackLevelUpLearnset,
+        .levelUpLearnset = sRotomLevelUpLearnset,
         .teachableLearnset = sRotomTeachableLearnset,
         .formSpeciesIdTable = sRotomFormSpeciesIdTable,
+        .formChangeTable = sRotomFormChangeTable,
     },
 
-	[SPECIES_ROTOM_BOOGIE] =
-	{
-		.baseHP        = 50,
-		.baseAttack    = 65,
-		.baseDefense   = 86,
-		.baseSpeed     = 105,
-		.baseSpAttack  = 107,
-		.baseSpDefense = 107,
-		.types = MON_TYPES(TYPE_ELECTRIC, TYPE_FLYING),
+    [SPECIES_ROTOM_WASH] =
+    {
+        .baseHP        = 50,
+        .baseAttack    = 65,
+        .baseDefense   = 107,
+        .baseSpeed     = 86,
+        .baseSpAttack  = 105,
+        .baseSpDefense = 107,
+    #if P_UPDATED_TYPES >= GEN_5
+        .types = MON_TYPES(TYPE_ELECTRIC, TYPE_WATER),
+    #else
+        .types = ROTOM_FAMILY_TYPES,
+    #endif
         .catchRate = 45,
         .expYield = ROTOM_APPLIANCE_EXP_YIELD,
         .evYield_Speed = 1,
@@ -6169,7 +6181,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_AERILATE, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_RED,
         .noFlip = TRUE,
         .speciesName = _("Rotom"),
@@ -6213,24 +6225,29 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
-            sAnimTable_Following,
+            sAnimTable_Following_Asym,
             gOverworldPalette_RotomWash,
             gShinyOverworldPalette_RotomWash
         )
-        .levelUpLearnset = sRotomBoogieLevelUpLearnset,
+        .levelUpLearnset = sRotomLevelUpLearnset,
         .teachableLearnset = sRotomTeachableLearnset,
         .formSpeciesIdTable = sRotomFormSpeciesIdTable,
+        .formChangeTable = sRotomFormChangeTable,
     },
 
-	[SPECIES_ROTOM_BFS] =
-	{
-		.baseHP        = 50,
-		.baseAttack    = 65,
-		.baseDefense   = 107,
-		.baseSpeed     = 86,
-		.baseSpAttack  = 107,
-		.baseSpDefense = 105,
-		.types = MON_TYPES(TYPE_ELECTRIC, TYPE_STEEL),
+    [SPECIES_ROTOM_FROST] =
+    {
+        .baseHP        = 50,
+        .baseAttack    = 65,
+        .baseDefense   = 107,
+        .baseSpeed     = 86,
+        .baseSpAttack  = 105,
+        .baseSpDefense = 107,
+    #if P_UPDATED_TYPES >= GEN_5
+        .types = MON_TYPES(TYPE_ELECTRIC, TYPE_ICE),
+    #else
+        .types = ROTOM_FAMILY_TYPES,
+    #endif
         .catchRate = 45,
         .expYield = ROTOM_APPLIANCE_EXP_YIELD,
         .evYield_Speed = 1,
@@ -6240,7 +6257,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_SHARPNESS, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Rotom"),
         .cryId = CRY_ROTOM,
@@ -6286,20 +6303,25 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_RotomFrost,
             gShinyOverworldPalette_RotomFrost
         )
-        .levelUpLearnset = sRotomBFSLevelUpLearnset,
+        .levelUpLearnset = sRotomLevelUpLearnset,
         .teachableLearnset = sRotomTeachableLearnset,
         .formSpeciesIdTable = sRotomFormSpeciesIdTable,
+        .formChangeTable = sRotomFormChangeTable,
     },
 
-	[SPECIES_ROTOM_SLAM] =
-	{
-		.baseHP        = 50,
-		.baseAttack    = 107,
-		.baseDefense   = 65,
-		.baseSpeed     = 86,
-		.baseSpAttack  = 105,
-		.baseSpDefense = 107,
-		.types = MON_TYPES(TYPE_ELECTRIC, TYPE_GROUND),
+    [SPECIES_ROTOM_FAN] =
+    {
+        .baseHP        = 50,
+        .baseAttack    = 65,
+        .baseDefense   = 107,
+        .baseSpeed     = 86,
+        .baseSpAttack  = 105,
+        .baseSpDefense = 107,
+    #if P_UPDATED_TYPES >= GEN_5
+        .types = MON_TYPES(TYPE_ELECTRIC, TYPE_FLYING),
+    #else
+        .types = ROTOM_FAMILY_TYPES,
+    #endif
         .catchRate = 45,
         .expYield = ROTOM_APPLIANCE_EXP_YIELD,
         .evYield_Speed = 1,
@@ -6309,7 +6331,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_MEGA_LAUNCHER, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Rotom"),
         .cryId = CRY_ROTOM,
@@ -6380,20 +6402,25 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_RotomFan,
             gShinyOverworldPalette_RotomFan
         )
-        .levelUpLearnset = sRotomSlamLevelUpLearnset,
+        .levelUpLearnset = sRotomLevelUpLearnset,
         .teachableLearnset = sRotomTeachableLearnset,
         .formSpeciesIdTable = sRotomFormSpeciesIdTable,
+        .formChangeTable = sRotomFormChangeTable,
     },
 
-	[SPECIES_ROTOM_BUST] =
-	{
-		.baseHP        = 50,
-		.baseAttack    = 107,
-		.baseDefense   = 105,
-		.baseSpeed     = 65,
-		.baseSpAttack  = 86,
-		.baseSpDefense = 107,
-		.types = MON_TYPES(TYPE_ELECTRIC, TYPE_ROCK),
+    [SPECIES_ROTOM_MOW] =
+    {
+        .baseHP        = 50,
+        .baseAttack    = 65,
+        .baseDefense   = 107,
+        .baseSpeed     = 86,
+        .baseSpAttack  = 105,
+        .baseSpDefense = 107,
+    #if P_UPDATED_TYPES >= GEN_5
+        .types = MON_TYPES(TYPE_ELECTRIC, TYPE_GRASS),
+    #else
+        .types = ROTOM_FAMILY_TYPES,
+    #endif
         .catchRate = 45,
         .expYield = ROTOM_APPLIANCE_EXP_YIELD,
         .evYield_Speed = 1,
@@ -6403,7 +6430,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_ROCKY_PAYLOAD, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Rotom"),
         .cryId = CRY_ROTOM,
@@ -6452,440 +6479,11 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_RotomMow,
             gShinyOverworldPalette_RotomMow
         )
-        .levelUpLearnset = sRotomBustLevelUpLearnset,
+        .levelUpLearnset = sRotomLevelUpLearnset,
         .teachableLearnset = sRotomTeachableLearnset,
         .formSpeciesIdTable = sRotomFormSpeciesIdTable,
+        .formChangeTable = sRotomFormChangeTable,
     },
-	
-	[SPECIES_ROTOM_RIDE] =
-	{
-		.baseHP        = 50,
-		.baseAttack    = 105,
-		.baseDefense   = 86,
-		.baseSpeed     = 107,
-		.baseSpAttack  = 107,
-		.baseSpDefense = 65,
-		.types = MON_TYPES(TYPE_ELECTRIC, TYPE_POISON),
-		.catchRate = 45,
-		.expYield = ROTOM_APPLIANCE_EXP_YIELD,
-		.evYield_Speed = 1,
-		.evYield_SpAttack = 1,
-		.genderRatio = MON_GENDERLESS,
-		.eggCycles = 20,
-		.friendship = STANDARD_FRIENDSHIP,
-		.growthRate = GROWTH_MEDIUM_FAST,
-		.eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-		.abilities = { ABILITY_SPEED_BOOST, ABILITY_NONE, ABILITY_NONE },
-		.bodyColor = BODY_COLOR_RED,
-		.speciesName = _("Rotom"),
-		.cryId = CRY_ROTOM,
-		.natDexNum = NATIONAL_DEX_ROTOM,
-		.categoryName = _("Plasma"),
-		.height = 3,
-		.weight = 3,
-		.description = COMPOUND_STRING(
-			"Rotom-Ride turns into a toxic speedster.\n"
-			"It zooms around leaving a poisonous trail\n"
-			"of static energy. It's both fast and\n"
-			"dangerous in battle."),
-		.pokemonScale = 530,
-		.pokemonOffset = 13,
-		.trainerScale = 256,
-		.trainerOffset = 0,
-		.frontPic = gMonFrontPic_RotomRide,
-		.frontPicSize = MON_COORDS_SIZE(56, 64),
-		.frontPicYOffset = 3,
-		.frontAnimFrames = ANIM_FRAMES(
-			ANIMCMD_FRAME(0, 15),
-			ANIMCMD_FRAME(1, 15),
-			ANIMCMD_FRAME(0, 15),
-			ANIMCMD_FRAME(1, 15),
-			ANIMCMD_FRAME(0, 15),
-		),
-		.frontAnimId = ANIM_TIP_MOVE_FORWARD,
-		.enemyMonElevation = 6,
-		.backPic = gMonBackPic_RotomRide,
-		.backPicSize = MON_COORDS_SIZE(56, 48),
-		.backPicYOffset = 10,
-		.backAnimId = BACK_ANIM_H_SLIDE,
-		.palette = gMonPalette_RotomRide,
-		.shinyPalette = gMonShinyPalette_RotomRide,
-		.iconSprite = gMonIcon_RotomRide,
-		.iconPalIndex = 0,
-		.pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-		SHADOW(2, 14, SHADOW_SIZE_M)
-		FOOTPRINT(Rotom)
-		OVERWORLD(
-			sPicTable_Rotom,
-			SIZE_32x32,
-			SHADOW_SIZE_M,
-			TRACKS_FOOT,
-			sAnimTable_Following,
-			gOverworldPalette_Rotom,
-			gShinyOverworldPalette_Rotom
-		)
-		.levelUpLearnset = sRotomRideLevelUpLearnset,
-		.teachableLearnset = sRotomTeachableLearnset,
-		.formSpeciesIdTable = sRotomFormSpeciesIdTable,
-	},
-	
-		[SPECIES_ROTOM_CASTER] =
-	{
-		.baseHP        = 50,
-		.baseAttack    = 130,
-		.baseDefense   = 80,
-		.baseSpeed     = 90,
-		.baseSpAttack  = 70,
-		.baseSpDefense = 130,
-		.types = MON_TYPES(TYPE_ELECTRIC, TYPE_DRAGON),
-		.catchRate = 45,
-		.expYield = ROTOM_APPLIANCE_EXP_YIELD,
-		.evYield_Speed = 1,
-		.evYield_SpAttack = 1,
-		.genderRatio = MON_GENDERLESS,
-		.eggCycles = 20,
-		.friendship = STANDARD_FRIENDSHIP,
-		.growthRate = GROWTH_MEDIUM_FAST,
-		.eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-		.abilities = { ABILITY_LONG_REACH, ABILITY_NONE, ABILITY_NONE },
-		.bodyColor = BODY_COLOR_RED,
-		.speciesName = _("Rotom"),
-		.cryId = CRY_ROTOM,
-		.natDexNum = NATIONAL_DEX_ROTOM,
-		.categoryName = _("Plasma"),
-		.height = 3,
-		.weight = 3,
-		.description = COMPOUND_STRING(
-			"Rotom-Ride turns into a toxic speedster.\n"
-			"It zooms around leaving a poisonous trail\n"
-			"of static energy. It's both fast and\n"
-			"dangerous in battle."),
-		.pokemonScale = 530,
-		.pokemonOffset = 13,
-		.trainerScale = 256,
-		.trainerOffset = 0,
-		.frontPic = gMonFrontPic_RotomCaster,
-		.frontPicSize = MON_COORDS_SIZE(64, 64),
-		.frontPicYOffset = 4,
-		.frontAnimFrames = ANIM_FRAMES(
-			ANIMCMD_FRAME(1, 50),
-			ANIMCMD_FRAME(0, 20),
-		),
-		.frontAnimId = ANIM_H_STRETCH,
-		.enemyMonElevation = 6,
-		.backPic = gMonBackPic_RotomCaster,
-		.backPicSize = MON_COORDS_SIZE(64, 56),
-		.backPicYOffset = 7,
-		.backAnimId = BACK_ANIM_V_SHAKE_LOW,
-		.palette = gMonPalette_RotomCaster,
-		.shinyPalette = gMonShinyPalette_RotomCaster,
-		.iconSprite = gMonIcon_RotomCaster,
-		.iconPalIndex = 5,
-		.pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-		SHADOW(0, 13, SHADOW_SIZE_M)
-		FOOTPRINT(Rotom)
-		OVERWORLD(
-			sPicTable_Rotom,
-			SIZE_32x32,
-			SHADOW_SIZE_M,
-			TRACKS_FOOT,
-			sAnimTable_Following,
-			gOverworldPalette_Rotom,
-			gShinyOverworldPalette_Rotom
-		)
-		.levelUpLearnset = sRotomCasterLevelUpLearnset,
-		.teachableLearnset = sRotomTeachableLearnset,
-		.formSpeciesIdTable = sRotomFormSpeciesIdTable,
-	},
-
-    [SPECIES_ROTOM_CHUCKS] =
-    {
-        .baseHP        = 50,
-        .baseAttack    = 125,
-        .baseDefense   = 95,
-        .baseSpeed     = 125,
-        .baseSpAttack  = 75,
-        .baseSpDefense = 80,
-        .types = MON_TYPES(TYPE_ELECTRIC, TYPE_DARK),
-        .catchRate = 45,
-        .expYield = ROTOM_APPLIANCE_EXP_YIELD,
-        .evYield_Speed = 1,
-        .evYield_SpAttack = 1,
-        .genderRatio = MON_GENDERLESS,
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_TECHNICIAN, ABILITY_NONE, ABILITY_NONE },
-        .bodyColor = BODY_COLOR_RED,
-        .speciesName = _("Rotom"),
-        .cryId = CRY_ROTOM,
-        .natDexNum = NATIONAL_DEX_ROTOM,
-        .categoryName = _("Plasma"),
-        .height = 3,
-        .weight = 3,
-        .description = COMPOUND_STRING(
-            "This form of Rotom focuses its\n"
-            "dark energy into overwhelming rapid\n"
-            "punches. It excels at blitzing\n"
-            "weaker targets with speed."),
-        .pokemonScale = 530,
-        .pokemonOffset = 13,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_RotomChucks,
-        .frontPicSize = MON_COORDS_SIZE(56, 64),
-        .frontPicYOffset = 3,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(0, 15),
-            ANIMCMD_FRAME(1, 15),
-            ANIMCMD_FRAME(0, 15),
-            ANIMCMD_FRAME(1, 15),
-            ANIMCMD_FRAME(0, 15),
-        ),
-        .frontAnimId = ANIM_TIP_MOVE_FORWARD,
-        .enemyMonElevation = 6,
-        .backPic = gMonBackPic_RotomChucks,
-        .backPicSize = MON_COORDS_SIZE(56, 48),
-        .backPicYOffset = 10,
-        .backAnimId = BACK_ANIM_H_SLIDE,
-        .palette = gMonPalette_RotomChucks,
-        .shinyPalette = gMonShinyPalette_RotomChucks,
-        .iconSprite = gMonIcon_RotomChucks,
-        .iconPalIndex = 0,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(2, 14, SHADOW_SIZE_M)
-        FOOTPRINT(Rotom)
-        OVERWORLD(
-			sPicTable_Rotom,
-			SIZE_32x32,
-			SHADOW_SIZE_M,
-			TRACKS_FOOT,
-			sAnimTable_Following,
-			gOverworldPalette_Rotom,
-			gShinyOverworldPalette_Rotom
-        )
-        .levelUpLearnset = sRotomChucksLevelUpLearnset,
-        .teachableLearnset = sRotomTeachableLearnset,
-        .formSpeciesIdTable = sRotomFormSpeciesIdTable,
-    },
-
-    [SPECIES_ROTOM_AXE] =
-    {
-        .baseHP        = 50,
-        .baseAttack    = 60,
-        .baseDefense   = 120,
-        .baseSpeed     = 130,
-        .baseSpAttack  = 90,
-        .baseSpDefense = 100,
-        .types = MON_TYPES(TYPE_ELECTRIC, TYPE_FIRE),
-        .catchRate = 45,
-        .expYield = ROTOM_APPLIANCE_EXP_YIELD,
-        .evYield_Speed = 1,
-        .evYield_SpAttack = 1,
-        .genderRatio = MON_GENDERLESS,
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_HUGE_POWER, ABILITY_NONE, ABILITY_NONE },
-        .bodyColor = BODY_COLOR_RED,
-        .speciesName = _("Rotom"),
-        .cryId = CRY_ROTOM,
-        .natDexNum = NATIONAL_DEX_ROTOM,
-        .categoryName = _("Plasma"),
-        .height = 3,
-        .weight = 3,
-        .description = COMPOUND_STRING(
-            "Rotom-Axe focuses its strength into\n"
-            "precise, blazing swings. The more\n"
-            "intensely it burns, the more powerful\n"
-            "its physical attacks become."),
-        .pokemonScale = 530,
-        .pokemonOffset = 13,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_RotomAxe,
-        .frontPicSize = MON_COORDS_SIZE(56, 64),
-        .frontPicYOffset = 3,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(0, 15),
-            ANIMCMD_FRAME(1, 15),
-            ANIMCMD_FRAME(0, 15),
-            ANIMCMD_FRAME(1, 15),
-            ANIMCMD_FRAME(0, 15),
-        ),
-        .frontAnimId = ANIM_TIP_MOVE_FORWARD,
-        .enemyMonElevation = 6,
-        .backPic = gMonBackPic_RotomAxe,
-        .backPicSize = MON_COORDS_SIZE(56, 48),
-        .backPicYOffset = 10,
-        .backAnimId = BACK_ANIM_H_SLIDE,
-        .palette = gMonPalette_RotomAxe,
-        .shinyPalette = gMonShinyPalette_RotomAxe,
-        .iconSprite = gMonIcon_RotomAxe,
-        .iconPalIndex = 0,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(2, 14, SHADOW_SIZE_M)
-        FOOTPRINT(Rotom)
-        OVERWORLD(
-			sPicTable_Rotom,
-			SIZE_32x32,
-			SHADOW_SIZE_M,
-			TRACKS_FOOT,
-			sAnimTable_Following,
-			gOverworldPalette_Rotom,
-			gShinyOverworldPalette_Rotom
-        )
-        .levelUpLearnset = sRotomAxeLevelUpLearnset,
-        .teachableLearnset = sRotomTeachableLearnset,
-        .formSpeciesIdTable = sRotomFormSpeciesIdTable,
-    },
-
-    [SPECIES_ROTOM_BLOCKER] =
-    {
-        .baseHP        = 50,
-        .baseAttack    = 70,
-        .baseDefense   = 140,
-        .baseSpeed     = 100,
-        .baseSpAttack  = 100,
-        .baseSpDefense = 90,
-        .types = MON_TYPES(TYPE_ELECTRIC, TYPE_FAIRY),
-        .catchRate = 45,
-        .expYield = ROTOM_APPLIANCE_EXP_YIELD,
-        .evYield_Speed = 1,
-        .evYield_SpAttack = 1,
-        .genderRatio = MON_GENDERLESS,
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_CLEAR_BODY, ABILITY_NONE, ABILITY_NONE },
-        .bodyColor = BODY_COLOR_RED,
-        .speciesName = _("Rotom"),
-        .cryId = CRY_ROTOM,
-        .natDexNum = NATIONAL_DEX_ROTOM,
-        .categoryName = _("Plasma"),
-        .height = 3,
-        .weight = 3,
-        .description = COMPOUND_STRING(
-            "Rotom-Blocker forms a magical barrier\n"
-            "with its appliance. It can intercept\n"
-            "attacks with its wall of energy while\n"
-            "maintaining offense."),
-        .pokemonScale = 530,
-        .pokemonOffset = 13,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_RotomBlocker,
-        .frontPicSize = MON_COORDS_SIZE(56, 64),
-        .frontPicYOffset = 3,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(0, 15),
-            ANIMCMD_FRAME(1, 15),
-            ANIMCMD_FRAME(0, 15),
-            ANIMCMD_FRAME(1, 15),
-            ANIMCMD_FRAME(0, 15),
-        ),
-        .frontAnimId = ANIM_TIP_MOVE_FORWARD,
-        .enemyMonElevation = 6,
-        .backPic = gMonBackPic_RotomBlocker,
-        .backPicSize = MON_COORDS_SIZE(56, 48),
-        .backPicYOffset = 10,
-        .backAnimId = BACK_ANIM_H_SLIDE,
-        .palette = gMonPalette_RotomBlocker,
-        .shinyPalette = gMonShinyPalette_RotomBlocker,
-        .iconSprite = gMonIcon_RotomBlocker,
-        .iconPalIndex = 0,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(2, 14, SHADOW_SIZE_M)
-        FOOTPRINT(Rotom)
-        OVERWORLD(
-			sPicTable_Rotom,
-			SIZE_32x32,
-			SHADOW_SIZE_M,
-			TRACKS_FOOT,
-			sAnimTable_Following,
-			gOverworldPalette_Rotom,
-			gShinyOverworldPalette_Rotom
-        )
-        .levelUpLearnset = sRotomBlockerLevelUpLearnset,
-        .teachableLearnset = sRotomTeachableLearnset,
-        .formSpeciesIdTable = sRotomFormSpeciesIdTable,
-    },
-
-    [SPECIES_ROTOM_SLYDER] =
-    {
-        .baseHP        = 50,
-        .baseAttack    = 55,
-        .baseDefense   = 80,
-        .baseSpeed     = 110,
-        .baseSpAttack  = 145,
-        .baseSpDefense = 110,
-        .types = MON_TYPES(TYPE_ELECTRIC, TYPE_PSYCHIC),
-        .catchRate = 45,
-        .expYield = ROTOM_APPLIANCE_EXP_YIELD,
-        .evYield_Speed = 1,
-        .evYield_SpAttack = 1,
-        .genderRatio = MON_GENDERLESS,
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
-        .bodyColor = BODY_COLOR_RED,
-        .speciesName = _("Rotom"),
-        .cryId = CRY_ROTOM,
-        .natDexNum = NATIONAL_DEX_ROTOM,
-        .categoryName = _("Plasma"),
-        .height = 3,
-        .weight = 3,
-        .description = COMPOUND_STRING(
-            "Rotom-Slyder is a sleek and efficient\n"
-            "scout that relies on enhanced awareness\n"
-            "and mobility. Its telekinetic power\n"
-            "lets it slip through tight defenses."),
-        .pokemonScale = 530,
-        .pokemonOffset = 13,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_RotomSlyder,
-        .frontPicSize = MON_COORDS_SIZE(56, 64),
-        .frontPicYOffset = 3,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(0, 15),
-            ANIMCMD_FRAME(1, 15),
-            ANIMCMD_FRAME(0, 15),
-            ANIMCMD_FRAME(1, 15),
-            ANIMCMD_FRAME(0, 15),
-        ),
-        .frontAnimId = ANIM_TIP_MOVE_FORWARD,
-        .enemyMonElevation = 6,
-        .backPic = gMonBackPic_RotomSlyder,
-        .backPicSize = MON_COORDS_SIZE(56, 48),
-        .backPicYOffset = 10,
-        .backAnimId = BACK_ANIM_H_SLIDE,
-        .palette = gMonPalette_RotomSlyder,
-        .shinyPalette = gMonShinyPalette_RotomSlyder,
-        .iconSprite = gMonIcon_RotomSlyder,
-        .iconPalIndex = 0,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(2, 14, SHADOW_SIZE_M)
-        FOOTPRINT(Rotom)
-        OVERWORLD(
-			sPicTable_Rotom,
-			SIZE_32x32,
-			SHADOW_SIZE_M,
-			TRACKS_FOOT,
-			sAnimTable_Following,
-			gOverworldPalette_Rotom,
-			gShinyOverworldPalette_Rotom
-        )
-        .levelUpLearnset = sRotomSlyderLevelUpLearnset,
-        .teachableLearnset = sRotomTeachableLearnset,
-        .formSpeciesIdTable = sRotomFormSpeciesIdTable,
-    },
-
 #endif //P_FAMILY_ROTOM
 
 #if P_FAMILY_UXIE

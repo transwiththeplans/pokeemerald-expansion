@@ -21,6 +21,8 @@ static u16 sSecondaryTilesetAnimCounterMax;
 static void (*sPrimaryTilesetAnimCallback)(u16);
 static void (*sSecondaryTilesetAnimCallback)(u16);
 
+#define MAUVILLE_INSIDE_ANIM_COUNTER_MAX 4536
+
 static void _InitPrimaryTilesetAnimation(void);
 static void _InitSecondaryTilesetAnimation(void);
 static void TilesetAnim_General(u16);
@@ -40,6 +42,7 @@ static void TilesetAnim_SootopolisGym(u16);
 static void TilesetAnim_Cave(u16);
 static void TilesetAnim_EliteFour(u16);
 static void TilesetAnim_MauvilleGym(u16);
+static void TilesetAnim_Mauville_Inside(u16);
 static void TilesetAnim_BikeShop(u16);
 static void TilesetAnim_BattlePyramid(u16);
 static void TilesetAnim_BattleDome(u16);
@@ -70,6 +73,9 @@ static void QueueAnimTiles_Cave_Lava(u16);
 static void QueueAnimTiles_BattleFrontierOutsideWest_Flag(u16);
 static void QueueAnimTiles_BattleFrontierOutsideEast_Flag(u16);
 static void QueueAnimTiles_MauvilleGym_ElectricGates(u16);
+static void QueueAnimTiles_Mauville_Inside_GameCornerSign(u16);
+static void QueueAnimTiles_Mauville_Inside_GameCornerLights(u16);
+static void QueueAnimTiles_Mauville_Inside_GymLights(u16);
 static void QueueAnimTiles_SootopolisGym_Waterfalls(u16);
 static void QueueAnimTiles_EliteFour_GroundLights(u16);
 static void QueueAnimTiles_EliteFour_WallLights(u16);
@@ -475,6 +481,77 @@ const u16 *const gTilesetAnims_MauvilleGym_ElectricGates[] = {
     gTilesetAnims_MauvilleGym_ElectricGates_Frame1
 };
 
+const u16 gTilesetAnims_Mauville_Inside_GameCornerSign_Frame0[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/game_corner_sign/0.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GameCornerSign_Frame1[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/game_corner_sign/1.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GameCornerSign_Frame2[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/game_corner_sign/2.4bpp");
+
+const u16 *const gTilesetAnims_Mauville_Inside_GameCornerSign[] = {
+    gTilesetAnims_Mauville_Inside_GameCornerSign_Frame0,
+    gTilesetAnims_Mauville_Inside_GameCornerSign_Frame1,
+    gTilesetAnims_Mauville_Inside_GameCornerSign_Frame2,
+};
+
+const u16 gTilesetAnims_Mauville_Inside_GameCornerLights_Frame0[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/game_corner_lights/0.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GameCornerLights_Frame1[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/game_corner_lights/1.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GameCornerLights_Frame2[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/game_corner_lights/2.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GameCornerLights_Frame3[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/game_corner_lights/3.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GameCornerLights_Frame4[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/game_corner_lights/4.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GameCornerLights_Frame5[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/game_corner_lights/5.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GameCornerLights_Frame6[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/game_corner_lights/6.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GameCornerLights_Frame7[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/game_corner_lights/7.4bpp");
+
+const u16 *const gTilesetAnims_Mauville_Inside_GameCornerLights[] = {
+    gTilesetAnims_Mauville_Inside_GameCornerLights_Frame0,
+    gTilesetAnims_Mauville_Inside_GameCornerLights_Frame1,
+    gTilesetAnims_Mauville_Inside_GameCornerLights_Frame2,
+    gTilesetAnims_Mauville_Inside_GameCornerLights_Frame3,
+    gTilesetAnims_Mauville_Inside_GameCornerLights_Frame4,
+    gTilesetAnims_Mauville_Inside_GameCornerLights_Frame5,
+    gTilesetAnims_Mauville_Inside_GameCornerLights_Frame6,
+    gTilesetAnims_Mauville_Inside_GameCornerLights_Frame7,
+};
+
+const u16 gTilesetAnims_Mauville_Inside_GymLights_Frame0[]  = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/gym_lights/0.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GymLights_Frame1[]  = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/gym_lights/1.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GymLights_Frame2[]  = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/gym_lights/2.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GymLights_Frame3[]  = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/gym_lights/3.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GymLights_Frame4[]  = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/gym_lights/4.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GymLights_Frame5[]  = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/gym_lights/5.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GymLights_Frame6[]  = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/gym_lights/6.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GymLights_Frame7[]  = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/gym_lights/7.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GymLights_Frame8[]  = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/gym_lights/8.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GymLights_Frame9[]  = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/gym_lights/9.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GymLights_Frame10[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/gym_lights/10.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GymLights_Frame11[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/gym_lights/11.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GymLights_Frame12[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/gym_lights/12.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GymLights_Frame13[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/gym_lights/13.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GymLights_Frame14[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/gym_lights/14.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GymLights_Frame15[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/gym_lights/15.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GymLights_Frame16[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/gym_lights/16.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GymLights_Frame17[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/gym_lights/17.4bpp");
+const u16 gTilesetAnims_Mauville_Inside_GymLights_Frame18[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/gym_lights/18.4bpp");
+
+const u16 *const gTilesetAnims_Mauville_Inside_GymLights[] = {
+    gTilesetAnims_Mauville_Inside_GymLights_Frame0,
+    gTilesetAnims_Mauville_Inside_GymLights_Frame1,
+    gTilesetAnims_Mauville_Inside_GymLights_Frame2,
+    gTilesetAnims_Mauville_Inside_GymLights_Frame3,
+    gTilesetAnims_Mauville_Inside_GymLights_Frame4,
+    gTilesetAnims_Mauville_Inside_GymLights_Frame5,
+    gTilesetAnims_Mauville_Inside_GymLights_Frame6,
+    gTilesetAnims_Mauville_Inside_GymLights_Frame7,
+    gTilesetAnims_Mauville_Inside_GymLights_Frame8,
+    gTilesetAnims_Mauville_Inside_GymLights_Frame9,
+    gTilesetAnims_Mauville_Inside_GymLights_Frame10,
+    gTilesetAnims_Mauville_Inside_GymLights_Frame11,
+    gTilesetAnims_Mauville_Inside_GymLights_Frame12,
+    gTilesetAnims_Mauville_Inside_GymLights_Frame13,
+    gTilesetAnims_Mauville_Inside_GymLights_Frame14,
+    gTilesetAnims_Mauville_Inside_GymLights_Frame15,
+    gTilesetAnims_Mauville_Inside_GymLights_Frame16,
+    gTilesetAnims_Mauville_Inside_GymLights_Frame17,
+};
+
 const u16 gTilesetAnims_BikeShop_BlinkingLights_Frame0[] = INCBIN_U16("data/tilesets/secondary/bike_shop/anim/blinking_lights/0.4bpp");
 const u16 gTilesetAnims_BikeShop_BlinkingLights_Frame1[] = INCBIN_U16("data/tilesets/secondary/bike_shop/anim/blinking_lights/1.4bpp");
 const u16 tileset_anims_space_7[16] = {};
@@ -813,6 +890,13 @@ void InitTilesetAnim_MauvilleGym(void)
     sSecondaryTilesetAnimCallback = TilesetAnim_MauvilleGym;
 }
 
+void InitTilesetAnim_MauvilleInside(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = MAUVILLE_INSIDE_ANIM_COUNTER_MAX;
+    sSecondaryTilesetAnimCallback = TilesetAnim_Mauville_Inside;
+}
+
 void InitTilesetAnim_BikeShop(void)
 {
     sSecondaryTilesetAnimCounter = 0;
@@ -1069,6 +1153,18 @@ static void TilesetAnim_MauvilleGym(u16 timer)
         QueueAnimTiles_MauvilleGym_ElectricGates(timer / 2);
 }
 
+static void TilesetAnim_Mauville_Inside(u16 timer)
+{
+    if (timer % 9 == 0)
+        QueueAnimTiles_Mauville_Inside_GameCornerSign(timer / 9);
+
+    if (timer % 7 == 0)
+        QueueAnimTiles_Mauville_Inside_GameCornerLights(timer / 7);
+
+    if (timer % 18 == 0)
+        QueueAnimTiles_Mauville_Inside_GymLights(timer / 18);
+}
+
 static void TilesetAnim_SootopolisGym(u16 timer)
 {
     if (timer % 8 == 0)
@@ -1133,6 +1229,24 @@ static void QueueAnimTiles_EliteFour_GroundLights(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_EliteFour_FloorLight);
     AppendTilesetAnimToBuffer(gTilesetAnims_EliteFour_FloorLight[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 480)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_Mauville_Inside_GameCornerSign(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Mauville_Inside_GameCornerSign);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Mauville_Inside_GameCornerSign[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 416)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_Mauville_Inside_GameCornerLights(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Mauville_Inside_GameCornerLights);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Mauville_Inside_GameCornerLights[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 455)), 1 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_Mauville_Inside_GymLights(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Mauville_Inside_GymLights);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Mauville_Inside_GymLights[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 240)), 6 * TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_MauvilleGym_ElectricGates(u16 timer)

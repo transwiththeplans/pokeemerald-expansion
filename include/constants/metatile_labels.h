@@ -304,6 +304,13 @@
 #define METATILE_Mauville_Door_BattleTent              0x3D4
 #define METATILE_Mauville_Door_CyclingRoad             0x289
 #define METATILE_Mauville_Door_Verdanturf              0x3A1
+#define METATILE_Mauville_Inside_DepDoor               0x3A9
+#define METATILE_Mauville_Inside_ElevatorDoor          0x2A4
+#define METATILE_Mauville_Inside_ElevatorDoorRight     0x2A2
+#define METATILE_Mauville_Inside_GameCornerDoor        0x31A
+#define METATILE_Mauville_Inside_GameCornerDoor_Right  0x31B
+#define METATILE_Mauville_Inside_GymDoor               0x273
+#define METATILE_Mauville_Inside_SmoothieDoor          0x2EC
 #define METATILE_Mauville_MirageTower_Tile0            0x3D8
 #define METATILE_Mauville_MirageTower_Tile1            0x3D9
 #define METATILE_Mauville_MirageTower_Tile10           0x3E4
@@ -351,15 +358,6 @@
 #define METATILE_MauvilleGym_RedBeamH4_On     0x22B
 #define METATILE_MauvilleGym_RedBeamV1_On     0x241
 #define METATILE_MauvilleGym_RedBeamV2_On     0x249
-
-// gTileset_Mauville_Inside
-#define METATILE_Mauville_Inside_DepDoor               0x3A9
-#define METATILE_Mauville_Inside_ElevatorDoor          0x2A4
-#define METATILE_Mauville_Inside_ElevatorDoorRight     0x2A2
-#define METATILE_Mauville_Inside_GameCornerDoor        0x31A
-#define METATILE_Mauville_Inside_GameCornerDoor_Right  0x31B
-#define METATILE_Mauville_Inside_GymDoor               0x273
-#define METATILE_Mauville_Inside_SmoothieDoor          0x2EC
 
 // gTileset_MeteorFalls
 #define METATILE_MeteorFalls_CaveEntrance_Bottom  0x24E

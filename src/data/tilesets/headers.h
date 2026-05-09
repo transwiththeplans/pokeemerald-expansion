@@ -850,7 +850,7 @@ const struct Tileset gTileset_Mauville_Inside =
     .palettes = gTilesetPalettes_Mauville_Inside,
     .metatiles = gMetatiles_Mauville_Inside,
     .metatileAttributes = gMetatileAttributes_Mauville_Inside,
-    .callback = NULL,
+    .callback = InitTilesetAnim_MauvilleInside,
 };
 
 const struct Tileset gTileset_Mauville_Rooftop =

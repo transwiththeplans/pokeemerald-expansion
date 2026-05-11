@@ -17601,6 +17601,26 @@ Bulbasaur
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+=== TRAINER_ANIMO_1 ===
+Name: ANIMO
+Class: Rival
+Pic: Dr Animo
+Gender: Male
+Music: Suspicious
+Double Battle: No
+
+Slowpoke
+Level: 16
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Charcadet
+Level: 18
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Bagon
+Level: 17
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 === TRAINER_BRENDAN_PLACEHOLDER ===
 Name: BRENDAN
 Class: RS Protag

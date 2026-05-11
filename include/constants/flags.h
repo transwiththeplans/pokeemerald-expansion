@@ -517,7 +517,7 @@
 #define FLAG_HIDE_KAI_IN_RUSTBORO            0x1DE
 #define FLAG_HIDE_ROUTE_104_MR_BRINEY2       0x1DF
 #define FLAG_MR_BRINEY_PEEKO_INTRO           0x1E0
-#define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
+#define FLAG_HIDE_PETALBURG_WOODS_ANIMO      0x1E1
 #define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
 #define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
 
@@ -664,7 +664,7 @@
 #define FLAG_ITEM_PETALBURG_FIELDS_INNATE_CANDY    0x26B
 #define FLAG_ITEM_PETALBURG_FIELDS_ETHER           0x26C
 #define FLAG_HIDDEN_ITEM_PETALBURG_FIELDS_PROTEIN  0x26D
-#define FLAG_UNUSED_0x26E  0x26E // Unused Flag
+#define FLAG_ITEM_PETALBURG_WOODS_INNATE_CANDY     0x26E
 #define FLAG_UNUSED_0x26F  0x26F // Unused Flag
 #define FLAG_UNUSED_0x270  0x270 // Unused Flag
 #define FLAG_UNUSED_0x271  0x271 // Unused Flag

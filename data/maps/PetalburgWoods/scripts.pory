@@ -473,3 +473,72 @@ PetalburgWoods_Text_TrainerTipsPP:
 	.string "taken to a POKéMON CENTER.$"
 
 `
+
+script PetalburgWoods_EventScript_MeetAnimoIntro {
+    lock
+    msgbox(format("???: Fascinating…still so much to discover…"))
+    closemessage
+    playse(SE_PIN)
+    applymovement(LOCALID_PETALBURG_WOODS_ANIMO, moves(
+        emote_exclamation_mark
+        delay_16 * 2
+        walk_in_place_faster_up
+    ))
+    waitmovement(0)
+    delay(30)
+    msgbox(format("???: …you."))
+    msgbox(format("???: Ah, I mean…hello there."))
+    closemessage
+}
+
+script PetalburgWoods_EventScript_MeetAnimoIntroLeft {
+    call(PetalburgWoods_EventScript_MeetAnimoIntro)
+    applymovement(LOCALID_PETALBURG_WOODS_ANIMO, moves(
+        walk_up
+    ))
+    waitmovement(0)
+    call(PetalburgWoods_EventScript_MeetAnimo)
+}
+
+script PetalburgWoods_EventScript_MeetAnimoIntroRight {
+    call(PetalburgWoods_EventScript_MeetAnimoIntro)
+    applymovement(LOCALID_PETALBURG_WOODS_ANIMO, moves(
+        walk_up
+        walk_in_place_faster_right
+        walk_right
+        walk_in_place_faster_up
+    ))
+    waitmovement(0)
+    setobjectxyperm(LOCALID_PETALBURG_WOODS_INNATE_CANDY, 21, 10)
+    call(PetalburgWoods_EventScript_MeetAnimo)
+}
+
+script PetalburgWoods_EventScript_MeetAnimo {
+    delay(30)
+    msgbox(format("???: Are you…a trainer? A newbie?"))
+    closemessage
+    delay(30)
+    msgbox(format("Animo: Who am I? I am…Doctor Animo."))
+    msgbox(format("Animo: I am an independent researcher. I'm investigating the strange mutations that occurred across the Hoenn region."))
+    msgbox(format("Animo: …Mhmph. I need direct confirmation on these “individual values” on these Pokemon…"))
+    msgbox(format("Animo: Would you mind?"))
+    closemessage
+    trainerbattle_no_intro(TRAINER_ANIMO_1, format("…"))
+    clearflag(FLAG_ITEM_PETALBURG_WOODS_INNATE_CANDY)
+    addobject(LOCALID_PETALBURG_WOODS_INNATE_CANDY)
+    msgbox(format("Animo: …"))
+    msgbox(format("Animo: …I see. I see."))
+    msgbox(format("Animo: It appears…I have much to learn about this world…"))
+    closemessage
+    delay(30)
+    applymovement(LOCALID_PETALBURG_WOODS_ANIMO, moves(
+        walk_in_place_faster_down
+        walk_down * 6
+    ))
+    waitmovement(0)
+    setflag(FLAG_HIDE_PETALBURG_WOODS_ANIMO)
+    removeobject(LOCALID_PETALBURG_WOODS_ANIMO)
+    setvar(VAR_PETALBURG_WOODS_STATE, 3)
+    release
+    end
+}

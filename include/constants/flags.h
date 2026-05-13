@@ -518,7 +518,7 @@
 #define FLAG_HIDE_ROUTE_104_MR_BRINEY2       0x1DF
 #define FLAG_MR_BRINEY_PEEKO_INTRO           0x1E0
 #define FLAG_HIDE_PETALBURG_WOODS_ANIMO      0x1E1
-#define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
+#define FLAG_HIDE_DEWFORD_GARDEN_BRAWLY      0x1E2
 #define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
 
 // Mystery Gift Flags (Unknown)

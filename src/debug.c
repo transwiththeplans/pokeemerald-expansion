@@ -3673,7 +3673,8 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_RG_TEACHY_TV_MENU)        \
     X(MUS_OE_VS_WILD)               \
     X(MUS_OE_VS_TRAINER)            \
-    X(MUS_OE_VS_GYM_LEADER)
+    X(MUS_OE_VS_GYM_LEADER)         \
+    X(MUS_OE_VS_RIVAL)
 
 #define SOUND_LIST_SE               \
     X(SE_USE_ITEM)                  \

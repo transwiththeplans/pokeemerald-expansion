@@ -495,7 +495,8 @@
 #define MUS_OE_VS_WILD              610
 #define MUS_OE_VS_TRAINER           611
 #define MUS_OE_VS_GYM_LEADER        612
-#define END_MUS                     MUS_OE_VS_GYM_LEADER
+#define MUS_OE_VS_RIVAL             613
+#define END_MUS                     MUS_OE_VS_RIVAL
 
 // These PH_* constants are phoneme sounds used by the "bard" NPC (see src/bard_music.c and src/mauville_old_man.c).
 // Each comes in a triplet of PH_*_BLEND, PH_*_HELD, and PH_*_SOLO, and the name of each triplet incorporates the English phonetic sound it represents.

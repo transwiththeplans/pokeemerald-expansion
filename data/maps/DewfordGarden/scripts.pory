@@ -1,4 +1,61 @@
-raw `
-DewfordGarden_MapScripts::
-	.byte 0
-`
+mapscripts DewfordGarden_MapScripts {}
+
+script DewfordGarden_EventScript_Brawly {
+    lock
+    msgbox("…")
+    msgbox("…")
+    msgbox("…")
+    msgbox("SNOOOOOOOORE")
+    msgbox(format("(The guy's asleep! Wake him up?)"), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == NO) {
+        msgbox(format("(He looks tired! Better let him rest.)"))
+    } else {
+        playse(SE_PIN)
+        applymovement(LOCALID_DEWFORD_GARDEN_BRAWLY, moves(
+            emote_exclamation_mark
+        ))
+        waitmovement(0)
+        msgbox("H-huh? Whaa?")
+        msgbox(format("Ah, sorry. Must've dozed off after my training session. You here for a challenge?"))
+        msgbox(format("…oh, you’re Max's grandkid? I can see the resemblance. Old man's got some serious skills. Maybe you'll be a challenge, too!"))
+        msgbox(format("See you at the gym!"))
+        closemessage
+        delay(30)
+        getobjectfacingdirection(LOCALID_PLAYER, VAR_0x8008)
+        switch(var(VAR_0x8008)) {
+            case DIR_WEST:
+                applymovement(LOCALID_PLAYER, moves(
+                    delay_16
+                    delay_8
+                    walk_in_place_faster_down
+                    delay_8
+                    walk_in_place_faster_right
+                ))
+                applymovement(LOCALID_DEWFORD_GARDEN_BRAWLY, moves(
+                    walk_in_place_faster_down
+                    walk_fast_down
+                    walk_in_place_faster_right
+                    walk_fast_right * 9
+                ))
+            case DIR_NORTH:
+                applymovement(LOCALID_PLAYER, moves(
+                    delay_8
+                    walk_in_place_faster_right
+                ))
+                applymovement(LOCALID_DEWFORD_GARDEN_BRAWLY, moves(
+                    walk_in_place_faster_right
+                    walk_fast_right * 9
+                ))
+            default:
+                applymovement(LOCALID_DEWFORD_GARDEN_BRAWLY, moves(
+                    walk_in_place_faster_right
+                    walk_fast_right * 9
+                ))
+        }
+        waitmovement(0)
+        removeobject(LOCALID_DEWFORD_GARDEN_BRAWLY)
+        setflag(FLAG_HIDE_DEWFORD_GARDEN_BRAWLY)
+    }
+    release
+    end
+}

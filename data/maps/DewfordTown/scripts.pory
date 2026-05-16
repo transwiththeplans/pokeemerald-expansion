@@ -791,3 +791,12 @@ DewfordTown_Text_YeahDefinitionOfInRightNow:
 	.string "“{STR_VAR_1}” is the\n"
 	.string "definition of “in” right now.$"
 `
+
+script DewfordTown_EventScript_GymGuide {
+    msgbox(format(
+        "Hey, champ in the making. Looking for Brawly?
+         He's out in the Garden, doing some training. Go
+         find him if you want a good battle!"
+    ), MSGBOX_NPC)
+    end
+}

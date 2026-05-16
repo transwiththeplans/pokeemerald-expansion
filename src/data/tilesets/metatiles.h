@@ -222,3 +222,6 @@ const u16 gMetatileAttributes_Verdanturf[] = INCBIN_U16("data/tilesets/secondary
 
 const u16 gMetatiles_Mauville_Desert[] = INCBIN_U16("data/tilesets/secondary/mauville_desert/metatiles.bin");
 const u16 gMetatileAttributes_Mauville_Desert[] = INCBIN_U16("data/tilesets/secondary/mauville_desert/metatile_attributes.bin");
+
+const u16 gMetatiles_Mauville_Buildings[] = INCBIN_U16("data/tilesets/secondary/mauville_buildings/metatiles.bin");
+const u16 gMetatileAttributes_Mauville_Buildings[] = INCBIN_U16("data/tilesets/secondary/mauville_buildings/metatile_attributes.bin");

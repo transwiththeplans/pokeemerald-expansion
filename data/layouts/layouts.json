@@ -585,19 +585,19 @@
       "id": "LAYOUT_HOUSE1",
       "name": "House1_Layout",
       "width": 10,
-      "height": 12,
+      "height": 9,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_InsideOfTruck",
+      "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/House1/border.bin",
       "blockdata_filepath": "data/layouts/House1/map.bin"
     },
     {
       "id": "LAYOUT_HOUSE2",
       "name": "House2_Layout",
-      "width": 10,
-      "height": 12,
+      "width": 11,
+      "height": 8,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_InsideOfTruck",
+      "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/House2/border.bin",
       "blockdata_filepath": "data/layouts/House2/map.bin"
     },
@@ -794,10 +794,10 @@
     {
       "id": "LAYOUT_HOUSE_WITH_BED",
       "name": "HouseWithBed_Layout",
-      "width": 12,
-      "height": 12,
+      "width": 10,
+      "height": 8,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_InsideOfTruck",
+      "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/HouseWithBed/border.bin",
       "blockdata_filepath": "data/layouts/HouseWithBed/map.bin"
     },
@@ -4607,9 +4607,19 @@
       "width": 60,
       "height": 52,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_InsideOfTruck",
+      "secondary_tileset": "gTileset_Mauville_Buildings",
       "border_filepath": "data/layouts/MauvilleCity_Inside_2F_Buildings/border.bin",
       "blockdata_filepath": "data/layouts/MauvilleCity_Inside_2F_Buildings/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_INSIDE_FOOD_COURT",
+      "name": "MauvilleCity_Inside_Food_Court_Layout",
+      "width": 22,
+      "height": 21,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Mauville_Buildings",
+      "border_filepath": "data/layouts/MauvilleCity_Inside_Food_Court/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_Inside_Food_Court/map.bin"
     }
   ]
 }

@@ -2,3 +2,9 @@ raw `
 MauvilleCity_Inside_2F_MapScripts::
 	.byte 0
 `
+
+script MauvilleCity_Inside_2F_EventScript_RuinManiac {
+    // Placeholder dialogue.
+    msgbox(format("Mauville has something new around every corner."), MSGBOX_NPC)
+    end
+}

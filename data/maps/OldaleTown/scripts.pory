@@ -462,3 +462,33 @@ OldaleTown_Text_TownSign:
 	.string "“Where things start off scarce.”$"
 
 `
+
+script OldaleTown_EventScript_SouthWoman {
+    // Placeholder dialogue.
+    msgbox(format("Oldale is a nice place to rest before heading out again."), MSGBOX_NPC)
+    end
+}
+
+script OldaleTown_EventScript_LittleBoy {
+    // Placeholder dialogue.
+    msgbox(format("Oldale is a nice place to rest before heading out again."), MSGBOX_NPC)
+    end
+}
+
+script OldaleTown_EventScript_LittleGirl {
+    // Placeholder dialogue.
+    msgbox(format("Oldale is a nice place to rest before heading out again."), MSGBOX_NPC)
+    end
+}
+
+script OldaleTown_EventScript_OldMan {
+    // Placeholder dialogue.
+    msgbox(format("Oldale is a nice place to rest before heading out again."), MSGBOX_NPC)
+    end
+}
+
+script OldaleTown_EventScript_OldWoman {
+    // Placeholder dialogue.
+    msgbox(format("Oldale is a nice place to rest before heading out again."), MSGBOX_NPC)
+    end
+}

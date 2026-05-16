@@ -1,1 +1,13 @@
 mapscripts  LittlerootTown_House1_MapScripts {}
+
+script LittlerootTown_House1_EventScript_Woman {
+    // Placeholder dialogue.
+    msgbox(format("A quiet home is the best place to plan your next trip."), MSGBOX_NPC)
+    end
+}
+
+script LittlerootTown_House1_EventScript_Girl {
+    // Placeholder dialogue.
+    msgbox(format("A quiet home is the best place to plan your next trip."), MSGBOX_NPC)
+    end
+}

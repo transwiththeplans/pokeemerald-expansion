@@ -564,3 +564,9 @@ Route109_Text_TrainerTipsSign:
 	.string "POKéMON raised by TRAINERS are said\n"
 	.string "to grow stronger than wild POKéMON.$"
 `
+
+script Route109_EventScript_BeachSailor {
+    // Placeholder dialogue.
+    msgbox(format("Nothing beats a day by the beach."), MSGBOX_NPC)
+    end
+}

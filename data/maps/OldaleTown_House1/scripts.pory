@@ -15,3 +15,9 @@ OldaleTown_House1_Text_LeftPokemonGoesOutFirst:
 	.string "It could give you an advantage.$"
 
 `
+
+script OldaleTown_House1_EventScript_LittleGirl {
+    // Placeholder dialogue.
+    msgbox(format("Take care when you travel beyond town."), MSGBOX_NPC)
+    end
+}

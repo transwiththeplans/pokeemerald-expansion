@@ -528,3 +528,21 @@ RusturfTunnel_Text_MikePostBattle:
 	.string "There's a feel-good story!$"
 
 `
+
+script RusturfTunnel_EventScript_BlackBelt {
+    // Placeholder dialogue.
+    msgbox(format("Sound carries far inside this tunnel."), MSGBOX_NPC)
+    end
+}
+
+script RusturfTunnel_EventScript_OldMan {
+    // Placeholder dialogue.
+    msgbox(format("Sound carries far inside this tunnel."), MSGBOX_NPC)
+    end
+}
+
+script RusturfTunnel_EventScript_Woman {
+    // Placeholder dialogue.
+    msgbox(format("Sound carries far inside this tunnel."), MSGBOX_NPC)
+    end
+}

@@ -1746,3 +1746,39 @@ script RustboroCity_EventScript_FamilyMeetupAfterBattle {
 
     releaseall
 }
+
+script RustboroCity_EventScript_SouthFisherman {
+    // Placeholder dialogue.
+    msgbox(format("Rustboro is busy, but people here are kind."), MSGBOX_NPC)
+    end
+}
+
+script RustboroCity_EventScript_NorthFisherman {
+    // Placeholder dialogue.
+    msgbox(format("Rustboro is busy, but people here are kind."), MSGBOX_NPC)
+    end
+}
+
+script RustboroCity_EventScript_SouthOldMan {
+    // Placeholder dialogue.
+    msgbox(format("Rustboro is busy, but people here are kind."), MSGBOX_NPC)
+    end
+}
+
+script RustboroCity_EventScript_SouthOldWoman {
+    // Placeholder dialogue.
+    msgbox(format("Rustboro is busy, but people here are kind."), MSGBOX_NPC)
+    end
+}
+
+script RustboroCity_EventScript_RoxanneOutside {
+    // Placeholder dialogue.
+    msgbox(format("Rustboro is busy, but people here are kind."), MSGBOX_NPC)
+    end
+}
+
+script RustboroCity_EventScript_FlanneryOutside {
+    // Placeholder dialogue.
+    msgbox(format("Rustboro is busy, but people here are kind."), MSGBOX_NPC)
+    end
+}

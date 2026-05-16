@@ -22,6 +22,11 @@
       "map": "MAP_ROUTE113",
       "offset": 0,
       "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE111_METEOR_RESORT",
+      "offset": -1,
+      "direction": "down"
     }
   ],
   "object_events": [

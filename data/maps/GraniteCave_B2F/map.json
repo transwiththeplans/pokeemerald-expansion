@@ -141,7 +141,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "GraniteCave_B2F_EventScript_Hiker",
       "flag": "0"
     },
     {
@@ -154,7 +154,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "GraniteCave_B2F_EventScript_NorthHexManiac",
       "flag": "0"
     },
     {
@@ -167,7 +167,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "GraniteCave_B2F_EventScript_SouthHexManiac",
       "flag": "0"
     },
     {
@@ -180,7 +180,7 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "GraniteCave_B2F_EventScript_PokefanF",
       "flag": "0"
     },
     {
@@ -193,7 +193,7 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "GraniteCave_B2F_EventScript_PokefanM",
       "flag": "0"
     },
     {
@@ -206,7 +206,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "GraniteCave_B2F_EventScript_OldMan",
       "flag": "0"
     }
   ],

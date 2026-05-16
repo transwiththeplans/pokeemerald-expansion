@@ -1,1 +1,7 @@
 mapscripts MauvilleCity_Inside_Food_Court_MapScripts {}
+
+script MauvilleCity_Inside_Food_Court_EventScript_LittleBoy {
+    // Placeholder dialogue.
+    msgbox(format("Good food makes a long journey feel shorter."), MSGBOX_NPC)
+    end
+}

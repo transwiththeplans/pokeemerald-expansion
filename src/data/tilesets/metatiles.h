@@ -225,3 +225,6 @@ const u16 gMetatileAttributes_Mauville_Desert[] = INCBIN_U16("data/tilesets/seco
 
 const u16 gMetatiles_Mauville_Buildings[] = INCBIN_U16("data/tilesets/secondary/mauville_buildings/metatiles.bin");
 const u16 gMetatileAttributes_Mauville_Buildings[] = INCBIN_U16("data/tilesets/secondary/mauville_buildings/metatile_attributes.bin");
+
+const u16 gMetatiles_AreaZero[] = INCBIN_U16("data/tilesets/secondary/area_zero/metatiles.bin");
+const u16 gMetatileAttributes_AreaZero[] = INCBIN_U16("data/tilesets/secondary/area_zero/metatile_attributes.bin");

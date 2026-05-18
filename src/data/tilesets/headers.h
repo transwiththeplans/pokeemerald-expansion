@@ -896,3 +896,14 @@ const struct Tileset gTileset_Mauville_Buildings =
     .metatileAttributes = gMetatileAttributes_Mauville_Buildings,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_AreaZero =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_AreaZero,
+    .palettes = gTilesetPalettes_AreaZero,
+    .metatiles = gMetatiles_AreaZero,
+    .metatileAttributes = gMetatileAttributes_AreaZero,
+    .callback = NULL,
+};

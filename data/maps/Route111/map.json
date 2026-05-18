@@ -490,7 +490,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
       "x": 19,
-      "y": 121,
+      "y": 122,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 1,
@@ -542,7 +542,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 19,
-      "y": 118,
+      "y": 119,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -605,6 +605,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route111_EventScript_RockSmashTipFatMan",
       "flag": "FLAG_HIDE_ROUTE_111_ROCK_SMASH_TIP_GUY"
+    },
+    {
+      "local_id": "LOCALID_DEMO_ENDS_NPC",
+      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+      "x": 11,
+      "y": 76,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route111_EventScript_Man1",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -854,7 +868,7 @@
     },
     {
       "type": "trigger",
-      "x": 10,
+      "x": 9,
       "y": 60,
       "elevation": 3,
       "var": "TRIGGER_RUN_IMMEDIATELY",
@@ -950,6 +964,33 @@
       "var": "TRIGGER_RUN_IMMEDIATELY",
       "var_value": "0",
       "script": "Route111_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 78,
+      "elevation": 3,
+      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var_value": "0",
+      "script": "Route111_EventScript_DemoEnds_1"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 78,
+      "elevation": 3,
+      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var_value": "0",
+      "script": "Route111_EventScript_DemoEnds_2"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 78,
+      "elevation": 3,
+      "var": "TRIGGER_RUN_IMMEDIATELY",
+      "var_value": "0",
+      "script": "Route111_EventScript_DemoEnds_2"
     }
   ],
   "bg_events": [

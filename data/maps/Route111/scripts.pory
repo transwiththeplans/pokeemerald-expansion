@@ -721,3 +721,20 @@ Route111_Text_TrainerHillSign:
 	.string "TRAINERS!”$"
 
 `
+
+script Route111_EventScript_DemoEnds_1{
+	//LOCALID_DEMO_ENDS_NPC
+	goto(Route111_EventScript_DemoEnds)
+}
+
+script Route111_EventScript_DemoEnds_2{
+	goto(Route111_EventScript_DemoEnds)
+}
+
+script Route111_EventScript_DemoEnds_3{
+	goto(Route111_EventScript_DemoEnds)
+}
+
+script Route111_EventScript_DemoEnds{
+	end
+}

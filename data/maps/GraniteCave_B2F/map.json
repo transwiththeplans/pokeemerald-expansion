@@ -42,8 +42,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 4,
-      "y": 14,
+      "x": 34,
+      "y": 33,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -55,8 +55,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 3,
-      "y": 15,
+      "x": 32,
+      "y": 33,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -68,8 +68,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 2,
-      "y": 16,
+      "x": 31,
+      "y": 32,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -81,8 +81,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 6,
-      "y": 12,
+      "x": 35,
+      "y": 32,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -94,8 +94,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 28,
-      "y": 12,
+      "x": 9,
+      "y": 30,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -107,8 +107,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 29,
-      "y": 13,
+      "x": 10,
+      "y": 31,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -120,8 +120,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 30,
-      "y": 14,
+      "x": 33,
+      "y": 33,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -172,8 +172,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
-      "x": 7,
-      "y": 20,
+      "x": 18,
+      "y": 36,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 3,
@@ -185,8 +185,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
-      "x": 24,
-      "y": 24,
+      "x": 19,
+      "y": 27,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 3,
@@ -198,8 +198,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
-      "x": 32,
-      "y": 12,
+      "x": 37,
+      "y": 27,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -212,15 +212,15 @@
   ],
   "warp_events": [
     {
-      "x": 7,
-      "y": 27,
+      "x": 39,
+      "y": 29,
       "elevation": 3,
       "dest_map": "MAP_GRANITE_CAVE_B1F",
       "dest_warp_id": "2"
     },
     {
-      "x": 27,
-      "y": 27,
+      "x": 36,
+      "y": 37,
       "elevation": 3,
       "dest_map": "MAP_GRANITE_CAVE_B1F",
       "dest_warp_id": "3"
@@ -240,7 +240,7 @@
       "dest_warp_id": "5"
     },
     {
-      "x": 29,
+      "x": 30,
       "y": 2,
       "elevation": 3,
       "dest_map": "MAP_GRANITE_CAVE_B1F",
@@ -259,8 +259,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 16,
-      "y": 10,
+      "x": 23,
+      "y": 24,
       "elevation": 3,
       "item": "ITEM_EVERSTONE",
       "flag": "FLAG_HIDDEN_ITEM_GRANITE_CAVE_B2F_EVERSTONE_2"

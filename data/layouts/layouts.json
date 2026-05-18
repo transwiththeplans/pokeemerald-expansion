@@ -1317,7 +1317,7 @@
       "width": 42,
       "height": 15,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
+      "secondary_tileset": "gTileset_AreaZero",
       "border_filepath": "data/layouts/GraniteCave_1F/border.bin",
       "blockdata_filepath": "data/layouts/GraniteCave_1F/map.bin"
     },
@@ -1327,17 +1327,17 @@
       "width": 32,
       "height": 26,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
+      "secondary_tileset": "gTileset_AreaZero",
       "border_filepath": "data/layouts/GraniteCave_B1F/border.bin",
       "blockdata_filepath": "data/layouts/GraniteCave_B1F/map.bin"
     },
     {
       "id": "LAYOUT_GRANITE_CAVE_B2F",
       "name": "GraniteCave_B2F_Layout",
-      "width": 35,
-      "height": 32,
+      "width": 49,
+      "height": 48,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
+      "secondary_tileset": "gTileset_AreaZero",
       "border_filepath": "data/layouts/GraniteCave_B2F/border.bin",
       "blockdata_filepath": "data/layouts/GraniteCave_B2F/map.bin"
     },
@@ -2875,9 +2875,9 @@
       "id": "LAYOUT_GRANITE_CAVE_STEVENS_ROOM",
       "name": "GraniteCave_StevensRoom_Layout",
       "width": 15,
-      "height": 14,
+      "height": 17,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
+      "secondary_tileset": "gTileset_AreaZero",
       "border_filepath": "data/layouts/GraniteCave_StevensRoom/border.bin",
       "blockdata_filepath": "data/layouts/GraniteCave_StevensRoom/map.bin"
     },

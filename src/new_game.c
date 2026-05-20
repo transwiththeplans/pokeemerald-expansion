@@ -131,6 +131,7 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
+    DebugPrintf("DAILY_FLAGS_END: %d", (DAILY_FLAGS_START + 0x3F));
     SetWarpDestination(MAP_GROUP(MAP_INSIDE_OF_TRUCK), MAP_NUM(MAP_INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
     WarpIntoMap();
 }

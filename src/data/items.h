@@ -16139,6 +16139,39 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
     },
+
+    [ITEM_CAP_CANDY] =
+    {
+        .name = ITEM_NAME("Cap Candy"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "A catalog full of\n"
+            "devices liked by\n"
+            "Rotom."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RotomCatalog,
+        .iconPic = gItemIcon_RotomCatalog,
+        .iconPalette = gItemIconPalette_RotomCatalog,
+    },
+
+    [ITEM_ABILITY_SNACK] =
+    {
+        .name = ITEM_NAME("Ability Snack"),
+        .price = 10000,
+        .holdEffectParam = 0,
+        .description = COMPOUND_STRING(
+            "Switches a Poké-\n"
+            "mon's ability."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_FIELD_USE,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_AbilityCapsule,
+        .iconPic = gItemIcon_AbilityCapsule,
+        .iconPalette = gItemIconPalette_AbilityCapsule,
+    },
+
 };
 
 #undef ITEM_NAME

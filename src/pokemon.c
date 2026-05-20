@@ -3647,6 +3647,8 @@ const u32 sExpCandyExperienceTable[] = {
     [EXP_30000 - 1] = 30000,
 };
 
+#define CANDY_BOX_LEVELS 7
+
 // Returns TRUE if the item has no effect on the Pokémon, FALSE otherwise
 bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 moveIndex, bool8 usedByAI)
 {
@@ -3714,11 +3716,37 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
              && GetMonData(mon, MON_DATA_LEVEL, NULL) != MAX_LEVEL)
             {
                 u8 param = GetItemHoldEffectParam(item);
+                u8 monLevel = GetMonData(mon, MON_DATA_LEVEL, NULL);
                 dataUnsigned = 0;
 
-                if (param == 0) // Rare Candy
+                if (FlagGet(FLAG_USED_CANDY_BOX)) // Candy Box
                 {
-                    dataUnsigned = gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES, NULL)].growthRate][GetMonData(mon, MON_DATA_LEVEL, NULL) + 1];
+                    u8 targetLevel;
+                    u16 selectedLevel = VarGet(VAR_CANDY_BOX_LEVEL);
+
+                    if (selectedLevel == 0)
+                    {
+                        targetLevel = GetCurrentLevelCap();
+                    }
+                    else
+                    {
+                        if (selectedLevel > CANDY_BOX_LEVELS)
+                            selectedLevel = CANDY_BOX_LEVELS;
+                        targetLevel = monLevel + selectedLevel;
+                    }
+
+                    if (targetLevel > MAX_LEVEL)
+                        targetLevel = MAX_LEVEL;
+                    if (targetLevel <= monLevel)
+                        targetLevel = min(monLevel + 1, MAX_LEVEL);
+
+                    dataUnsigned = gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES, NULL)].growthRate][targetLevel];
+                    SetMonData(mon, MON_DATA_LEVEL, &targetLevel);
+                    DebugPrintf("targetLevel: %d dataUnsigned: %d", targetLevel, dataUnsigned);
+                }
+                else if (param == 0) // Rare Candy
+                {
+                    dataUnsigned = gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES, NULL)].growthRate][monLevel + 1];
                 }
                 else if (param - 1 < ARRAY_COUNT(sExpCandyExperienceTable)) // EXP Candies
                 {

@@ -1636,6 +1636,9 @@
 #define NUM_DAILY_FLAGS                             (DAILY_FLAGS_END - DAILY_FLAGS_START + 1)
 
 #define NEW_FLAGS_START                              DAILY_FLAGS_END + 1
+#define FLAG_USED_CANDY_BOX                          NEW_FLAGS_START + 1
+#define FLAG_LEVEL_UP_FROM_PARTY_SCREEN              NEW_FLAGS_START + 2
+
 #define NEW_FLAGS_END                                5399
 
 #define FLAGS_COUNT                                 (NEW_FLAGS_END + 1) //Added 3000 new flags

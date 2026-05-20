@@ -114,6 +114,7 @@ enum {
     MENU_CATALOG_MOWER,
     MENU_CHANGE_FORM,
     MENU_CHANGE_ABILITY,
+    MENU_SUB_LEVEL_UP,
     MENU_FIELD_MOVES
 };
 
@@ -343,6 +344,7 @@ static void Task_HandleCancelParticipationYesNoInput(u8);
 static bool8 ShouldUseChooseMonText(void);
 static void SetPartyMonFieldSelectionActions(struct Pokemon *, u8);
 static void SetPartyMonLearnMoveSelectionActions(struct Pokemon*, u8);
+static void CursorCb_TryToLevelUpMenu(u8 taskId);
 static u8 GetPartyMenuActionsTypeInBattle(struct Pokemon *);
 static u8 GetPartySlotEntryStatus(s8);
 static void Task_UpdateHeldItemSprite(u8);
@@ -426,6 +428,7 @@ static void Task_DisplayLevelUpStatsPg2(u8);
 static void DisplayLevelUpStatsPg2(u8);
 static void Task_TryLearnNewMoves(u8);
 static void PartyMenuTryEvolution(u8);
+static void Task_HandleWhichLevelInput(u8 taskId);
 static void DisplayMonNeedsToReplaceMove(u8);
 static void DisplayMonLearnedMove(u8, u16);
 static void UseSacredAsh(u8);
@@ -500,6 +503,7 @@ static void CursorCb_ChangeForm(u8);
 static void CursorCb_ChangeAbility(u8);
 void TryItemHoldFormChange(struct Pokemon *mon, s8 slotId);
 static void ShowMoveSelectWindow(u8 slot);
+static void ShowLevelUpSelectWindow(u8 slot);
 static void Task_HandleWhichMoveInput(u8 taskId);
 static void Task_HideFollowerNPCForTeleport(u8);
 static void FieldCallback_RockClimb(void);
@@ -2779,6 +2783,9 @@ static u8 DisplaySelectionWindow(u8 windowType)
     case SELECTWINDOW_MAIL:
         window = sMailReadTakeWindowTemplate;
         break;
+    case SELECTWINDOW_LEVEL_UP:
+        window = sLevelUpSelectWindowTemplate;
+        break;
     case SELECTWINDOW_CATALOG:
         window = sCatalogSelectWindowTemplate;
         break;
@@ -2929,6 +2936,15 @@ static void SetPartyMonLearnMoveSelectionActions(struct Pokemon *mons, u8 slotId
     }
 
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_CANCEL1);
+}
+
+static void CursorCb_TryToLevelUpMenu(u8 taskId) {
+    FlagSet(FLAG_USED_CANDY_BOX);
+    FlagSet(FLAG_LEVEL_UP_FROM_PARTY_SCREEN);
+    DisplayPartyMenuStdMessage(PARTY_MSG_CHOSE_LEVEL);
+
+    ShowLevelUpSelectWindow(gPartyMenu.slotId);
+    gTasks[taskId].func = Task_HandleWhichLevelInput;
 }
 
 static u8 GetPartyMenuActionsType(struct Pokemon *mon)
@@ -5410,6 +5426,46 @@ static void ShowMoveSelectWindow(u8 slot)
     ScheduleBgCopyTilemapToVram(2);
 }
 
+#define MAX_CANDY_BOX_LEVELS 7
+#define TEXT_SPEED_FF 0xFF
+
+static void ShowLevelUpSelectWindow(u8 slot) {
+    u8 nextlevel, numlevels, i = 0;
+    u8 fontId = 1;
+    //u8 windowId = DisplaySelectionWindowNew(SELECTWINDOW_LEVEL_UP);
+    u8 windowId = DisplaySelectionWindow(SELECTWINDOW_LEVEL_UP);
+    u8 level = GetMonData(&gPlayerParty[slot], MON_DATA_LEVEL);
+    u8 levelcap = GetCurrentLevelCap();
+    static const u8 sText_levelCap[] = _("Level Cap$");
+
+    if (levelcap >= MAX_LEVEL) {
+        levelcap = MAX_LEVEL;
+        StringCopy(gStringVar1, sText_levelCap);
+        AddTextPrinterParameterized(windowId, fontId, gStringVar1, 8, (i * 16) + 1, TEXT_SPEED_FF, NULL);
+    }
+
+    numlevels = levelcap - level;
+
+    if (numlevels >= MAX_CANDY_BOX_LEVELS) numlevels = MAX_CANDY_BOX_LEVELS;
+
+    nextlevel = level;
+    VarSet(VAR_CANDY_BOX_NUM_LEVELS, numlevels);
+
+    for (i = 0; i < numlevels; i++) {
+        if (i == 0) {
+            StringCopy(gStringVar1, sText_levelCap);
+        } else {
+            nextlevel++;
+            ConvertIntToDecimalStringN(gStringVar1, nextlevel, STR_CONV_MODE_RIGHT_ALIGN, 3);
+        }
+        AddTextPrinterParameterized(windowId, fontId, gStringVar1, 8, (i * 16) + 1, TEXT_SPEED_FF, NULL);
+    }
+    InitMenuInUpperLeftCornerNormal(windowId, numlevels, 0);
+    //InitMenuInUpperLeftCornerPlaySoundWhenAPressed(windowId, numlevels, 0);
+    
+    ScheduleBgCopyTilemapToVram(2);
+}
+
 static void Task_HandleWhichMoveInput(u8 taskId)
 {
     s8 input = Menu_ProcessInput();
@@ -5460,6 +5516,13 @@ static void ReturnToUseOnWhichMon(u8 taskId)
     sPartyMenuInternal->exitCallback = NULL;
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
     DisplayPartyMenuStdMessage(PARTY_MSG_USE_ON_WHICH_MON);
+}
+
+static void ReturnToPartyMenuScreen(u8 taskId) {
+    gTasks[taskId].func = Task_HandleChooseMonInput;
+    sPartyMenuInternal->exitCallback = NULL;
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    DisplayPartyMenuStdMessage(PARTY_MSG_CHOOSE_MON_OR_CANCEL);
 }
 
 static void TryUseItemOnMove(u8 taskId)
@@ -5695,7 +5758,9 @@ static void CB2_ReturnToPartyMenuWhileLearningMove(void)
 {
     if (sFinalLevel != 0)
         SetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_LEVEL, &sFinalLevel); // to avoid displaying incorrect level
-    if (GetItemFieldFunc(gSpecialVar_ItemId) == ItemUseOutOfBattle_RareCandy && gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD && CheckBagHasItem(gSpecialVar_ItemId, 1))
+    if (gSpecialVar_ItemId == ITEM_RARE_CANDY && GetItemFieldFunc(gSpecialVar_ItemId) == ItemUseOutOfBattle_RareCandy && gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD && CheckBagHasItem(gSpecialVar_ItemId, 1))
+        InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_USE_ITEM, TRUE, PARTY_MSG_NONE, Task_ReturnToPartyMenuWhileLearningMove, gPartyMenu.exitCallback);
+    else if (gSpecialVar_ItemId == ITEM_CAP_CANDY && GetItemFieldFunc(gSpecialVar_ItemId) == ItemUseOutOfBattle_RareCandy && gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD && CheckBagHasItem(gSpecialVar_ItemId, 1))
         InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_USE_ITEM, TRUE, PARTY_MSG_NONE, Task_ReturnToPartyMenuWhileLearningMove, gPartyMenu.exitCallback);
     else
         InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CHOOSE_MON, TRUE, PARTY_MSG_NONE, Task_ReturnToPartyMenuWhileLearningMove, gPartyMenu.exitCallback);
@@ -5914,6 +5979,88 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     }
 }
 
+static void Task_HandleWhichLevelInput(u8 taskId) {
+    s8 input = Menu_ProcessInput();
+
+    if (input != MENU_NOTHING_CHOSEN) {
+        if (input == MENU_B_PRESSED) {
+            PlaySE(SE_SELECT);
+            if (FlagGet(FLAG_LEVEL_UP_FROM_PARTY_SCREEN)) {
+                FlagClear(FLAG_LEVEL_UP_FROM_PARTY_SCREEN);
+                ReturnToPartyMenuScreen(taskId);
+            } else {
+                ReturnToUseOnWhichMon(taskId);
+            }
+        } else {
+            VarSet(VAR_CANDY_BOX_LEVEL, Menu_GetCursorPos());
+            PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+            ItemUseCB_CandyBox(taskId, gTasks[taskId].func);
+        }
+    }
+}
+
+void ItemUseCB_CandyBox2(u8 taskId, TaskFunc task) {
+    u8 levelCap = GetCurrentLevelCap();
+    u8 level = GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_LEVEL);
+
+    PlaySE(SE_SELECT);
+    FlagSet(FLAG_USED_CANDY_BOX);
+    DisplayPartyMenuStdMessage(PARTY_MSG_CHOSE_LEVEL);
+    if (level + 1 < levelCap) {
+        ShowLevelUpSelectWindow(gPartyMenu.slotId);
+        gTasks[taskId].func = Task_HandleWhichLevelInput;
+    } else if (level + 1 == levelCap) {
+        VarSet(VAR_CANDY_BOX_LEVEL, 0);
+        VarSet(VAR_CANDY_BOX_NUM_LEVELS, 1);
+        ItemUseCB_CandyBox(taskId, task);
+    } else {
+        ItemUseCB_CandyBox(taskId, task);
+    }
+}
+
+void ItemUseCB_CandyBox(u8 taskId, TaskFunc task) {
+    u8 levelCap = GetCurrentLevelCap();
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+    struct PartyMenuInternal *ptr = sPartyMenuInternal;
+    s16 *arrayPtr = ptr->data;
+    bool8 cannotUseEffect;
+    u8 level = GetMonData(mon, MON_DATA_LEVEL);
+
+    sInitialLevel = level;
+    sFinalLevel = level;
+
+    if (level != MAX_LEVEL && (level < levelCap)) {
+        BufferMonStatsToTaskData(mon, arrayPtr);
+        //cannotUseEffect = ExecuteTableBasedItemEffect(gPartyMenu.slotId, ITEM_RARE_CANDY, 0);
+        cannotUseEffect = ExecuteTableBasedItemEffect(mon, ITEM_RARE_CANDY, gPartyMenu.slotId, 0);
+        BufferMonStatsToTaskData(mon, &ptr->data[NUM_STATS]);
+    } else {
+        PartyMenuTryEvolution(taskId);
+        cannotUseEffect = TRUE;
+    }
+    PlaySE(SE_SELECT);
+    if (cannotUseEffect) {
+        gPartyMenuUseExitCallback = FALSE;
+        DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+        ScheduleBgCopyTilemapToVram(2);
+        gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
+    } else {
+        sFinalLevel = GetMonData(mon, MON_DATA_LEVEL);
+        gPartyMenuUseExitCallback = TRUE;
+        PlayFanfareByFanfareNum(FANFARE_LEVEL_UP);
+        UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon);
+        GetMonNickname(mon, gStringVar1);
+        ConvertIntToDecimalStringN(gStringVar2, GetMonData(mon, MON_DATA_LEVEL), STR_CONV_MODE_LEFT_ALIGN, 3);
+        StringExpandPlaceholders(gStringVar4, gText_PkmnElevatedToLvVar2);
+        DisplayPartyMenuMessage(gStringVar4, TRUE);
+        ScheduleBgCopyTilemapToVram(2);
+        FlagClear(FLAG_USED_CANDY_BOX);
+        VarSet(VAR_CANDY_BOX_LEVEL, 0);
+        VarSet(VAR_CANDY_BOX_NUM_LEVELS, 0);
+        gTasks[taskId].func = Task_TryLearnNewMoves;
+    }
+}
+
 static void UpdateMonDisplayInfoAfterRareCandy(u8 slot, struct Pokemon *mon)
 {
     SetPartyMonAilmentGfx(mon, &sPartyMenuBoxes[slot]);
@@ -6035,6 +6182,11 @@ static void CB2_ReturnToPartyMenuUsingRareCandy(void)
     SetMainCallback2(CB2_ShowPartyMenuForItemUse);
 }
 
+static void CB2_ReturnToPartyMenuUsingCandyBox(void) {
+    gItemUseCB = ItemUseCB_CandyBox2;
+    SetMainCallback2(CB2_ShowPartyMenuForItemUse);
+}
+
 static void PartyMenuTryEvolution(u8 taskId)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
@@ -6051,8 +6203,10 @@ static void PartyMenuTryEvolution(u8 taskId)
     {
         GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE, NULL, &canStopEvo, DO_EVO);
         FreePartyPointers();
-        if (GetItemFieldFunc(gSpecialVar_ItemId) == ItemUseOutOfBattle_RareCandy && gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD && CheckBagHasItem(gSpecialVar_ItemId, 1))
+        if (gSpecialVar_ItemId == ITEM_RARE_CANDY && gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD && CheckBagHasItem(gSpecialVar_ItemId, 1))
             gCB2_AfterEvolution = CB2_ReturnToPartyMenuUsingRareCandy;
+        else if (gSpecialVar_ItemId == ITEM_CAP_CANDY && gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD && CheckBagHasItem(gSpecialVar_ItemId, 1))
+            gCB2_AfterEvolution = CB2_ReturnToPartyMenuUsingCandyBox;
         else
             gCB2_AfterEvolution = gPartyMenu.exitCallback;
         BeginEvolutionScene(mon, targetSpecies, canStopEvo, gPartyMenu.slotId);

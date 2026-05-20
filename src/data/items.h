@@ -16151,9 +16151,11 @@ const struct Item gItemsInfo[] =
             "Rotom."),
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_RotomCatalog,
-        .iconPic = gItemIcon_RotomCatalog,
-        .iconPalette = gItemIconPalette_RotomCatalog,
+        .fieldUseFunc = ItemUseOutOfBattle_CandyBox,
+        .effect = gItemEffect_RareCandy,
+        .flingPower = 30,
+        .iconPic = gItemIcon_RareCandy,
+        .iconPalette = gItemIconPalette_RareCandy,
     },
 
     [ITEM_ABILITY_SNACK] =

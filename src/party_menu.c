@@ -329,6 +329,7 @@ static bool8 DisplayCancelChooseMonYesNo(u8);
 static const u8 *GetFacilityCancelString(void);
 static void Task_CancelChooseMonYesNo(u8);
 static void PartyMenuDisplayYesNoMenu(void);
+static void PartyMenuDisplayAbilityChooseMenu(void);
 static void Task_HandleCancelChooseMonYesNoInput(u8);
 static void Task_ReturnToChooseMonAfterText(u8);
 static void UpdateCurrentPartySelection(s8 *, s8);
@@ -5166,6 +5167,180 @@ void ItemUseCB_AbilityPatch(u8 taskId, TaskFunc task)
 #undef tState
 #undef tSpecies
 #undef tAbilityNum
+#undef tMonId
+#undef tOldFunc
+
+#define tState       data[0]
+#define tSpecies     data[1]
+#define tAbilityNum  data[2]
+#define tMonId       data[3]
+#define tAbility1    data[4]
+#define tAbility2    data[5]
+#define tOldFunc     6
+
+#define ABILITY_SNACK_ABILITY_NUM   0
+#define ABILITY_SNACK_ABILITY_INDEX 1
+
+u8 GetSpeciesAbilityNumberFromAbility(u16 species, u16 ability){
+    u8 i = 0;
+
+    for(i = 0; i < NUM_ABILITY_SLOTS; i++){
+        if(GetSpeciesAbility(species, i) == ability)
+            return i;
+    }
+
+    return NUM_ABILITY_SLOTS;
+}
+
+void Task_AbilitySnack(u8 taskId)
+{
+    static const u8 askText[]  = _("Would you like to change {STR_VAR_1}'s\nability to {STR_VAR_2}?");
+    static const u8 askText2[] = _("Would you like to change {STR_VAR_1}'s\nability or stay with {STR_VAR_2}?");
+    static const u8 doneText[] = _("{STR_VAR_1}'s ability became\n{STR_VAR_2}!{PAUSE_UNTIL_PRESS}");
+    s16 *data = gTasks[taskId].data;
+    u8 numOptions;
+
+    switch (tState)
+    {
+    case 0:
+        // Can't use.
+        if (tAbility1 == ABILITY_NONE || !tSpecies)
+        {
+            gPartyMenuUseExitCallback = FALSE;
+            PlaySE(SE_SELECT);
+            DisplayPartyMenuMessage(gText_WontHaveEffect, 1);
+            ScheduleBgCopyTilemapToVram(2);
+            gTasks[taskId].func = Task_ClosePartyMenuAfterText;
+            return;
+        }
+        gPartyMenuUseExitCallback = TRUE;
+        GetMonNickname(&gPlayerParty[tMonId], gStringVar1);
+        StringCopy(gStringVar2, gAbilitiesInfo[tAbility1].name);
+        if(tAbility2 != ABILITY_NONE) //If it can show 2 abilities
+        {
+            u16 currentAbility = GetSpeciesAbility(tSpecies, tAbilityNum);
+            StringCopy(gStringVar2, gAbilitiesInfo[currentAbility].name);
+            StringExpandPlaceholders(gStringVar4, askText2);
+        }
+        else
+            StringExpandPlaceholders(gStringVar4, askText);
+        PlaySE(SE_SELECT);
+        DisplayPartyMenuMessage(gStringVar4, 1);
+        ScheduleBgCopyTilemapToVram(2);
+        tState++;
+        break;
+    case 1:
+        if (!IsPartyMenuTextPrinterActive())
+        {
+            if(tAbility2 != ABILITY_NONE){
+                StringCopy(gStringVar2, gAbilitiesInfo[tAbility1].name);
+                StringCopy(gStringVar3, gAbilitiesInfo[tAbility2].name);
+                PartyMenuDisplayAbilityChooseMenu();
+            }
+            else
+                PartyMenuDisplayYesNoMenu();
+            tState++;
+        }
+        break;
+    case 2:
+        if(tAbility2 != ABILITY_NONE)
+            numOptions = 3;
+        else
+            numOptions = 2;
+
+        switch (Menu_ProcessInputNoWrapClearOnChoose_OverrideOptions(numOptions))
+        {
+        case 0:
+            tAbilityNum = GetSpeciesAbilityNumberFromAbility(tSpecies, tAbility1);
+            tState++;
+            break;
+        case 1:
+            if(tAbility2 != ABILITY_NONE){
+                tAbilityNum = GetSpeciesAbilityNumberFromAbility(tSpecies, tAbility2);
+                tState++;
+                break;
+            }
+        case 2:
+        case MENU_B_PRESSED:
+            gPartyMenuUseExitCallback = FALSE;
+            PlaySE(SE_SELECT);
+            ScheduleBgCopyTilemapToVram(2);
+            // Don't exit party selections screen, return to choosing a mon.
+            ClearStdWindowAndFrameToTransparent(6, 0);
+            ClearWindowTilemap(6);
+            DisplayPartyMenuStdMessage(5);
+            gTasks[taskId].func = (void *)GetWordTaskArg(taskId, tOldFunc);
+            return;
+        }
+        break;
+    case 3:
+        PlaySE(SE_USE_ITEM);
+        StringCopy(gStringVar2, gAbilitiesInfo[GetSpeciesAbility(tSpecies, tAbilityNum)].name);
+        StringExpandPlaceholders(gStringVar4, doneText);
+        DisplayPartyMenuMessage(gStringVar4, 1);
+        ScheduleBgCopyTilemapToVram(2);
+        tState++;
+        break;
+    case 4:
+        if (!IsPartyMenuTextPrinterActive())
+            tState++;
+        break;
+    case 5:
+        if(tAbilityNum != NUM_ABILITY_SLOTS && GetSpeciesAbility(tSpecies, tAbilityNum) != ABILITY_NONE){
+            //Failsafes
+            SetMonData(&gPlayerParty[tMonId], MON_DATA_ABILITY_NUM, &tAbilityNum);
+            RemoveBagItem(gSpecialVar_ItemId, 1);
+        }
+        gTasks[taskId].func = Task_ClosePartyMenu;
+        break;
+    }
+}
+
+static void PartyMenuDisplayAbilityChooseMenu(void)
+{
+    static const u8 askText[] = _("{STR_VAR_2}\n{STR_VAR_3}\nCancel");
+    StringExpandPlaceholders(gStringVar4, askText);
+    CreateCustomYesNoMenu(&sAbilitySnackSelectWindowTemplate, 0x4F, 13, 0, gStringVar4);
+}
+
+void ItemUseCB_AbilitySnack(u8 taskId, TaskFunc task)
+{
+    s16 *data = gTasks[taskId].data;
+
+    tState = 0;
+    tMonId = gPartyMenu.slotId;
+    tSpecies = GetMonData(&gPlayerParty[tMonId], MON_DATA_SPECIES, NULL);
+    tAbilityNum = GetMonData(&gPlayerParty[tMonId], MON_DATA_ABILITY_NUM, NULL);
+
+    switch(tAbilityNum){
+        case 0:
+            tAbility1 = GetSpeciesAbility(tSpecies, 1);
+            tAbility2 = GetSpeciesAbility(tSpecies, 2);
+        break;
+        case 1:
+            tAbility1 = GetSpeciesAbility(tSpecies, 0);
+            tAbility2 = GetSpeciesAbility(tSpecies, 2);
+        break;
+        case 2:
+            tAbility1 = GetSpeciesAbility(tSpecies, 0);
+            tAbility2 = GetSpeciesAbility(tSpecies, 1);
+        break;
+    }
+
+    if(tAbility1 == ABILITY_NONE && tAbility2 != ABILITY_NONE){
+        tAbility1 = tAbility2;
+        tAbility2 = ABILITY_NONE;
+    }
+
+    SetWordTaskArg(taskId, tOldFunc, (uintptr_t)(gTasks[taskId].func));
+    gTasks[taskId].func = Task_AbilitySnack;
+}
+
+#undef tState
+#undef tSpecies
+#undef tAbilityNum
+#undef tAbility1
+#undef tAbility2
 #undef tMonId
 #undef tOldFunc
 

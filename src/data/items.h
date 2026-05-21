@@ -16169,7 +16169,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_FIELD_USE,
         .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_AbilityCapsule,
+        .fieldUseFunc = ItemUseOutOfBattle_AbilitySnack,
         .iconPic = gItemIcon_AbilityCapsule,
         .iconPalette = gItemIconPalette_AbilityCapsule,
     },

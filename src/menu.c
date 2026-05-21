@@ -1352,6 +1352,16 @@ s8 Menu_ProcessInputNoWrapClearOnChoose(void)
     return result;
 }
 
+s8 Menu_ProcessInputNoWrapClearOnChoose_OverrideOptions(u8 numOptions)
+{
+    s8 result;
+    sMenu.maxCursorPos = numOptions - 1;
+    result = Menu_ProcessInputNoWrap();
+    if (result != MENU_NOTHING_CHOSEN)
+        EraseYesNoWindow();
+    return result;
+}
+
 void EraseYesNoWindow(void)
 {
     ClearStdWindowAndFrameToTransparent(sYesNoWindowId, TRUE);
@@ -1764,6 +1774,31 @@ void CreateYesNoMenu(const struct WindowTemplate *window, u16 baseTileNum, u8 pa
     DrawStdFrameWithCustomTileAndPalette(sYesNoWindowId, TRUE, baseTileNum, paletteNum);
 
     printer.currentChar = gText_YesNo;
+    printer.windowId = sYesNoWindowId;
+    printer.fontId = FONT_NORMAL;
+    printer.x = 8;
+    printer.y = 1;
+    printer.currentX = printer.x;
+    printer.currentY = printer.y;
+    printer.fgColor = GetFontAttribute(FONT_NORMAL, FONTATTR_COLOR_FOREGROUND);
+    printer.bgColor = GetFontAttribute(FONT_NORMAL, FONTATTR_COLOR_BACKGROUND);
+    printer.shadowColor = GetFontAttribute(FONT_NORMAL, FONTATTR_COLOR_SHADOW);
+    printer.unk = GetFontAttribute(FONT_NORMAL, FONTATTR_UNKNOWN);
+    printer.letterSpacing = 0;
+    printer.lineSpacing = 0;
+
+    AddTextPrinter(&printer, TEXT_SKIP_DRAW, NULL);
+    InitMenuInUpperLeftCornerNormal(sYesNoWindowId, 2, initialCursorPos);
+}
+
+void CreateCustomYesNoMenu(const struct WindowTemplate *window, u16 baseTileNum, u8 paletteNum, u8 initialCursorPos, const u8 *text)
+{
+    struct TextPrinterTemplate printer;
+
+    sYesNoWindowId = AddWindow(window);
+    DrawStdFrameWithCustomTileAndPalette(sYesNoWindowId, TRUE, baseTileNum, paletteNum);
+
+    printer.currentChar = text;
     printer.windowId = sYesNoWindowId;
     printer.fontId = FONT_NORMAL;
     printer.x = 8;

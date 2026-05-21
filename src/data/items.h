@@ -16146,16 +16146,16 @@ const struct Item gItemsInfo[] =
         .price = 0,
         .importance = 1,
         .description = COMPOUND_STRING(
-            "A catalog full of\n"
-            "devices liked by\n"
-            "Rotom."),
+            "Raises the level\n"
+            "of a Pokémon to\n"
+            "the level cap."),
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CandyBox,
         .effect = gItemEffect_RareCandy,
         .flingPower = 30,
-        .iconPic = gItemIcon_RareCandy,
-        .iconPalette = gItemIconPalette_RareCandy,
+        .iconPic = gItemIcon_Cap_Candy,
+        .iconPalette = gItemIconPalette_Cap_Candy,
     },
 
     [ITEM_ABILITY_SNACK] =

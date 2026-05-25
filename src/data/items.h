@@ -16139,6 +16139,41 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
     },
+
+    [ITEM_CAP_CANDY] =
+    {
+        .name = ITEM_NAME("Cap Candy"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "Raises the level\n"
+            "of a Pokémon to\n"
+            "the level cap."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CandyBox,
+        .effect = gItemEffect_RareCandy,
+        .flingPower = 30,
+        .iconPic = gItemIcon_Cap_Candy,
+        .iconPalette = gItemIconPalette_Cap_Candy,
+    },
+
+    [ITEM_ABILITY_SNACK] =
+    {
+        .name = ITEM_NAME("Ability Snack"),
+        .price = 10000,
+        .holdEffectParam = 0,
+        .description = COMPOUND_STRING(
+            "Switches a Poké-\n"
+            "mon's ability."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_FIELD_USE,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_AbilitySnack,
+        .iconPic = gItemIcon_AbilityCapsule,
+        .iconPalette = gItemIconPalette_AbilityCapsule,
+    },
+
 };
 
 #undef ITEM_NAME

@@ -1076,8 +1076,12 @@
 #define ITEM_DRAMPANITE 907
 #define ITEM_FALINKSITE 908
 #define ITEM_INNATE_CANDY 909
+#define ITEM_CAP_CANDY 910
+#define ITEM_ABILITY_SNACK 911
 
-#define ITEMS_COUNT 910
+#define ITEM_FILLER_END 1022
+
+#define ITEMS_COUNT ITEM_FILLER_END + 1
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

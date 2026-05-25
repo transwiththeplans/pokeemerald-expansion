@@ -516,6 +516,17 @@ static const struct WindowTemplate sMailReadTakeWindowTemplate =
     .baseBlock = 0x39D,
 };
 
+static const struct WindowTemplate sLevelUpSelectWindowTemplate =
+{
+    .bg = 2,
+    .tilemapLeft = 19,
+    .tilemapTop = 5,
+    .width = 10,
+    .height = 14,
+    .paletteNum = 14,
+    .baseBlock = 0x2E9,
+};
+
 static const struct WindowTemplate sMoveSelectWindowTemplate =
 {
     .bg = 2,
@@ -534,6 +545,17 @@ static const struct WindowTemplate sCatalogSelectWindowTemplate =
     .tilemapTop = 5,
     .width = 12,
     .height = 14,
+    .paletteNum = 14,
+    .baseBlock = 0x2E9,
+};
+
+static const struct WindowTemplate sAbilitySnackSelectWindowTemplate =
+{
+    .bg = 2,
+    .tilemapLeft = 17,
+    .tilemapTop = 7,
+    .width = 12,
+    .height = 6,
     .paletteNum = 14,
     .baseBlock = 0x2E9,
 };
@@ -663,6 +685,7 @@ static const u8 *const sActionStringTable[] =
     [PARTY_MSG_NO_POKEMON]             = COMPOUND_STRING("You have no POKéMON."),
     [PARTY_MSG_CHOOSE_MON_FOR_BOX]     = gText_SendWhichMonToPC,
     [PARTY_MSG_MOVE_ITEM_WHERE]        = gText_MoveItemWhere,
+    [PARTY_MSG_CHOSE_LEVEL]            = gText_WhatLevel,
 };
 
 static const u8 *const sDescriptionStringTable[] =
@@ -731,6 +754,7 @@ struct
     [MENU_CATALOG_MOWER]   = {COMPOUND_STRING("Lawn mower"),      CursorCb_CatalogMower},
     [MENU_CHANGE_FORM]     = {COMPOUND_STRING("Change form"),     CursorCb_ChangeForm},
     [MENU_CHANGE_ABILITY]  = {COMPOUND_STRING("Change Ability"),  CursorCb_ChangeAbility},
+    [MENU_SUB_LEVEL_UP]    = {COMPOUND_STRING("Change Level"),    CursorCb_TryToLevelUpMenu},
 };
 
 static const u8 sPartyMenuAction_SummarySwitchCancel[] = {MENU_SUMMARY, MENU_SWITCH, MENU_CANCEL1};

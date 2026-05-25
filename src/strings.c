@@ -1094,6 +1094,7 @@ const u8 gText_Summary[] = _("SUMMARY");
 const u8 gText_Others2[] = _("OTHERS");
 const u8 gText_Deselect[] = _("DESELECT");
 const u8 gText_TheseThreePkmnOkay[] = _("Are these three POKéMON OK?");
+const u8 gText_WhatLevel[] = _("To what level?");
 const u8 gText_Yes2[] = _("YES");
 const u8 gText_No2[] = _("NO");
 const u8 gText_CantSelectSamePkmn[] = _("Can't select same {PKMN}.");

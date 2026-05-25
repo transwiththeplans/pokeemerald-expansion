@@ -558,7 +558,6 @@ static void CreateShedinja(u32 preEvoSpecies, u32 postEvoSpecies, struct Pokemon
          && gPlayerPartyCount < PARTY_SIZE
          && DoesMonMeetAdditionalConditions(mon, evolutions[i].params, NULL, PARTY_SIZE, NULL, CHECK_EVO))
         {
-            s32 j;
             struct Pokemon *shedinja = &gPlayerParty[gPlayerPartyCount];
 
             CopyMon(&gPlayerParty[gPlayerPartyCount], mon, sizeof(struct Pokemon));
@@ -571,11 +570,6 @@ static void CreateShedinja(u32 preEvoSpecies, u32 postEvoSpecies, struct Pokemon
                 SetMonData(&gPlayerParty[gPlayerPartyCount], MON_DATA_POKEBALL, &ball);
                 RemoveBagItem(ball, 1);
             }
-
-            for (j = MON_DATA_COOL_RIBBON; j < MON_DATA_COOL_RIBBON + CONTEST_CATEGORIES_COUNT; j++)
-                SetMonData(&gPlayerParty[gPlayerPartyCount], j, &data);
-            for (j = MON_DATA_CHAMPION_RIBBON; j <= MON_DATA_WORLD_RIBBON; j++)
-                SetMonData(&gPlayerParty[gPlayerPartyCount], j, &data);
 
             SetMonData(&gPlayerParty[gPlayerPartyCount], MON_DATA_STATUS, &data);
             data = MAIL_NONE;

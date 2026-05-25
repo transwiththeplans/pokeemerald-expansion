@@ -43,6 +43,7 @@ static void TilesetAnim_Cave(u16);
 static void TilesetAnim_EliteFour(u16);
 static void TilesetAnim_MauvilleGym(u16);
 static void TilesetAnim_Mauville_Inside(u16);
+static void TilesetAnim_Petalburg(u16);
 static void TilesetAnim_BikeShop(u16);
 static void TilesetAnim_BattlePyramid(u16);
 static void TilesetAnim_BattleDome(u16);
@@ -73,6 +74,7 @@ static void QueueAnimTiles_Cave_Lava(u16);
 static void QueueAnimTiles_BattleFrontierOutsideWest_Flag(u16);
 static void QueueAnimTiles_BattleFrontierOutsideEast_Flag(u16);
 static void QueueAnimTiles_MauvilleGym_ElectricGates(u16);
+static void QueueAnimTiles_Petalburg_Fountain(u16);
 static void QueueAnimTiles_Mauville_Inside_GameCornerSign(u16);
 static void QueueAnimTiles_Mauville_Inside_GameCornerLights(u16);
 static void QueueAnimTiles_Mauville_Inside_GymLights(u16);
@@ -481,6 +483,20 @@ const u16 *const gTilesetAnims_MauvilleGym_ElectricGates[] = {
     gTilesetAnims_MauvilleGym_ElectricGates_Frame1
 };
 
+const u16 gTilesetAnims_Petalburg_Fountain_Frame0[] = INCBIN_U16("data/tilesets/secondary/petalburg/anim/fountain/0.4bpp");
+const u16 gTilesetAnims_Petalburg_Fountain_Frame1[] = INCBIN_U16("data/tilesets/secondary/petalburg/anim/fountain/1.4bpp");
+const u16 gTilesetAnims_Petalburg_Fountain_Frame2[] = INCBIN_U16("data/tilesets/secondary/petalburg/anim/fountain/2.4bpp");
+const u16 gTilesetAnims_Petalburg_Fountain_Frame3[] = INCBIN_U16("data/tilesets/secondary/petalburg/anim/fountain/3.4bpp");
+const u16 gTilesetAnims_Petalburg_Fountain_Frame4[] = INCBIN_U16("data/tilesets/secondary/petalburg/anim/fountain/4.4bpp");
+
+const u16 *const gTilesetAnims_Petalburg_Fountain[] = {
+    gTilesetAnims_Petalburg_Fountain_Frame0,
+    gTilesetAnims_Petalburg_Fountain_Frame1,
+    gTilesetAnims_Petalburg_Fountain_Frame2,
+    gTilesetAnims_Petalburg_Fountain_Frame3,
+    gTilesetAnims_Petalburg_Fountain_Frame4,
+};
+
 const u16 gTilesetAnims_Mauville_Inside_GameCornerSign_Frame0[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/game_corner_sign/0.4bpp");
 const u16 gTilesetAnims_Mauville_Inside_GameCornerSign_Frame1[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/game_corner_sign/1.4bpp");
 const u16 gTilesetAnims_Mauville_Inside_GameCornerSign_Frame2[] = INCBIN_U16("data/tilesets/secondary/mauville_inside/anim/game_corner_sign/2.4bpp");
@@ -753,8 +769,8 @@ static void QueueAnimTiles_General_Waterfall(u16 timer)
 void InitTilesetAnim_Petalburg(void)
 {
     sSecondaryTilesetAnimCounter = 0;
-    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
-    sSecondaryTilesetAnimCallback = NULL;
+    sSecondaryTilesetAnimCounterMax = 12 * ARRAY_COUNT(gTilesetAnims_Petalburg_Fountain);
+    sSecondaryTilesetAnimCallback = TilesetAnim_Petalburg;
 }
 
 void InitTilesetAnim_Rustboro(void)
@@ -1229,6 +1245,17 @@ static void QueueAnimTiles_EliteFour_GroundLights(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_EliteFour_FloorLight);
     AppendTilesetAnimToBuffer(gTilesetAnims_EliteFour_FloorLight[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 480)), 4 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_Petalburg(u16 timer)
+{
+    if (timer % 12 == 0)
+        QueueAnimTiles_Petalburg_Fountain(timer / 12);
+}
+
+static void QueueAnimTiles_Petalburg_Fountain(u16 timer)
+{
+    AppendTilesetAnimToBuffer(gTilesetAnims_Petalburg_Fountain[timer % ARRAY_COUNT(gTilesetAnims_Petalburg_Fountain)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 288)), 8 * TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_Mauville_Inside_GameCornerSign(u16 timer)

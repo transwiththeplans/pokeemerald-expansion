@@ -1638,6 +1638,8 @@
 #define NEW_FLAGS_START                              DAILY_FLAGS_END + 1
 #define FLAG_USED_CANDY_BOX                          NEW_FLAGS_START + 1
 #define FLAG_LEVEL_UP_FROM_PARTY_SCREEN              NEW_FLAGS_START + 2
+#define FLAG_DEXNAV_SEARCHING                        NEW_FLAGS_START + 3
+#define FLAG_DEXNAV_DETECTOR_MODE                    NEW_FLAGS_START + 4
 
 #define NEW_FLAGS_END                                5399
 

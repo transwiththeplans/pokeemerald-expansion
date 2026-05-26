@@ -174,12 +174,14 @@ enum
 static const u8 *GetHealthboxElementGfxPtr(u8);
 static u8 *AddTextPrinterAndCreateWindowOnHealthbox(const u8 *, u32, u32, u32, u32 *);
 static u8 *AddTextPrinterAndCreateWindowOnHealthboxToFit(const u8 *, u32, u32, u32, u32 *, u32);
+static u8 *AddNicknamePrinterAndCreateWindowOnHealthboxToFit(const u8 *str, u32 x, u32 y, u32 *windowId, u32 width);
 
 static void RemoveWindowOnHealthbox(u32 windowId);
 static void UpdateHpTextInHealthboxInDoubles(u32 healthboxSpriteId, u32 maxOrCurrent, s16 currHp, s16 maxHp);
 static void UpdateStatusIconInHealthbox(u8);
 
 static void TextIntoHealthboxObject(void *, u8 *, s32);
+static void NicknameTextIntoHealthboxObject(void *, u8 *, s32);
 static void SafariTextIntoHealthboxObject(void *, u8 *, u32);
 static void HpTextIntoHealthboxObject(void *, u8 *, u32);
 static void FillHealthboxObject(void *, u32, u32);
@@ -767,8 +769,8 @@ static void SpriteCB_HealthBar(struct Sprite *sprite)
     switch (sprite->hBar_Data6)
     {
     case 0:
-        sprite->x = gSprites[healthboxSpriteId].x + 16;
-        sprite->y = gSprites[healthboxSpriteId].y;
+        sprite->x = gSprites[healthboxSpriteId].x + 12;
+        sprite->y = gSprites[healthboxSpriteId].y + 3;
         break;
     case 1:
         sprite->x = gSprites[healthboxSpriteId].x + 16;
@@ -900,58 +902,6 @@ void InitBattlerHealthboxCoords(u8 battler)
 
     GetBattlerHealthboxCoords(battler, &x, &y);
     UpdateSpritePos(gHealthboxSpriteIds[battler], x, y);
-}
-
-static void UpdateLvlInHealthbox(u8 healthboxSpriteId, u8 lvl)
-{
-    u32 windowId, spriteTileNum;
-    u8 *windowTileData;
-    u8 text[16];
-    u32 xPos;
-    u8 *objVram;
-    u8 battler = gSprites[healthboxSpriteId].hMain_Battler;
-
-    // Don't print Lv char if mon has a gimmick with an indicator active.
-    if (GetIndicatorPalTag(battler) != TAG_NONE)
-    {
-        objVram = ConvertIntToDecimalStringN(text, lvl, STR_CONV_MODE_LEFT_ALIGN, 3);
-        xPos = 5 * (3 - (objVram - (text + 2))) - 1;
-        UpdateIndicatorLevelData(healthboxSpriteId, lvl);
-        UpdateIndicatorVisibilityAndType(healthboxSpriteId, FALSE);
-    }
-    else
-    {
-        text[0] = CHAR_EXTRA_SYMBOL;
-        text[1] = CHAR_LV_2;
-
-        objVram = ConvertIntToDecimalStringN(text + 2, lvl, STR_CONV_MODE_LEFT_ALIGN, 3);
-        xPos = 5 * (3 - (objVram - (text + 2)));
-        UpdateIndicatorVisibilityAndType(healthboxSpriteId, TRUE);
-    }
-
-    windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(text, xPos, 3, 2, &windowId);
-    spriteTileNum = gSprites[healthboxSpriteId].oam.tileNum * TILE_SIZE_4BPP;
-
-    if (IsOnPlayerSide(battler))
-    {
-        objVram = (void *)(OBJ_VRAM0);
-        switch (GetBattlerCoordsIndex(battler))
-        {
-        case BATTLE_COORDS_SINGLES:
-            objVram += spriteTileNum + 0x820;
-            break;
-        default:
-            objVram += spriteTileNum + 0x420;
-            break;
-        }
-    }
-    else
-    {
-        objVram = (void *)(OBJ_VRAM0);
-        objVram += spriteTileNum + 0x400;
-    }
-    TextIntoHealthboxObject(objVram, windowTileData, 3);
-    RemoveWindowOnHealthbox(windowId);
 }
 
 static void PrintHpOnHealthbox(u32 spriteId, s16 currHp, s16 maxHp, u32 bgColor, u32 rightTile, u32 leftTile)
@@ -1711,6 +1661,11 @@ static void SpriteCB_StatusSummaryBalls_OnSwitchout(struct Sprite *sprite)
     sprite->y2 = gSprites[barSpriteId].y2;
 }
 
+static const u8 sText_HealthboxNickname[] = _("");
+
+#define HEALTH_BAR_NICKNAME_X  5
+#define HEALTH_BAR_NICKNAME_Y  4
+
 static void UpdateNickInHealthbox(u8 healthboxSpriteId, struct Pokemon *mon)
 {
     u8 nickname[POKEMON_NAME_LENGTH + 1];
@@ -1722,7 +1677,7 @@ static void UpdateNickInHealthbox(u8 healthboxSpriteId, struct Pokemon *mon)
     if (illusionMon != NULL)
         mon = illusionMon;
 
-    StringCopy(gDisplayedStringBattle, gText_HealthboxNickname);
+    StringCopy(gDisplayedStringBattle, sText_HealthboxNickname);
     GetMonData(mon, MON_DATA_NICKNAME, nickname);
     StringGet_Nickname(nickname);
     ptr = StringAppend(gDisplayedStringBattle, nickname);
@@ -1746,30 +1701,86 @@ static void UpdateNickInHealthbox(u8 healthboxSpriteId, struct Pokemon *mon)
         break;
     }
 
-    windowTileData = AddTextPrinterAndCreateWindowOnHealthboxToFit(gDisplayedStringBattle, 0, 3, 2, &windowId, 55);
+    windowTileData = AddNicknamePrinterAndCreateWindowOnHealthboxToFit(gDisplayedStringBattle, HEALTH_BAR_NICKNAME_X, HEALTH_BAR_NICKNAME_Y, &windowId, 55);
 
     spriteTileNum = gSprites[healthboxSpriteId].oam.tileNum * TILE_SIZE_4BPP;
 
     if (IsOnPlayerSide(gSprites[healthboxSpriteId].data[6]))
     {
-        TextIntoHealthboxObject((void *)(OBJ_VRAM0 + 0x40 + spriteTileNum), windowTileData, 6);
+        NicknameTextIntoHealthboxObject((void *)(OBJ_VRAM0 + 0x40 + spriteTileNum), windowTileData, 6);
         ptr = (void *)(OBJ_VRAM0);
+
         switch (GetBattlerCoordsIndex(gSprites[healthboxSpriteId].data[6]))
         {
         case BATTLE_COORDS_SINGLES:
-            ptr += spriteTileNum + 0x800;
+            ptr += spriteTileNum + 2048;
             break;
         default:
-            ptr += spriteTileNum + 0x400;
+            ptr += spriteTileNum + 1024;
             break;
         }
-        TextIntoHealthboxObject(ptr, windowTileData + 0xC0, 1);
+        NicknameTextIntoHealthboxObject(ptr, windowTileData + 192, 1);
     }
     else
     {
-        TextIntoHealthboxObject((void *)(OBJ_VRAM0 + 0x20 + spriteTileNum), windowTileData, 7);
+        NicknameTextIntoHealthboxObject((void *)(OBJ_VRAM0 + 0x20 + spriteTileNum), windowTileData, 7);
     }
 
+    RemoveWindowOnHealthbox(windowId);
+}
+
+#define HEALTH_BAR_LEVEL_X  0
+#define HEALTH_BAR_LEVEL_Y  4
+
+static void UpdateLvlInHealthbox(u8 healthboxSpriteId, u8 lvl)
+{
+    u32 windowId, spriteTileNum;
+    u8 *windowTileData;
+    u8 text[16];
+    u32 xPos;
+    u8 *objVram;
+    u8 battler = gSprites[healthboxSpriteId].hMain_Battler;
+
+    // Don't print Lv char if mon has a gimmick with an indicator active.
+    if (GetIndicatorPalTag(battler) != TAG_NONE)
+    {
+        objVram = ConvertIntToDecimalStringN(text, lvl, STR_CONV_MODE_LEFT_ALIGN, 3);
+        xPos = HEALTH_BAR_LEVEL_X + (4 * (3 - (objVram - (text + 2))) - 3);
+        UpdateIndicatorLevelData(healthboxSpriteId, lvl);
+        UpdateIndicatorVisibilityAndType(healthboxSpriteId, FALSE);
+    }
+    else
+    {
+        text[0] = CHAR_EXTRA_SYMBOL;
+        text[1] = CHAR_LV_2;
+
+        objVram = ConvertIntToDecimalStringN(text + 2, lvl, STR_CONV_MODE_LEFT_ALIGN, 3);
+        xPos = HEALTH_BAR_LEVEL_X + (4 * (3 - (objVram - (text + 2)))) - 2;
+        UpdateIndicatorVisibilityAndType(healthboxSpriteId, TRUE);
+    }
+
+    windowTileData = AddNicknamePrinterAndCreateWindowOnHealthboxToFit(text, xPos, HEALTH_BAR_LEVEL_Y, &windowId, 55);
+    spriteTileNum = gSprites[healthboxSpriteId].oam.tileNum * TILE_SIZE_4BPP;
+
+    if (IsOnPlayerSide(battler))
+    {
+        objVram = (void *)(OBJ_VRAM0);
+        switch (GetBattlerCoordsIndex(battler))
+        {
+        case BATTLE_COORDS_SINGLES:
+            objVram += spriteTileNum + 0x840;
+            break;
+        default:
+            objVram += spriteTileNum + 0x440;
+            break;
+        }
+    }
+    else
+    {
+        objVram = (void *)(OBJ_VRAM0);
+        objVram += spriteTileNum + 0x400;
+    }
+    NicknameTextIntoHealthboxObject(objVram, windowTileData, 3);
     RemoveWindowOnHealthbox(windowId);
 }
 
@@ -1863,7 +1874,7 @@ static void UpdateStatusIconInHealthbox(u8 healthboxSpriteId)
             CpuCopy32(statusGfxPtr, (void *)(OBJ_VRAM0 + (gSprites[healthboxSpriteId].oam.tileNum + tileNumAdder + i) * TILE_SIZE_4BPP), 32);
 
         if (!gBattleSpritesDataPtr->battlerData[battler].hpNumbersNoBars)
-            CpuCopy32(GetHealthboxElementGfxPtr(HEALTHBOX_GFX_1), (void *)(OBJ_VRAM0 + gSprites[healthBarSpriteId].oam.tileNum * TILE_SIZE_4BPP), 64);
+            CpuCopy32(GetHealthboxElementGfxPtr(HEALTHBOX_GFX_1), (void *)(OBJ_VRAM0 + gSprites[healthBarSpriteId].oam.tileNum * TILE_SIZE_4BPP), 64);*/
 
         TryAddPokeballIconToHealthbox(healthboxSpriteId, TRUE);
         return;
@@ -2355,9 +2366,9 @@ static u8 *AddTextPrinterAndCreateWindowOnHealthboxWithFont(const u8 *str, u32 x
     winId = AddWindow(&winTemplate);
     FillWindowPixelBuffer(winId, PIXEL_FILL(bgColor));
 
-    color[0] = bgColor;
+    color[0] = 0;
     color[1] = 1;
-    color[2] = 3;
+    color[2] = 5;
 
     AddTextPrinterParameterized4(winId, fontId, x, y, 0, 0, color, TEXT_SKIP_DRAW, str);
 
@@ -2374,6 +2385,36 @@ static u8 *AddTextPrinterAndCreateWindowOnHealthboxToFit(const u8 *str, u32 x, u
 {
     u32 fontId = GetFontIdToFit(str, FONT_SMALL, 0, width);
     return AddTextPrinterAndCreateWindowOnHealthboxWithFont(str, x, y, bgColor, windowId, fontId);
+}
+
+static const struct WindowTemplate sHealthboxNicknameWindowTemplate = {
+    .bg = 0,
+    .tilemapLeft = 0,
+    .tilemapTop = 0,
+    .width = 8,
+    .height = 2,
+    .paletteNum = 0,
+    .baseBlock = 0
+};
+
+static u8 *AddNicknamePrinterAndCreateWindowOnHealthboxToFit(const u8 *str, u32 x, u32 y, u32 *windowId, u32 width)
+{
+    u32 fontId = GetFontIdToFit(str, FONT_SMALL, 0, width);
+    u16 winId;
+    u8 color[3];
+    struct WindowTemplate winTemplate = sHealthboxNicknameWindowTemplate;
+
+    winId = AddWindow(&winTemplate);
+    FillWindowPixelBuffer(winId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+
+    color[0] = TEXT_COLOR_TRANSPARENT;
+    color[1] = 1;
+    color[2] = 5;
+
+    AddTextPrinterParameterized4(winId, fontId, x, y, 0, 0, color, TEXT_SKIP_DRAW, str);
+
+    *windowId = winId;
+    return (u8 *)(GetWindowAttribute(winId, WINDOW_TILE_DATA));
 }
 
 static void RemoveWindowOnHealthbox(u32 windowId)
@@ -2401,6 +2442,50 @@ static void TextIntoHealthboxObject(void *dest, u8 *windowTileData, s32 windowWi
         {
             CpuCopy32(windowTileData + 20, dest + 20, 12);
             dest += 32, windowTileData += 32;
+            windowWidth--;
+        } while (windowWidth != 0);
+    }
+}
+
+static void CopyNicknameTextPixels(void *dest, const u8 *src, u32 size)
+{
+    u32 i;
+    u16 *dest16 = dest;
+    const u16 *src16 = (const u16 *)src;
+
+    for (i = 0; i < size / sizeof(u16); i++)
+    {
+        u16 srcPixels = src16[i];
+        u16 destPixels;
+
+        if (srcPixels == 0)
+            continue;
+
+        destPixels = dest16[i];
+        if (srcPixels & 0x000F)
+            destPixels = (destPixels & 0xFFF0) | (srcPixels & 0x000F);
+        if (srcPixels & 0x00F0)
+            destPixels = (destPixels & 0xFF0F) | (srcPixels & 0x00F0);
+        if (srcPixels & 0x0F00)
+            destPixels = (destPixels & 0xF0FF) | (srcPixels & 0x0F00);
+        if (srcPixels & 0xF000)
+            destPixels = (destPixels & 0x0FFF) | (srcPixels & 0xF000);
+        dest16[i] = destPixels;
+    }
+}
+
+static void NicknameTextIntoHealthboxObject(void *dest, u8 *windowTileData, s32 windowWidth)
+{
+    u8 *destTileData = dest;
+
+    CopyNicknameTextPixels(destTileData + 256, windowTileData + 256, windowWidth * TILE_SIZE_4BPP);
+// + 256 as that prevents the top 4 blank rows of sHealthboxWindowTemplate from being copied
+    if (windowWidth > 0)
+    {
+        do
+        {
+            CopyNicknameTextPixels(destTileData + 20, windowTileData + 20, 12);
+            destTileData += 32, windowTileData += 32;
             windowWidth--;
         } while (windowWidth != 0);
     }

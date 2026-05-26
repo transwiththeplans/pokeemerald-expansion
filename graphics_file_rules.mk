@@ -293,7 +293,7 @@ $(MISCGFXDIR)/japanese_hof.4bpp: %.4bpp: %.png
 $(MISCGFXDIR)/mirage_tower.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 73 -Wnum_tiles
 
-$(BATINTGFXDIR)/textbox.gbapal: $(BATINTGFXDIR)/textbox_0.gbapal \
+$(BATINTGFXDIR)/textbox.gbapal: $(BATINTGFXDIR)/textbox_new.gbapal \
                                 $(BATINTGFXDIR)/textbox_1.gbapal
 	@cat $^ >$@
 
@@ -336,9 +336,6 @@ $(UNUSEDGFXDIR)/redyellowgreen_frame.bin: $(UNUSEDGFXDIR)/red_frame.bin \
 
 $(UNUSEDGFXDIR)/color_frames.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 353 -Wnum_tiles
-
-$(BATINTGFXDIR)/unused_window2bar.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -num_tiles 5 -Wnum_tiles
 
 $(BATINTGFXDIR)/ability_pop_up.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 8 -mheight 4

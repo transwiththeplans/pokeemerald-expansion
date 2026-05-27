@@ -1536,17 +1536,21 @@ static const u16 sGrammarMoveUsedTable[] =
 
 static const u8 sText_EmptyStatus[] = _("$$$$$$$");
 
+#define BATTLEBOX_BGCOLOR 8
+#define BATTLEBOX_FONT_COLOR 10
+#define BATTLEBOX_SHADOW_COLOR 4
+
 static const struct BattleWindowText sTextOnWindowsInfo_Normal[] =
 {
     [B_WIN_MSG] = {
-        .fillValue = PIXEL_FILL(0xF),
+        .fillValue = PIXEL_FILL(BATTLEBOX_BGCOLOR),
         .fontId = FONT_NORMAL,
         .x = 0,
         .y = 1,
         .speed = 1,
-        .fgColor = 1,
-        .bgColor = 15,
-        .shadowColor = 6,
+        .fgColor = BATTLEBOX_FONT_COLOR,
+        .bgColor = BATTLEBOX_BGCOLOR,
+        .shadowColor = BATTLEBOX_SHADOW_COLOR,
     },
     [B_WIN_ACTION_PROMPT] = {
         .fillValue = PIXEL_FILL(0xF),

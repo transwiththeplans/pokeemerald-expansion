@@ -770,8 +770,8 @@ void LoadBattleTextboxAndBackground(void)
     CopyBgTilemapBufferToVram(BG_TEXTBOX);
     ShowBg(1);
 
-    LoadPalette(gBattleTextboxPalette_1, 0,    2 * PLTT_SIZE_4BPP);
-    LoadPalette(gBattleTextboxPalette_2, 0x10, 2 * PLTT_SIZE_4BPP);
+    LoadPalette(gBattleTextboxPalette, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
+    LoadPalette(gBattleTextboxPalette, 0x10, 2 * PLTT_SIZE_4BPP);
 
     /*
     //Original Function

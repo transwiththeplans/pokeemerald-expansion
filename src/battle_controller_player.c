@@ -191,9 +191,7 @@ const u8 sText_BattleMenu_Action_Fight[]   = _("FIGHT");
 const u8 sText_BattleMenu_Action_Bag[]     = _("BAG");
 const u8 sText_BattleMenu_Action_Pokemon[] = _("POKéMON");
 const u8 sText_BattleMenu_Action_Run[]     = _("RUN");
-const u8 sText_BattleMenu_Action_What_Will_X_Do[] = _("What will\nCrabominable do?");
-const u8 sText_BattleMenu_Action_Test[]   = _("TEST");
-//const u8 sText_BattleMenu_Action_What_Will_X_Do[] = _("What will\n{B_BUFF1} do?");
+const u8 sText_BattleMenu_Action_What_Will_X_Do[] = _("What will\n{STR_VAR_1} do?");
 
 static const u8 sBattleSelector_Actions[] = INCBIN_U8("graphics/ui_menus/battle_interface/selector.4bpp");
 static const u8 sBattleSelector_Moves[]   = INCBIN_U8("graphics/ui_menus/battle_interface/selector_moves.4bpp");
@@ -220,6 +218,8 @@ void ClearBattleWindow(void)
 
 void PrintBattleWindow_ActionPromt(u32 battler)
 {
+    struct Pokemon *mon = &gPlayerParty[gBattlerPartyIndexes[battler]];
+    u8 nickname[POKEMON_NAME_LENGTH + 1];
     u8 i, posX, posY, offset;
     u8 windowId = B_WIN_ACTION_PROMPT;
     u8 font = FONT_NORMAL;
@@ -235,12 +235,17 @@ void PrintBattleWindow_ActionPromt(u32 battler)
     posY = 8;
     offset = 0;
 
+    GetMonData(mon, MON_DATA_NICKNAME, nickname);
+    StringGet_Nickname(nickname);
+
     //PREPARE_MON_NICK_BUFFER(gBattleTextBuff1, battler, gBattlerPartyIndexes[battler]);
     //BattleStringExpandPlaceholdersToDisplayedString(gText_WhatWillPkmnDo);
     
-    StringCopy(gStringVar1, sText_BattleMenu_Action_What_Will_X_Do);
-    offset = 4 + GetStringCenterAlignXOffset(FONT_NORMAL, gStringVar1, BATTLE_WINDOW_WHAT_WILL_X_DO_SQUARE_SIZE);
-    AddTextPrinterParameterized4(windowId, FONT_NORMAL, posX + offset, posY, 0, 0, sMenuWindowFontColors[fontColor], 0xFF, gStringVar1);
+    //StringCopy(gStringVar1, sText_BattleMenu_Action_What_Will_X_Do);
+    StringCopy(gStringVar1, nickname);
+	StringExpandPlaceholders(gStringVar4, sText_BattleMenu_Action_What_Will_X_Do);
+    offset = 4 + GetStringCenterAlignXOffset(FONT_NORMAL, gStringVar4, BATTLE_WINDOW_WHAT_WILL_X_DO_SQUARE_SIZE);
+    AddTextPrinterParameterized4(windowId, FONT_NORMAL, posX + offset, posY, 0, 0, sMenuWindowFontColors[fontColor], 0xFF, gStringVar4);
 
     // Print Fight / Pokémon / Bag / Run Text
     posX = BATTLE_WINDOW_SQUARE_SIZE_FIGHT_START_X;

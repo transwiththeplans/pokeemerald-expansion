@@ -129,7 +129,7 @@ const struct BgTemplate gBattleBgTemplates[] =
         .mapBaseIndex = 24,
         .screenSize = 2,
         .paletteMode = 0,
-        .priority = 2,
+        .priority = 1,
         .baseTile = 0
     },
     {
@@ -138,7 +138,7 @@ const struct BgTemplate gBattleBgTemplates[] =
         .mapBaseIndex = 28,
         .screenSize = 2,
         .paletteMode = 0,
-        .priority = 1,
+        .priority = 0,
         .baseTile = 0
     },
     {
@@ -161,16 +161,15 @@ const struct BgTemplate gBattleBgTemplates[] =
     },
 };
 
-#define BATTLE_WINDOW_DEFAULT_TOP   15
-#define BATTLE_WINDOW_DEFAULT_TOP_1 15
-#define BATTLE_WINDOW_DEFAULT_TOP_2 35
-#define BATTLE_WINDOW_DEFAULT_TOP_3 55
+#define BATTLE_WINDOW_DEFAULT_TOP 14
 
 #define BATTLE_WINDOW_MAX_WIDTH 30
 #define BATTLE_WINDOW_MAX_HEIGHT 6
 #define B_WIN_DEFAULT_BG         0
 #define B_WIN_DEFAULT_BG_1       1
 #define B_WIN_DEFAULT_BG_2       2
+
+#define B_WIN_DISABLED           0
 
 static const struct WindowTemplate sStandardBattleWindowTemplates[] =
 {
@@ -186,7 +185,7 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
     [B_WIN_ACTION_PROMPT] = {
         .bg = B_WIN_DEFAULT_BG_1,
         .tilemapLeft = 0,
-        .tilemapTop = BATTLE_WINDOW_DEFAULT_TOP - 1,
+        .tilemapTop = BATTLE_WINDOW_DEFAULT_TOP,
         .width = BATTLE_WINDOW_MAX_WIDTH,
         .height = BATTLE_WINDOW_MAX_HEIGHT,
         .paletteNum = 0,
@@ -203,46 +202,46 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
     },
     [B_WIN_MOVE_NAME_1] = {
         .bg = B_WIN_DEFAULT_BG,
-        .tilemapLeft = 2,
-        .tilemapTop = 55,
-        .width = 16,    //for z move names
-        .height = 2,
+        .tilemapLeft = B_WIN_DISABLED, //2,
+        .tilemapTop = B_WIN_DISABLED, //55,
+        .width = B_WIN_DISABLED, //16,    //for z move names
+        .height = B_WIN_DISABLED, //2,
         .paletteNum = 5,
         .baseBlock = 0x0300,
     },
     [B_WIN_MOVE_NAME_2] = {
         .bg = B_WIN_DEFAULT_BG,
-        .tilemapLeft = 11,
-        .tilemapTop = 55,
-        .width = 8,
-        .height = 2,
+        .tilemapLeft = B_WIN_DISABLED, //11,
+        .tilemapTop = B_WIN_DISABLED, //55,
+        .width = B_WIN_DISABLED, //8,
+        .height = B_WIN_DISABLED, //2,
         .paletteNum = 5,
         .baseBlock = 0x0318,
     },
     [B_WIN_MOVE_NAME_3] = {
         .bg = B_WIN_DEFAULT_BG,
-        .tilemapLeft = 2,
-        .tilemapTop = 57,
-        .width = 16,    //for z effect descriptions
-        .height = 2,
+        .tilemapLeft = B_WIN_DISABLED, //2,
+        .tilemapTop = B_WIN_DISABLED, //57,
+        .width = B_WIN_DISABLED, //16,    //for z effect descriptions
+        .height = B_WIN_DISABLED, //2,
         .paletteNum = 5,
         .baseBlock = 0x0328,
     },
     [B_WIN_MOVE_NAME_4] = {
         .bg = B_WIN_DEFAULT_BG,
-        .tilemapLeft = 11,
-        .tilemapTop = 57,
-        .width = 8,
-        .height = 2,
+        .tilemapLeft = B_WIN_DISABLED, //11,
+        .tilemapTop = B_WIN_DISABLED, //57,
+        .width = B_WIN_DISABLED, //8,
+        .height = B_WIN_DISABLED, //2,
         .paletteNum = 5,
         .baseBlock = 0x0340,
     },
     [B_WIN_PP] = {
         .bg = B_WIN_DEFAULT_BG,
-        .tilemapLeft = 21,
-        .tilemapTop = 55,
-        .width = 4,
-        .height = 2,
+        .tilemapLeft = B_WIN_DISABLED, //21,
+        .tilemapTop = B_WIN_DISABLED, //55,
+        .width = B_WIN_DISABLED, //4,
+        .height = B_WIN_DISABLED, //2,
         .paletteNum = 5,
         .baseBlock = 0x0290,
     },
@@ -257,19 +256,19 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
     },
     [B_WIN_PP_REMAINING] = {
         .bg = B_WIN_DEFAULT_BG,
-        .tilemapLeft = 25,
-        .tilemapTop = 55,
-        .width = 4,
-        .height = 2,
+        .tilemapLeft = B_WIN_DISABLED, //25,
+        .tilemapTop = B_WIN_DISABLED, //55,
+        .width = B_WIN_DISABLED, //4,
+        .height = B_WIN_DISABLED, //2,
         .paletteNum = 5,
         .baseBlock = 0x0298,
     },
     [B_WIN_MOVE_TYPE] = {
         .bg = B_WIN_DEFAULT_BG,
-        .tilemapLeft = 21,
-        .tilemapTop = 57,
-        .width = 8,
-        .height = 2,
+        .tilemapLeft = B_WIN_DISABLED, //21,
+        .tilemapTop = B_WIN_DISABLED, //57,
+        .width = B_WIN_DISABLED, //8,
+        .height = B_WIN_DISABLED, //2,
         .paletteNum = 5,
         .baseBlock = 0x02a0,
     },
@@ -414,11 +413,11 @@ static const struct WindowTemplate sBattleArenaWindowTemplates[] =
         .baseBlock = 0x0090,
     },
     [B_WIN_ACTION_PROMPT] = {
-        .bg = B_WIN_DEFAULT_BG,
-        .tilemapLeft = 1,
-        .tilemapTop = 35,
-        .width = 14,
-        .height = 4,
+        .bg = B_WIN_DEFAULT_BG_1,
+        .tilemapLeft = 0,
+        .tilemapTop = BATTLE_WINDOW_DEFAULT_TOP,
+        .width = BATTLE_WINDOW_MAX_WIDTH,
+        .height = BATTLE_WINDOW_MAX_HEIGHT,
         .paletteNum = 0,
         .baseBlock = 0x01c0,
     },
@@ -433,17 +432,17 @@ static const struct WindowTemplate sBattleArenaWindowTemplates[] =
     },
     [B_WIN_MOVE_NAME_1] = {
         .bg = B_WIN_DEFAULT_BG,
-        .tilemapLeft = 2,
-        .tilemapTop = 55,
-        .width = 8,
-        .height = 2,
+        .tilemapLeft = B_WIN_DISABLED, //2,
+        .tilemapTop = B_WIN_DISABLED, //55,
+        .width = B_WIN_DISABLED, //8,
+        .height = B_WIN_DISABLED, //2,
         .paletteNum = 5,
         .baseBlock = 0x0300,
     },
     [B_WIN_MOVE_NAME_2] = {
         .bg = B_WIN_DEFAULT_BG,
-        .tilemapLeft = 11,
-        .tilemapTop = 55,
+        .tilemapLeft = B_WIN_DISABLED, //11,
+        .tilemapTop = B_WIN_DISABLED, //55,
         .width = 8,
         .height = 2,
         .paletteNum = 5,
@@ -451,17 +450,17 @@ static const struct WindowTemplate sBattleArenaWindowTemplates[] =
     },
     [B_WIN_MOVE_NAME_3] = {
         .bg = B_WIN_DEFAULT_BG,
-        .tilemapLeft = 2,
-        .tilemapTop = 57,
-        .width = 8,
-        .height = 2,
+        .tilemapLeft = B_WIN_DISABLED, //2,
+        .tilemapTop = B_WIN_DISABLED,// 57,
+        .width = B_WIN_DISABLED, //8,
+        .height = B_WIN_DISABLED, //2,
         .paletteNum = 5,
         .baseBlock = 0x0320,
     },
     [B_WIN_MOVE_NAME_4] = {
         .bg = B_WIN_DEFAULT_BG,
-        .tilemapLeft = 11,
-        .tilemapTop = 57,
+        .tilemapLeft = B_WIN_DISABLED, //11,
+        .tilemapTop = B_WIN_DISABLED, //57,
         .width = 8,
         .height = 2,
         .paletteNum = 5,
@@ -469,10 +468,10 @@ static const struct WindowTemplate sBattleArenaWindowTemplates[] =
     },
     [B_WIN_PP] = {
         .bg = B_WIN_DEFAULT_BG,
-        .tilemapLeft = 21,
-        .tilemapTop = 55,
-        .width = 4,
-        .height = 2,
+        .tilemapLeft = B_WIN_DISABLED, //21,
+        .tilemapTop = B_WIN_DISABLED, //55,
+        .width = B_WIN_DISABLED, //4,
+        .height = B_WIN_DISABLED, //2,
         .paletteNum = 5,
         .baseBlock = 0x0290,
     },
@@ -487,19 +486,19 @@ static const struct WindowTemplate sBattleArenaWindowTemplates[] =
     },
     [B_WIN_PP_REMAINING] = {
         .bg = B_WIN_DEFAULT_BG,
-        .tilemapLeft = 25,
-        .tilemapTop = 55,
-        .width = 4,
-        .height = 2,
+        .tilemapLeft = B_WIN_DISABLED, //25,
+        .tilemapTop = B_WIN_DISABLED, //55,
+        .width = B_WIN_DISABLED, //4,
+        .height = B_WIN_DISABLED, //2,
         .paletteNum = 5,
         .baseBlock = 0x0298,
     },
     [B_WIN_MOVE_TYPE] = {
         .bg = B_WIN_DEFAULT_BG,
-        .tilemapLeft = 21,
-        .tilemapTop = 57,
-        .width = 8,
-        .height = 2,
+        .tilemapLeft = B_WIN_DISABLED, //21,
+        .tilemapTop = B_WIN_DISABLED, //57,
+        .width = B_WIN_DISABLED, //8,
+        .height = B_WIN_DISABLED, //2,
         .paletteNum = 5,
         .baseBlock = 0x02a0,
     },

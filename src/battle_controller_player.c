@@ -192,9 +192,11 @@ const u8 sText_BattleMenu_Action_Bag[]     = _("BAG");
 const u8 sText_BattleMenu_Action_Pokemon[] = _("POKéMON");
 const u8 sText_BattleMenu_Action_Run[]     = _("RUN");
 const u8 sText_BattleMenu_Action_What_Will_X_Do[] = _("What will\nCrabominable do?");
+const u8 sText_BattleMenu_Action_Test[]   = _("TEST");
 //const u8 sText_BattleMenu_Action_What_Will_X_Do[] = _("What will\n{B_BUFF1} do?");
 
-static const u8 sBattleSelector1x[] = INCBIN_U8("graphics/ui_menus/battle_interface/selector.4bpp");
+static const u8 sBattleSelector_Actions[] = INCBIN_U8("graphics/ui_menus/battle_interface/selector.4bpp");
+static const u8 sBattleSelector_Moves[]   = INCBIN_U8("graphics/ui_menus/battle_interface/selector_moves.4bpp");
 
 #define BATTLE_WINDOW_WHAT_WILL_X_DO_SQUARE_SIZE 100
 #define BATTLE_WINDOW_WHAT_WILL_X_DO_SQUARE_SIZE_DPPT 88
@@ -222,6 +224,8 @@ void PrintBattleWindow_ActionPromt(u32 battler)
     u8 windowId = B_WIN_ACTION_PROMPT;
     u8 font = FONT_NORMAL;
     u8 fontColor = FONT_BLACK;
+    gBattle_BG1_Y = 0;
+    gBattle_BG1_X = 0;
 
     //Fill the window with the fill value
     FillWindowPixelBuffer(windowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
@@ -269,8 +273,77 @@ void PrintBattleWindow_ActionPromt(u32 battler)
         AddTextPrinterParameterized4(windowId, FONT_NORMAL, posX + offset, posY, 0, 0, sMenuWindowFontColors[fontColor], 0xFF, gStringVar1);
 
         if(gActionSelectionCursor[battler] == i)
-            BlitBitmapToWindow(windowId, sBattleSelector1x, posX + offset - 8, posY, 8, 16);
+            BlitBitmapToWindow(windowId, sBattleSelector_Actions, posX + offset - 8, posY, 8, 16);
     }
+
+    PutWindowTilemap(windowId);
+    CopyWindowToVram(windowId, 3);
+}
+
+#define BATTLE_WINDOW_MOVE_LIST_X 16
+#define BATTLE_WINDOW_MOVE_LIST_Y 4
+#define BATTLE_WINDOW_MOVE_LIST_X_OFFSET 72
+#define BATTLE_WINDOW_MOVE_LIST_WIDTH 64
+#define BATTLE_WINDOW_MOVE_LIST_PP_WIDTH 40
+const u8 sText_BattleMenu_Action_PP_Left[]   = _("{STR_VAR_1}/{STR_VAR_2}");
+const u8 sText_BattleMenu_Action_Power[]   = _("Power: {STR_VAR_1} Accuracy:{STR_VAR_2}");
+const u8 sText_BattleMenu_Action_Type[]   = _("Type: {STR_VAR_1}");
+
+void PrintBattleWindow_MoveWindow(u32 battler)
+{
+    u8 i, posX, posY, maxPP, currPP;
+    u8 windowId = B_WIN_ACTION_PROMPT;
+    u8 font = FONT_NORMAL;
+    u8 fontColor = FONT_BLACK;
+    u16 currMove = gBattleMons[battler].moves[gMoveSelectionCursor[battler]];
+    gBattle_BG1_Y = 0;
+    gBattle_BG1_X = 0;
+
+    //Fill the window with the fill value
+    FillWindowPixelBuffer(windowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+
+    // Print Fight / Pokémon / Bag / Run Text
+    posX = BATTLE_WINDOW_MOVE_LIST_X;
+    posY = BATTLE_WINDOW_MOVE_LIST_Y;
+
+    for(i = 0; i < NUM_BATTLE_ACTIONS; i++){
+        //Cursor
+        if(gMoveSelectionCursor[battler] == i)
+            BlitBitmapToWindow(windowId, sBattleSelector_Moves, posX - 8, posY + (i * 8) + 4, 8, 8);
+
+        //Move Name
+        StringCopy(gStringVar1, GetMoveName(gBattleMons[battler].moves[i]));
+        font = GetFontIdToFit(gStringVar1, FONT_SMALL, 0, BATTLE_WINDOW_MOVE_LIST_WIDTH);
+
+        AddTextPrinterParameterized4(windowId, font, posX, posY + (i * 8), 0, 0, sMenuWindowFontColors[fontColor], 0xFF, gStringVar1);
+        //PP Left
+        currPP = 25 + i;
+        maxPP  = 25 + i;
+	    ConvertIntToDecimalStringN(gStringVar1, currPP, STR_CONV_MODE_LEFT_ALIGN, 3);
+	    ConvertIntToDecimalStringN(gStringVar2, maxPP,  STR_CONV_MODE_LEFT_ALIGN, 3);
+	    StringExpandPlaceholders(gStringVar4, sText_BattleMenu_Action_PP_Left);
+
+        AddTextPrinterParameterized4(windowId, FONT_SMALL, (posX + BATTLE_WINDOW_MOVE_LIST_WIDTH + 8), posY + (i * 8), 0, 0, sMenuWindowFontColors[fontColor], 0xFF, gStringVar4);
+    }
+
+    //Move Description
+    StringCopy(gStringVar1, GetMoveDescription(currMove));
+    AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROWER, (posX + BATTLE_WINDOW_MOVE_LIST_WIDTH + BATTLE_WINDOW_MOVE_LIST_PP_WIDTH + 8), posY, 0, 0, sMenuWindowFontColors[fontColor], 0xFF, gStringVar1);
+
+    //Power & Accuracy
+    currPP = GetMovePower(currMove);
+    maxPP  = GetMoveAccuracy(currMove);
+	ConvertIntToDecimalStringN(gStringVar1, currPP, STR_CONV_MODE_LEFT_ALIGN, 3);
+	ConvertIntToDecimalStringN(gStringVar2, maxPP,  STR_CONV_MODE_LEFT_ALIGN, 3);
+	StringExpandPlaceholders(gStringVar4, sText_BattleMenu_Action_Power);
+
+    AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROWER, (posX + BATTLE_WINDOW_MOVE_LIST_WIDTH + BATTLE_WINDOW_MOVE_LIST_PP_WIDTH + 8), posY + 16, 0, 0, sMenuWindowFontColors[fontColor], 0xFF, gStringVar4);
+
+    //Type
+    currPP = GetMoveType(currMove);
+    StringCopy(gStringVar1, gTypesInfo[currPP].name);
+	StringExpandPlaceholders(gStringVar4, sText_BattleMenu_Action_Type);
+    AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROWER, (posX + BATTLE_WINDOW_MOVE_LIST_WIDTH + BATTLE_WINDOW_MOVE_LIST_PP_WIDTH + 8), posY + 24, 0, 0, sMenuWindowFontColors[fontColor], 0xFF, gStringVar4);
 
     PutWindowTilemap(windowId);
     CopyWindowToVram(windowId, 3);
@@ -430,10 +503,12 @@ static void HandleInputChooseAction(u32 battler)
     {
         PlaySE(SE_SELECT);
         TryHideLastUsedBall();
+        ClearBattleWindow();
 
         switch (gActionSelectionCursor[battler])
         {
             case BATTLE_ACTION_FIGHT: // Top left
+                PrintBattleWindow_MoveWindow(battler);
                 BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_USE_MOVE, 0);
                 break;
             case BATTLE_ACTION_BAG: // Top right
@@ -446,7 +521,6 @@ static void HandleInputChooseAction(u32 battler)
                 BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_RUN, 0);
                 break;
         }
-        ClearBattleWindow();
         //PrintBattleWindow_ActionPromt(battler);
         BtlController_Complete(battler);
     }
@@ -585,9 +659,9 @@ static void HandleInputChooseAction(u32 battler)
             if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER)) // If wild battle, pressing B moves cursor to "Run".
             {
                 PlaySE(SE_SELECT);
-                ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
+                //ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
                 gActionSelectionCursor[battler] = 3;
-                ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
+                //ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
             }
         }
     }
@@ -608,7 +682,6 @@ static void HandleInputChooseAction(u32 battler)
         BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_THROW_BALL, 0);
         BtlController_Complete(battler);
     }
-    PrintBattleWindow_ActionPromt(battler);
 }
 
 void HandleInputChooseTarget(u32 battler)
@@ -871,6 +944,7 @@ void HandleInputChooseMove(u32 battler)
     {
         TryToHideMoveInfoWindow();
         PlaySE(SE_SELECT);
+        ClearBattleWindow();
 
         moveTarget = GetBattlerMoveTargetType(battler, moveInfo->moves[gMoveSelectionCursor[battler]]);
 
@@ -982,7 +1056,8 @@ void HandleInputChooseMove(u32 battler)
     }
     else if (JOY_NEW(DPAD_LEFT) && !gBattleStruct->zmove.viewing)
     {
-        if (gMoveSelectionCursor[battler] & 1)
+        PrintBattleWindow_MoveWindow(battler);
+        /*if (gMoveSelectionCursor[battler] & 1)
         {
             MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
             gMoveSelectionCursor[battler] ^= 1;
@@ -994,11 +1069,12 @@ void HandleInputChooseMove(u32 battler)
             MoveSelectionDisplayMoveType(battler);
             TryMoveSelectionDisplayMoveDescription(battler);
             TryChangeZTrigger(battler, gMoveSelectionCursor[battler]);
-        }
+        }*/
     }
     else if (JOY_NEW(DPAD_RIGHT) && !gBattleStruct->zmove.viewing)
     {
-        if (!(gMoveSelectionCursor[battler] & 1)
+        PrintBattleWindow_MoveWindow(battler);
+        /*if (!(gMoveSelectionCursor[battler] & 1)
          && (gMoveSelectionCursor[battler] ^ 1) < gNumberOfMovesToChoose)
         {
             MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
@@ -1011,11 +1087,16 @@ void HandleInputChooseMove(u32 battler)
             MoveSelectionDisplayMoveType(battler);
             TryMoveSelectionDisplayMoveDescription(battler);
             TryChangeZTrigger(battler, gMoveSelectionCursor[battler]);
-        }
+        }*/
     }
     else if (JOY_NEW(DPAD_UP) && !gBattleStruct->zmove.viewing)
     {
-        if (gMoveSelectionCursor[battler] & 2)
+        if(gMoveSelectionCursor[battler] != 0){
+            gMoveSelectionCursor[battler]--;
+            PrintBattleWindow_MoveWindow(battler);
+            PlaySE(SE_SELECT);
+        }
+        /*if (gMoveSelectionCursor[battler] & 2)
         {
             MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
             gMoveSelectionCursor[battler] ^= 2;
@@ -1027,11 +1108,16 @@ void HandleInputChooseMove(u32 battler)
             MoveSelectionDisplayMoveType(battler);
             TryMoveSelectionDisplayMoveDescription(battler);
             TryChangeZTrigger(battler, gMoveSelectionCursor[battler]);
-        }
+        }*/
     }
     else if (JOY_NEW(DPAD_DOWN) && !gBattleStruct->zmove.viewing)
     {
-        if (!(gMoveSelectionCursor[battler] & 2)
+        if(gMoveSelectionCursor[battler] < MAX_MON_MOVES - 1){
+            gMoveSelectionCursor[battler]++;
+            PrintBattleWindow_MoveWindow(battler);
+            PlaySE(SE_SELECT);
+        }
+        /*if (!(gMoveSelectionCursor[battler] & 2)
          && (gMoveSelectionCursor[battler] ^ 2) < gNumberOfMovesToChoose)
         {
             MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
@@ -1044,7 +1130,7 @@ void HandleInputChooseMove(u32 battler)
             MoveSelectionDisplayMoveType(battler);
             TryMoveSelectionDisplayMoveDescription(battler);
             TryChangeZTrigger(battler, gMoveSelectionCursor[battler]);
-        }
+        }*/
     }
     else if (B_MOVE_REARRANGEMENT_IN_BATTLE < GEN_4 && JOY_NEW(SELECT_BUTTON) && !gBattleStruct->zmove.viewing && !gBattleStruct->descriptionSubmenu)
     {
@@ -1114,8 +1200,8 @@ static void ReloadMoveNames(u32 battler)
     else
     {
         gBattleStruct->zmove.viewing = FALSE;
-        MoveSelectionDestroyCursorAt(battler);
-        MoveSelectionDisplayMoveNames(battler);
+        //MoveSelectionDestroyCursorAt(battler);
+        //MoveSelectionDisplayMoveNames(battler);
         MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
         if (B_SHOW_EFFECTIVENESS)
             MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
@@ -1124,58 +1210,9 @@ static void ReloadMoveNames(u32 battler)
     }
 }
 
-static u32 UNUSED HandleMoveInputUnused(u32 battler)
-{
-    u32 var = 0;
-
-    if (JOY_NEW(A_BUTTON))
-    {
-        PlaySE(SE_SELECT);
-        var = 1;
-    }
-    if (JOY_NEW(B_BUTTON))
-    {
-        PlaySE(SE_SELECT);
-        gBattle_BG0_X = 0;
-        gBattle_BG0_Y = DISPLAY_HEIGHT * 2;
-        var = 0xFF;
-    }
-    if (JOY_NEW(DPAD_LEFT) && gMoveSelectionCursor[battler] & 1)
-    {
-        MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
-        gMoveSelectionCursor[battler] ^= 1;
-        PlaySE(SE_SELECT);
-        MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
-    }
-    if (JOY_NEW(DPAD_RIGHT) && !(gMoveSelectionCursor[battler] & 1)
-        && (gMoveSelectionCursor[battler] ^ 1) < gNumberOfMovesToChoose)
-    {
-        MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
-        gMoveSelectionCursor[battler] ^= 1;
-        PlaySE(SE_SELECT);
-        MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
-    }
-    if (JOY_NEW(DPAD_UP) && gMoveSelectionCursor[battler] & 2)
-    {
-        MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
-        gMoveSelectionCursor[battler] ^= 2;
-        PlaySE(SE_SELECT);
-        MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
-    }
-    if (JOY_NEW(DPAD_DOWN) && !(gMoveSelectionCursor[battler] & 2)
-        && (gMoveSelectionCursor[battler] ^ 2) < gNumberOfMovesToChoose)
-    {
-        MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
-        gMoveSelectionCursor[battler] ^= 2;
-        PlaySE(SE_SELECT);
-        MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
-    }
-
-    return var;
-}
-
 void HandleMoveSwitching(u32 battler)
 {
+    //Testo
     u8 perMovePPBonuses[MAX_MON_MOVES];
     struct ChooseMoveStruct moveStruct;
     u8 totalPPBonuses;
@@ -1974,12 +2011,12 @@ static void MoveSelectionDisplayMoveDescription(u32 battler)
 
 void MoveSelectionCreateCursorAt(u8 cursorPosition, u8 baseTileNum)
 {
-    u16 src[2];
+    /*u16 src[2];
     src[0] = baseTileNum + 1;
     src[1] = baseTileNum + 2;
 
     CopyToBgTilemapBufferRect_ChangePalette(0, src, 9 * (cursorPosition & 1) + 1, 55 + (cursorPosition & 2), 1, 2, 0x11);
-    CopyBgTilemapBufferToVram(0);
+    CopyBgTilemapBufferToVram(0);*/
 }
 
 void MoveSelectionDestroyCursorAt(u8 cursorPosition)
@@ -2207,6 +2244,7 @@ static void PlayerHandleChooseAction(u32 battler)
     gBattlerControllerFuncs[battler] = HandleChooseActionAfterDma3;
     BattleTv_ClearExplosionFaintCause();
     PrintBattleWindow_ActionPromt(battler);
+
     //BattlePutTextOnWindow(gText_BattleMenu, B_WIN_ACTION_MENU);
 
     /*for (i = 0; i < 4; i++)

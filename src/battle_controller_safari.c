@@ -310,14 +310,14 @@ static void SafariHandleChooseAction(u32 battler)
     s32 i;
 
     gBattlerControllerFuncs[battler] = HandleChooseActionAfterDma3;
-    BattlePutTextOnWindow(gText_SafariZoneMenu, B_WIN_ACTION_MENU);
+    //BattlePutTextOnWindow(gText_SafariZoneMenu, B_WIN_ACTION_MENU);
 
     for (i = 0; i < 4; i++)
         ActionSelectionDestroyCursorAt(i);
 
     ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
     BattleStringExpandPlaceholdersToDisplayedString(gText_WhatWillPkmnDo2);
-    BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_ACTION_PROMPT);
+    //BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_ACTION_PROMPT);
 }
 
 static void SafariHandleChooseItem(u32 battler)

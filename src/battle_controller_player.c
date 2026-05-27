@@ -191,15 +191,8 @@ const u8 sText_BattleMenu_Action_Fight[]   = _("FIGHT");
 const u8 sText_BattleMenu_Action_Bag[]     = _("BAG");
 const u8 sText_BattleMenu_Action_Pokemon[] = _("POKéMON");
 const u8 sText_BattleMenu_Action_Run[]     = _("RUN");
-
-const u8 sText_BattleMenu_Action_Forfeit[] = _("Forfeit");
-const u8 sText_BattleMenu_Action_Info[]    = _("Info");
-const u8 sText_BattleMenu_Action_Catch[]   = _("Catch");
 const u8 sText_BattleMenu_Action_What_Will_X_Do[] = _("What will\nCrabominable do?");
-const u8 sText_BattleMenu_Action_What_Will_X_Do_1[] = _("What will");
-const u8 sText_BattleMenu_Action_What_Will_X_Do_2[] = _("Crabominable");
-const u8 sText_BattleMenu_Action_What_Will_X_Do_3[] = _("do?");
-//const u8 sText_BattleMenu_Action_What_Will_X_Do[] = _("What will\nCrabominable\ndo?");
+//const u8 sText_BattleMenu_Action_What_Will_X_Do[] = _("What will\n{B_BUFF1} do?");
 
 static const u8 sBattleSelector1x[] = INCBIN_U8("graphics/ui_menus/battle_interface/selector.4bpp");
 
@@ -215,7 +208,6 @@ static const u8 sBattleSelector1x[] = INCBIN_U8("graphics/ui_menus/battle_interf
 #define BATTLE_WINDOW_SQUARE_SIZE_FIGHT_START_Y 8
 #define BATTLE_WINDOW_SQUARE_SIZE_FIGHT_START_X_OFFSET 53
 #define BATTLE_WINDOW_SQUARE_SIZE_FIGHT_START_Y_OFFSET 16
-
 
 void ClearBattleWindow(void)
 {
@@ -239,6 +231,9 @@ void PrintBattleWindow_ActionPromt(u32 battler)
     posY = 8;
     offset = 0;
 
+    //PREPARE_MON_NICK_BUFFER(gBattleTextBuff1, battler, gBattlerPartyIndexes[battler]);
+    //BattleStringExpandPlaceholdersToDisplayedString(gText_WhatWillPkmnDo);
+    
     StringCopy(gStringVar1, sText_BattleMenu_Action_What_Will_X_Do);
     offset = 4 + GetStringCenterAlignXOffset(FONT_NORMAL, gStringVar1, BATTLE_WINDOW_WHAT_WILL_X_DO_SQUARE_SIZE);
     AddTextPrinterParameterized4(windowId, FONT_NORMAL, posX + offset, posY, 0, 0, sMenuWindowFontColors[fontColor], 0xFF, gStringVar1);

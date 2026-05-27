@@ -322,8 +322,8 @@ void PrintBattleWindow_MoveWindow(u32 battler)
 
         AddTextPrinterParameterized4(windowId, font, posX, posY + (i * 8), 0, 0, sMenuWindowFontColors[fontColor], 0xFF, gStringVar1);
         //PP Left
-        currPP = 25 + i;
-        maxPP  = 25 + i;
+        currPP = gBattleMons[battler].pp[i];
+        maxPP  = CalculatePPWithBonus(gBattleMons[battler].moves[i], gBattleMons[battler].ppBonuses, i);
 	    ConvertIntToDecimalStringN(gStringVar1, currPP, STR_CONV_MODE_LEFT_ALIGN, 3);
 	    ConvertIntToDecimalStringN(gStringVar2, maxPP,  STR_CONV_MODE_LEFT_ALIGN, 3);
 	    StringExpandPlaceholders(gStringVar4, sText_BattleMenu_Action_PP_Left);
@@ -732,7 +732,7 @@ void HandleInputChooseTarget(u32 battler)
             gBattleStruct->zmove.viewing = TRUE;
             ReloadMoveNames(battler);
         }
-        TryToAddMoveInfoWindow();
+        //TryToAddMoveInfoWindow();
         DoBounceEffect(battler, BOUNCE_HEALTHBOX, 7, 1);
         DoBounceEffect(battler, BOUNCE_MON, 7, 1);
         EndBounceEffect(gMultiUsePlayerCursor, BOUNCE_HEALTHBOX);
@@ -947,7 +947,7 @@ void HandleInputChooseMove(u32 battler)
 
     if (JOY_NEW(A_BUTTON) && !gBattleStruct->descriptionSubmenu)
     {
-        TryToHideMoveInfoWindow();
+        //TryToHideMoveInfoWindow();
         PlaySE(SE_SELECT);
         ClearBattleWindow();
 
@@ -1056,7 +1056,7 @@ void HandleInputChooseMove(u32 battler)
             BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_EXEC_SCRIPT, 0xFFFF);
             HideGimmickTriggerSprite();
             BtlController_Complete(battler);
-            TryToHideMoveInfoWindow();
+            //TryToHideMoveInfoWindow();
         }
     }
     else if (JOY_NEW(DPAD_LEFT) && !gBattleStruct->zmove.viewing)
@@ -1153,7 +1153,7 @@ void HandleInputChooseMove(u32 battler)
             gBattlerControllerFuncs[battler] = HandleMoveSwitching;
         }
     }
-    else if (gBattleStruct->descriptionSubmenu)
+    /*else if (gBattleStruct->descriptionSubmenu)
     {
         if (JOY_NEW(B_MOVE_DESCRIPTION_BUTTON) || JOY_NEW(A_BUTTON) || JOY_NEW(B_BUTTON))
         {
@@ -1179,7 +1179,7 @@ void HandleInputChooseMove(u32 battler)
     {
         gBattleStruct->descriptionSubmenu = TRUE;
         TryMoveSelectionDisplayMoveDescription(battler);
-    }
+    }*/
     else if (JOY_NEW(START_BUTTON))
     {
         if (gBattleStruct->gimmick.usableGimmick[battler] != GIMMICK_NONE
@@ -2348,7 +2348,7 @@ void PlayerHandleChooseMove(u32 battler)
 
         InitMoveSelectionsVarsAndStrings(battler);
         gBattleStruct->gimmick.playerSelect = FALSE;
-        TryToAddMoveInfoWindow();
+        //TryToAddMoveInfoWindow();
 
         AssignUsableZMoves(battler, moveInfo->moves);
         gBattleStruct->zmove.viable = (gBattleStruct->zmove.possibleZMoves[battler] & (1u << gMoveSelectionCursor[battler])) != 0;

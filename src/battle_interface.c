@@ -768,21 +768,25 @@ static const u8 *GetHealthboxElementGfxPtr(u8 elementId)
 static void SpriteCB_HealthBar(struct Sprite *sprite)
 {
     u8 healthboxSpriteId = sprite->hBar_HealthBoxSpriteId;
+    u8 yOffset = 0; 
+
+    if(IsDoubleBattle() && GetBattlerSide(sprite->hBar_Data6) != B_SIDE_PLAYER)
+        yOffset = 1;
 
     switch (sprite->hBar_Data6)
     {
     case 0:
         sprite->x = gSprites[healthboxSpriteId].x + 12;
-        sprite->y = gSprites[healthboxSpriteId].y + 3;
+        sprite->y = gSprites[healthboxSpriteId].y + 3 + yOffset;
         break;
     case 1:
         sprite->x = gSprites[healthboxSpriteId].x + 16;
-        sprite->y = gSprites[healthboxSpriteId].y;
+        sprite->y = gSprites[healthboxSpriteId].y + yOffset;
         break;
     case 2:
     default:
         sprite->x = gSprites[healthboxSpriteId].x + 8;
-        sprite->y = gSprites[healthboxSpriteId].y + 2;
+        sprite->y = gSprites[healthboxSpriteId].y + 2 + yOffset;
         break;
     }
 
@@ -883,8 +887,8 @@ static const s16 sBattlerHealthboxCoords[BATTLE_COORDS_COUNT][MAX_BATTLERS_COUNT
     },
     [BATTLE_COORDS_DOUBLES] =
     {
-        [B_POSITION_PLAYER_LEFT]    = { 159, 76 },
-        [B_POSITION_PLAYER_RIGHT]   = { 171, 101 },
+        [B_POSITION_PLAYER_LEFT]    = { 150, 76 },
+        [B_POSITION_PLAYER_RIGHT]   = { 162, 101 },
         [B_POSITION_OPPONENT_LEFT]  = { 44,  19 },
         [B_POSITION_OPPONENT_RIGHT] = { 32,  44 },
     },
@@ -1711,10 +1715,15 @@ static void UpdateNickInHealthbox(u8 healthboxSpriteId, struct Pokemon *mon)
     void *ptr;
     u32 windowId, spriteTileNum, species;
     u8 *windowTileData;
-    u8 gender;
+    u8 gender, xOffset;
     struct Pokemon *illusionMon = GetIllusionMonPtr(gSprites[healthboxSpriteId].hMain_Battler);
     if (illusionMon != NULL)
         mon = illusionMon;
+
+    if(IsDoubleBattle() && GetBattlerSide(gSprites[healthboxSpriteId].hMain_Battler) == B_SIDE_PLAYER)
+        xOffset = 3;
+    else
+        xOffset = 0;
 
     StringCopy(gDisplayedStringBattle, sText_HealthboxNickname);
     GetMonData(mon, MON_DATA_NICKNAME, nickname);
@@ -1740,7 +1749,7 @@ static void UpdateNickInHealthbox(u8 healthboxSpriteId, struct Pokemon *mon)
         break;
     }
 
-    windowTileData = AddNicknamePrinterAndCreateWindowOnHealthboxToFit(gDisplayedStringBattle, HEALTH_BAR_NICKNAME_X, HEALTH_BAR_NICKNAME_Y, &windowId, 55);
+    windowTileData = AddNicknamePrinterAndCreateWindowOnHealthboxToFit(gDisplayedStringBattle, HEALTH_BAR_NICKNAME_X + xOffset, HEALTH_BAR_NICKNAME_Y, &windowId, 55);
 
     spriteTileNum = gSprites[healthboxSpriteId].oam.tileNum * TILE_SIZE_4BPP;
 
@@ -2436,12 +2445,22 @@ static u8 *AddTextPrinterAndCreateWindowOnHealthboxToFit(const u8 *str, u32 x, u
     return AddTextPrinterAndCreateWindowOnHealthboxWithFont(str, x, y, bgColor, windowId, fontId);
 }
 
+static const struct WindowTemplate sHealthboxNicknameWindowTemplate2 = {
+    .bg = 0,
+    .tilemapLeft = 0,
+    .tilemapTop = 0,
+    .width = 8,
+    .height = 2,
+    .paletteNum = 0,
+    .baseBlock = 0
+};
+
 static u8 *AddNicknamePrinterAndCreateWindowOnHealthboxToFit(const u8 *str, u32 x, u32 y, u32 *windowId, u32 width)
 {
     u32 fontId = GetFontIdToFit(str, FONT_SMALL, 0, width);
     u16 winId;
     u8 color[3];
-    struct WindowTemplate winTemplate = sHealthboxNicknameWindowTemplate;
+    struct WindowTemplate winTemplate = sHealthboxNicknameWindowTemplate2;
 
     winId = AddWindow(&winTemplate);
     FillWindowPixelBuffer(winId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));

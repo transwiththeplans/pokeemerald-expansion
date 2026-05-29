@@ -620,6 +620,8 @@ gSongTable::
 	song mus_oe_vs_trainer, MUSIC_PLAYER_BGM, 0
 	song mus_oe_vs_gym_leader, MUSIC_PLAYER_BGM, 0
 	song mus_oe_vs_rival, MUSIC_PLAYER_BGM, 0
+	song mus_oe_vs_mega_rayquaza, MUSIC_PLAYER_BGM, 0
+	song mus_oe_vs_cyrus, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:

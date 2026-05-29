@@ -782,7 +782,7 @@ static void SpriteCB_HealthBar(struct Sprite *sprite)
     case 2:
     default:
         sprite->x = gSprites[healthboxSpriteId].x + 8;
-        sprite->y = gSprites[healthboxSpriteId].y;
+        sprite->y = gSprites[healthboxSpriteId].y + 2;
         break;
     }
 
@@ -1907,8 +1907,15 @@ static void UpdateStatusIconInHealthbox(u8 healthboxSpriteId)
     }
     else
     {
-        //Check here
-        statusGfxPtr = GetHealthboxElementGfxPtr(HEALTHBOX_GFX_39);
+        switch(battler){
+            default:
+            case 0:
+                statusGfxPtr = GetHealthboxElementGfxPtr(HEALTHBOX_GFX_39);
+            break;
+            case 1:
+                statusGfxPtr = GetHealthboxElementGfxPtr(HEALTHBOX_GFX_40);
+            break;
+        }
 
         //for (i = 0; i < 3; i++)
         //    CpuCopy32(statusGfxPtr, (void *)(OBJ_VRAM0 + (gSprites[healthboxSpriteId].oam.tileNum + tileNumAdder + i) * TILE_SIZE_4BPP), 32);

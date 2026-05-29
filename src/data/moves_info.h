@@ -22617,7 +22617,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Cryosleep"),
         .description = COMPOUND_STRING(
-			"User freezes the target/n" 
+			"User freezes the target\n" 
 			"into a deep sleep."),
         .effect = EFFECT_HIT,
         .power = 65,

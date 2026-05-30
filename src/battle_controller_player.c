@@ -97,6 +97,7 @@ static void PrintLinkStandbyMsg(void);
 
 static void ReloadMoveNames(u32 battler);
 static u32 CheckTypeEffectiveness(u32 battlerAtk, u32 battlerDef);
+static uq4_12_t CheckTypeEffectivenessMod(u32 battlerAtk, u32 battlerDef, u16 move);
 static u32 CheckTargetTypeEffectiveness(u32 battler);
 static void MoveSelectionDisplayMoveEffectiveness(u32 foeEffectiveness, u32 battler);
 
@@ -209,6 +210,13 @@ static const u8 sBattleSelector_Moves[]   = INCBIN_U8("graphics/ui_menus/battle_
 #define BATTLE_WINDOW_SQUARE_SIZE_FIGHT_START_X_OFFSET 53
 #define BATTLE_WINDOW_SQUARE_SIZE_FIGHT_START_Y_OFFSET 16
 
+static void RestoreBattleMenuBg(void)
+{
+    gBattle_BG1_Y = 0;
+    gBattle_BG1_X = 0;
+    ShowBg(1);
+}
+
 void ClearBattleWindow(void)
 {
     FillWindowPixelBuffer(B_WIN_ACTION_PROMPT, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
@@ -224,8 +232,9 @@ void PrintBattleWindow_ActionPromt(u32 battler)
     u8 windowId = B_WIN_ACTION_PROMPT;
     u8 font = FONT_NORMAL;
     u8 fontColor = FONT_BLACK;
-    gBattle_BG1_Y = 0;
-    gBattle_BG1_X = 0;
+    RestoreBattleMenuBg();
+
+    DebugPrintfLevel(MGBA_LOG_WARN, "PrintBattleWindow_ActionPromt");
 
     //Fill the window with the fill value
     FillWindowPixelBuffer(windowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
@@ -292,17 +301,35 @@ void PrintBattleWindow_ActionPromt(u32 battler)
 #define BATTLE_WINDOW_MOVE_LIST_PP_WIDTH 40
 const u8 sText_BattleMenu_Action_PP_Left[]   = _("{PP}{STR_VAR_1}/{STR_VAR_2}");
 const u8 sText_BattleMenu_Action_Power[]   = _("Power: {STR_VAR_1} Accuracy:{STR_VAR_2}");
-const u8 sText_BattleMenu_Action_Type[]   = _("Type: {STR_VAR_1}");
 
-void PrintBattleWindow_MoveWindow(u32 battler)
+const u8 sText_BattleMenu_Action_Type_Eff_x1[]     = _("Type: {STR_VAR_1}");
+const u8 sText_BattleMenu_Action_Type_Eff_x2[]     = _("Type: {STR_VAR_1}+");
+const u8 sText_BattleMenu_Action_Type_Eff_x4[]     = _("Type: {STR_VAR_1}++");
+const u8 sText_BattleMenu_Action_Type_Eff_x8[]     = _("Type: {STR_VAR_1}+++");
+const u8 sText_BattleMenu_Action_Type_Eff_x05[]    = _("Type: {STR_VAR_1}-");
+const u8 sText_BattleMenu_Action_Type_Eff_x025[]   = _("Type: {STR_VAR_1}--");
+const u8 sText_BattleMenu_Action_Type_Eff_x0125[]  = _("Type: {STR_VAR_1}---");
+const u8 sText_BattleMenu_Action_Type_Eff_x0[]     = _("Type: {STR_VAR_1}X");
+
+// Order based numerically, with EFFECTIVENESS_CANNOT_VIEW at 0 to always prioritize any other effectiveness during comparison
+enum
 {
-    u8 i, posX, posY, maxPP, currPP;
+    EFFECTIVENESS_CANNOT_VIEW,
+    EFFECTIVENESS_NO_EFFECT,
+    EFFECTIVENESS_NOT_VERY_EFFECTIVE,
+    EFFECTIVENESS_NORMAL,
+    EFFECTIVENESS_SUPER_EFFECTIVE,
+};
+
+void PrintBattleWindow_MoveWindow(u32 battler, bool8 isSelecting)
+{
+    u8 i, posX, posY, maxPP, currPP, battlerDef;
     u8 windowId = B_WIN_ACTION_PROMPT;
     u8 font = FONT_NORMAL;
     u8 fontColor = FONT_BLACK;
     u16 currMove = gBattleMons[battler].moves[gMoveSelectionCursor[battler]];
-    gBattle_BG1_Y = 0;
-    gBattle_BG1_X = 0;
+    uq4_12_t modifier = UQ_4_12(1.0);
+    RestoreBattleMenuBg();
 
     //Fill the window with the fill value
     FillWindowPixelBuffer(windowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
@@ -347,7 +374,35 @@ void PrintBattleWindow_MoveWindow(u32 battler)
     //Type
     currPP = GetMoveType(currMove);
     StringCopy(gStringVar1, gTypesInfo[currPP].name);
-	StringExpandPlaceholders(gStringVar4, sText_BattleMenu_Action_Type);
+
+    if (B_SHOW_EFFECTIVENESS){
+        if(IsDoubleBattle() && isSelecting)
+            battlerDef = GetBattlerPosition(gMultiUsePlayerCursor);
+        else
+            battlerDef = BATTLE_OPPOSITE(battler);
+
+        modifier = CheckTypeEffectivenessMod(battler, battlerDef, currMove);
+
+        if (modifier == UQ_4_12(0.0))
+            StringExpandPlaceholders(gStringVar4, sText_BattleMenu_Action_Type_Eff_x0); // No effect
+        else if (modifier <= UQ_4_12(0.125))
+            StringExpandPlaceholders(gStringVar4, sText_BattleMenu_Action_Type_Eff_x0125); // Not very effective
+        else if (modifier <= UQ_4_12(0.25))
+            StringExpandPlaceholders(gStringVar4, sText_BattleMenu_Action_Type_Eff_x025); // Not very effective
+        else if (modifier <= UQ_4_12(0.5))
+            StringExpandPlaceholders(gStringVar4, sText_BattleMenu_Action_Type_Eff_x05); // Not very effective
+        else if (modifier >= UQ_4_12(8.0))
+            StringExpandPlaceholders(gStringVar4, sText_BattleMenu_Action_Type_Eff_x4); // Super effective
+        else if (modifier >= UQ_4_12(4.0))
+            StringExpandPlaceholders(gStringVar4, sText_BattleMenu_Action_Type_Eff_x4); // Super effective
+        else if (modifier >= UQ_4_12(2.0))
+            StringExpandPlaceholders(gStringVar4, sText_BattleMenu_Action_Type_Eff_x2); // Super effective
+        else
+            StringExpandPlaceholders(gStringVar4, sText_BattleMenu_Action_Type_Eff_x1);; // Normal effectiveness
+    }
+    else
+	    StringExpandPlaceholders(gStringVar4, sText_BattleMenu_Action_Type_Eff_x1);
+
     AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROWER, (posX + BATTLE_WINDOW_MOVE_LIST_WIDTH + BATTLE_WINDOW_MOVE_LIST_PP_WIDTH + 8), posY + 24, 0, 0, sMenuWindowFontColors[fontColor], 0xFF, gStringVar4);
 
     PutWindowTilemap(windowId);
@@ -513,7 +568,7 @@ static void HandleInputChooseAction(u32 battler)
         switch (gActionSelectionCursor[battler])
         {
             case BATTLE_ACTION_FIGHT: // Top left
-                //PrintBattleWindow_MoveWindow(battler);
+                //PrintBattleWindow_MoveWindow(battler, FALSE);
                 BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_USE_MOVE, 0);
                 break;
             case BATTLE_ACTION_BAG: // Top right
@@ -710,6 +765,7 @@ void HandleInputChooseTarget(u32 battler)
 
     if (JOY_NEW(A_BUTTON))
     {
+        ClearBattleWindow();
         PlaySE(SE_SELECT);
         gSprites[gBattlerSpriteIds[gMultiUsePlayerCursor]].callback = SpriteCB_HideAsMoveTarget;
         if (gBattleStruct->gimmick.playerSelect)
@@ -786,6 +842,7 @@ void HandleInputChooseTarget(u32 battler)
                     i = 0;
             } while (i == 0);
         }
+        PrintBattleWindow_MoveWindow(battler, TRUE);
         gSprites[gBattlerSpriteIds[gMultiUsePlayerCursor]].callback = SpriteCB_ShowAsMoveTarget;
     }
     else if (JOY_NEW(DPAD_RIGHT | DPAD_DOWN))
@@ -838,6 +895,7 @@ void HandleInputChooseTarget(u32 battler)
             } while (i == 0);
         }
 
+        PrintBattleWindow_MoveWindow(battler, TRUE);
         gSprites[gBattlerSpriteIds[gMultiUsePlayerCursor]].callback = SpriteCB_ShowAsMoveTarget;
     }
 }
@@ -986,6 +1044,8 @@ void HandleInputChooseMove(u32 battler)
                 canSelectTarget = 0;
             }
 
+            PrintBattleWindow_MoveWindow(battler, TRUE);
+
             if (B_SHOW_TARGETS == TRUE)
             {
                 // Show all available targets for multi-target moves
@@ -1061,7 +1121,7 @@ void HandleInputChooseMove(u32 battler)
     }
     else if (JOY_NEW(DPAD_LEFT) && !gBattleStruct->zmove.viewing)
     {
-        PrintBattleWindow_MoveWindow(battler);
+        PrintBattleWindow_MoveWindow(battler, FALSE);
         /*if (gMoveSelectionCursor[battler] & 1)
         {
             MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
@@ -1078,7 +1138,7 @@ void HandleInputChooseMove(u32 battler)
     }
     else if (JOY_NEW(DPAD_RIGHT) && !gBattleStruct->zmove.viewing)
     {
-        PrintBattleWindow_MoveWindow(battler);
+        PrintBattleWindow_MoveWindow(battler, FALSE);
         /*if (!(gMoveSelectionCursor[battler] & 1)
          && (gMoveSelectionCursor[battler] ^ 1) < gNumberOfMovesToChoose)
         {
@@ -1098,7 +1158,7 @@ void HandleInputChooseMove(u32 battler)
     {
         if(gMoveSelectionCursor[battler] != 0){
             gMoveSelectionCursor[battler]--;
-            PrintBattleWindow_MoveWindow(battler);
+            PrintBattleWindow_MoveWindow(battler, FALSE);
             PlaySE(SE_SELECT);
         }
         /*if (gMoveSelectionCursor[battler] & 2)
@@ -1119,7 +1179,7 @@ void HandleInputChooseMove(u32 battler)
     {
         if(gMoveSelectionCursor[battler] < MAX_MON_MOVES - 1){
             gMoveSelectionCursor[battler]++;
-            PrintBattleWindow_MoveWindow(battler);
+            PrintBattleWindow_MoveWindow(battler, FALSE);
             PlaySE(SE_SELECT);
         }
         /*if (!(gMoveSelectionCursor[battler] & 2)
@@ -2220,6 +2280,8 @@ static void HandleChooseActionAfterDma3(u32 battler)
     {
         gBattle_BG0_X = 0;
         gBattle_BG0_Y = DISPLAY_HEIGHT;
+        PrintBattleWindow_ActionPromt(battler);
+
         if (gBattleStruct->aiDelayTimer != 0)
         {
             gBattleStruct->aiDelayFrames = gMain.vblankCounter1 - gBattleStruct->aiDelayTimer;
@@ -2319,7 +2381,7 @@ void HandleChooseMoveAfterDma3(u32 battler)
     {
         gBattle_BG0_X = 0;
         gBattle_BG0_Y = DISPLAY_HEIGHT * 2;
-        PrintBattleWindow_MoveWindow(battler);
+        PrintBattleWindow_MoveWindow(battler, FALSE);
         gBattlerControllerFuncs[battler] = HandleInputChooseMove;
     }
 }
@@ -2600,16 +2662,6 @@ static void PlayerHandleBattleDebug(u32 battler)
     gBattlerControllerFuncs[battler] = Controller_WaitForDebug;
 }
 
-// Order based numerically, with EFFECTIVENESS_CANNOT_VIEW at 0 to always prioritize any other effectiveness during comparison
-enum
-{
-    EFFECTIVENESS_CANNOT_VIEW,
-    EFFECTIVENESS_NO_EFFECT,
-    EFFECTIVENESS_NOT_VERY_EFFECTIVE,
-    EFFECTIVENESS_NORMAL,
-    EFFECTIVENESS_SUPER_EFFECTIVE,
-};
-
 static bool32 ShouldShowTypeEffectiveness(u32 targetId)
 {
     if (B_SHOW_EFFECTIVENESS == SHOW_EFFECTIVENESS_CAUGHT)
@@ -2645,6 +2697,26 @@ static u32 CheckTypeEffectiveness(u32 battlerAtk, u32 battlerDef)
     else if (modifier >= UQ_4_12(2.0))
         return EFFECTIVENESS_SUPER_EFFECTIVE; // Super effective
     return EFFECTIVENESS_NORMAL; // Normal effectiveness
+}
+
+static uq4_12_t CheckTypeEffectivenessMod(u32 battlerAtk, u32 battlerDef, u16 move)
+{
+    struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battlerAtk][4]);
+    struct DamageContext ctx = {0};
+    ctx.battlerAtk = battlerAtk;
+    ctx.battlerDef = battlerDef;
+    ctx.move = move;
+    ctx.moveType = CheckDynamicMoveType(GetBattlerMon(battlerAtk), ctx.move, battlerAtk, MON_IN_BATTLE);
+    ctx.updateFlags = FALSE;
+    ctx.holdEffectAtk = GetBattlerHoldEffect(battlerAtk);
+    ctx.holdEffectDef = GetBattlerHoldEffect(battlerDef);
+
+    uq4_12_t modifier = CalcTypeEffectivenessMultiplier(&ctx);
+
+    if (!ShouldShowTypeEffectiveness(battlerDef))
+        return UQ_4_12(1.0);
+
+    return modifier;
 }
 
 static u32 CheckTargetTypeEffectiveness(u32 battler)

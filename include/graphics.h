@@ -1938,6 +1938,10 @@ extern const u32 gShopMenu_Tilemap[];
 extern const u16 gShopMenu_Pal[];
 extern const u32 gShopMenuMoney_Gfx[];
 
+extern const u8 gBattleInterface_Info_Stat_Dot[];
+extern const u8 gBattleInterface_Info_L_Arrow[];
+extern const u8 gBattleInterface_Info_R_Arrow[];
+
 extern const u32 gBattleInterface_BallStatusBarGfx[];
 extern const u8 gBattleInterface_BallDisplayGfx[];
 extern const u16 gBattleInterface_BallStatusBarPal[];

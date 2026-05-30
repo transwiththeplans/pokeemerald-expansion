@@ -13,6 +13,7 @@
 #include "bg.h"
 #include "data.h"
 #include "event_data.h"
+#include "graphics.h"
 #include "item.h"
 #include "item_menu.h"
 #include "international_string_util.h"
@@ -193,10 +194,17 @@ const u8 sText_BattleMenu_Action_Bag[]     = _("BAG");
 const u8 sText_BattleMenu_Action_Pokemon[] = _("POKéMON");
 const u8 sText_BattleMenu_Action_Run[]     = _("RUN");
 const u8 sText_BattleMenu_Action_What_Will_X_Do[] = _("What will\n{STR_VAR_1} do?");
+const u8 sText_BattleMenu_Action_Info[] = _("{L_BUTTON} INFO");
+const u8 sText_BattleMenu_Action_Exit[] = _("{L_BUTTON} EXIT");
+
+const u8 sText_BattleMenu_Action_Info_Nickname[] = _("{STR_VAR_1} {LV}{STR_VAR_2}");
+const u8 sText_BattleMenu_Action_Info_HP[] = _("{STR_VAR_1}/{STR_VAR_2}");
+const u8 sText_BattleMenu_Action_Test[] = _("8");
 
 static const u8 sBattleSelector_Actions[] = INCBIN_U8("graphics/ui_menus/battle_interface/selector.4bpp");
 static const u8 sBattleSelector_Moves[]   = INCBIN_U8("graphics/ui_menus/battle_interface/selector_moves.4bpp");
 
+#define BATTLE_WINDOW_ACTION_LIST_WIDTH 64
 #define BATTLE_WINDOW_WHAT_WILL_X_DO_SQUARE_SIZE 100
 #define BATTLE_WINDOW_WHAT_WILL_X_DO_SQUARE_SIZE_DPPT 88
 #define BATTLE_WINDOW_SQUARE_SIZE 47
@@ -205,8 +213,8 @@ static const u8 sBattleSelector_Moves[]   = INCBIN_U8("graphics/ui_menus/battle_
 #define BATTLE_WINDOW_SPACE_BETWEEN_SQUARE_AND_TEXT_DPPT 14
 #define BATTLE_WINDOW_SPACE_BETWEEN_SQUARE_AND_TEXT_CLASSIC 4
 
-#define BATTLE_WINDOW_SQUARE_SIZE_FIGHT_START_X 136
-#define BATTLE_WINDOW_SQUARE_SIZE_FIGHT_START_Y 8
+#define BATTLE_WINDOW_SQUARE_SIZE_FIGHT_START_X 184
+#define BATTLE_WINDOW_SQUARE_SIZE_FIGHT_START_Y 4
 #define BATTLE_WINDOW_SQUARE_SIZE_FIGHT_START_X_OFFSET 53
 #define BATTLE_WINDOW_SQUARE_SIZE_FIGHT_START_Y_OFFSET 16
 
@@ -232,6 +240,7 @@ void PrintBattleWindow_ActionPromt(u32 battler)
     u8 windowId = B_WIN_ACTION_PROMPT;
     u8 font = FONT_NORMAL;
     u8 fontColor = FONT_BLACK;
+    u8 battlerToCheck = VarGet(VAR_BATTLE_INFO_BATTLER);
     RestoreBattleMenuBg();
 
     DebugPrintfLevel(MGBA_LOG_WARN, "PrintBattleWindow_ActionPromt");
@@ -239,22 +248,80 @@ void PrintBattleWindow_ActionPromt(u32 battler)
     //Fill the window with the fill value
     FillWindowPixelBuffer(windowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
 
-    //What Will X Do?
-    posX = 8;
-    posY = 8;
-    offset = 0;
+    if(FlagGet(FLAG_SYS_BATTLE_ACTION_WINDOW_INFO)){
+        u8 j, level;
+        u32 maxHp, currHp;
+        struct Pokemon *checkMon;
 
-    GetMonData(mon, MON_DATA_NICKNAME, nickname);
-    StringGet_Nickname(nickname);
+        font = FONT_SMALL_NARROW;
+        posX = 8;
+        posY = 4;
+        offset = 0;
 
-    //PREPARE_MON_NICK_BUFFER(gBattleTextBuff1, battler, gBattlerPartyIndexes[battler]);
-    //BattleStringExpandPlaceholdersToDisplayedString(gText_WhatWillPkmnDo);
-    
-    //StringCopy(gStringVar1, sText_BattleMenu_Action_What_Will_X_Do);
-    StringCopy(gStringVar1, nickname);
-	StringExpandPlaceholders(gStringVar4, sText_BattleMenu_Action_What_Will_X_Do);
-    offset = 4 + GetStringCenterAlignXOffset(FONT_NORMAL, gStringVar4, BATTLE_WINDOW_WHAT_WILL_X_DO_SQUARE_SIZE);
-    AddTextPrinterParameterized4(windowId, FONT_NORMAL, posX + offset, posY, 0, 0, sMenuWindowFontColors[fontColor], 0xFF, gStringVar4);
+        if(IsOnPlayerSide(battlerToCheck))
+            checkMon = &gPlayerParty[gBattlerPartyIndexes[battlerToCheck]];
+        else
+            checkMon = &gEnemyParty[gBattlerPartyIndexes[battlerToCheck]];
+
+        maxHp = GetMonData(checkMon, MON_DATA_MAX_HP);
+        currHp = GetMonData(checkMon, MON_DATA_HP);
+        level = GetMonData(checkMon, MON_DATA_LEVEL);
+
+        GetMonData(checkMon, MON_DATA_NICKNAME, nickname);
+        StringGet_Nickname(nickname);
+
+        StringCopy(gStringVar1, nickname);
+	    ConvertIntToDecimalStringN(gStringVar2, level, STR_CONV_MODE_LEFT_ALIGN, 3);
+        StringExpandPlaceholders(gStringVar4, sText_BattleMenu_Action_Info_Nickname);
+        offset = 4 + GetStringCenterAlignXOffset(font, gStringVar4, BATTLE_WINDOW_WHAT_WILL_X_DO_SQUARE_SIZE);
+        AddTextPrinterParameterized4(windowId, font, posX + offset, posY, 0, 0, sMenuWindowFontColors[fontColor], 0xFF, gStringVar4);
+
+        AddTextPrinterParameterized4(windowId, font, posX + 104, posY, 0, 0, sMenuWindowFontColors[fontColor], 0xFF, sText_BattleMenu_Action_Exit);
+
+        posX = 16;
+        posY = 8;
+        offset = 0;
+
+		BlitBitmapToWindow(windowId, gBattleInterface_Info_L_Arrow, (posX - offset), posY, 8, 8);
+		BlitBitmapToWindow(windowId, gBattleInterface_Info_R_Arrow, (posX - offset + 84), posY, 8, 8);
+
+        posY = 12;
+        for(i = 0; i < NUM_STATS; i++){
+            if((NUM_STATS / 2) - 1 < i)
+                offset = 72;
+            else
+                offset = 0;
+
+            AddTextPrinterParameterized4(windowId, font, (posX + offset), posY + ((i % 3) * 8), 0, 0, sMenuWindowFontColors[fontColor], 0xFF, gStatNamesShortTable[i]);
+
+            if(i != STAT_HP){
+                for(j = 0; j < MAX_STAT_STAGE / 2; j++)
+                    BlitBitmapToWindow(windowId, gBattleInterface_Info_Stat_Dot, (posX + offset) + (j * 8) + 16, posY + ((i % 3) * 8) + 4, 8, 8);
+            }
+            else{
+	            ConvertIntToDecimalStringN(gStringVar1, currHp, STR_CONV_MODE_LEFT_ALIGN, 4);
+	            ConvertIntToDecimalStringN(gStringVar2, maxHp, STR_CONV_MODE_LEFT_ALIGN, 4);
+                StringExpandPlaceholders(gStringVar4, sText_BattleMenu_Action_Info_HP);
+                AddTextPrinterParameterized4(windowId, font, (posX + offset) + 16, posY + ((i % 3) * 8), 0, 0, sMenuWindowFontColors[fontColor], 0xFF, gStringVar4);
+            }
+        }
+    }
+    else{
+        //What Will X Do?
+        posX = 8;
+        posY = 8;
+        offset = 0;
+
+        GetMonData(mon, MON_DATA_NICKNAME, nickname);
+        StringGet_Nickname(nickname);
+
+        StringCopy(gStringVar1, nickname);
+        StringExpandPlaceholders(gStringVar4, sText_BattleMenu_Action_What_Will_X_Do);
+        offset = 4 + GetStringCenterAlignXOffset(FONT_NORMAL, gStringVar4, BATTLE_WINDOW_WHAT_WILL_X_DO_SQUARE_SIZE);
+        AddTextPrinterParameterized4(windowId, FONT_NORMAL, posX + offset, posY, 0, 0, sMenuWindowFontColors[fontColor], 0xFF, gStringVar4);
+
+        AddTextPrinterParameterized4(windowId, font, posX + offset + 104, posY, 0, 0, sMenuWindowFontColors[fontColor], 0xFF, sText_BattleMenu_Action_Info);
+    }
 
     // Print Fight / Pokémon / Bag / Run Text
     posX = BATTLE_WINDOW_SQUARE_SIZE_FIGHT_START_X;
@@ -262,6 +329,31 @@ void PrintBattleWindow_ActionPromt(u32 battler)
     offset = 0;
 
     for(i = 0; i < NUM_BATTLE_ACTIONS; i++){
+        //Cursor
+        if(gActionSelectionCursor[battler] == i)
+            BlitBitmapToWindow(windowId, sBattleSelector_Moves, posX - 8, posY + (i * 8) + 4, 8, 8);
+
+        //Move Name
+        switch(i){
+            case BATTLE_ACTION_FIGHT:
+                StringCopy(gStringVar1, sText_BattleMenu_Action_Fight);
+            break;
+            case BATTLE_ACTION_BAG:
+                StringCopy(gStringVar1, sText_BattleMenu_Action_Bag);
+            break;
+            case BATTLE_ACTION_POKEMON:
+                StringCopy(gStringVar1, sText_BattleMenu_Action_Pokemon);
+            break;
+            case BATTLE_ACTION_RUN:
+                StringCopy(gStringVar1, sText_BattleMenu_Action_Run);
+            break;
+        }
+        font = GetFontIdToFit(gStringVar1, FONT_SMALL, 0, BATTLE_WINDOW_ACTION_LIST_WIDTH);
+
+        AddTextPrinterParameterized4(windowId, font, posX, posY + (i * 8), 0, 0, sMenuWindowFontColors[fontColor], 0xFF, gStringVar1);
+    }
+
+    /*for(i = 0; i < NUM_BATTLE_ACTIONS; i++){
         switch(i){
             case BATTLE_ACTION_FIGHT:
                 StringCopy(gStringVar1, sText_BattleMenu_Action_Fight);
@@ -284,11 +376,11 @@ void PrintBattleWindow_ActionPromt(u32 battler)
                 posY   = BATTLE_WINDOW_SQUARE_SIZE_FIGHT_START_Y + BATTLE_WINDOW_SQUARE_SIZE_FIGHT_START_Y_OFFSET;
             break;
         }
-        AddTextPrinterParameterized4(windowId, FONT_NORMAL, posX + offset, posY, 0, 0, sMenuWindowFontColors[fontColor], 0xFF, gStringVar1);
+        AddTextPrinterParameterized4(windowId, FONT_SMALL, posX + offset, posY, 0, 0, sMenuWindowFontColors[fontColor], 0xFF, gStringVar1);
 
         if(gActionSelectionCursor[battler] == i)
             BlitBitmapToWindow(windowId, sBattleSelector_Actions, posX + offset - 8, posY, 8, 16);
-    }
+    }*/
 
     PutWindowTilemap(windowId);
     CopyWindowToVram(windowId, 3);
@@ -500,6 +592,13 @@ static void HandleInputChooseAction(u32 battler)
     else
         gPlayerDpadHoldFrames = 0;
 
+    if (JOY_NEW(L_BUTTON) && B_LAST_USED_BALL_BUTTON != L_BUTTON)
+    {
+        FlagToggle(FLAG_SYS_BATTLE_ACTION_WINDOW_INFO);
+        VarSet(VAR_BATTLE_INFO_BATTLER, 0);
+        PrintBattleWindow_ActionPromt(battler);
+    }
+
     if (B_LAST_USED_BALL == TRUE && B_LAST_USED_BALL_CYCLE == TRUE
     && !(B_LAST_USED_BALL_BUTTON == L_BUTTON && gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_L_EQUALS_A))
     {
@@ -586,13 +685,21 @@ static void HandleInputChooseAction(u32 battler)
     }
     else if (JOY_NEW(DPAD_LEFT))
     {
+        if(FlagGet(FLAG_SYS_BATTLE_ACTION_WINDOW_INFO)){
+            value = VarGet(VAR_BATTLE_INFO_BATTLER);
+            if(value != 0)
+                value--;
+            
+            VarSet(VAR_BATTLE_INFO_BATTLER, value);
+            PrintBattleWindow_ActionPromt(battler);
+        }
         /*if (gActionSelectionCursor[battler] & 1) // if is B_ACTION_USE_ITEM or B_ACTION_RUN
         {
             PlaySE(SE_SELECT);
             ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
             gActionSelectionCursor[battler] ^= 1;
             //ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
-        }*/
+        }
         PlaySE(SE_SELECT);
         switch(gActionSelectionCursor[battler]){
             case BATTLE_ACTION_FIGHT:
@@ -610,17 +717,31 @@ static void HandleInputChooseAction(u32 battler)
                 gActionSelectionCursor[battler] = BATTLE_ACTION_POKEMON;
             break;
         }
-        PrintBattleWindow_ActionPromt(battler);
+        PrintBattleWindow_ActionPromt(battler);*/
     }
     else if (JOY_NEW(DPAD_RIGHT))
     {
+        if(FlagGet(FLAG_SYS_BATTLE_ACTION_WINDOW_INFO)){
+            value = VarGet(VAR_BATTLE_INFO_BATTLER);
+            if(IsDoubleBattle()){
+                if(value < MAX_BATTLERS_COUNT - 1)
+                    value++;
+            }
+            else{
+                if(value < 2)
+                    value++;
+            }
+            
+            VarSet(VAR_BATTLE_INFO_BATTLER, value);
+            PrintBattleWindow_ActionPromt(battler);
+        }
         /*if (!(gActionSelectionCursor[battler] & 1)) // if is B_ACTION_USE_MOVE or B_ACTION_SWITCH
         {
             PlaySE(SE_SELECT);
             ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
             gActionSelectionCursor[battler] ^= 1;
             //ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
-        }*/
+        }
 
         PlaySE(SE_SELECT);
         switch(gActionSelectionCursor[battler]){
@@ -638,7 +759,7 @@ static void HandleInputChooseAction(u32 battler)
                     gActionSelectionCursor[battler] = BATTLE_ACTION_POKEMON;
             break;
         }
-        PrintBattleWindow_ActionPromt(battler);
+        PrintBattleWindow_ActionPromt(battler);*/
     }
     else if (JOY_NEW(DPAD_UP))
     {
@@ -650,7 +771,9 @@ static void HandleInputChooseAction(u32 battler)
             //ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
         }*/
         PlaySE(SE_SELECT);
-        switch(gActionSelectionCursor[battler]){
+        if(gActionSelectionCursor[battler] != 0)
+            gActionSelectionCursor[battler]--;
+        /*switch(gActionSelectionCursor[battler]){
             case BATTLE_ACTION_FIGHT:
                 if(ENABLE_BATTLE_INPUT_GOING_BEYOND_SCREEN)
                     gActionSelectionCursor[battler] = BATTLE_ACTION_POKEMON;
@@ -665,7 +788,7 @@ static void HandleInputChooseAction(u32 battler)
             case BATTLE_ACTION_RUN:
                 gActionSelectionCursor[battler] = BATTLE_ACTION_BAG;
             break;
-        }
+        }*/
         PrintBattleWindow_ActionPromt(battler);
     }
     else if (JOY_NEW(DPAD_DOWN))
@@ -678,7 +801,9 @@ static void HandleInputChooseAction(u32 battler)
             //ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
         }*/
         PlaySE(SE_SELECT);
-        switch(gActionSelectionCursor[battler]){
+        if(gActionSelectionCursor[battler] < BATTLE_ACTION_RUN)
+            gActionSelectionCursor[battler]++;
+        /*switch(gActionSelectionCursor[battler]){
             case BATTLE_ACTION_FIGHT:
                 gActionSelectionCursor[battler] = BATTLE_ACTION_POKEMON;
             break;
@@ -693,7 +818,7 @@ static void HandleInputChooseAction(u32 battler)
                 if(ENABLE_BATTLE_INPUT_GOING_BEYOND_SCREEN)
                     gActionSelectionCursor[battler] = BATTLE_ACTION_BAG;
             break;
-        }
+        }*/
         PrintBattleWindow_ActionPromt(battler);
     }
     else if (JOY_NEW(B_BUTTON) || gPlayerDpadHoldFrames > 59)
@@ -727,7 +852,7 @@ static void HandleInputChooseAction(u32 battler)
     }
     else if (JOY_NEW(START_BUTTON))
     {
-        SwapHpBarsWithHpText();
+        //SwapHpBarsWithHpText();
     }
     else if (DEBUG_BATTLE_MENU == TRUE && JOY_NEW(SELECT_BUTTON))
     {

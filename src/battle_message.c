@@ -147,6 +147,19 @@ const u8 *const gStatNamesTable[NUM_BATTLE_STATS] =
     [STAT_ACC]     = sText_Accuracy,
     [STAT_EVASION] = sText_Evasiveness,
 };
+
+const u8 *const gStatNamesShortTable[NUM_BATTLE_STATS] =
+{
+    [STAT_HP]      = COMPOUND_STRING("HP"),
+    [STAT_ATK]     = COMPOUND_STRING("Atk"),
+    [STAT_DEF]     = COMPOUND_STRING("Def"),
+    [STAT_SPATK]   = COMPOUND_STRING("SpA"),
+    [STAT_SPDEF]   = COMPOUND_STRING("SpD"),
+    [STAT_SPEED]   = COMPOUND_STRING("Spe"),
+    [STAT_ACC]     = COMPOUND_STRING("Acc"),
+    [STAT_EVASION] = COMPOUND_STRING("Eva"),
+};
+
 const u8 *const gPokeblockWasTooXStringTable[FLAVOR_COUNT] =
 {
     [FLAVOR_SPICY]  = COMPOUND_STRING("was too spicy!"),

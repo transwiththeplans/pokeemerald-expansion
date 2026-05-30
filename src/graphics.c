@@ -697,6 +697,11 @@ const u32 gUnusedGfx_BasicFrame[] = INCBIN_U32("graphics/unused/basic_frame.4bpp
 const u16 gUnusedPal_BasicFrame[] = INCBIN_U16("graphics/unused/basic_frame.gbapal");
 const u32 gUnusedTilemap_BasicFrame[] = INCBIN_U32("graphics/unused/basic_frame.bin.smolTM");
 
+//Info Battle Interface
+const u8 gBattleInterface_Info_Stat_Dot[] = INCBIN_U8("graphics/battle_interface/info/stat_dot.4bpp");
+const u8 gBattleInterface_Info_L_Arrow[] = INCBIN_U8("graphics/battle_interface/info/l_arrow.4bpp");
+const u8 gBattleInterface_Info_R_Arrow[] = INCBIN_U8("graphics/battle_interface/info/r_arrow.4bpp");
+
 // Battle Interface
 
 const u16 gBattleInterface_BallStatusBarPal[] = INCBIN_U16("graphics/battle_interface/ball_status_bar.gbapal");

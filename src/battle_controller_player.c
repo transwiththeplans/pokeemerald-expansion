@@ -2433,6 +2433,11 @@ static void PlayerHandleChooseAction(u32 battler)
     // "What will {x} do?" + "Fight/Pokémon/Bag/Run" menu
     s32 i;
 
+	//Reshow Bg
+    gBattle_BG1_X = 0;
+    gBattle_BG1_Y = 0;
+    ShowBg(1);
+
     gBattlerControllerFuncs[battler] = HandleChooseActionAfterDma3;
     BattleTv_ClearExplosionFaintCause();
     PrintBattleWindow_ActionPromt(battler);

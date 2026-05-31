@@ -197,8 +197,14 @@ const u8 sText_BattleMenu_Action_What_Will_X_Do[] = _("What will\n{STR_VAR_1} do
 const u8 sText_BattleMenu_Action_Info[] = _("{L_BUTTON} INFO");
 const u8 sText_BattleMenu_Action_Exit[] = _("{L_BUTTON} EXIT");
 
-const u8 sText_BattleMenu_Action_Info_Nickname[] = _("{STR_VAR_1} {LV}{STR_VAR_2}");
+
+const u8 sText_BattleMenu_Gender_Male[] = _("♂");
+const u8 sText_BattleMenu_Gender_Female[] = _("♀");
+const u8 sText_BattleMenu_Gender_None[] = _("");
+
+const u8 sText_BattleMenu_Action_Info_Nickname[] = _("{STR_VAR_1}{STR_VAR_2} {LV}{STR_VAR_3}");
 const u8 sText_BattleMenu_Action_Info_HP[] = _("{STR_VAR_1}/{STR_VAR_2}");
+const u8 sText_BattleMenu_Action_Info_HP_Percent[] = _("{STR_VAR_1}%");
 const u8 sText_BattleMenu_Action_Test[] = _("8");
 
 static const u8 sBattleSelector_Actions[] = INCBIN_U8("graphics/ui_menus/battle_interface/selector.4bpp");
@@ -232,6 +238,23 @@ void ClearBattleWindow(void)
     CopyWindowToVram(B_WIN_ACTION_PROMPT, 3);
 }
 
+#define ACTION_PRIMPT_INFO_TEXT_X 16 + 104
+#define ACTION_PRIMPT_INFO_TEXT_Y 4
+
+
+#define ACTION_PROMPT_LEVEL_WIN_WIDTH 100
+
+static const u8 sStatOrder[NUM_BATTLE_STATS] = {
+    STAT_HP,
+    STAT_ATK,
+    STAT_DEF,
+    STAT_SPATK,
+    STAT_SPDEF,
+    STAT_SPEED,
+    STAT_ACC,
+    STAT_EVASION,
+};
+
 void PrintBattleWindow_ActionPromt(u32 battler)
 {
     struct Pokemon *mon = &gPlayerParty[gBattlerPartyIndexes[battler]];
@@ -249,8 +272,8 @@ void PrintBattleWindow_ActionPromt(u32 battler)
     FillWindowPixelBuffer(windowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
 
     if(FlagGet(FLAG_SYS_BATTLE_ACTION_WINDOW_INFO)){
-        u8 j, level;
-        u32 maxHp, currHp;
+        u8 j, level, nameSize, gender;
+        u32 maxHp, currHp, species;
         struct Pokemon *checkMon;
 
         font = FONT_SMALL_NARROW;
@@ -271,40 +294,88 @@ void PrintBattleWindow_ActionPromt(u32 battler)
         StringGet_Nickname(nickname);
 
         StringCopy(gStringVar1, nickname);
-	    ConvertIntToDecimalStringN(gStringVar2, level, STR_CONV_MODE_LEFT_ALIGN, 3);
+
+        gender = GetMonGender(mon);
+        species = GetMonData(mon, MON_DATA_SPECIES);
+
+        if ((species == SPECIES_NIDORAN_F || species == SPECIES_NIDORAN_M) && StringCompare(nickname, GetSpeciesName(species)) == 0)
+            gender = 100;
+
+        switch (gender)
+        {
+        default:
+            StringCopy(gStringVar2, sText_BattleMenu_Gender_None);
+            break;
+        case MON_MALE:
+            StringCopy(gStringVar2, sText_BattleMenu_Gender_Male);
+            break;
+        case MON_FEMALE:
+            StringCopy(gStringVar2, sText_BattleMenu_Gender_Female);
+            break;
+        }
+
+	    ConvertIntToDecimalStringN(gStringVar3, level, STR_CONV_MODE_LEFT_ALIGN, 3);
         StringExpandPlaceholders(gStringVar4, sText_BattleMenu_Action_Info_Nickname);
-        offset = 4 + GetStringCenterAlignXOffset(font, gStringVar4, BATTLE_WINDOW_WHAT_WILL_X_DO_SQUARE_SIZE);
+        offset = 10 + GetStringCenterAlignXOffset(font, gStringVar4, ACTION_PROMPT_LEVEL_WIN_WIDTH);
         AddTextPrinterParameterized4(windowId, font, posX + offset, posY, 0, 0, sMenuWindowFontColors[fontColor], 0xFF, gStringVar4);
 
-        AddTextPrinterParameterized4(windowId, font, posX + 104, posY, 0, 0, sMenuWindowFontColors[fontColor], 0xFF, sText_BattleMenu_Action_Exit);
+        //posX = 16;
+        posY = 8;
+        nameSize = GetStringWidth(font, gStringVar4, 0);
+
+		BlitBitmapToWindow(windowId, gBattleInterface_Info_L_Arrow, (posX + offset - 8), posY, 8, 8);
+		BlitBitmapToWindow(windowId, gBattleInterface_Info_R_Arrow, (posX + offset + nameSize), posY, 8, 8);
 
         posX = 16;
-        posY = 8;
-        offset = 0;
-
-		BlitBitmapToWindow(windowId, gBattleInterface_Info_L_Arrow, (posX - offset), posY, 8, 8);
-		BlitBitmapToWindow(windowId, gBattleInterface_Info_R_Arrow, (posX - offset + 84), posY, 8, 8);
-
         posY = 12;
         for(i = 0; i < NUM_STATS; i++){
+            u8 stat = sStatOrder[i];
             if((NUM_STATS / 2) - 1 < i)
                 offset = 72;
             else
                 offset = 0;
 
-            AddTextPrinterParameterized4(windowId, font, (posX + offset), posY + ((i % 3) * 8), 0, 0, sMenuWindowFontColors[fontColor], 0xFF, gStatNamesShortTable[i]);
+            AddTextPrinterParameterized4(windowId, font, (posX + offset), posY + ((i % 3) * 8), 0, 0, sMenuWindowFontColors[fontColor], 0xFF, gStatNamesShortTable[stat]);
 
-            if(i != STAT_HP){
-                for(j = 0; j < MAX_STAT_STAGE / 2; j++)
-                    BlitBitmapToWindow(windowId, gBattleInterface_Info_Stat_Dot, (posX + offset) + (j * 8) + 16, posY + ((i % 3) * 8) + 4, 8, 8);
+            if(stat != STAT_HP){
+                for(j = 0; j < MAX_STAT_STAGE / 2; j++){
+                    if(gBattleMons[battlerToCheck].statStages[stat] > DEFAULT_STAT_STAGE){
+                        u8 stages = gBattleMons[battlerToCheck].statStages[stat] - DEFAULT_STAT_STAGE;
+                        if(j < stages)
+                            BlitBitmapToWindow(windowId, gBattleInterface_Info_Plus_Symbol, (posX + offset) + (j * 8) + 16, posY + ((i % 3) * 8) + 4, 8, 8);
+                        else
+                            BlitBitmapToWindow(windowId, gBattleInterface_Info_Stat_Dot, (posX + offset) + (j * 8) + 16, posY + ((i % 3) * 8) + 4, 8, 8);
+                    }
+                    else if(gBattleMons[battlerToCheck].statStages[stat] < DEFAULT_STAT_STAGE){
+                        u8 stages = DEFAULT_STAT_STAGE - gBattleMons[battlerToCheck].statStages[stat];
+                        if(j < stages)
+                            BlitBitmapToWindow(windowId, gBattleInterface_Info_Down_Symbol, (posX + offset) + (j * 8) + 16, posY + ((i % 3) * 8) + 4, 8, 8);
+                        else
+                            BlitBitmapToWindow(windowId, gBattleInterface_Info_Stat_Dot, (posX + offset) + (j * 8) + 16, posY + ((i % 3) * 8) + 4, 8, 8);
+                    }
+                    else{
+                        BlitBitmapToWindow(windowId, gBattleInterface_Info_Stat_Dot, (posX + offset) + (j * 8) + 16, posY + ((i % 3) * 8) + 4, 8, 8);
+                    }
+                }
             }
             else{
-	            ConvertIntToDecimalStringN(gStringVar1, currHp, STR_CONV_MODE_LEFT_ALIGN, 4);
-	            ConvertIntToDecimalStringN(gStringVar2, maxHp, STR_CONV_MODE_LEFT_ALIGN, 4);
-                StringExpandPlaceholders(gStringVar4, sText_BattleMenu_Action_Info_HP);
+                bool8 isEnemy = !IsOnPlayerSide(battlerToCheck);
+                if(isEnemy){
+                    u16 percent = (maxHp * 100) / currHp;
+                    ConvertIntToDecimalStringN(gStringVar1, percent, STR_CONV_MODE_LEFT_ALIGN, 4);
+                    StringExpandPlaceholders(gStringVar4, sText_BattleMenu_Action_Info_HP_Percent);
+                }
+                else{
+                    ConvertIntToDecimalStringN(gStringVar1, currHp, STR_CONV_MODE_LEFT_ALIGN, 4);
+                    ConvertIntToDecimalStringN(gStringVar2, maxHp, STR_CONV_MODE_LEFT_ALIGN, 4);
+                    StringExpandPlaceholders(gStringVar4, sText_BattleMenu_Action_Info_HP);
+                }
+
                 AddTextPrinterParameterized4(windowId, font, (posX + offset) + 16, posY + ((i % 3) * 8), 0, 0, sMenuWindowFontColors[fontColor], 0xFF, gStringVar4);
             }
         }
+
+        AddTextPrinterParameterized4(windowId, FONT_SMALL, ACTION_PRIMPT_INFO_TEXT_X, ACTION_PRIMPT_INFO_TEXT_Y, 0, 0, sMenuWindowFontColors[fontColor], 0xFF, sText_BattleMenu_Action_Exit);
     }
     else{
         //What Will X Do?
@@ -320,7 +391,7 @@ void PrintBattleWindow_ActionPromt(u32 battler)
         offset = 4 + GetStringCenterAlignXOffset(FONT_NORMAL, gStringVar4, BATTLE_WINDOW_WHAT_WILL_X_DO_SQUARE_SIZE);
         AddTextPrinterParameterized4(windowId, FONT_NORMAL, posX + offset, posY, 0, 0, sMenuWindowFontColors[fontColor], 0xFF, gStringVar4);
 
-        AddTextPrinterParameterized4(windowId, font, posX + offset + 104, posY, 0, 0, sMenuWindowFontColors[fontColor], 0xFF, sText_BattleMenu_Action_Info);
+        AddTextPrinterParameterized4(windowId, FONT_SMALL, ACTION_PRIMPT_INFO_TEXT_X, ACTION_PRIMPT_INFO_TEXT_Y, 0, 0, sMenuWindowFontColors[fontColor], 0xFF, sText_BattleMenu_Action_Info);
     }
 
     // Print Fight / Pokémon / Bag / Run Text
@@ -728,7 +799,7 @@ static void HandleInputChooseAction(u32 battler)
                     value++;
             }
             else{
-                if(value < 2)
+                if(value < 1)
                     value++;
             }
             

@@ -701,6 +701,8 @@ const u32 gUnusedTilemap_BasicFrame[] = INCBIN_U32("graphics/unused/basic_frame.
 const u8 gBattleInterface_Info_Stat_Dot[] = INCBIN_U8("graphics/battle_interface/info/stat_dot.4bpp");
 const u8 gBattleInterface_Info_L_Arrow[] = INCBIN_U8("graphics/battle_interface/info/l_arrow.4bpp");
 const u8 gBattleInterface_Info_R_Arrow[] = INCBIN_U8("graphics/battle_interface/info/r_arrow.4bpp");
+const u8 gBattleInterface_Info_Plus_Symbol[] = INCBIN_U8("graphics/battle_interface/info/plus_symbol.4bpp");
+const u8 gBattleInterface_Info_Down_Symbol[] = INCBIN_U8("graphics/battle_interface/info/minus_symbol.4bpp");
 
 // Battle Interface
 

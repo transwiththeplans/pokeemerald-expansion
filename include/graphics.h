@@ -1941,6 +1941,8 @@ extern const u32 gShopMenuMoney_Gfx[];
 extern const u8 gBattleInterface_Info_Stat_Dot[];
 extern const u8 gBattleInterface_Info_L_Arrow[];
 extern const u8 gBattleInterface_Info_R_Arrow[];
+extern const u8 gBattleInterface_Info_Plus_Symbol[];
+extern const u8 gBattleInterface_Info_Down_Symbol[];
 
 extern const u32 gBattleInterface_BallStatusBarGfx[];
 extern const u8 gBattleInterface_BallDisplayGfx[];

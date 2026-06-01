@@ -1751,7 +1751,7 @@
 #define SPECIES_MELMETAL_MEGA_Z                         1619
 #define SPECIES_ALTARIA_MEGA_Z                          1620
 #define SPECIES_MEOWSCARADA_MEGA                        1621
-#define SPECIES_CUSTOM_30                               1622
+#define SPECIES_COPPERAJAH_MEGA                         1622
 // Legends Z-A
 #define SPECIES_CLEFABLE_MEGA                           1623
 #define SPECIES_VICTREEBEL_MEGA                         1624

@@ -2892,5 +2892,12 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Damage reduced by 30%."),
         .aiRating = 8,
     },
+	
+    [ABILITY_METAL_SHRED] =
+    {
+        .name = _("Mucus Membrane"),
+        .description = COMPOUND_STRING("Scatters metal debris if hit."),
+        .aiRating = 8,
+    },
 
 };

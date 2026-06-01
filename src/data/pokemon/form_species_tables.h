@@ -2450,8 +2450,8 @@ static const u16 sMorpekoFormSpeciesIdTable[] = {
 #if P_FAMILY_CUFANT
 static const u16 sCopperajahFormSpeciesIdTable[] = {
     SPECIES_COPPERAJAH,
-#if P_GIGANTAMAX_FORMS
-    SPECIES_COPPERAJAH_GMAX,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_COPPERAJAH_MEGA,
 #endif
     FORM_SPECIES_END,
 };

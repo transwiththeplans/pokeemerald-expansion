@@ -201,3 +201,7 @@
 .include "sound/voicegroups/rg_sevii_45.inc"
 .include "sound/voicegroups/rg_sevii_67.inc"
 .include "sound/voicegroups/drumsets/rg_credits.inc"
+
+@Omniversal Emerald
+.include "sound/voicegroups/oe_vs_mega_rayquaza.inc"
+.include "sound/voicegroups/oe_vs_cyrus.inc"

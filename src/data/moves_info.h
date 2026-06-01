@@ -22617,7 +22617,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Cryosleep"),
         .description = COMPOUND_STRING(
-			"User freezes the target/n" 
+			"User freezes the target\n" 
 			"into a deep sleep."),
         .effect = EFFECT_HIT,
         .power = 65,
@@ -22879,6 +22879,28 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_HyperBeam,
+    },
+	
+    [MOVE_PUDDLE_SMACK] =
+    {
+        .name = COMPOUND_STRING("Puddle Smack"),
+        .description = sHeavySlamDescription,
+        .effect = EFFECT_HEAT_CRASH,
+        .power = 1,
+        .type = TYPE_POISON,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .minimizeDoubleDamage = B_UPDATED_MOVE_FLAGS >= GEN_7,
+        .skyBattleBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_HeavySlam,
     },
 
     // Z-Moves

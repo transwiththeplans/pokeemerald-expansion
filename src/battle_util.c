@@ -8986,6 +8986,11 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct DamageContext *ctx)
         RecordAbilityBattle(ctx->battlerAtk, ABILITY_PRISM_ARMOR);
         modifier = uq4_12_multiply(modifier, UQ_4_12(0.75));
     }
+    if (SearchTraits(battlerTraits, ABILITY_MUCUS_MEMBRANE))
+    {
+        RecordAbilityBattle(ctx->battlerAtk, ABILITY_MUCUS_MEMBRANE);
+        modifier = uq4_12_multiply(modifier, UQ_4_12(0.70));
+    }
     if (SearchTraits(battlerTraits, ABILITY_FLUFFY))
     {
         if (ctx->moveType == TYPE_FIRE && !IsMoveMakingContact(ctx->battlerAtk, ctx->battlerDef, ctx->holdEffectAtk, ctx->move))

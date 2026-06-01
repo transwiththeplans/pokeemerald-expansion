@@ -3674,7 +3674,9 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_OE_VS_WILD)               \
     X(MUS_OE_VS_TRAINER)            \
     X(MUS_OE_VS_GYM_LEADER)         \
-    X(MUS_OE_VS_RIVAL)
+    X(MUS_OE_VS_RIVAL)              \
+    X(MUS_OE_VS_MEGA_RAYQUAZA)      \
+    X(MUS_OE_VS_CYRUS)
 
 #define SOUND_LIST_SE               \
     X(SE_USE_ITEM)                  \

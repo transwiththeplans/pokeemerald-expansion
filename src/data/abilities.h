@@ -2606,7 +2606,8 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_AIRBORNE] =
     {
         .name = _("Airborne"),
-        .description = COMPOUND_STRING("Floats until hit. Immune to Ground."),
+        .description = COMPOUND_STRING("Floats until hit.\n" 
+		"Immune to Ground."),
         .aiRating = 7,
         .breakable = TRUE,
     },
@@ -2614,7 +2615,8 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_CRYONICS] =
     {
         .name = _("Cryonics"),
-        .description = COMPOUND_STRING("May cause frostbite on contact."),
+        .description = COMPOUND_STRING("May cause frostbite on\n"
+		"contact."),
         .aiRating = 7,
     },
 
@@ -2765,7 +2767,8 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SHOOTING_STAR] =
     {
         .name = _("Shooting Star"),
-        .description = COMPOUND_STRING("Activates wish when at half health, once per battle."),
+        .description = COMPOUND_STRING("Activates wish when at\n" 
+		"half health, once per battle."),
         .aiRating = 8,
     },
 
@@ -2786,7 +2789,8 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_AURA_SHIFT] =
     {
         .name = _("Aura Shift"),
-        .description = COMPOUND_STRING("Fighting-type moves use special attack."),
+        .description = COMPOUND_STRING("Fighting-type moves use\n" 
+		"special attack."),
         .aiRating = 8,
     },
 
@@ -2807,21 +2811,24 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_OPPOSITE_DAY] =
     {
         .name = _("Opposite day"),
-        .description = COMPOUND_STRING("The Pokémon summons Inverse Room when it enters the battlefield."),
+        .description = COMPOUND_STRING("The Pokémon summons Inverse Room\n"
+		"when it enters the battlefield."),
         .aiRating = 8,
     },
 
     [ABILITY_TOTTERING_STEP] =
     {
         .name = _("Tottering Steps"),
-        .description = COMPOUND_STRING("When attacking this Pokémon may cause the target to become confused."),
+        .description = COMPOUND_STRING("When attacking this Pokémon\n"
+		"may cause the target to become confused."),
         .aiRating = 8,
     },
 
     [ABILITY_PREDATOR] =
     {
         .name = _("Predator"),
-        .description = COMPOUND_STRING("Dealing a KO heals 1/8 of this Pokémon's max HP."),
+        .description = COMPOUND_STRING("Dealing a KO heals 1/8 of\n"
+		"this Pokémon's max HP."),
         .aiRating = 8,
     },
 
@@ -2835,21 +2842,24 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_BELLICUS] =
     {
         .name = _("Bellicus"),
-        .description = COMPOUND_STRING("50% boost to attacks, 50% drop in speed."),
+        .description = COMPOUND_STRING("50% boost to attacks,\n"
+		"50% drop in speed."),
         .aiRating = 8,
     },
 
     [ABILITY_SERENA] =
     {
         .name = _("Serena"),
-        .description = COMPOUND_STRING("50% boost to defense, 50% drop in speed."),
+        .description = COMPOUND_STRING("50% boost to defense,\n"
+		"50% drop in speed."),
         .aiRating = 8,
     },
 
     [ABILITY_DEAD_SPACE] =
     {
         .name = _("Dead Space"),
-        .description = COMPOUND_STRING("Nullifies terrain, weather and abilities."),
+        .description = COMPOUND_STRING("Nullifies terrain, weather\n"
+		"and abilities."),
         .aiRating = 8,
         .cantBeSuppressed = TRUE,
     },
@@ -2857,7 +2867,8 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_MOUNTAINEER] =
     {
         .name = _("Mountaineer"),
-        .description = COMPOUND_STRING("Not hit by Rock-type moves, ignores hazards."),
+        .description = COMPOUND_STRING("Not hit by Rock-type moves,\n"
+		"ignores hazards."),
         .aiRating = 8,
     },
 
@@ -2872,6 +2883,20 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Dragonize"),
         .description = COMPOUND_STRING("Turns Normal moves into Dragon."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_MUCUS_MEMBRANE] =
+    {
+        .name = _("Mucus Membrane"),
+        .description = COMPOUND_STRING("Damage reduced by 30%."),
+        .aiRating = 8,
+    },
+	
+    [ABILITY_METAL_SHRED] =
+    {
+        .name = _("Mucus Membrane"),
+        .description = COMPOUND_STRING("Scatters metal debris if hit."),
         .aiRating = 8,
     },
 

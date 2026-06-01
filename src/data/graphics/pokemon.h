@@ -18415,6 +18415,13 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u16 gOverworldPalette_Eelektross[] = INCBIN_U16("graphics/pokemon/eelektross/overworld_normal.gbapal");
     const u16 gShinyOverworldPalette_Eelektross[] = INCBIN_U16("graphics/pokemon/eelektross/overworld_shiny.gbapal");
+#if P_MEGA_EVOLUTIONS
+    const u32 gMonFrontPic_EelektrossMega[] = INCBIN_U32("graphics/pokemon/eelektross/mega/front.4bpp.lz");
+    const u16 gMonPalette_EelektrossMega[] = INCBIN_U16("graphics/pokemon/eelektross/mega/normal.gbapal");
+    const u32 gMonBackPic_EelektrossMega[] = INCBIN_U32("graphics/pokemon/eelektross/mega/back.4bpp.lz");
+    const u16 gMonShinyPalette_EelektrossMega[] = INCBIN_U16("graphics/pokemon/eelektross/mega/shiny.gbapal");
+    const u8 gMonIcon_EelektrossMega[] = INCBIN_U8("graphics/pokemon/eelektross/mega/icon.4bpp");
+#endif //P_MEGA_EVOLUTIONS
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_TYNAMO

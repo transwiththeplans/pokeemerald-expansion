@@ -2489,7 +2489,7 @@ static void AskRecordBattle(void)
     case STATE_PRINT_YES_NO:
         if (!IsTextPrinterActive(B_WIN_MSG))
         {
-            HandleBattleWindow(YESNOBOX_X_Y, 0);
+            BattleShowYesNoBox();
             BattlePutTextOnWindow(gText_BattleYesNoChoice, B_WIN_YESNO);
             gBattleCommunication[CURSOR_POSITION] = 1;
             BattleCreateYesNoCursorAt(1);
@@ -2525,7 +2525,7 @@ static void AskRecordBattle(void)
             if (gBattleCommunication[CURSOR_POSITION] == 0)
             {
                 // Selected Yes
-                HandleBattleWindow(YESNOBOX_X_Y, WINDOW_CLEAR);
+                BattleHideYesNoBox();
                 gBattleCommunication[1] = MoveRecordedBattleToSaveData();
                 gBattleCommunication[MULTIUSE_STATE] = STATE_RECORD_YES;
             }
@@ -2544,7 +2544,7 @@ static void AskRecordBattle(void)
     case STATE_RECORD_NO:
         if (IsLinkTaskFinished() == TRUE)
         {
-            HandleBattleWindow(YESNOBOX_X_Y, WINDOW_CLEAR);
+            BattleHideYesNoBox();
             if (gMain.anyLinkBattlerHasFrontierPass)
             {
                 // Other battlers may be recording, wait for them

@@ -8407,7 +8407,7 @@ static void Cmd_yesnoboxlearnmove(void)
     switch (gBattleScripting.learnMoveState)
     {
     case 0:
-        HandleBattleWindow(YESNOBOX_X_Y, 0);
+        BattleShowYesNoBox();
         BattlePutTextOnWindow(gText_BattleYesNoChoice, B_WIN_YESNO);
         gBattleScripting.learnMoveState++;
         gBattleCommunication[CURSOR_POSITION] = 0;
@@ -8433,7 +8433,7 @@ static void Cmd_yesnoboxlearnmove(void)
             PlaySE(SE_SELECT);
             if (gBattleCommunication[1] == 0)
             {
-                HandleBattleWindow(YESNOBOX_X_Y, WINDOW_CLEAR);
+                BattleHideYesNoBox();
                 BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
                 gBattleScripting.learnMoveState++;
             }
@@ -8504,7 +8504,7 @@ static void Cmd_yesnoboxlearnmove(void)
         }
         break;
     case 5:
-        HandleBattleWindow(YESNOBOX_X_Y, WINDOW_CLEAR);
+        BattleHideYesNoBox();
         gBattlescriptCurrInstr = cmd->nextInstr;
         break;
     case 6:
@@ -8523,7 +8523,7 @@ static void Cmd_yesnoboxstoplearningmove(void)
     switch (gBattleScripting.learnMoveState)
     {
     case 0:
-        HandleBattleWindow(YESNOBOX_X_Y, 0);
+        BattleShowYesNoBox();
         BattlePutTextOnWindow(gText_BattleYesNoChoice, B_WIN_YESNO);
         gBattleScripting.learnMoveState++;
         gBattleCommunication[CURSOR_POSITION] = 0;
@@ -8553,13 +8553,13 @@ static void Cmd_yesnoboxstoplearningmove(void)
             else
                 gBattlescriptCurrInstr = cmd->nextInstr;
 
-            HandleBattleWindow(YESNOBOX_X_Y, WINDOW_CLEAR);
+            BattleHideYesNoBox();
         }
         else if (JOY_NEW(B_BUTTON))
         {
             PlaySE(SE_SELECT);
             gBattlescriptCurrInstr = cmd->noInstr;
-            HandleBattleWindow(YESNOBOX_X_Y, WINDOW_CLEAR);
+            BattleHideYesNoBox();
         }
         break;
     }
@@ -8837,7 +8837,7 @@ static void Cmd_yesnobox(void)
     switch (gBattleCommunication[0])
     {
     case 0:
-        HandleBattleWindow(YESNOBOX_X_Y, 0);
+        BattleShowYesNoBox();
         BattlePutTextOnWindow(gText_BattleYesNoChoice, B_WIN_YESNO);
         gBattleCommunication[0]++;
         gBattleCommunication[CURSOR_POSITION] = 0;
@@ -8862,13 +8862,13 @@ static void Cmd_yesnobox(void)
         {
             gBattleCommunication[CURSOR_POSITION] = 1;
             PlaySE(SE_SELECT);
-            HandleBattleWindow(YESNOBOX_X_Y, WINDOW_CLEAR);
+            BattleHideYesNoBox();
             gBattlescriptCurrInstr = cmd->nextInstr;
         }
         else if (JOY_NEW(A_BUTTON))
         {
             PlaySE(SE_SELECT);
-            HandleBattleWindow(YESNOBOX_X_Y, WINDOW_CLEAR);
+            BattleHideYesNoBox();
             gBattlescriptCurrInstr = cmd->nextInstr;
         }
         break;
@@ -14283,7 +14283,7 @@ static void Cmd_givecaughtmon(void)
         }
         break;
     case GIVECAUGHTMON_ASK_ADD_TO_PARTY:
-        HandleBattleWindow(YESNOBOX_X_Y, 0);
+        BattleShowYesNoBox();
         BattlePutTextOnWindow(gText_BattleYesNoChoice, B_WIN_YESNO);
         gBattleCommunication[MULTIUSE_STATE] = GIVECAUGHTMON_HANDLE_INPUT;
         gBattleCommunication[CURSOR_POSITION] = 0;
@@ -14307,6 +14307,7 @@ static void Cmd_givecaughtmon(void)
         if (JOY_NEW(A_BUTTON))
         {
             PlaySE(SE_SELECT);
+            BattleHideYesNoBox();
             if (gBattleCommunication[CURSOR_POSITION] == 0)
             {
                 gBattleCommunication[MULTIUSE_STATE] = GIVECAUGHTMON_DO_CHOOSE_MON;
@@ -14319,6 +14320,7 @@ static void Cmd_givecaughtmon(void)
         else if (JOY_NEW(B_BUTTON))
         {
             PlaySE(SE_SELECT);
+            BattleHideYesNoBox();
             gBattleCommunication[MULTIUSE_STATE] = GIVECAUGHTMON_GIVE_AND_SHOW_MSG;
         }
         break;
@@ -14537,6 +14539,21 @@ void HandleBattleWindow(u8 xStart, u8 yStart, u8 xEnd, u8 yEnd, u8 flags)
     }
 }
 
+void BattleShowYesNoBox(void)
+{
+    SetBgAttribute(0, BG_ATTR_PRIORITY, 0);
+    ShowBg(0);
+    HandleBattleWindow(YESNOBOX_X_Y, 0);
+}
+
+void BattleHideYesNoBox(void)
+{
+    HandleBattleWindow(YESNOBOX_X_Y, WINDOW_CLEAR);
+    CopyBgTilemapBufferToVram(0);
+    SetBgAttribute(0, BG_ATTR_PRIORITY, 1);
+    ShowBg(0);
+}
+
 void BattleCreateYesNoCursorAt(u8 cursorPosition)
 {
     u16 src[2];
@@ -14564,7 +14581,7 @@ static void Cmd_trygivecaughtmonnick(void)
     switch (gBattleCommunication[MULTIUSE_STATE])
     {
     case 0:
-        HandleBattleWindow(YESNOBOX_X_Y, 0);
+        BattleShowYesNoBox();
         BattlePutTextOnWindow(gText_BattleYesNoChoice, B_WIN_YESNO);
         gBattleCommunication[MULTIUSE_STATE]++;
         gBattleCommunication[CURSOR_POSITION] = 0;
@@ -14588,6 +14605,7 @@ static void Cmd_trygivecaughtmonnick(void)
         if (JOY_NEW(A_BUTTON))
         {
             PlaySE(SE_SELECT);
+            BattleHideYesNoBox();
             if (gBattleCommunication[CURSOR_POSITION] == 0)
             {
                 gBattleCommunication[MULTIUSE_STATE]++;
@@ -14601,6 +14619,7 @@ static void Cmd_trygivecaughtmonnick(void)
         else if (JOY_NEW(B_BUTTON))
         {
             PlaySE(SE_SELECT);
+            BattleHideYesNoBox();
             gBattleCommunication[MULTIUSE_STATE] = 4;
         }
         break;

@@ -910,7 +910,7 @@ static void Task_EvolutionScene(u8 taskId)
         case MVSTATE_PRINT_YES_NO:
             if (!IsTextPrinterActive(0) && !IsSEPlaying())
             {
-                HandleBattleWindow(YESNOBOX_X_Y, 0);
+                BattleShowYesNoBox();
                 BattlePutTextOnWindow(gText_BattleYesNoChoice, B_WIN_YESNO);
                 gTasks[taskId].tLearnMoveState++;
                 sEvoCursorPos = 0;
@@ -939,7 +939,7 @@ static void Task_EvolutionScene(u8 taskId)
             }
             if (JOY_NEW(A_BUTTON))
             {
-                HandleBattleWindow(YESNOBOX_X_Y, WINDOW_CLEAR);
+                BattleHideYesNoBox();
                 PlaySE(SE_SELECT);
 
                 if (sEvoCursorPos != 0)
@@ -958,7 +958,7 @@ static void Task_EvolutionScene(u8 taskId)
             if (JOY_NEW(B_BUTTON))
             {
                 // Equivalent to selecting NO
-                HandleBattleWindow(YESNOBOX_X_Y, WINDOW_CLEAR);
+                BattleHideYesNoBox();
                 PlaySE(SE_SELECT);
                 gTasks[taskId].tLearnMoveState = gTasks[taskId].tLearnMoveNoState;
             }

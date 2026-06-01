@@ -147,6 +147,19 @@ const u8 *const gStatNamesTable[NUM_BATTLE_STATS] =
     [STAT_ACC]     = sText_Accuracy,
     [STAT_EVASION] = sText_Evasiveness,
 };
+
+const u8 *const gStatNamesShortTable[NUM_BATTLE_STATS] =
+{
+    [STAT_HP]      = COMPOUND_STRING("HP"),
+    [STAT_ATK]     = COMPOUND_STRING("Atk"),
+    [STAT_DEF]     = COMPOUND_STRING("Def"),
+    [STAT_SPATK]   = COMPOUND_STRING("SpA"),
+    [STAT_SPDEF]   = COMPOUND_STRING("SpD"),
+    [STAT_SPEED]   = COMPOUND_STRING("Spe"),
+    [STAT_ACC]     = COMPOUND_STRING("Acc"),
+    [STAT_EVASION] = COMPOUND_STRING("Eva"),
+};
+
 const u8 *const gPokeblockWasTooXStringTable[FLAVOR_COUNT] =
 {
     [FLAVOR_SPICY]  = COMPOUND_STRING("was too spicy!"),
@@ -1401,7 +1414,7 @@ const u8 gText_MoveInterfaceType[] = _("TYPE/");
 const u8 gText_MoveInterfacePpType[] = _("{PALETTE 5}{COLOR_HIGHLIGHT_SHADOW DYNAMIC_COLOR4 DYNAMIC_COLOR5 DYNAMIC_COLOR6}PP\nTYPE/");
 const u8 gText_MoveInterfaceDynamicColors[] = _("{PALETTE 5}{COLOR_HIGHLIGHT_SHADOW DYNAMIC_COLOR4 DYNAMIC_COLOR5 DYNAMIC_COLOR6}");
 const u8 gText_WhichMoveToForget4[] = _("{PALETTE 5}{COLOR_HIGHLIGHT_SHADOW DYNAMIC_COLOR4 DYNAMIC_COLOR5 DYNAMIC_COLOR6}Which move should\nbe forgotten?");
-const u8 gText_BattleYesNoChoice[] = _("{PALETTE 5}{COLOR_HIGHLIGHT_SHADOW DYNAMIC_COLOR4 DYNAMIC_COLOR5 DYNAMIC_COLOR6}Yes\nNo");
+const u8 gText_BattleYesNoChoice[] = _("Yes\nNo");
 const u8 gText_BattleSwitchWhich[] = _("{PALETTE 5}{COLOR_HIGHLIGHT_SHADOW DYNAMIC_COLOR4 DYNAMIC_COLOR5 DYNAMIC_COLOR6}Switch\nwhich?");
 const u8 gText_BattleSwitchWhich2[] = _("{PALETTE 5}{COLOR_HIGHLIGHT_SHADOW DYNAMIC_COLOR4 DYNAMIC_COLOR5 DYNAMIC_COLOR6}");
 const u8 gText_BattleSwitchWhich3[] = _("{UP_ARROW}");
@@ -1536,17 +1549,25 @@ static const u16 sGrammarMoveUsedTable[] =
 
 static const u8 sText_EmptyStatus[] = _("$$$$$$$");
 
+#define BATTLEBOX_BGCOLOR 8
+#define BATTLEBOX_FONT_COLOR 10
+#define BATTLEBOX_SHADOW_COLOR 4
+
+#define BATTLEWIN_BGCOLOR 5
+#define BATTLEWIN_FONT_COLOR 10
+#define BATTLEWIN_SHADOW_COLOR 4
+
 static const struct BattleWindowText sTextOnWindowsInfo_Normal[] =
 {
     [B_WIN_MSG] = {
-        .fillValue = PIXEL_FILL(0xF),
+        .fillValue = PIXEL_FILL(BATTLEBOX_BGCOLOR),
         .fontId = FONT_NORMAL,
         .x = 0,
         .y = 1,
         .speed = 1,
-        .fgColor = 1,
-        .bgColor = 15,
-        .shadowColor = 6,
+        .fgColor = BATTLEBOX_FONT_COLOR,
+        .bgColor = BATTLEBOX_BGCOLOR,
+        .shadowColor = BATTLEBOX_SHADOW_COLOR,
     },
     [B_WIN_ACTION_PROMPT] = {
         .fillValue = PIXEL_FILL(0xF),
@@ -1659,33 +1680,34 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal[] =
         .shadowColor = 15,
     },
     [B_WIN_YESNO] = {
-        .fillValue = PIXEL_FILL(0xE),
+        .fillValue = PIXEL_FILL(BATTLEWIN_BGCOLOR),
         .fontId = FONT_NORMAL,
         .x = 0,
         .y = 1,
         .speed = 0,
-        .fgColor = 13,
-        .bgColor = 14,
-        .shadowColor = 15,
+        .fgColor = BATTLEWIN_FONT_COLOR,
+        .bgColor = BATTLEWIN_BGCOLOR,
+        .shadowColor = BATTLEWIN_SHADOW_COLOR,
     },
     [B_WIN_LEVEL_UP_BOX] = {
-        .fillValue = PIXEL_FILL(0xE),
+        .fillValue = PIXEL_FILL(BATTLEWIN_BGCOLOR),
         .fontId = FONT_NORMAL,
         .x = 0,
         .y = 1,
         .speed = 0,
-        .fgColor = 13,
-        .bgColor = 14,
-        .shadowColor = 15,
+        .fgColor = BATTLEWIN_FONT_COLOR,
+        .bgColor = BATTLEWIN_BGCOLOR,
+        .shadowColor = BATTLEWIN_SHADOW_COLOR,
     },
     [B_WIN_LEVEL_UP_BANNER] = {
-        .fillValue = PIXEL_FILL(0),
+        .fillValue = PIXEL_FILL(BATTLEWIN_BGCOLOR),
         .fontId = FONT_NORMAL,
         .x = 32,
         .y = 1,
         .speed = 0,
-        .fgColor = 1,
-        .shadowColor = 2,
+        .fgColor = BATTLEWIN_FONT_COLOR,
+        .bgColor = BATTLEWIN_BGCOLOR,
+        .shadowColor = BATTLEWIN_SHADOW_COLOR,
     },
     [B_WIN_VS_PLAYER] = {
         .fillValue = PIXEL_FILL(0xE),
@@ -3491,8 +3513,7 @@ void BattlePutTextOnWindow(const u8 *text, u8 windowId)
         windowId &= ~B_WIN_COPYTOVRAM;
         copyToVram = FALSE;
     }
-    else
-    {
+    else {
         FillWindowPixelBuffer(windowId, textInfo[windowId].fillValue);
         copyToVram = TRUE;
     }
@@ -3511,7 +3532,7 @@ void BattlePutTextOnWindow(const u8 *text, u8 windowId)
     printerTemplate.bgColor = textInfo[windowId].bgColor;
     printerTemplate.shadowColor = textInfo[windowId].shadowColor;
 
-    if (B_WIN_MOVE_NAME_1 <= windowId && windowId <= B_WIN_MOVE_NAME_4)
+    /*if (B_WIN_MOVE_NAME_1 <= windowId && windowId <= B_WIN_MOVE_NAME_4)
     {
         // We cannot check the actual width of the window because
         // B_WIN_MOVE_NAME_1 and B_WIN_MOVE_NAME_3 are 16 wide for
@@ -3520,7 +3541,7 @@ void BattlePutTextOnWindow(const u8 *text, u8 windowId)
             printerTemplate.fontId = GetFontIdToFit(text, printerTemplate.fontId, printerTemplate.letterSpacing, 16 * TILE_WIDTH);
         else
             printerTemplate.fontId = GetFontIdToFit(text, printerTemplate.fontId, printerTemplate.letterSpacing, 8 * TILE_WIDTH);
-    }
+    }*/
 
     if (printerTemplate.x == 0xFF)
     {

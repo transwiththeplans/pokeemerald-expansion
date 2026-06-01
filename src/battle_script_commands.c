@@ -8407,7 +8407,7 @@ static void Cmd_yesnoboxlearnmove(void)
     switch (gBattleScripting.learnMoveState)
     {
     case 0:
-        HandleBattleWindow(YESNOBOX_X_Y, 0);
+        BattleShowYesNoBox();
         BattlePutTextOnWindow(gText_BattleYesNoChoice, B_WIN_YESNO);
         gBattleScripting.learnMoveState++;
         gBattleCommunication[CURSOR_POSITION] = 0;
@@ -8433,7 +8433,7 @@ static void Cmd_yesnoboxlearnmove(void)
             PlaySE(SE_SELECT);
             if (gBattleCommunication[1] == 0)
             {
-                HandleBattleWindow(YESNOBOX_X_Y, WINDOW_CLEAR);
+                BattleHideYesNoBox();
                 BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
                 gBattleScripting.learnMoveState++;
             }
@@ -8504,7 +8504,7 @@ static void Cmd_yesnoboxlearnmove(void)
         }
         break;
     case 5:
-        HandleBattleWindow(YESNOBOX_X_Y, WINDOW_CLEAR);
+        BattleHideYesNoBox();
         gBattlescriptCurrInstr = cmd->nextInstr;
         break;
     case 6:
@@ -8523,7 +8523,7 @@ static void Cmd_yesnoboxstoplearningmove(void)
     switch (gBattleScripting.learnMoveState)
     {
     case 0:
-        HandleBattleWindow(YESNOBOX_X_Y, 0);
+        BattleShowYesNoBox();
         BattlePutTextOnWindow(gText_BattleYesNoChoice, B_WIN_YESNO);
         gBattleScripting.learnMoveState++;
         gBattleCommunication[CURSOR_POSITION] = 0;
@@ -8553,13 +8553,13 @@ static void Cmd_yesnoboxstoplearningmove(void)
             else
                 gBattlescriptCurrInstr = cmd->nextInstr;
 
-            HandleBattleWindow(YESNOBOX_X_Y, WINDOW_CLEAR);
+            BattleHideYesNoBox();
         }
         else if (JOY_NEW(B_BUTTON))
         {
             PlaySE(SE_SELECT);
             gBattlescriptCurrInstr = cmd->noInstr;
-            HandleBattleWindow(YESNOBOX_X_Y, WINDOW_CLEAR);
+            BattleHideYesNoBox();
         }
         break;
     }
@@ -8837,7 +8837,7 @@ static void Cmd_yesnobox(void)
     switch (gBattleCommunication[0])
     {
     case 0:
-        HandleBattleWindow(YESNOBOX_X_Y, 0);
+        BattleShowYesNoBox();
         BattlePutTextOnWindow(gText_BattleYesNoChoice, B_WIN_YESNO);
         gBattleCommunication[0]++;
         gBattleCommunication[CURSOR_POSITION] = 0;
@@ -8862,13 +8862,13 @@ static void Cmd_yesnobox(void)
         {
             gBattleCommunication[CURSOR_POSITION] = 1;
             PlaySE(SE_SELECT);
-            HandleBattleWindow(YESNOBOX_X_Y, WINDOW_CLEAR);
+            BattleHideYesNoBox();
             gBattlescriptCurrInstr = cmd->nextInstr;
         }
         else if (JOY_NEW(A_BUTTON))
         {
             PlaySE(SE_SELECT);
-            HandleBattleWindow(YESNOBOX_X_Y, WINDOW_CLEAR);
+            BattleHideYesNoBox();
             gBattlescriptCurrInstr = cmd->nextInstr;
         }
         break;
@@ -9101,8 +9101,8 @@ static void Cmd_drawlvlupbox(void)
     case 10:
         if (!IsDma3ManagerBusyWithBgCopy())
         {
-            SetBgAttribute(0, BG_ATTR_PRIORITY, 0);
-            SetBgAttribute(1, BG_ATTR_PRIORITY, 1);
+            SetBgAttribute(0, BG_ATTR_PRIORITY, 1);
+            SetBgAttribute(1, BG_ATTR_PRIORITY, 0);
             ShowBg(0);
             ShowBg(1);
             gBattlescriptCurrInstr = cmd->nextInstr;
@@ -9111,12 +9111,17 @@ static void Cmd_drawlvlupbox(void)
     }
 }
 
+#define LEVEL_UP_WINDOW_BG_COLOR 5
+#define LEVEL_UP_WINDOW_FONT_COLOR 10
+#define LEVEL_UP_WINDOW_SHADOW_COLOR 4
+
 static void DrawLevelUpWindow1(void)
 {
     u16 currStats[NUM_STATS];
+    //DebugPrintfLevel(MGBA_LOG_WARN, "DrawLevelUpWindow1");
 
     GetMonLevelUpWindowStats(&gPlayerParty[gBattleStruct->expGetterMonId], currStats);
-    DrawLevelUpWindowPg1(B_WIN_LEVEL_UP_BOX, gBattleResources->beforeLvlUp->stats, currStats, TEXT_DYNAMIC_COLOR_5, TEXT_DYNAMIC_COLOR_4, TEXT_DYNAMIC_COLOR_6);
+    DrawLevelUpWindowPg1(B_WIN_LEVEL_UP_BOX, gBattleResources->beforeLvlUp->stats, currStats, LEVEL_UP_WINDOW_BG_COLOR, LEVEL_UP_WINDOW_FONT_COLOR, LEVEL_UP_WINDOW_SHADOW_COLOR);
 }
 
 static void DrawLevelUpWindow2(void)
@@ -9124,7 +9129,7 @@ static void DrawLevelUpWindow2(void)
     u16 currStats[NUM_STATS];
 
     GetMonLevelUpWindowStats(&gPlayerParty[gBattleStruct->expGetterMonId], currStats);
-    DrawLevelUpWindowPg2(B_WIN_LEVEL_UP_BOX, currStats, TEXT_DYNAMIC_COLOR_5, TEXT_DYNAMIC_COLOR_4, TEXT_DYNAMIC_COLOR_6);
+    DrawLevelUpWindowPg2(B_WIN_LEVEL_UP_BOX, currStats, LEVEL_UP_WINDOW_BG_COLOR, LEVEL_UP_WINDOW_FONT_COLOR, LEVEL_UP_WINDOW_SHADOW_COLOR);
 }
 
 static void InitLevelUpBanner(void)
@@ -14278,7 +14283,7 @@ static void Cmd_givecaughtmon(void)
         }
         break;
     case GIVECAUGHTMON_ASK_ADD_TO_PARTY:
-        HandleBattleWindow(YESNOBOX_X_Y, 0);
+        BattleShowYesNoBox();
         BattlePutTextOnWindow(gText_BattleYesNoChoice, B_WIN_YESNO);
         gBattleCommunication[MULTIUSE_STATE] = GIVECAUGHTMON_HANDLE_INPUT;
         gBattleCommunication[CURSOR_POSITION] = 0;
@@ -14302,6 +14307,7 @@ static void Cmd_givecaughtmon(void)
         if (JOY_NEW(A_BUTTON))
         {
             PlaySE(SE_SELECT);
+            BattleHideYesNoBox();
             if (gBattleCommunication[CURSOR_POSITION] == 0)
             {
                 gBattleCommunication[MULTIUSE_STATE] = GIVECAUGHTMON_DO_CHOOSE_MON;
@@ -14314,6 +14320,7 @@ static void Cmd_givecaughtmon(void)
         else if (JOY_NEW(B_BUTTON))
         {
             PlaySE(SE_SELECT);
+            BattleHideYesNoBox();
             gBattleCommunication[MULTIUSE_STATE] = GIVECAUGHTMON_GIVE_AND_SHOW_MSG;
         }
         break;
@@ -14532,6 +14539,21 @@ void HandleBattleWindow(u8 xStart, u8 yStart, u8 xEnd, u8 yEnd, u8 flags)
     }
 }
 
+void BattleShowYesNoBox(void)
+{
+    SetBgAttribute(0, BG_ATTR_PRIORITY, 0);
+    ShowBg(0);
+    HandleBattleWindow(YESNOBOX_X_Y, 0);
+}
+
+void BattleHideYesNoBox(void)
+{
+    HandleBattleWindow(YESNOBOX_X_Y, WINDOW_CLEAR);
+    CopyBgTilemapBufferToVram(0);
+    SetBgAttribute(0, BG_ATTR_PRIORITY, 1);
+    ShowBg(0);
+}
+
 void BattleCreateYesNoCursorAt(u8 cursorPosition)
 {
     u16 src[2];
@@ -14559,7 +14581,7 @@ static void Cmd_trygivecaughtmonnick(void)
     switch (gBattleCommunication[MULTIUSE_STATE])
     {
     case 0:
-        HandleBattleWindow(YESNOBOX_X_Y, 0);
+        BattleShowYesNoBox();
         BattlePutTextOnWindow(gText_BattleYesNoChoice, B_WIN_YESNO);
         gBattleCommunication[MULTIUSE_STATE]++;
         gBattleCommunication[CURSOR_POSITION] = 0;
@@ -14583,6 +14605,7 @@ static void Cmd_trygivecaughtmonnick(void)
         if (JOY_NEW(A_BUTTON))
         {
             PlaySE(SE_SELECT);
+            BattleHideYesNoBox();
             if (gBattleCommunication[CURSOR_POSITION] == 0)
             {
                 gBattleCommunication[MULTIUSE_STATE]++;
@@ -14596,6 +14619,7 @@ static void Cmd_trygivecaughtmonnick(void)
         else if (JOY_NEW(B_BUTTON))
         {
             PlaySE(SE_SELECT);
+            BattleHideYesNoBox();
             gBattleCommunication[MULTIUSE_STATE] = 4;
         }
         break;

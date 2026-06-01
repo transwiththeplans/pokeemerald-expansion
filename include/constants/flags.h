@@ -1640,6 +1640,7 @@
 #define FLAG_LEVEL_UP_FROM_PARTY_SCREEN              NEW_FLAGS_START + 2
 #define FLAG_DEXNAV_SEARCHING                        NEW_FLAGS_START + 3
 #define FLAG_DEXNAV_DETECTOR_MODE                    NEW_FLAGS_START + 4
+#define FLAG_SYS_BATTLE_ACTION_WINDOW_INFO           NEW_FLAGS_START + 5
 
 #define NEW_FLAGS_END                                5399
 

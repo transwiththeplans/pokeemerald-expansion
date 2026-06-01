@@ -230,6 +230,7 @@ static void RestoreBattleMenuBg(void)
 {
     gBattle_BG1_Y = 0;
     gBattle_BG1_X = 0;
+
     ShowBg(1);
 }
 
@@ -242,7 +243,6 @@ void ClearBattleWindow(void)
 
 #define ACTION_PRIMPT_INFO_TEXT_X 16 + 104
 #define ACTION_PRIMPT_INFO_TEXT_Y 4
-
 
 #define ACTION_PROMPT_LEVEL_WIN_WIDTH 100
 
@@ -2531,13 +2531,9 @@ static void PlayerHandleChooseAction(u32 battler)
     // "What will {x} do?" + "Fight/Pokémon/Bag/Run" menu
     s32 i;
 
-	//Reshow Bg
-    gBattle_BG1_X = 0;
-    gBattle_BG1_Y = 0;
-    ShowBg(1);
-
     gBattlerControllerFuncs[battler] = HandleChooseActionAfterDma3;
     BattleTv_ClearExplosionFaintCause();
+    FlagClear(FLAG_SYS_BATTLE_ACTION_WINDOW_INFO);
     PrintBattleWindow_ActionPromt(battler);
 
     //BattlePutTextOnWindow(gText_BattleMenu, B_WIN_ACTION_MENU);

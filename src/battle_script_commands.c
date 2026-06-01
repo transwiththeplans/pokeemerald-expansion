@@ -9101,8 +9101,8 @@ static void Cmd_drawlvlupbox(void)
     case 10:
         if (!IsDma3ManagerBusyWithBgCopy())
         {
-            SetBgAttribute(0, BG_ATTR_PRIORITY, 0);
-            SetBgAttribute(1, BG_ATTR_PRIORITY, 1);
+            SetBgAttribute(0, BG_ATTR_PRIORITY, 1);
+            SetBgAttribute(1, BG_ATTR_PRIORITY, 0);
             ShowBg(0);
             ShowBg(1);
             gBattlescriptCurrInstr = cmd->nextInstr;
@@ -9118,7 +9118,7 @@ static void Cmd_drawlvlupbox(void)
 static void DrawLevelUpWindow1(void)
 {
     u16 currStats[NUM_STATS];
-    DebugPrintfLevel(MGBA_LOG_WARN, "DrawLevelUpWindow1");
+    //DebugPrintfLevel(MGBA_LOG_WARN, "DrawLevelUpWindow1");
 
     GetMonLevelUpWindowStats(&gPlayerParty[gBattleStruct->expGetterMonId], currStats);
     DrawLevelUpWindowPg1(B_WIN_LEVEL_UP_BOX, gBattleResources->beforeLvlUp->stats, currStats, LEVEL_UP_WINDOW_BG_COLOR, LEVEL_UP_WINDOW_FONT_COLOR, LEVEL_UP_WINDOW_SHADOW_COLOR);

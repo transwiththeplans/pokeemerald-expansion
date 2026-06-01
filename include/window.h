@@ -65,6 +65,7 @@ void BlitBitmapRectToWindow(u32 windowId, const u8 *pixels, u16 srcX, u16 srcY, 
 void FillWindowPixelRect(u32 windowId, u8 fillValue, u16 x, u16 y, u16 width, u16 height);
 void CopyToWindowPixelBuffer(u32 windowId, const void *src, u16 size, u16 tileOffset);
 void FillWindowPixelBuffer(u32 windowId, u8 fillValue);
+void FillWindowPixelBufferWithSize(u32 windowId, u8 fillValue, u32 fillSize);
 void ScrollWindow(u32 windowId, u8 direction, u8 distance, u8 fillValue);
 void CallWindowFunction(u32 windowId, void ( *func)(u8, u8, u8, u8, u8, u8));
 bool32 SetWindowAttribute(u32 windowId, u32 attributeId, u32 value);

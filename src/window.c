@@ -463,6 +463,12 @@ void FillWindowPixelBuffer(u32 windowId, u8 fillValue)
     CpuFastFill8(fillValue, gWindows[windowId].tileData, 32 * fillSize);
 }
 
+void FillWindowPixelBufferWithSize(u32 windowId, u8 fillValue, u32 fillSize)
+{
+    //int fillSize = gWindows[windowId].window.width * gWindows[windowId].window.height;
+    CpuFastFill8(fillValue, gWindows[windowId].tileData, 32 * fillSize);
+}
+
 #define MOVE_TILES_DOWN(a)                                                      \
 {                                                                               \
     destOffset = i + (a);                                                       \

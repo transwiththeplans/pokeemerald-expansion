@@ -175,7 +175,7 @@ static const u8 *GetHealthboxElementGfxPtr(u8);
 static u8 *AddTextPrinterAndCreateWindowOnHealthboxWithFont(const u8 *str, u32 x, u32 y, u32 bgColor, u32 *windowId, u32 fontId);
 static u8 *AddTextPrinterAndCreateWindowOnHealthbox(const u8 *, u32, u32, u32, u32 *);
 static u8 *AddTextPrinterAndCreateWindowOnHealthboxToFit(const u8 *, u32, u32, u32, u32 *, u32);
-static u8 *AddNicknamePrinterAndCreateWindowOnHealthboxToFit(const u8 *str, u32 x, u32 y, u32 *windowId, u32 destTileWidth);
+static u8 *AddNicknamePrinterAndCreateWindowOnHealthboxToFit(const u8 *str, u32 x, u32 y, u32 *windowId, u32 destTileWidth, u8 type);
 
 static void RemoveWindowOnHealthbox(u32 windowId);
 static void UpdateHpTextInHealthboxInDoubles(u32 healthboxSpriteId, u32 maxOrCurrent, s16 currHp, s16 maxHp);
@@ -1747,6 +1747,11 @@ static const u8 sText_HealthboxNickname[] = _("");
 #define HEALTH_BAR_NICKNAME_Y  4
 #define HEALTH_BAR_NICKNAME_DEST_TILES 7
 
+#define HEALTHBOX_TEXT_TYPE_NICKNAME       0
+#define HEALTHBOX_TEXT_TYPE_LEVEL_1_DIGIT  1
+#define HEALTHBOX_TEXT_TYPE_LEVEL_2_DIGITS 2
+#define HEALTHBOX_TEXT_TYPE_LEVEL_3_DIGITS 3
+
 static void UpdateNickInHealthbox(u8 healthboxSpriteId, struct Pokemon *mon)
 {
     u8 nickname[POKEMON_NAME_LENGTH + 1];
@@ -1789,7 +1794,7 @@ static void UpdateNickInHealthbox(u8 healthboxSpriteId, struct Pokemon *mon)
         break;
     }
 
-    windowTileData = AddNicknamePrinterAndCreateWindowOnHealthboxToFit(gDisplayedStringBattle, HEALTH_BAR_NICKNAME_X - xOffset, HEALTH_BAR_NICKNAME_Y, &windowId, HEALTH_BAR_NICKNAME_DEST_TILES);
+    windowTileData = AddNicknamePrinterAndCreateWindowOnHealthboxToFit(gDisplayedStringBattle, HEALTH_BAR_NICKNAME_X - xOffset, HEALTH_BAR_NICKNAME_Y, &windowId, HEALTH_BAR_NICKNAME_DEST_TILES, HEALTHBOX_TEXT_TYPE_NICKNAME);
 
     spriteTileNum = gSprites[healthboxSpriteId].oam.tileNum * TILE_SIZE_4BPP;
 
@@ -1828,6 +1833,7 @@ static void UpdateLvlInHealthbox(u8 healthboxSpriteId, u8 lvl)
     u32 xPos;
     u8 *objVram;
     u8 battler = gSprites[healthboxSpriteId].hMain_Battler;
+    u8 type = HEALTHBOX_TEXT_TYPE_LEVEL_1_DIGIT;
 
     // Don't print Lv char if mon has a gimmick with an indicator active.
     if (GetIndicatorPalTag(battler) != TAG_NONE)
@@ -1847,7 +1853,14 @@ static void UpdateLvlInHealthbox(u8 healthboxSpriteId, u8 lvl)
         UpdateIndicatorVisibilityAndType(healthboxSpriteId, TRUE);
     }
 
-    windowTileData = AddNicknamePrinterAndCreateWindowOnHealthboxToFit(text, xPos, HEALTH_BAR_LEVEL_Y, &windowId, 3);
+    if(lvl == MAX_LEVEL)
+        type = HEALTHBOX_TEXT_TYPE_LEVEL_3_DIGITS;
+    else if(lvl >= 10)
+        type = HEALTHBOX_TEXT_TYPE_LEVEL_2_DIGITS;
+    else
+        type = HEALTHBOX_TEXT_TYPE_LEVEL_1_DIGIT;
+
+    windowTileData = AddNicknamePrinterAndCreateWindowOnHealthboxToFit(text, xPos, HEALTH_BAR_LEVEL_Y, &windowId, 3, type);
     spriteTileNum = gSprites[healthboxSpriteId].oam.tileNum * TILE_SIZE_4BPP;
 
     if (IsOnPlayerSide(battler))
@@ -2489,7 +2502,7 @@ static u8 *AddTextPrinterAndCreateWindowOnHealthboxToFit(const u8 *str, u32 x, u
     return AddTextPrinterAndCreateWindowOnHealthboxWithFont(str, x, y, bgColor, windowId, fontId);
 }
 
-static u8 *AddNicknamePrinterAndCreateWindowOnHealthboxToFit(const u8 *str, u32 x, u32 y, u32 *windowId, u32 destTileWidth)
+static u8 *AddNicknamePrinterAndCreateWindowOnHealthboxToFit(const u8 *str, u32 x, u32 y, u32 *windowId, u32 destTileWidth, u8 type)
 {
     u16 winId;
     u8 color[3];
@@ -2498,6 +2511,24 @@ static u8 *AddNicknamePrinterAndCreateWindowOnHealthboxToFit(const u8 *str, u32 
 
     winId = AddWindow(&winTemplate);
     FillWindowPixelBuffer(winId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+
+    switch(type){
+        case HEALTHBOX_TEXT_TYPE_NICKNAME:
+            //FillWindowPixelBufferWithSize(winId, PIXEL_FILL(6), (52 * 2));
+            BlitBitmapToWindow(winId, gBattleInterface_Healthbox_Singles_Player_Nickname, x, y + 1, 56, 16);
+        break;
+        default:
+        case HEALTHBOX_TEXT_TYPE_LEVEL_1_DIGIT:
+            BlitBitmapToWindow(winId, gBattleInterface_Healthbox_Singles_Player_Level, HEALTH_BAR_LEVEL_X, y + 1, 24, 16);
+        break;
+        /*break;
+        case HEALTHBOX_TEXT_TYPE_LEVEL_2_DIGITS:
+            BlitBitmapToWindow(winId, gBattleInterface_Healthbox_Singles_Player_Level_2, HEALTH_BAR_LEVEL_X - 2, y + 1, 24, 16);
+        break;
+        case HEALTHBOX_TEXT_TYPE_LEVEL_3_DIGITS:
+            BlitBitmapToWindow(winId, gBattleInterface_Healthbox_Singles_Player_Level_3, HEALTH_BAR_LEVEL_X - 2, y + 1, 24, 16);
+        break;*/
+    }
 
     color[0] = TEXT_COLOR_TRANSPARENT;
     color[1] = 1;

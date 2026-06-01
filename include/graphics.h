@@ -1944,6 +1944,9 @@ extern const u8 gBattleInterface_Info_R_Arrow[];
 extern const u8 gBattleInterface_Info_Plus_Symbol[];
 extern const u8 gBattleInterface_Info_Down_Symbol[];
 
+extern const u8 gBattleInterface_Healthbox_Singles_Player_Nickname[];
+extern const u8 gBattleInterface_Healthbox_Singles_Player_Level[];
+
 extern const u32 gBattleInterface_BallStatusBarGfx[];
 extern const u8 gBattleInterface_BallDisplayGfx[];
 extern const u16 gBattleInterface_BallStatusBarPal[];

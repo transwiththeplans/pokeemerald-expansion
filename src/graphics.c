@@ -704,6 +704,9 @@ const u8 gBattleInterface_Info_R_Arrow[] = INCBIN_U8("graphics/battle_interface/
 const u8 gBattleInterface_Info_Plus_Symbol[] = INCBIN_U8("graphics/battle_interface/info/plus_symbol.4bpp");
 const u8 gBattleInterface_Info_Down_Symbol[] = INCBIN_U8("graphics/battle_interface/info/minus_symbol.4bpp");
 
+const u8 gBattleInterface_Healthbox_Singles_Player_Nickname[] = INCBIN_U8("graphics/battle_interface/info/healthbox_singles_player_namebox.4bpp");
+const u8 gBattleInterface_Healthbox_Singles_Player_Level[] = INCBIN_U8("graphics/battle_interface/info/healthbox_singles_player_level.4bpp");
+
 // Battle Interface
 
 const u16 gBattleInterface_BallStatusBarPal[] = INCBIN_U16("graphics/battle_interface/ball_status_bar.gbapal");

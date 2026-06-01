@@ -209,8 +209,8 @@ const u8 sText_BattleMenu_Action_Info_HP[] = _("{STR_VAR_1}/{STR_VAR_2}");
 const u8 sText_BattleMenu_Action_Info_HP_Percent[] = _("{STR_VAR_1}%");
 const u8 sText_BattleMenu_Action_Test[] = _("8");
 
-static const u8 sBattleSelector_Actions[] = INCBIN_U8("graphics/ui_menus/battle_interface/selector.4bpp");
-static const u8 sBattleSelector_Moves[]   = INCBIN_U8("graphics/ui_menus/battle_interface/selector_moves.4bpp");
+static const u8 sBattleSelector_Actions[] = INCBIN_U8("graphics/battle_interface/selector.4bpp");
+static const u8 sBattleSelector_Moves[]   = INCBIN_U8("graphics/battle_interface/selector_moves.4bpp");
 
 #define BATTLE_WINDOW_ACTION_LIST_WIDTH 64
 #define BATTLE_WINDOW_WHAT_WILL_X_DO_SQUARE_SIZE 100

@@ -698,14 +698,14 @@ const u16 gUnusedPal_BasicFrame[] = INCBIN_U16("graphics/unused/basic_frame.gbap
 const u32 gUnusedTilemap_BasicFrame[] = INCBIN_U32("graphics/unused/basic_frame.bin.smolTM");
 
 //Info Battle Interface
-const u8 gBattleInterface_Info_Stat_Dot[] = INCBIN_U8("graphics/battle_interface/info/stat_dot.4bpp");
-const u8 gBattleInterface_Info_L_Arrow[] = INCBIN_U8("graphics/battle_interface/info/l_arrow.4bpp");
-const u8 gBattleInterface_Info_R_Arrow[] = INCBIN_U8("graphics/battle_interface/info/r_arrow.4bpp");
-const u8 gBattleInterface_Info_Plus_Symbol[] = INCBIN_U8("graphics/battle_interface/info/plus_symbol.4bpp");
-const u8 gBattleInterface_Info_Down_Symbol[] = INCBIN_U8("graphics/battle_interface/info/minus_symbol.4bpp");
+const u8 gBattleInterface_Info_Stat_Dot[] = INCBIN_U8("graphics/battle_interface/stat_dot.4bpp");
+const u8 gBattleInterface_Info_L_Arrow[] = INCBIN_U8("graphics/battle_interface/l_arrow.4bpp");
+const u8 gBattleInterface_Info_R_Arrow[] = INCBIN_U8("graphics/battle_interface/r_arrow.4bpp");
+const u8 gBattleInterface_Info_Plus_Symbol[] = INCBIN_U8("graphics/battle_interface/plus_symbol.4bpp");
+const u8 gBattleInterface_Info_Down_Symbol[] = INCBIN_U8("graphics/battle_interface/minus_symbol.4bpp");
 
-const u8 gBattleInterface_Healthbox_Singles_Player_Nickname[] = INCBIN_U8("graphics/battle_interface/info/healthbox_singles_player_namebox.4bpp");
-const u8 gBattleInterface_Healthbox_Singles_Player_Level[] = INCBIN_U8("graphics/battle_interface/info/healthbox_singles_player_level.4bpp");
+const u8 gBattleInterface_Healthbox_Singles_Player_Nickname[] = INCBIN_U8("graphics/battle_interface/healthbox_singles_player_namebox.4bpp");
+const u8 gBattleInterface_Healthbox_Singles_Player_Level[] = INCBIN_U8("graphics/battle_interface/healthbox_singles_player_level.4bpp");
 
 // Battle Interface
 

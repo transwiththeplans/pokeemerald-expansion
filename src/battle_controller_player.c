@@ -79,6 +79,8 @@ static void PlayerHandleLinkStandbyMsg(u32 battler);
 static void PlayerHandleResetActionMoveSelection(u32 battler);
 static void PlayerHandleEndLinkBattle(u32 battler);
 static void PlayerHandleBattleDebug(u32 battler);
+static void FixBattleMenuHandleChangingBattler(void);
+static void BattleMenuHandleChangingBattler(bool8 isLeft);
 
 static void PlayerBufferRunCommand(u32 battler);
 static void MoveSelectionDisplayPpNumber(u32 battler);
@@ -259,19 +261,20 @@ void PrintBattleWindow_ActionPromt(u32 battler)
 {
     struct Pokemon *mon = &gPlayerParty[gBattlerPartyIndexes[battler]];
     u8 nickname[POKEMON_NAME_LENGTH + 1];
-    u8 i, posX, posY, offset;
+    u8 i, posX, posY, offset, battlerToCheck;
     u8 windowId = B_WIN_ACTION_PROMPT;
     u8 font = FONT_NORMAL;
     u8 fontColor = FONT_BLACK;
-    u8 battlerToCheck = VarGet(VAR_BATTLE_INFO_BATTLER);
     RestoreBattleMenuBg();
 
-    DebugPrintfLevel(MGBA_LOG_WARN, "PrintBattleWindow_ActionPromt");
+    //DebugPrintfLevel(MGBA_LOG_WARN, "PrintBattleWindow_ActionPromt");
+    FixBattleMenuHandleChangingBattler();
+    battlerToCheck = VarGet(VAR_BATTLE_INFO_BATTLER);
 
     //Fill the window with the fill value
     FillWindowPixelBuffer(windowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
 
-    if(FlagGet(FLAG_SYS_BATTLE_ACTION_WINDOW_INFO)){
+    if(FlagGet(FLAG_SYS_BATTLE_ACTION_WINDOW_INFO) && IsBattlerAlive(battlerToCheck)){
         u8 j, level, nameSize, gender;
         u32 maxHp, currHp, species;
         struct Pokemon *checkMon;
@@ -361,7 +364,7 @@ void PrintBattleWindow_ActionPromt(u32 battler)
             else{
                 bool8 isEnemy = !IsOnPlayerSide(battlerToCheck);
                 if(isEnemy){
-                    u16 percent = (maxHp * 100) / currHp;
+                    u16 percent = (currHp * 100) / maxHp;
                     ConvertIntToDecimalStringN(gStringVar1, percent, STR_CONV_MODE_LEFT_ALIGN, 4);
                     StringExpandPlaceholders(gStringVar4, sText_BattleMenu_Action_Info_HP_Percent);
                 }
@@ -649,6 +652,44 @@ static u32 GetNextBall(u32 ballId)
 
 #define ENABLE_BATTLE_INPUT_GOING_BEYOND_SCREEN FALSE // No idea what to call this constant
 
+static void FixBattleMenuHandleChangingBattler(void){
+    u8 value = VarGet(VAR_BATTLE_INFO_BATTLER);
+
+    if(!IsBattlerAlive(value))
+        BattleMenuHandleChangingBattler(FALSE);
+}
+
+static void BattleMenuHandleChangingBattler(bool8 isLeft){
+    u8 value = VarGet(VAR_BATTLE_INFO_BATTLER);
+    u8 maxBattlers;
+    u8 checksRan = 0;
+
+    if(IsDoubleBattle())
+        maxBattlers = MAX_BATTLERS_COUNT - 1;
+    else
+        maxBattlers = (MAX_BATTLERS_COUNT / 2) - 1;
+
+    do{
+        if(!isLeft){
+            if(value < maxBattlers)
+                value++;
+            else
+                value = 0;
+                
+            VarSet(VAR_BATTLE_INFO_BATTLER, value);
+        }
+        else{
+            if(value != 0)
+                value--;
+            else
+                value = maxBattlers;
+                
+            VarSet(VAR_BATTLE_INFO_BATTLER, value);
+        }
+    }
+    while(!IsBattlerAlive(value) && checksRan++ < maxBattlers);
+}
+
 static void HandleInputChooseAction(u32 battler)
 {
     u8 windowId = B_WIN_ACTION_PROMPT;
@@ -757,11 +798,7 @@ static void HandleInputChooseAction(u32 battler)
     else if (JOY_NEW(DPAD_LEFT))
     {
         if(FlagGet(FLAG_SYS_BATTLE_ACTION_WINDOW_INFO)){
-            value = VarGet(VAR_BATTLE_INFO_BATTLER);
-            if(value != 0)
-                value--;
-            
-            VarSet(VAR_BATTLE_INFO_BATTLER, value);
+            BattleMenuHandleChangingBattler(TRUE);
             PrintBattleWindow_ActionPromt(battler);
         }
         /*if (gActionSelectionCursor[battler] & 1) // if is B_ACTION_USE_ITEM or B_ACTION_RUN
@@ -793,17 +830,7 @@ static void HandleInputChooseAction(u32 battler)
     else if (JOY_NEW(DPAD_RIGHT))
     {
         if(FlagGet(FLAG_SYS_BATTLE_ACTION_WINDOW_INFO)){
-            value = VarGet(VAR_BATTLE_INFO_BATTLER);
-            if(IsDoubleBattle()){
-                if(value < MAX_BATTLERS_COUNT - 1)
-                    value++;
-            }
-            else{
-                if(value < 1)
-                    value++;
-            }
-            
-            VarSet(VAR_BATTLE_INFO_BATTLER, value);
+            BattleMenuHandleChangingBattler(FALSE);
             PrintBattleWindow_ActionPromt(battler);
         }
         /*if (!(gActionSelectionCursor[battler] & 1)) // if is B_ACTION_USE_MOVE or B_ACTION_SWITCH

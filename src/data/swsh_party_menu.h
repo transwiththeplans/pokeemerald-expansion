@@ -48,6 +48,7 @@ static const u8 sMenuText_Confirm[]                         = _("Confirm");
 static const u8 sMenuText_Switch[]                          = _("Switch");
 static const u8 sMenuText_Boxes[]                           = _("Boxes");
 static const u8 sText_SendThisMonToPC[]                     = _("Send {STR_VAR_1} to the PC?");
+static const u8 sMenuText_Abilities[]                           = _("Abilities");
 
 static const struct BgTemplate sPartyMenuBgTemplates[] =
 {
@@ -169,7 +170,7 @@ static const u32 sCancelButton_Tilemap[] = INCBIN_U32("graphics/party_menu/cance
 static const u8 sFontColorTable[][3] =
 {
     {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_LIGHT_GRAY, TEXT_COLOR_DARK_GRAY},  // Default
-    {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      TEXT_COLOR_GREEN},      // Unused
+    {TEXT_COLOR_TRANSPARENT, 2, 1},      // Move Names
     {TEXT_COLOR_TRANSPARENT, TEXT_DYNAMIC_COLOR_2,  TEXT_DYNAMIC_COLOR_3},  // Gender symbol
     {TEXT_COLOR_WHITE,       TEXT_COLOR_DARK_GRAY,  TEXT_COLOR_LIGHT_GRAY}, // Selection actions
     {TEXT_COLOR_WHITE,       TEXT_COLOR_BLUE,       TEXT_COLOR_LIGHT_BLUE}, // Field moves

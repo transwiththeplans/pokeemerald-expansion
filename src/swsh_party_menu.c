@@ -1463,9 +1463,9 @@ static void DisplayPartyPokemonAbility(u8 windowId, u8 slot)
         return;
 
     u8 abilityNum;
-    u16 species;
-    enum Ability ability;
+    enum Ability ability, innate;
     const u8 *name;
+    const u8 *innateName;
     int x;
     int y = 16;
 
@@ -1474,14 +1474,33 @@ static void DisplayPartyPokemonAbility(u8 windowId, u8 slot)
 
     {
         struct Pokemon *mon = &gPlayerParty[slot];
-        if (GetMonData(mon, MON_DATA_SPECIES) != SPECIES_NONE && !GetMonData(mon, MON_DATA_IS_EGG))
+        bool8 innateUnlocked = FALSE;
+        u16 species = GetMonData(mon, MON_DATA_SPECIES);
+        u8 monLevel = GetMonData(mon, MON_DATA_LEVEL);
+        u8 unlockLevel = gSpeciesInfo[species].innateUnlockLevel;
+
+        innate = GetSpeciesInnate(species, 1);
+
+        if(monLevel > unlockLevel || GetMonData(mon, MON_DATA_INNATE_UNLOCKED))
+            innateUnlocked = innate != ABILITY_NONE;
+
+        if (species != SPECIES_NONE && !GetMonData(mon, MON_DATA_IS_EGG))
         {
             abilityNum = GetMonData(mon, MON_DATA_ABILITY_NUM);
-            species = GetMonData(mon, MON_DATA_SPECIES);
             ability = GetAbilityBySpecies(species, abilityNum);
             name = gAbilitiesInfo[ability].name;
-            x = GetStringCenterAlignXOffset(FONT_SMALL, name, 104);
-            AddTextPrinterParameterized3(windowId, FONT_SMALL, x, y, sFontColorTable[9], 0, name);
+            innateName = gAbilitiesInfo[innate].name;
+            if(innateUnlocked){
+                x = GetStringCenterAlignXOffset(FONT_SMALL_NARROWER, name, (104 / 2));
+                AddTextPrinterParameterized3(windowId, FONT_SMALL_NARROWER, x, y, sFontColorTable[9], 0, name);
+
+                x = GetStringCenterAlignXOffset(FONT_SMALL_NARROWER, innateName, (104 / 2));
+                AddTextPrinterParameterized3(windowId, FONT_SMALL_NARROWER, x + (104 / 2), y, sFontColorTable[9], 0, innateName);
+            }
+            else{
+                x = GetStringCenterAlignXOffset(FONT_SMALL, name, 104);
+                AddTextPrinterParameterized3(windowId, FONT_SMALL, x, y, sFontColorTable[9], 0, name);
+            }
         }
     }
     CopyWindowToVram(windowId, COPYWIN_GFX);
@@ -3189,7 +3208,7 @@ static void DisplayPartyPokemonMoves(u8 windowId, struct Pokemon *mon, int m)
         StartSpriteAnim(&gSprites[sMoveTypeSpriteIds[m]], type);
     }
     AddTextPrinterParameterized3(windowId, GetFontIdToFit(name, FONT_SMALL, 0, info->dimensions[2]),
-                                 info->dimensions[0], info->dimensions[1], sFontColorTable[0], 0, name);
+                                 info->dimensions[0], info->dimensions[1], sFontColorTable[1], 0, name);
     PrintMovePPToWindow(windowId, FONT_SMALL, mon, m, info->dimensions[4], info->dimensions[5], info->dimensions[6]);
 }
 

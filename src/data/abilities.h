@@ -2895,7 +2895,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 	
     [ABILITY_METAL_SHRED] =
     {
-        .name = _("Mucus Membrane"),
+        .name = _("Metal Shred"),
         .description = COMPOUND_STRING("Scatters metal debris if hit."),
         .aiRating = 8,
     },

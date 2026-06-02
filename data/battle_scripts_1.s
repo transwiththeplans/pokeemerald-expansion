@@ -5450,6 +5450,14 @@ BattleScript_LooseRocksActivates::
 	printstring STRINGID_POINTEDSTONESFLOAT
 	waitmessage B_WAIT_TIME_LONG
 	return
+	
+BattleScript_MetalShredActivates::
+	call BattleScript_AbilityPopUp
+	pause B_WAIT_TIME_SHORT
+	setsteelsurge BattleScript_EffectSteelsurge
+	printstring STRINGID_SHARPSTEELFLOATS
+	waitmessage B_WAIT_TIME_LONG
+	return
 
 BattleScript_EarthEaterActivates::
 	call BattleScript_AbilityPopUp
@@ -9319,7 +9327,7 @@ BattleScript_RecycleBerriesAlliesEnd:
 
 BattleScript_EffectSteelsurge::
 	setsteelsurge BattleScript_MoveEnd
-	printfromtable gDmgHazardsStringIds
+	printstring STRINGID_SHARPSTEELFLOATS
 	waitmessage B_WAIT_TIME_LONG
 	return
 

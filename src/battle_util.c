@@ -5819,6 +5819,22 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
             effect++;
         }
 
+        if (SearchTraits(battlerTraits, ABILITY_METAL_SHRED)
+         && !gBattleStruct->isSkyBattle
+         && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+         && IsBattleMovePhysical(gCurrentMove)
+         && IsBattlerTurnDamaged(gBattlerTarget)
+         && !IsHazardOnSide(GetBattlerSide(gBattlerTarget), HAZARDS_STEELSURGE))
+        {
+            SaveBattlerTarget(gBattlerTarget);
+            SaveBattlerAttacker(gBattlerAttacker);
+            gBattlerAttacker = gBattlerTarget;
+            gBattlerTarget = BATTLE_OPPOSITE(gBattlerAttacker);
+            PushTraitStack(battler, ABILITY_METAL_SHRED);
+            BattleScriptCall(BattleScript_MetalShredActivates);
+            effect++;
+        }
+
         if (SearchTraits(battlerTraits, ABILITY_LOOSE_ROCKS)
          && !gBattleStruct->isSkyBattle
          && !gProtectStructs[gBattlerAttacker].confusionSelfDmg

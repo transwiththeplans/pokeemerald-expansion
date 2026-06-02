@@ -265,6 +265,7 @@ extern const u8 BattleScript_TailwindEnds[];
 extern const u8 BattleScript_TrickRoomEnds[];
 extern const u8 BattleScript_WebDownActivated[];
 extern const u8 BattleScript_LooseRocksActivates[];
+extern const u8 BattleScript_MetalShredActivates[];
 extern const u8 BattleScript_WonderRoomEnds[];
 extern const u8 BattleScript_MagicRoomEnds[];
 extern const u8 BattleScript_TerrainEnds[];

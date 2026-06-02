@@ -2082,6 +2082,17 @@ const u16 gPokenavRibbonsSummaryBg_Pal[] = INCBIN_U16("graphics/pokenav/ribbons/
 const u32 gPokenavRibbonsSummaryBg_Gfx[] = INCBIN_U32("graphics/pokenav/ribbons/summary_bg.4bpp.smol");
 const u32 gPokenavRibbonsSummaryBg_Tilemap[] = INCBIN_U32("graphics/pokenav/ribbons/summary_bg.bin.smolTM");
 
+//#ifdef DARKENED_ICONS
+const u16 gMonIconPalettes[][16] =
+{
+    INCBIN_U16("graphics/pokemon/icon_palettes/pal_black.gbapal"),
+    INCBIN_U16("graphics/pokemon/icon_palettes/pal_black.gbapal"),
+    INCBIN_U16("graphics/pokemon/icon_palettes/pal_black.gbapal"),
+    INCBIN_U16("graphics/pokemon/icon_palettes/pal_black.gbapal"),
+    INCBIN_U16("graphics/pokemon/icon_palettes/pal_black.gbapal"),
+    INCBIN_U16("graphics/pokemon/icon_palettes/pal_black.gbapal"),
+};
+/*#else
 const u16 gMonIconPalettes[][16] =
 {
     INCBIN_U16("graphics/pokemon/icon_palettes/pal0.gbapal"),
@@ -2091,6 +2102,7 @@ const u16 gMonIconPalettes[][16] =
     INCBIN_U16("graphics/pokemon/icon_palettes/pal4.gbapal"),
     INCBIN_U16("graphics/pokemon/icon_palettes/pal5.gbapal"),
 };
+#endif*/
 
 const u16 gTitleScreenBgPalettes[]         = INCBIN_U16("graphics/title_screen/pokemon_logo.gbapal",
                                                         "graphics/title_screen/rayquaza_and_clouds.gbapal");

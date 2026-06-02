@@ -3668,7 +3668,6 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
     u8 effectFlags;
     s16 evChange;
     u16 evCount;
-    bool8 didLevelUp = FALSE;
 
     // Determine the EV cap to use
     u32 maxAllowedEVs = !B_EV_ITEMS_CAP ? MAX_TOTAL_EVS : GetCurrentEVCap();
@@ -3773,8 +3772,6 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                     {
                         SetMonData(mon, MON_DATA_EXP, &dataUnsigned);
                         CalculateMonStats(mon);
-                        if (GetMonData(mon, MON_DATA_LEVEL, NULL) > levelBefore)
-                            didLevelUp = TRUE;
                     }
                     retVal = FALSE;
                 }

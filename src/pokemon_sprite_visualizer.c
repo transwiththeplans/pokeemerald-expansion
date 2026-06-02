@@ -24,6 +24,7 @@
 #include "pokemon.h"
 #include "pokemon_animation.h"
 #include "pokemon_sprite_visualizer.h"
+#include "pokemon_summary_screen.h"
 #include "pokemon_icon.h"
 #include "reset_rtc_screen.h"
 #include "scanline_effect.h"
@@ -1654,12 +1655,19 @@ static void UpdateShadowSizeValue(u8 taskId, bool8 increment)
 
 #define sAnimId    data[2]
 #define sAnimDelay data[3]
+#define tIsShadow  data[4]
+
+static EWRAM_DATA u8 sShadowAnimDelayTaskId = 0;
 
 static void Task_AnimateAfterDelay(u8 taskId)
 {
     if (--gTasks[taskId].sAnimDelay == 0)
     {
         LaunchAnimationTaskForFrontSprite(READ_PTR_FROM_TASK(taskId, 0), gTasks[taskId].sAnimId);
+        if (gTasks[taskId].tIsShadow)
+            sShadowAnimDelayTaskId = TASK_NONE;
+        else
+            SummaryScreen_SetAnimDelayTaskId(TASK_NONE);
         DestroyTask(taskId);
     }
 }

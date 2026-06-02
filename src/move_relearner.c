@@ -1081,3 +1081,18 @@ void MoveRelearnerShowHideCategoryIcon(s32 moveId)
         StartSpriteAnim(&gSprites[sMoveRelearnerStruct->categoryIconSpriteId], GetBattleMoveCategory(moveId));
     }
 }
+
+bool32 CanBoxMonRelearnMoves(struct BoxPokemon *boxMon, enum MoveRelearnerStates state)
+{
+    return FALSE; //sRelearnTypes[state].hasMoveToRelearn(boxMon);
+}
+
+bool32 CanBoxMonRelearnAnyMove(struct BoxPokemon *boxMon)
+{
+    /*for (u32 i = MOVE_RELEARNER_LEVEL_UP_MOVES; i < MOVE_RELEARNER_COUNT; i++)
+    {
+        if (sRelearnTypes[i].hasMoveToRelearn(boxMon))
+            return TRUE;
+    }*/
+    return FALSE;
+}

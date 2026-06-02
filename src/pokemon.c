@@ -3617,9 +3617,9 @@ void CopyPartyMonToBattleData(u32 battler, u32 partyIndex)
     ClearTemporarySpeciesSpriteData(battler, FALSE, FALSE);
 }
 
-bool8 ExecuteTableBasedItemEffect(struct Pokemon *mon, u16 item, u8 partyIndex, u8 moveIndex)
+bool8 ExecuteTableBasedItemEffect(struct Pokemon *mon, u16 item, u8 partyIndex, u8 moveIndex, u8 modifyStats, u16 itemCount)
 {
-    return PokemonUseItemEffects(mon, item, partyIndex, moveIndex, FALSE);
+    return PokemonUseItemEffects(mon, item, partyIndex, moveIndex, FALSE, modifyStats, itemCount);
 }
 
 #define UPDATE_FRIENDSHIP_FROM_ITEM()                                                                   \
@@ -3650,7 +3650,7 @@ const u32 sExpCandyExperienceTable[] = {
 #define CANDY_BOX_LEVELS 7
 
 // Returns TRUE if the item has no effect on the Pokémon, FALSE otherwise
-bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 moveIndex, bool8 usedByAI)
+bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 moveIndex, bool8 usedByAI, u8 modifyStats, u16 itemCount)
 {
     u32 dataUnsigned;
     s32 dataSigned, evCap;
@@ -3666,8 +3666,9 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
     bool32 friendshipOnly = FALSE;
     u16 heldItem;
     u8 effectFlags;
-    s8 evChange;
+    s16 evChange;
     u16 evCount;
+    bool8 didLevelUp = FALSE;
 
     // Determine the EV cap to use
     u32 maxAllowedEVs = !B_EV_ITEMS_CAP ? MAX_TOTAL_EVS : GetCurrentEVCap();
@@ -3717,6 +3718,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
             {
                 u8 param = GetItemHoldEffectParam(item);
                 u8 monLevel = GetMonData(mon, MON_DATA_LEVEL, NULL);
+                u8 levelBefore = monLevel;
                 dataUnsigned = 0;
 
                 if (FlagGet(FLAG_USED_CANDY_BOX)) // Candy Box
@@ -3742,16 +3744,16 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
 
                     dataUnsigned = gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES, NULL)].growthRate][targetLevel];
                     SetMonData(mon, MON_DATA_LEVEL, &targetLevel);
-                    DebugPrintf("targetLevel: %d dataUnsigned: %d", targetLevel, dataUnsigned);
+                    //DebugPrintf("targetLevel: %d dataUnsigned: %d", targetLevel, dataUnsigned);
                 }
                 else if (param == 0) // Rare Candy
                 {
-                    dataUnsigned = gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES, NULL)].growthRate][monLevel + 1];
+                    dataUnsigned = gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES, NULL)].growthRate][monLevel + itemCount];
                 }
                 else if (param - 1 < ARRAY_COUNT(sExpCandyExperienceTable)) // EXP Candies
                 {
                     u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
-                    dataUnsigned = sExpCandyExperienceTable[param - 1] + GetMonData(mon, MON_DATA_EXP, NULL);
+                    dataUnsigned = (sExpCandyExperienceTable[param - 1] * itemCount) + GetMonData(mon, MON_DATA_EXP, NULL);
 
                     if (B_RARE_CANDY_CAP && B_EXP_CAP_TYPE == EXP_CAP_HARD)
                     {
@@ -3767,8 +3769,13 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
 
                 if (dataUnsigned != 0) // Failsafe
                 {
-                    SetMonData(mon, MON_DATA_EXP, &dataUnsigned);
-                    CalculateMonStats(mon);
+                    if (modifyStats)
+                    {
+                        SetMonData(mon, MON_DATA_EXP, &dataUnsigned);
+                        CalculateMonStats(mon);
+                        if (GetMonData(mon, MON_DATA_LEVEL, NULL) > levelBefore)
+                            didLevelUp = TRUE;
+                    }
                     retVal = FALSE;
                 }
             }
@@ -3822,7 +3829,8 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         evCount = GetMonEVCount(mon);
                         temp2 = itemEffect[itemEffectParam];
                         dataSigned = GetMonData(mon, sGetMonDataEVConstants[temp1], NULL);
-                        evChange = temp2;
+                        s8 evDelta = (s8)itemEffect[itemEffectParam];
+                        s16 evChange = evDelta * itemCount;
 
                         if (evChange > 0) // Increasing EV (HP or Atk)
                         {
@@ -3877,8 +3885,11 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         }
 
                         // Update EVs and stats
-                        SetMonData(mon, sGetMonDataEVConstants[temp1], &dataSigned);
-                        CalculateMonStats(mon);
+                        if (modifyStats)
+                        {
+                            SetMonData(mon, sGetMonDataEVConstants[temp1], &dataSigned);
+                            CalculateMonStats(mon);
+                        }
                         itemEffectParam++;
                         retVal = FALSE;
                         break;
@@ -3924,7 +3935,8 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                             dataUnsigned = currentHP + dataUnsigned;
                             if (dataUnsigned > maxHP)
                                 dataUnsigned = maxHP;
-                            SetMonData(mon, MON_DATA_HP, &dataUnsigned);
+                            if (modifyStats)
+                                SetMonData(mon, MON_DATA_HP, &dataUnsigned);
                             retVal = FALSE;
                         }
                         effectFlags &= ~(ITEM4_REVIVE >> 2);
@@ -4011,7 +4023,8 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         evCount = GetMonEVCount(mon);
                         temp2 = itemEffect[itemEffectParam];
                         dataSigned = GetMonData(mon, sGetMonDataEVConstants[temp1 + 2], NULL);
-                        evChange = temp2;
+                        s8 evDelta = (s8)itemEffect[itemEffectParam];
+                        evChange = evDelta * itemCount;
                         if (evChange > 0) // Increasing EV
                         {
                             // Check if the total EV limit is reached
@@ -4065,8 +4078,11 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         }
 
                         // Update EVs and stats
-                        SetMonData(mon, sGetMonDataEVConstants[temp1 + 2], &dataSigned);
-                        CalculateMonStats(mon);
+                        if (modifyStats)
+                        {
+                            SetMonData(mon, sGetMonDataEVConstants[temp1 + 2], &dataSigned);
+                            CalculateMonStats(mon);
+                        }
                         retVal = FALSE;
                         itemEffectParam++;
                         break;
@@ -4097,20 +4113,29 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         // how much friendship the Pokémon already has.
                         // In general, Pokémon with lower friendship receive more,
                         // and Pokémon with higher friendship receive less.
-                        if (GetMonData(mon, MON_DATA_FRIENDSHIP, NULL) < 100)
-                            UPDATE_FRIENDSHIP_FROM_ITEM();
+                        if (modifyStats)
+                        {
+                            if (GetMonData(mon, MON_DATA_FRIENDSHIP, NULL) < 100)
+                                UPDATE_FRIENDSHIP_FROM_ITEM();
+                        }
                         itemEffectParam++;
                         break;
 
                     case 6: // ITEM5_FRIENDSHIP_MID
-                        if (GetMonData(mon, MON_DATA_FRIENDSHIP, NULL) >= 100 && GetMonData(mon, MON_DATA_FRIENDSHIP, NULL) < 200)
-                            UPDATE_FRIENDSHIP_FROM_ITEM();
+                        if (modifyStats)
+                        {
+                            if (GetMonData(mon, MON_DATA_FRIENDSHIP, NULL) >= 100 && GetMonData(mon, MON_DATA_FRIENDSHIP, NULL) < 200)
+                                UPDATE_FRIENDSHIP_FROM_ITEM();
+                        }
                         itemEffectParam++;
                         break;
 
                     case 7: // ITEM5_FRIENDSHIP_HIGH
-                        if (GetMonData(mon, MON_DATA_FRIENDSHIP, NULL) >= 200)
-                            UPDATE_FRIENDSHIP_FROM_ITEM();
+                        if (modifyStats)
+                        {
+                            if (GetMonData(mon, MON_DATA_FRIENDSHIP, NULL) >= 200)
+                                UPDATE_FRIENDSHIP_FROM_ITEM();
+                        }
                         itemEffectParam++;
                         break;
                     }
@@ -6423,12 +6448,19 @@ static void Task_AnimateAfterDelay(u8 taskId)
     }
 }
 
+#define tIsShadow data[4]
+
+static EWRAM_DATA u8 sShadowAnimDelayTaskId = 0;
+
 static void Task_PokemonSummaryAnimateAfterDelay(u8 taskId)
 {
     if (--gTasks[taskId].sAnimDelay == 0)
     {
         StartMonSummaryAnimation(READ_PTR_FROM_TASK(taskId, 0), gTasks[taskId].sAnimId);
-        SummaryScreen_SetAnimDelayTaskId(TASK_NONE);
+        if (gTasks[taskId].tIsShadow)
+            sShadowAnimDelayTaskId = TASK_NONE;
+        else
+            SummaryScreen_SetAnimDelayTaskId(TASK_NONE);
         DestroyTask(taskId);
     }
 }
@@ -6488,7 +6520,7 @@ void DoMonFrontSpriteAnimation(struct Sprite *sprite, u16 species, bool8 noCry, 
     }
 }
 
-void PokemonSummaryDoMonAnimation(struct Sprite *sprite, u16 species, bool8 oneFrame)
+void PokemonSummaryDoMonAnimation(struct Sprite *sprite, u16 species, bool8 oneFrame, bool32 isShadow)
 {
     if (!oneFrame && HasTwoFramesAnimation(species))
         StartSpriteAnim(sprite, 1);
@@ -6499,7 +6531,12 @@ void PokemonSummaryDoMonAnimation(struct Sprite *sprite, u16 species, bool8 oneF
         STORE_PTR_IN_TASK(sprite, taskId, 0);
         gTasks[taskId].sAnimId = gSpeciesInfo[species].frontAnimId;
         gTasks[taskId].sAnimDelay = gSpeciesInfo[species].frontAnimDelay;
-        SummaryScreen_SetAnimDelayTaskId(taskId);
+        gTasks[taskId].tIsShadow = isShadow;
+
+        if (isShadow)
+            sShadowAnimDelayTaskId = taskId;
+        else
+            SummaryScreen_SetAnimDelayTaskId(taskId);
         SetSpriteCB_MonAnimDummy(sprite);
     }
     else
@@ -6511,9 +6548,19 @@ void PokemonSummaryDoMonAnimation(struct Sprite *sprite, u16 species, bool8 oneF
 
 void StopPokemonAnimationDelayTask(void)
 {
-    u8 delayTaskId = FindTaskIdByFunc(Task_PokemonSummaryAnimateAfterDelay);
+    u8 delayTaskId;
+    while ((delayTaskId = FindTaskIdByFunc(Task_PokemonSummaryAnimateAfterDelay)) != TASK_NONE)
     if (delayTaskId != TASK_NONE)
         DestroyTask(delayTaskId);
+}
+
+void StopShadowAnimDelayTask(void)
+{
+    if (sShadowAnimDelayTaskId != TASK_NONE)
+    {
+        DestroyTask(sShadowAnimDelayTaskId);
+        sShadowAnimDelayTaskId = TASK_NONE;
+    }
 }
 
 void BattleAnimateBackSprite(struct Sprite *sprite, u16 species)
@@ -6682,6 +6729,10 @@ struct MonSpritesGfxManager *CreateMonSpritesGfxManager(u8 managerId, u8 mode)
 
     failureFlags = 0;
     managerId %= MON_SPR_GFX_MANAGERS_COUNT;
+    // Mont note: If the manager is already active, return it to allow for reliable transitions between summary screen
+    // and swsh party menu which also uses animated mon sprite
+    if (sMonSpritesGfxManagers[managerId] != NULL && sMonSpritesGfxManagers[managerId]->active == GFX_MANAGER_ACTIVE)
+        return sMonSpritesGfxManagers[managerId];
     gfx = AllocZeroed(sizeof(*gfx));
     if (gfx == NULL)
         return NULL;
@@ -6777,6 +6828,9 @@ void DestroyMonSpritesGfxManager(u8 managerId)
 
     managerId %= MON_SPR_GFX_MANAGERS_COUNT;
     gfx = sMonSpritesGfxManagers[managerId];
+    // Clear global reference to avoid leaving a dangling pointer that others (swsh summary screen)
+    // might read while the manager is being freed
+    sMonSpritesGfxManagers[managerId] = NULL;
     if (gfx == NULL)
         return;
 
@@ -7504,4 +7558,14 @@ enum Ability GetSpeciesInnate(u16 species, u8 traitNum)
         return gSpeciesInfo[species].innates[traitNum - 1];
     else
         return 0;
+}
+
+struct BoxPokemon *GetSelectedBoxMonFromPcOrParty(void)
+{
+    struct BoxPokemon *boxmon;
+    if (gSpecialVar_0x8004 == PC_MON_CHOSEN)
+        boxmon = GetBoxedMonPtr(gSpecialVar_MonBoxId, gSpecialVar_MonBoxPos);
+    else
+        boxmon = &(gPlayerParty[gSpecialVar_0x8004].box);
+    return boxmon;
 }

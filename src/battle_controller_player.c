@@ -230,6 +230,8 @@ static void RestoreBattleMenuBg(void)
 {
     gBattle_BG1_Y = 0;
     gBattle_BG1_X = 0;
+    
+    SetBgAttribute(1, BG_ATTR_PRIORITY, 0);
 
     ShowBg(1);
 }

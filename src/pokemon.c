@@ -6556,11 +6556,14 @@ void StopPokemonAnimationDelayTask(void)
 
 void StopShadowAnimDelayTask(void)
 {
-    if (sShadowAnimDelayTaskId != TASK_NONE)
+    if (sShadowAnimDelayTaskId < NUM_TASKS
+        && gTasks[sShadowAnimDelayTaskId].isActive
+        && gTasks[sShadowAnimDelayTaskId].func == Task_PokemonSummaryAnimateAfterDelay
+        && gTasks[sShadowAnimDelayTaskId].tIsShadow)
     {
         DestroyTask(sShadowAnimDelayTaskId);
-        sShadowAnimDelayTaskId = TASK_NONE;
     }
+    sShadowAnimDelayTaskId = TASK_NONE;
 }
 
 void BattleAnimateBackSprite(struct Sprite *sprite, u16 species)
@@ -6852,7 +6855,7 @@ void DestroyMonSpritesGfxManager(u8 managerId)
 u8 *MonSpritesGfxManager_GetSpritePtr(u8 managerId, u8 spriteNum)
 {
     struct MonSpritesGfxManager *gfx = sMonSpritesGfxManagers[managerId % MON_SPR_GFX_MANAGERS_COUNT];
-    if (gfx->active != GFX_MANAGER_ACTIVE)
+    if (gfx == NULL || gfx->active != GFX_MANAGER_ACTIVE)
     {
         return NULL;
     }

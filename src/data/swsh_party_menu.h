@@ -1260,6 +1260,9 @@ static const struct SpriteTemplate sSpriteTemplate_HeldItem =
     .paletteTag = TAG_HELD_ITEM,
     .oam = &sOamData_HeldItem,
     .anims = sSpriteAnimTable_HeldItem,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
 };
 
 static const struct OamData sOamData_HoverCursor =
@@ -1299,6 +1302,9 @@ static const struct SpriteTemplate sSpriteTemplate_HoverCursor =
     .paletteTag = TAG_HELD_ITEM,
     .oam = &sOamData_HoverCursor,
     .anims = sAnims_HoverCursor,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
 };
 
 static const struct OamData sOamData_SelectFrame =
@@ -1356,6 +1362,9 @@ static const struct SpriteTemplate sSpriteTemplate_SelectFrame =
     .paletteTag = TAG_HELD_ITEM,
     .oam = &sOamData_SelectFrame,
     .anims = sSpriteAnimTable_SelectFrame,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
 };
 
 static const struct OamData sOamData_MessageWindow =
@@ -1428,6 +1437,9 @@ static const struct SpriteTemplate sSpriteTemplate_MessageWindow =
     .paletteTag = TAG_HELD_ITEM,
     .oam = &sOamData_MessageWindow,
     .anims = sSpriteAnimTable_MessageWindow,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
 };
 
 static const struct OamData sOamData_MultiuseWindow =
@@ -1490,6 +1502,9 @@ static const struct SpriteTemplate sSpriteTemplate_MultiuseWindow =
     .paletteTag = TAG_HELD_ITEM,
     .oam = &sOamData_MultiuseWindow,
     .anims = sSpriteAnimTable_MultiuseWindow,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
 };
 
 static const struct SpritePalette sSpritePal_PartyMonShadow =
@@ -1598,6 +1613,9 @@ const struct SpriteTemplate gSpriteTemplate_StatusIcons =
     .paletteTag = TAG_HELD_ITEM,
     .oam = &sOamData_StatusCondition,
     .anims = sSpriteTemplate_StatusCondition,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
 };
 
 static const struct OamData sOamData_MoveTypes =
@@ -1754,6 +1772,9 @@ static const struct SpriteTemplate sSpriteTemplate_MoveTypes =
     .paletteTag = POKE_ICON_BASE_PAL_TAG,
     .oam = &sOamData_MoveTypes,
     .anims = sSpriteAnimTable_MoveTypes,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
 };
 
 static const u8 *const sUnused_StatStrings[] =

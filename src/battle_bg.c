@@ -768,6 +768,7 @@ void LoadBattleMenuWindowGfx(void)
 
 void DrawMainBattleBackground(void)
 {
+    SetBgAttribute(1, BG_ATTR_PRIORITY, 2);
     LoadBattleEnvironmentGfx(GetBattleEnvironmentOverride());
 }
 
@@ -793,7 +794,7 @@ void LoadBattleTextboxAndBackground(void)
     */
     
     if (B_TERRAIN_BG_CHANGE == TRUE)
-        DrawTerrainTypeBattleBackground();
+        DrawTerrainTypeBattleBackground(); 
     else
         DrawMainBattleBackground();
 }

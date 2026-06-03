@@ -71,7 +71,7 @@ PetalburgCity_Gym_EventScript_TurnPlayerNorth::
 	end
 
 PetalburgCity_Gym_OnFrame:
-	map_script_2 VAR_PETALBURG_GYM_STATE, 1, PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial
+	@ map_script_2 VAR_PETALBURG_GYM_STATE, 1, PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial
 	.2byte 0
 
 PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial::
@@ -1816,7 +1816,8 @@ script PetalburgCity_Gym_EventScript_RivalExit {
        }
        removeobject(LOCALID_PETALBURG_GYM_RIVAL)
        playse(SE_DOOR)
-       setvar(VAR_PETALBURG_CITY_STATE, 1)
+       // The state is set to 2 to keep the original progress after the disabled tutorial
+       setvar(VAR_PETALBURG_CITY_STATE, 2)
        release
        end
 }

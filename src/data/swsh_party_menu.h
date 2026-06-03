@@ -860,7 +860,7 @@ static const struct WindowTemplate sAbilitySnackSelectWindowTemplate =
     .width = 12,
     .height = 6,
     .paletteNum = 14,
-    .baseBlock = 0x2E9,
+    .baseBlock = 0x283,
 };
 
 static const struct WindowTemplate sZygardeCubeSelectWindowTemplate =

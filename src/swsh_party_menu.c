@@ -6895,7 +6895,7 @@ static void PartyMenuDisplayAbilityChooseMenu(void)
 {
     static const u8 askText[] = _("{STR_VAR_2}\n{STR_VAR_3}\nCancel");
     StringExpandPlaceholders(gStringVar4, askText);
-    CreateCustomYesNoMenu(&sAbilitySnackSelectWindowTemplate, 0x4F, 13, 0, gStringVar4);
+    CreateCustomYesNoMenu(&sAbilitySnackSelectWindowTemplate, 0x63, 13, 0, gStringVar4);
 }
 
 void ItemUseCB_AbilitySnack(u8 taskId, TaskFunc task)

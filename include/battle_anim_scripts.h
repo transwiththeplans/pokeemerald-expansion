@@ -947,6 +947,16 @@ extern const u8 gBattleAnimMove_GMaxSteelsurge[];
 extern const u8 gBattleAnimMove_GMaxDepletion[];
 extern const u8 gBattleAnimMove_GMaxOneBlow[];
 extern const u8 gBattleAnimMove_GMaxRapidFlow[];
+extern const u8 gBattleAnimMove_AirBomb[];
+extern const u8 gBattleAnimMove_AsteroidBelt[];
+extern const u8 gBattleAnimMove_BlockBarrage[];
+extern const u8 gBattleAnimMove_ChainLightning[];
+extern const u8 gBattleAnimMove_CursedTemple[];
+extern const u8 gBattleAnimMove_SeedBurst[];
+extern const u8 gBattleAnimMove_DustDevil[];
+extern const u8 gBattleAnimMove_EyeBlast[];
+extern const u8 gBattleAnimMove_FangsOfSteel[];
+extern const u8 gBattleAnimMove_Frenzy[];
 
 // status animations
 extern const u8 gBattleAnimStatus_Poison[];

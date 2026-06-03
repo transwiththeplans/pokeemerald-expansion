@@ -874,6 +874,17 @@ static const struct WindowTemplate sZygardeCubeSelectWindowTemplate =
     .baseBlock = 0x283,
 };
 
+static const struct WindowTemplate sLevelUpSelectWindowTemplate =
+{
+    .bg = 2,
+    .tilemapLeft = 19,
+    .tilemapTop = 5,
+    .width = 10,
+    .height = 14,
+    .paletteNum = 14,
+    .baseBlock = 0x283,
+};
+
 static const struct WindowTemplate sPartyMenuYesNoWindowTemplate =
 {
     .bg = 2,
@@ -1067,6 +1078,7 @@ static const u8 *const sActionStringTable[] =
     [PARTY_MSG_CHOOSE_MON_FOR_BOX]     = gText_SendWhichMonToPC,
     [PARTY_MSG_SEND_MON_TO_BOX]        = sText_SendThisMonToPC,
     [PARTY_MSG_MOVE_ITEM_WHERE]        = gText_MoveItemWhere,
+    [PARTY_MSG_CHOSE_LEVEL]            = gText_WhatLevel,
 };
 
 static const u8 sText_NoUse[] = _("NO USE");
@@ -1137,6 +1149,7 @@ struct
     [MENU_CATALOG_MOWER]   = {COMPOUND_STRING("Lawn mower"),      CursorCb_CatalogMower},
     [MENU_CHANGE_FORM]     = {COMPOUND_STRING("Change form"),     CursorCb_ChangeForm},
     [MENU_CHANGE_ABILITY]  = {COMPOUND_STRING("Change Ability"),  CursorCb_ChangeAbility},
+    [MENU_SUB_LEVEL_UP]    = {COMPOUND_STRING("Change Level"),    CursorCb_TryToLevelUpMenu},
 };
 
 static const u8 sPartyMenuAction_SummarySwitchCancel[] = {MENU_SUMMARY, MENU_SWITCH, MENU_CANCEL1};
@@ -1154,8 +1167,6 @@ static const u8 sPartyMenuAction_TradeSummaryCancel2[] = {MENU_TRADE2, MENU_SUMM
 static const u8 sPartyMenuAction_TakeItemTossCancel[] = {MENU_TAKE_ITEM, MENU_TOSS, MENU_CANCEL1};
 static const u8 sPartyMenuAction_RotomCatalog[] = {MENU_CATALOG_BULB, MENU_CATALOG_OVEN, MENU_CATALOG_WASHING, MENU_CATALOG_FRIDGE, MENU_CATALOG_FAN, MENU_CATALOG_MOWER, MENU_CANCEL1};
 static const u8 sPartyMenuAction_ZygardeCube[] = {MENU_CHANGE_FORM, MENU_CHANGE_ABILITY, MENU_CANCEL1};
-
-
 
 static const u8 *const sPartyMenuActions[] =
 {

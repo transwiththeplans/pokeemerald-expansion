@@ -2944,7 +2944,7 @@ static void SetPartyMonLearnMoveSelectionActions(struct Pokemon *mons, u8 slotId
 static void CursorCb_TryToLevelUpMenu(u8 taskId) {
     FlagSet(FLAG_USED_CANDY_BOX);
     FlagSet(FLAG_LEVEL_UP_FROM_PARTY_SCREEN);
-    DisplayPartyMenuStdMessage(PARTY_MSG_CHOSE_LEVEL);
+    //DisplayPartyMenuStdMessage(PARTY_MSG_CHOSE_LEVEL);
 
     ShowLevelUpSelectWindow(gPartyMenu.slotId);
     gTasks[taskId].func = Task_HandleWhichLevelInput;
@@ -5609,7 +5609,6 @@ static void ShowMoveSelectWindow(u8 slot)
 static void ShowLevelUpSelectWindow(u8 slot) {
     u8 nextlevel, numlevels, i = 0;
     u8 fontId = 1;
-    //u8 windowId = DisplaySelectionWindowNew(SELECTWINDOW_LEVEL_UP);
     u8 windowId = DisplaySelectionWindow(SELECTWINDOW_LEVEL_UP);
     u8 level = GetMonData(&gPlayerParty[slot], MON_DATA_LEVEL);
     u8 levelcap = GetCurrentLevelCap();
@@ -6182,7 +6181,7 @@ void ItemUseCB_CandyBox2(u8 taskId, TaskFunc task) {
 
     PlaySE(SE_SELECT);
     FlagSet(FLAG_USED_CANDY_BOX);
-    DisplayPartyMenuStdMessage(PARTY_MSG_CHOSE_LEVEL);
+    //DisplayPartyMenuStdMessage(PARTY_MSG_CHOSE_LEVEL);
     if (level + 1 < levelCap) {
         ShowLevelUpSelectWindow(gPartyMenu.slotId);
         gTasks[taskId].func = Task_HandleWhichLevelInput;

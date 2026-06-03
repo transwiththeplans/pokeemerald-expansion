@@ -120,6 +120,7 @@ enum {
     MENU_CATALOG_MOWER,
     MENU_CHANGE_FORM,
     MENU_CHANGE_ABILITY,
+    MENU_SUB_LEVEL_UP,
     MENU_FIELD_MOVES
 };
 
@@ -504,6 +505,7 @@ static void Task_DisplayLevelUpStatsPg2(u8);
 static void DisplayLevelUpStatsPg2(u8);
 static void Task_TryLearnNewMoves(u8);
 static void PartyMenuTryEvolution(u8);
+static void Task_HandleWhichLevelInput(u8 taskId);
 static void DisplayMonNeedsToReplaceMove(u8);
 static void DisplayMonLearnedMove(u8, u16);
 static void UseSacredAsh(u8);
@@ -576,9 +578,11 @@ static void CursorCb_CatalogFan(u8);
 static void CursorCb_CatalogMower(u8);
 static void CursorCb_ChangeForm(u8);
 static void CursorCb_ChangeAbility(u8);
+static void CursorCb_TryToLevelUpMenu(u8);
 void TryItemHoldFormChange(struct Pokemon *mon, s8 slotId);
 static void ShowMoveSelectWindow(u8 slot);
 static void Task_HandleWhichMoveInput(u8 taskId);
+static void ShowLevelUpSelectWindow(u8 slot);
 static u8 IsFusionMon(u16 species);
 static void Task_HideFollowerNPCForTeleport(u8);
 static void FieldCallback_RockClimb(void);
@@ -3585,9 +3589,87 @@ static u8 DisplaySelectionWindow(u8 windowType)
     case SELECTWINDOW_ZYGARDECUBE:
         window = sZygardeCubeSelectWindowTemplate;
         break;
+    case SELECTWINDOW_LEVEL_UP:
+        window = sLevelUpSelectWindowTemplate;
+        break;
     default: // SELECTWINDOW_MOVES
         window = sMoveSelectWindowTemplate;
         break;
+    }
+
+    sPartyMenuInternal->windowId[0] = AddWindow(&window);
+    DrawStdFrameWithCustomTileAndPalette(sPartyMenuInternal->windowId[0], FALSE, 0x63, 13);
+    if (windowType == SELECTWINDOW_MOVES)
+        return sPartyMenuInternal->windowId[0];
+    cursorDimension = GetMenuCursorDimensionByFont(FONT_NORMAL, 0);
+    letterSpacing = GetFontAttribute(FONT_NORMAL, FONTATTR_LETTER_SPACING);
+
+    for (i = 0; i < sPartyMenuInternal->numActions; i++)
+    {
+        const u8 *text;
+        u8 fontColorsId = 3;
+
+        if (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES)
+            fontColorsId = 4;
+        if (sPartyMenuInternal->actions[i] >= MENU_LEVEL_UP_MOVES && sPartyMenuInternal->actions[i] <= MENU_SUB_MOVES)
+            fontColorsId = 6;
+
+        if (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES)
+            text = GetMoveName(FieldMove_GetMoveId(sPartyMenuInternal->actions[i] - MENU_FIELD_MOVES));
+        else
+            text = sCursorOptions[sPartyMenuInternal->actions[i]].text;
+
+        AddTextPrinterParameterized4(sPartyMenuInternal->windowId[0], FONT_NORMAL, cursorDimension, (i * 16) + 1, letterSpacing, 0, sFontColorTable[fontColorsId], 0, text);
+    }
+
+    InitMenuInUpperLeftCorner(sPartyMenuInternal->windowId[0], sPartyMenuInternal->numActions, 0, TRUE);
+    ScheduleBgCopyTilemapToVram(2);
+
+    return sPartyMenuInternal->windowId[0];
+}
+
+static u8 DisplayCustomSelectionWindow(u8 windowType, u8 options)
+{
+    struct WindowTemplate window;
+    u8 cursorDimension;
+    u8 letterSpacing;
+    u8 i, pastHeight;
+
+    switch (windowType)
+    {
+    case SELECTWINDOW_ACTIONS:
+        SetWindowTemplateFields(&window, 2, 19, 19 - (sPartyMenuInternal->numActions * 2), 10, sPartyMenuInternal->numActions * 2, 14, 0x2E9);
+        break;
+    case SELECTWINDOW_ITEM:
+        window = sItemGiveTakeWindowTemplate;
+        break;
+    case SELECTWINDOW_MAIL:
+        window = sMailReadTakeWindowTemplate;
+        break;
+    case SELECTWINDOW_CATALOG:
+        window = sCatalogSelectWindowTemplate;
+        break;
+    case SELECTWINDOW_ZYGARDECUBE:
+        window = sZygardeCubeSelectWindowTemplate;
+        break;
+    case SELECTWINDOW_LEVEL_UP:
+        window = sLevelUpSelectWindowTemplate;
+        break;
+    default: // SELECTWINDOW_MOVES
+        window = sMoveSelectWindowTemplate;
+        break;
+    }
+
+    pastHeight = window.height;
+    window.height = options * 2;
+
+    if(window.height < pastHeight){
+        u8 difference = pastHeight - window.height;
+        window.tilemapTop += difference;
+    }
+    else{
+        u8 difference = window.height - pastHeight;
+        window.tilemapTop -= difference;
     }
 
     sPartyMenuInternal->windowId[0] = AddWindow(&window);
@@ -3725,6 +3807,15 @@ static void SetPartyMonLearnMoveSelectionActions(struct Pokemon *mons, u8 slotId
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_TUTOR_MOVES);
 
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_CANCEL1);
+}
+
+static void CursorCb_TryToLevelUpMenu(u8 taskId) {
+    FlagSet(FLAG_USED_CANDY_BOX);
+    FlagSet(FLAG_LEVEL_UP_FROM_PARTY_SCREEN);
+    //DisplayPartyMenuStdMessage(PARTY_MSG_CHOSE_LEVEL);
+
+    ShowLevelUpSelectWindow(gPartyMenu.slotId);
+    gTasks[taskId].func = Task_HandleWhichLevelInput;
 }
 
 static u8 GetPartyMenuActionsType(struct Pokemon *mon)
@@ -7688,6 +7779,46 @@ static void ReturnToPartyMenuScreen(u8 taskId) {
     DisplayPartyMenuStdMessage(PARTY_MSG_CHOOSE_MON_OR_CANCEL);
 }
 
+#define MAX_CANDY_BOX_LEVELS 7
+#define TEXT_SPEED_FF 0xFF
+
+static void ShowLevelUpSelectWindow(u8 slot) {
+    u8 nextlevel, windowId, numlevels, i = 0;
+    u8 fontId = 1;
+    u8 level = GetMonData(&gPlayerParty[slot], MON_DATA_LEVEL);
+    u8 levelcap = GetCurrentLevelCap();
+    static const u8 sText_levelCap[] = _("Level Cap$");
+
+    if (levelcap >= MAX_LEVEL) {
+        levelcap = MAX_LEVEL;
+        //StringCopy(gStringVar1, sText_levelCap);
+        //AddTextPrinterParameterized(windowId, fontId, gStringVar1, 8, (i * 16) + 1, TEXT_SPEED_FF, NULL);
+    }
+
+    numlevels = levelcap - level;
+
+    if (numlevels >= MAX_CANDY_BOX_LEVELS)
+        numlevels = MAX_CANDY_BOX_LEVELS;
+
+    windowId = DisplayCustomSelectionWindow(SELECTWINDOW_LEVEL_UP, numlevels);
+
+    nextlevel = level;
+    VarSet(VAR_CANDY_BOX_NUM_LEVELS, numlevels);
+
+    for (i = 0; i < numlevels; i++) {
+        if (i == 0)
+            StringCopy(gStringVar1, sText_levelCap);
+        else 
+        {
+            nextlevel++;
+            ConvertIntToDecimalStringN(gStringVar1, nextlevel, STR_CONV_MODE_RIGHT_ALIGN, 3);
+        }
+        AddTextPrinterParameterized(windowId, fontId, gStringVar1, 8, (i * 16) + 1, TEXT_SPEED_FF, NULL);
+    }
+    InitMenuInUpperLeftCornerNormal(windowId, numlevels, 0);
+    ScheduleBgCopyTilemapToVram(2);
+}
+
 static void Task_HandleWhichLevelInput(u8 taskId) {
     s8 input = Menu_ProcessInput();
 
@@ -7708,61 +7839,23 @@ static void Task_HandleWhichLevelInput(u8 taskId) {
     }
 }
 
-#define MAX_CANDY_BOX_LEVELS 7
-#define TEXT_SPEED_FF 0xFF
-
-static void ShowLevelUpSelectWindow(u8 slot) {
-    u8 nextlevel, numlevels, i = 0;
-    u8 fontId = 1;
-    //u8 windowId = DisplaySelectionWindowNew(SELECTWINDOW_LEVEL_UP);
-    u8 windowId = DisplaySelectionWindow(SELECTWINDOW_LEVEL_UP);
-    u8 level = GetMonData(&gPlayerParty[slot], MON_DATA_LEVEL);
-    u8 levelcap = GetCurrentLevelCap();
-    static const u8 sText_levelCap[] = _("Level Cap$");
-
-    if (levelcap >= MAX_LEVEL) {
-        levelcap = MAX_LEVEL;
-        StringCopy(gStringVar1, sText_levelCap);
-        AddTextPrinterParameterized(windowId, fontId, gStringVar1, 8, (i * 16) + 1, TEXT_SPEED_FF, NULL);
-    }
-
-    numlevels = levelcap - level;
-
-    if (numlevels >= MAX_CANDY_BOX_LEVELS) numlevels = MAX_CANDY_BOX_LEVELS;
-
-    nextlevel = level;
-    VarSet(VAR_CANDY_BOX_NUM_LEVELS, numlevels);
-
-    for (i = 0; i < numlevels; i++) {
-        if (i == 0) {
-            StringCopy(gStringVar1, sText_levelCap);
-        } else {
-            nextlevel++;
-            ConvertIntToDecimalStringN(gStringVar1, nextlevel, STR_CONV_MODE_RIGHT_ALIGN, 3);
-        }
-        AddTextPrinterParameterized(windowId, fontId, gStringVar1, 8, (i * 16) + 1, TEXT_SPEED_FF, NULL);
-    }
-    InitMenuInUpperLeftCornerNormal(windowId, numlevels, 0);
-    //InitMenuInUpperLeftCornerPlaySoundWhenAPressed(windowId, numlevels, 0);
-    
-    ScheduleBgCopyTilemapToVram(2);
-}
-
 void ItemUseCB_CandyBox2(u8 taskId, TaskFunc task) {
     u8 levelCap = GetCurrentLevelCap();
     u8 level = GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_LEVEL);
 
     PlaySE(SE_SELECT);
     FlagSet(FLAG_USED_CANDY_BOX);
-    DisplayPartyMenuStdMessage(PARTY_MSG_CHOSE_LEVEL);
+    //DisplayPartyMenuStdMessage(PARTY_MSG_CHOSE_LEVEL);
     if (level + 1 < levelCap) {
         ShowLevelUpSelectWindow(gPartyMenu.slotId);
         gTasks[taskId].func = Task_HandleWhichLevelInput;
-    } else if (level + 1 == levelCap) {
+    } 
+    else if (level + 1 == levelCap) {
         VarSet(VAR_CANDY_BOX_LEVEL, 0);
         VarSet(VAR_CANDY_BOX_NUM_LEVELS, 1);
         ItemUseCB_CandyBox(taskId, task);
-    } else {
+    } 
+    else {
         ItemUseCB_CandyBox(taskId, task);
     }
 }

@@ -4511,7 +4511,7 @@ static void PrintMonAbilityName(void)
 
 static const u8 sText_Ability_Name_Title[] = _("Ability");
 static const u8 sText_Innate_Name_Title[] = _("Innate");
-static const u8 sText_InnateLockedUntilLevel_SwSh[] = _("This POKéMON innate is currently\nlocked until level {STR_VAR_1}.");
+static const u8 sText_InnateLockedUntilLevel_SwSh[] = _("This POKéMON innate is\ncurrently locked until level {STR_VAR_1}.");
 
 static void PrintMonAbilityDescription(void)
 {

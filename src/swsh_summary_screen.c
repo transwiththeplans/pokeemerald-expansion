@@ -455,8 +455,8 @@ static void PrintRightAlignedPrompt(u8, u8, const u8*, int, u8);
 
 // const rom data
 
-static const u8 sMemoNatureTextColor[]          = _("{COLOR LIGHT_BLUE}{SHADOW DYNAMIC_COLOR1}");
-static const u8 sMemoMiscTextColor[]            = _("{COLOR WHITE}{SHADOW DARK_GRAY}");
+static const u8 sMemoNatureTextColor[]          = _("{COLOR 3}{SHADOW 9}");
+static const u8 sMemoMiscTextColor[]            = _("{COLOR 3}{SHADOW 4}");
 static const u8 sStatsHPLayout[]                = _("{DYNAMIC 0}/{DYNAMIC 1}");
 static const u8 sStatsHPIVEVLayout[]            = _("{DYNAMIC 0}");
 static const u8 sMovesPPLayout[]                = _("{DYNAMIC 0}/{DYNAMIC 1}");
@@ -788,7 +788,7 @@ static const struct WindowTemplate sPageMovesTemplate[] = // This is used for bo
         .tilemapTop = 3,
         .width = 20,
         .height = 12,
-        .paletteNum = 3,
+        .paletteNum = 2,
         .baseBlock = 151,
     },
     [PSS_DATA_WINDOW_MOVE_DESCRIPTION] = {
@@ -822,15 +822,30 @@ static const struct WindowTemplate sPageMemoTemplate[] =
         .baseBlock = 331,
     },
 };
+
+enum{
+    SWSH_SUMMARY_FONT_COLOR_BLACK,
+    SWSH_SUMMARY_FONT_COLOR_WHITE,
+    SWSH_SUMMARY_FONT_COLOR_UNK_1,
+    SWSH_SUMMARY_FONT_COLOR_UNK_2, //Palette 3
+    SWSH_SUMMARY_FONT_COLOR_BLUE, //Palette 3
+    SWSH_SUMMARY_FONT_COLOR_UNK_3,
+    SWSH_SUMMARY_FONT_COLOR_UNK_4,
+    SWSH_SUMMARY_FONT_COLOR_RED,
+    SWSH_SUMMARY_FONT_COLOR_WHITE_NO_SHADOW,
+};
+
 static const u8 sTextColors[][3] =
 {
-    {0, 1, 2}, //Black Font
-    {0, 3, 4}, //White Font
-    {0, 5, 6},
-    {0, 7, 8},
-    {0, 9, 10},  //Blue Font
-    {0, 11, 12}, //Red Font
-    {0, 13, 14}, //Blue Font 2
+    [SWSH_SUMMARY_FONT_COLOR_BLACK]  = {0, 1, 2},
+    [SWSH_SUMMARY_FONT_COLOR_WHITE]  = {0, 3, 4},
+    [SWSH_SUMMARY_FONT_COLOR_UNK_1]  = {0, 5, 6},
+    [SWSH_SUMMARY_FONT_COLOR_UNK_2]  = {0, 7, 8},
+    [SWSH_SUMMARY_FONT_COLOR_BLUE]   = {0, 3, 9},
+    [SWSH_SUMMARY_FONT_COLOR_UNK_3]  = {0, 11, 12},
+    [SWSH_SUMMARY_FONT_COLOR_UNK_4]  = {0, 13, 14},
+    [SWSH_SUMMARY_FONT_COLOR_RED]    = {0, 3, 5},
+    [SWSH_SUMMARY_FONT_COLOR_WHITE_NO_SHADOW]  = {0, 3, 0},
 };
 
 static void (*const sTextPrinterFunctions[])(void) =
@@ -4410,8 +4425,6 @@ static void Task_PrintInfoPage(u8 taskId)
     data[0]++;
 }
 
-#define SWSH_SUMMARY_FONT_COLOR_WHITE 1
-
 static void PrintMonDexNumberSpecies(void)
 {
     int windowId;
@@ -4527,25 +4540,25 @@ static void PrintMonAbilityDescription(void)
     y -= 4;
 
     //Ability
-    PrintTextOnWindowWithFont(windowId, sText_Ability_Name_Title, 0, y, 0, SWSH_SUMMARY_FONT_COLOR_WHITE, FONT_SMALL_NARROW);
-    PrintTextOnWindowWithFont(windowId, gAbilitiesInfo[ability].name, 48, y, 0, SWSH_SUMMARY_FONT_COLOR_WHITE, FONT_SMALL_NARROW);
+    PrintTextOnWindowWithFont(windowId, sText_Ability_Name_Title, 0, y, 0, SWSH_SUMMARY_FONT_COLOR_RED, FONT_SMALL_NARROW);
+    PrintTextOnWindowWithFont(windowId, gAbilitiesInfo[ability].name, 48, y, 0, SWSH_SUMMARY_FONT_COLOR_RED, FONT_SMALL_NARROW);
     y += 8;
-    PrintTextOnWindowWithFont(windowId, gAbilitiesInfo[ability].description, 0, y, 0, SWSH_SUMMARY_FONT_COLOR_WHITE, FONT_SMALL_NARROW);
+    PrintTextOnWindowWithFont(windowId, gAbilitiesInfo[ability].description, 0, y, 0, SWSH_SUMMARY_FONT_COLOR_WHITE, FONT_SMALL_NARROWER);
     //Innate
     y += 28;
-    PrintTextOnWindowWithFont(windowId, sText_Innate_Name_Title, 0, y, 0, SWSH_SUMMARY_FONT_COLOR_WHITE, FONT_SMALL_NARROW);
-    PrintTextOnWindowWithFont(windowId, gAbilitiesInfo[innate].name, 48, y, 0, SWSH_SUMMARY_FONT_COLOR_WHITE, FONT_SMALL_NARROW);
+    PrintTextOnWindowWithFont(windowId, sText_Innate_Name_Title, 0, y, 0, SWSH_SUMMARY_FONT_COLOR_BLUE, FONT_SMALL_NARROW);
+    PrintTextOnWindowWithFont(windowId, gAbilitiesInfo[innate].name, 48, y, 0, SWSH_SUMMARY_FONT_COLOR_BLUE, FONT_SMALL_NARROW);
     y += 8;
     
     if(sMonSummaryScreen->summary.innateUnlock || unlockLevel < sMonSummaryScreen->summary.level){
         //Unlocked
-        PrintTextOnWindowWithFont(windowId, gAbilitiesInfo[innate].description, 0, y, 0, SWSH_SUMMARY_FONT_COLOR_WHITE, FONT_SMALL_NARROW);
+        PrintTextOnWindowWithFont(windowId, gAbilitiesInfo[innate].description, 0, y, 0, SWSH_SUMMARY_FONT_COLOR_WHITE, FONT_SMALL_NARROWER);
     }
     else{
         ConvertIntToDecimalStringN(gStringVar1, unlockLevel, STR_CONV_MODE_LEFT_ALIGN, 3);
         StringExpandPlaceholders(gStringVar4, sText_InnateLockedUntilLevel_SwSh);
 
-        PrintTextOnWindowWithFont(windowId, gStringVar4, 0, y, 0, SWSH_SUMMARY_FONT_COLOR_WHITE, FONT_SMALL_NARROW);
+        PrintTextOnWindowWithFont(windowId, gStringVar4, 0, y, 0, SWSH_SUMMARY_FONT_COLOR_WHITE, FONT_SMALL_NARROWER);
     }
 }
 
@@ -4961,8 +4974,8 @@ static void PrintStats(u8 mode)
 // Add a function to just print the stat labels
 static void PrintStatLabels(void)
 {
-    static const u8 sTextNatureDown[] = _("{COLOR}{08}{SHADOW}{07}");
-    static const u8 sTextNatureUp[] = _("{COLOR}{06}{SHADOW}{05}");
+    static const u8 sTextNatureDown[] = _("{COLOR}{03}{SHADOW}{09}");
+    static const u8 sTextNatureUp[] = _("{COLOR}{03}{SHADOW}{05}");
     static const u8 sTextNatureNeutral[] = _("");
 
     struct StatLabelInfo {
@@ -5015,7 +5028,7 @@ static void PrintExpPointsNextLevel(void)
 
     // print current exp
     ConvertIntToDecimalStringN(gStringVar1, sum->exp, STR_CONV_MODE_LEFT_ALIGN, 7);
-    PrintTextOnWindow(windowId, gStringVar1, 8, 4, 0, 0);
+    PrintTextOnWindow(windowId, gStringVar1, 8, 4, 0, SWSH_SUMMARY_FONT_COLOR_WHITE);
 
     // print exp to next level
     if (sum->level < MAX_LEVEL)
@@ -5024,7 +5037,7 @@ static void PrintExpPointsNextLevel(void)
         expToNextLevel = 0;
 
     ConvertIntToDecimalStringN(gStringVar1, expToNextLevel, STR_CONV_MODE_RIGHT_ALIGN, 5);
-    PrintTextOnWindow(windowId, gStringVar1, 104 - GetStringWidth(PSS_DEFAULT_FONT, gStringVar1, 0), 15, 0, 0);
+    PrintTextOnWindow(windowId, gStringVar1, 104 - GetStringWidth(PSS_DEFAULT_FONT, gStringVar1, 0), 15, 0, SWSH_SUMMARY_FONT_COLOR_WHITE);
 }
 
 static void PrintBattleMoves(void)
@@ -5822,6 +5835,8 @@ static void Task_PrintContestMoves(u8 taskId)
     data[0]++;
 }
 
+static const u8 sMovesPPLayout2[] = _("{STR_VAR_1}/{STR_VAR_2}");
+
 static void PrintMoveNameAndPP(u8 moveIndex)
 {
     u8 pp;
@@ -5831,20 +5846,22 @@ static void PrintMoveNameAndPP(u8 moveIndex)
     u8 moveNameWindowId = AddWindowFromTemplateList(sPageMovesTemplate, PSS_DATA_WINDOW_MOVE_NAMES_PP);
     bool8 isHighlighted = (sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MOVE_CURSOR] != SPRITE_NONE
                            && moveIndex == sMonSummaryScreen->firstMoveIndex);
-    u8 moveNameColorId = isHighlighted ? 3 : 4;
+    u8 moveNameColorId = isHighlighted ? SWSH_SUMMARY_FONT_COLOR_BLUE : SWSH_SUMMARY_FONT_COLOR_BLACK;
 
     u16 move = summary->moves[moveIndex];
 
-    if (move != 0)
+    if (move != MOVE_NONE)
     {
         PrintTextOnWindowToFitPx_WithFont(moveNameWindowId, GetMoveName(move), 4, moveIndex * 18 + 4, 0, moveNameColorId, FONT_SMALL, 74);
+        
         pp = CalculatePPWithBonus(move, summary->ppBonuses, moveIndex);
         ConvertIntToDecimalStringN(gStringVar1, summary->pp[moveIndex], STR_CONV_MODE_RIGHT_ALIGN, 2);
         ConvertIntToDecimalStringN(gStringVar2, pp, STR_CONV_MODE_RIGHT_ALIGN, 2);
-        DynamicPlaceholderTextUtil_Reset();
+        /*DynamicPlaceholderTextUtil_Reset();
         DynamicPlaceholderTextUtil_SetPlaceholderPtr(0, gStringVar1);
         DynamicPlaceholderTextUtil_SetPlaceholderPtr(1, gStringVar2);
-        DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sMovesPPLayout);
+        DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sMovesPPLayout2);*/
+        StringExpandPlaceholders(gStringVar4, sMovesPPLayout2);
         text = gStringVar4;
         ppState = GetCurrentPpToMaxPpState(summary->pp[moveIndex], pp);
     }
@@ -5855,8 +5872,7 @@ static void PrintMoveNameAndPP(u8 moveIndex)
         ppState = 3;
     }
 
-    if(ppState == SWSH_SUMMARY_FONT_COLOR_WHITE)
-        ppState = 0;
+    ppState = SWSH_SUMMARY_FONT_COLOR_WHITE;
 
     PrintTextOnWindowWithFont(moveNameWindowId, text, 121, moveIndex * 18 + 4, 0, ppState, FONT_SMALL);
 }
@@ -6007,17 +6023,17 @@ static void PrintNewMoveDetailsOrCancelText(void)
     u8 moveIndex = 4;
     u8 xOffset = 8;
     bool8 isHighlighted = (sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MOVE_CURSOR] != SPRITE_NONE
-                           && sMonSummaryScreen->firstMoveIndex == 4);
+                           && sMonSummaryScreen->firstMoveIndex == 4);      
 
     if (sMonSummaryScreen->newMove == MOVE_NONE)
     {
-        u8 cancelColorId = isHighlighted ? 1 : 4;
+        u8 cancelColorId = isHighlighted ? SWSH_SUMMARY_FONT_COLOR_BLUE : SWSH_SUMMARY_FONT_COLOR_BLACK;
         PrintTextOnWindowWithFont(windowId1, sText_Cancel, 4 + xOffset, 4 * 18 + 4, 0, cancelColorId, FONT_SMALL);
     }
     else
     {
         u16 move = sMonSummaryScreen->newMove;
-        u8 moveNameColorId = isHighlighted ? 3 : 4;
+        u8 moveNameColorId = isHighlighted ? SWSH_SUMMARY_FONT_COLOR_BLUE : SWSH_SUMMARY_FONT_COLOR_BLACK;
 
         if (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES)
             PrintTextOnWindowToFitPx_WithFont(windowId1, GetMoveName(move), 4 + xOffset, moveIndex * 18 + 4, 0, moveNameColorId, FONT_SMALL, 74);
@@ -6969,18 +6985,18 @@ static void UpdateMoveNamePalette(u8 moveIndex)
     {
         if (sMonSummaryScreen->newMove == MOVE_NONE)
         {
-            u8 cancelColorId = isHighlighted ? 1 : 4;
+            u8 cancelColorId = isHighlighted ? SWSH_SUMMARY_FONT_COLOR_BLUE : SWSH_SUMMARY_FONT_COLOR_BLACK;
             PrintTextOnWindowWithFont(windowId, sText_Cancel, xPos, moveIndex * 18 + 4, 0, cancelColorId, FONT_SMALL);
         }
         else
         {
-            u8 moveNameColorId = isHighlighted ? 3 : 4;
+            u8 moveNameColorId = isHighlighted ? SWSH_SUMMARY_FONT_COLOR_BLUE : SWSH_SUMMARY_FONT_COLOR_BLACK;
             PrintTextOnWindowToFitPx_WithFont(windowId, GetMoveName(sMonSummaryScreen->newMove), xPos, moveIndex * 18 + 4, 0, moveNameColorId, FONT_SMALL, 74);
         }
     }
     else
     {
-        u8 moveNameColorId = isHighlighted ? 3 : 4;
+        u8 moveNameColorId = isHighlighted ? SWSH_SUMMARY_FONT_COLOR_BLUE : SWSH_SUMMARY_FONT_COLOR_BLACK;
         u16 move = summary->moves[moveIndex];
 
         if (move != 0)

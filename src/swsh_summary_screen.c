@@ -823,13 +823,13 @@ static const struct WindowTemplate sPageMemoTemplate[] =
 };
 static const u8 sTextColors[][3] =
 {
-    {0, 1, 2},
-    {0, 3, 4},
+    {0, 1, 2}, //Black Font
+    {0, 3, 4}, //White Font
     {0, 5, 6},
     {0, 7, 8},
-    {0, 9, 10},
-    {0, 11, 12},
-    {0, 13, 14},
+    {0, 9, 10},  //Blue Font
+    {0, 11, 12}, //Red Font
+    {0, 13, 14}, //Blue Font 2
 };
 
 static void (*const sTextPrinterFunctions[])(void) =
@@ -942,6 +942,9 @@ static const struct SpriteTemplate sSpriteTemplate_CategoryIcons =
     .paletteTag = TAG_CATEGORY_ICONS,
     .oam = &sOamData_CategoryIcons_SwSh,
     .anims = sSpriteAnimTable_CategoryIcons_SwSh,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
 };
 
 enum FriendshipLevels
@@ -1027,6 +1030,9 @@ static const struct SpriteTemplate sSpriteTemplate_FriendshipIcon =
     .paletteTag = TAG_GENDER_ICON,
     .oam = &sOamData_FriendshipIcon,
     .anims = sSpriteAnimTable_FriendshipIcon,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
 };
 
 static const struct OamData sOamData_MoveTypes =
@@ -1197,6 +1203,9 @@ static const struct SpriteTemplate sSpriteTemplate_MoveTypes =
     .paletteTag = TAG_MOVE_TYPES,
     .oam = &sOamData_MoveTypes,
     .anims = sSpriteAnimTable_MoveTypes,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
 };
 
 static const union AnimCmd sSpriteAnim_TeraTypeNone[] = {
@@ -1338,6 +1347,9 @@ static const struct SpriteTemplate sSpriteTemplate_TeraType =
     .paletteTag = TAG_TERA_TYPE,
     .oam = &sOamData_TeraType,
     .anims = sSpriteAnimTable_TeraType,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
 };
 
 static const struct OamData sOamData_MoveSlot =
@@ -1396,6 +1408,9 @@ static const struct SpriteTemplate sMoveSlotSpriteTemplate =
     .paletteTag = TAG_GENDER_ICON,
     .oam = &sOamData_MoveSlot,
     .anims = sSpriteAnimTable_MoveSlot,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
 };
 
 static const struct OamData sOamData_MoveCursor =
@@ -1435,6 +1450,9 @@ static const struct SpriteTemplate sSpriteTemplate_MoveCursor =
     .paletteTag = TAG_HELD_ITEM_BOX,
     .oam = &sOamData_MoveCursor,
     .anims = sAnims_MoveCursor,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
 };
 
 static const struct OamData sOamData_MoveFrame =
@@ -1492,6 +1510,9 @@ static const struct SpriteTemplate sMoveFrameSpriteTemplate =
     .paletteTag = TAG_HELD_ITEM_BOX,
     .oam = &sOamData_MoveFrame,
     .anims = sSpriteAnimTable_MoveFrame,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
 };
 
 static const struct OamData sOamData_HeldItemBox =
@@ -1563,6 +1584,9 @@ static const struct SpriteTemplate sSpriteTemplate_HeldItemBox =
     .paletteTag = TAG_HELD_ITEM_BOX,
     .oam = &sOamData_HeldItemBox,
     .anims = sSpriteAnimTable_HeldItemBox,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
 };
 
 static const struct OamData sOamData_AbilityBox =
@@ -1619,6 +1643,9 @@ static const struct SpriteTemplate sSpriteTemplate_AbilityBox =
     .paletteTag = TAG_HELD_ITEM_BOX,
     .oam = &sOamData_AbilityBox,
     .anims = sSpriteAnimTable_AbilityBox,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
 };
 
 
@@ -1713,6 +1740,9 @@ static const struct SpriteTemplate sSpriteTemplate_DynamaxBox =
     .paletteTag = TAG_HELD_ITEM_BOX,
     .oam = &sOamData_DynamaxBox,
     .anims = sSpriteAnimTable_DynamaxBox,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
 };
 
 static const struct CompressedSpriteSheet sSpriteSheet_DynamaxLevels =
@@ -1788,6 +1818,9 @@ static const struct SpriteTemplate sSpriteTemplate_DynamaxLevel =
     .paletteTag = TAG_HELD_ITEM_BOX,
     .oam = &sOamData_DynamaxLevel,
     .anims = sSpriteAnimTable_DynamaxLevels,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
 };
 
 static const struct OamData sOamData_StatusCondition =
@@ -1878,6 +1911,9 @@ static const struct SpriteTemplate sSpriteTemplate_StatusCondition =
     .paletteTag = TAG_MON_STATUS,
     .oam = &sOamData_StatusCondition,
     .anims = sSpriteAnimTable_StatusCondition,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
 };
 
 static const struct OamData sOamData_GenderIcons =
@@ -1931,6 +1967,9 @@ static const struct SpriteTemplate sSpriteTemplate_GenderIcons =
     .paletteTag = TAG_GENDER_ICON,
     .oam = &sOamData_GenderIcons,
     .anims = sSpriteAnimTable_GenderIcons,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
 };
 
 static const struct OamData sOamData_ShinyIcon =
@@ -1962,6 +2001,10 @@ static const struct SpriteTemplate sSpriteTemplate_ShinyIcon =
     .tileTag = TAG_MON_SHINY_ICON,
     .paletteTag = TAG_CATEGORY_ICONS,
     .oam = &sOamData_ShinyIcon,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
 };
 
 static const struct OamData sOamData_GigantamaxIcon =
@@ -1993,6 +2036,10 @@ static const struct SpriteTemplate sSpriteTemplate_GigantamaxIcon =
     .tileTag = TAG_GIGANTAMAX_ICON,
     .paletteTag = TAG_GENDER_ICON,
     .oam = &sOamData_GigantamaxIcon,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
 };
 
 static const struct OamData sOamData_PokerusCuredIcon =
@@ -2024,6 +2071,10 @@ static const struct SpriteTemplate sSpriteTemplate_PokerusCuredIcon =
     .tileTag = TAG_MON_POKERUS_CURED_ICON,
     .paletteTag = TAG_CATEGORY_ICONS,
     .oam = &sOamData_PokerusCuredIcon,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy
 };
 
 #if SWSH_SUMMARY_SHOW_CONTEST_PAGES
@@ -4357,6 +4408,8 @@ static void Task_PrintInfoPage(u8 taskId)
     data[0]++;
 }
 
+#define SWSH_SUMMARY_FONT_COLOR_WHITE 1
+
 static void PrintMonDexNumberSpecies(void)
 {
     int windowId;
@@ -4369,11 +4422,11 @@ static void PrintMonDexNumberSpecies(void)
 
     if (sMonSummaryScreen->summary.isEgg)
     {
-        PrintTextOnWindow(windowId, gText_FiveMarks, 0, 5, 0, 0);
+        PrintTextOnWindow(windowId, gText_FiveMarks, 0, 5, 0, SWSH_SUMMARY_FONT_COLOR_WHITE);
     }
     else
     {
-        PrintTextOnWindow(windowId, GetSpeciesName(summary->species2), 0, 5, 0, 0);
+        PrintTextOnWindow(windowId, GetSpeciesName(summary->species2), 0, 5, 0, SWSH_SUMMARY_FONT_COLOR_WHITE);
 
         if (dexNum != 0xFFFF)
         {
@@ -4386,7 +4439,7 @@ static void PrintMonDexNumberSpecies(void)
 
             if (!IsMonShiny(mon))
             {
-                PrintTextOnWindow(windowId, gStringVar1, 76, 5, 0, 0);
+                PrintTextOnWindow(windowId, gStringVar1, 76, 5, 0, SWSH_SUMMARY_FONT_COLOR_WHITE);
             }
             else
             {
@@ -4402,12 +4455,12 @@ static void PrintMonOTName(void)
     int windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_SPECIES);
     if (InBattleFactory() != TRUE && InSlateportBattleTent() != TRUE)
     {
-        PrintTextOnWindow(windowId, sMonSummaryScreen->summary.OTName, 0, 37, 0, 0);
+        PrintTextOnWindow(windowId, sMonSummaryScreen->summary.OTName, 0, 37, 0, SWSH_SUMMARY_FONT_COLOR_WHITE);
     }
     else
     {
         StringCopy(gStringVar1, sText_RentalPkmn);
-        PrintTextOnWindow(windowId, gStringVar1, 0, 37, 0, 0);
+        PrintTextOnWindow(windowId, gStringVar1, 0, 37, 0, SWSH_SUMMARY_FONT_COLOR_WHITE);
     }
 }
 
@@ -4416,7 +4469,7 @@ static void PrintMonOTID(void)
     if (InBattleFactory() != TRUE && InSlateportBattleTent() != TRUE)
     {
         ConvertIntToDecimalStringN(gStringVar1, (u16)sMonSummaryScreen->summary.OTID, STR_CONV_MODE_LEADING_ZEROS, 5);
-        PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_SPECIES), gStringVar1, 71, 37, 0, 0);
+        PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_SPECIES), gStringVar1, 71, 37, 0, SWSH_SUMMARY_FONT_COLOR_WHITE);
     }
 }
 
@@ -4438,7 +4491,7 @@ static void PrintMonNature(void)
         DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sText_Nature);
     }
 
-    PrintTextOnWindow(windowId, gStringVar4, 0, 53, 0, 0);
+    PrintTextOnWindow(windowId, gStringVar4, 0, 53, 0, SWSH_SUMMARY_FONT_COLOR_WHITE);
 }
 
 static void PrintMonAbilityName(void)
@@ -4605,14 +4658,14 @@ static void BufferMonTrainerMemo(void)
 static void PrintMonNatureMemo(void)
 {
     u8 windowId = AddWindowFromTemplateList(sPageMemoTemplate, PSS_DATA_WINDOW_MEMO_NOTE);
-    PrintTextOnWindow(windowId, gStringVar4, 8, 0, 0, 0);
+    PrintTextOnWindow(windowId, gStringVar4, 8, 0, 0, SWSH_SUMMARY_FONT_COLOR_WHITE);
 }
 
 static void PrintMonEncounter(void)
 {
     u8 windowId = AddWindowFromTemplateList(sPageMemoTemplate, PSS_DATA_WINDOW_MEMO_NOTE);
     const u8 *buf = (gStringVar3[0] != 0) ? gStringVar3 : sText_Empty;
-    PrintTextOnWindow(windowId, buf, 8, 19, 0, 0);
+    PrintTextOnWindow(windowId, buf, 8, 19, 0, SWSH_SUMMARY_FONT_COLOR_WHITE);
 }
 
 static void PrintMonCharacteristic(void)
@@ -4620,7 +4673,7 @@ static void PrintMonCharacteristic(void)
     u8 windowId = AddWindowFromTemplateList(sPageMemoTemplate, PSS_DATA_WINDOW_MEMO_NOTE);
     const u8 *text = GetCharacteristicString();
     u8 y = (gStringVar3[0] != 0) ? 53 : 19; // if no encounter, move the characteristic up
-    PrintTextOnWindow(windowId, text, 8, y, 0, 0);
+    PrintTextOnWindow(windowId, text, 8, y, 0, SWSH_SUMMARY_FONT_COLOR_WHITE);
 }
 
 static void GetMetLevelString(u8 *output)
@@ -4834,7 +4887,7 @@ static void PrintStats(u8 mode)
         DynamicPlaceholderTextUtil_SetPlaceholderPtr(0, currentHPString);
         DynamicPlaceholderTextUtil_SetPlaceholderPtr(1, maxHPString);
         DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sStatsHPLayout);
-        AddTextPrinterParameterized4(windowId, PSS_DEFAULT_FONT, 72 - GetStringWidth(PSS_DEFAULT_FONT, gStringVar4, 0), 2, 0, 0, sTextColors[0], TEXT_SKIP_DRAW, gStringVar4);
+        AddTextPrinterParameterized4(windowId, PSS_DEFAULT_FONT, 72 - GetStringWidth(PSS_DEFAULT_FONT, gStringVar4, 0), 2, 0, 0, sTextColors[SWSH_SUMMARY_FONT_COLOR_WHITE], TEXT_SKIP_DRAW, gStringVar4);
     }
     else
     {
@@ -4843,24 +4896,24 @@ static void PrintStats(u8 mode)
         DynamicPlaceholderTextUtil_Reset();
         DynamicPlaceholderTextUtil_SetPlaceholderPtr(0, hpString);
         DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sStatsHPIVEVLayout);
-        AddTextPrinterParameterized4(windowId, PSS_DEFAULT_FONT, 72 - GetStringWidth(PSS_DEFAULT_FONT, gStringVar4, 0), 2, 0, 0, sTextColors[0], TEXT_SKIP_DRAW, gStringVar4);
+        AddTextPrinterParameterized4(windowId, PSS_DEFAULT_FONT, 72 - GetStringWidth(PSS_DEFAULT_FONT, gStringVar4, 0), 2, 0, 0, sTextColors[SWSH_SUMMARY_FONT_COLOR_WHITE], TEXT_SKIP_DRAW, gStringVar4);
     }
 
     // print other stats
     BufferStat(gStringVar1, atk, 0, 3);
-    AddTextPrinterParameterized4(windowId, PSS_DEFAULT_FONT, 144 - GetStringWidth(PSS_DEFAULT_FONT, gStringVar1, 0), 2, 0, 0, sTextColors[0], TEXT_SKIP_DRAW, gStringVar1);
+    AddTextPrinterParameterized4(windowId, PSS_DEFAULT_FONT, 144 - GetStringWidth(PSS_DEFAULT_FONT, gStringVar1, 0), 2, 0, 0, sTextColors[SWSH_SUMMARY_FONT_COLOR_WHITE], TEXT_SKIP_DRAW, gStringVar1);
 
     BufferStat(gStringVar2, def, 1, 3);
-    AddTextPrinterParameterized4(windowId, PSS_DEFAULT_FONT, 72 - GetStringWidth(PSS_DEFAULT_FONT, gStringVar2, 0), 19, 0, 0, sTextColors[0], TEXT_SKIP_DRAW, gStringVar2);
+    AddTextPrinterParameterized4(windowId, PSS_DEFAULT_FONT, 72 - GetStringWidth(PSS_DEFAULT_FONT, gStringVar2, 0), 19, 0, 0, sTextColors[SWSH_SUMMARY_FONT_COLOR_WHITE], TEXT_SKIP_DRAW, gStringVar2);
 
     BufferStat(gStringVar3, spA, 2, 3);
-    AddTextPrinterParameterized4(windowId, PSS_DEFAULT_FONT, 144 - GetStringWidth(PSS_DEFAULT_FONT, gStringVar3, 0), 19, 0, 0, sTextColors[0], TEXT_SKIP_DRAW, gStringVar3);
+    AddTextPrinterParameterized4(windowId, PSS_DEFAULT_FONT, 144 - GetStringWidth(PSS_DEFAULT_FONT, gStringVar3, 0), 19, 0, 0, sTextColors[SWSH_SUMMARY_FONT_COLOR_WHITE], TEXT_SKIP_DRAW, gStringVar3);
 
     BufferStat(gStringVar4, spD, 3, 3);
-    AddTextPrinterParameterized4(windowId, PSS_DEFAULT_FONT, 72 - GetStringWidth(PSS_DEFAULT_FONT, gStringVar4, 0), 36, 0, 0, sTextColors[0], TEXT_SKIP_DRAW, gStringVar4);
+    AddTextPrinterParameterized4(windowId, PSS_DEFAULT_FONT, 72 - GetStringWidth(PSS_DEFAULT_FONT, gStringVar4, 0), 36, 0, 0, sTextColors[SWSH_SUMMARY_FONT_COLOR_WHITE], TEXT_SKIP_DRAW, gStringVar4);
 
     BufferStat(sStringVar5, spe, 4, 3);
-    AddTextPrinterParameterized4(windowId, PSS_DEFAULT_FONT, 144 - GetStringWidth(PSS_DEFAULT_FONT, sStringVar5, 0), 36, 0, 0, sTextColors[0], TEXT_SKIP_DRAW, sStringVar5);
+    AddTextPrinterParameterized4(windowId, PSS_DEFAULT_FONT, 144 - GetStringWidth(PSS_DEFAULT_FONT, sStringVar5, 0), 36, 0, 0, sTextColors[SWSH_SUMMARY_FONT_COLOR_WHITE], TEXT_SKIP_DRAW, sStringVar5);
 
     // Now copy everything to VRAM in one operation
     CopyWindowToVram(windowId, COPYWIN_FULL);
@@ -4871,7 +4924,7 @@ static void PrintStatLabels(void)
 {
     static const u8 sTextNatureDown[] = _("{COLOR}{07}{SHADOW}{08}");
     static const u8 sTextNatureUp[] = _("{COLOR}{05}{SHADOW}{06}");
-    static const u8 sTextNatureNeutral[] = _("{COLOR}{01}");
+    static const u8 sTextNatureNeutral[] = _("");
 
     struct StatLabelInfo {
         u8 statIndex;
@@ -4910,7 +4963,7 @@ static void PrintStatLabels(void)
 
         StringCopy(coloredLabel, color);
         StringAppend(coloredLabel, sStatLabels[i].text);
-        AddTextPrinterParameterized4(windowId, PSS_DEFAULT_FONT, sStatLabels[i].x, sStatLabels[i].y, 0, 0, sTextColors[0], TEXT_SKIP_DRAW, coloredLabel);
+        AddTextPrinterParameterized4(windowId, PSS_DEFAULT_FONT, sStatLabels[i].x, sStatLabels[i].y, 0, 0, sTextColors[SWSH_SUMMARY_FONT_COLOR_WHITE], TEXT_SKIP_DRAW, coloredLabel);
     }
 }
 
@@ -5761,6 +5814,9 @@ static void PrintMoveNameAndPP(u8 moveIndex)
         text = gText_EmptyString2;
         ppState = 3;
     }
+
+    if(ppState == SWSH_SUMMARY_FONT_COLOR_WHITE)
+        ppState = 0;
 
     PrintTextOnWindowWithFont(moveNameWindowId, text, 121, moveIndex * 18 + 4, 0, ppState, FONT_SMALL);
 }

@@ -4524,7 +4524,7 @@ static void PrintMonAbilityName(void)
 
 static const u8 sText_Ability_Name_Title[] = _("Ability");
 static const u8 sText_Innate_Name_Title[] = _("Innate");
-static const u8 sText_InnateLockedUntilLevel_SwSh[] = _("This POKéMON innate is\ncurrently locked until level {STR_VAR_1}.");
+#define ABILITY_DESCRIPTION_WIDTH 144
 
 static void PrintMonAbilityDescription(void)
 {
@@ -4532,6 +4532,7 @@ static void PrintMonAbilityDescription(void)
     enum Ability ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum);
     enum Ability innate = gSpeciesInfo[sMonSummaryScreen->summary.species].innates[0];
     u8 unlockLevel = gSpeciesInfo[sMonSummaryScreen->summary.species].innateUnlockLevel;
+    u8 fontId;// = GetFontIdToFit(text, PSS_DEFAULT_FONT, 0, 72);
     u8 y = 30;
 
     if (!SWSH_SUMMARY_SHOW_DYNAMAX_LEVEL)
@@ -4543,7 +4544,9 @@ static void PrintMonAbilityDescription(void)
     PrintTextOnWindowWithFont(windowId, sText_Ability_Name_Title, 0, y, 0, SWSH_SUMMARY_FONT_COLOR_RED, FONT_SMALL_NARROW);
     PrintTextOnWindowWithFont(windowId, gAbilitiesInfo[ability].name, 48, y, 0, SWSH_SUMMARY_FONT_COLOR_RED, FONT_SMALL_NARROW);
     y += 8;
-    PrintTextOnWindowWithFont(windowId, gAbilitiesInfo[ability].description, 0, y, 0, SWSH_SUMMARY_FONT_COLOR_WHITE, FONT_SMALL_NARROWER);
+    StringCopy(gStringVar1, gAbilitiesInfo[ability].description);
+    fontId = GetFontIdToFit(gStringVar1, FONT_SMALL, 0, ABILITY_DESCRIPTION_WIDTH);
+    PrintTextOnWindowWithFont(windowId, gStringVar1, 0, y, 0, SWSH_SUMMARY_FONT_COLOR_WHITE, fontId);
     //Innate
     y += 28;
     PrintTextOnWindowWithFont(windowId, sText_Innate_Name_Title, 0, y, 0, SWSH_SUMMARY_FONT_COLOR_BLUE, FONT_SMALL_NARROW);
@@ -4552,7 +4555,9 @@ static void PrintMonAbilityDescription(void)
     
     if(sMonSummaryScreen->summary.innateUnlock || unlockLevel < sMonSummaryScreen->summary.level){
         //Unlocked
-        PrintTextOnWindowWithFont(windowId, gAbilitiesInfo[innate].description, 0, y, 0, SWSH_SUMMARY_FONT_COLOR_WHITE, FONT_SMALL_NARROWER);
+        StringCopy(gStringVar1, gAbilitiesInfo[innate].description);
+        fontId = GetFontIdToFit(gStringVar1, FONT_SMALL, 0, ABILITY_DESCRIPTION_WIDTH);
+        PrintTextOnWindowWithFont(windowId, gStringVar1, 0, y, 0, SWSH_SUMMARY_FONT_COLOR_WHITE, fontId);
     }
     else{
         ConvertIntToDecimalStringN(gStringVar1, unlockLevel, STR_CONV_MODE_LEFT_ALIGN, 3);

@@ -25,12 +25,160 @@
 #include <memory>
 #include <cstring>
 #include <cerrno>
+#include <cstdlib>
+#include <vector>
 #include "preproc.h"
 #include "c_file.h"
 #include "char_util.h"
 #include "utf8.h"
 #include "string_parser.h"
 #include "io.h"
+
+static int ConvertPreprocDigit(char c, int radix)
+{
+    int digit;
+
+    if (c >= '0' && c <= '9')
+        digit = c - '0';
+    else if (c >= 'A' && c <= 'F')
+        digit = 10 + c - 'A';
+    else if (c >= 'a' && c <= 'f')
+        digit = 10 + c - 'a';
+    else
+        return -1;
+
+    return (digit < radix) ? digit : -1;
+}
+
+static std::vector<unsigned char> ReadGlyphWidths(const char *name)
+{
+    FILE *fp = std::fopen("src/fonts.c", "rb");
+    std::vector<unsigned char> widths;
+
+    if (fp == NULL)
+        return widths;
+
+    std::fseek(fp, 0, SEEK_END);
+    long size = std::ftell(fp);
+    std::rewind(fp);
+
+    std::string buffer(size, 0);
+
+    if (std::fread(&buffer[0], size, 1, fp) != 1)
+    {
+        std::fclose(fp);
+        return widths;
+    }
+
+    std::fclose(fp);
+
+    size_t pos = buffer.find(name);
+    if (pos == std::string::npos)
+        return widths;
+
+    pos = buffer.find('{', pos);
+    if (pos == std::string::npos)
+        return widths;
+
+    while (++pos < buffer.size() && buffer[pos] != '}')
+    {
+        if (IsAsciiDigit(buffer[pos]))
+        {
+            char *end;
+            unsigned long value = std::strtoul(&buffer[pos], &end, 10);
+            widths.push_back((unsigned char)value);
+            pos = end - &buffer[0];
+        }
+    }
+
+    return widths;
+}
+
+static const std::vector<unsigned char>& GetGlyphWidthsForFont(int fontId)
+{
+    static const std::vector<unsigned char> smallNarrow = ReadGlyphWidths("gFontSmallNarrowLatinGlyphWidths");
+    static const std::vector<unsigned char> small = ReadGlyphWidths("gFontSmallLatinGlyphWidths");
+    static const std::vector<unsigned char> narrow = ReadGlyphWidths("gFontNarrowLatinGlyphWidths");
+    static const std::vector<unsigned char> shortFont = ReadGlyphWidths("gFontShortLatinGlyphWidths");
+    static const std::vector<unsigned char> normal = ReadGlyphWidths("gFontNormalLatinGlyphWidths");
+    static const std::vector<unsigned char> narrower = ReadGlyphWidths("gFontNarrowerLatinGlyphWidths");
+    static const std::vector<unsigned char> smallNarrower = ReadGlyphWidths("gFontSmallNarrowerLatinGlyphWidths");
+    static const std::vector<unsigned char> shortNarrow = ReadGlyphWidths("gFontShortNarrowLatinGlyphWidths");
+    static const std::vector<unsigned char> shortNarrower = ReadGlyphWidths("gFontShortNarrowerLatinGlyphWidths");
+    static const std::vector<unsigned char> empty;
+
+    switch (fontId)
+    {
+    case 0:
+        return small;
+    case 1:
+        return normal;
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+        return shortFont;
+    case 7:
+        return narrow;
+    case 8:
+        return smallNarrow;
+    case 10:
+        return narrower;
+    case 11:
+        return smallNarrower;
+    case 12:
+        return shortNarrow;
+    case 13:
+        return shortNarrower;
+    default:
+        return empty;
+    }
+}
+
+static int GetPreprocGlyphWidth(int fontId, unsigned char c)
+{
+    if (fontId < 0 || fontId >= 14)
+        return 0;
+
+    if (c == 0xFE || c == 0xFF)
+        return 0;
+    if (c == 0x00)
+        return 3;
+
+    const std::vector<unsigned char>& widths = GetGlyphWidthsForFont(fontId);
+    if (c < widths.size())
+        return widths[c];
+
+    if (fontId == 6 || fontId == 9)
+        return 8;
+
+    switch (fontId)
+    {
+    case 0:  // FONT_SMALL
+    case 8:  // FONT_SMALL_NARROW
+    case 11: // FONT_SMALL_NARROWER
+        return 5;
+    case 7:  // FONT_NARROW
+    case 10: // FONT_NARROWER
+        return 5;
+    default:
+        return 6;
+    }
+}
+
+static int GetStringWidthForFont(const std::vector<unsigned char>& text, int fontId, int start, int end)
+{
+    int width = 0;
+
+    for (int i = start; i < end; i++)
+    {
+        if (text[i] == 0xFE)
+            break;
+        width += GetPreprocGlyphWidth(fontId, text[i]);
+    }
+
+    return width;
+}
 
 CFile::CFile(const char * filenameCStr, bool isStdin)
 {
@@ -152,12 +300,20 @@ void CFile::SkipWhitespace()
 
 void CFile::TryConvertString()
 {
+    if (TryConvertFormattedString())
+        return;
+
+    TryConvertPlainString();
+}
+
+bool CFile::TryConvertPlainString()
+{
     long oldPos = m_pos;
     long oldLineNum = m_lineNum;
     bool noTerminator = false;
 
     if (m_buffer[m_pos] != '_' || (m_pos > 0 && IsIdentifierChar(m_buffer[m_pos - 1])))
-        return;
+        return false;
 
     m_pos++;
 
@@ -173,7 +329,7 @@ void CFile::TryConvertString()
     {
         m_pos = oldPos;
         m_lineNum = oldLineNum;
-        return;
+        return false;
     }
 
     m_pos++;
@@ -224,6 +380,210 @@ void CFile::TryConvertString()
         std::printf(" }");
     else
         std::printf("0xFF }");
+
+    return true;
+}
+
+bool CFile::TryConvertFormattedString()
+{
+    long oldPos = m_pos;
+    long oldLineNum = m_lineNum;
+
+    if (m_buffer[m_pos] != '_' || m_buffer[m_pos + 1] != 'f' || (m_pos > 0 && IsIdentifierChar(m_buffer[m_pos - 1])))
+        return false;
+
+    m_pos += 2;
+
+    SkipWhitespace();
+
+    if (m_buffer[m_pos] != '(')
+    {
+        m_pos = oldPos;
+        m_lineNum = oldLineNum;
+        return false;
+    }
+
+    m_pos++;
+    SkipWhitespace();
+
+    int fontId = ReadIntegerArgument();
+    ExpectComma();
+    int width = ReadIntegerArgument();
+    ExpectComma();
+
+    std::vector<unsigned char> text;
+
+    while (1)
+    {
+        SkipWhitespace();
+
+        if (m_buffer[m_pos] == '"')
+        {
+            unsigned char s[kMaxStringLength];
+            int length;
+            StringParser stringParser(m_buffer, m_size);
+
+            try
+            {
+                m_pos += stringParser.ParseString(m_pos, s, length);
+            }
+            catch (std::runtime_error& e)
+            {
+                RaiseError(e.what());
+            }
+
+            text.insert(text.end(), s, s + length);
+        }
+        else if (m_buffer[m_pos] == ')')
+        {
+            m_pos++;
+            break;
+        }
+        else
+        {
+            if (m_pos >= m_size)
+                RaiseError("unexpected EOF");
+            if (IsAsciiPrintable(m_buffer[m_pos]))
+                RaiseError("unexpected character '%c'", m_buffer[m_pos]);
+            else
+                RaiseError("unexpected character '\\x%02X'", m_buffer[m_pos]);
+        }
+    }
+
+    FormatString(text, fontId, width);
+    std::printf("{ ");
+    PrintStringBytes(text.data(), text.size());
+    std::printf("0xFF }");
+
+    return true;
+}
+
+int CFile::ReadIntegerArgument()
+{
+    int value = 0;
+
+    SkipWhitespace();
+
+    if (IsIdentifierStartingChar(m_buffer[m_pos]))
+    {
+        long startPos = m_pos;
+
+        m_pos++;
+
+        while (IsIdentifierChar(m_buffer[m_pos]))
+            m_pos++;
+
+        std::string ident(&m_buffer[startPos], m_pos - startPos);
+
+        if (ident == "FONT_SMALL")
+            return 0;
+        if (ident == "FONT_NORMAL")
+            return 1;
+        if (ident == "FONT_SHORT")
+            return 2;
+        if (ident == "FONT_SHORT_COPY_1")
+            return 3;
+        if (ident == "FONT_SHORT_COPY_2")
+            return 4;
+        if (ident == "FONT_SHORT_COPY_3")
+            return 5;
+        if (ident == "FONT_BRAILLE")
+            return 6;
+        if (ident == "FONT_NARROW")
+            return 7;
+        if (ident == "FONT_SMALL_NARROW")
+            return 8;
+        if (ident == "FONT_BOLD")
+            return 9;
+        if (ident == "FONT_NARROWER")
+            return 10;
+        if (ident == "FONT_SMALL_NARROWER")
+            return 11;
+        if (ident == "FONT_SHORT_NARROW")
+            return 12;
+        if (ident == "FONT_SHORT_NARROWER")
+            return 13;
+        if (ident == "ABILITY_DESCRIPTION_FONT")
+            return 1;
+        if (ident == "ABILITY_DESCRIPTION_WIDTH")
+            return 104;
+
+        RaiseError("unknown integer argument '%s'", ident.c_str());
+    }
+
+    if (!IsAsciiDigit(m_buffer[m_pos]))
+        RaiseError("expected integer argument");
+
+    if (m_buffer[m_pos] == '0' && m_buffer[m_pos + 1] == 'x')
+    {
+        m_pos += 2;
+        while (ConvertPreprocDigit(m_buffer[m_pos], 16) != -1)
+        {
+            int digit = ConvertPreprocDigit(m_buffer[m_pos], 16);
+            value = (value * 16) + digit;
+            m_pos++;
+        }
+
+        SkipWhitespace();
+        return value;
+    }
+
+    while (IsAsciiDigit(m_buffer[m_pos]))
+    {
+        value = (value * 10) + (m_buffer[m_pos] - '0');
+        m_pos++;
+    }
+
+    SkipWhitespace();
+    return value;
+}
+
+void CFile::ExpectComma()
+{
+    SkipWhitespace();
+
+    if (m_buffer[m_pos] != ',')
+        RaiseError("expected comma");
+
+    m_pos++;
+}
+
+void CFile::PrintStringBytes(const unsigned char *s, int length)
+{
+    for (int i = 0; i < length; i++)
+        printf("0x%02X, ", s[i]);
+}
+
+void CFile::FormatString(std::vector<unsigned char>& text, int fontId, int width)
+{
+    int lineStart = 0;
+    int lastSpace = -1;
+
+    for (int i = 0; i < (int)text.size(); i++)
+    {
+        if (text[i] == 0xFE)
+        {
+            lineStart = i + 1;
+            lastSpace = -1;
+            continue;
+        }
+
+        if (text[i] == 0x00)
+            lastSpace = i;
+
+        if (GetStringWidthForFont(text, fontId, lineStart, i + 1) > width && lastSpace >= lineStart)
+        {
+            text[lastSpace] = 0xFE;
+            lineStart = lastSpace + 1;
+            lastSpace = -1;
+
+            for (int j = lineStart; j <= i; j++)
+            {
+                if (text[j] == 0x00)
+                    lastSpace = j;
+            }
+        }
+    }
 }
 
 bool CFile::CheckIdentifier(const std::string& ident)

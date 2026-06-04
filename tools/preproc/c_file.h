@@ -25,6 +25,7 @@
 #include <cstdint>
 #include <string>
 #include <memory>
+#include <vector>
 #include "preproc.h"
 
 class CFile
@@ -48,6 +49,12 @@ private:
     bool ConsumeNewline();
     void SkipWhitespace();
     void TryConvertString();
+    bool TryConvertFormattedString();
+    bool TryConvertPlainString();
+    int ReadIntegerArgument();
+    void ExpectComma();
+    void PrintStringBytes(const unsigned char *s, int length);
+    void FormatString(std::vector<unsigned char>& text, int fontId, int width);
     std::unique_ptr<unsigned char[]> ReadWholeFile(const std::string& path, int& size);
     bool CheckIdentifier(const std::string& ident);
     void TryConvertIncbin();

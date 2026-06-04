@@ -33,6 +33,7 @@
 /* Converts a string to a compound literal, essentially making it a pointer to const u8 */
 #define COMPOUND_STRING(str) (const u8[]) _(str)
 #define COMPOUND_STRING_SIZE_LIMIT(str, limit) (const u8[COMPOUND_STRING_CHECK_SIZE(str, limit)]) _(str)
+#define FORMATTED_STRING(font, width, str) (const u8[]) _f(font, width, str)
 
 /* Used for COMPOUND_STRING_SIZE_LIMIT. Stupid, but makes sure we only get
  * one error message regardless of how many characters over the limit we are.

@@ -253,6 +253,7 @@ static EWRAM_DATA struct PokemonSummaryScreenData
         u8 evSpatk;
         u8 evSpdef;
         u8 evSpeed; // 0x56
+        u8 innateUnlock;
     } summary;
     u16 bg3TilemapBuffers[PSS_BUFFER_SIZE];
     u16 bg2TilemapBuffers[PSS_PAGE_COUNT][PSS_BUFFER_SIZE];
@@ -763,7 +764,7 @@ static const struct WindowTemplate sPageSkillsTemplate[] =
     [PSS_DATA_WINDOW_SKILLS_STATS] = {
         .bg = 0,
         .tilemapLeft = 1,
-        .tilemapTop = 4,
+        .tilemapTop = 3,
         .width = 18,
         .height = 7,
         .paletteNum = 2,
@@ -772,9 +773,9 @@ static const struct WindowTemplate sPageSkillsTemplate[] =
     [PSS_DATA_WINDOW_SKILLS_ABILITY] = {
         .bg = 0,
         .tilemapLeft = 1,
-        .tilemapTop = 11, // Shifted up to cover both possible positions
+        .tilemapTop = 8, // Shifted up to cover both possible positions
         .width = 18,
-        .height = 7, // Increased height to cover the shift
+        .height = 10, // Increased height to cover the shift
         .paletteNum = 2,
         .baseBlock = 277,
     },
@@ -2669,6 +2670,7 @@ static bool8 ExtractMonDataToSummaryStruct(struct Pokemon *mon)
         sum->exp = GetMonData(mon, MON_DATA_EXP);
         sum->level = GetMonData(mon, MON_DATA_LEVEL);
         sum->abilityNum = GetMonData(mon, MON_DATA_ABILITY_NUM);
+        sum->innateUnlock = GetMonData(mon, MON_DATA_INNATE_UNLOCKED);
         sum->item = GetMonData(mon, MON_DATA_HELD_ITEM);
         sum->pid = GetMonData(mon, MON_DATA_PERSONALITY);
         sum->sanity = GetMonData(mon, MON_DATA_SANITY_IS_BAD_EGG);
@@ -4496,22 +4498,55 @@ static void PrintMonNature(void)
 
 static void PrintMonAbilityName(void)
 {
+    //u8 windowId = AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_ABILITY);
     enum Ability ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum);
     u8 y = 21;
     if (!SWSH_SUMMARY_SHOW_DYNAMAX_LEVEL)
         y -= 18;
 
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_ABILITY), gAbilitiesInfo[ability].name, 48, y, 0, 0);
+    /*PrintTextOnWindowWithFont(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_ABILITY), gAbilitiesInfo[ability].name, 48, y, 0, 0, FONT_SMALL_NARROW);
+    y += 8;
+    PrintTextOnWindowWithFont(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_ABILITY), gAbilitiesInfo[ability].description, 48, y, 0, 0, FONT_SMALL_NARROW);*/
 }
+
+static const u8 sText_Ability_Name_Title[] = _("Ability");
+static const u8 sText_Innate_Name_Title[] = _("Innate");
+static const u8 sText_InnateLockedUntilLevel_SwSh[] = _("This POKéMON innate is currently\nlocked until level {STR_VAR_1}.");
 
 static void PrintMonAbilityDescription(void)
 {
+    u8 windowId = AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_ABILITY);
     enum Ability ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum);
-    u8 y = 38;
+    enum Ability innate = gSpeciesInfo[sMonSummaryScreen->summary.species].innates[0];
+    u8 unlockLevel = gSpeciesInfo[sMonSummaryScreen->summary.species].innateUnlockLevel;
+    u8 y = 30;
+
     if (!SWSH_SUMMARY_SHOW_DYNAMAX_LEVEL)
         y -= 18;
 
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_ABILITY), gAbilitiesInfo[ability].description, 0, y, 0, 0);
+    y -= 4;
+
+    //Ability
+    PrintTextOnWindowWithFont(windowId, sText_Ability_Name_Title, 0, y, 0, SWSH_SUMMARY_FONT_COLOR_WHITE, FONT_SMALL_NARROW);
+    PrintTextOnWindowWithFont(windowId, gAbilitiesInfo[ability].name, 48, y, 0, SWSH_SUMMARY_FONT_COLOR_WHITE, FONT_SMALL_NARROW);
+    y += 8;
+    PrintTextOnWindowWithFont(windowId, gAbilitiesInfo[ability].description, 0, y, 0, SWSH_SUMMARY_FONT_COLOR_WHITE, FONT_SMALL_NARROW);
+    //Innate
+    y += 28;
+    PrintTextOnWindowWithFont(windowId, sText_Innate_Name_Title, 0, y, 0, SWSH_SUMMARY_FONT_COLOR_WHITE, FONT_SMALL_NARROW);
+    PrintTextOnWindowWithFont(windowId, gAbilitiesInfo[innate].name, 48, y, 0, SWSH_SUMMARY_FONT_COLOR_WHITE, FONT_SMALL_NARROW);
+    y += 8;
+    
+    if(sMonSummaryScreen->summary.innateUnlock || unlockLevel < sMonSummaryScreen->summary.level){
+        //Unlocked
+        PrintTextOnWindowWithFont(windowId, gAbilitiesInfo[innate].description, 0, y, 0, SWSH_SUMMARY_FONT_COLOR_WHITE, FONT_SMALL_NARROW);
+    }
+    else{
+        ConvertIntToDecimalStringN(gStringVar1, unlockLevel, STR_CONV_MODE_LEFT_ALIGN, 3);
+        StringExpandPlaceholders(gStringVar4, sText_InnateLockedUntilLevel_SwSh);
+
+        PrintTextOnWindowWithFont(windowId, gStringVar4, 0, y, 0, SWSH_SUMMARY_FONT_COLOR_WHITE, FONT_SMALL_NARROW);
+    }
 }
 
 static const u8 *GetCharacteristicString(void)
@@ -4836,6 +4871,10 @@ static void BufferStat(u8 *dst, u32 stat, u32 strId, u32 align)
     DynamicPlaceholderTextUtil_SetPlaceholderPtr(strId, dst);
 }
 
+#define PRINT_STATS_FONT FONT_SMALL
+#define PRINT_STATS_Y_1 4
+#define PRINT_STATS_Y_2 16
+#define PRINT_STATS_Y_3 28
 
 static void PrintStats(u8 mode)
 {
@@ -4887,7 +4926,7 @@ static void PrintStats(u8 mode)
         DynamicPlaceholderTextUtil_SetPlaceholderPtr(0, currentHPString);
         DynamicPlaceholderTextUtil_SetPlaceholderPtr(1, maxHPString);
         DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sStatsHPLayout);
-        AddTextPrinterParameterized4(windowId, PSS_DEFAULT_FONT, 72 - GetStringWidth(PSS_DEFAULT_FONT, gStringVar4, 0), 2, 0, 0, sTextColors[SWSH_SUMMARY_FONT_COLOR_WHITE], TEXT_SKIP_DRAW, gStringVar4);
+        AddTextPrinterParameterized4(windowId, PRINT_STATS_FONT, 72 - GetStringWidth(PRINT_STATS_FONT, gStringVar4, 0), PRINT_STATS_Y_1, 0, 0, sTextColors[SWSH_SUMMARY_FONT_COLOR_WHITE], TEXT_SKIP_DRAW, gStringVar4);
     }
     else
     {
@@ -4896,24 +4935,24 @@ static void PrintStats(u8 mode)
         DynamicPlaceholderTextUtil_Reset();
         DynamicPlaceholderTextUtil_SetPlaceholderPtr(0, hpString);
         DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sStatsHPIVEVLayout);
-        AddTextPrinterParameterized4(windowId, PSS_DEFAULT_FONT, 72 - GetStringWidth(PSS_DEFAULT_FONT, gStringVar4, 0), 2, 0, 0, sTextColors[SWSH_SUMMARY_FONT_COLOR_WHITE], TEXT_SKIP_DRAW, gStringVar4);
+        AddTextPrinterParameterized4(windowId, PRINT_STATS_FONT, 72 - GetStringWidth(PRINT_STATS_FONT, gStringVar4, 0), PRINT_STATS_Y_1, 0, 0, sTextColors[SWSH_SUMMARY_FONT_COLOR_WHITE], TEXT_SKIP_DRAW, gStringVar4);
     }
 
     // print other stats
     BufferStat(gStringVar1, atk, 0, 3);
-    AddTextPrinterParameterized4(windowId, PSS_DEFAULT_FONT, 144 - GetStringWidth(PSS_DEFAULT_FONT, gStringVar1, 0), 2, 0, 0, sTextColors[SWSH_SUMMARY_FONT_COLOR_WHITE], TEXT_SKIP_DRAW, gStringVar1);
+    AddTextPrinterParameterized4(windowId, PRINT_STATS_FONT, 144 - GetStringWidth(PRINT_STATS_FONT, gStringVar1, 0), PRINT_STATS_Y_1, 0, 0, sTextColors[SWSH_SUMMARY_FONT_COLOR_WHITE], TEXT_SKIP_DRAW, gStringVar1);
 
     BufferStat(gStringVar2, def, 1, 3);
-    AddTextPrinterParameterized4(windowId, PSS_DEFAULT_FONT, 72 - GetStringWidth(PSS_DEFAULT_FONT, gStringVar2, 0), 19, 0, 0, sTextColors[SWSH_SUMMARY_FONT_COLOR_WHITE], TEXT_SKIP_DRAW, gStringVar2);
+    AddTextPrinterParameterized4(windowId, PRINT_STATS_FONT, 72 - GetStringWidth(PRINT_STATS_FONT, gStringVar2, 0), PRINT_STATS_Y_2, 0, 0, sTextColors[SWSH_SUMMARY_FONT_COLOR_WHITE], TEXT_SKIP_DRAW, gStringVar2);
 
     BufferStat(gStringVar3, spA, 2, 3);
-    AddTextPrinterParameterized4(windowId, PSS_DEFAULT_FONT, 144 - GetStringWidth(PSS_DEFAULT_FONT, gStringVar3, 0), 19, 0, 0, sTextColors[SWSH_SUMMARY_FONT_COLOR_WHITE], TEXT_SKIP_DRAW, gStringVar3);
+    AddTextPrinterParameterized4(windowId, PRINT_STATS_FONT, 144 - GetStringWidth(PRINT_STATS_FONT, gStringVar3, 0), PRINT_STATS_Y_2, 0, 0, sTextColors[SWSH_SUMMARY_FONT_COLOR_WHITE], TEXT_SKIP_DRAW, gStringVar3);
 
     BufferStat(gStringVar4, spD, 3, 3);
-    AddTextPrinterParameterized4(windowId, PSS_DEFAULT_FONT, 72 - GetStringWidth(PSS_DEFAULT_FONT, gStringVar4, 0), 36, 0, 0, sTextColors[SWSH_SUMMARY_FONT_COLOR_WHITE], TEXT_SKIP_DRAW, gStringVar4);
+    AddTextPrinterParameterized4(windowId, PRINT_STATS_FONT, 72 - GetStringWidth(PRINT_STATS_FONT, gStringVar4, 0), PRINT_STATS_Y_3, 0, 0, sTextColors[SWSH_SUMMARY_FONT_COLOR_WHITE], TEXT_SKIP_DRAW, gStringVar4);
 
     BufferStat(sStringVar5, spe, 4, 3);
-    AddTextPrinterParameterized4(windowId, PSS_DEFAULT_FONT, 144 - GetStringWidth(PSS_DEFAULT_FONT, sStringVar5, 0), 36, 0, 0, sTextColors[SWSH_SUMMARY_FONT_COLOR_WHITE], TEXT_SKIP_DRAW, sStringVar5);
+    AddTextPrinterParameterized4(windowId, PRINT_STATS_FONT, 144 - GetStringWidth(PRINT_STATS_FONT, sStringVar5, 0), PRINT_STATS_Y_3, 0, 0, sTextColors[SWSH_SUMMARY_FONT_COLOR_WHITE], TEXT_SKIP_DRAW, sStringVar5);
 
     // Now copy everything to VRAM in one operation
     CopyWindowToVram(windowId, COPYWIN_FULL);
@@ -4922,8 +4961,8 @@ static void PrintStats(u8 mode)
 // Add a function to just print the stat labels
 static void PrintStatLabels(void)
 {
-    static const u8 sTextNatureDown[] = _("{COLOR}{07}{SHADOW}{08}");
-    static const u8 sTextNatureUp[] = _("{COLOR}{05}{SHADOW}{06}");
+    static const u8 sTextNatureDown[] = _("{COLOR}{08}{SHADOW}{07}");
+    static const u8 sTextNatureUp[] = _("{COLOR}{06}{SHADOW}{05}");
     static const u8 sTextNatureNeutral[] = _("");
 
     struct StatLabelInfo {
@@ -4934,12 +4973,12 @@ static void PrintStatLabels(void)
     };
 
     static const struct StatLabelInfo sStatLabels[] = {
-        {STAT_HP,     sText_HP_Title,      8,  2},
-        {STAT_ATK,    sText_Attack_Title,  80, 2},
-        {STAT_DEF,    sText_Defense_Title, 8,  19},
-        {STAT_SPATK,  sText_SpAtk_Title,   80, 19},
-        {STAT_SPDEF,  sText_SpDef_Title,   8,  36},
-        {STAT_SPEED,  sText_Speed_Title,   80, 36},
+        {STAT_HP,     sText_HP_Title,      8,  PRINT_STATS_Y_1},
+        {STAT_ATK,    sText_Attack_Title,  80, PRINT_STATS_Y_1},
+        {STAT_DEF,    sText_Defense_Title, 8,  PRINT_STATS_Y_2},
+        {STAT_SPATK,  sText_SpAtk_Title,   80, PRINT_STATS_Y_2},
+        {STAT_SPDEF,  sText_SpDef_Title,   8,  PRINT_STATS_Y_3},
+        {STAT_SPEED,  sText_Speed_Title,   80, PRINT_STATS_Y_3},
     };
 
     u8 windowId = AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS);
@@ -4951,6 +4990,7 @@ static void PrintStatLabels(void)
     for (i = 0; i < ARRAY_COUNT(sStatLabels); i++)
     {
         const u8 *color;
+        u8 y = (i % 3)* 16;
 
         if (natureUpStat == natureDownStat)
             color = sTextNatureNeutral;
@@ -4963,7 +5003,7 @@ static void PrintStatLabels(void)
 
         StringCopy(coloredLabel, color);
         StringAppend(coloredLabel, sStatLabels[i].text);
-        AddTextPrinterParameterized4(windowId, PSS_DEFAULT_FONT, sStatLabels[i].x, sStatLabels[i].y, 0, 0, sTextColors[SWSH_SUMMARY_FONT_COLOR_WHITE], TEXT_SKIP_DRAW, coloredLabel);
+        AddTextPrinterParameterized4(windowId, PRINT_STATS_FONT, sStatLabels[i].x, sStatLabels[i].y, 0, 0, sTextColors[SWSH_SUMMARY_FONT_COLOR_WHITE], TEXT_SKIP_DRAW, coloredLabel);
     }
 }
 
@@ -6591,7 +6631,7 @@ static void DestroyHeldItemBoxSprites(void)
 
 static void CreateAbilityBoxSprites(void)
 {
-    u8 col, row;
+    /*u8 col, row;
     u8 *spriteIds = &sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_ABILITY_BOX];
 
     // Always destroy old sprites first
@@ -6630,14 +6670,14 @@ static void CreateAbilityBoxSprites(void)
             if (spriteIds[idx] != MAX_SPRITES)
                 StartSpriteAnim(&gSprites[spriteIds[idx]], tileAnim);
         }
-    }
+    }*/
 }
 
 static void DestroyAbilityBoxSprites(void)
 {
-    u8 i;
+    /*u8 i;
     for (i = 0; i < ABILITY_BOX_SPRITES_COUNT; i++)
-        DestroySpriteInArray(SPRITE_ARR_ID_ABILITY_BOX + i);
+        DestroySpriteInArray(SPRITE_ARR_ID_ABILITY_BOX + i);*/
 }
 
 static void CreateDynamaxLevelSprites(void)

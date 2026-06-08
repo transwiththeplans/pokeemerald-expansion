@@ -21570,7 +21570,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .metronomeBanned = TRUE,
         .healingMove = TRUE,
-        .battleAnimScript = gBattleAnimMove_NightShade,
+        .battleAnimScript = gBattleAnimMove_SoulSuck,
     },
 
     [MOVE_STALAG_BITE] =
@@ -21594,7 +21594,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .moveEffect = MOVE_EFFECT_FLINCH,
             .chance = 20,
         }),
-        .battleAnimScript = gBattleAnimMove_Bite,
+        .battleAnimScript = gBattleAnimMove_StalagBite,
     },
 
     [MOVE_SUGAR_CRUNCH] =
@@ -21618,7 +21618,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .moveEffect = MOVE_EFFECT_CONFUSION,
             .chance = 20,
         }),
-        .battleAnimScript = gBattleAnimMove_PsychicFangs,
+        .battleAnimScript = gBattleAnimMove_SugarCrunch,
     },
 
     [MOVE_NEUROSHOCK] =

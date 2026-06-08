@@ -38216,3 +38216,88 @@ gBattleAnimMove_Frenzy::
 	playsewithpan SE_M_MEGA_KICK2, SOUND_PAN_TARGET
 	call UnsetBugBg
 	end
+
+gBattleAnimMove_SoulSuck::
+	loadspritegfx ANIM_TAG_ORBS
+	loadspritegfx ANIM_TAG_BLUE_STAR
+	monbg ANIM_DEF_PARTNER
+	splitbgprio_foes ANIM_TARGET
+	setalpha 12, 8
+	playsewithpan SE_M_PSYBEAM, SOUND_PAN_ATTACKER
+	fadetobg BG_GHOST
+	waitbgfadein
+	delay 10
+	playsewithpan SE_M_ABSORB, SOUND_PAN_TARGET
+	delay 2
+	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 0, 5, 5, 1
+	waitforvisualfinish
+	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 1, 0, 7, RGB_BLACK
+	call AbsorbEffect
+	waitforvisualfinish
+	delay 15
+	call HealingEffect
+	waitforvisualfinish
+	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 1, 7, 0, RGB_BLACK
+	restorebg
+	waitbgfadein
+	clearmonbg ANIM_DEF_PARTNER
+	blendoff
+	end
+
+gBattleAnimMove_StalagBite::
+	loadspritegfx ANIM_TAG_SHARP_TEETH
+	loadspritegfx ANIM_TAG_ROCKS
+	loadspritegfx ANIM_TAG_IMPACT
+	monbg ANIM_TARGET
+	monbg ANIM_DEF_PARTNER
+	setalpha 12, 8
+	playsewithpan SE_M_BITE, SOUND_PAN_TARGET
+	createsprite gSharpTeethSpriteTemplate, ANIM_ATTACKER, 2, 0, -32, 0, 0, 819, 10
+	createsprite gSharpTeethSpriteTemplate, ANIM_ATTACKER, 2, 0, 32, 4, 0, -819, 10
+	delay 10
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, ANIM_TARGET, 2
+	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 0, 4, 7, 1
+	waitforvisualfinish
+	playsewithpan SE_M_ROCK_THROW, SOUND_PAN_TARGET
+	createsprite gRockFragmentSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, 20, 24, 14, 2
+	createsprite gRockFragmentSpriteTemplate, ANIM_ATTACKER, 2, 5, 0, -20, 24, 14, 1
+	createsprite gRockFragmentSpriteTemplate, ANIM_ATTACKER, 2, 0, 5, 20, -24, 14, 2
+	createsprite gRockFragmentSpriteTemplate, ANIM_ATTACKER, 2, -5, 0, -20, -24, 14, 2
+	createsprite gRockFragmentSpriteTemplate, ANIM_ATTACKER, 2, 0, -5, 30, 18, 8, 2
+	createsprite gRockFragmentSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, 30, -18, 8, 2
+	createsprite gRockFragmentSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, -30, 18, 8, 2
+	createsprite gRockFragmentSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, -30, -18, 8, 2
+	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 0, 4, 7, 1
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	clearmonbg ANIM_DEF_PARTNER
+	blendoff
+	end
+
+gBattleAnimMove_SugarCrunch::
+	loadspritegfx ANIM_TAG_SHARP_TEETH
+	loadspritegfx ANIM_TAG_IMPACT
+	monbg ANIM_TARGET
+	fadetobg BG_MISTY_TERRAIN
+	waitbgfadein
+	setalpha 12, 8
+	playsewithpan SE_M_BITE, SOUND_PAN_TARGET
+	createsprite gSharpTeethSpriteTemplate, ANIM_ATTACKER, 2, 0xffe0, 0xffe0, 0x1, 0x333, 0x333, 0xa
+	createsprite gSharpTeethSpriteTemplate, ANIM_ATTACKER, 2, 0x20, 0x20, 0x5, 0xfccd, 0xfccd, 0xa
+	delay 10
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 2, -8, 0, ANIM_TARGET, 1
+	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 0, 7, 5, 2
+	delay 16
+	playsewithpan SE_M_BITE, SOUND_PAN_TARGET
+	createsprite gSharpTeethSpriteTemplate, ANIM_ATTACKER, 2, 0x20, 0xffe0, 0x7, 0xfccd, 0x333, 0xa
+	createsprite gSharpTeethSpriteTemplate, ANIM_ATTACKER, 2, 0xffe0, 0x20, 0x3, 0x333, 0xfccd, 0xa
+	delay 10
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 2, 8, 0, ANIM_TARGET, 1
+	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 0, 8, 4, 2
+	playsewithpan SE_M_SUPERSONIC, SOUND_PAN_TARGET
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
+	restorebg
+	waitbgfadein
+	end

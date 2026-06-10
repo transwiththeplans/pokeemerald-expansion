@@ -1308,6 +1308,9 @@ const u16 gBattleAnimSpritePal_SaltParticle[] = INCBIN_U16("graphics/battle_anim
 
 const u16 gBattleAnimUnusedPal_Unknown2[] = INCBIN_U16("graphics/battle_anims/unused/unknown_2.gbapal");
 
+const u32 gBattleAnimSpriteGfx_BlueBlock[] = INCBIN_U32("graphics/battle_anims/sprites/blue_block.4bpp.smol");
+const u16 gBattleAnimSpritePal_BlueBlock[] = INCBIN_U16("graphics/battle_anims/sprites/blue_block.gbapal");
+
 #include "data/graphics/trainers.h"
 
 const u32 gBattleVSFrame_Gfx[] = INCBIN_U32("graphics/battle_transitions/vs_frame.4bpp.smol");

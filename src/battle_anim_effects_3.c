@@ -28,6 +28,7 @@ extern const struct SpriteTemplate gThoughtBubbleSpriteTemplate;
 
 static void AnimBlackSmoke_Step(struct Sprite *);
 static void AnimWhiteHalo(struct Sprite *);
+static void AnimWhiteHaloOnMonPos(struct Sprite *);
 static void AnimWhiteHalo_Step1(struct Sprite *);
 static void AnimWhiteHalo_Step2(struct Sprite *);
 static void AnimMeanLookEye(struct Sprite *);
@@ -196,6 +197,17 @@ const struct SpriteTemplate gWhiteHaloSpriteTemplate =
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimWhiteHalo,
+};
+
+const struct SpriteTemplate gWhiteHaloOnMonSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_ROUND_WHITE_HALO,
+    .paletteTag = ANIM_TAG_ROUND_WHITE_HALO,
+    .oam = &gOamData_AffineOff_ObjBlend_64x64,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimWhiteHaloOnMonPos,
 };
 
 const struct SpriteTemplate gTealAlertSpriteTemplate =
@@ -1011,6 +1023,16 @@ const struct SpriteTemplate gBarrageBallSpriteTemplate =
     .affineAnims = gBarrageBallAffineAnimTable,
     .callback = SpriteCallbackDummy,
 };
+const struct SpriteTemplate gBarrageBlockSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_BLUE_BLOCK,
+    .paletteTag = ANIM_TAG_BLUE_BLOCK,
+    .oam = &gOamData_AffineNormal_ObjNormal_32x32,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gBarrageBallAffineAnimTable,
+    .callback = SpriteCallbackDummy,
+};
 
 const struct SpriteTemplate gSmellingSaltsHandSpriteTemplate =
 {
@@ -1446,6 +1468,15 @@ static void AnimWhiteHalo(struct Sprite *sprite)
     StoreSpriteCallbackInData6(sprite, AnimWhiteHalo_Step1);
     SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_ALL | BLDCNT_EFFECT_BLEND);
     SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(sprite->data[1], 16 - sprite->data[1]));
+}
+
+static void AnimWhiteHaloOnMonPos(struct Sprite *sprite)
+{
+    if (gBattleAnimArgs[0] == ANIM_ATTACKER)
+    {
+        InitSpritePosToAnimAttacker(sprite, TRUE);
+    }
+    AnimWhiteHalo(sprite);
 }
 
 static void AnimWhiteHalo_Step1(struct Sprite *sprite)
@@ -5829,4 +5860,33 @@ static void AnimTask_SlackOffSquish_Step(u8 taskId)
 
     if (!RunAffineAnimFromTaskData(&gTasks[taskId]))
         DestroyAnimVisualTask(taskId);
+}
+
+// Based on AnimTask_Barrage.
+// Moves a block in an arc towards the target, and rotates the block while arcing.
+// No args.
+void AnimTask_BarrageBlock(u8 taskId) {
+    struct Task *task = &gTasks[taskId];
+
+    task->data[11] = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2);
+    task->data[12] = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_Y_PIC_OFFSET);
+    task->data[13] = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X_2);
+    task->data[14] = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y_PIC_OFFSET) + GetBattlerSpriteCoordAttr(gBattleAnimTarget, BATTLER_COORD_ATTR_HEIGHT) / 4;
+    task->data[15] = CreateSprite(&gBarrageBlockSpriteTemplate, task->data[11], task->data[12], GetBattlerSpriteSubpriority(gBattleAnimTarget) - 5);
+    if (task->data[15] != MAX_SPRITES)
+    {
+        gSprites[task->data[15]].data[0] = 16;
+        gSprites[task->data[15]].data[2] = task->data[13];
+        gSprites[task->data[15]].data[4] = task->data[14];
+        gSprites[task->data[15]].data[5] = -32;
+        InitAnimArcTranslation(&gSprites[task->data[15]]);
+        if (!IsOnPlayerSide(gBattleAnimAttacker))
+            StartSpriteAffineAnim(&gSprites[task->data[15]], 1);
+
+        task->func = AnimTask_BarrageBall_Step;
+    }
+    else
+    {
+        DestroyAnimVisualTask(taskId);
+    }
 }

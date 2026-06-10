@@ -371,7 +371,7 @@ const struct Item gItemsInfo[] =
     [ITEM_REPEAT_BALL] =
     {
         .name = ITEM_NAME("Repeat Ball"),
-        .price = 1000,
+        .price = 100,
         .description = COMPOUND_STRING(
             "A Ball that works\n"
             "better on Pokémon\n"
@@ -14212,7 +14212,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_SUPER_ROD] =
     {
-        .name = ITEM_NAME("Super Rod"),
+        .name = ITEM_NAME("Fishing Rod"),
         .price = 0,
         .description = COMPOUND_STRING(
             "The best fishing\n"
@@ -16161,7 +16161,7 @@ const struct Item gItemsInfo[] =
     [ITEM_ABILITY_SNACK] =
     {
         .name = ITEM_NAME("Ability Snack"),
-        .price = 10000,
+        .price = 5000,
         .holdEffectParam = 0,
         .description = COMPOUND_STRING(
             "Switches a Poké-\n"

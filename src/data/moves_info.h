@@ -21330,7 +21330,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 			.moveEffect = MOVE_EFFECT_SP_DEF_MINUS_1,
 			.chance = 10,
 		}),
-		.battleAnimScript = gBattleAnimMove_MistBall,
+		.battleAnimScript = gBattleAnimMove_AirBomb,
 	},
 
 	[MOVE_ASTEROID_BELT] =
@@ -21353,7 +21353,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 			.moveEffect = MOVE_EFFECT_BURN,
 			.chance = 30,
 		}),
-		.battleAnimScript = gBattleAnimMove_RockSlide,
+		.battleAnimScript = gBattleAnimMove_AsteroidBelt,
 	},
 
 	[MOVE_BLOCK_BARRAGE] =
@@ -21372,7 +21372,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 		.category = DAMAGE_CATEGORY_PHYSICAL,
 		.makesContact = FALSE,
 		.metronomeBanned = TRUE,
-		.battleAnimScript = gBattleAnimMove_Barrage,
+		.battleAnimScript = gBattleAnimMove_BlockBarrage,
 	},
 
 	[MOVE_CHAIN_LIGHTNING] =
@@ -21391,7 +21391,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 		.category = DAMAGE_CATEGORY_SPECIAL,
 		.makesContact = FALSE,
 		.metronomeBanned = TRUE,
-		.battleAnimScript = gBattleAnimMove_ChargeBeam,
+		.battleAnimScript = gBattleAnimMove_ChainLightning,
 	},
 
 	[MOVE_COMBINATION_STRIKE] =
@@ -21433,16 +21433,16 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 			.moveEffect = MOVE_EFFECT_PREVENT_ESCAPE,
 			.chance = 100,
 		}),
-		.battleAnimScript = gBattleAnimMove_NightDaze,
+		.battleAnimScript = gBattleAnimMove_CursedTemple,
 	},
 
 	[MOVE_SEED_BURST] =
 	{
 		.name = COMPOUND_STRING("Seed Burst"),
 		.description = COMPOUND_STRING(
-			"Hits as both Grass and\n"
-			"Fire-type damage."),
-		.effect = EFFECT_TWO_TYPED_MOVE,
+			"Fires burning seeds at foe.\n"
+			"High chance of burn."),
+		.effect = EFFECT_HIT,
 		.power = 80,
 		.type = TYPE_GRASS,
 		.accuracy = 100,
@@ -21450,10 +21450,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 		.target = MOVE_TARGET_SELECTED,
 		.priority = 0,
 		.category = DAMAGE_CATEGORY_SPECIAL,
-        .argument = { .type = TYPE_FIRE },
+		.additionalEffects = ADDITIONAL_EFFECTS({
+			.moveEffect = MOVE_EFFECT_BURN,
+			.chance = 50,
+		}),
 		.makesContact = FALSE,
 		.metronomeBanned = TRUE,
-		.battleAnimScript = gBattleAnimMove_SeedBomb,
+		.battleAnimScript = gBattleAnimMove_SeedBurst,
 	},
 	
     [MOVE_DUST_DEVIL] =
@@ -21476,7 +21479,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .moveEffect = MOVE_EFFECT_ATK_MINUS_1,
             .chance = 100,
         }),
-        .battleAnimScript = gBattleAnimMove_SandTomb,
+        .battleAnimScript = gBattleAnimMove_DustDevil,
     },
 
     [MOVE_EYE_BLAST] =
@@ -21499,7 +21502,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .moveEffect = MOVE_EFFECT_TRI_ATTACK,
             .chance = 20,
         }),
-        .battleAnimScript = gBattleAnimMove_TriAttack,
+        .battleAnimScript = gBattleAnimMove_EyeBlast,
     },
 
     [MOVE_FANGS_OF_STEEL] =
@@ -21523,7 +21526,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .moveEffect = MOVE_EFFECT_FLINCH,
             .chance = 20,
         }),
-        .battleAnimScript = gBattleAnimMove_Bite,
+        .battleAnimScript = gBattleAnimMove_FangsOfSteel,
     },
 
     [MOVE_FRENZY] =
@@ -21547,7 +21550,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .self = TRUE,
             .chance = 100,
         }),
-        .battleAnimScript = gBattleAnimMove_NeedleArm,
+        .battleAnimScript = gBattleAnimMove_Frenzy,
     },
 	
 	[MOVE_SOUL_SUCK] =

@@ -5155,6 +5155,16 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
                 effect++;
                 break;
             }
+            else if ((traitCheck = SearchTraits(battlerTraits, ABILITY_THERIANTROPE)) && !gSpecialStatuses[battler].endTurnTraitDone[traitCheck - 1]
+             && TryBattleFormChange(battler, FORM_CHANGE_BATTLE_HP_PERCENT))
+            {
+                gSpecialStatuses[battler].endTurnTraitDone[traitCheck - 1] = TRUE;
+                gBattleScripting.battler = battler;
+                PushTraitStack(battler, ABILITY_THERIANTROPE);
+                BattleScriptExecute(BattleScript_Theriantrope);
+                effect++;
+                break;
+            }
 			else if ((traitCheck = SearchTraits(battlerTraits, ABILITY_HUNGER_SWITCH)) && !gSpecialStatuses[battler].endTurnTraitDone[traitCheck - 1]
              && !gBattleMons[battler].volatiles.transformed
              && GetActiveGimmick(battler) != GIMMICK_TERA

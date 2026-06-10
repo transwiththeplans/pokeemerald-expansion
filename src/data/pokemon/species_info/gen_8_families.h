@@ -8750,6 +8750,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
         .abilities = { ABILITY_CUTE_CHARM, ABILITY_NONE, ABILITY_CONTRARY },
+		.innates = {ABILITY_THERIANTROPE}, 
         .bodyColor = BODY_COLOR_PINK,
         .speciesName = _("Enamorus"),
         .cryId = CRY_ENAMORUS_INCARNATE,
@@ -8802,7 +8803,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
 
     [SPECIES_ENAMORUS_THERIAN] =
     {
-        .baseHP        = 74,
+        .baseHP        = 148,
         .baseAttack    = 115,
         .baseDefense   = 110,
         .baseSpeed     = 46,
@@ -8818,6 +8819,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
         .abilities = { ABILITY_OVERCOAT, ABILITY_NONE, ABILITY_NONE },
+		.innates = {ABILITY_THERIANTROPE}, 
         .bodyColor = BODY_COLOR_PINK,
         .speciesName = _("Enamorus"),
         .cryId = CRY_ENAMORUS_THERIAN,
@@ -8864,7 +8866,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sEnamorusLevelUpLearnset,
         .teachableLearnset = sEnamorusTeachableLearnset,
         .formSpeciesIdTable = sEnamorusFormSpeciesIdTable,
-        .formChangeTable = sEnamorusFormChangeTable,
+        .formChangeTable = sEnamorusTherianFormChangeTable,
     },
 #endif //P_FAMILY_ENAMORUS
 

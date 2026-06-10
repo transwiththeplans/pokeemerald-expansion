@@ -13020,6 +13020,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
         .abilities = { ABILITY_PRANKSTER, ABILITY_NONE, ABILITY_DEFIANT },
+		.innates = {ABILITY_THERIANTROPE}, 
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Tornadus"),
         .cryId = CRY_TORNADUS_INCARNATE,
@@ -13095,7 +13096,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 
     [SPECIES_TORNADUS_THERIAN] =
     {
-        .baseHP        = 79,
+        .baseHP        = 158,
         .baseAttack    = 100,
         .baseDefense   = 80,
         .baseSpeed     = 121,
@@ -13111,6 +13112,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
         .abilities = { ABILITY_REGENERATOR, ABILITY_NONE, ABILITY_REGENERATOR },
+		.innates = {ABILITY_THERIANTROPE}, 
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Tornadus"),
         .cryId = CRY_TORNADUS_THERIAN,
@@ -13163,7 +13165,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sTornadusLevelUpLearnset,
         .teachableLearnset = sTornadusTeachableLearnset,
         .formSpeciesIdTable = sTornadusFormSpeciesIdTable,
-        .formChangeTable = sTornadusFormChangeTable,
+        .formChangeTable = sTornadusTherianFormChangeTable,
     },
 #endif //P_FAMILY_TORNADUS
 
@@ -13186,6 +13188,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
         .abilities = { ABILITY_PRANKSTER, ABILITY_NONE, ABILITY_DEFIANT },
+		.innates = {ABILITY_THERIANTROPE}, 
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Thundurus"),
         .cryId = CRY_THUNDURUS_INCARNATE,
@@ -13261,7 +13264,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 
     [SPECIES_THUNDURUS_THERIAN] =
     {
-        .baseHP        = 79,
+        .baseHP        = 158,
         .baseAttack    = 105,
         .baseDefense   = 70,
         .baseSpeed     = 101,
@@ -13277,6 +13280,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
         .abilities = { ABILITY_VOLT_ABSORB, ABILITY_NONE, ABILITY_VOLT_ABSORB },
+		.innates = {ABILITY_THERIANTROPE}, 
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Thundurus"),
         .cryId = CRY_THUNDURUS_THERIAN,
@@ -13341,7 +13345,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sThundurusLevelUpLearnset,
         .teachableLearnset = sThundurusTeachableLearnset,
         .formSpeciesIdTable = sThundurusFormSpeciesIdTable,
-        .formChangeTable = sThundurusFormChangeTable,
+        .formChangeTable = sThundurusTherianFormChangeTable,
     },
 #endif //P_FAMILY_THUNDURUS
 
@@ -13506,6 +13510,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
         .abilities = { ABILITY_SAND_FORCE, ABILITY_NONE, ABILITY_SHEER_FORCE },
+		.innates = {ABILITY_THERIANTROPE}, 
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Landorus"),
         .cryId = CRY_LANDORUS_INCARNATE,
@@ -13581,7 +13586,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 
     [SPECIES_LANDORUS_THERIAN] =
     {
-        .baseHP        = 89,
+        .baseHP        = 178,
         .baseAttack    = 145,
         .baseDefense   = 90,
         .baseSpeed     = 91,
@@ -13597,6 +13602,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
         .abilities = { ABILITY_INTIMIDATE, ABILITY_NONE, ABILITY_NONE },
+		.innates = {ABILITY_THERIANTROPE}, 
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Landorus"),
         .cryId = CRY_LANDORUS_THERIAN,
@@ -13649,7 +13655,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sLandorusLevelUpLearnset,
         .teachableLearnset = sLandorusTeachableLearnset,
         .formSpeciesIdTable = sLandorusFormSpeciesIdTable,
-        .formChangeTable = sLandorusFormChangeTable,
+        .formChangeTable = sLandorusTherianFormChangeTable,
     },
 #endif //P_FAMILY_LANDORUS
 

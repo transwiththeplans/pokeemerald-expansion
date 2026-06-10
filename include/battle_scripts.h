@@ -577,6 +577,7 @@ extern const u8 BattleScript_TeraShellDistortingTypeMatchups[];
 extern const u8 BattleScript_TeraFormChange[];
 extern const u8 BattleScript_SleepClausePreventsEnd2[];
 extern const u8 BattleScript_PowerConstruct[];
+extern const u8 BattleScript_Theriantrope[];
 extern const u8 BattleScript_AbilityProtectsDoesntAffect[];
 extern const u8 BattleScript_ImmunityProtected[];
 extern const u8 BattleScript_SafeguardProtected[];

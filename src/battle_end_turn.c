@@ -1330,6 +1330,7 @@ static bool32 HandleEndTurnFormChangeAbilities(u32 battler)
     STORE_BATTLER_TRAITS(battler);
     
     if (SearchTraits(battlerTraits, ABILITY_POWER_CONSTRUCT)
+     || SearchTraits(battlerTraits, ABILITY_THERIANTROPE)
      || SearchTraits(battlerTraits, ABILITY_SCHOOLING)
      || SearchTraits(battlerTraits, ABILITY_SHIELDS_DOWN)
      || SearchTraits(battlerTraits, ABILITY_ZEN_MODE)

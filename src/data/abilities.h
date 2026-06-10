@@ -2892,5 +2892,17 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = FORMAT_ABILITY_DESCRIPTION("Scatters metal debris if hit."),
         .aiRating = 8,
     },
+	
+    [ABILITY_THERIANTROPE] =
+    {
+        .name = _("Theriantrope"),
+        .description = FORMAT_ABILITY_DESCRIPTION("Transforms at half HP."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .cantBeSuppressed = TRUE,
+        .cantBeOverwritten = TRUE,
+    },
 
 };

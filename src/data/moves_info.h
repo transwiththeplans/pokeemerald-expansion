@@ -21440,9 +21440,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 	{
 		.name = COMPOUND_STRING("Seed Burst"),
 		.description = COMPOUND_STRING(
-			"Hits as both Grass and\n"
-			"Fire-type damage."),
-		.effect = EFFECT_TWO_TYPED_MOVE,
+			"Fires burning seeds at foe.\n"
+			"High chance of burn."),
+		.effect = EFFECT_HIT,
 		.power = 80,
 		.type = TYPE_GRASS,
 		.accuracy = 100,
@@ -21450,7 +21450,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 		.target = MOVE_TARGET_SELECTED,
 		.priority = 0,
 		.category = DAMAGE_CATEGORY_SPECIAL,
-        .argument = { .type = TYPE_FIRE },
+		.additionalEffects = ADDITIONAL_EFFECTS({
+			.moveEffect = MOVE_EFFECT_BURN,
+			.chance = 50,
+		}),
 		.makesContact = FALSE,
 		.metronomeBanned = TRUE,
 		.battleAnimScript = gBattleAnimMove_SeedBurst,

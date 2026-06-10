@@ -8559,6 +8559,13 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
         if (ctx->updateFlags)
             RecordAbilityBattle(battlerDef, ABILITY_INSULATED);
     }
+    if (BattlerHasTrait(battlerDef, ABILITY_STEAM_ENGINE)
+     && (moveType == TYPE_WATER || moveType == TYPE_FIRE))
+    {
+        modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.75));
+        if (ctx->updateFlags)
+            RecordAbilityBattle(battlerDef, ABILITY_STEAM_ENGINE);
+    }
     // ally's abilities
     if (IsBattlerAlive(BATTLE_PARTNER(battlerAtk)))
     {

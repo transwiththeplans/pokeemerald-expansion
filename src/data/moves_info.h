@@ -21640,7 +21640,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .moveEffect = MOVE_EFFECT_BURN,
             .chance = 30,
         }),
-        .battleAnimScript = gBattleAnimMove_ChargeBeam,
+        .battleAnimScript = gBattleAnimMove_Neuroshock,
     },
 
     [MOVE_THUNDER_SPEAR] =
@@ -21663,7 +21663,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .moveEffect = MOVE_EFFECT_PARALYSIS,
             .chance = 30,
         }),
-        .battleAnimScript = gBattleAnimMove_Spark,
+        .battleAnimScript = gBattleAnimMove_ThunderSpear,
     },
 
     [MOVE_TITAN_FANG] =
@@ -21687,7 +21687,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .moveEffect = MOVE_EFFECT_SPD_MINUS_1,
 			.chance = 30,
         }),
-        .battleAnimScript = gBattleAnimMove_Crunch,
+        .battleAnimScript = gBattleAnimMove_TitanFang,
     },
 
     [MOVE_WALL_OF_SOUND] =

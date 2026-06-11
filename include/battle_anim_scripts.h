@@ -960,6 +960,9 @@ extern const u8 gBattleAnimMove_Frenzy[];
 extern const u8 gBattleAnimMove_SoulSuck[];
 extern const u8 gBattleAnimMove_StalagBite[];
 extern const u8 gBattleAnimMove_SugarCrunch[];
+extern const u8 gBattleAnimMove_Neuroshock[];
+extern const u8 gBattleAnimMove_ThunderSpear[];
+extern const u8 gBattleAnimMove_TitanFang[];
 
 // status animations
 extern const u8 gBattleAnimStatus_Poison[];

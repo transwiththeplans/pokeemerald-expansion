@@ -307,6 +307,18 @@ const struct SpriteTemplate gElectricChargingParticlesSpriteTemplate =
     .callback = SpriteCallbackDummy,
 };
 
+
+const struct SpriteTemplate gGreenChargingParticlesSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_ELECTRIC_ORBS,
+    .paletteTag = ANIM_TAG_GREEN_ORBS,
+    .oam = &gOamData_AffineOff_ObjNormal_8x8,
+    .anims = gAnims_ElectricChargingParticles,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy,
+};
+
 const struct SpriteTemplate gLightOfRuinGrayChargeTemplate =
 {
     .tileTag = ANIM_TAG_ELECTRIC_ORBS,
@@ -542,6 +554,17 @@ const struct SpriteTemplate gGrowingShockWaveOrbSpriteTemplate =
 {
     .tileTag = ANIM_TAG_CIRCLE_OF_LIGHT,
     .paletteTag = ANIM_TAG_CIRCLE_OF_LIGHT,
+    .oam = &gOamData_AffineNormal_ObjBlend_64x64,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gAffineAnims_GrowingElectricOrb,
+    .callback = AnimGrowingShockWaveOrb,
+};
+
+const struct SpriteTemplate gGrowingShockWaveGreenOrbSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_CIRCLE_OF_LIGHT,
+    .paletteTag = ANIM_TAG_GREEN_ORBS,
     .oam = &gOamData_AffineNormal_ObjBlend_64x64,
     .anims = gDummySpriteAnimTable,
     .images = NULL,
@@ -1043,6 +1066,8 @@ static void AnimTask_ElectricChargingParticles_Step(u8 taskId)
             task->data[12] = 0;
             if (gAnimMoveIndex == MOVE_FLASH_CANNON || gAnimMoveIndex == MOVE_STEEL_BEAM)
                 spriteId = CreateSprite(&gLightOfRuinGrayChargeTemplate, task->data[14], task->data[15], 2);
+            else if (gAnimMoveIndex == MOVE_NEUROSHOCK)
+                spriteId = CreateSprite(&gGreenChargingParticlesSpriteTemplate, task->data[14], task->data[15], 2);
             else
                 spriteId = CreateSprite(&gElectricChargingParticlesSpriteTemplate, task->data[14], task->data[15], 2);
 

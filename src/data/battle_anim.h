@@ -1947,6 +1947,7 @@ const struct SpritePalette gBattleAnimPaletteTable[] =
     {gBattleAnimSpritePal_TatsugiriDroopy, ANIM_TAG_TATSUGIRI_DROOPY},
     {gBattleAnimSpritePal_TatsugiriStretchy, ANIM_TAG_TATSUGIRI_STRETCHY},
     {gBattleAnimSpritePal_BlueBlock, ANIM_TAG_BLUE_BLOCK},
+    {gBattleAnimSpritePal_GreenOrbs, ANIM_TAG_GREEN_ORBS},
 };
 
 const struct BattleAnimBackground gBattleAnimBackgroundTable[] =

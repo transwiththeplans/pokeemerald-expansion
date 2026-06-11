@@ -2673,6 +2673,7 @@ extern const u32 gBattleAnimSpriteGfx_TatsugiriStretchy[];
 extern const u16 gBattleAnimSpritePal_TatsugiriStretchy[];
 extern const u32 gBattleAnimSpriteGfx_BlueBlock[];
 extern const u16 gBattleAnimSpritePal_BlueBlock[];
+extern const u16 gBattleAnimSpritePal_GreenOrbs[];
 
 // New Battle Anim Particles
 extern const u32 gBattleAnimSpriteGfx_AlphaStone[];

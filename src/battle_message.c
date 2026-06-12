@@ -898,8 +898,22 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_POWERCONSTRUCTTRANSFORM]              = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} transformed into its Complete Forme!"),
     [STRINGID_THERIANTROPETRANSFORM]                = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} transformed into its Therian Forme!"),
     [STRINGID_ABILITYSHIELDPROTECTS]                = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX}'s Ability is protected by the effects of its {B_LAST_ITEM}!"),
-    [STRINGID_AIRBORNEFLOAT]                       = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} floats in the air with Airborne!"),
-    [STRINGID_AIRBORNEBROKEN]                      = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX}'s Airborne was broken!"),
+    [STRINGID_AIRBORNEFLOAT]                        = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} floats in the air with Airborne!"),
+    [STRINGID_AIRBORNEBROKEN]                       = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX}'s Airborne was broken!"),
+    [STRINGID_CHEMIST_ACTIVATION]                   = COMPOUND_STRING("An strange gas is filling {B_DEF_NAME_WITH_PREFIX}!"),
+    [STRINGID_CHEMIST_ACTIVATION_RESISTED]          = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} resisted the gas!"),
+    [STRINGID_CHEMIST_ACTIVATION_POISON_RESISTED]   = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} resisted the poisonous gas!"),
+    [STRINGID_CHEMIST_ACTIVATION_SLEEP_RESISTED]    = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} resisted the sleep gas!"),
+    [STRINGID_CHEMIST_ACTIVATION_BURN_RESISTED]     = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} resisted the burning gas!"),
+    [STRINGID_CHEMIST_ACTIVATION_FROSTBITE_RESISTED] = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} resisted the frostbite gas!"),
+    [STRINGID_CHEMIST_ACTIVATION_PARALYSIS_RESISTED] = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} resisted the paralyzing gas!"),
+    [STRINGID_CHEMIST_ACTIVATION_POISON]            = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} became poisoned due to the gas!"),
+    [STRINGID_CHEMIST_ACTIVATION_SLEEP]             = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} became asleep due to the gas!"),
+    [STRINGID_CHEMIST_ACTIVATION_BURN]              = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} became burned due to the gas!"),
+    [STRINGID_CHEMIST_ACTIVATION_FROSTBITE]         = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} became frostbiten due to the gas!"),
+    [STRINGID_CHEMIST_ACTIVATION_PARALYSIS]         = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} became paralyzed due to the gas!"),
+
+    
 };
 
 const u16 gTrainerUsedItemStringIds[] =

@@ -284,6 +284,13 @@ static inline u32 CommonSwitchInAbilities(u32 battler, u16 trait, u8 traitDone, 
     return 1; // simulate effect ++
 }
 
+static void SetBattlerStatusAndSyncParty(u32 battler, u32 status)
+{
+    gBattleMons[battler].status1 |= status;
+    BtlController_EmitSetMonData(battler, B_COMM_TO_CONTROLLER, REQUEST_STATUS_BATTLE, 0, sizeof(gBattleMons[battler].status1), &gBattleMons[battler].status1);
+    MarkBattlerForControllerExec(battler);
+}
+
 // Gen5+
 static u32 CalcBeatUpPower(void)
 {
@@ -4590,6 +4597,130 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
                     gBattleStruct->partyState[GetBattlerSide(battler)][gBattlerPartyIndexes[battler]].dauntlessShieldBoost = TRUE;
             effect += CommonSwitchInAbilities(battler, ABILITY_DAUNTLESS_SHIELD, traitCheck, BattleScript_BattlerAbilityStatRaiseOnSwitchInDauntless);
         }
+
+        if ((traitCheck = SearchTraits(battlerTraits, ABILITY_CHEMIST)) && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1]
+         && !(gBattleStruct->partyState[GetBattlerSide(battler)][gBattlerPartyIndexes[battler]].chemistUsed))
+        {
+            u8 chosenTarget = MAX_BATTLERS_COUNT;
+            u8 side = (BATTLE_OPPOSITE(GetBattlerPosition(battler))) & BIT_SIDE;
+            u8 target1 = GetBattlerAtPosition(side);
+            u8 target2 = GetBattlerAtPosition(side + BIT_FLANK);
+            u8 chemistEffect = Random() % NUM_CHEMIST_EFFECTS;
+
+            if (IsDoubleBattle())
+            {
+                bool8 effectOnTarget1 = FALSE;
+                bool8 effectOnTarget2 = FALSE;
+
+                switch(chemistEffect){
+                    case CHEMIST_EFFECT_POISON:
+                        if(CanBePoisoned(battler, target1) && IsBattlerAlive(target1))
+                            effectOnTarget1 = TRUE;
+
+                        if(CanBePoisoned(battler, target2) && IsBattlerAlive(target2))
+                            effectOnTarget2 = TRUE;
+                    break;
+                    case CHEMIST_EFFECT_SLEEP:
+                        if(CanBeSlept(battler, target1, BLOCKED_BY_SLEEP_CLAUSE) && IsBattlerAlive(target1))
+                            effectOnTarget1 = TRUE;
+
+                        if(CanBeSlept(battler, target2, BLOCKED_BY_SLEEP_CLAUSE) && IsBattlerAlive(target2))
+                            effectOnTarget2 = TRUE;
+                    break;
+                    case CHEMIST_EFFECT_BURN:
+                        if(CanBeBurned(battler, target1) && IsBattlerAlive(target1))
+                            effectOnTarget1 = TRUE;
+
+                        if(CanBeBurned(battler, target2) && IsBattlerAlive(target2))
+                            effectOnTarget2 = TRUE;
+                    break;
+                    case CHEMIST_EFFECT_FROSTBITE:
+                        if(CanBeFrozen(battler, target1) && IsBattlerAlive(target1))
+                            effectOnTarget1 = TRUE;
+
+                        if(CanBeFrozen(battler, target2) && IsBattlerAlive(target2))
+                            effectOnTarget2 = TRUE;
+                    break;
+                    case CHEMIST_EFFECT_PARALYSIS:
+                        if(CanBeParalyzed(battler, target1) && IsBattlerAlive(target1))
+                            effectOnTarget1 = TRUE;
+
+                        if(CanBeParalyzed(battler, target2) && IsBattlerAlive(target2))
+                            effectOnTarget2 = TRUE;
+                    break;
+                }
+                
+                if (effectOnTarget1 && effectOnTarget2)
+                    chosenTarget = GetBattlerAtPosition((RandomPercentage(RNG_TRACE, 50) * 2) | side);
+                else if (effectOnTarget1)
+                    chosenTarget = target1;
+                else if (effectOnTarget2)
+                    chosenTarget = target2;
+            }
+            else
+            {
+                if (gBattleMons[target1].hp != 0)
+                    chosenTarget = target1;
+            }
+
+            if(chosenTarget != MAX_BATTLERS_COUNT){
+                gBattlerTarget = chosenTarget;
+
+                switch(chemistEffect){
+                    case CHEMIST_EFFECT_POISON:
+                    {
+                        if(CanBePoisoned(battler, gBattlerTarget)){
+                            SetBattlerStatusAndSyncParty(gBattlerTarget, STATUS1_POISON);
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_Poison);
+                        }
+                        else{
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_PoisonResisted);
+                        }
+                    }
+                    break;
+                    case CHEMIST_EFFECT_SLEEP:
+                    {
+                        if(CanBeSlept(battler, gBattlerTarget, BLOCKED_BY_SLEEP_CLAUSE) ){
+                            SetBattlerStatusAndSyncParty(gBattlerTarget, STATUS1_SLEEP);
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_Sleep);
+                        }
+                        else{
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_SleepResisted);
+                        }
+                    }
+                    break;
+                    case CHEMIST_EFFECT_BURN:
+                        if(CanBeBurned(battler, gBattlerTarget)){
+                            SetBattlerStatusAndSyncParty(gBattlerTarget, STATUS1_BURN);
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_Burn);
+                        }
+                        else{
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_BurnResisted);
+                        }
+                    break;
+                    case CHEMIST_EFFECT_FROSTBITE:
+                        if(CanBeFrozen(battler, gBattlerTarget)){
+                            SetBattlerStatusAndSyncParty(gBattlerTarget, STATUS1_FROSTBITE);
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_Frostbite);
+                        }
+                        else{
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_FrostbiteResisted);
+                        }
+                    break;
+                    case CHEMIST_EFFECT_PARALYSIS:
+                        if(CanBeParalyzed(battler, gBattlerTarget)){
+                            SetBattlerStatusAndSyncParty(gBattlerTarget, STATUS1_PARALYSIS);
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_Paralysis);
+                        }
+                        else{
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_ParalysisResisted);
+                        }
+                    break;
+                }
+                gBattleStruct->partyState[GetBattlerSide(battler)][gBattlerPartyIndexes[battler]].chemistUsed = TRUE;
+            }
+        }
+
         if ((traitCheck = SearchTraits(battlerTraits, ABILITY_WIND_RIDER)) && !gSpecialStatuses[battler].switchInTraitDone[traitCheck - 1]
          && CompareStat(battler, STAT_ATK, MAX_STAT_STAGE, CMP_LESS_THAN)
          && gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_TAILWIND)

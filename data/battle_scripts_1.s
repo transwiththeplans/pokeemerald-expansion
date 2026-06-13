@@ -7568,6 +7568,147 @@ BattleScript_BattlerAbilityStatRaiseOnSwitchInDauntless::
 BattleScript_BattlerAbilityStatRaiseOnSwitchInDauntlessRet:
 	end3
 
+BattleScript_BattlerAbilityChemist_Resisted::
+	call BattleScript_AbilityPopUpScripting
+	playmoveanimation MOVE_POISON_GAS
+	waitanimation
+	printstring STRINGID_CHEMIST_ACTIVATION
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_CHEMIST_ACTIVATION_RESISTED
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_BattlerAbilityChemist_ResistedRet:
+	end3
+
+BattleScript_BattlerAbilityChemist_PoisonResisted::
+	call BattleScript_AbilityPopUpScripting
+	playmoveanimation MOVE_POISON_GAS
+	waitanimation
+	printstring STRINGID_CHEMIST_ACTIVATION
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_CHEMIST_ACTIVATION_POISON_RESISTED
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_BattlerAbilityChemist_PoisonResistedRet:
+	end3
+
+BattleScript_BattlerAbilityChemist_SleepResisted::
+	call BattleScript_AbilityPopUpScripting
+	playmoveanimation MOVE_POISON_GAS
+	waitanimation
+	printstring STRINGID_CHEMIST_ACTIVATION
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_CHEMIST_ACTIVATION_SLEEP_RESISTED
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_BattlerAbilityChemist_SleepResistedRet:
+	end3
+
+BattleScript_BattlerAbilityChemist_BurnResisted::
+	call BattleScript_AbilityPopUpScripting
+	playmoveanimation MOVE_POISON_GAS
+	waitanimation
+	printstring STRINGID_CHEMIST_ACTIVATION
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_CHEMIST_ACTIVATION_BURN_RESISTED
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_BattlerAbilityChemist_BurnResistedRet:
+	end3
+
+BattleScript_BattlerAbilityChemist_FrostbiteResisted::
+	call BattleScript_AbilityPopUpScripting
+	playmoveanimation MOVE_POISON_GAS
+	waitanimation
+	printstring STRINGID_CHEMIST_ACTIVATION
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_CHEMIST_ACTIVATION_FROSTBITE_RESISTED
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_BattlerAbilityChemist_FrostbiteResistedRet:
+	end3
+
+BattleScript_BattlerAbilityChemist_ParalysisResisted::
+	call BattleScript_AbilityPopUpScripting
+	playmoveanimation MOVE_POISON_GAS
+	waitanimation
+	printstring STRINGID_CHEMIST_ACTIVATION
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_CHEMIST_ACTIVATION_PARALYSIS_RESISTED
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_BattlerAbilityChemist_ParalysisResistedRet:
+	end3
+
+BattleScript_BattlerAbilityChemist_Poison::
+	call BattleScript_AbilityPopUpScripting
+	playmoveanimation MOVE_POISON_GAS
+	waitanimation
+	printstring STRINGID_CHEMIST_ACTIVATION
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_CHEMIST_ACTIVATION_POISON
+	waitmessage B_WAIT_TIME_LONG
+	statusanimation BS_TARGET
+	updatestatusicon BS_TARGET
+	waitstate
+	tryactivateitem BS_EFFECT_BATTLER, ACTIVATION_ON_STATUS_CHANGE
+BattleScript_BattlerAbilityChemist_PoisonRet:
+	end3
+
+BattleScript_BattlerAbilityChemist_Sleep::
+	call BattleScript_AbilityPopUpScripting
+	playmoveanimation MOVE_POISON_GAS
+	waitanimation
+	printstring STRINGID_CHEMIST_ACTIVATION
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_CHEMIST_ACTIVATION_SLEEP
+	waitmessage B_WAIT_TIME_LONG
+	statusanimation BS_TARGET
+	updatestatusicon BS_TARGET
+	waitstate
+	tryactivateitem BS_EFFECT_BATTLER, ACTIVATION_ON_STATUS_CHANGE
+BattleScript_BattlerAbilityChemist_SleepRet:
+	end3
+
+BattleScript_BattlerAbilityChemist_Burn::
+	call BattleScript_AbilityPopUpScripting
+	playmoveanimation MOVE_POISON_GAS
+	waitanimation
+	printstring STRINGID_CHEMIST_ACTIVATION
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_CHEMIST_ACTIVATION_BURN
+	waitmessage B_WAIT_TIME_LONG
+	statusanimation BS_TARGET
+	updatestatusicon BS_TARGET
+	waitstate
+	tryactivateitem BS_EFFECT_BATTLER, ACTIVATION_ON_STATUS_CHANGE
+BattleScript_BattlerAbilityChemist_BurnRet:
+	end3
+
+BattleScript_BattlerAbilityChemist_Frostbite::
+	call BattleScript_AbilityPopUpScripting
+	playmoveanimation MOVE_POISON_GAS
+	waitanimation
+	printstring STRINGID_CHEMIST_ACTIVATION
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_CHEMIST_ACTIVATION_FROSTBITE
+	waitmessage B_WAIT_TIME_LONG
+	statusanimation BS_TARGET
+	updatestatusicon BS_TARGET
+	waitstate
+	tryactivateitem BS_EFFECT_BATTLER, ACTIVATION_ON_STATUS_CHANGE
+BattleScript_BattlerAbilityChemist_FrostbiteRet:
+	end3
+
+BattleScript_BattlerAbilityChemist_Paralysis::
+	call BattleScript_AbilityPopUpScripting
+	playmoveanimation MOVE_POISON_GAS
+	waitanimation
+	printstring STRINGID_CHEMIST_ACTIVATION
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_CHEMIST_ACTIVATION_PARALYSIS
+	waitmessage B_WAIT_TIME_LONG
+	statusanimation BS_TARGET
+	updatestatusicon BS_TARGET
+	waitstate
+	tryactivateitem BS_EFFECT_BATTLER, ACTIVATION_ON_STATUS_CHANGE
+BattleScript_BattlerAbilityChemist_ParalysisRet:
+	end3
+
 BattleScript_BattlerAbilityStatRaiseOnSwitchInWindRider::
 	call BattleScript_AbilityPopUpScripting
 	setstatchanger STAT_ATK, 1, FALSE

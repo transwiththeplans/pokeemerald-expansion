@@ -424,6 +424,7 @@
 #define ANIM_TAG_TATSUGIRI_DROOPY           (ANIM_SPRITES_START + 410)
 #define ANIM_TAG_TATSUGIRI_STRETCHY         (ANIM_SPRITES_START + 411)
 #define ANIM_TAG_BLUE_BLOCK                 (ANIM_SPRITES_START + 412)
+#define ANIM_TAG_GREEN_ORBS                 (ANIM_SPRITES_START + 413)
 
 // battlers
 #define ANIM_ATTACKER         0

@@ -2865,6 +2865,20 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 8,
     },
 
+    [ABILITY_CHEMIST] =
+    {
+        .name = _("Chemist"),
+        .description = FORMAT_ABILITY_DESCRIPTION("Upon switch in, releases gas that has a myriad of status effects."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_MEGA_SOL] =
+    {
+        .name = _("Mega Sol"),
+        .description = FORMAT_ABILITY_DESCRIPTION("Even when the sunlight has not turned harsh, the Pokémon can use its moves as if the weather were harsh sunlight."),
+        .aiRating = 8,
+    },
+
     [ABILITY_ENCHANTING_VOICE] =
     {
         .name = _("Enchanting Voice"),

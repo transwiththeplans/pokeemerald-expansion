@@ -7634,6 +7634,50 @@ BattleScript_BattlerAbilityChemist_ParalysisResisted::
 BattleScript_BattlerAbilityChemist_ParalysisResistedRet:
 	end3
 
+BattleScript_BattlerAbilityChemist_ConfusionResisted::
+	call BattleScript_AbilityPopUpScripting
+	playmoveanimation MOVE_POISON_GAS
+	waitanimation
+	printstring STRINGID_CHEMIST_ACTIVATION
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_CHEMIST_ACTIVATION_CONFUSION_RESISTED
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_BattlerAbilityChemist_ConfusionResistedRet:
+	end3
+
+BattleScript_BattlerAbilityChemist_InfatuationResisted::
+	call BattleScript_AbilityPopUpScripting
+	playmoveanimation MOVE_POISON_GAS
+	waitanimation
+	printstring STRINGID_CHEMIST_ACTIVATION
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_CHEMIST_ACTIVATION_INFATUATION_RESISTED
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_BattlerAbilityChemist_InfatuationResistedRet:
+	end3
+
+BattleScript_BattlerAbilityChemist_TauntResisted::
+	call BattleScript_AbilityPopUpScripting
+	playmoveanimation MOVE_POISON_GAS
+	waitanimation
+	printstring STRINGID_CHEMIST_ACTIVATION
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_CHEMIST_ACTIVATION_TAUNT_RESISTED
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_BattlerAbilityChemist_TauntResistedRet:
+	end3
+
+BattleScript_BattlerAbilityChemist_TormentResisted::
+	call BattleScript_AbilityPopUpScripting
+	playmoveanimation MOVE_POISON_GAS
+	waitanimation
+	printstring STRINGID_CHEMIST_ACTIVATION
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_CHEMIST_ACTIVATION_TORMENT_RESISTED
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_BattlerAbilityChemist_TormentResistedRet:
+	end3
+
 BattleScript_BattlerAbilityChemist_Poison::
 	call BattleScript_AbilityPopUpScripting
 	playmoveanimation MOVE_POISON_GAS
@@ -7707,6 +7751,50 @@ BattleScript_BattlerAbilityChemist_Paralysis::
 	waitstate
 	tryactivateitem BS_EFFECT_BATTLER, ACTIVATION_ON_STATUS_CHANGE
 BattleScript_BattlerAbilityChemist_ParalysisRet:
+	end3
+
+BattleScript_BattlerAbilityChemist_Confusion::
+	call BattleScript_AbilityPopUpScripting
+	playmoveanimation MOVE_POISON_GAS
+	waitanimation
+	printstring STRINGID_CHEMIST_ACTIVATION
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_CHEMIST_ACTIVATION_CONFUSION
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_BattlerAbilityChemist_ConfusionRet:
+	end3
+
+BattleScript_BattlerAbilityChemist_Infatuation::
+	call BattleScript_AbilityPopUpScripting
+	playmoveanimation MOVE_POISON_GAS
+	waitanimation
+	printstring STRINGID_CHEMIST_ACTIVATION
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_CHEMIST_ACTIVATION_INFATUATION
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_BattlerAbilityChemist_InfatuationRet:
+	end3
+
+BattleScript_BattlerAbilityChemist_Taunt::
+	call BattleScript_AbilityPopUpScripting
+	playmoveanimation MOVE_POISON_GAS
+	waitanimation
+	printstring STRINGID_CHEMIST_ACTIVATION
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_CHEMIST_ACTIVATION_TAUNT
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_BattlerAbilityChemist_TauntRet:
+	end3
+
+BattleScript_BattlerAbilityChemist_Torment::
+	call BattleScript_AbilityPopUpScripting
+	playmoveanimation MOVE_POISON_GAS
+	waitanimation
+	printstring STRINGID_CHEMIST_ACTIVATION
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_CHEMIST_ACTIVATION_TORMENT
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_BattlerAbilityChemist_TormentRet:
 	end3
 
 BattleScript_BattlerAbilityStatRaiseOnSwitchInWindRider::

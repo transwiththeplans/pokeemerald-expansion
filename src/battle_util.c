@@ -4664,7 +4664,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
                         if(CanBeCharmed(battler, target1) && IsBattlerAlive(target1))
                             effectOnTarget1 = TRUE;
 
-                        if(CanBeCharmed(battler, target1) && IsBattlerAlive(target2))
+                        if(CanBeCharmed(battler, target2) && IsBattlerAlive(target2))
                             effectOnTarget2 = TRUE;
                     break;
                     case CHEMIST_EFFECT_TAUNT:
@@ -4751,38 +4751,58 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
                     break;
                     case CHEMIST_EFFECT_CONFUSION:
                         if(CanBeConfused(gBattlerTarget)){
-                            SetBattlerStatusAndSyncParty(gBattlerTarget, STATUS1_PARALYSIS);
-                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_Paralysis);
+                            gBattleMons[gBattlerTarget].volatiles.confusionTurns = ((Random()) % 4) + 3;
+
+                            if (!HasBattlerActedThisTurn(gBattlerTarget)) // 2-5 turns
+                                gBattleMons[gBattlerTarget].volatiles.confusionTurns--;
+
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_Confusion);
                         }
                         else{
-                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_ParalysisResisted);
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_ConfusionResisted);
                         }
                     break;
                     case CHEMIST_EFFECT_INFATUATION:
                         if(CanBeCharmed(battler, gBattlerTarget)){
-                            SetBattlerStatusAndSyncParty(gBattlerTarget, STATUS1_PARALYSIS);
-                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_Paralysis);
+                            gBattleMons[gBattlerTarget].volatiles.infatuation = INFATUATED_WITH(battler);
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_Infatuation);
                         }
                         else{
-                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_ParalysisResisted);
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_InfatuationResisted);
                         }
                     break;
                     case CHEMIST_EFFECT_TAUNT:
-                        if(CanBeTaunted(battler)){
-                            SetBattlerStatusAndSyncParty(gBattlerTarget, STATUS1_PARALYSIS);
-                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_Paralysis);
+                        if(CanBeTaunted(gBattlerTarget)){
+                            u8 turns;
+                            if (B_TAUNT_TURNS >= GEN_5)
+                            {
+                                turns = 4;
+                                if (!HasBattlerActedThisTurn(gBattlerTarget))
+                                    turns--; // If the target hasn't yet moved this turn, Taunt lasts for only three turns (source: Bulbapedia)
+                            }
+                            else if (B_TAUNT_TURNS >= GEN_4)
+                            {
+                                turns = (Random() & 2) + 3;
+                            }
+                            else
+                            {
+                                turns = 2;
+                            }
+
+                            gDisableStructs[gBattlerTarget].tauntTimer = turns;
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_Taunt);
                         }
                         else{
-                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_ParalysisResisted);
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_TauntResisted);
                         }
                     break;
                     case CHEMIST_EFFECT_TORMENT:
-                        if(CanBeTormented(battler)){
-                            SetBattlerStatusAndSyncParty(gBattlerTarget, STATUS1_PARALYSIS);
-                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_Paralysis);
+                        if(CanBeTormented(gBattlerTarget)){
+                            gBattleMons[gBattlerTarget].volatiles.torment = TRUE;
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_Torment);
                         }
                         else{
-                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_ParalysisResisted);
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_TormentResisted);
                         }
                     break;
                 }
@@ -7200,9 +7220,9 @@ bool32 CanBeCharmed(u32 attacker, u32 target)
 {
     if(!IsBattlerAlive(attacker) ||
        !IsBattlerAlive(target)   ||
-       (gBattleMons[target].volatiles.infatuation)      ||
-       !IsAbilityAndRecord(attacker, ABILITY_OBLIVIOUS) ||
-       !AreBattlersOfOppositeGender(attacker, target)   ||
+       (gBattleMons[target].volatiles.infatuation)     ||
+       IsAbilityAndRecord(attacker, ABILITY_OBLIVIOUS) ||
+       !AreBattlersOfOppositeGender(attacker, target)  ||
        IsAbilityOnSide(attacker, ABILITY_AROMA_VEIL))
         return FALSE;
     return TRUE;

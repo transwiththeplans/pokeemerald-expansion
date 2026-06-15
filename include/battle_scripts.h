@@ -596,11 +596,19 @@ extern const u8 BattleScript_BattlerAbilityChemist_SleepResisted[];
 extern const u8 BattleScript_BattlerAbilityChemist_BurnResisted[];
 extern const u8 BattleScript_BattlerAbilityChemist_FrostbiteResisted[];
 extern const u8 BattleScript_BattlerAbilityChemist_ParalysisResisted[];
+extern const u8 BattleScript_BattlerAbilityChemist_ConfusionResisted[];
+extern const u8 BattleScript_BattlerAbilityChemist_InfatuationResisted[];
+extern const u8 BattleScript_BattlerAbilityChemist_TauntResisted[];
+extern const u8 BattleScript_BattlerAbilityChemist_TormentResisted[];
 extern const u8 BattleScript_BattlerAbilityChemist_Poison[];
 extern const u8 BattleScript_BattlerAbilityChemist_Sleep[];
 extern const u8 BattleScript_BattlerAbilityChemist_Burn[];
 extern const u8 BattleScript_BattlerAbilityChemist_Frostbite[];
 extern const u8 BattleScript_BattlerAbilityChemist_Paralysis[];
+extern const u8 BattleScript_BattlerAbilityChemist_Confusion[];
+extern const u8 BattleScript_BattlerAbilityChemist_Infatuation[];
+extern const u8 BattleScript_BattlerAbilityChemist_Taunt[];
+extern const u8 BattleScript_BattlerAbilityChemist_Torment[];
 
 // zmoves
 extern const u8 BattleScript_ZMoveActivateDamaging[];

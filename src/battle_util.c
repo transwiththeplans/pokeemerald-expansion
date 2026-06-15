@@ -79,6 +79,11 @@ static u32 GetSleepTalkMove(void);
 static u32 GetCopyCatMove(void);
 static u32 GetMeFirstMove(void);
 
+//
+bool32 CanBeCharmed(u32 attacker, u32 target);
+bool32 CanBeTaunted(u32 battler);
+bool32 CanBeTormented(u32 battler);
+
 ARM_FUNC NOINLINE static uq4_12_t PercentToUQ4_12(u32 percent);
 ARM_FUNC NOINLINE static uq4_12_t PercentToUQ4_12_Floored(u32 percent);
 
@@ -4648,6 +4653,34 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
                         if(CanBeParalyzed(battler, target2) && IsBattlerAlive(target2))
                             effectOnTarget2 = TRUE;
                     break;
+                    case CHEMIST_EFFECT_CONFUSION:
+                        if(CanBeConfused(target1) && IsBattlerAlive(target1))
+                            effectOnTarget1 = TRUE;
+
+                        if(CanBeConfused(target2) && IsBattlerAlive(target2))
+                            effectOnTarget2 = TRUE;
+                    break;
+                    case CHEMIST_EFFECT_INFATUATION:
+                        if(CanBeCharmed(battler, target1) && IsBattlerAlive(target1))
+                            effectOnTarget1 = TRUE;
+
+                        if(CanBeCharmed(battler, target1) && IsBattlerAlive(target2))
+                            effectOnTarget2 = TRUE;
+                    break;
+                    case CHEMIST_EFFECT_TAUNT:
+                        if(CanBeTaunted(target1) && IsBattlerAlive(target1))
+                            effectOnTarget1 = TRUE;
+
+                        if(CanBeTaunted(target2) && IsBattlerAlive(target2))
+                            effectOnTarget2 = TRUE;
+                    break;
+                    case CHEMIST_EFFECT_TORMENT:
+                        if(CanBeTormented(target1) && IsBattlerAlive(target1))
+                            effectOnTarget1 = TRUE;
+
+                        if(CanBeTormented(target2) && IsBattlerAlive(target2))
+                            effectOnTarget2 = TRUE;
+                    break;
                 }
                 
                 if (effectOnTarget1 && effectOnTarget2)
@@ -4709,6 +4742,42 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
                     break;
                     case CHEMIST_EFFECT_PARALYSIS:
                         if(CanBeParalyzed(battler, gBattlerTarget)){
+                            SetBattlerStatusAndSyncParty(gBattlerTarget, STATUS1_PARALYSIS);
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_Paralysis);
+                        }
+                        else{
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_ParalysisResisted);
+                        }
+                    break;
+                    case CHEMIST_EFFECT_CONFUSION:
+                        if(CanBeConfused(gBattlerTarget)){
+                            SetBattlerStatusAndSyncParty(gBattlerTarget, STATUS1_PARALYSIS);
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_Paralysis);
+                        }
+                        else{
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_ParalysisResisted);
+                        }
+                    break;
+                    case CHEMIST_EFFECT_INFATUATION:
+                        if(CanBeCharmed(battler, gBattlerTarget)){
+                            SetBattlerStatusAndSyncParty(gBattlerTarget, STATUS1_PARALYSIS);
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_Paralysis);
+                        }
+                        else{
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_ParalysisResisted);
+                        }
+                    break;
+                    case CHEMIST_EFFECT_TAUNT:
+                        if(CanBeTaunted(battler)){
+                            SetBattlerStatusAndSyncParty(gBattlerTarget, STATUS1_PARALYSIS);
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_Paralysis);
+                        }
+                        else{
+                            effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_ParalysisResisted);
+                        }
+                    break;
+                    case CHEMIST_EFFECT_TORMENT:
+                        if(CanBeTormented(battler)){
                             SetBattlerStatusAndSyncParty(gBattlerTarget, STATUS1_PARALYSIS);
                             effect += CommonSwitchInAbilities(battler, ABILITY_CHEMIST, traitCheck, BattleScript_BattlerAbilityChemist_Paralysis);
                         }
@@ -7116,6 +7185,38 @@ bool32 CanBeConfused(u32 battler)
     return TRUE;
 }
 
+bool32 CanBeTaunted(u32 battler)
+{
+    // Uses an extra check for the received ability in case the AI is trying to give a status to itself and thus should know the ability already
+    if (gDisableStructs[battler].tauntTimer != 0
+     || IsBattlerTerrainAffected(battler, GetBattlerHoldEffect(battler), STATUS_FIELD_MISTY_TERRAIN)
+     || IsAbilityOnSide(battler, ABILITY_AROMA_VEIL)
+     || (gAiLogicData->aiCalcInProgress ? AI_BATTLER_HAS_TRAIT(battler, ABILITY_OBLIVIOUS) : IsAbilityAndRecord(battler, ABILITY_OBLIVIOUS)))
+        return FALSE;
+    return TRUE;
+}
+
+bool32 CanBeCharmed(u32 attacker, u32 target)
+{
+    if(!IsBattlerAlive(attacker) ||
+       !IsBattlerAlive(target)   ||
+       (gBattleMons[target].volatiles.infatuation)      ||
+       !IsAbilityAndRecord(attacker, ABILITY_OBLIVIOUS) ||
+       !AreBattlersOfOppositeGender(attacker, target)   ||
+       IsAbilityOnSide(attacker, ABILITY_AROMA_VEIL))
+        return FALSE;
+    return TRUE;
+}
+
+bool32 CanBeTormented(u32 battler)
+{
+    if(!IsBattlerAlive(battler)               ||
+       gBattleMons[battler].volatiles.torment ||
+       IsAbilityOnSide(battler, ABILITY_AROMA_VEIL))
+        return FALSE;
+    return TRUE;
+}
+
 // second argument is 1/X of current hp compared to max hp
 bool32 HasEnoughHpToEatBerry(u32 battler, u32 hpFraction, u32 itemId)
 {
@@ -7273,7 +7374,7 @@ u8 GetAttackerObedienceForAction()
 
     if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK))
         return OBEYS;
-    if (BattlerHasAi(gBattlerAttacker))
+    if (BattlerHasAi(gBattlerAttacker) || FORCE_OBEDIENCE)
         return OBEYS;
 
     if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && GetBattlerPosition(gBattlerAttacker) == B_POSITION_PLAYER_RIGHT)

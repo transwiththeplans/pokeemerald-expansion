@@ -6207,20 +6207,26 @@ void ItemUseCB_CandyBox(u8 taskId, TaskFunc task) {
 
     if (level != MAX_LEVEL && (level < levelCap)) {
         BufferMonStatsToTaskData(mon, arrayPtr);
-        //cannotUseEffect = ExecuteTableBasedItemEffect(gPartyMenu.slotId, ITEM_RARE_CANDY, 0);
-        cannotUseEffect = ExecuteTableBasedItemEffect(mon, ITEM_RARE_CANDY, gPartyMenu.slotId, 0, 0, 1);
+        cannotUseEffect = ExecuteTableBasedItemEffect(mon, ITEM_RARE_CANDY, gPartyMenu.slotId, 0, TRUE, 1);
         BufferMonStatsToTaskData(mon, &ptr->data[NUM_STATS]);
-    } else {
+    }
+    else
+    {
         PartyMenuTryEvolution(taskId);
         cannotUseEffect = TRUE;
     }
+
     PlaySE(SE_SELECT);
-    if (cannotUseEffect) {
+
+    if (cannotUseEffect)
+    {
         gPartyMenuUseExitCallback = FALSE;
         DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
         ScheduleBgCopyTilemapToVram(2);
         gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
-    } else {
+    }
+    else
+    {
         sFinalLevel = GetMonData(mon, MON_DATA_LEVEL);
         gPartyMenuUseExitCallback = TRUE;
         PlayFanfareByFanfareNum(FANFARE_LEVEL_UP);

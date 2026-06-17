@@ -214,6 +214,14 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .breakable = TRUE,
     },
 
+    [ABILITY_EELEVATE] =
+    {
+        .name = _("Eelevate"),
+        .description = FORMAT_ABILITY_DESCRIPTION("Not hit by Ground attacks and KOs boost best stat."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+
     [ABILITY_EFFECT_SPORE] =
     {
         .name = _("Effect Spore"),

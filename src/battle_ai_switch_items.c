@@ -548,6 +548,7 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler)
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_EARTH_EATER;
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_LEVITATE;
+        absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_EELEVATE;
     }
     if (IsSoundMove(incomingMove) || (isOpposingBattlerChargingOrInvulnerable && IsSoundMove(incomingMove)))
     {
@@ -1535,7 +1536,7 @@ static u32 GetFirstNonInvalidMon(u32 firstId, u32 lastId, u32 invalidMons)
 bool32 IsMonGrounded(enum HoldEffect heldItemEffect, enum Ability ability, enum Type type1, enum Type type2, u16 species)
 {
     // List that makes mon not grounded
-    if (type1 == TYPE_FLYING || type2 == TYPE_FLYING || (ability == ABILITY_LEVITATE || SpeciesHasInnate(species, ABILITY_LEVITATE))
+    if (type1 == TYPE_FLYING || type2 == TYPE_FLYING || (ability == ABILITY_LEVITATE || SpeciesHasInnate(species, ABILITY_LEVITATE)) || (ability == ABILITY_EELEVATE || SpeciesHasInnate(species, ABILITY_EELEVATE))
          || (heldItemEffect == HOLD_EFFECT_AIR_BALLOON && !(ability == ABILITY_KLUTZ || SpeciesHasInnate(species, ABILITY_KLUTZ) || (gFieldStatuses & STATUS_FIELD_MAGIC_ROOM))))
     {
         // List that overrides being off the ground
@@ -1565,7 +1566,7 @@ static u32 GetSwitchinHazardsDamage(u32 battler, struct BattlePokemon *battleMon
          ability != ABILITY_MOUNTAINEER  && !SpeciesHasInnate(species, ABILITY_MOUNTAINEER)  && 
          ability != ABILITY_BLOW_AWAY    && !SpeciesHasInnate(species, ABILITY_BLOW_AWAY))   ||
         (heldItemEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS &&
-        !((gFieldStatuses & STATUS_FIELD_MAGIC_ROOM) || (ability == ABILITY_LEVITATE || SpeciesHasInnate(species, ABILITY_LEVITATE)))))
+        !((gFieldStatuses & STATUS_FIELD_MAGIC_ROOM) || (ability == ABILITY_LEVITATE || SpeciesHasInnate(species, ABILITY_LEVITATE) || ability == ABILITY_EELEVATE || SpeciesHasInnate(species, ABILITY_EELEVATE)))))
     {
         // Stealth Rock
         if (IsHazardOnSide(side, HAZARDS_STEALTH_ROCK) && heldItemEffect != HOLD_EFFECT_HEAVY_DUTY_BOOTS && !SpeciesHasInnate(species, ABILITY_BLOW_AWAY) && !SpeciesHasInnate(species, ABILITY_MOUNTAINEER))

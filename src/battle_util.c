@@ -7703,9 +7703,14 @@ static bool32 IsBattlerGroundedInverseCheck(u32 battler, enum HoldEffect holdEff
 
 bool32 IsBattlerGrounded(u32 battler, enum HoldEffect holdEffect)
 {   bool32 hasLevitate;
+    bool32 hasEelevate;
 
     // Regular ability check split out here as the AI switching logic uses battle context to figure out the Ability instead. (Multi)
     hasLevitate = gAiLogicData->aiCalcInProgress ? AI_BATTLER_HAS_TRAIT(battler, ABILITY_LEVITATE) : BattlerHasTrait(battler, ABILITY_LEVITATE);
+    hasEelevate = gAiLogicData->aiCalcInProgress ? AI_BATTLER_HAS_TRAIT(battler, ABILITY_EELEVATE) : BattlerHasTrait(battler, ABILITY_EELEVATE);
+
+    if(!hasLevitate && hasEelevate)
+        hasLevitate = TRUE;
 
     return IsBattlerGroundedInverseCheck(battler, holdEffect, NOT_INVERSE_BATTLE, FALSE, hasLevitate);
 }
@@ -9805,19 +9810,27 @@ static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(struct DamageCont
         if (B_GLARE_GHOST < GEN_4 && ctx->move == MOVE_GLARE && IS_BATTLER_OF_TYPE(ctx->battlerDef, TYPE_GHOST))
             modifier = UQ_4_12(0.0);
     }
-    else if (ctx->moveType == TYPE_GROUND && !IsBattlerGroundedInverseCheck(ctx->battlerDef, ctx->holdEffectDef, INVERSE_BATTLE, ctx->isAnticipation, SearchTraits(battlerTraits, ABILITY_LEVITATE)
+    else if (ctx->moveType == TYPE_GROUND && !IsBattlerGroundedInverseCheck(ctx->battlerDef, ctx->holdEffectDef, INVERSE_BATTLE, ctx->isAnticipation, (SearchTraits(battlerTraits, ABILITY_LEVITATE) || SearchTraits(battlerTraits, ABILITY_EELEVATE))
      && !MoveIgnoresTypeIfFlyingAndUngrounded(ctx->move)
      && !MoveIgnoresTargetAbility(ctx->move) && (ctx->holdEffectDef == HOLD_EFFECT_ABILITY_SHIELD || !HasMoldBreakerTypeAbility(ctx->battlerAtk))))
     {
         modifier = UQ_4_12(0.0);
-        if (ctx->updateFlags && SearchTraits(battlerTraits, ABILITY_LEVITATE))
+        if (ctx->updateFlags && (SearchTraits(battlerTraits, ABILITY_LEVITATE) || SearchTraits(battlerTraits, ABILITY_EELEVATE)))
         {
             gBattleStruct->moveResultFlags[ctx->battlerDef] |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
-            gLastUsedAbility = ABILITY_LEVITATE;
             gLastLandedMoves[ctx->battlerDef] = 0;
             gBattleStruct->missStringId[ctx->battlerDef] = B_MSG_GROUND_MISS;
-            PushTraitStack(ctx->battlerDef, ABILITY_LEVITATE);
-            RecordAbilityBattle(ctx->battlerDef, ABILITY_LEVITATE);
+
+            if(SearchTraits(battlerTraits, ABILITY_EELEVATE)){
+                gLastUsedAbility = ABILITY_EELEVATE;
+                PushTraitStack(ctx->battlerDef, ABILITY_EELEVATE);
+                RecordAbilityBattle(ctx->battlerDef, ABILITY_EELEVATE);
+            }
+            else{
+                gLastUsedAbility = ABILITY_LEVITATE;
+                PushTraitStack(ctx->battlerDef, ABILITY_LEVITATE);
+                RecordAbilityBattle(ctx->battlerDef, ABILITY_LEVITATE);
+            }
         }
     }
 	if (ctx->moveType == TYPE_FIGHTING && SearchTraits(battlerTraits, ABILITY_COUNTERPROOF))
@@ -9920,14 +9933,14 @@ uq4_12_t CalcPartyMonTypeEffectivenessMultiplier(u16 move, u16 speciesDef, struc
 
         if (mon == 0) //catch for non Pokemon struct entries, only checks Ability
         {
-            if (ctx.moveType == TYPE_GROUND && MonHasTrait(mon, ABILITY_LEVITATE) && !(gFieldStatuses & STATUS_FIELD_GRAVITY))
+            if (ctx.moveType == TYPE_GROUND && (MonHasTrait(mon, ABILITY_LEVITATE) || MonHasTrait(mon, ABILITY_EELEVATE)) && !(gFieldStatuses & STATUS_FIELD_GRAVITY))
                 modifier = UQ_4_12(0.0);
             if (MonHasTrait(mon, ABILITY_WONDER_GUARD) && modifier <= UQ_4_12(1.0) && GetMovePower(move) != 0)
                 modifier = UQ_4_12(0.0);
         }
         else
         {
-            if (ctx.moveType == TYPE_GROUND && MonHasTrait(mon, ABILITY_LEVITATE) && !(gFieldStatuses & STATUS_FIELD_GRAVITY))
+            if (ctx.moveType == TYPE_GROUND && (MonHasTrait(mon, ABILITY_LEVITATE) || MonHasTrait(mon, ABILITY_EELEVATE)) && !(gFieldStatuses & STATUS_FIELD_GRAVITY))
                 modifier = UQ_4_12(0.0);
             if (MonHasTrait(mon, ABILITY_WONDER_GUARD) && modifier <= UQ_4_12(1.0) && GetMovePower(move) != 0)
                 modifier = UQ_4_12(0.0);
@@ -9978,7 +9991,7 @@ uq4_12_t GetOverworldTypeEffectiveness(struct Pokemon *mon, enum Type moveType)
 	if ((modifier <= UQ_4_12(1.0)     && MonHasTrait(mon, ABILITY_WONDER_GUARD))
 		|| (moveType == TYPE_FIRE     && MonHasTrait(mon, ABILITY_FLASH_FIRE))
 		|| (moveType == TYPE_GRASS    && MonHasTrait(mon, ABILITY_SAP_SIPPER))
-		|| (moveType == TYPE_GROUND   && (MonHasTrait(mon, ABILITY_LEVITATE)      || MonHasTrait(mon, ABILITY_EARTH_EATER) || MonHasTrait(mon, ABILITY_POWER_METAL)))
+		|| (moveType == TYPE_GROUND   && (MonHasTrait(mon, ABILITY_LEVITATE)      || MonHasTrait(mon, ABILITY_EARTH_EATER) || MonHasTrait(mon, ABILITY_POWER_METAL) || MonHasTrait(mon, ABILITY_EELEVATE)))
 		|| (moveType == TYPE_WATER    && (MonHasTrait(mon, ABILITY_WATER_ABSORB)  || MonHasTrait(mon, ABILITY_DRY_SKIN)    || MonHasTrait(mon, ABILITY_STORM_DRAIN)))
 		|| (moveType == TYPE_ELECTRIC && (MonHasTrait(mon, ABILITY_LIGHTNING_ROD) || MonHasTrait(mon, ABILITY_VOLT_ABSORB) || MonHasTrait(mon, ABILITY_MOTOR_DRIVE)))
 		|| (moveType == TYPE_FIGHTING && MonHasTrait(mon, ABILITY_COUNTERPROOF))
@@ -11374,7 +11387,7 @@ bool8 CanMonParticipateInSkyBattle(struct Pokemon *mon)
 {
     u16 species = GetMonData(mon, MON_DATA_SPECIES);
 
-    bool8 hasLevitateAbility = (MonHasTrait(mon, ABILITY_LEVITATE));
+    bool8 hasLevitateAbility = (MonHasTrait(mon, ABILITY_LEVITATE) || MonHasTrait(mon, ABILITY_EELEVATE));
     bool8 isFlyingType = GetSpeciesType(species, 0) == TYPE_FLYING || GetSpeciesType(species, 1) == TYPE_FLYING;
     bool8 monIsValidAndNotEgg = GetMonData(mon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(mon, MON_DATA_IS_EGG);
 

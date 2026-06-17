@@ -5816,6 +5816,25 @@ static bool32 HandleMoveEndAbilityBlock(u32 battlerAtk, u32 battlerDef, u32 move
             }
         }
     }
+    if (SearchTraits(battlerTraits, ABILITY_EELEVATE))
+    {
+        if (IsBattlerAlive(battlerAtk) && !NoAliveMonsForEitherParty())
+        {
+            stat = GetHighestStatId(battlerAtk);
+            numMonsFainted = NumFaintedBattlersByAttacker(battlerAtk);
+
+            if (numMonsFainted && CompareStat(battlerAtk, stat, MAX_STAT_STAGE, CMP_LESS_THAN))
+            {
+                gLastUsedAbility = ABILITY_EELEVATE;
+                SET_STATCHANGER(stat, numMonsFainted, FALSE);
+                PREPARE_STAT_BUFFER(gBattleTextBuff1, stat);
+                gBattleScripting.animArg1 = GET_STAT_BUFF_ID(stat) + (numMonsFainted > 1 ? STAT_ANIM_PLUS2 : STAT_ANIM_PLUS1);
+                PushTraitStack(battlerAtk, ABILITY_EELEVATE);
+                BattleScriptCall(BattleScript_RaiseStatOnFaintingTargetBeastBoost);
+                effect = TRUE;
+            }
+        }
+    }
     if (SearchTraits(battlerTraits, ABILITY_PREDATOR))
     {
         if (IsBattlerAlive(battlerAtk) 

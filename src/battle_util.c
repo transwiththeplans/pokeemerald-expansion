@@ -8770,6 +8770,9 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
     if (SearchTraits(battlerTraits, ABILITY_DRAGONS_MAW)
      && moveType == TYPE_DRAGON)
         modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+    if (SearchTraits(battlerTraits, ABILITY_FIRE_MANE)
+     && moveType == TYPE_FIRE)
+        modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
     if (SearchTraits(battlerTraits, ABILITY_GORILLA_TACTICS)
      && IsBattleMovePhysical(move))
         modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));

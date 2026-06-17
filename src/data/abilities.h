@@ -218,7 +218,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Eelevate"),
         .description = FORMAT_ABILITY_DESCRIPTION("Not hit by Ground attacks and KOs boost best stat."),
-        .aiRating = 7,
+        .aiRating = 10,
         .breakable = TRUE,
     },
 
@@ -2925,6 +2925,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeTraced = TRUE,
         .cantBeSuppressed = TRUE,
         .cantBeOverwritten = TRUE,
+    },
+	
+    [ABILITY_FIRE_MANE] =
+    {
+        .name = _("Fire Mane"),
+        .description = FORMAT_ABILITY_DESCRIPTION("Ups Fire-type moves."),
+        .aiRating = 6,
     },
 
 };

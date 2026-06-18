@@ -80,6 +80,8 @@ struct TrainerMon
     u32 tags;
 };
 
+#define TRAINER_ID_DYNAMIC 0
+
 #define TRAINER_PARTY(partyArray) partyArray, .partySize = ARRAY_COUNT(partyArray)
 
 enum TrainerBattleType

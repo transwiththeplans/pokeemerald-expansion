@@ -58,14 +58,10 @@ static void SpriteCB_PressStartCopyrightBanner(struct Sprite *sprite);
 static void SpriteCB_PokemonLogoShine(struct Sprite *sprite);
 
 // const rom data
-static const u16 sUnusedUnknownPal[] = INCBIN_U16("graphics/title_screen/unused.gbapal");
-
 static const u32 sTitleScreenRayquazaGfx[] = INCBIN_U32("graphics/title_screen/rayquaza.4bpp.smol");
 static const u32 sTitleScreenRayquazaTilemap[] = INCBIN_U32("graphics/title_screen/rayquaza.bin.smolTM");
 static const u32 sTitleScreenLogoShineGfx[] = INCBIN_U32("graphics/title_screen/logo_shine.4bpp.smol");
 static const u32 sTitleScreenCloudsGfx[] = INCBIN_U32("graphics/title_screen/clouds.4bpp.smol");
-
-
 
 // Used to blend "Emerald Version" as it passes over over the Pokémon banner.
 // Also used by the intro to blend the Game Freak name/logo in and out as they appear and disappear
@@ -854,16 +850,26 @@ static void CB2_GoToBerryFixScreen(void)
     }
 }
 
+#define LEGENDARY_MARKING_COLOR_INDEX   12
+#define LEGENDARY_MARKING_COLOR_INDEX_2 9
+
 static void UpdateLegendaryMarkingColor(u8 frameNum)
 {
     if ((frameNum % 4) == 0) // Change color every 4th frame
     {
         s32 intensity = Cos(frameNum, Q_8_8(0.5)) + Q_8_8(0.5);
         u32 r = 31 - Q_8_8_TO_INT(intensity * 31);
-        u32 g = 31 - Q_8_8_TO_INT(intensity * 22);
+        u32 g = 12 - Q_8_8_TO_INT(intensity * 22);
         u32 b = 12;
 
+        u32 r2 = 28 - Q_8_8_TO_INT(intensity * 28);
+        u32 g2 = 12 - Q_8_8_TO_INT(intensity * 22);
+        u32 b2 = 12;
+
         u16 color = RGB(r, g, b);
-        LoadPalette(&color, BG_PLTT_ID(14) + 15, sizeof(color));
+        u16 color2 = RGB(r2, g2, b2);
+
+        LoadPalette(&color,  BG_PLTT_ID(14) + LEGENDARY_MARKING_COLOR_INDEX,   sizeof(color));
+        LoadPalette(&color2, BG_PLTT_ID(14) + LEGENDARY_MARKING_COLOR_INDEX_2, sizeof(color2));
    }
 }

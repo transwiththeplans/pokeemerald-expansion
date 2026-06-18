@@ -1888,29 +1888,14 @@ void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon 
     }
 }
 
-#include "data/trainer_pools.h"
-
-u16 GetTrainerSpeciesFromPool(u16 species, u16 trainerId, u8 trainerClass)
-{
-    u32 poolSize = 0;
-
-    if (trainerId == TRAINER_ID_DYNAMIC || trainerClass >= TRAINER_CLASS_COUNT)
-        return species;
-
-    while (poolSize < TRAINER_POOL_MON_NUM && sTrainerClassPkmnPool[trainerClass][poolSize] != SPECIES_NONE)
-        poolSize++;
-
-    if (poolSize != 0)
-        return sTrainerClassPkmnPool[trainerClass][Random() % poolSize];
-
-    return species;
-}
+#include "data/team_generator.h"
 
 u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer, bool32 firstTrainer, u32 battleTypeFlags, u16 trainerId)
 {
     u32 personalityValue;
     s32 i;
     u8 monsCount;
+
     if (battleTypeFlags & BATTLE_TYPE_TRAINER && !(battleTypeFlags & (BATTLE_TYPE_FRONTIER
                                                                         | BATTLE_TYPE_EREADER_TRAINER
                                                                         | BATTLE_TYPE_TRAINER_HILL)))
@@ -1942,8 +1927,8 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             u32 otIdType = OT_ID_RANDOM_NO_SHINY;
             u32 fixedOtId = 0;
             u32 abilityNum = 0;
-            u16 species = GetTrainerSpeciesFromPool(partyData[monIndex].species, trainerId, trainer->trainerClass);
-            bool8 hasChangedSpecies = FALSE;
+            u16 species = GetTrainerSpeciesFromPool(partyData[monIndex].species, partyData[monIndex].lvl, trainerId, trainer->trainerClass, party, i);
+            bool8 hasChangedSpecies = (species != partyData[monIndex].species);
 
             if (trainer->battleType != TRAINER_BATTLE_TYPE_SINGLES)
                 personalityValue = 0x80;

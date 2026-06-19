@@ -937,7 +937,7 @@ const struct Item gItemsInfo[] =
     [ITEM_ANTIDOTE] =
     {
         .name = ITEM_NAME("Antidote"),
-        .price = (I_PRICE >= GEN_7) ? 20 : 100,
+        .price = (I_PRICE >= GEN_7) ? 200 : 100,
         .description = COMPOUND_STRING(
             "Heals a poisoned\n"
             "Pokémon."),
@@ -955,7 +955,7 @@ const struct Item gItemsInfo[] =
     [ITEM_PARALYZE_HEAL] =
     {
         .name = ITEM_NAME("Paralyze Heal"),
-        .price = (I_PRICE == GEN_7) ? 30 : 200,
+        .price = (I_PRICE == GEN_7) ? 300 : 200,
         .description = COMPOUND_STRING(
             "Heals a paralyzed\n"
             "Pokémon."),
@@ -974,7 +974,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Burn Heal"),
     #if I_PRICE >= GEN_8
-        .price = 20,
+        .price = 200,
     #elif I_PRICE == GEN_7
         .price = 300,
     #else
@@ -998,7 +998,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Ice Heal"),
     #if I_PRICE >= GEN_8
-        .price = 20,
+        .price = 200,
     #elif I_PRICE == GEN_7
         .price = 100,
     #else
@@ -1022,7 +1022,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Awakening"),
     #if (I_PRICE >= GEN_8 || I_PRICE == GEN_1)
-        .price = 20,
+        .price = 200,
     #elif I_PRICE == GEN_7
         .price = 100,
     #else
@@ -1045,7 +1045,7 @@ const struct Item gItemsInfo[] =
     [ITEM_FULL_HEAL] =
     {
         .name = ITEM_NAME("Full Heal"),
-        .price = (I_PRICE >= GEN_7) ? 40 : 600,
+        .price = (I_PRICE >= GEN_7) ? 400 : 600,
         .description = sFullHealDesc,
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_STATUS_RECOVERY,
@@ -1061,7 +1061,7 @@ const struct Item gItemsInfo[] =
     [ITEM_ETHER] =
     {
         .name = ITEM_NAME("Ether"),
-        .price = (I_PRICE >= GEN_2) ? 100 : 1,
+        .price = (I_PRICE >= GEN_2) ? 1000 : 1,
         .holdEffectParam = 10,
         .description = COMPOUND_STRING(
             "Restores the PP\n"
@@ -1081,7 +1081,7 @@ const struct Item gItemsInfo[] =
     [ITEM_MAX_ETHER] =
     {
         .name = ITEM_NAME("Max Ether"),
-        .price = (I_PRICE >= GEN_2) ? 200 : 1,
+        .price = (I_PRICE >= GEN_2) ? 2000 : 1,
         .holdEffectParam = 255,
         .description = COMPOUND_STRING(
             "Fully restores the\n"
@@ -1101,7 +1101,7 @@ const struct Item gItemsInfo[] =
     [ITEM_ELIXIR] =
     {
         .name = ITEM_NAME("Elixir"),
-        .price = (I_PRICE >= GEN_2) ? 300 : 1,
+        .price = (I_PRICE >= GEN_2) ? 3000 : 1,
         .holdEffectParam = 10,
         .description = COMPOUND_STRING(
             "Restores the PP\n"
@@ -1120,7 +1120,7 @@ const struct Item gItemsInfo[] =
     [ITEM_MAX_ELIXIR] =
     {
         .name = ITEM_NAME("Max Elixir"),
-        .price = (I_PRICE >= GEN_2) ? 450 : 1,
+        .price = (I_PRICE >= GEN_2) ? 4500 : 1,
         .holdEffectParam = 255,
         .description = COMPOUND_STRING(
             "Fully restores the\n"
@@ -2059,7 +2059,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Exp. Candy XS"),
         .pluralName = ITEM_PLURAL_NAME("Exp. Candies XS"),
-        .price = 20,
+        .price = 2000,
         .holdEffectParam = EXP_100,
         .description = COMPOUND_STRING(
             "Gives a very small\n"
@@ -2079,7 +2079,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Exp. Candy S"),
         .pluralName = ITEM_PLURAL_NAME("Exp. Candies S"),
-        .price = 240,
+        .price = 2400,
         .holdEffectParam = EXP_800,
         .description = COMPOUND_STRING(
             "Gives a small\n"
@@ -2099,7 +2099,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Exp. Candy M"),
         .pluralName = ITEM_PLURAL_NAME("Exp. Candies M"),
-        .price = 1000,
+        .price = 10000,
         .holdEffectParam = EXP_3000,
         .description = COMPOUND_STRING(
             "Gives a moderate\n"
@@ -2119,7 +2119,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Exp. Candy L"),
         .pluralName = ITEM_PLURAL_NAME("Exp. Candies L"),
-        .price = 3000,
+        .price = 20000,
         .holdEffectParam = EXP_10000,
         .description = COMPOUND_STRING(
             "Gives a large\n"
@@ -2139,7 +2139,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Exp. Candy XL"),
         .pluralName = ITEM_PLURAL_NAME("Exp. Candies XL"),
-        .price = 10000,
+        .price = 30000,
         .holdEffectParam = EXP_30000,
         .description = COMPOUND_STRING(
             "Gives a very large\n"
@@ -3827,7 +3827,7 @@ const struct Item gItemsInfo[] =
     [ITEM_WISHING_PIECE] =
     {
         .name = ITEM_NAME("Wishing Piece"),
-        .price = 20,
+        .price = 2000,
         .description = COMPOUND_STRING(
             "Throw into a\n"
             "{PKMN} Den to attract\n"
@@ -3844,7 +3844,7 @@ const struct Item gItemsInfo[] =
     [ITEM_GALARICA_TWIG] =
     {
         .name = ITEM_NAME("Galarica Twig"),
-        .price = 20 * TREASURE_FACTOR,
+        .price = 2000 * TREASURE_FACTOR,
         .description = COMPOUND_STRING(
             "A twig from a tree\n"
             "in Galar called\n"
@@ -3862,7 +3862,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Armorite Ore"),
         .pluralName = ITEM_PLURAL_NAME("Armorite Ore"),
-        .price = 20,
+        .price = 2000,
         .description = COMPOUND_STRING(
             "A rare ore. Can be\n"
             "found in the Isle\n"
@@ -3880,7 +3880,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Dynite Ore"),
         .pluralName = ITEM_PLURAL_NAME("Dynite Ore"),
-        .price = 20,
+        .price = 2000,
         .description = COMPOUND_STRING(
             "A mysterious ore.\n"
             "It can be found in\n"
@@ -15603,7 +15603,7 @@ const struct Item gItemsInfo[] =
     [ITEM_BERSERK_GENE] =
     {
         .name = ITEM_NAME("Berserk Gene"),
-        .price = 20,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_BERSERK_GENE,
         .description = COMPOUND_STRING(
             "Sharply boosts\n"

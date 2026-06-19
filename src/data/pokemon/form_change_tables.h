@@ -1955,7 +1955,7 @@ static const struct FormChange sAlcremieFormChangeTable[] =
 static const struct FormChange sFalinksFormChangeTable[] =
 {
 #if P_GEN_9_MEGA_EVOLUTIONS
-    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_FALINKS_MEGA, ITEM_FALINKSITE},
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_FALINKS_MEGA, ITEM_ULTIMATRIX_SYMBOL},
 #endif
     {FORM_CHANGE_END_BATTLE,                    SPECIES_FALINKS},
     {FORM_CHANGE_TERMINATOR},

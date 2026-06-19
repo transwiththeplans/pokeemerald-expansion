@@ -216,7 +216,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_EELEVATE] =
     {
-        .name = _("Eelevate"),
+        .name = _("Elevate"),
         .description = FORMAT_ABILITY_DESCRIPTION("Not hit by Ground attacks and KOs boost best stat."),
         .aiRating = 10,
         .breakable = TRUE,

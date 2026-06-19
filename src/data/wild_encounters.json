@@ -1451,6 +1451,26 @@
                 "species": "SPECIES_SLOWPOKE"
               }
             ]
+          },
+          "hidden_mons": {
+            "encounter_rate": 1,
+            "mons": [
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_SIZZLIPEDE"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_BLITZLE"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_FIDOUGH"
+              }
+            ]
           }
         },
         {
@@ -1915,6 +1935,26 @@
                 "min_level": 6,
                 "max_level": 6,
                 "species": "SPECIES_BAGON"
+              }
+            ]
+          },
+          "hidden_mons": {
+            "encounter_rate": 1,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PANSAGE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PANSEAR"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PANPOUR"
               }
             ]
           }

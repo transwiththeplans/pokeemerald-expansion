@@ -31314,7 +31314,7 @@
 		{ "Level": 49, "Move": "MOVE_BRAVE_BIRD" },
 		{ "Level": 52, "Move": "MOVE_DOUBLE_EDGE" },
 		{ "Level": 57, "Move": "MOVE_FINAL_GAMBIT" },
-		{ "Level": 62, "Move": "MOVE_PSYCHO_CUT" }
+		{ "Level": 62, "Move": "MOVE_SUPERPOWER" }
 	  ],
     "TMMoves": [
 	  "MOVE_ACROBATICS",

@@ -246,7 +246,7 @@ static const struct AdoptionTierInfo sAdoptionTiersInfo[ADOPTION_TIER_COUNT] =
     [ADOPTION_TIER_BASIC] =
     {
         .name = COMPOUND_STRING("Basic"),
-        .price = 100,
+        .price = 300,
         .description = COMPOUND_STRING("Basic tier"),
         .species = sAdoptionTierBasic,
         .speciesCount = sizeof(sAdoptionTierBasic),
@@ -254,7 +254,7 @@ static const struct AdoptionTierInfo sAdoptionTiersInfo[ADOPTION_TIER_COUNT] =
     [ADOPTION_TIER_MEDIUM] =
     {
         .name = COMPOUND_STRING("Medium"),
-        .price = 500,
+        .price = 1000,
         .description = COMPOUND_STRING("Medium tier"),
         .species = sAdoptionTierMedium,
         .speciesCount = sizeof(sAdoptionTierMedium),
@@ -262,7 +262,7 @@ static const struct AdoptionTierInfo sAdoptionTiersInfo[ADOPTION_TIER_COUNT] =
     [ADOPTION_TIER_TOP] =
     {
         .name = COMPOUND_STRING("Top"),
-        .price = 1000,
+        .price = 2000,
         .description = COMPOUND_STRING("Top tier"),
         .species = sAdoptionTierTop,
         .speciesCount = sizeof(sAdoptionTierTop),
@@ -270,7 +270,7 @@ static const struct AdoptionTierInfo sAdoptionTiersInfo[ADOPTION_TIER_COUNT] =
     [ADOPTION_TIER_SUPREME] =
     {
         .name = COMPOUND_STRING("Supreme"),
-        .price = 2000,
+        .price = 3000,
         .description = COMPOUND_STRING("Supreme tier"),
         .species = sAdoptionTierSupreme,
         .speciesCount = sizeof(sAdoptionTierSupreme),

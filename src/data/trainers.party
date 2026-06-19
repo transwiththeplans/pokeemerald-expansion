@@ -4855,9 +4855,12 @@ Music: Female
 Items: Potion / Potion
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Force Setup First Turn
+Party Size: 4
+Pool Pick Functions: Default
 
 Roggenrola
 Level: 13
+Tags: Lead
 Ability: Sturdy
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Rock Ripple
@@ -4883,8 +4886,57 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Rollout
 - Growl
 
+Rolycoly
+Level: 14
+Ability: Steam Engine
+Innate Unlocked: Yes
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Ancient Power
+- Slowdown
+- Vacuum Wave
+- Thunder Wave
+
+Nacli
+Level: 14
+Ability: Sturdy
+Innate Unlocked: Yes
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Ancient Power
+- Slowdown
+- Vacuum Wave
+- Thunder Wave
+
+Roggenrola
+Level: 14
+Ability: Sturdy
+Innate Unlocked: Yes
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Ancient Power
+- Slowdown
+- Vacuum Wave
+- Thunder Wave
+
+Flareon
+Level: 14
+Innate Unlocked: Yes
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Ancient Power
+- Slowdown
+- Vacuum Wave
+- Thunder Wave
+
+Geodude
+Level: 14
+Innate Unlocked: Yes
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Ancient Power
+- Slowdown
+- Vacuum Wave
+- Thunder Wave
+
 Nosepass @ Oran Berry
 Level: 15
+Tags: Ace
 Ability: Solid Rock
 Innate Unlocked: Yes
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe

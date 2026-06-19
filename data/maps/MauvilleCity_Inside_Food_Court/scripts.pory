@@ -5,3 +5,89 @@ script MauvilleCity_Inside_Food_Court_EventScript_LittleBoy {
     msgbox(format("Good food makes a long journey feel shorter."), MSGBOX_NPC)
     end
 }
+
+script MauvilleCity_Inside_Food_Court_EventScript_Clerk_1{
+	lock
+	faceplayer
+	message(format("Welcome to the Food Court, how can I help you?"))
+	waitmessage
+	pokemart(MauvilleCity_Inside_Food_Court_Pokemart_1)
+	msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script MauvilleCity_Inside_Food_Court_EventScript_Clerk_2{
+	lock
+	faceplayer
+	message(format("Welcome to the Food Court, how can I help you?"))
+	waitmessage
+	pokemart(MauvilleCity_Inside_Food_Court_Pokemart_2)
+	msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script MauvilleCity_Inside_Food_Court_EventScript_Clerk_3{
+	lock
+	faceplayer
+	message(format("Welcome to the Food Court, how can I help you?"))
+	waitmessage
+	pokemart(MauvilleCity_Inside_Food_Court_Pokemart_3)
+	msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+mart MauvilleCity_Inside_Food_Court_Pokemart_1{
+    ITEM_ABILITY_SNACK
+    ITEM_FRESH_WATER
+    ITEM_SODA_POP
+    ITEM_BERRY_JUICE
+    ITEM_LEMONADE
+    ITEM_SWEET_APPLE
+    ITEM_TART_APPLE
+    ITEM_STRAWBERRY_SWEET
+    ITEM_LOVE_SWEET
+    ITEM_BERRY_SWEET
+    ITEM_CLOVER_SWEET
+    ITEM_FLOWER_SWEET
+    ITEM_STAR_SWEET
+    ITEM_RIBBON_SWEET
+}
+
+mart MauvilleCity_Inside_Food_Court_Pokemart_2{
+    ITEM_PEWTER_CRUNCHIES
+    ITEM_RAGE_CANDY_BAR
+    ITEM_LAVA_COOKIE
+    ITEM_OLD_GATEAU
+    ITEM_CASTELIACONE
+    ITEM_LUMIOSE_GALETTE
+    ITEM_SHALOUR_SABLE
+    ITEM_BIG_MALASADA
+    ITEM_JUBILIFE_MUFFIN
+}
+
+mart MauvilleCity_Inside_Food_Court_Pokemart_3{
+    ITEM_LONELY_MINT
+    ITEM_ADAMANT_MINT
+    ITEM_NAUGHTY_MINT
+    ITEM_BRAVE_MINT
+    ITEM_BOLD_MINT
+    ITEM_IMPISH_MINT
+    ITEM_LAX_MINT
+    ITEM_RELAXED_MINT
+    ITEM_MODEST_MINT
+    ITEM_MILD_MINT
+    ITEM_RASH_MINT
+    ITEM_QUIET_MINT
+    ITEM_CALM_MINT
+    ITEM_GENTLE_MINT
+    ITEM_CAREFUL_MINT
+    ITEM_SASSY_MINT
+    ITEM_TIMID_MINT
+    ITEM_HASTY_MINT
+    ITEM_JOLLY_MINT
+    ITEM_NAIVE_MINT
+    ITEM_SERIOUS_MINT
+}

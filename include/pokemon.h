@@ -489,7 +489,8 @@ struct SpeciesInfo /*0xC4*/
     u32 dexForceRequired:1; // This species will be taken into account for Pokédex ratings even if they have the "isMythical" flag set.
     u32 tmIlliterate:1;     // This species will be unable to learn the universal moves.
     u32 isFrontierBanned:1; // This species is not allowed to participate in Battle Frontier facilities.
-    u32 padding4:11;
+    u32 isSevii:1;
+    u32 padding4:10;
     // Shadow settings
     s8 enemyShadowXOffset; // This determines the X-offset for an enemy Pokémon's shadow during battle; negative values point left, positive values point right.
     s8 enemyShadowYOffset; // This determines the Y-offset for an enemy Pokémon's shadow during battle; negative values point up, positive values point down.

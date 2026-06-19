@@ -671,5 +671,5 @@ MauvilleCity_Text_BeenCheckingOutTV:
 
 
 text MauvilleCity_Text_FoodAreaSign{
-	"Mauville City - Food Area: The best cuisine in all of Hoenn"
+	format("Mauville City - Food Area: The best cuisine in all of Hoenn")
 }

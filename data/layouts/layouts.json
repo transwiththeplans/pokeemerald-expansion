@@ -4620,6 +4620,16 @@
       "secondary_tileset": "gTileset_Mauville_Buildings",
       "border_filepath": "data/layouts/MauvilleCity_Inside_Food_Court/border.bin",
       "blockdata_filepath": "data/layouts/MauvilleCity_Inside_Food_Court/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_EGG_ADOPTION_CENTER",
+      "name": "MauvilleCity_Egg_Adoption_Center_Layout",
+      "width": 8,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonDayCare",
+      "border_filepath": "data/layouts/MauvilleCity_Egg_Adoption_Center/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_Egg_Adoption_Center/map.bin"
     }
   ]
 }

@@ -2,3 +2,19 @@ raw `
 NewRusturfTunnel_MapScripts::
 	.byte 0
 `
+
+script NewRusturfTunnel_EventScript_BlackBelt{
+	end
+}
+
+script NewRusturfTunnel_EventScript_BlackBelt2{
+	end
+}
+
+script NewRusturfTunnel_EventScript_Hiker1{
+	end
+}
+
+script NewRusturfTunnel_EventScript_HikerFayez{
+	end
+}

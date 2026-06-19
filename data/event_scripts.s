@@ -1197,3 +1197,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/MauvilleCity_Inside_2F_Buildings/scripts.inc"
 
 	.include "data/maps/MauvilleCity_Inside_Food_Court/scripts.inc"
+
+	.include "data/maps/MauvilleCity_Egg_Adoption_Center/scripts.inc"

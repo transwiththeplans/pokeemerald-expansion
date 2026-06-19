@@ -17,7 +17,6 @@ OldaleTown_House1_Text_LeftPokemonGoesOutFirst:
 `
 
 script OldaleTown_House1_EventScript_LittleGirl {
-    // Placeholder dialogue.
-    msgbox(format("Take care when you travel beyond town."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }

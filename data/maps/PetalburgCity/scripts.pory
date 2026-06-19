@@ -722,19 +722,16 @@ movement PetalburgCity_Movement_WallyTutorialWally {
 }
 
 script PetalburgCity_EventScript_SouthwestLittleBoy {
-    // Placeholder dialogue.
-    msgbox(format("Petalburg is a friendly city for new Trainers."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }
 
 script PetalburgCity_EventScript_SouthwestLittleGirl {
-    // Placeholder dialogue.
-    msgbox(format("Petalburg is a friendly city for new Trainers."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }
 
 script PetalburgCity_EventScript_SouthGirl {
-    // Placeholder dialogue.
-    msgbox(format("Petalburg is a friendly city for new Trainers."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }

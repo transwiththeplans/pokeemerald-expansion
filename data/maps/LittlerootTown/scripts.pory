@@ -1191,37 +1191,31 @@ script LittlerootTown_EventScript_MarketSign {
 }
 
 script LittlerootTown_EventScript_SouthwestWoman {
-    // Placeholder dialogue.
-    msgbox(format("Littleroot is small, but every journey can start here."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }
 
 script LittlerootTown_EventScript_SouthwestMan {
-    // Placeholder dialogue.
-    msgbox(format("Littleroot is small, but every journey can start here."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }
 
 script LittlerootTown_EventScript_EastBoy {
-    // Placeholder dialogue.
-    msgbox(format("Littleroot is small, but every journey can start here."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }
 
 script LittlerootTown_EventScript_EastGirl {
-    // Placeholder dialogue.
-    msgbox(format("Littleroot is small, but every journey can start here."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }
 
 script LittlerootTown_EventScript_OldMan {
-    // Placeholder dialogue.
-    msgbox(format("Littleroot is small, but every journey can start here."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }
 
 script LittlerootTown_EventScript_Youngster {
-    // Placeholder dialogue.
-    msgbox(format("Littleroot is small, but every journey can start here."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }

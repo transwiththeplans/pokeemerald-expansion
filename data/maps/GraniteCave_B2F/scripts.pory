@@ -5,37 +5,31 @@ GraniteCave_B2F_MapScripts::
 `
 
 script GraniteCave_B2F_EventScript_Hiker {
-    // Placeholder dialogue.
-    msgbox(format("Granite Cave is deep and full of surprises."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }
 
 script GraniteCave_B2F_EventScript_NorthHexManiac {
-    // Placeholder dialogue.
-    msgbox(format("Granite Cave is deep and full of surprises."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }
 
 script GraniteCave_B2F_EventScript_SouthHexManiac {
-    // Placeholder dialogue.
-    msgbox(format("Granite Cave is deep and full of surprises."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }
 
 script GraniteCave_B2F_EventScript_PokefanF {
-    // Placeholder dialogue.
-    msgbox(format("Granite Cave is deep and full of surprises."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }
 
 script GraniteCave_B2F_EventScript_PokefanM {
-    // Placeholder dialogue.
-    msgbox(format("Granite Cave is deep and full of surprises."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }
 
 script GraniteCave_B2F_EventScript_OldMan {
-    // Placeholder dialogue.
-    msgbox(format("Granite Cave is deep and full of surprises."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }

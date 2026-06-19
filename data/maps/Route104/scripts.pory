@@ -1191,13 +1191,11 @@ script Route104_EventScript_PeekoTired {
 }
 
 script Route104_EventScript_SouthFisherman {
-    // Placeholder dialogue.
-    msgbox(format("The sea breeze on this route feels refreshing."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }
 
 script Route104_EventScript_FlowerWoman {
-    // Placeholder dialogue.
-    msgbox(format("The sea breeze on this route feels refreshing."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }

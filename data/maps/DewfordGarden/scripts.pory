@@ -61,25 +61,21 @@ script DewfordGarden_EventScript_Brawly {
 }
 
 script DewfordGarden_EventScript_ManNearPath {
-    // Placeholder dialogue.
-    msgbox(format("This garden is a peaceful spot to catch your breath."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }
 
 script DewfordGarden_EventScript_GirlByPond {
-    // Placeholder dialogue.
-    msgbox(format("This garden is a peaceful spot to catch your breath."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }
 
 script DewfordGarden_EventScript_RuinManiac {
-    // Placeholder dialogue.
-    msgbox(format("This garden is a peaceful spot to catch your breath."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }
 
 script DewfordGarden_EventScript_WestGirl {
-    // Placeholder dialogue.
-    msgbox(format("This garden is a peaceful spot to catch your breath."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }

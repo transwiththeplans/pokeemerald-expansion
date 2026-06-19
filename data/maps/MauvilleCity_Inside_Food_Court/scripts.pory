@@ -1,8 +1,47 @@
 mapscripts MauvilleCity_Inside_Food_Court_MapScripts {}
 
 script MauvilleCity_Inside_Food_Court_EventScript_LittleBoy {
-    // Placeholder dialogue.
-    msgbox(format("Good food makes a long journey feel shorter."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    end
+}
+
+script MauvilleCity_Inside_Food_Court_EventScript_Maniac {
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    end
+}
+
+script MauvilleCity_Inside_Food_Court_EventScript_Couple_Girl {
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    end
+}
+
+script MauvilleCity_Inside_Food_Court_EventScript_Couple_Boy {
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    end
+}
+
+script MauvilleCity_Inside_Food_Court_EventScript_Old_Man {
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    end
+}
+
+script MauvilleCity_Inside_Food_Court_EventScript_Old_Woman {
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    end
+}
+
+script MauvilleCity_Inside_Food_Court_EventScript_Gameboy_Kid {
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    end
+}
+
+script MauvilleCity_Inside_Food_Court_EventScript_Parent_Male {
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    end
+}
+
+script MauvilleCity_Inside_Food_Court_EventScript_Parent_Female {
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }
 

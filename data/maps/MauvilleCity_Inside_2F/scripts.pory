@@ -4,7 +4,6 @@ MauvilleCity_Inside_2F_MapScripts::
 `
 
 script MauvilleCity_Inside_2F_EventScript_RuinManiac {
-    // Placeholder dialogue.
-    msgbox(format("Mauville has something new around every corner."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }

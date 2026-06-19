@@ -566,7 +566,6 @@ Route109_Text_TrainerTipsSign:
 `
 
 script Route109_EventScript_BeachSailor {
-    // Placeholder dialogue.
-    msgbox(format("Nothing beats a day by the beach."), MSGBOX_NPC)
+    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
     end
 }

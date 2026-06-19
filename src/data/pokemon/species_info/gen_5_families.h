@@ -9725,7 +9725,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
         .abilities = { ABILITY_MUCUS_MEMBRANE, ABILITY_MUCUS_MEMBRANE, ABILITY_MUCUS_MEMBRANE },
-		.innates = {ABILITY_LEVITATE},
+		.innates = {ABILITY_EELEVATE},
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Eelektross"),
     #if P_MODIFIED_MEGA_CRIES

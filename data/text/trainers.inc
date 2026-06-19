@@ -4794,3 +4794,19 @@ VSSeeker_Text_TrainersNotReady::
 	.string "The other Trainers don't appear\n"
 	.string "to be ready for battle.\p"
 	.string "Let's wait till later.{PAUSE_UNTIL_PRESS}$"
+
+NewRusturfTunnel_Text_BlackBeltIoanIntro:
+	.string "This cave...it's perfect for training\n"
+	.string "your body against the cold!$"
+
+NewRusturfTunnel_Text_BlackBeltIoanDefeat:
+	.string "These aren't good health benefits...$"
+	
+NewRusturfTunnel_Text_HikerFayezIntro:
+	.string "There's a lot of ICE POKéMON here,\n"
+	.string "aren't there?\p"
+	.string "Good thing I have my ROCK types!$"
+
+NewRusturfTunnel_Text_HikerFayezDefeat:
+	.string "I always forget ROCK and ICE are\n"
+	.string "the weakest types...$"

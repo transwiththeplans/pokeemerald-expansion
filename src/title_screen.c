@@ -58,10 +58,11 @@ static void SpriteCB_PressStartCopyrightBanner(struct Sprite *sprite);
 static void SpriteCB_PokemonLogoShine(struct Sprite *sprite);
 
 // const rom data
-static const u32 sTitleScreenRayquazaGfx[] = INCBIN_U32("graphics/title_screen/rayquaza.4bpp.smol");
+static const u32 sTitleScreenRayquazaGfx[]     = INCBIN_U32("graphics/title_screen/rayquaza.4bpp.smol");
 static const u32 sTitleScreenRayquazaTilemap[] = INCBIN_U32("graphics/title_screen/rayquaza.bin.smolTM");
-static const u32 sTitleScreenLogoShineGfx[] = INCBIN_U32("graphics/title_screen/logo_shine.4bpp.smol");
-static const u32 sTitleScreenCloudsGfx[] = INCBIN_U32("graphics/title_screen/clouds.4bpp.smol");
+static const u32 sTitleScreenLogoShineGfx[]    = INCBIN_U32("graphics/title_screen/logo_shine.4bpp.smol");
+static const u32 sTitleScreenCloudsGfx[]       = INCBIN_U32("graphics/title_screen/clouds.4bpp.smol");
+static const u32 gTitleScreenCloudsTilemap[]   = INCBIN_U32("graphics/title_screen/clouds.bin.smolTM");
 
 // Used to blend "Emerald Version" as it passes over over the Pokémon banner.
 // Also used by the intro to blend the Game Freak name/logo in and out as they appear and disappear
@@ -852,19 +853,22 @@ static void CB2_GoToBerryFixScreen(void)
 
 #define LEGENDARY_MARKING_COLOR_INDEX   12
 #define LEGENDARY_MARKING_COLOR_INDEX_2 9
+#define LEGENDARY_MARKING_LIME_R        (161 / 8)
+#define LEGENDARY_MARKING_LIME_G        (255 / 8)
+#define LEGENDARY_MARKING_LIME_B        (133 / 8)
 
 static void UpdateLegendaryMarkingColor(u8 frameNum)
 {
     if ((frameNum % 4) == 0) // Change color every 4th frame
     {
         s32 intensity = Cos(frameNum, Q_8_8(0.5)) + Q_8_8(0.5);
-        u32 r = 31 - Q_8_8_TO_INT(intensity * 31);
-        u32 g = 12 - Q_8_8_TO_INT(intensity * 22);
-        u32 b = 12;
+        u32 r = LEGENDARY_MARKING_LIME_R - Q_8_8_TO_INT(intensity * 8);
+        u32 g = LEGENDARY_MARKING_LIME_G - Q_8_8_TO_INT(intensity * 8);
+        u32 b = LEGENDARY_MARKING_LIME_B - Q_8_8_TO_INT(intensity * 2);
 
-        u32 r2 = 28 - Q_8_8_TO_INT(intensity * 28);
-        u32 g2 = 12 - Q_8_8_TO_INT(intensity * 22);
-        u32 b2 = 12;
+        u32 r2 = LEGENDARY_MARKING_LIME_R - 3 - Q_8_8_TO_INT(intensity * 8);
+        u32 g2 = LEGENDARY_MARKING_LIME_G - 3 - Q_8_8_TO_INT(intensity * 8);
+        u32 b2 = LEGENDARY_MARKING_LIME_B - 1 - Q_8_8_TO_INT(intensity * 2);
 
         u16 color = RGB(r, g, b);
         u16 color2 = RGB(r2, g2, b2);

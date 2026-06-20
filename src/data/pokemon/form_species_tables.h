@@ -13,6 +13,22 @@ static const u16 sVenusaurFormSpeciesIdTable[] = {
 #endif //P_FAMILY_BULBASAUR
 
 #if P_FAMILY_CHARMANDER
+static const u16 sCharmanderFormSpeciesIdTable[] = {
+    SPECIES_CHARMANDER,
+#if P_SEVII_FORMS
+    SPECIES_CHARMANDER_SEVII,
+#endif
+    FORM_SPECIES_END,
+};
+
+static const u16 sCharmeleonFormSpeciesIdTable[] = {
+    SPECIES_CHARMELEON,
+#if P_SEVII_FORMS
+    SPECIES_CHARMELEON_SEVII,
+#endif
+    FORM_SPECIES_END,
+};
+
 static const u16 sCharizardFormSpeciesIdTable[] = {
     SPECIES_CHARIZARD,
 #if P_MEGA_EVOLUTIONS
@@ -20,8 +36,11 @@ static const u16 sCharizardFormSpeciesIdTable[] = {
     SPECIES_CHARIZARD_MEGA_Y,
     SPECIES_CHARIZARD_MEGA_Z,
 #endif
-#if P_GIGANTAMAX_FORMS
-    SPECIES_CHARIZARD_GMAX,
+#if P_SEVII_FORMS
+    SPECIES_CHARIZARD_SEVII,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_CHARIZARD_MEGA_SEVII,
+#endif
 #endif
     FORM_SPECIES_END,
 };
@@ -904,10 +923,32 @@ static const u16 sTyranitarFormSpeciesIdTable[] = {
 #endif //P_FAMILY_LARVITAR
 
 #if P_FAMILY_TREECKO
+static const u16 sTreeckoFormSpeciesIdTable[] = {
+    SPECIES_TREECKO,
+#if P_SEVII_FORMS
+    SPECIES_TREECKO_SEVII,
+#endif
+    FORM_SPECIES_END,
+};
+
+static const u16 sGrovyleFormSpeciesIdTable[] = {
+    SPECIES_GROVYLE,
+#if P_SEVII_FORMS
+    SPECIES_GROVYLE_SEVII,
+#endif
+    FORM_SPECIES_END,
+};
+
 static const u16 sSceptileFormSpeciesIdTable[] = {
     SPECIES_SCEPTILE,
 #if P_MEGA_EVOLUTIONS
     SPECIES_SCEPTILE_MEGA,
+#endif
+#if P_SEVII_FORMS
+    SPECIES_SCEPTILE_SEVII,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_SCEPTILE_MEGA_SEVII,
+#endif
 #endif
     FORM_SPECIES_END,
 };
@@ -1654,12 +1695,34 @@ static const u16 sDelphoxFormSpeciesIdTable[] = {
 #endif //P_FAMILY_FENNEKIN
 
 #if P_FAMILY_FROAKIE
+static const u16 sFroakieFormSpeciesIdTable[] = {
+    SPECIES_FROAKIE,
+#if P_SEVII_FORMS
+    SPECIES_FROAKIE_SEVII,
+#endif
+    FORM_SPECIES_END,
+};
+
+static const u16 sFrogadierFormSpeciesIdTable[] = {
+    SPECIES_FROGADIER,
+#if P_SEVII_FORMS
+    SPECIES_FROGADIER_SEVII,
+#endif
+    FORM_SPECIES_END,
+};
+
 static const u16 sGreninjaFormSpeciesIdTable[] = {
     SPECIES_GRENINJA,
     SPECIES_GRENINJA_BATTLE_BOND,
     SPECIES_GRENINJA_ASH,
 #if P_MEGA_EVOLUTIONS
     SPECIES_GRENINJA_MEGA,
+#endif
+#if P_SEVII_FORMS
+    SPECIES_GRENINJA_SEVII,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_GRENINJA_MEGA_SEVII,
+#endif
 #endif
     FORM_SPECIES_END,
 };

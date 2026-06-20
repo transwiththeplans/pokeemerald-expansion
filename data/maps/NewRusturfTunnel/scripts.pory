@@ -1,20 +1,45 @@
 raw `
 NewRusturfTunnel_MapScripts::
 	.byte 0
+	
+NewRusturfTunnel_EventScript_BlackBelt::
+	trainerbattle_single TRAINER_IOAN, NewRusturfTunnel_Text_BlackBeltIoanIntro, NewRusturfTunnel_Text_BlackBeltIoanDefeat
+	msgbox NewRusturfTunnel_Text_BlackBeltIoanPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+NewRusturfTunnel_Text_BlackBeltIoanPostBattle:
+	.string "11 minutes a week!\n"
+	.string "That's my limit.$"
+
+NewRusturfTunnel_EventScript_Hiker1::
+	msgbox NewRusturfTunnel_Text_Hiker1, MSGBOX_NPC
+	end
+
+NewRusturfTunnel_Text_Hiker1:
+	.string "They found this cave after the\n"
+	.string "CHAMPION did some investigation with\l"
+	.string "some archeologists.$"
+
+NewRusturfTunnel_EventScript_BlackBelt2::
+	msgbox NewRusturfTunnel_Text_BlackBelt2, MSGBOX_NPC
+	end
+
+NewRusturfTunnel_Text_BlackBelt2:
+	.string "...\p"
+	.string "...\p"
+	.string "I regret coming in barefoot, I'm\n"
+	.string "frozen to the ground.\p"
+	.string "Help.$"
+
+NewRusturfTunnel_EventScript_HikerFayez::
+	trainerbattle_single TRAINER_FAYEZ, NewRusturfTunnel_Text_HikerFayezIntro, NewRusturfTunnel_Text_HikerFayezDefeat
+	msgbox NewRusturfTunnel_Text_HikerFayezPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+NewRusturfTunnel_Text_HikerFayezPostBattle:
+	.string "Honestly I only fought you so you\n"
+	.string "wouldn't get this TM...\p"
+	.string "It's super effective against my\n"
+	.string "POKéMON...$"
+	
 `
-
-script NewRusturfTunnel_EventScript_BlackBelt{
-	end
-}
-
-script NewRusturfTunnel_EventScript_BlackBelt2{
-	end
-}
-
-script NewRusturfTunnel_EventScript_Hiker1{
-	end
-}
-
-script NewRusturfTunnel_EventScript_HikerFayez{
-	end
-}

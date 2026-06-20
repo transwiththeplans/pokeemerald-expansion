@@ -1772,6 +1772,19 @@
 #define SPECIES_MAGEARNA_MEGA                           1639
 #define SPECIES_MAGEARNA_ORIGINAL_MEGA                  1640
 #define SPECIES_LAPRAS_MEGA                             1641
+// More customs
+#define SPECIES_TREECKO_SEVII                           1642
+#define SPECIES_GROVYLE_SEVII                           1643
+#define SPECIES_SCEPTILE_SEVII                          1644
+#define SPECIES_SCEPTILE_MEGA_SEVII                     1645
+#define SPECIES_CHARMANDER_SEVII                        1646
+#define SPECIES_CHARMELEON_SEVII                        1647
+#define SPECIES_CHARIZARD_SEVII                         1648
+#define SPECIES_CHARIZARD_MEGA_SEVII                    1649
+#define SPECIES_FROAKIE_SEVII                           1650
+#define SPECIES_FROGADIER_SEVII                         1651
+#define SPECIES_GRENINJA_SEVII                          1652
+#define SPECIES_GRENINJA_MEGA_SEVII                     1653
 
 #define SPECIES_LAST                                    2000 //To always have more space for new species if needed
 

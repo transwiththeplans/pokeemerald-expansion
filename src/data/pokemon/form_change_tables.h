@@ -142,7 +142,7 @@ static const struct FormChange sPerrserkerFormChangeTable[] =
 static const struct FormChange sAlakazamFormChangeTable[] =
 {
 #if P_MEGA_EVOLUTIONS
-    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_ALAKAZAM_MEGA, ITEM_ALAKAZITE},
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_ALAKAZAM_MEGA, ITEM_ULTIMATRIX_SYMBOL},
 #endif
     {FORM_CHANGE_END_BATTLE,                    SPECIES_ALAKAZAM},
     {FORM_CHANGE_TERMINATOR},

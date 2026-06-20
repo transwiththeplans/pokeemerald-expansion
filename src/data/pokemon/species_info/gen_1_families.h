@@ -892,6 +892,220 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formChangeTable = sCharizardFormChangeTable,
     },
 #endif //P_GIGANTAMAX_FORMS
+
+#if P_SEVII_FORMS
+	[SPECIES_CHARMANDER_SEVII] =
+	{
+		.baseHP        = 39,
+		.baseAttack    = 52,
+		.baseDefense   = 43,
+		.baseSpeed     = 50,
+		.baseSpAttack  = 60,
+		.baseSpDefense = 65,
+		.types = MON_TYPES(TYPE_DARK, TYPE_DRAGON),
+		.catchRate = 45,
+		.expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 62 : 65,
+		.evYield_Speed = 1,
+		.genderRatio = PERCENT_FEMALE(12.5),
+		.eggCycles = 20,
+		.friendship = STANDARD_FRIENDSHIP,
+		.growthRate = GROWTH_MEDIUM_SLOW,
+		.eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_DRAGON),
+		.abilities = { ABILITY_JUGGERNAUT, ABILITY_INTIMIDATE, ABILITY_ANGER_POINT },
+		.innates = { ABILITY_DRAGONS_MAW },
+		.innateUnlockLevel = 40,
+		.bodyColor = BODY_COLOR_RED,
+		.speciesName = _("Charmander"),
+		.cryId = CRY_CHARMANDER,
+		.natDexNum = NATIONAL_DEX_CHARMANDER,
+		.categoryName = _("Lizard"),
+		.height = 6,
+		.weight = 85,
+		.description = COMPOUND_STRING(
+			"The flame that burns at the tip of its\n"
+			"tail is an indication of its emotions.\n"
+			"The flame wavers when Charmander is\n"
+			"happy, and blazes when it is enraged."),
+		.pokemonScale = 444,
+		.pokemonOffset = 18,
+		.trainerScale = 256,
+		.trainerOffset = 0,
+		.frontPic = gMonFrontPic_Charmander,
+		.frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(40, 40) : MON_COORDS_SIZE(48, 48),
+		.frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 12 : 10,
+		.frontAnimFrames = sAnims_SingleFramePlaceHolder,
+		.frontAnimId = ANIM_V_JUMPS_SMALL,
+		.backPic = gMonBackPic_Charmander,
+		.backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 40) : MON_COORDS_SIZE(48, 48),
+		.backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 14 : 9,
+		.backAnimId = BACK_ANIM_CONCAVE_ARC_SMALL,
+		.palette = gMonPalette_Charmander,
+		.shinyPalette = gMonShinyPalette_Charmander,
+		.iconSprite = gMonIcon_Charmander,
+		.iconPalIndex = 0,
+		.pokemonJumpType = PKMN_JUMP_TYPE_FAST,
+		SHADOW(-2, 3, SHADOW_SIZE_S)
+		FOOTPRINT(Charmander)
+		OVERWORLD(
+			sPicTable_Charmander,
+			SIZE_32x32,
+			SHADOW_SIZE_M,
+			TRACKS_FOOT,
+			sAnimTable_Following,
+			gOverworldPalette_Charmander,
+			gShinyOverworldPalette_Charmander
+		)
+		.isSeviiForm = TRUE,
+		.levelUpLearnset = sCharmanderSeviiLevelUpLearnset,
+		.teachableLearnset = sCharmanderSeviiTeachableLearnset,
+		.eggMoveLearnset = sCharmanderEggMoveLearnset,
+		.evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_CHARMELEON_SEVII}),
+	},
+
+	[SPECIES_CHARMELEON_SEVII] =
+	{
+		.baseHP        = 58,
+		.baseAttack    = 64,
+		.baseDefense   = 58,
+		.baseSpeed     = 65,
+		.baseSpAttack  = 80,
+		.baseSpDefense = 80,
+		.types = MON_TYPES(TYPE_DARK, TYPE_DRAGON),
+		.catchRate = 45,
+		.expYield = 142,
+		.evYield_Speed = 1,
+		.evYield_SpAttack = 1,
+		.genderRatio = PERCENT_FEMALE(12.5),
+		.eggCycles = 20,
+		.friendship = STANDARD_FRIENDSHIP,
+		.growthRate = GROWTH_MEDIUM_SLOW,
+		.eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_DRAGON),
+		.abilities = { ABILITY_JUGGERNAUT, ABILITY_INTIMIDATE, ABILITY_ANGER_POINT },
+		.innates = { ABILITY_DRAGONS_MAW },
+		.innateUnlockLevel = 40,
+		.bodyColor = BODY_COLOR_RED,
+		.speciesName = _("Charmeleon"),
+		.cryId = CRY_CHARMELEON,
+		.natDexNum = NATIONAL_DEX_CHARMELEON,
+		.categoryName = _("Flame"),
+		.height = 11,
+		.weight = 190,
+		.description = COMPOUND_STRING(
+			"Without pity, its sharp claws destroy foes.\n"
+			"If it encounters a strong enemy, it\n"
+			"becomes agitated, and the flame on its\n"
+			"tail flares with a bluish white color."),
+		.pokemonScale = 302,
+		.pokemonOffset = 9,
+		.trainerScale = 256,
+		.trainerOffset = 0,
+		.frontPic = gMonFrontPic_Charmeleon,
+		.frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 48) : MON_COORDS_SIZE(56, 56),
+		.frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 9 : 8,
+		.frontAnimFrames = sAnims_SingleFramePlaceHolder,
+		.frontAnimId = ANIM_BACK_AND_LUNGE,
+		.backPic = gMonBackPic_Charmeleon,
+		.backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 48) : MON_COORDS_SIZE(56, 48),
+		.backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 9 : 8,
+		.backAnimId = BACK_ANIM_JOLT_RIGHT,
+		.palette = gMonPalette_Charmeleon,
+		.shinyPalette = gMonShinyPalette_Charmeleon,
+		.iconSprite = gMonIcon_Charmeleon,
+		.iconPalIndex = 0,
+		.pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+		SHADOW(0, 5, SHADOW_SIZE_M)
+		FOOTPRINT(Charmeleon)
+		OVERWORLD(
+			sPicTable_Charmeleon,
+			SIZE_32x32,
+			SHADOW_SIZE_M,
+			TRACKS_FOOT,
+			sAnimTable_Following,
+			gOverworldPalette_Charmeleon,
+			gShinyOverworldPalette_Charmeleon
+		)
+		.isSeviiForm = TRUE,
+		.levelUpLearnset = sCharmeleonSeviiLevelUpLearnset,
+		.teachableLearnset = sCharmeleonSeviiTeachableLearnset,
+		.eggMoveLearnset = sCharmanderEggMoveLearnset,
+		.evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_CHARIZARD_SEVII}),
+	},
+
+	[SPECIES_CHARIZARD_SEVII] =
+	{
+		.baseHP        = 78,
+		.baseAttack    = 84,
+		.baseDefense   = 78,
+		.baseSpeed     = 85,
+		.baseSpAttack  = 109,
+		.baseSpDefense = 100,
+		.types = MON_TYPES(TYPE_DARK, TYPE_DRAGON),
+		.catchRate = 45,
+	#if P_UPDATED_EXP_YIELDS >= GEN_8
+		.expYield = 267,
+	#elif P_UPDATED_EXP_YIELDS >= GEN_5
+		.expYield = 240,
+	#else
+		.expYield = 209,
+	#endif
+		.evYield_SpAttack = 3,
+		.genderRatio = PERCENT_FEMALE(12.5),
+		.eggCycles = 20,
+		.friendship = STANDARD_FRIENDSHIP,
+		.growthRate = GROWTH_MEDIUM_SLOW,
+		.eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_DRAGON),
+		.abilities = { ABILITY_JUGGERNAUT, ABILITY_INTIMIDATE, ABILITY_ANGER_POINT },
+		.innates = { ABILITY_DRAGONS_MAW },
+		.innateUnlockLevel = 40,
+		.bodyColor = BODY_COLOR_RED,
+		.speciesName = _("Charizard"),
+		.cryId = CRY_CHARIZARD,
+		.natDexNum = NATIONAL_DEX_CHARIZARD,
+		.categoryName = _("Flame"),
+		.height = 17,
+		.weight = 905,
+		.description = COMPOUND_STRING(
+			"A Charizard flies about in search of\n"
+			"strong opponents. It breathes intense\n"
+			"flames that can melt any material. However,\n"
+			"it will never torch a weaker foe."),
+		.pokemonScale = 256,
+		.pokemonOffset = 1,
+		.trainerScale = 302,
+		.trainerOffset = 3,
+		.frontPic = gMonFrontPic_Charizard,
+		.frontPicSize = MON_COORDS_SIZE(64, 64),
+		.frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 1 : 0,
+		.frontAnimFrames = sAnims_SingleFramePlaceHolder,
+		.frontAnimId = ANIM_V_SHAKE,
+		.backPic = gMonBackPic_Charizard,
+		.backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 56) : MON_COORDS_SIZE(64, 64),
+		.backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 4 : 1,
+		.backAnimId = BACK_ANIM_SHAKE_GLOW_RED,
+		.palette = gMonPalette_Charizard,
+		.shinyPalette = gMonShinyPalette_Charizard,
+		.iconSprite = gMonIcon_Charizard,
+		.iconPalIndex = 0,
+		.pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+		SHADOW(2, 13, SHADOW_SIZE_L)
+		FOOTPRINT(Charizard)
+		OVERWORLD(
+			sPicTable_Charizard,
+			SIZE_32x32,
+			SHADOW_SIZE_M,
+			TRACKS_FOOT,
+			sAnimTable_Following,
+			gOverworldPalette_Charizard,
+			gShinyOverworldPalette_Charizard
+		)
+		.isSeviiForm = TRUE,
+		.levelUpLearnset = sCharizardSeviiLevelUpLearnset,
+		.teachableLearnset = sCharizardSeviiTeachableLearnset,
+		.eggMoveLearnset = sCharmanderEggMoveLearnset,
+		.formSpeciesIdTable = sCharizardFormSpeciesIdTable,
+		.formChangeTable = sCharizardFormChangeTable,
+	},
+#endif //P_SEVII_FORMS
 #endif //P_FAMILY_CHARMANDER
 
 #if P_FAMILY_SQUIRTLE

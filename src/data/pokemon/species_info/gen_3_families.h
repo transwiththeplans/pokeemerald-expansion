@@ -297,6 +297,212 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .formChangeTable = sSceptileFormChangeTable,
     },
 #endif //P_MEGA_EVOLUTIONS
+#if P_SEVII_FORMS
+	[SPECIES_TREECKO_SEVII] =
+	{
+		.baseHP        = 40,
+		.baseAttack    = 45,
+		.baseDefense   = 35,
+		.baseSpeed     = 70,
+		.baseSpAttack  = 65,
+		.baseSpDefense = 55,
+		.types = MON_TYPES(TYPE_DARK, TYPE_FIGHTING),
+		.catchRate = 45,
+		.expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 62 : 65,
+		.evYield_Speed = 1,
+		.genderRatio = PERCENT_FEMALE(12.5),
+		.eggCycles = 20,
+		.friendship = STANDARD_FRIENDSHIP,
+		.growthRate = GROWTH_MEDIUM_SLOW,
+		.eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_DRAGON),
+		.abilities = { ABILITY_INNER_FOCUS, ABILITY_UNBURDEN, ABILITY_MOLD_BREAKER },
+		.innates = { ABILITY_ROUGH_SKIN },
+		.innateUnlockLevel = 40,
+		.bodyColor = BODY_COLOR_GREEN,
+		.speciesName = _("Treecko"),
+		.cryId = CRY_TREECKO,
+		.natDexNum = NATIONAL_DEX_TREECKO,
+		.categoryName = _("Wood Gecko"),
+		.height = 5,
+		.weight = 50,
+		.description = COMPOUND_STRING(
+			"It makes its nest in a giant tree in the\n"
+			"forest. It ferociously guards against\n"
+			"anything nearing its territory. It is said\n"
+			"to be the protector of the forest's trees."),
+		.pokemonScale = 541,
+		.pokemonOffset = 19,
+		.trainerScale = 256,
+		.trainerOffset = 0,
+		.frontPic = gMonFrontPic_Treecko,
+		.frontPicSize = MON_COORDS_SIZE(48, 48),
+		.frontPicYOffset = 8,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+		.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+		.backPic = gMonBackPic_Treecko,
+		.backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 56) : MON_COORDS_SIZE(56, 48),
+		.backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 6 : 8,
+		.backAnimId = BACK_ANIM_CONCAVE_ARC_LARGE,
+		.palette = gMonPalette_Treecko,
+		.shinyPalette = gMonShinyPalette_Treecko,
+		.iconSprite = gMonIcon_Treecko,
+		.iconPalIndex = 1,
+		.pokemonJumpType = PKMN_JUMP_TYPE_FAST,
+		SHADOW(-3, 4, SHADOW_SIZE_S)
+		FOOTPRINT(Treecko)
+		OVERWORLD(
+			sPicTable_Treecko,
+			SIZE_32x32,
+			SHADOW_SIZE_M,
+			TRACKS_FOOT,
+			sAnimTable_Following,
+			gOverworldPalette_Treecko,
+			gShinyOverworldPalette_Treecko
+		)
+		.isSeviiForm = TRUE,
+		.levelUpLearnset = sTreeckoSeviiLevelUpLearnset,
+		.teachableLearnset = sTreeckoSeviiTeachableLearnset,
+		.eggMoveLearnset = sTreeckoEggMoveLearnset,
+		.evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_GROVYLE_SEVII}),
+	},
+	
+	[SPECIES_GROVYLE_SEVII] =
+	{
+		.baseHP        = 50,
+		.baseAttack    = 65,
+		.baseDefense   = 45,
+		.baseSpeed     = 95,
+		.baseSpAttack  = 85,
+		.baseSpDefense = 65,
+		.types = MON_TYPES(TYPE_DARK, TYPE_FIGHTING),
+		.catchRate = 45,
+		.expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 142 : 141,
+		.evYield_Speed = 2,
+		.genderRatio = PERCENT_FEMALE(12.5),
+		.eggCycles = 20,
+		.friendship = STANDARD_FRIENDSHIP,
+		.growthRate = GROWTH_MEDIUM_SLOW,
+		.eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_DRAGON),
+		.abilities = { ABILITY_INNER_FOCUS, ABILITY_UNBURDEN, ABILITY_MOLD_BREAKER },
+		.innates = { ABILITY_ROUGH_SKIN },
+		.innateUnlockLevel = 40,
+		.bodyColor = BODY_COLOR_GREEN,
+		.speciesName = _("Grovyle"),
+		.cryId = CRY_GROVYLE,
+		.natDexNum = NATIONAL_DEX_GROVYLE,
+		.categoryName = _("Wood Gecko"),
+		.height = 9,
+		.weight = 216,
+		.description = COMPOUND_STRING(
+			"Its strongly developed thigh muscles\n"
+			"give it astounding agility and jumping\n"
+			"performance. It can leap from branch to\n"
+			"branch while dashing through the forest."),
+		.pokemonScale = 305,
+		.pokemonOffset = 10,
+		.trainerScale = 256,
+		.trainerOffset = 0,
+		.frontPic = gMonFrontPic_Grovyle,
+		.frontPicSize = MON_COORDS_SIZE(48, 64),
+		.frontPicYOffset = 3,
+		.frontAnimFrames = sAnims_SingleFramePlaceHolder,
+		.frontAnimId = ANIM_V_STRETCH,
+		.backPic = gMonBackPic_Grovyle,
+		.backPicSize = MON_COORDS_SIZE(64, 64),
+		.backPicYOffset = 3,
+		.backAnimId = BACK_ANIM_JOLT_RIGHT,
+		.palette = gMonPalette_Grovyle,
+		.shinyPalette = gMonShinyPalette_Grovyle,
+		.iconSprite = gMonIcon_Grovyle,
+		.iconPalIndex = 1,
+		.pokemonJumpType = PKMN_JUMP_TYPE_FAST,
+		SHADOW(-1, 9, SHADOW_SIZE_M)
+		FOOTPRINT(Grovyle)
+		OVERWORLD(
+			sPicTable_Grovyle,
+			SIZE_32x32,
+			SHADOW_SIZE_M,
+			TRACKS_FOOT,
+			sAnimTable_Following,
+			gOverworldPalette_Grovyle,
+			gShinyOverworldPalette_Grovyle
+		)
+		.isSeviiForm = TRUE,
+		.levelUpLearnset = sGrovyleSeviiLevelUpLearnset,
+		.teachableLearnset = sGrovyleSeviiTeachableLearnset,
+		.eggMoveLearnset = sTreeckoEggMoveLearnset,
+		.evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_SCEPTILE_SEVII}),
+	},
+
+	[SPECIES_SCEPTILE_SEVII] =
+	{
+		.baseHP        = 70,
+		.baseAttack    = 85,
+		.baseDefense   = 65,
+		.baseSpeed     = 120,
+		.baseSpAttack  = 105,
+		.baseSpDefense = 85,
+		.types = MON_TYPES(TYPE_DARK, TYPE_FIGHTING),
+		.catchRate = 45,
+		.expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 265 : 208,
+		.evYield_Speed = 3,
+		.genderRatio = PERCENT_FEMALE(12.5),
+		.eggCycles = 20,
+		.friendship = STANDARD_FRIENDSHIP,
+		.growthRate = GROWTH_MEDIUM_SLOW,
+		.eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_DRAGON),
+		.abilities = { ABILITY_INNER_FOCUS, ABILITY_UNBURDEN, ABILITY_MOLD_BREAKER },
+		.innates = { ABILITY_ROUGH_SKIN },
+		.innateUnlockLevel = 40,
+		.bodyColor = BODY_COLOR_GREEN,
+		.speciesName = _("Sceptile"),
+		.cryId = CRY_SCEPTILE,
+		.natDexNum = NATIONAL_DEX_SCEPTILE,
+		.categoryName = _("Forest"),
+		.height = 17,
+		.weight = 522,
+		.description = COMPOUND_STRING(
+			"The leaves growing on SCEPTILE'S body\n"
+			"are very sharp edged. This Pokémon is\n"
+			"very agile—it leaps all over the branches\n"
+			"of trees and jumps on its foe from above."),
+		.pokemonScale = 256,
+		.pokemonOffset = 0,
+		.trainerScale = 340,
+		.trainerOffset = 7,
+		.frontPic = gMonFrontPic_Sceptile,
+		.frontPicSize = MON_COORDS_SIZE(64, 64),
+		.frontPicYOffset = 0,
+		.frontAnimFrames = sAnims_SingleFramePlaceHolder,
+		.frontAnimId = ANIM_V_SHAKE,
+		.backPic = gMonBackPic_Sceptile,
+		.backPicSize = MON_COORDS_SIZE(64, 64),
+		.backPicYOffset = 1,
+		.backAnimId = BACK_ANIM_GROW_STUTTER,
+		.palette = gMonPalette_Sceptile,
+		.shinyPalette = gMonShinyPalette_Sceptile,
+		.iconSprite = gMonIcon_Sceptile,
+		.iconPalIndex = 1,
+		.pokemonJumpType = PKMN_JUMP_TYPE_TALL,
+		SHADOW(2, 11, SHADOW_SIZE_M)
+		FOOTPRINT(Sceptile)
+		OVERWORLD(
+			sPicTable_Sceptile,
+			SIZE_32x32,
+			SHADOW_SIZE_M,
+			TRACKS_FOOT,
+			sAnimTable_Following,
+			gOverworldPalette_Sceptile,
+			gShinyOverworldPalette_Sceptile
+		)
+		.isSeviiForm = TRUE,
+		.levelUpLearnset = sSceptileSeviiLevelUpLearnset,
+		.teachableLearnset = sSceptileSeviiTeachableLearnset,
+		.eggMoveLearnset = sTreeckoEggMoveLearnset,
+		.formSpeciesIdTable = sSceptileFormSpeciesIdTable,
+		.formChangeTable = sSceptileFormChangeTable,
+	},
+#endif //P_SEVII_FORMS
 #endif //P_FAMILY_TREECKO
 
 #if P_FAMILY_TORCHIC

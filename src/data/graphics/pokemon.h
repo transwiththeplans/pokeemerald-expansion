@@ -9781,6 +9781,25 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u16 gOverworldPalette_SceptileMega[] = INCBIN_U16("graphics/pokemon/sceptile/mega/overworld_normal.gbapal");
     const u16 gShinyOverworldPalette_SceptileMega[] = INCBIN_U16("graphics/pokemon/sceptile/mega/overworld_shiny.gbapal");
+#if P_SEVII_FORMS
+	const u32 gMonFrontPic_TreeckoSevii[] = INCBIN_U32("graphics/pokemon/treecko/sevii/anim_front.4bpp.smol");
+	const u16 gMonPalette_TreeckoSevii[] = INCBIN_U16("graphics/pokemon/treecko/sevii/normal.gbapal");
+	const u32 gMonBackPic_TreeckoSevii[] = INCBIN_U32("graphics/pokemon/treecko/sevii/back.4bpp.smol");
+	const u16 gMonShinyPalette_TreeckoSevii[] = INCBIN_U16("graphics/pokemon/treecko/sevii/shiny.gbapal");
+	const u8 gMonIcon_TreeckoSevii[] = INCBIN_U8("graphics/pokemon/treecko/sevii/icon.4bpp");
+
+	const u32 gMonFrontPic_GrovyleSevii[] = INCBIN_U32("graphics/pokemon/grovyle/sevii/anim_front.4bpp.smol");
+	const u16 gMonPalette_GrovyleSevii[] = INCBIN_U16("graphics/pokemon/grovyle/sevii/normal.gbapal");
+	const u32 gMonBackPic_GrovyleSevii[] = INCBIN_U32("graphics/pokemon/grovyle/sevii/back.4bpp.smol");
+	const u16 gMonShinyPalette_GrovyleSevii[] = INCBIN_U16("graphics/pokemon/grovyle/sevii/shiny.gbapal");
+	const u8 gMonIcon_GrovyleSevii[] = INCBIN_U8("graphics/pokemon/grovyle/sevii/icon.4bpp");
+
+	const u32 gMonFrontPic_SceptileSevii[] = INCBIN_U32("graphics/pokemon/sceptile/sevii/anim_front.4bpp.smol");
+	const u16 gMonPalette_SceptileSevii[] = INCBIN_U16("graphics/pokemon/sceptile/sevii/normal.gbapal");
+	const u32 gMonBackPic_SceptileSevii[] = INCBIN_U32("graphics/pokemon/sceptile/sevii/back.4bpp.smol");
+	const u16 gMonShinyPalette_SceptileSevii[] = INCBIN_U16("graphics/pokemon/sceptile/sevii/shiny.gbapal");
+	const u8 gMonIcon_SceptileSevii[] = INCBIN_U8("graphics/pokemon/sceptile/sevii/icon.4bpp");
+#endif //P_SEVII_FORMS
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
 #endif //P_MEGA_EVOLUTIONS

@@ -2933,5 +2933,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = FORMAT_ABILITY_DESCRIPTION("Ups Fire-type moves."),
         .aiRating = 6,
     },
+	
+    [ABILITY_COLD_STORAGE] =
+    {
+        .name = _("Water Absorb"),
+        .description = FORMAT_ABILITY_DESCRIPTION("Changes water into HP."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
 
 };

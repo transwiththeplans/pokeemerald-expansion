@@ -4887,23 +4887,31 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Growl
 
 Rolycoly
-Level: 14
+Level: 15
 Ability: Steam Engine
-Innate Unlocked: Yes
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Ancient Power
-- Slowdown
-- Vacuum Wave
 - Thunder Wave
+- Rock Tomb
+- Mud Shot
+- Reflect
 
-Nacli
+Bergmite
+Level: 14
+Ability: Juggernaut
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Ice Shard
+- Protect
+- Rock Tomb
+- Curse
+
+Magnemite
 Level: 14
 Ability: Sturdy
 Innate Unlocked: Yes
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Ancient Power
-- Slowdown
-- Vacuum Wave
+- Rock Ripple
+- Flash Volley
+- Rock Polish
 - Thunder Wave
 
 Roggenrola
@@ -4916,23 +4924,23 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Vacuum Wave
 - Thunder Wave
 
-Flareon
+Lileep
 Level: 14
-Innate Unlocked: Yes
+Ability: Storm Drain
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Ancient Power
-- Slowdown
-- Vacuum Wave
-- Thunder Wave
+- Rock Ripple
+- Confusion
+- Mud Shot
+- Life Dew
 
-Geodude
+Anorith
 Level: 14
-Innate Unlocked: Yes
+Ability: Poison Point
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Ancient Power
-- Slowdown
-- Vacuum Wave
-- Thunder Wave
+- Fury Cutter
+- Smack Down
+- Aqua Jet
+- Protect
 
 Nosepass @ Oran Berry
 Level: 15
@@ -4954,6 +4962,8 @@ Music: Male
 Items: Super Potion / Super Potion / X Attack
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Force Setup First Turn
+Party Size: 4
+Pool Pick Functions: Default
 
 Aipom
 Level: 20
@@ -4968,20 +4978,78 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Taillow
 Level: 20
 Ability: Guts
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Double Kick
 - Wing Attack
 - Bulk Up
 - Knock Off
 
+Meowth
+Level: 20
+Ability: Scrappy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Fake Out
+- Karate Chop
+- Aerial Ace
+- Taunt
+
+Binacle
+Level: 21
+Ability: Tough Claws
+Innate Unlocked: Yes
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Power Up Punch
+- Aqua Jet
+- Bulk Up
+- Dual Chop
+
+Machop
+Level: 20
+Ability: Guts
+Innate Unlocked: Yes
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Power Up Punch
+- Bulldoze
+- Bulk Up
+- Knock Off
+
+Falinks
+Level: 20
+Ability: Prankster
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Wall of Sound
+- Vacuum Wave
+- Disarming Voice
+- Work Up
+
+Croagunk
+Level: 20
+Ability: Moxie
+Innate Unlocked: Yes
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Arm Thrust
+- Poison Sting
+- Aerial Ace
+- Ice Punch
+
 Primeape
 Level: 21
 Ability: Anger Point
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Bug Bite
 - Brick Break
 - Pounce
 - Leer
+
+Meditite
+Level: 21
+Ability: Inner Focus
+Innate Unlocked: Yes
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Force Palm
+- Psybeam
+- Work Up
+- Rock Tomb
 
 Gurdurr @ Sitrus Berry
 Level: 22
@@ -5001,7 +5069,9 @@ Gender: Male
 Music: Male
 Items: Super Potion / Super Potion / Full Heal
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
+Party Size: 4
+Pool Pick Functions: Default
 
 Pikachu @ Air Balloon
 Level: 28
@@ -5030,6 +5100,74 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - Fire Fang
 - Ice Fang
 - Mach Punch
+
+Voltorb
+Level: 28
+Ability: Aftermath
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Electro Ball
+- Volt Switch
+- Signal Beam
+- Self Destruct
+
+Rotom @ Colbur Berry
+Level: 28
+Ability: Transistor
+Innate Unlocked: Yes
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Volt Switch
+- Will o Wisp
+- Water Pulse
+- Hex
+
+Yanma
+Level: 29
+Ability: Tinted Lens
+Innate Unlocked: Yes
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Buzzy Buzz
+- Signal Beam
+- Chilling Water
+- Volt Switch
+
+Furret
+Level: 29
+Ability: Technician
+Innate Unlocked: Yes
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Thunder Spear
+- Ice Punch
+- Rock Smash
+- Tidy Up
+
+Eelektrik
+Level: 28
+Ability: Stakeout
+Innate Unlocked: Yes
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Water Pulse
+- Drain Punch
+- Acrobatics
+- Volt Switch
+
+Arctibax
+Level: 30
+Ability: Heatproof
+IVs: 24 HP / 12 Atk / 24 Def / 12 SpA / 24 SpD / 12 Spe
+- Freeze Dry
+- Volt Switch
+- Chilling Water
+- Protect
+
+Raboot @ Focus Sash
+Level: 29
+Ability: Blaze
+Innate Unlocked: Yes
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Fireballs
+- Thunder Fang
+- Trailblaze
+- Acrobatics
 
 Abomasnow @ Ultimatrix Symbol
 Level: 30

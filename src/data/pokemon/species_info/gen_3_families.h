@@ -297,7 +297,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .formChangeTable = sSceptileFormChangeTable,
     },
 #endif //P_MEGA_EVOLUTIONS
-#if P_SEVII_FORMS
+
+#if P_GALARIAN_FORMS
 	[SPECIES_TREECKO_SEVII] =
 	{
 		.baseHP        = 40,
@@ -359,7 +360,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 			gOverworldPalette_Treecko,
 			gShinyOverworldPalette_Treecko
 		)
-		.isSeviiForm = TRUE,
+		.isGalarianForm = TRUE,
 		.levelUpLearnset = sTreeckoSeviiLevelUpLearnset,
 		.teachableLearnset = sTreeckoSeviiTeachableLearnset,
 		.eggMoveLearnset = sTreeckoEggMoveLearnset,
@@ -427,7 +428,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 			gOverworldPalette_Grovyle,
 			gShinyOverworldPalette_Grovyle
 		)
-		.isSeviiForm = TRUE,
+		.isGalarianForm = TRUE,
 		.levelUpLearnset = sGrovyleSeviiLevelUpLearnset,
 		.teachableLearnset = sGrovyleSeviiTeachableLearnset,
 		.eggMoveLearnset = sTreeckoEggMoveLearnset,
@@ -464,7 +465,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 		.description = COMPOUND_STRING(
 			"The leaves growing on SCEPTILE'S body\n"
 			"are very sharp edged. This Pokémon is\n"
-			"very agile—it leaps all over the branches\n"
+			"very agile. It leaps all over the branches\n"
 			"of trees and jumps on its foe from above."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -483,7 +484,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 		.shinyPalette = gMonShinyPalette_SceptileSevii,
 		.iconSprite = gMonIcon_SceptileSevii,
 		.iconPalIndex = 1,
-		.pokemonJumpType = PKMN_JUMP_TYPE_TALL,
+		.pokemonJumpType = PKMN_JUMP_TYPE_FAST,
 		SHADOW(2, 11, SHADOW_SIZE_M)
 		FOOTPRINT(Sceptile)
 		OVERWORLD(
@@ -495,14 +496,14 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 			gOverworldPalette_Sceptile,
 			gShinyOverworldPalette_Sceptile
 		)
-		.isSeviiForm = TRUE,
+		.isGalarianForm = TRUE,
 		.levelUpLearnset = sSceptileSeviiLevelUpLearnset,
 		.teachableLearnset = sSceptileSeviiTeachableLearnset,
 		.eggMoveLearnset = sTreeckoEggMoveLearnset,
 		.formSpeciesIdTable = sSceptileFormSpeciesIdTable,
 		.formChangeTable = sSceptileFormChangeTable,
 	},
-#endif //P_SEVII_FORMS
+#endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_TREECKO
 
 #if P_FAMILY_TORCHIC

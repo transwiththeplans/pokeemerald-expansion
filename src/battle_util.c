@@ -3721,13 +3721,20 @@ bool32 CanAbilityAbsorbMove(u32 battlerAtk, u32 battlerDef, u32 move, enum Type 
         PushTraitStack(battlerDef, ABILITY_METAL_MUNCHER);
         effect = MOVE_ABSORBED_BY_DRAIN_HP_ABILITY;
     }
+	if ((gAiLogicData->aiCalcInProgress ? AISearchTraits(AIBattlerTraits, ABILITY_COLD_STORAGE) : SearchTraits(battlerTraits, ABILITY_COLD_STORAGE) || abilityDef == ABILITY_COLD_STORAGE)
+     && moveType == TYPE_ICE)
+    {
+        abilityDef = ABILITY_COLD_STORAGE;
+        PushTraitStack(battlerDef, ABILITY_COLD_STORAGE);
+        effect = MOVE_ABSORBED_BY_DRAIN_HP_ABILITY;
+    }
     if ((gAiLogicData->aiCalcInProgress ? AISearchTraits(AIBattlerTraits, ABILITY_WATER_ABSORB) : SearchTraits(battlerTraits, ABILITY_WATER_ABSORB) || abilityDef == ABILITY_WATER_ABSORB)
      && moveType == TYPE_WATER)
     {
         abilityDef = ABILITY_WATER_ABSORB;
         PushTraitStack(battlerDef, ABILITY_WATER_ABSORB);
         effect = MOVE_ABSORBED_BY_DRAIN_HP_ABILITY;
-    }
+    }    
     if ((gAiLogicData->aiCalcInProgress ? AISearchTraits(AIBattlerTraits, ABILITY_DRY_SKIN) : SearchTraits(battlerTraits, ABILITY_DRY_SKIN) || abilityDef == ABILITY_DRY_SKIN)
      && moveType == TYPE_WATER)
     {
@@ -10000,7 +10007,8 @@ uq4_12_t GetOverworldTypeEffectiveness(struct Pokemon *mon, enum Type moveType)
 		|| (moveType == TYPE_FIGHTING && MonHasTrait(mon, ABILITY_COUNTERPROOF))
 		|| (moveType == TYPE_ROCK     && MonHasTrait(mon, ABILITY_MOUNTAINEER))
 		|| (moveType == TYPE_POISON   && MonHasTrait(mon, ABILITY_FILTH_FEEDER))
-		|| (moveType == TYPE_STEEL    && MonHasTrait(mon, ABILITY_METAL_MUNCHER)))
+		|| (moveType == TYPE_STEEL    && MonHasTrait(mon, ABILITY_METAL_MUNCHER))
+		|| (moveType == TYPE_ICE      && MonHasTrait(mon, ABILITY_COLD_STORAGE)))
         modifier = UQ_4_12(0.0);
     
     return modifier;

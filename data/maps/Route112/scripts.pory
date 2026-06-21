@@ -140,5 +140,35 @@ Route112_Text_MtChimneySign:
 Route112_Text_RouteSignLavaridge:
 	.string "ROUTE 112\n"
 	.string "{LEFT_ARROW} LAVARIDGE TOWN$"
+	
+Route112_EventScript_HyperVoiceYodeler::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_TM_HYPER_VOICE, Route112_EventScript_ReceivedHyperVoice
+	msgbox Route112_Text_YodeleleIntro, MSGBOX_DEFAULT
+	giveitem ITEM_TM_HYPER_VOICE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_TM_HYPER_VOICE
+	msgbox Route112_Text_YodelingStressRelief, MSGBOX_DEFAULT
+	release
+	end
+
+Route112_EventScript_ReceivedHyperVoice::
+	msgbox Route112_Text_YodelingStressRelief, MSGBOX_DEFAULT
+	release
+	end
+
+Route112_Text_YodeleleIntro:
+	.string "YODELELELEEEOOOOOOO-\p"
+	.string "Ah! Sorry. You scared me.\n"
+	.string "I was just yodeling! It's fun.\p"
+	.string "Hm? Not interested. Then maybe your\n"
+	.string "POKéMON will. Here, try this!$"
+
+Route112_Text_YodelingStressRelief:
+	.string "Yodeling is great at relieving tension\n"
+	.string "and stress by releasing endorphins!\p"
+	.string "Yes, that's real.\n"
+	.string "Look it up.$"
 
 `

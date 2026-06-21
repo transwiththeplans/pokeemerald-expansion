@@ -893,7 +893,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 #endif //P_GIGANTAMAX_FORMS
 
-#if P_SEVII_FORMS
+#if P_GALARIAN_FORMS
 	[SPECIES_CHARMANDER_SEVII] =
 	{
 		.baseHP        = 39,
@@ -930,18 +930,18 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 		.pokemonOffset = 18,
 		.trainerScale = 256,
 		.trainerOffset = 0,
-		.frontPic = gMonFrontPic_Charmander,
+		.frontPic = gMonFrontPic_CharmanderSevii,
 		.frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(40, 40) : MON_COORDS_SIZE(48, 48),
 		.frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 12 : 10,
 		.frontAnimFrames = sAnims_SingleFramePlaceHolder,
 		.frontAnimId = ANIM_V_JUMPS_SMALL,
-		.backPic = gMonBackPic_Charmander,
+		.backPic = gMonBackPic_CharmanderSevii,
 		.backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 40) : MON_COORDS_SIZE(48, 48),
 		.backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 14 : 9,
 		.backAnimId = BACK_ANIM_CONCAVE_ARC_SMALL,
-		.palette = gMonPalette_Charmander,
-		.shinyPalette = gMonShinyPalette_Charmander,
-		.iconSprite = gMonIcon_Charmander,
+		.palette = gMonPalette_CharmanderSevii,
+		.shinyPalette = gMonShinyPalette_CharmanderSevii,
+		.iconSprite = gMonIcon_CharmanderSevii,
 		.iconPalIndex = 0,
 		.pokemonJumpType = PKMN_JUMP_TYPE_FAST,
 		SHADOW(-2, 3, SHADOW_SIZE_S)
@@ -955,7 +955,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 			gOverworldPalette_Charmander,
 			gShinyOverworldPalette_Charmander
 		)
-		.isSeviiForm = TRUE,
+		.isGalarianForm = TRUE,
 		.levelUpLearnset = sCharmanderSeviiLevelUpLearnset,
 		.teachableLearnset = sCharmanderSeviiTeachableLearnset,
 		.eggMoveLearnset = sCharmanderEggMoveLearnset,
@@ -999,18 +999,18 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 		.pokemonOffset = 9,
 		.trainerScale = 256,
 		.trainerOffset = 0,
-		.frontPic = gMonFrontPic_Charmeleon,
+		.frontPic = gMonFrontPic_CharmeleonSevii,
 		.frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 48) : MON_COORDS_SIZE(56, 56),
 		.frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 9 : 8,
 		.frontAnimFrames = sAnims_SingleFramePlaceHolder,
 		.frontAnimId = ANIM_BACK_AND_LUNGE,
-		.backPic = gMonBackPic_Charmeleon,
+		.backPic = gMonBackPic_CharmeleonSevii,
 		.backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 48) : MON_COORDS_SIZE(56, 48),
 		.backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 9 : 8,
 		.backAnimId = BACK_ANIM_JOLT_RIGHT,
-		.palette = gMonPalette_Charmeleon,
-		.shinyPalette = gMonShinyPalette_Charmeleon,
-		.iconSprite = gMonIcon_Charmeleon,
+		.palette = gMonPalette_CharmeleonSevii,
+		.shinyPalette = gMonShinyPalette_CharmeleonSevii,
+		.iconSprite = gMonIcon_CharmeleonSevii,
 		.iconPalIndex = 0,
 		.pokemonJumpType = PKMN_JUMP_TYPE_NONE,
 		SHADOW(0, 5, SHADOW_SIZE_M)
@@ -1024,7 +1024,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 			gOverworldPalette_Charmeleon,
 			gShinyOverworldPalette_Charmeleon
 		)
-		.isSeviiForm = TRUE,
+		.isGalarianForm = TRUE,
 		.levelUpLearnset = sCharmeleonSeviiLevelUpLearnset,
 		.teachableLearnset = sCharmeleonSeviiTeachableLearnset,
 		.eggMoveLearnset = sCharmanderEggMoveLearnset,
@@ -1073,18 +1073,18 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 		.pokemonOffset = 1,
 		.trainerScale = 302,
 		.trainerOffset = 3,
-		.frontPic = gMonFrontPic_Charizard,
+		.frontPic = gMonFrontPic_CharizardSevii,
 		.frontPicSize = MON_COORDS_SIZE(64, 64),
 		.frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 1 : 0,
 		.frontAnimFrames = sAnims_SingleFramePlaceHolder,
 		.frontAnimId = ANIM_V_SHAKE,
-		.backPic = gMonBackPic_Charizard,
+		.backPic = gMonBackPic_CharizardSevii,
 		.backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 56) : MON_COORDS_SIZE(64, 64),
 		.backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 4 : 1,
 		.backAnimId = BACK_ANIM_SHAKE_GLOW_RED,
-		.palette = gMonPalette_Charizard,
-		.shinyPalette = gMonShinyPalette_Charizard,
-		.iconSprite = gMonIcon_Charizard,
+		.palette = gMonPalette_CharizardSevii,
+		.shinyPalette = gMonShinyPalette_CharizardSevii,
+		.iconSprite = gMonIcon_CharizardSevii,
 		.iconPalIndex = 0,
 		.pokemonJumpType = PKMN_JUMP_TYPE_NONE,
 		SHADOW(2, 13, SHADOW_SIZE_L)
@@ -1098,7 +1098,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 			gOverworldPalette_Charizard,
 			gShinyOverworldPalette_Charizard
 		)
-		.isSeviiForm = TRUE,
+		.isGalarianForm = TRUE,
 		.levelUpLearnset = sCharizardSeviiLevelUpLearnset,
 		.teachableLearnset = sCharizardSeviiTeachableLearnset,
 		.eggMoveLearnset = sCharmanderEggMoveLearnset,

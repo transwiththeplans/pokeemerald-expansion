@@ -959,7 +959,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .formChangeTable = sGreninjaFormChangeTable,
     },
 #endif //P_MEGA_EVOLUTIONS
-#if P_SEVII_FORMS
+#if P_GALARIAN_FORMS
 	[SPECIES_FROAKIE_SEVII] =
 	{
 		.baseHP        = 41,
@@ -995,18 +995,18 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
 		.pokemonOffset = 13,
 		.trainerScale = 256,
 		.trainerOffset = 0,
-		.frontPic = gMonFrontPic_Froakie,
+		.frontPic = gMonFrontPic_FroakieSevii,
 		.frontPicSize = MON_COORDS_SIZE(40, 40),
 		.frontPicYOffset = 12,
 		.frontAnimFrames = sAnims_SingleFramePlaceHolder,
 		.frontAnimId = ANIM_H_JUMPS,
-		.backPic = gMonBackPic_Froakie,
+		.backPic = gMonBackPic_FroakieSevii,
 		.backPicSize = MON_COORDS_SIZE(56, 56),
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_SHRINK_GROW,
-		.palette = gMonPalette_Froakie,
-		.shinyPalette = gMonShinyPalette_Froakie,
-		.iconSprite = gMonIcon_Froakie,
+		.palette = gMonPalette_FroakieSevii,
+		.shinyPalette = gMonShinyPalette_FroakieSevii,
+		.iconSprite = gMonIcon_FroakieSevii,
 		.iconPalIndex = 0,
 		.pokemonJumpType = PKMN_JUMP_TYPE_FAST,
 		SHADOW(2, 0, SHADOW_SIZE_S)
@@ -1020,7 +1020,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
 			gOverworldPalette_Froakie,
 			gShinyOverworldPalette_Froakie
 		)
-		.isSeviiForm = TRUE,
+		.isGalarianForm = TRUE,
 		.levelUpLearnset = sFroakieSeviiLevelUpLearnset,
 		.teachableLearnset = sFroakieSeviiTeachableLearnset,
 		.eggMoveLearnset = sFroakieEggMoveLearnset,
@@ -1062,18 +1062,18 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
 		.pokemonOffset = 12,
 		.trainerScale = 256,
 		.trainerOffset = 0,
-		.frontPic = gMonFrontPic_Frogadier,
+		.frontPic = gMonFrontPic_FrogadierSevii,
 		.frontPicSize = MON_COORDS_SIZE(56, 48),
 		.frontPicYOffset = 8,
 		.frontAnimFrames = sAnims_SingleFramePlaceHolder,
 		.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
-		.backPic = gMonBackPic_Frogadier,
+		.backPic = gMonBackPic_FrogadierSevii,
 		.backPicSize = MON_COORDS_SIZE(64, 56),
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_GROW_STUTTER,
-		.palette = gMonPalette_Frogadier,
-		.shinyPalette = gMonShinyPalette_Frogadier,
-		.iconSprite = gMonIcon_Frogadier,
+		.palette = gMonPalette_FrogadierSevii,
+		.shinyPalette = gMonShinyPalette_FrogadierSevii,
+		.iconSprite = gMonIcon_FrogadierSevii,
 		.iconPalIndex = 0,
 		.pokemonJumpType = PKMN_JUMP_TYPE_FAST,
 		SHADOW(0, 5, SHADOW_SIZE_M)
@@ -1087,7 +1087,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
 			gOverworldPalette_Frogadier,
 			gShinyOverworldPalette_Frogadier
 		)
-		.isSeviiForm = TRUE,
+		.isGalarianForm = TRUE,
 		.levelUpLearnset = sFrogadierSeviiLevelUpLearnset,
 		.teachableLearnset = sFrogadierSeviiTeachableLearnset,
 		.eggMoveLearnset = sFroakieEggMoveLearnset,
@@ -1126,18 +1126,18 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
 		.pokemonOffset = 2,
 		.trainerScale = 271,
 		.trainerOffset = 0,
-		.frontPic = gMonFrontPic_Greninja,
+		.frontPic = gMonFrontPic_GreninjaSevii,
 		.frontPicSize = MON_COORDS_SIZE(64, 56),
 		.frontPicYOffset = 7,
 		.frontAnimFrames = sAnims_SingleFramePlaceHolder,
 		.frontAnimId = ANIM_V_STRETCH,
-		.backPic = gMonBackPic_Greninja,
+		.backPic = gMonBackPic_GreninjaSevii,
 		.backPicSize = MON_COORDS_SIZE(64, 48),
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_JOLT_RIGHT,
-		.palette = gMonPalette_Greninja,
-		.shinyPalette = gMonShinyPalette_Greninja,
-		.iconSprite = gMonIcon_Greninja,
+		.palette = gMonPalette_GreninjaSevii,
+		.shinyPalette = gMonShinyPalette_GreninjaSevii,
+		.iconSprite = gMonIcon_GreninjaSevii,
 		.iconPalIndex = 0,
 		.pokemonJumpType = PKMN_JUMP_TYPE_NONE,
 		SHADOW(4, 6, SHADOW_SIZE_L)
@@ -1151,14 +1151,14 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
 			gOverworldPalette_Greninja,
 			gShinyOverworldPalette_Greninja
 		)
-		.isSeviiForm = TRUE,
+		.isGalarianForm = TRUE,
 		.levelUpLearnset = sGreninjaSeviiLevelUpLearnset,
 		.teachableLearnset = sGreninjaSeviiTeachableLearnset,
 		.eggMoveLearnset = sFroakieEggMoveLearnset,
 		.formSpeciesIdTable = sGreninjaFormSpeciesIdTable,
 		.formChangeTable = sGreninjaFormChangeTable,
 	},
-#endif //P_SEVII_FORMS
+#endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_FROAKIE
 
 #if P_FAMILY_BUNNELBY
@@ -3772,7 +3772,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_WATER_2),
-        .abilities = { ABILITY_SNIPER, ABILITY_SNIPER, ABILITY_SNIPER },
+        .abilities = { ABILITY_PREDATOR, ABILITY_PREDATOR, ABILITY_PREDATOR },
 		.innates = {ABILITY_CONTRARY},  
 		.innateUnlockLevel = 40,  
         .bodyColor = BODY_COLOR_BLUE,
@@ -3845,7 +3845,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_WATER_2),
-        .abilities = { ABILITY_MAGIC_GUARD, ABILITY_MAGIC_GUARD, ABILITY_MAGIC_GUARD },
+        .abilities = { ABILITY_OPPOSITE_DAY, ABILITY_OPPOSITE_DAY, ABILITY_OPPOSITE_DAY },
 		.innates = {ABILITY_CONTRARY},  
 		.innateUnlockLevel = 40,  
         .bodyColor = BODY_COLOR_BLUE,

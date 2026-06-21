@@ -260,6 +260,25 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     // const u16 gOverworldPalette_CharizardGmax[] = INCBIN_U16("graphics/pokemon/charizard/gmax/overworld_normal.gbapal");
     // const u16 gShinyOverworldPalette_CharizardGmax[] = INCBIN_U16("graphics/pokemon/charizard/gmax/overworld_shiny.gbapal");
+#if P_GALARIAN_FORMS
+	const u32 gMonFrontPic_CharmanderSevii[] = INCBIN_U32("graphics/pokemon/charmander/sevii/anim_front.4bpp.smol");
+	const u16 gMonPalette_CharmanderSevii[] = INCBIN_U16("graphics/pokemon/charmander/sevii/normal.gbapal");
+	const u32 gMonBackPic_CharmanderSevii[] = INCBIN_U32("graphics/pokemon/charmander/sevii/back.4bpp.smol");
+	const u16 gMonShinyPalette_CharmanderSevii[] = INCBIN_U16("graphics/pokemon/charmander/sevii/shiny.gbapal");
+	const u8 gMonIcon_CharmanderSevii[] = INCBIN_U8("graphics/pokemon/charmander/sevii/icon.4bpp");
+
+	const u32 gMonFrontPic_CharmeleonSevii[] = INCBIN_U32("graphics/pokemon/charmeleon/sevii/anim_front.4bpp.smol");
+	const u16 gMonPalette_CharmeleonSevii[] = INCBIN_U16("graphics/pokemon/charmeleon/sevii/normal.gbapal");
+	const u32 gMonBackPic_CharmeleonSevii[] = INCBIN_U32("graphics/pokemon/charmeleon/sevii/back.4bpp.smol");
+	const u16 gMonShinyPalette_CharmeleonSevii[] = INCBIN_U16("graphics/pokemon/charmeleon/sevii/shiny.gbapal");
+	const u8 gMonIcon_CharmeleonSevii[] = INCBIN_U8("graphics/pokemon/charmeleon/sevii/icon.4bpp");
+
+	const u32 gMonFrontPic_CharizardSevii[] = INCBIN_U32("graphics/pokemon/charizard/sevii/anim_front.4bpp.smol");
+	const u16 gMonPalette_CharizardSevii[] = INCBIN_U16("graphics/pokemon/charizard/sevii/normal.gbapal");
+	const u32 gMonBackPic_CharizardSevii[] = INCBIN_U32("graphics/pokemon/charizard/sevii/back.4bpp.smol");
+	const u16 gMonShinyPalette_CharizardSevii[] = INCBIN_U16("graphics/pokemon/charizard/sevii/shiny.gbapal");
+	const u8 gMonIcon_CharizardSevii[] = INCBIN_U8("graphics/pokemon/charizard/sevii/icon.4bpp");
+#endif //P_GALARIAN_FORMS
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_GIGANTAMAX_FORMS
@@ -9781,7 +9800,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u16 gOverworldPalette_SceptileMega[] = INCBIN_U16("graphics/pokemon/sceptile/mega/overworld_normal.gbapal");
     const u16 gShinyOverworldPalette_SceptileMega[] = INCBIN_U16("graphics/pokemon/sceptile/mega/overworld_shiny.gbapal");
-#if P_SEVII_FORMS
+#if P_GALARIAN_FORMS
 	const u32 gMonFrontPic_TreeckoSevii[] = INCBIN_U32("graphics/pokemon/treecko/sevii/anim_front.4bpp.smol");
 	const u16 gMonPalette_TreeckoSevii[] = INCBIN_U16("graphics/pokemon/treecko/sevii/normal.gbapal");
 	const u32 gMonBackPic_TreeckoSevii[] = INCBIN_U32("graphics/pokemon/treecko/sevii/back.4bpp.smol");
@@ -9799,7 +9818,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 	const u32 gMonBackPic_SceptileSevii[] = INCBIN_U32("graphics/pokemon/sceptile/sevii/back.4bpp.smol");
 	const u16 gMonShinyPalette_SceptileSevii[] = INCBIN_U16("graphics/pokemon/sceptile/sevii/shiny.gbapal");
 	const u8 gMonIcon_SceptileSevii[] = INCBIN_U8("graphics/pokemon/sceptile/sevii/icon.4bpp");
-#endif //P_SEVII_FORMS
+#endif //P_GALARIAN_FORMS
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
 #endif //P_MEGA_EVOLUTIONS
@@ -19645,6 +19664,25 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u16 gOverworldPalette_GreninjaAsh[] = INCBIN_U16("graphics/pokemon/greninja/ash/overworld_normal.gbapal");
     const u16 gShinyOverworldPalette_GreninjaAsh[] = INCBIN_U16("graphics/pokemon/greninja/ash/overworld_shiny.gbapal");
+#if P_GALARIAN_FORMS
+	const u32 gMonFrontPic_FroakieSevii[] = INCBIN_U32("graphics/pokemon/froakie/sevii/front.4bpp.smol");
+	const u16 gMonPalette_FroakieSevii[] = INCBIN_U16("graphics/pokemon/froakie/sevii/normal.gbapal");
+	const u32 gMonBackPic_FroakieSevii[] = INCBIN_U32("graphics/pokemon/froakie/sevii/back.4bpp.smol");
+	const u16 gMonShinyPalette_FroakieSevii[] = INCBIN_U16("graphics/pokemon/froakie/sevii/shiny.gbapal");
+	const u8 gMonIcon_FroakieSevii[] = INCBIN_U8("graphics/pokemon/froakie/sevii/icon.4bpp");
+
+	const u32 gMonFrontPic_FrogadierSevii[] = INCBIN_U32("graphics/pokemon/frogadier/sevii/front.4bpp.smol");
+	const u16 gMonPalette_FrogadierSevii[] = INCBIN_U16("graphics/pokemon/frogadier/sevii/normal.gbapal");
+	const u32 gMonBackPic_FrogadierSevii[] = INCBIN_U32("graphics/pokemon/frogadier/sevii/back.4bpp.smol");
+	const u16 gMonShinyPalette_FrogadierSevii[] = INCBIN_U16("graphics/pokemon/frogadier/sevii/shiny.gbapal");
+	const u8 gMonIcon_FrogadierSevii[] = INCBIN_U8("graphics/pokemon/frogadier/sevii/icon.4bpp");
+
+	const u32 gMonFrontPic_GreninjaSevii[] = INCBIN_U32("graphics/pokemon/greninja/sevii/anim_front.4bpp.smol");
+	const u16 gMonPalette_GreninjaSevii[] = INCBIN_U16("graphics/pokemon/greninja/sevii/normal.gbapal");
+	const u32 gMonBackPic_GreninjaSevii[] = INCBIN_U32("graphics/pokemon/greninja/sevii/back.4bpp.smol");
+	const u16 gMonShinyPalette_GreninjaSevii[] = INCBIN_U16("graphics/pokemon/greninja/sevii/shiny.gbapal");
+	const u8 gMonIcon_GreninjaSevii[] = INCBIN_U8("graphics/pokemon/greninja/sevii/icon.4bpp");
+#endif //P_GALARIAN_FORMS
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS && OW_BATTLE_ONLY_FORMS
 #endif //P_FAMILY_FROAKIE

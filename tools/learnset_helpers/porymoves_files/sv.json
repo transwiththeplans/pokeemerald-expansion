@@ -48099,254 +48099,121 @@
   "EggMoves": [],
   "TutorMoves": []
   },
-  "LARVESTA": {
-    "LevelMoves": [
-      {
-        "Level": 1,
-        "Move": "MOVE_EMBER"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_STRING_SHOT"
-      },
-      {
-        "Level": 6,
-        "Move": "MOVE_FLAME_CHARGE"
-      },
-      {
-        "Level": 12,
-        "Move": "MOVE_STRUGGLE_BUG"
-      },
-      {
-        "Level": 18,
-        "Move": "MOVE_FLAME_WHEEL"
-      },
-      {
-        "Level": 30,
-        "Move": "MOVE_SCREECH"
-      },
-      {
-        "Level": 36,
-        "Move": "MOVE_LEECH_LIFE"
-      },
-      {
-        "Level": 42,
-        "Move": "MOVE_BUG_BUZZ"
-      },
-      {
-        "Level": 48,
-        "Move": "MOVE_TAKE_DOWN"
-      },
-      {
-        "Level": 54,
-        "Move": "MOVE_AMNESIA"
-      },
-      {
-        "Level": 60,
-        "Move": "MOVE_DOUBLE_EDGE"
-      },
-      {
-        "Level": 66,
-        "Move": "MOVE_FLARE_BLITZ"
-      }
-    ],
-    "PreEvoMoves": [],
-    "TMMoves": [
-      "MOVE_TAKE_DOWN",
-      "MOVE_PROTECT",
-      "MOVE_ACROBATICS",
-      "MOVE_STRUGGLE_BUG",
-      "MOVE_TRAILBLAZE",
-      "MOVE_POUNCE",
-      "MOVE_FIRE_SPIN",
-      "MOVE_FACADE",
-      "MOVE_FLAME_CHARGE",
-      "MOVE_ENDURE",
-      "MOVE_SUNNY_DAY",
-      "MOVE_ZEN_HEADBUTT",
-      "MOVE_U_TURN",
-      "MOVE_BODY_SLAM",
-      "MOVE_SLEEP_TALK",
-      "MOVE_LIGHT_SCREEN",
-      "MOVE_REST",
-      "MOVE_LEECH_LIFE",
-      "MOVE_SUBSTITUTE",
-      "MOVE_WILL_O_WISP",
-      "MOVE_GIGA_DRAIN",
-      "MOVE_HEAT_WAVE",
-      "MOVE_PSYCHIC",
-      "MOVE_FLAMETHROWER",
-      "MOVE_AMNESIA",
-      "MOVE_CALM_MIND",
-      "MOVE_FIRE_BLAST",
-      "MOVE_WILD_CHARGE",
-      "MOVE_OVERHEAT",
-      "MOVE_BUG_BUZZ",
-      "MOVE_FLARE_BLITZ",
-      "MOVE_SOLAR_BEAM",
-      "MOVE_TERA_BLAST",
-      "MOVE_BUG_BITE",
-      "MOVE_LUNGE",
-      "MOVE_DOUBLE_EDGE",
-      "MOVE_SKITTER_SMACK"
-    ],
-    "EggMoves": [
-      "MOVE_ABSORB",
-      "MOVE_HARDEN",
-      "MOVE_MORNING_SUN",
-      "MOVE_THRASH"
-    ],
-    "TutorMoves": []
-  },
-  "VOLCARONA": {
-    "LevelMoves": [
-      {
-        "Level": 0,
-        "Move": "MOVE_QUIVER_DANCE"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_FIERY_DANCE"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_STRUGGLE_BUG"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_FLAME_CHARGE"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_FLARE_BLITZ"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_FIRE_SPIN"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_GUST"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_EMBER"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_DOUBLE_EDGE"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_TAKE_DOWN"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_WHIRLWIND"
-      },
-      {
-        "Level": 1,
-        "Move": "MOVE_STRING_SHOT"
-      },
-      {
-        "Level": 18,
-        "Move": "MOVE_FLAME_WHEEL"
-      },
-      {
-        "Level": 24,
-        "Move": "MOVE_BUG_BITE"
-      },
-      {
-        "Level": 30,
-        "Move": "MOVE_SCREECH"
-      },
-      {
-        "Level": 36,
-        "Move": "MOVE_LEECH_LIFE"
-      },
-      {
-        "Level": 42,
-        "Move": "MOVE_BUG_BUZZ"
-      },
-      {
-        "Level": 48,
-        "Move": "MOVE_HEAT_WAVE"
-      },
-      {
-        "Level": 54,
-        "Move": "MOVE_AMNESIA"
-      },
-      {
-        "Level": 62,
-        "Move": "MOVE_HURRICANE"
-      },
-      {
-        "Level": 70,
-        "Move": "MOVE_FIRE_BLAST"
-      },
-      {
-        "Level": 78,
-        "Move": "MOVE_RAGE_POWDER"
-      }
-    ],
-    "PreEvoMoves": [],
-    "TMMoves": [
-      "MOVE_TAKE_DOWN",
-      "MOVE_PROTECT",
-      "MOVE_ACROBATICS",
-      "MOVE_STRUGGLE_BUG",
-      "MOVE_TRAILBLAZE",
-      "MOVE_POUNCE",
-      "MOVE_FIRE_SPIN",
-      "MOVE_FACADE",
-      "MOVE_FLAME_CHARGE",
-      "MOVE_AIR_CUTTER",
-      "MOVE_ENDURE",
-      "MOVE_SUNNY_DAY",
-      "MOVE_RAIN_DANCE",
-      "MOVE_ZEN_HEADBUTT",
-      "MOVE_U_TURN",
-      "MOVE_AIR_SLASH",
-      "MOVE_BODY_SLAM",
-      "MOVE_SLEEP_TALK",
-      "MOVE_LIGHT_SCREEN",
-      "MOVE_POISON_JAB",
-      "MOVE_REST",
-      "MOVE_LEECH_LIFE",
-      "MOVE_FLY",
-      "MOVE_SUBSTITUTE",
-      "MOVE_WILL_O_WISP",
-      "MOVE_GIGA_DRAIN",
-      "MOVE_TAILWIND",
-      "MOVE_HEAT_WAVE",
-      "MOVE_PSYCHIC",
-      "MOVE_FLAMETHROWER",
-      "MOVE_AMNESIA",
-      "MOVE_CALM_MIND",
-      "MOVE_FIRE_BLAST",
-      "MOVE_WILD_CHARGE",
-      "MOVE_GIGA_IMPACT",
-      "MOVE_OVERHEAT",
-      "MOVE_HURRICANE",
-      "MOVE_BUG_BUZZ",
-      "MOVE_HYPER_BEAM",
-      "MOVE_FLARE_BLITZ",
-      "MOVE_SOLAR_BEAM",
-      "MOVE_TERA_BLAST",
-      "MOVE_BUG_BITE",
-      "MOVE_LUNGE",
-      "MOVE_DUAL_WINGBEAT",
-      "MOVE_DOUBLE_EDGE",
-      "MOVE_SKITTER_SMACK"
-    ],
-    "EggMoves": [
-      "MOVE_ABSORB",
-      "MOVE_HARDEN",
-      "MOVE_MORNING_SUN",
-      "MOVE_THRASH"
-    ],
-    "TutorMoves": []
-  },
+"LARVESTA": {
+  "LevelMoves": [
+    { "Level": 1,  "Move": "MOVE_POWDER_SNOW" },
+    { "Level": 1,  "Move": "MOVE_STRING_SHOT" },
+    { "Level": 6,  "Move": "MOVE_EMBER" },
+    { "Level": 12, "Move": "MOVE_ICY_WIND" },
+    { "Level": 18, "Move": "MOVE_FLAME_WHEEL" },
+    { "Level": 24, "Move": "MOVE_AURORA_BEAM" },
+    { "Level": 30, "Move": "MOVE_SCREECH" },
+    { "Level": 36, "Move": "MOVE_FREEZE_DRY" },
+    { "Level": 42, "Move": "MOVE_BUG_BUZZ" },
+    { "Level": 48, "Move": "MOVE_ICE_BEAM" },
+    { "Level": 54, "Move": "MOVE_AMNESIA" },
+    { "Level": 60, "Move": "MOVE_HEAT_WAVE" },
+    { "Level": 66, "Move": "MOVE_BLIZZARD" }
+  ],
+  "TMMoves": [
+    "MOVE_CALM_MIND",
+    "MOVE_TOXIC",
+    "MOVE_SNOWSCAPE",
+    "MOVE_HIDDEN_POWER",
+    "MOVE_SUNNY_DAY",
+    "MOVE_LIGHT_SCREEN",
+    "MOVE_PROTECT",
+    "MOVE_GIGA_DRAIN",
+    "MOVE_ICE_BEAM",
+    "MOVE_BLIZZARD",
+    "MOVE_RETURN",
+    "MOVE_PSYCHIC",
+    "MOVE_SHADOW_BALL",
+    "MOVE_DOUBLE_TEAM",
+    "MOVE_FLAMETHROWER",
+    "MOVE_FIRE_BLAST",
+    "MOVE_FACADE",
+    "MOVE_SECRET_POWER",
+    "MOVE_REST",
+    "MOVE_DAZZLING_GLEAM",
+    "MOVE_SIGNAL_BEAM",
+    "MOVE_OVERHEAT",
+    "MOVE_LEECH_LIFE",
+    "MOVE_SUBSTITUTE",
+    "MOVE_WILL_O_WISP",
+    "MOVE_TAILWIND",
+    "MOVE_ENERGY_BALL",
+    "MOVE_HEX",
+    "MOVE_AIR_SLASH",
+    "MOVE_DUAL_WINGBEAT",
+    "MOVE_FLASH_VOLLEY",
+    "MOVE_MOONBLAST",
+    "MOVE_GLACIATE",
+    "MOVE_SILVER_WIND"
+  ],
+  "EggMoves": [],
+  "TutorMoves": []
+},
+
+"VOLCARONA": {
+  "LevelMoves": [
+    { "Level": 0,  "Move": "MOVE_QUIVER_DANCE" },
+    { "Level": 1,  "Move": "MOVE_QUIVER_DANCE" },
+    { "Level": 1,  "Move": "MOVE_POWDER_SNOW" },
+    { "Level": 1,  "Move": "MOVE_EMBER" },
+    { "Level": 1,  "Move": "MOVE_STRING_SHOT" },
+    { "Level": 1,  "Move": "MOVE_ICY_WIND" },
+    { "Level": 1,  "Move": "MOVE_FLAME_WHEEL" },
+    { "Level": 1,  "Move": "MOVE_AURORA_BEAM" },
+    { "Level": 18, "Move": "MOVE_FLAME_CHARGE" },
+    { "Level": 24, "Move": "MOVE_FREEZE_DRY" },
+    { "Level": 30, "Move": "MOVE_SCREECH" },
+    { "Level": 36, "Move": "MOVE_BUG_BUZZ" },
+    { "Level": 42, "Move": "MOVE_ICE_BEAM" },
+    { "Level": 48, "Move": "MOVE_HEAT_WAVE" },
+    { "Level": 54, "Move": "MOVE_AMNESIA" },
+    { "Level": 62, "Move": "MOVE_BLIZZARD" },
+    { "Level": 70, "Move": "MOVE_OVERHEAT" },
+    { "Level": 78, "Move": "MOVE_AURORA_VEIL" }
+  ],
+  "TMMoves": [
+    "MOVE_CALM_MIND",
+    "MOVE_TOXIC",
+    "MOVE_SNOWSCAPE",
+    "MOVE_HIDDEN_POWER",
+    "MOVE_SUNNY_DAY",
+    "MOVE_LIGHT_SCREEN",
+    "MOVE_PROTECT",
+    "MOVE_GIGA_DRAIN",
+    "MOVE_ICE_BEAM",
+    "MOVE_BLIZZARD",
+    "MOVE_PSYCHIC",
+    "MOVE_SHADOW_BALL",
+    "MOVE_DOUBLE_TEAM",
+    "MOVE_FLAMETHROWER",
+    "MOVE_FIRE_BLAST",
+    "MOVE_FACADE",
+    "MOVE_SECRET_POWER",
+    "MOVE_REST",
+    "MOVE_DAZZLING_GLEAM",
+    "MOVE_SIGNAL_BEAM",
+    "MOVE_OVERHEAT",
+    "MOVE_LEECH_LIFE",
+    "MOVE_SUBSTITUTE",
+    "MOVE_WILL_O_WISP",
+    "MOVE_TAILWIND",
+    "MOVE_ENERGY_BALL",
+    "MOVE_HEX",
+    "MOVE_AIR_SLASH",
+    "MOVE_DUAL_WINGBEAT",
+    "MOVE_FLASH_VOLLEY",
+    "MOVE_MOONBLAST",
+    "MOVE_GLACIATE",
+    "MOVE_SILVER_WIND"
+  ],
+  "EggMoves": [],
+  "TutorMoves": []
+},
   "COBALION": {
     "LevelMoves": [
       {

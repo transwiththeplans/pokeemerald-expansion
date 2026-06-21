@@ -9091,7 +9091,7 @@ static inline uq4_12_t GetParentalBondModifier(u32 battlerAtk)
 {
     if (gSpecialStatuses[battlerAtk].parentalBondState != PARENTAL_BOND_2ND_HIT)
         return UQ_4_12(1.0);
-    return B_PARENTAL_BOND_DMG >= GEN_7 ? UQ_4_12(0.25) : UQ_4_12(0.5);
+    return B_PARENTAL_BOND_DMG >= UQ_4_12(0.5);
 }
 
 static inline uq4_12_t GetSameTypeAttackBonusModifier(struct DamageContext *ctx)
@@ -9316,6 +9316,13 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct DamageContext *ctx)
     {
         RecordAbilityBattle(ctx->battlerAtk, ABILITY_ICE_SCALES);    
         modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
+    }
+    
+	if (SearchTraits(battlerTraits, ABILITY_WONDER_SKIN) 
+     && IsBattleMoveSpecial(ctx->move))
+    {
+        RecordAbilityBattle(ctx->battlerAtk, ABILITY_WONDER_SKIN);    
+        modifier = uq4_12_multiply(modifier, UQ_4_12(0.90));
     }
 
     if (SearchTraits(battlerTraits, ABILITY_JUGGERNAUT)) //check if this works

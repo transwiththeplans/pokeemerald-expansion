@@ -1137,7 +1137,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_WONDER_SKIN] =
     {
         .name = _("Wonder Skin"),
-        .description = FORMAT_ABILITY_DESCRIPTION("May avoid status problems."),
+        .description = FORMAT_ABILITY_DESCRIPTION("May avoid status problems, reduces special damage."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -1425,7 +1425,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_PARENTAL_BOND] =
     {
-        .name = _("Parental Bond"),
+        .name = _("Hyper Aggressive"),
         .description = FORMAT_ABILITY_DESCRIPTION("Moves hit twice."),
         .aiRating = 10,
     },
@@ -1672,7 +1672,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_CORROSION] =
     {
         .name = _("Corrosion"),
-        .description = FORMAT_ABILITY_DESCRIPTION("Poisons any type."),
+        .description = FORMAT_ABILITY_DESCRIPTION("Poisons any type, melts through Steel."),
         .aiRating = 5,
     },
 

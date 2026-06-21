@@ -5971,11 +5971,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-    #if P_UPDATED_ABILITIES >= GEN_6
-        .abilities = { ABILITY_PURE_POWER, ABILITY_FILTER, ABILITY_STALWART },
-    #else
-        .abilities = { ABILITY_CUTE_CHARM, ABILITY_NONE, ABILITY_FRIEND_GUARD },
-    #endif
+        .abilities = { ABILITY_HUGE_POWER, ABILITY_FILTER, ABILITY_BULLETPROOF },
 		.innates = {ABILITY_HEAVY_METAL},
 		.innateUnlockLevel = 30,
         .bodyColor = BODY_COLOR_PINK,
@@ -6045,11 +6041,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY),
-    #if P_UPDATED_ABILITIES >= GEN_6
-        .abilities = { ABILITY_PURE_POWER, ABILITY_FILTER, ABILITY_STALWART },
-    #else
-        .abilities = { ABILITY_CUTE_CHARM, ABILITY_NONE, ABILITY_FRIEND_GUARD },
-    #endif
+        .abilities = { ABILITY_HUGE_POWER, ABILITY_FILTER, ABILITY_BULLETPROOF },
 		.innates = {ABILITY_HEAVY_METAL},
 		.innateUnlockLevel = 30,
         .bodyColor = BODY_COLOR_PINK,
@@ -6133,11 +6125,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY),
-    #if P_UPDATED_ABILITIES >= GEN_6
-        .abilities = { ABILITY_PURE_POWER, ABILITY_FILTER, ABILITY_STALWART },
-    #else
-        .abilities = { ABILITY_CUTE_CHARM, ABILITY_NONE, ABILITY_FRISK },
-    #endif
+        .abilities = { ABILITY_HUGE_POWER, ABILITY_FILTER, ABILITY_BULLETPROOF },
 		.innates = {ABILITY_HEAVY_METAL},
 		.innateUnlockLevel = 30,
         .bodyColor = BODY_COLOR_PINK,

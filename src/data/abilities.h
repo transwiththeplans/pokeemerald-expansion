@@ -1532,7 +1532,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_MERCILESS] =
     {
         .name = _("Merciless"),
-        .description = FORMAT_ABILITY_DESCRIPTION("Criticals poisoned foes."),
+        .description = FORMAT_ABILITY_DESCRIPTION("Ensures critical hits on statused foes."),
         .aiRating = 4,
     },
 
@@ -1910,7 +1910,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_STEAM_ENGINE] =
     {
         .name = _("Steam Engine"),
-        .description = FORMAT_ABILITY_DESCRIPTION("Fire or Water hits up Speed."),
+        .description = FORMAT_ABILITY_DESCRIPTION("Fire or Water hits up Speed. Also reduces Fire and Water damage."),
         .aiRating = 3,
     },
 
@@ -2826,7 +2826,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_TOTTERING_STEP] =
     {
         .name = _("Tottering Steps"),
-        .description = FORMAT_ABILITY_DESCRIPTION("When attacking this Pokémon may cause the target to become confused."),
+        .description = FORMAT_ABILITY_DESCRIPTION("When attacking, this Pokémon may cause the target to become confused."),
         .aiRating = 8,
     },
 
@@ -2936,8 +2936,8 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 	
     [ABILITY_COLD_STORAGE] =
     {
-        .name = _("Water Absorb"),
-        .description = FORMAT_ABILITY_DESCRIPTION("Changes water into HP."),
+        .name = _("Cold Storage"),
+        .description = FORMAT_ABILITY_DESCRIPTION("Changes Ice into HP."),
         .aiRating = 7,
         .breakable = TRUE,
     },

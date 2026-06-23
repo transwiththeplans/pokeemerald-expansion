@@ -21706,7 +21706,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .soundMove = TRUE,
         .metronomeBanned = TRUE,
-        .battleAnimScript = gBattleAnimMove_EchoedVoice,
+        .battleAnimScript = gBattleAnimMove_WallOfSound,
     },
 
     [MOVE_WEB_SWING] =

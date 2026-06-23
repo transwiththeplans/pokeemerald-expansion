@@ -867,12 +867,14 @@
 #define TRAINER_EVAN                        861
 #define TRAINER_ANIMO_1                     862
 #define TRAINER_IOAN                        863
-#define TRAINER_FAYEZ                        864
+#define TRAINER_FAYEZ                       864
+#define TRAINER_MORANA                      865
+#define TRAINER_NYX                         866
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      TRAINER_FAYEZ + 1
+#define TRAINERS_COUNT                      TRAINER_NYX + 1
 #define MAX_TRAINERS_COUNT                  2000 // +1200 Trainers
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

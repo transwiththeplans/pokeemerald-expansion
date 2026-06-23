@@ -4810,3 +4810,15 @@ NewRusturfTunnel_Text_HikerFayezIntro:
 NewRusturfTunnel_Text_HikerFayezDefeat:
 	.string "I always forget ROCK and ICE are\n"
 	.string "the weakest types...$"
+	
+GraniteCave_B2F_Text_NorthHexManiacIntro:
+	.string "It's so cold...$"
+
+GraniteCave_B2F_Text_NorthHexManiacDefeat:
+	.string "Even my spirit froze...$"
+
+GraniteCave_B2F_Text_SouthHexManiacIntro:
+	.string "It's so eerie...$"
+
+GraniteCave_B2F_Text_SouthHexManiacDefeat:
+	.string "The spirits went quiet...$"

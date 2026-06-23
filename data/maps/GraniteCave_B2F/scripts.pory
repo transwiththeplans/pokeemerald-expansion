@@ -5,31 +5,43 @@ GraniteCave_B2F_MapScripts::
 `
 
 script GraniteCave_B2F_EventScript_Hiker {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    msgbox(format("It's easy to get lost around here. All the more reason to use Flash."), MSGBOX_NPC)
     end
 }
 
 script GraniteCave_B2F_EventScript_NorthHexManiac {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    trainerbattle_single(TRAINER_MORANA, GraniteCave_B2F_Text_NorthHexManiacIntro, GraniteCave_B2F_Text_NorthHexManiacDefeat)
+    msgbox(GraniteCave_B2F_Text_NorthHexManiacPostBattle, MSGBOX_AUTOCLOSE)
     end
+}
+
+text GraniteCave_B2F_Text_NorthHexManiacPostBattle {
+    "The cold here feels unnatural.\n"
+    "Like something is breathing it out."
 }
 
 script GraniteCave_B2F_EventScript_SouthHexManiac {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    trainerbattle_single(TRAINER_NYX, GraniteCave_B2F_Text_SouthHexManiacIntro, GraniteCave_B2F_Text_SouthHexManiacDefeat)
+    msgbox(GraniteCave_B2F_Text_SouthHexManiacPostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
+text GraniteCave_B2F_Text_SouthHexManiacPostBattle {
+    "Listen closely...\n"
+    "The cave whispers back."
+}
+
 script GraniteCave_B2F_EventScript_PokefanF {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    msgbox(format("Do you like the diamonds here? Sableye used to try and eat them."), MSGBOX_NPC)
     end
 }
 
 script GraniteCave_B2F_EventScript_PokefanM {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    msgbox(format("We aren't allowed to mine the diamonds here at all. Something something...stupid law.\pWhatever. I've invested in bitcoin. That'll work out, right?"), MSGBOX_NPC)
     end
 }
 
 script GraniteCave_B2F_EventScript_OldMan {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    msgbox(format("I come here to get away from my wife."), MSGBOX_NPC)
     end
 }

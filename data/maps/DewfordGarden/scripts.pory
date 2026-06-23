@@ -61,21 +61,21 @@ script DewfordGarden_EventScript_Brawly {
 }
 
 script DewfordGarden_EventScript_ManNearPath {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    msgbox(format("Sometimes Brawly comes here after a good nap. Or a good surf. Either or, he sleeps a lot."), MSGBOX_NPC)
     end
 }
 
 script DewfordGarden_EventScript_GirlByPond {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    msgbox(format("That girl over there...Do you think she noticed me?"), MSGBOX_NPC)
     end
 }
 
 script DewfordGarden_EventScript_RuinManiac {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    msgbox(format("This is my private place! Quite peaceful, don't you agree?\pNow shoo! I am trying to meditate..."), MSGBOX_NPC)
     end
 }
 
 script DewfordGarden_EventScript_WestGirl {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    msgbox(format("...why's that girl looking at me all weird?"), MSGBOX_NPC)
     end
 }

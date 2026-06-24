@@ -23,22 +23,22 @@ mart LittlerootTown_Market_Pokemart {
 }
 
 script LittlerootTown_Market_EventScript_Woman_1 {
-	msgbox(format("I'm buying a treat for my TANDEMAUS."), MSGBOX_NPC)
+	msgbox(format("I'm buying a treat for my Tandemaus! I hope they don't decide to evolve on me beforehand..."), MSGBOX_NPC)
 	end
 }
 
 script LittlerootTown_Market_EventScript_Woman_3 {
-	msgbox(format("I've been looking for apricorn balls forever!"), MSGBOX_NPC)
+	msgbox(format("I've been looking for Apricorn Balls forever!"), MSGBOX_NPC)
 	end
 }
 
 script LittlerootTown_Market_EventScript_Gentleman {
-	msgbox(format("This shop has many fine items."), MSGBOX_NPC)
+	msgbox(format("This shop has many fine imported items."), MSGBOX_NPC)
 	end
 }
 
 script LittlerootTown_Market_EventScript_Bug_Catcher {
-	msgbox(format("This store is always well stocked."), MSGBOX_NPC)
+	msgbox(format("This store is always well stocked. Mr. Baumann is a lifesaver!"), MSGBOX_NPC)
 	end
 }
 
@@ -48,11 +48,11 @@ script LittlerootTown_Market_EventScript_Little_Girl {
 }
 
 script LittlerootTown_Market_EventScript_Sale_Woman {
-	msgbox(format("These are flying off the shelves these days."), MSGBOX_NPC)
+	msgbox(format("I heard Mr. Baumann leaves treats out for Pokemon behind the shop. What a guy!"), MSGBOX_NPC)
 	end
 }
 
 script LittlerootTown_Market_EventScript_Camper {
-	msgbox(format("I never leave home without POTIONS."), MSGBOX_NPC)
+	msgbox(format("I never leave home without potions!"), MSGBOX_NPC)
 	end
 }

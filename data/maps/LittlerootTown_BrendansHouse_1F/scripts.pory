@@ -362,18 +362,17 @@ PlayersHouse_1F_Text_ItsOverWeMissedHim:
 	.string "Too bad.$"
 
 PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor:
-	.string "Oh, yes.\n"
-	.string "One of Grandpa's friends lives in town.\p"
-	.string "PROF. BIRCH is his name.\p"
-	.string "He lives right next door, so you should\n"
-	.string "go over and introduce yourself.$"
+	.string "Now, I know you don't want to, but...\p"
+	.string "Go next door and say hi to your cousin!\n"
+	.string "Or, at least your aunt.\p"
+	.string "I know you two don't get along,\n"
+	.string "but... please try to?$"
 
 PlayersHouse_1F_Text_SeeYouHoney:
 	.string "MOM: See you, honey!$"
 
 PlayersHouse_1F_Text_DidYouMeetProfBirch:
-	.string "MOM: Did you introduce yourself to\n"
-	.string "PROF. BIRCH?$"
+	.string "MOM: Did you go next door yet?$"
 
 PlayersHouse_1F_Text_YouShouldRestABit:
 	.string "MOM: How are you doing, {PLAYER}?\n"

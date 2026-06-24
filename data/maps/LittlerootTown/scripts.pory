@@ -1191,31 +1191,72 @@ script LittlerootTown_EventScript_MarketSign {
 }
 
 script LittlerootTown_EventScript_SouthwestWoman {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "It's nice living in a small town.\p"
+        "You get to know everybody,"
+        "for better or worse."
+    ), MSGBOX_NPC)
+    release
     end
 }
 
 script LittlerootTown_EventScript_SouthwestMan {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "Every now and then some famous Trainer"
+        "comes from a tiny town like this.\p"
+        "Makes you wonder who's next."
+    ), MSGBOX_NPC)
+    release
     end
 }
 
 script LittlerootTown_EventScript_EastBoy {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "I wanna travel all over Hoenn!\p"
+        "Well... maybe not all of it.\p"
+        "The desert sounds hot."
+    ), MSGBOX_NPC)
+    release
     end
 }
 
 script LittlerootTown_EventScript_EastGirl {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "Everyone says Littleroot is boring.\p"
+        "I think boring is nice sometimes."
+    ), MSGBOX_NPC)
+    release
     end
 }
 
 script LittlerootTown_EventScript_OldMan {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "The older I get, the faster the years go.\p"
+        "I still remember when this town"
+        "only had a handful of houses."
+    ), MSGBOX_NPC)
+    release
     end
 }
 
 script LittlerootTown_EventScript_Youngster {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "Professor Birch gets chased by"
+        "wild Pokémon a lot.\p"
+        "You'd think he'd be used to it by now."
+    ), MSGBOX_NPC)
+    release
     end
 }

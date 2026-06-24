@@ -1191,11 +1191,20 @@ script Route104_EventScript_PeekoTired {
 }
 
 script Route104_EventScript_SouthFisherman {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    msgbox(format("I seen it...the Krakken of Route 104...best bring your Dive Balls..."), MSGBOX_NPC)
     end
 }
 
 script Route104_EventScript_FlowerWoman {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "The flowers along Route 104 bloom"
+        "all year round.\p"
+        "I like to think the Pokémon help"
+        "take care of them."
+    ), MSGBOX_NPC)
+    release
     end
 }
+

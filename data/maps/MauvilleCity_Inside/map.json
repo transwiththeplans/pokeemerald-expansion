@@ -221,7 +221,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MauvilleCity_EventScript_Generic_NPC",
+      "script": "MauvilleCity_EventScript_NorthMan",
       "flag": "0"
     },
     {
@@ -234,7 +234,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MauvilleCity_EventScript_Generic_NPC",
+      "script": "MauvilleCity_EventScript_LadyNearCenter",
       "flag": "0"
     },
     {
@@ -247,7 +247,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MauvilleCity_EventScript_Generic_NPC",
+      "script": "MauvilleCity_EventScript_Lass",
       "flag": "0"
     },
     {
@@ -260,7 +260,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MauvilleCity_EventScript_Generic_NPC",
+      "script": "MauvilleCity_EventScript_BottomEastBoy",
       "flag": "0"
     },
     {
@@ -273,7 +273,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MauvilleCity_EventScript_Generic_NPC",
+      "script": "MauvilleCity_EventScript_BottomWestMan",
       "flag": "0"
     },
     {
@@ -286,7 +286,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MauvilleCity_EventScript_Generic_NPC",
+      "script": "MauvilleCity_EventScript_WestBenchMan",
       "flag": "0"
     },
     {
@@ -299,7 +299,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MauvilleCity_EventScript_Generic_NPC",
+      "script": "MauvilleCity_EventScript_EastBenchBoy",
       "flag": "0"
     }
   ],

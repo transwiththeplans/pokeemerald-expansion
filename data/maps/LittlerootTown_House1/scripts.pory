@@ -1,11 +1,26 @@
 mapscripts  LittlerootTown_House1_MapScripts {}
 
 script LittlerootTown_House1_EventScript_Woman {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "It's nice having Professor Birch"
+        "living nearby.\p"
+        "Though I swear half the town has"
+        "helped him chase Pokémon at least once."
+    ), MSGBOX_NPC)
+    release
     end
 }
 
 script LittlerootTown_House1_EventScript_Girl {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "I asked Professor Birch what it's like"
+        "to study Pokémon.\p"
+        "He talked for three hours."
+    ), MSGBOX_NPC)
+    release
     end
 }

@@ -1394,7 +1394,7 @@ RustboroCity_Text_YouCanHave2On2Battle:
 script RustboroCity_EventScript_MeetKai {
     lockall
     msgbox(format(
-        "Roxanne: …yes, yes. I'd say you're more than ready for your first "
+        "Roxanne: …yes, yes. I'd say you're more than ready for your first"
         "challenger. I don't think I can offer you any more advice."
     ))
     msgbox(format("Kai: Are you sure?"))
@@ -1748,22 +1748,95 @@ script RustboroCity_EventScript_FamilyMeetupAfterBattle {
 }
 
 script RustboroCity_EventScript_SouthFisherman {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    msgbox(format("Nothing's biting today..."), MSGBOX_NPC)
     end
 }
 
 script RustboroCity_EventScript_NorthFisherman {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    msgbox(format("Eheheh. Everything's biting today!"), MSGBOX_NPC)
     end
 }
 
 script RustboroCity_EventScript_SouthOldMan {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
-    end
+	lock
+	faceplayer
+	if (flag(FLAG_RECEIVED_KOFFING)) {
+		msgbox(format(
+			"I know Derrick would have appreciated\n"
+			"a fellow KOFFING fan.\p"
+			"Thank you for giving the little guy a home."
+		), MSGBOX_DEFAULT)
+	} else {
+		msgbox(format(
+			"I was holding onto this for a friend,\n"
+			"but he sadly passed a while back.\p"
+			"He loved KOFFING so much...\n"
+			"Would you like to take it off my hands?"
+		), MSGBOX_YESNO)
+		if (var(VAR_RESULT)) {
+			goto(RustboroCity_EventScript_GiveKoffing)
+		} else {
+			msgbox(format(
+				"I understand.\p"
+				"I'll keep looking for someone who can\n"
+				"give it a good home."
+			), MSGBOX_DEFAULT)
+		}
+	}
+	release
+	end
+}
+
+script RustboroCity_EventScript_GiveKoffing {
+	setvar(VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KOFFING)
+    givemon(SPECIES_KOFFING, 10, ITEM_LUM_BERRY, ITEM_CHERISH_BALL)
+	switch (var(VAR_RESULT)) {
+		case MON_GIVEN_TO_PARTY:
+			call(RustboroCity_EventScript_ReceivedKoffingFanfare)
+			msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+			if (var(VAR_RESULT)) {
+				call(Common_EventScript_GetGiftMonPartySlot)
+				call(Common_EventScript_NameReceivedPartyMon)
+			}
+			goto(RustboroCity_EventScript_ReceivedKoffing)
+			break
+
+		case MON_GIVEN_TO_PC:
+			call(RustboroCity_EventScript_ReceivedKoffingFanfare)
+			msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+			if (var(VAR_RESULT)) {
+				call(Common_EventScript_NameReceivedBoxMon)
+			}
+			call(Common_EventScript_TransferredToPC)
+			goto(RustboroCity_EventScript_ReceivedKoffing)
+			break
+
+		default:
+			goto(Common_EventScript_NoMoreRoomForPokemon)
+			break
+	}
+	end
+}
+
+script RustboroCity_EventScript_ReceivedKoffingFanfare {
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(format("{PLAYER} obtained a KOFFING."))
+	waitmessage
+	waitfanfare
+	bufferspeciesname(STR_VAR_1, SPECIES_KOFFING)
+	return
+}
+
+script RustboroCity_EventScript_ReceivedKoffing {
+	setflag(FLAG_RECEIVED_KOFFING)
+	release
+	end
 }
 
 script RustboroCity_EventScript_SouthOldWoman {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    msgbox(format("The Devon Corp really likes to"
+	"make this place pretty."
+	"Bit much to have TWO fancy fountains."), MSGBOX_NPC)
     end
 }
 

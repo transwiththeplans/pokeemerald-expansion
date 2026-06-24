@@ -566,6 +566,15 @@ Route109_Text_TrainerTipsSign:
 `
 
 script Route109_EventScript_BeachSailor {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "You ever notice how sailors are"
+        "always talking about the sea?\p"
+        "That's because we're at sea"
+        "most of the time."
+    ), MSGBOX_NPC)
+    release
     end
 }
+

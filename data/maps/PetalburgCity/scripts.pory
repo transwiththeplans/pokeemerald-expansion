@@ -611,7 +611,7 @@ PetalburgCity_EventScript_GymBoy::
 	end
 
 PetalburgCity_Text_WhereIsWally:
-	.string "Where has our WALLY gone?\p"
+	.string "My son insists on playing here.\p"
 	.string "We have to leave for VERDANTURF TOWN\n"
 	.string "very soon…$"
 
@@ -722,16 +722,16 @@ movement PetalburgCity_Movement_WallyTutorialWally {
 }
 
 script PetalburgCity_EventScript_SouthwestLittleBoy {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    msgbox(format("My friend told me Ekans spelt\nbackwards is snake...\pWhat's a snake?"), MSGBOX_NPC)
     end
 }
 
 script PetalburgCity_EventScript_SouthwestLittleGirl {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    msgbox(format("I'm just chilling up here. Don't rush me."), MSGBOX_NPC)
     end
 }
 
 script PetalburgCity_EventScript_SouthGirl {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    msgbox(format("Mr. Tennyson built this playground!"), MSGBOX_NPC)
     end
 }

@@ -17,6 +17,6 @@ OldaleTown_House1_Text_LeftPokemonGoesOutFirst:
 `
 
 script OldaleTown_House1_EventScript_LittleGirl {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    msgbox(format("Do you know Five Nights at Ursalunas?"), MSGBOX_NPC)
     end
 }

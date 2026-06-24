@@ -464,26 +464,63 @@ OldaleTown_Text_TownSign:
 `
 
 script OldaleTown_EventScript_SouthWoman {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "Oldale Town isn't very exciting.\p"
+        "That's exactly why I like it."
+    ), MSGBOX_NPC)
+    release
     end
 }
 
 script OldaleTown_EventScript_LittleBoy {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "One day I'm gonna catch a Dragon-type!\p"
+        "Or maybe something cooler...like..."
+        "A MEGA Dragon type!"
+    ), MSGBOX_NPC)
+    release
     end
 }
 
 script OldaleTown_EventScript_LittleGirl {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "My mom says not to wander into"
+        "the tall grass alone.\p"
+        "Wild Pokémon play too rough!"
+    ), MSGBOX_NPC)
+    release
     end
 }
 
 script OldaleTown_EventScript_OldMan {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "You know, when I was young,"
+        "we didn't have Poké Balls.\p"
+        "We had to politely ask Pokémon"
+        "to come with us.\p"
+        "...you're stupid if you"
+        "think that's true."
+    ), MSGBOX_NPC)
+    release
     end
 }
 
 script OldaleTown_EventScript_OldWoman {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "Everyone rushes through Oldale"
+        "on their way somewhere else.\p"
+        "I think that's a shame."
+    ), MSGBOX_NPC)
+    release
     end
 }

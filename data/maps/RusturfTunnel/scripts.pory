@@ -530,16 +530,40 @@ RusturfTunnel_Text_MikePostBattle:
 `
 
 script RusturfTunnel_EventScript_BlackBelt {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "I came here to train my body.\p"
+        "Then I remembered how miserable"
+		"working out is!"
+    ), MSGBOX_NPC)
+    release
     end
 }
 
 script RusturfTunnel_EventScript_OldMan {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "When they first started digging this"
+        "tunnel, everyone thought it would"
+        "take years.\p"
+        "Well...\n"
+        "they were right."
+    ), MSGBOX_NPC)
+    release
     end
 }
 
 script RusturfTunnel_EventScript_Woman {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "The tunnel connects people from"
+        "different towns.\p"
+        "I think that's worth a little"
+        "construction noise."
+    ), MSGBOX_NPC)
+    release
     end
 }

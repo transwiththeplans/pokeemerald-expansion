@@ -42,7 +42,7 @@
     {
       "type": "hidden_item",
       "x": 16,
-      "y": 16,
+      "y": 15,
       "elevation": 0,
       "item": "ITEM_THUNDER_STONE",
       "flag": "FLAG_HIDDEN_ITEM_DIGLETT_GROTTO_THUNDER_STONE"

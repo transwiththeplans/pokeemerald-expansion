@@ -1,47 +1,114 @@
 mapscripts MauvilleCity_Inside_Food_Court_MapScripts {}
 
-script MauvilleCity_Inside_Food_Court_EventScript_LittleBoy {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
-    end
-}
-
 script MauvilleCity_Inside_Food_Court_EventScript_Maniac {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
-    end
-}
-
-script MauvilleCity_Inside_Food_Court_EventScript_Couple_Girl {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "I've heard that the Paldea region has"
+        "these things called Paradox Pokémon.\p"
+        "I'd love to catch one, but they're"
+        "being studied by the Saturday Family"
+        "until further notice."
+    ), MSGBOX_NPC)
+    release
     end
 }
 
 script MauvilleCity_Inside_Food_Court_EventScript_Couple_Boy {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "I remember when this smoothie shop had"
+        "a big, gaudy-looking building...\p"
+        "Thank goodness New Mauville"
+        "changed that."
+    ), MSGBOX_NPC)
+    release
+    end
+}
+
+script MauvilleCity_Inside_Food_Court_EventScript_Couple_Girl {
+    lock
+    faceplayer
+    msgbox(format(
+        "I still like this place, but I miss"
+        "that big smoothie-shaped building"
+        "that was here before..."
+    ), MSGBOX_NPC)
+    release
     end
 }
 
 script MauvilleCity_Inside_Food_Court_EventScript_Old_Man {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "The best part about being old is that"
+        "I can just say 'HUH?' to anything,"
+        "so people leave me alone."
+    ), MSGBOX_NPC)
+    release
     end
 }
 
 script MauvilleCity_Inside_Food_Court_EventScript_Old_Woman {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "My grandson just graduated from"
+        "Mossdeep summa cum laude.\p"
+        "He makes rockets.\p"
+        "You look like someone's grandkid."
+        "What are you doing with your life?\p"
+        "Playing this garbage?"
+    ), MSGBOX_NPC)
+    release
     end
 }
 
 script MauvilleCity_Inside_Food_Court_EventScript_Gameboy_Kid {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "Shut up, dad!"
+        "I'm about to fight the"
+        "Roaring Knight!"
+    ), MSGBOX_NPC)
+    release
     end
 }
 
 script MauvilleCity_Inside_Food_Court_EventScript_Parent_Male {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "I can't connect with my kid at all."
+        "He never puts down his toys..."
+    ), MSGBOX_NPC)
+    release
     end
 }
 
 script MauvilleCity_Inside_Food_Court_EventScript_Parent_Female {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "Enjoy youth, kid.\p"
+        "One day you'll have kids of your own,"
+        "and it's gonna be allllll this."
+    ), MSGBOX_NPC)
+    release
+    end
+}
+
+script MauvilleCity_Inside_Food_Court_EventScript_LittleBoy {
+    lock
+    faceplayer
+    msgbox(format(
+        "So many yummy food choices!\p"
+        "What should I get?"
+    ), MSGBOX_NPC)
+    release
     end
 }
 

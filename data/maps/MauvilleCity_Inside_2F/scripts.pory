@@ -4,6 +4,94 @@ MauvilleCity_Inside_2F_MapScripts::
 `
 
 script MauvilleCity_Inside_2F_EventScript_RuinManiac {
-    msgbox(format("Placeholder dialogue."), MSGBOX_NPC)
+    msgbox(format("I spent a long time at the Sleepy Dunes...now I'm sleepy."), MSGBOX_NPC)
     end
 }
+
+script MauvilleCity_EventScript_CoupleMale {
+    lock
+    faceplayer
+    msgbox(format(
+        "My girlfriend's really into"
+        "Tarot card readings.\p"
+        "Is the Ten of Swords good?"
+    ), MSGBOX_NPC)
+    release
+    end
+}
+
+script MauvilleCity_EventScript_CoupleFemale {
+    lock
+    faceplayer
+    msgbox(format(
+        "...how do I tell him"
+        "how bad that is?"
+    ), MSGBOX_NPC)
+    release
+    end
+}
+
+script MauvilleCity_EventScript_LeftMan {
+    lock
+    faceplayer
+    msgbox(format(
+        "I feel bad.\p"
+        "I can't cuddle my poor Budew after"
+        "that meteorite flew overhead.\p"
+        "It catches my clothes on fire..."
+    ), MSGBOX_NPC)
+    release
+    end
+}
+
+script MauvilleCity_EventScript_LeftBench {
+    lock
+    faceplayer
+    msgbox(format(
+        "Wattson is a tough leader.\p"
+        "He gives a lot of people trouble,"
+        "but, like...\p"
+        "Can't they carry a Ground type?"
+    ), MSGBOX_NPC)
+    release
+    end
+}
+
+script MauvilleCity_EventScript_RightMan {
+    lock
+    faceplayer
+    msgbox(format(
+        "Don't make fame your goal.\p"
+        "Make your goal doing what you do"
+        "to the best of your ability,\p"
+        "and that's something no one can"
+        "take away from you."
+    ), MSGBOX_NPC)
+    release
+    end
+}
+
+script MauvilleCity_EventScript_OldMan {
+    lock
+    faceplayer
+    msgbox(format(
+        "The garden is the pride of"
+        "Mauville City.\p"
+        "You can toggle the environments"
+        "easily, and enjoy whatever you want."
+    ), MSGBOX_NPC)
+    release
+    end
+}
+
+script MauvilleCity_EventScript_RightBench {
+    lock
+    faceplayer
+    msgbox(format(
+        "I hope rent goes down here.\p"
+        "Apartments here aren't cheap!"
+    ), MSGBOX_NPC)
+    release
+    end
+}
+

@@ -1745,6 +1745,13 @@ script PetalburgCity_Gym_EventScript_KevinArrive
 			      "I’ll see you both there, okay?"))
 	}
 	closemessage
+	delay(15)
+	applymovement(LOCALID_PETALBURG_GYM_NORMAN, Common_Movement_ExclamationMark)
+	waitmovement(0)
+	msgbox(format("GRANDPA: Before I forget, take this."))
+	giveitem(ITEM_CAP_CANDY, 1)
+	msgbox(format("GRANDPA: I hope you find it useful."))
+	closemessage
 	delay(30)
 	goto(PetalburgCity_Gym_EventScript_GrandpaExitWithKevin)
 	end

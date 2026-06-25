@@ -1949,6 +1949,142 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .teachableLearnset = sMauscoldTeachableLearnset,
     },
 #endif //P_GALARIAN_FORMS
+#if P_ALOLAN_FORMS
+	[SPECIES_TANDEMAUS_SEVII] =
+	{
+		.baseHP        = 50,
+		.baseAttack    = 30,
+		.baseDefense   = 45,
+		.baseSpeed     = 75,
+		.baseSpAttack  = 60,
+		.baseSpDefense = 45,
+		.types = MON_TYPES(TYPE_NORMAL),
+		.catchRate = 150,
+		.expYield = 61,
+		.evYield_Speed = 1,
+		.genderRatio = MON_GENDERLESS,
+		.eggCycles = 10,
+		.friendship = STANDARD_FRIENDSHIP,
+		.growthRate = GROWTH_MEDIUM_FAST,
+		.eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY),
+		.abilities = { ABILITY_SOUNDPROOF, ABILITY_SCRAPPY, ABILITY_COMPETITIVE },
+		.innates = { ABILITY_DOPPLER_EFFECT },
+		.innateUnlockLevel = 40,
+		.bodyColor = BODY_COLOR_WHITE,
+		.speciesName = _("Tandemaus"),
+		.cryId = CRY_TANDEMAUS,
+		.natDexNum = NATIONAL_DEX_TANDEMAUS,
+		.categoryName = _("Couple"),
+		.height = 3,
+		.weight = 18,
+		.description = COMPOUND_STRING(
+		"Exhibiting great teamwork, they\n"
+		"use their incisors to cut pieces out\n"
+		"of any material that might be useful\n"
+		"for a nest, then make off with them."),
+		.pokemonScale = 356,
+		.pokemonOffset = 17,
+		.trainerScale = 256,
+		.trainerOffset = 0,
+		.frontPic = gMonFrontPic_TandemausSevii,
+		.frontPicSize = MON_COORDS_SIZE(48, 40),
+		.frontPicYOffset = 13,
+		.frontAnimFrames = sAnims_SingleFramePlaceHolder,
+		.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+		.backPic = gMonBackPic_TandemausSevii,
+		.backPicSize = MON_COORDS_SIZE(56, 40),
+		.backPicYOffset = 13,
+		.backAnimId = BACK_ANIM_CONCAVE_ARC_SMALL,
+		.palette = gMonPalette_TandemausSevii,
+		.shinyPalette = gMonShinyPalette_TandemausSevii,
+		.iconSprite = gMonIcon_TandemausSevii,
+		.iconPalIndex = 1,
+		.pokemonJumpType = PKMN_JUMP_TYPE_FAST,
+		SHADOW(0, 1, SHADOW_SIZE_S)
+		FOOTPRINT(TandemausSevii)
+		OVERWORLD(
+            sPicTable_Tandemaus,
+            SIZE_32x32,
+            SHADOW_SIZE_S,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Tandemaus,
+            gShinyOverworldPalette_Tandemaus
+        )
+		.isAlolanForm = TRUE,
+		.levelUpLearnset = sTandemausSeviiLevelUpLearnset,
+		.teachableLearnset = sTandemausSeviiTeachableLearnset,
+		.formSpeciesIdTable = sTandemausFormSpeciesIdTable,
+		.evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_MAUSHOLD_SEVII}),
+	},
+
+	[SPECIES_MAUSHOLD_SEVII] =
+	{
+		.baseHP        = 74,
+		.baseAttack    = 40,
+		.baseDefense   = 75,
+		.baseSpeed     = 111,
+		.baseSpAttack  = 100,
+		.baseSpDefense = 70,
+		.types = MON_TYPES(TYPE_NORMAL),
+		.catchRate = 75,
+		.expYield = 165,
+		.evYield_Speed = 2,
+		.genderRatio = MON_GENDERLESS,
+		.eggCycles = 10,
+		.friendship = STANDARD_FRIENDSHIP,
+		.growthRate = GROWTH_MEDIUM_FAST,
+		.eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY),
+		.abilities = { ABILITY_SOUNDPROOF, ABILITY_SCRAPPY, ABILITY_COMPETITIVE },
+		.innates = { ABILITY_DOPPLER_EFFECT },
+		.innateUnlockLevel = 40,
+		.bodyColor = BODY_COLOR_WHITE,
+		.speciesName = _("Maushold"),
+		.cryId = CRY_MAUSHOLD_FOUR,
+		.natDexNum = NATIONAL_DEX_MAUSHOLD,
+		.categoryName = _("Family"),
+		.height = 3,
+		.weight = 23,
+		.description = COMPOUND_STRING(
+		"Exhibiting great teamwork, they\n"
+		"use their incisors to cut pieces out\n"
+		"of any material that might be useful\n"
+		"for a nest, then make off with them."),
+		.pokemonScale = 356,
+		.pokemonOffset = 17,
+		.trainerScale = 256,
+		.trainerOffset = 0,
+		.frontPic = gMonFrontPic_MausholdSevii,
+		.frontPicSize = MON_COORDS_SIZE(56, 48),
+		.frontPicYOffset = 10,
+		.frontAnimFrames = sAnims_SingleFramePlaceHolder,
+		.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+		.backPic = gMonBackPic_MausholdSevii,
+		.backPicSize = MON_COORDS_SIZE(56, 48),
+		.backPicYOffset = 10,
+		.backAnimId = BACK_ANIM_CONCAVE_ARC_SMALL,
+		.palette = gMonPalette_MausholdSevii,
+		.shinyPalette = gMonShinyPalette_MausholdSevii,
+		.iconSprite = gMonIcon_MausholdSevii,
+		.iconPalIndex = 1,
+		.pokemonJumpType = PKMN_JUMP_TYPE_FAST,
+		SHADOW(0, 1, SHADOW_SIZE_S)
+		FOOTPRINT(MausholdSevii)
+		OVERWORLD(
+            sPicTable_Tandemaus,
+            SIZE_32x32,
+            SHADOW_SIZE_S,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Tandemaus,
+            gShinyOverworldPalette_Tandemaus
+        )
+		.isAlolanForm = TRUE,
+		.levelUpLearnset = sMausholdSeviiLevelUpLearnset,
+		.teachableLearnset = sMausholdSeviiTeachableLearnset,
+		.formSpeciesIdTable = sMausholdFormSpeciesIdTable,
+	},
+#endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_TANDEMAUS
 
 #if P_FAMILY_FIDOUGH

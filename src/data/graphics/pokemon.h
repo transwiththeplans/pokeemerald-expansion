@@ -3358,6 +3358,28 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_GEN_4_CROSS_EVOS
+#if P_ALOLAN_FORMS
+const u32 gMonFrontPic_MagnemiteSevii[] = INCBIN_U32("graphics/pokemon/magnemite/sevii/front.4bpp.smol");
+const u16 gMonPalette_MagnemiteSevii[] = INCBIN_U16("graphics/pokemon/magnemite/sevii/normal.gbapal");
+const u32 gMonBackPic_MagnemiteSevii[] = INCBIN_U32("graphics/pokemon/magnemite/sevii/back.4bpp.smol");
+const u16 gMonShinyPalette_MagnemiteSevii[] = INCBIN_U16("graphics/pokemon/magnemite/sevii/shiny.gbapal");
+const u8 gMonIcon_MagnemiteSevii[] = INCBIN_U8("graphics/pokemon/magnemite/sevii/icon.4bpp");
+const u8 gMonFootprint_MagnemiteSevii[] = INCBIN_U8("graphics/pokemon/magnemite/sevii/footprint.1bpp");
+
+const u32 gMonFrontPic_MagnetonSevii[] = INCBIN_U32("graphics/pokemon/magneton/sevii/front.4bpp.smol");
+const u16 gMonPalette_MagnetonSevii[] = INCBIN_U16("graphics/pokemon/magneton/sevii/normal.gbapal");
+const u32 gMonBackPic_MagnetonSevii[] = INCBIN_U32("graphics/pokemon/magneton/sevii/back.4bpp.smol");
+const u16 gMonShinyPalette_MagnetonSevii[] = INCBIN_U16("graphics/pokemon/magneton/sevii/shiny.gbapal");
+const u8 gMonIcon_MagnetonSevii[] = INCBIN_U8("graphics/pokemon/magneton/sevii/icon.4bpp");
+const u8 gMonFootprint_MagnetonSevii[] = INCBIN_U8("graphics/pokemon/magneton/sevii/footprint.1bpp");
+
+const u32 gMonFrontPic_Magneshocks[] = INCBIN_U32("graphics/pokemon/magneshocks/front.4bpp.smol");
+const u16 gMonPalette_Magneshocks[] = INCBIN_U16("graphics/pokemon/magneshocks/normal.gbapal");
+const u32 gMonBackPic_Magneshocks[] = INCBIN_U32("graphics/pokemon/magneshocks/back.4bpp.smol");
+const u16 gMonShinyPalette_Magneshocks[] = INCBIN_U16("graphics/pokemon/magneshocks/shiny.gbapal");
+const u8 gMonIcon_Magneshocks[] = INCBIN_U8("graphics/pokemon/magneshocks/icon.4bpp");
+const u8 gMonFootprint_Magneshocks[] = INCBIN_U8("graphics/pokemon/magneshocks/footprint.1bpp");
+#endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_MAGNEMITE
 
 #if P_FAMILY_FARFETCHD
@@ -25545,6 +25567,21 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
     const u32 gMonFrontPic_Mauscold[] = INCBIN_U32("graphics/pokemon/mauscold/front.4bpp.lz");
     const u32 gMonBackPic_Mauscold[] = INCBIN_U32("graphics/pokemon/mauscold/back.4bpp.lz");
     const u8 gMonIcon_Mauscold[] = INCBIN_U8("graphics/pokemon/mauscold/icon.4bpp");
+#if P_ALOLAN_FORMS
+	const u32 gMonFrontPic_TandemausSevii[] = INCBIN_U32("graphics/pokemon/tandemaus/sevii/front.4bpp.smol");
+	const u16 gMonPalette_TandemausSevii[] = INCBIN_U16("graphics/pokemon/tandemaus/sevii/normal.gbapal");
+	const u32 gMonBackPic_TandemausSevii[] = INCBIN_U32("graphics/pokemon/tandemaus/sevii/back.4bpp.smol");
+	const u16 gMonShinyPalette_TandemausSevii[] = INCBIN_U16("graphics/pokemon/tandemaus/sevii/shiny.gbapal");
+	const u8 gMonIcon_TandemausSevii[] = INCBIN_U8("graphics/pokemon/tandemaus/sevii/icon.4bpp");
+	const u8 gMonFootprint_TandemausSevii[] = INCBIN_U8("graphics/pokemon/tandemaus/sevii/footprint.1bpp");
+
+	const u32 gMonFrontPic_MausholdSevii[] = INCBIN_U32("graphics/pokemon/maushold/sevii/front.4bpp.smol");
+	const u16 gMonPalette_MausholdSevii[] = INCBIN_U16("graphics/pokemon/maushold/sevii/normal.gbapal");
+	const u32 gMonBackPic_MausholdSevii[] = INCBIN_U32("graphics/pokemon/maushold/sevii/back.4bpp.smol");
+	const u16 gMonShinyPalette_MausholdSevii[] = INCBIN_U16("graphics/pokemon/maushold/sevii/shiny.gbapal");
+	const u8 gMonIcon_MausholdSevii[] = INCBIN_U8("graphics/pokemon/maushold/sevii/icon.4bpp");
+	const u8 gMonFootprint_MausholdSevii[] = INCBIN_U8("graphics/pokemon/maushold/sevii/footprint.1bpp");
+#endif //P_ALOLAN_FORMS
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_TANDEMAUS

@@ -1614,6 +1614,24 @@ static const u16 sBraviaryFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_RUFFLET
 
+#if P_FAMILY_MAGNEMITE
+static const u16 sMagnemiteFormSpeciesIdTable[] = {
+    SPECIES_MAGNEMITE,
+#if P_ALOLAN_FORMS
+    SPECIES_MAGNEMITE_SEVII,
+#endif
+    FORM_SPECIES_END,
+};
+
+static const u16 sMagnetonFormSpeciesIdTable[] = {
+    SPECIES_MAGNETON,
+#if P_ALOLAN_FORMS
+    SPECIES_MAGNETON_SEVII,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_MAGNEMITE
+
 #if P_FAMILY_TORNADUS
 static const u16 sTornadusFormSpeciesIdTable[] = {
     SPECIES_TORNADUS_INCARNATE,
@@ -2665,6 +2683,7 @@ static const u16 sTandemausFormSpeciesIdTable[] = {
     SPECIES_TANDEMAUS,
 #if P_ALOLAN_FORMS
     SPECIES_TANDEMAUS_NECROFRIGGIAN,
+	SPECIES_TANDEMAUS_SEVII,
 #endif
     FORM_SPECIES_END,
 };
@@ -2672,7 +2691,9 @@ static const u16 sTandemausFormSpeciesIdTable[] = {
 static const u16 sMausholdFormSpeciesIdTable[] = {
     SPECIES_MAUSHOLD_THREE,
     SPECIES_MAUSHOLD_FOUR,
-    FORM_SPECIES_END,
+#if P_ALOLAN_FORMS
+    SPECIES_MAUSHOLD_SEVII,
+#endif
 #if P_MEGA_EVOLUTIONS
     SPECIES_MAUSHOLD_MEGA,
     SPECIES_MAUSHOLD_MEGA_Z,

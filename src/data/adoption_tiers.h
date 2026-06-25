@@ -234,6 +234,8 @@ static const u16 sAdoptionTierSevii[] =
     SPECIES_CHARMANDER_SEVII,
     SPECIES_FROAKIE_SEVII,
     SPECIES_HONEDGE,
+    SPECIES_MAGNEMITE_SEVII,
+    SPECIES_TANDEMAUS_SEVII,
 };
 
 static const struct AdoptionTierInfo sAdoptionTiersInfo[ADOPTION_TIER_COUNT] =

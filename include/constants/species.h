@@ -1784,7 +1784,11 @@
 #define SPECIES_FROAKIE_SEVII                           1650
 #define SPECIES_FROGADIER_SEVII                         1651
 #define SPECIES_GRENINJA_SEVII                          1652
-#define SPECIES_GRENINJA_MEGA_SEVII                     1653
+#define SPECIES_TANDEMAUS_SEVII                         1653
+#define SPECIES_MAUSHOLD_SEVII                          1654
+#define SPECIES_MAGNEMITE_SEVII                         1655
+#define SPECIES_MAGNETON_SEVII                          1656
+#define SPECIES_MAGNESHOCKS                             1657
 
 #define SPECIES_LAST                                    2000 //To always have more space for new species if needed
 

@@ -530,7 +530,7 @@
               {
                 "min_level": 4,
                 "max_level": 4,
-                "species": "SPECIES_STARLY"
+                "species": "SPECIES_PIDOVE"
               },
               {
                 "min_level": 4,
@@ -540,7 +540,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_STARLY"
+                "species": "SPECIES_PIDOVE"
               },
               {
                 "min_level": 5,
@@ -3622,17 +3622,17 @@
               {
                 "min_level": 7,
                 "max_level": 7,
-                "species": "SPECIES_GOOMY"
+                "species": "SPECIES_HOOTHOOT"
               },
               {
                 "min_level": 7,
                 "max_level": 7,
-                "species": "SPECIES_GREAVARD"
+                "species": "SPECIES_HOOTHOOT"
               },
               {
                 "min_level": 7,
                 "max_level": 7,
-                "species": "SPECIES_GREAVARD"
+                "species": "SPECIES_HOOTHOOT"
               },
               {
                 "min_level": 7,
@@ -12718,17 +12718,17 @@
               {
                 "min_level": 20,
                 "max_level": 20,
-                "species": "SPECIES_TANDEMAUS"
+                "species": "SPECIES_TANDEMAUS_SEVII"
               },
               {
                 "min_level": 20,
                 "max_level": 20,
-                "species": "SPECIES_TANDEMAUS"
+                "species": "SPECIES_TANDEMAUS_NECROFRIGGIAN"
               },
               {
                 "min_level": 20,
                 "max_level": 20,
-                "species": "SPECIES_TANDEMAUS"
+                "species": "SPECIES_TANDEMAUS_SEVII"
               },
               {
                 "min_level": 20,

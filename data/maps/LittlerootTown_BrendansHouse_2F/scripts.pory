@@ -294,26 +294,26 @@ script LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool{
 	lockall
 	switch(var(VAR_STARTER_POOL)){
 		case STARTER_POOL_AF:
-			msgbox(format("It's the AF Channel its showing the news, do you want to change the channel?"), MSGBOX_YESNO)
+			msgbox(format("It's the AF Channel! Its showing the news, do you want to change the channel?"), MSGBOX_YESNO)
 		break
 		case STARTER_POOL_OS:
-			msgbox(format("It's the AF Channel its showing the news, do you want to change the channel?"), MSGBOX_YESNO)
+			msgbox(format("It's the OS Channel! Its showing some cartoons, do you want to change the channel?"), MSGBOX_YESNO)
 		break
 		case STARTER_POOL_UA:
-			msgbox(format("It's the AF Channel its showing the news, do you want to change the channel?"), MSGBOX_YESNO)
+			msgbox(format("It's the UA Channel! It showing some documentary, do you want to change the channel?"), MSGBOX_YESNO)
 		break
 		case STARTER_POOL_OV:
-			msgbox(format("It's the AF Channel its showing the news, do you want to change the channel?"), MSGBOX_YESNO)
+			msgbox(format("It's the OV Channel! Its showing a robot movie, do you want to change the channel?"), MSGBOX_YESNO)
 		break
 		case STARTER_POOL_AS:
-			msgbox(format("It's the AF Channel its showing the news, do you want to change the channel?"), MSGBOX_YESNO)
+			msgbox(format("It's the AS Channel! Its showing some horror movie, do you want to change the channel?"), MSGBOX_YESNO)
 		break
 	}
 	if(var(VAR_RESULT) == YES){
 		goto(LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Switch)
 	}
 	else{
-		msgbox(format("Grampa also likes this channel"), MSGBOX_NPC)
+		msgbox(format("Grandpa also likes this channel!"), MSGBOX_NPC)
 	}
 	releaseall
 	end
@@ -325,7 +325,7 @@ script LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Switch{
 	multichoice(0, 0, MULTI_STARTER_POOL, FALSE)
 	switch(var(VAR_RESULT)){
 		default:
-			msgbox(format("Grampa also likes this channel"), MSGBOX_NPC)
+			msgbox(format("Grandpa also likes this channel!"), MSGBOX_NPC)
 		break
 		case STARTER_POOL_AF:
 		case STARTER_POOL_OS:
@@ -333,7 +333,7 @@ script LittlerootTown_BrendansHouse_2F_EventScript_Starter_Pool_Switch{
 		case STARTER_POOL_OV:
 		case STARTER_POOL_AS:
 			copyvar(VAR_STARTER_POOL, VAR_RESULT)
-			msgbox(format("Grampa also likes this channel"), MSGBOX_NPC)
+			msgbox(format("Grandpa also likes this channel!"), MSGBOX_NPC)
 		break
 	}
 	releaseall

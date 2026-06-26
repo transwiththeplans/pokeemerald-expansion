@@ -21,8 +21,8 @@
 
 // hidden pokemon options - an approximation of values due to lack of available data
 #define HIDDEN_MON_STEP_COUNT       100  // Look for hidden pokemon every x steps
-#define HIDDEN_MON_SEARCH_RATE      50   // x% chance of finding hidden pokemon every x steps
-#define HIDDEN_MON_PROBABILTY       50   // x% chance of finding hidden mon compared to regular encounter data
+#define HIDDEN_MON_SEARCH_RATE      100   // x% chance of finding hidden pokemon every x steps
+#define HIDDEN_MON_PROBABILTY       100   // x% chance of finding hidden mon compared to regular encounter data
 
 //// SEARCH PROBABILITIES
 // See https://bulbapedia.bulbagarden.net/wiki/DexNav#Benefits

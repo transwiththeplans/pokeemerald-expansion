@@ -25,22 +25,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MauvilleCity_EventScript_Wally",
+      "script": "MauvilleCity_EventScript_Kevin",
       "flag": "FLAG_HIDE_MAUVILLE_CITY_WALLY"
-    },
-    {
-      "local_id": "LOCALID_MAUVILLE_WALLYS_UNCLE",
-      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
-      "x": 35,
-      "y": 17,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "MauvilleCity_EventScript_WallysUncle",
-      "flag": "FLAG_HIDE_MAUVILLE_CITY_WALLYS_UNCLE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
@@ -301,6 +287,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MauvilleCity_EventScript_EastBenchBoy",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_MAUVILLE_SCOTT",
+      "graphics_id": "OBJ_EVENT_GFX_SCOTT",
+      "x": 44,
+      "y": 19,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_MAUVILLE_CITY_SCOTT"
     }
   ],
   "warp_events": [

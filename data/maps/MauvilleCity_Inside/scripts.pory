@@ -1,7 +1,4 @@
-raw `
-MauvilleCity_Inside_MapScripts::
-	.byte 0
-`
+mapscripts MauvilleCity_Inside_MapScripts {}
 
 script MauvilleCity_EventScript_TrashCanSign{
 	msgbox(MauvilleCity_Text_TrashCanSign, MSGBOX_SIGN)
@@ -66,9 +63,9 @@ script MauvilleCity_EventScript_RestArea_Sign{
 script MauvilleCity_EventScript_Generic_NPC{
     lock
     faceplayer
-	msgbox(format("Don't mind me, I'm just an NPC."), MSGBOX_SIGN)
+    msgbox(format("Don't mind me, I'm just an NPC."), MSGBOX_SIGN)
     release
-	end
+    end
 }
 
 script MauvilleCity_EventScript_WestBenchMan {
@@ -124,8 +121,8 @@ script MauvilleCity_EventScript_LadyNearCenter {
     faceplayer
     msgbox(format(
         "Hm, I think I'll do some shopping here"
-        "and check out the Tandemaus Meadows" 
-		"in Verdanturf!\p"
+        "and check out the Tandemaus Meadows"
+        "in Verdanturf!\p"
         "I love Tandemaus."
         "Anyone who doesn't is crazy!"
     ), MSGBOX_NPC)
@@ -155,5 +152,158 @@ script MauvilleCity_EventScript_Lass {
         "Go to Slateport?"
     ), MSGBOX_NPC)
     release
+    end
+}
+
+script MauvilleCity_EventScript_Kevin {
+    lockall
+    if (flag(FLAG_DECLINED_WALLY_BATTLE_MAUVILLE)) {
+        goto(MauvilleCity_EventScript_KevinRequestBattleAgain)
+    }
+    msgbox("…")
+    closemessage
+    applymovement(LOCALID_MAUVILLE_WALLY, Common_Movement_FacePlayer)
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(LOCALID_MAUVILLE_WALLY, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    applymovement(LOCALID_MAUVILLE_WALLY, Common_Movement_Delay48)
+    waitmovement(0)
+    msgbox(format(
+        "Oh, you again. Hey.\p"
+        "Thinking of taking on the gym leader?"
+        "I just got done wiping the floor with him."
+        "But Type:Null's still spirited from the fight,"
+        "and I don't think I can calm him down by myself.\p"
+        "…"
+    ))
+    msgbox(format("So, wanna fight or something?"), MSGBOX_YESNO)
+    goto(MauvilleCity_EventScript_BattleKevinPrompt)
+    end
+}
+
+script MauvilleCity_EventScript_KevinRequestBattleAgain {
+    applymovement(LOCALID_MAUVILLE_WALLY, Common_Movement_FacePlayer)
+    waitmovement(0)
+    msgbox(format("…\pSo, wanna fight or something?"), MSGBOX_YESNO)
+    goto(MauvilleCity_EventScript_BattleKevinPrompt)
+    end
+}
+
+script MauvilleCity_EventScript_BattleKevinPrompt {
+    if (var(VAR_RESULT) == YES) {
+        call(MauvilleCity_EventScript_BattleKevin)
+    } else {
+        setflag(FLAG_DECLINED_WALLY_BATTLE_MAUVILLE)
+        msgbox(format("…\pWhatever. Come back when you're ready."))
+        closemessage
+        releaseall
+        end
+    }
+    goto(MauvilleCity_EventScript_KevinExit)
+    end
+}
+
+script MauvilleCity_EventScript_BattleKevin {
+    trainerbattle_no_intro(TRAINER_WALLY_MAUVILLE, format("…"))
+    msgbox(format(
+        "…alright. There we go. They're calm now. Thanks.\p"
+        "It's always hard raising a Pokemon no one's ever seen before."
+        "No one knows how to handle 'outcasts' or whatever."
+        "Anyways, my place is in the next town over."
+        "Drop on by after you got your gym badge. Or don't. I don't care.\p"
+        "…\p"
+        "See ya."
+    ))
+    closemessage
+    return
+}
+
+script MauvilleCity_EventScript_KevinExit {
+    switch(var(VAR_FACING)) {
+    case DIR_NORTH:
+        applymovement(LOCALID_PLAYER, moves(
+            delay_16
+            walk_in_place_faster_left
+        ))
+        applymovement(LOCALID_MAUVILLE_WALLY, moves(
+            walk_left * 2
+            walk_down * 2
+            walk_left * 8
+            delay_8
+        ))
+    default:
+        applymovement(LOCALID_PLAYER, moves(
+            delay_16
+            walk_in_place_faster_down
+            delay_16 * 3
+            walk_in_place_faster_left
+        ))
+        applymovement(LOCALID_MAUVILLE_WALLY, moves(
+            walk_down * 2
+            walk_left * 10
+            delay_8
+        ))
+    }
+    waitmovement(0)
+    removeobject(LOCALID_MAUVILLE_WALLY)
+    clearflag(FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WALLY)
+    clearflag(FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WALLYS_UNCLE)
+    setflag(FLAG_DEFEATED_WALLY_MAUVILLE)
+    setvar(VAR_WALLY_CALL_STEP_COUNTER, 0)
+    setflag(FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL)
+    goto(MauvilleCity_EventScript_ScottApproachPlayer)
+    end
+}
+
+script MauvilleCity_EventScript_ScottApproachPlayer {
+    addobject(LOCALID_MAUVILLE_SCOTT)
+    switch(var(VAR_FACING)) {
+    case DIR_WEST:
+        applymovement(LOCALID_MAUVILLE_SCOTT, moves(
+            walk_left * 9
+            walk_up
+        ))
+    case DIR_NORTH:
+        applymovement(LOCALID_MAUVILLE_SCOTT, moves(
+            walk_left * 10
+            walk_in_place_faster_up
+        ))
+    case DIR_EAST:
+        applymovement(LOCALID_MAUVILLE_SCOTT, moves(
+            walk_left * 11
+            walk_up
+        ))
+    }
+    waitmovement(0)
+    applymovement(LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown)
+    waitmovement(0)
+    msgbox(MauvilleCity_Text_ScottYouDidntHoldBack)
+    closemessage
+    addvar(VAR_SCOTT_STATE, 1)
+    switch(var(VAR_FACING)) {
+    case DIR_NORTH:
+        applymovement(LOCALID_PLAYER, moves(
+            delay_16
+            delay_8
+            walk_in_place_faster_left
+        ))
+        applymovement(LOCALID_MAUVILLE_SCOTT, moves(
+            walk_left * 10
+        ))
+    default:
+        applymovement(LOCALID_PLAYER, moves(
+            delay_16 * 2
+            delay_8
+            walk_in_place_faster_left
+        ))
+        applymovement(LOCALID_MAUVILLE_SCOTT, moves(
+            walk_down
+            walk_left * 10
+        ))
+    }
+    waitmovement(0)
+    removeobject(LOCALID_MAUVILLE_SCOTT)
+    releaseall
     end
 }

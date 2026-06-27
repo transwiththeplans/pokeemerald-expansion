@@ -798,6 +798,14 @@ static const struct MenuAction MultichoiceList_BiomeType[] =
     {COMPOUND_STRING("Autumn forest")},
 };
 
+static const struct MenuAction MultichoiceList_KevinQuestions[] =
+{
+    {COMPOUND_STRING("Grandpa")},
+    {COMPOUND_STRING("Type:Null")},
+    {COMPOUND_STRING("Dream")},
+    {COMPOUND_STRING("Cars")},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -928,6 +936,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_BERRY_PLOT]                 = MULTICHOICE(MultichoiceList_BerryPlot),
     [MULTI_STARTER_POOL]               = MULTICHOICE(MultichoiceList_StarterPools),
     [MULTI_BIOME_TYPE]                 = MULTICHOICE(MultichoiceList_BiomeType),
+    [MULTI_KEVIN_QUESTIONS]            = MULTICHOICE(MultichoiceList_KevinQuestions),
 };
 
 const u8 *const gStdStrings[] =

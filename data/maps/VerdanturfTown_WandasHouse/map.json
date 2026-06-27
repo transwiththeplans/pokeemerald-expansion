@@ -17,14 +17,14 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_WALLY",
       "x": 14,
-      "y": 5,
+      "y": 4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "VerdanturfTown_WandasHouse_EventScript_Wally",
+      "script": "VerdanturfTown_WandasHouse_EventScript_Kevin",
       "flag": "FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WALLY"
     },
     {
@@ -50,7 +50,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "VerdanturfTown_WandasHouse_EventScript_WallysUncle",
+      "script": "VerdanturfTown_WandasHouse_EventScript_KevinsStepdad",
       "flag": "FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WALLYS_UNCLE"
     },
     {
@@ -63,10 +63,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "VerdanturfTown_WandasHouse_EventScript_WallysAunt",
+      "script": "VerdanturfTown_WandasHouse_EventScript_KevinsMom",
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_VERDANTURF_WANDA",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
       "x": 5,
       "y": 5,

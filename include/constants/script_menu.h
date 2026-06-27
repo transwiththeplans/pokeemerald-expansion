@@ -125,6 +125,7 @@
 #define MULTI_BERRY_PLOT                   114
 #define MULTI_STARTER_POOL                 115
 #define MULTI_BIOME_TYPE                   116
+#define MULTI_KEVIN_QUESTIONS              117
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

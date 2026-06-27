@@ -224,21 +224,25 @@ void MgbaClose(void)
     *REG_DEBUG_ENABLE = 0;
 }
 
+#define ENABLE_DEBUG_PRINT FALSE
+
 void MgbaPrintf(s32 level, const char *ptr, ...)
 {
-    va_list args;
+    if(ENABLE_DEBUG_PRINT){
+        va_list args;
 
-    level &= 0x7;
-    va_start(args, ptr);
-    #if (PRETTY_PRINT_HANDLER == PRETTY_PRINT_MINI_PRINTF)
-    mini_vsnprintf(REG_DEBUG_STRING, MGBA_REG_DEBUG_MAX, ptr, args);
-    #elif (PRETTY_PRINT_HANDLER == PRETTY_PRINT_LIBC)
-    vsnprintf(REG_DEBUG_STRING, MGBA_REG_DEBUG_MAX, ptr, args);
-    #else
-    #error "unspecified pretty printing handler."
-    #endif
-    va_end(args);
-    *REG_DEBUG_FLAGS = level | 0x100;
+        level &= 0x7;
+        va_start(args, ptr);
+        #if (PRETTY_PRINT_HANDLER == PRETTY_PRINT_MINI_PRINTF)
+        mini_vsnprintf(REG_DEBUG_STRING, MGBA_REG_DEBUG_MAX, ptr, args);
+        #elif (PRETTY_PRINT_HANDLER == PRETTY_PRINT_LIBC)
+        vsnprintf(REG_DEBUG_STRING, MGBA_REG_DEBUG_MAX, ptr, args);
+        #else
+        #error "unspecified pretty printing handler."
+        #endif
+        va_end(args);
+        *REG_DEBUG_FLAGS = level | 0x100;
+    }
 }
 
 void MgbaAssert(const char *pFile, s32 nLine, const char *pExpression, bool32 nStopProgram)

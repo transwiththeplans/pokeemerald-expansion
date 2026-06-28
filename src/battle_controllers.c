@@ -1438,7 +1438,7 @@ static u32 GetBattlerMonData(u32 battler, struct Pokemon *party, u32 monId, u8 *
 
         unlockLevel = gSpeciesInfo[battleMon.species].innateUnlockLevel;
 
-        if(battleMon.level > unlockLevel || GetMonData(&party[monId], MON_DATA_INNATE_UNLOCKED))
+        if(battleMon.level >= unlockLevel || GetMonData(&party[monId], MON_DATA_INNATE_UNLOCKED))
             battleMon.innateUnlocked = TRUE;
         else
             battleMon.innateUnlocked = FALSE;

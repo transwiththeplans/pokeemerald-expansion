@@ -2674,6 +2674,7 @@ static void CopyMonToSummaryStruct(struct Pokemon *mon)
 
 static bool8 ExtractMonDataToSummaryStruct(struct Pokemon *mon)
 {
+    u8 unlockLevel;
     u32 i;
     struct PokeSummary *sum = &sMonSummaryScreen->summary;
     // Spread the data extraction over multiple frames.
@@ -2685,7 +2686,8 @@ static bool8 ExtractMonDataToSummaryStruct(struct Pokemon *mon)
         sum->exp = GetMonData(mon, MON_DATA_EXP);
         sum->level = GetMonData(mon, MON_DATA_LEVEL);
         sum->abilityNum = GetMonData(mon, MON_DATA_ABILITY_NUM);
-        sum->innateUnlock = GetMonData(mon, MON_DATA_INNATE_UNLOCKED);
+        unlockLevel = gSpeciesInfo[sum->species].innateUnlockLevel;
+        sum->innateUnlock = sum->level >= unlockLevel || GetMonData(mon, MON_DATA_INNATE_UNLOCKED);
         sum->item = GetMonData(mon, MON_DATA_HELD_ITEM);
         sum->pid = GetMonData(mon, MON_DATA_PERSONALITY);
         sum->sanity = GetMonData(mon, MON_DATA_SANITY_IS_BAD_EGG);

@@ -38426,3 +38426,37 @@ TitanFangOnPlayer:
 TitanFangInContest:
 	fadetobg BG_IMPACT_CONTESTS
 	goto TitanFangContinue
+
+gBattleAnimMove_WallOfSound::
+	loadspritegfx ANIM_TAG_METAL_SOUND_WAVES
+	createvisualtask AnimTask_DoubleTeam, 2
+	setalpha 12, 8
+	monbg ANIM_ATK_PARTNER
+	playsewithpan SE_M_DOUBLE_TEAM, SOUND_PAN_ATTACKER
+	delay 32
+	playsewithpan SE_M_DOUBLE_TEAM, SOUND_PAN_ATTACKER
+	delay 24
+	call MetalSoundPlayNote
+	call MetalSoundPlayNote
+	call MetalSoundPlayNote
+	call MetalSoundPlayNote
+	call MetalSoundPlayNote
+	call MetalSoundPlayNote
+	call MetalSoundPlayNote
+	call MetalSoundPlayNote
+	playsewithpan SE_M_DOUBLE_TEAM, SOUND_PAN_ATTACKER
+	delay 8
+	playsewithpan SE_M_DOUBLE_TEAM, SOUND_PAN_ATTACKER
+	delay 8
+	playsewithpan SE_M_DOUBLE_TEAM, SOUND_PAN_ATTACKER
+	delay 8
+	playsewithpan SE_M_DOUBLE_TEAM, SOUND_PAN_ATTACKER
+	delay 8
+	playsewithpan SE_M_DOUBLE_TEAM, SOUND_PAN_ATTACKER
+	delay 8
+	playsewithpan SE_M_DOUBLE_TEAM, SOUND_PAN_ATTACKER
+	waitforvisualfinish
+	clearmonbg ANIM_ATK_PARTNER
+	blendoff
+	delay 1
+	end

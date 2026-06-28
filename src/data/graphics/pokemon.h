@@ -14976,7 +14976,7 @@ const u16 gShinyOverworldPalette_MismagiusPyronite[] = INCBIN_U16("graphics/poke
 #if OW_POKEMON_OBJECT_EVENTS
     const u32 gObjectEventPic_FloatzelF[] = INCBIN_COMP("graphics/pokemon/floatzel/overworldf.4bpp");
 #if P_MEGA_EVOLUTIONS
-    const u32 gMonFrontPic_FloatzelMega[] = INCBIN_U32("graphics/pokemon/floatzel/mega/anim_front.4bpp.lz");
+    const u32 gMonFrontPic_FloatzelMega[] = INCBIN_U32("graphics/pokemon/floatzel/mega/front.4bpp.lz");
     const u16 gMonPalette_FloatzelMega[] = INCBIN_U16("graphics/pokemon/floatzel/mega/normal.gbapal");
     const u32 gMonBackPic_FloatzelMega[] = INCBIN_U32("graphics/pokemon/floatzel/mega/back.4bpp.lz");
     const u16 gMonShinyPalette_FloatzelMega[] = INCBIN_U16("graphics/pokemon/floatzel/mega/shiny.gbapal");

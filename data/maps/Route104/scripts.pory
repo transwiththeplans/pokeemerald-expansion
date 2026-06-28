@@ -1180,7 +1180,7 @@ script Route104_EventScript_PeekoTired {
              darling Peeko needs some beauty sleep after
              that run in with that lunatic! I had to turn
              down some other boy earlier, but he went
-             storming off to the fields…"
+             storming off to Petalberg Fields…"
         ), MSGBOX_NPC)
     } else {
         msgbox(format(

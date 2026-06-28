@@ -133,6 +133,7 @@ SlateportCity_Pokemart_EnergyGuru:
 	.2byte ITEM_CLEVER_MOCHI
 	.2byte ITEM_SWIFT_MOCHI
 	.2byte ITEM_FRESH_START_MOCHI
+	.2byte ITEM_INNATE_CANDY
 	pokemartlistend
 
 SlateportCity_EventScript_EffortRibbonWoman::
@@ -481,13 +482,13 @@ SlateportCity_EventScript_DollClerk::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	pokemartdecoration SlateportCity_PokemartDecor_Dolls
+	pokemart SlateportCity_Pokemart_Sweets
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-SlateportCity_PokemartDecor_Dolls:
+SlateportCity_Pokemart_Sweets:
 	.2byte ITEM_STRAWBERRY_SWEET
 	.2byte ITEM_LOVE_SWEET
 	.2byte ITEM_BERRY_SWEET
@@ -510,13 +511,13 @@ SlateportCity_EventScript_DecorClerk::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	pokemartdecoration SlateportCity_PokemartDecor
+	pokemart SlateportCity_Pokemart_EvolutionItems
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-SlateportCity_PokemartDecor:
+SlateportCity_Pokemart_EvolutionItems:
 	.2byte ITEM_FIRE_STONE
 	.2byte ITEM_WATER_STONE
 	.2byte ITEM_THUNDER_STONE

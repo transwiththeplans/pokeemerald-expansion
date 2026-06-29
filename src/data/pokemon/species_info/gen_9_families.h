@@ -5411,6 +5411,8 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
         .abilities = { ABILITY_SCARE, ABILITY_NONE, ABILITY_SAND_STREAM },
+		.innates = {ABILITY_PREDATOR},
+		.innateUnlockLevel = 45, 
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Greavard"),
         .cryId = CRY_GREAVARD,
@@ -5476,6 +5478,8 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
         .abilities = { ABILITY_SCARE, ABILITY_NONE, ABILITY_SAND_STREAM },
+		.innates = {ABILITY_PREDATOR},
+		.innateUnlockLevel = 45, 
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Houndstone"),
         .cryId = CRY_HOUNDSTONE,
@@ -7795,12 +7799,12 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 #if P_FAMILY_KORAIDON
     [SPECIES_KORAIDON] =
     {
-        .baseHP        = 100,
-        .baseAttack    = 85,
-        .baseDefense   = 100,
-        .baseSpeed     = 135,
-        .baseSpAttack  = 135,
-        .baseSpDefense = 115,
+        .baseHP        = 80,
+        .baseAttack    = 95,
+        .baseDefense   = 95,
+        .baseSpeed     = 130,
+        .baseSpAttack  = 115,
+        .baseSpDefense = 100,
         .types = MON_TYPES(TYPE_GHOST, TYPE_DRAGON),
         .catchRate = 3,
         .expYield = 335,
@@ -7854,9 +7858,6 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
             gOverworldPalette_Koraidon,
             gShinyOverworldPalette_Koraidon
         )
-        .isLegendary = TRUE,
-        .isFrontierBanned = TRUE,
-        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sKoraidonLevelUpLearnset,
         .teachableLearnset = sKoraidonTeachableLearnset,
     },
@@ -7865,12 +7866,12 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 #if P_FAMILY_MIRAIDON
     [SPECIES_MIRAIDON] =
     {
-        .baseHP        = 100,
-        .baseAttack    = 135,
-        .baseDefense   = 115,
-        .baseSpeed     = 135,
-        .baseSpAttack  = 85,
-        .baseSpDefense = 100,
+        .baseHP        = 80,
+        .baseAttack    = 115,
+        .baseDefense   = 100,
+        .baseSpeed     = 130,
+        .baseSpAttack  = 95,
+        .baseSpDefense = 95,
         .types = MON_TYPES(TYPE_STEEL, TYPE_DRAGON),
         .catchRate = 3,
         .expYield = 335,

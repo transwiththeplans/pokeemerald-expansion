@@ -495,6 +495,8 @@ Route110_EventScript_RivalApproachPlayer2::
 Route110_EventScript_RivalApproachPlayer3::
 	applymovement LOCALID_ROUTE110_RIVAL, Route110_Movement_RivalApproachPlayer3
 	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
 	return
 
 Route110_EventScript_RivalExit1::
@@ -527,20 +529,23 @@ Route110_EventScript_MoveRival3::
 Route110_Movement_RivalApproachPlayer1:
 	walk_down
 	walk_left
+	walk_left
 	walk_in_place_faster_down
 	step_end
 
 Route110_Movement_RivalApproachPlayer2:
 	walk_down
+	walk_left
+	walk_in_place_faster_down
 	step_end
 
 Route110_Movement_RivalApproachPlayer3:
 	walk_down
-	walk_right
-	walk_in_place_faster_down
 	step_end
 
 Route110_Movement_RivalExit1:
+	walk_fast_right
+	walk_fast_right
 	walk_fast_up
 	walk_fast_up
 	walk_fast_up
@@ -551,6 +556,7 @@ Route110_Movement_RivalExit1:
 	step_end
 
 Route110_Movement_RivalExit2:
+	walk_fast_right
 	walk_fast_up
 	walk_fast_up
 	walk_fast_up

@@ -70,6 +70,10 @@ DewfordTown_EventScript_HallSign::
 	msgbox DewfordTown_Text_HallSign, MSGBOX_SIGN
 	end
 
+DewfordTown_EventScript_Fix_Script::
+	warp MAP_DEWFORD_TOWN, 11, 9
+	end
+
 DewfordTown_EventScript_OldRodFisherman::
 	lock
 	faceplayer

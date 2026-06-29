@@ -9008,7 +9008,7 @@
           "map": "MAP_DEWFORD_TOWN",
           "base_label": "gDewfordTown",
           "water_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 0,
             "mons": [
               {
                 "min_level": 5,

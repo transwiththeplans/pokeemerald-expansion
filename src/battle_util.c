@@ -6057,19 +6057,24 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
             effect++;
         }
 
-		if (SearchTraits(battlerTraits, ABILITY_BACKFIRE)
-			&& IsBattlerAlive(gBattlerAttacker)
-			&& !gSpecialStatuses[gBattlerAttacker].attackerInParty
-			&& IsBattlerTurnDamaged(gBattlerTarget, EXCLUDING_SUBSTITUTES)
-			&& CanBeBurned(gBattlerTarget, gBattlerAttacker, GetBattlerAbility(gBattlerAttacker)))
-		{
-			gEffectBattler = gBattlerAttacker;
-			gBattleScripting.battler = gBattlerTarget;
-			gBattleScripting.moveEffect = MOVE_EFFECT_BURN;
-			PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
-			BattleScriptCall(BattleScript_AbilityStatusEffect);
-			effect++;
-		}
+        // TODO: Check if it's better to combine Backfire with Flame Body and other
+        //       abilities that cause status ailments. There are potential issues
+        //       with ailment priority.
+        if (SearchTraits(battlerTraits, ABILITY_BACKFIRE)
+         && IsBattlerAlive(gBattlerAttacker)
+         && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+         && IsBattlerTurnDamaged(gBattlerTarget)
+         && CanBeBurned(gBattlerTarget, gBattlerAttacker)
+         && !CanBattlerAvoidContactEffects(gBattlerAttacker, gBattlerTarget, GetBattlerHoldEffect(gBattlerAttacker), move))
+        {
+            gEffectBattler = gBattlerAttacker;
+            gBattleScripting.battler = gBattlerTarget;
+            gBattleScripting.moveEffect = MOVE_EFFECT_BURN;
+            gLastUsedAbility = ABILITY_BACKFIRE;
+            PushTraitStack(battler, gLastUsedAbility);
+            BattleScriptCall(BattleScript_AbilityStatusEffectDef);
+            effect++;
+        }
 
         if (SearchTraits(battlerTraits, ABILITY_METAL_SHRED)
          && !gBattleStruct->isSkyBattle

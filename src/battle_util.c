@@ -6057,6 +6057,20 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, u32 special, u3
             effect++;
         }
 
+		if (SearchTraits(battlerTraits, ABILITY_BACKFIRE)
+			&& IsBattlerAlive(gBattlerAttacker)
+			&& !gSpecialStatuses[gBattlerAttacker].attackerInParty
+			&& IsBattlerTurnDamaged(gBattlerTarget, EXCLUDING_SUBSTITUTES)
+			&& CanBeBurned(gBattlerTarget, gBattlerAttacker, GetBattlerAbility(gBattlerAttacker)))
+		{
+			gEffectBattler = gBattlerAttacker;
+			gBattleScripting.battler = gBattlerTarget;
+			gBattleScripting.moveEffect = MOVE_EFFECT_BURN;
+			PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
+			BattleScriptCall(BattleScript_AbilityStatusEffect);
+			effect++;
+		}
+
         if (SearchTraits(battlerTraits, ABILITY_METAL_SHRED)
          && !gBattleStruct->isSkyBattle
          && !gProtectStructs[gBattlerAttacker].confusionSelfDmg

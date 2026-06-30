@@ -2943,7 +2943,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .teachableLearnset = sCharcadetTeachableLearnset,
         .eggMoveLearnset = sCharcadetEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_METAL_ALLOY, SPECIES_ARMAROUGE},
-                                {EVO_ITEM, ITEM_METAL_COAT, SPECIES_CERULEDGE}),
+                                {EVO_ITEM, ITEM_REAPER_CLOTH, SPECIES_CERULEDGE}),
     },
 
     [SPECIES_ARMAROUGE] =

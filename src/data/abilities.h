@@ -2942,4 +2942,12 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .breakable = TRUE,
     },
 
+    [ABILITY_BACKFIRE] =
+    {
+        .name = _("Backfire"),
+        .description = FORMAT_ABILITY_DESCRIPTION("Burns attacker after being hit."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+
 };

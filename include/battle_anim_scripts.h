@@ -964,6 +964,7 @@ extern const u8 gBattleAnimMove_Neuroshock[];
 extern const u8 gBattleAnimMove_ThunderSpear[];
 extern const u8 gBattleAnimMove_TitanFang[];
 extern const u8 gBattleAnimMove_WallOfSound[];
+extern const u8 gBattleAnimMove_GlimmerGate[];
 
 // status animations
 extern const u8 gBattleAnimStatus_Poison[];
@@ -1034,6 +1035,7 @@ extern const u8 gBattleAnimGeneral_SimpleHeal[];
 extern const u8 gBattleAnimGeneral_PowerConstruct[];
 extern const u8 gBattleAnimGeneral_SwapToSubstitute[];
 extern const u8 gBattleAnimGeneral_SwapFromSubstitute[];
+extern const u8 gBattleAnimGeneral_GlimmerGateHit[];
 
 // special animations
 extern const u8 gBattleAnimSpecial_LevelUp[];

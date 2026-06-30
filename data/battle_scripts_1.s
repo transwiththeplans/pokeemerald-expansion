@@ -5554,7 +5554,11 @@ BattleScript_FutureAttackAnimate::
 	playanimation BS_ATTACKER, B_ANIM_FUTURE_SIGHT_HIT
 	goto BattleScript_DoFutureAttackHit
 BattleScript_FutureHitAnimDoomDesire::
+	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_DOOM_DESIRE, BattleScript_FutureHitAnimGlimmerGate
 	playanimation BS_ATTACKER, B_ANIM_DOOM_DESIRE_HIT
+	goto BattleScript_DoFutureAttackHit
+BattleScript_FutureHitAnimGlimmerGate::
+	playanimation BS_ATTACKER, B_ANIM_GLIMMER_GATE_HIT
 BattleScript_DoFutureAttackHit::
 	effectivenesssound
 	hitanimation BS_TARGET

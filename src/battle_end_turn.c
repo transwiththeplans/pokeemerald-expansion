@@ -238,6 +238,8 @@ static bool32 HandleEndTurnFutureSight(u32 battler)
 
         if (gWishFutureKnock.futureSightMove[battler] == MOVE_FUTURE_SIGHT)
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_FUTURE_SIGHT;
+        else if (gWishFutureKnock.futureSightMove[battler] == MOVE_GLIMMER_GATE)
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_GLIMMER_GATE;
         else
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_DOOM_DESIRE;
 

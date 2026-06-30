@@ -940,6 +940,7 @@ enum FutureMoveUsedStringID
 {
     B_MSG_FUTURE_SIGHT,
     B_MSG_DOOM_DESIRE,
+    B_MSG_GLIMMER_GATE,
 };
 
 // gItemSwapStringIds

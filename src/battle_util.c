@@ -8378,7 +8378,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         else if (AreBattlersOfOppositeGender(battlerAtk, battlerDef))
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.75));
     }
-    if (SearchTraits(battlerTraits, ABILITY_ANALYTIC) && IsLastMonToMove(battlerAtk) && move != MOVE_FUTURE_SIGHT && move != MOVE_DOOM_DESIRE)
+    if (SearchTraits(battlerTraits, ABILITY_ANALYTIC) && IsLastMonToMove(battlerAtk) && move != MOVE_FUTURE_SIGHT && move != MOVE_DOOM_DESIRE && move != MOVE_GLIMMER_GATE)
         modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
     if (SearchTraits(battlerTraits, ABILITY_TOUGH_CLAWS) && IsMoveMakingContact(battlerAtk, battlerDef, ctx->holdEffectAtk, ctx->move))
         modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
@@ -11608,7 +11608,8 @@ enum Type GetBattleMoveType(u32 move)
     else if (B_UPDATED_MOVE_TYPES < GEN_5
          && (move == MOVE_BEAT_UP
           || move == MOVE_FUTURE_SIGHT
-          || move == MOVE_DOOM_DESIRE))
+          || move == MOVE_DOOM_DESIRE
+          || move == MOVE_GLIMMER_GATE))
           return TYPE_MYSTERY;
     return GetMoveType(move);
 }

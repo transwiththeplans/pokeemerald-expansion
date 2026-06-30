@@ -38460,3 +38460,64 @@ gBattleAnimMove_WallOfSound::
 	blendoff
 	delay 1
 	end
+
+gBattleAnimMove_GlimmerGate::
+	playsewithpan SE_M_SUPERSONIC, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendColorCycle, 2, F_PAL_ATTACKER, 0, 2, 0, 10, RGB(31, 10, 22)
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, -4, -4, 15, ANIM_ATTACKER, 1
+	waitforvisualfinish
+	delay 1
+	end
+
+gBattleAnimGeneral_GlimmerGateHit::
+	createvisualtask AnimTask_SetAnimTargetToBattlerTarget, 2
+	loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
+	loadspritegfx ANIM_TAG_GREEN_SPIKE
+	loadspritegfx ANIM_TAG_GUST
+	loadspritegfx ANIM_TAG_ORBS
+	loadspritegfx ANIM_TAG_ELECTRICITY
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_GUST, 0, 10, 10, RGB(31, 10, 22)
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_HANDS_AND_FEET, 0, 10, 10, RGB(31, 10, 22)
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_ORBS, 0, 10, 10, RGB(31, 10, 22)
+	monbg ANIM_TARGET
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 0, 3, 83, 1
+	createsprite gJudgmentBlackChargeTemplate, ANIM_TARGET, 1, 1, ANIM_TARGET
+	playsewithpan SE_M_SUPERSONIC, SOUND_PAN_TARGET
+	call JudgmentInwardSpikes
+	delay 5
+	call JudgmentInwardSpikes2
+	delay 5
+	call JudgmentInwardSpikes
+	delay 5
+	call JudgmentInwardSpikes2
+	delay 5
+	call JudgmentInwardSpikes
+	delay 5
+	call JudgmentInwardSpikes2
+	delay 5
+	call JudgmentInwardSpikes2
+	delay 47
+	call JudgmentOutwardSpikes
+	delay 5
+	call JudgmentOutwardSpikes2
+	delay 5
+	call JudgmentOutwardSpikes
+	delay 5
+	call JudgmentOutwardSpikes2
+	delay 5
+	call JudgmentOutwardSpikes
+	delay 5
+	call JudgmentOutwardSpikes2
+	delay 5
+	call JudgmentOutwardSpikes
+	delay 5
+	call JudgmentOutwardSpikes2
+	delay 5
+	call JudgmentOutwardSpikes
+	delay 5
+	call JudgmentOutwardSpikes2
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	delay 1
+	end

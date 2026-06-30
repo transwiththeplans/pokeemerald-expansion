@@ -12636,6 +12636,8 @@ static void Cmd_setfutureattack(void)
 
     if (gCurrentMove == MOVE_DOOM_DESIRE)
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_DOOM_DESIRE;
+    else if (gCurrentMove == MOVE_GLIMMER_GATE)
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_GLIMMER_GATE;
     else
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_FUTURE_SIGHT;
 

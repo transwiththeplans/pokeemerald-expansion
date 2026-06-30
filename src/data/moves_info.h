@@ -21745,7 +21745,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .ignoresProtect = TRUE,
         .metronomeBanned = TRUE,
-        .battleAnimScript = gBattleAnimMove_DoomDesire,
+        .battleAnimScript = gBattleAnimMove_GlimmerGate,
     },
 
     [MOVE_HIT_AND_RUN] =

@@ -5442,15 +5442,18 @@ BattleScript_ToxicDebrisRet:
 	restoretarget
 	restoreattacker
 	return
-	
+
 BattleScript_LooseRocksActivates::
 	call BattleScript_AbilityPopUp
 	pause B_WAIT_TIME_SHORT
 	setstealthrock BattleScript_EffectStealthRock
 	printstring STRINGID_POINTEDSTONESFLOAT
 	waitmessage B_WAIT_TIME_LONG
+BattleScript_LooseRocksRet::
+	restoretarget
+	restoreattacker
 	return
-	
+
 BattleScript_MetalShredActivates::
 	call BattleScript_AbilityPopUp
 	pause B_WAIT_TIME_SHORT

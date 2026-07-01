@@ -965,6 +965,7 @@ extern const u8 gBattleAnimMove_ThunderSpear[];
 extern const u8 gBattleAnimMove_TitanFang[];
 extern const u8 gBattleAnimMove_WallOfSound[];
 extern const u8 gBattleAnimMove_GlimmerGate[];
+extern const u8 gBattleAnimMove_InfestFist[];
 
 // status animations
 extern const u8 gBattleAnimStatus_Poison[];

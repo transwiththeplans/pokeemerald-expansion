@@ -38521,3 +38521,42 @@ gBattleAnimGeneral_GlimmerGateHit::
 	clearmonbg ANIM_TARGET
 	delay 1
 	end
+
+gBattleAnimMove_InfestFist::
+	loadspritegfx ANIM_TAG_IMPACT
+	loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	loadspritegfx ANIM_TAG_SMALL_BUBBLES
+	monbg ANIM_TARGET
+	delay 2
+	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 0, 0, 16, RGB_BLACK
+	setalpha 12, 8
+	playsewithpan SE_M_MEGA_KICK, SOUND_PAN_TARGET
+	createsprite gMegaPunchKickSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 50
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 0, 7, RGB_WHITE
+	delay 50
+	call SetImpactBackground
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, ANIM_TARGET, 0
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 4, 0, 22, 1
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 0, 0, RGB_WHITE
+	createsprite gComplexPaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG | F_PAL_BATTLERS, 3, 1, RGB_BLACK, 8, RGB_BLACK, 0
+	playsewithpan SE_M_VITAL_THROW2, SOUND_PAN_TARGET
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
+	restorebg
+	waitbgfadein
+	monbg ANIM_DEF_PARTNER
+	splitbgprio ANIM_TARGET
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 0, 9, RGB(0, 25, 28)
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 3, 0, 79, 1
+	loopsewithpan SE_M_CHARGE, SOUND_PAN_ATTACKER, 0x0, 0x4F
+	call InfestationVortex
+	call InfestationVortex
+	call InfestationVortex
+	call InfestationVortex
+	call InfestationVortex
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 9, 0, RGB(0, 25, 28)
+	waitforvisualfinish
+	clearmonbg ANIM_DEF_PARTNER
+	end

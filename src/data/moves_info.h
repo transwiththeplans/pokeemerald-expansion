@@ -21787,7 +21787,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .moveEffect = MOVE_EFFECT_PREVENT_ESCAPE,
             .chance = 30,
         }),
-        .battleAnimScript = gBattleAnimMove_MegaPunch,
+        .battleAnimScript = gBattleAnimMove_InfestFist,
     },
 
     [MOVE_MAGNETIC_ROCKS] =

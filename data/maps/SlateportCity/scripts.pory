@@ -529,6 +529,7 @@ SlateportCity_Pokemart_EvolutionItems:
 	.2byte ITEM_DUSK_STONE
 	.2byte ITEM_DAWN_STONE
 	.2byte ITEM_METAL_COAT
+	.2byte ITEM_REAPER_CLOTH
 	.2byte ITEM_METAL_ALLOY
 	.2byte ITEM_EVIOLITE
 	.2byte ITEM_EVERSTONE

@@ -84,6 +84,7 @@ COMMON_DATA bool8 (*gMenuCallback)(void) = NULL;
 
 // EWRAM
 EWRAM_DATA static u8 sSafariBallsWindowId = 0;
+EWRAM_DATA static u8 sVersionWindowId = 0;
 EWRAM_DATA static u8 sBattlePyramidFloorWindowId = 0;
 EWRAM_DATA static u8 sStartMenuCursorPos = 0;
 EWRAM_DATA static u8 sNumStartMenuActions = 0;
@@ -150,6 +151,16 @@ static const struct WindowTemplate sWindowTemplate_SafariBalls = {
     .tilemapTop = 1,
     .width = 9,
     .height = 4,
+    .paletteNum = 15,
+    .baseBlock = 0x8
+};
+
+static const struct WindowTemplate sWindowTemplate_Version = {
+    .bg = 0,
+    .tilemapLeft = 1,
+    .tilemapTop = 17,
+    .width = 5,
+    .height = 2,
     .paletteNum = 15,
     .baseBlock = 0x8
 };
@@ -445,6 +456,15 @@ static void ShowSafariBallsWindow(void)
     CopyWindowToVram(sSafariBallsWindowId, COPYWIN_GFX);
 }
 
+static void ShowVersionWindow(void)
+{
+    sVersionWindowId = AddWindow(&sWindowTemplate_Version);
+    PutWindowTilemap(sVersionWindowId);
+    DrawStdWindowFrame(sVersionWindowId, FALSE);
+    AddTextPrinterParameterized(sVersionWindowId, FONT_NORMAL, gText_Version, 0, 1, TEXT_SKIP_DRAW, NULL);
+    CopyWindowToVram(sVersionWindowId, COPYWIN_GFX);
+}
+
 static void ShowPyramidFloorWindow(void)
 {
     if (gSaveBlock2Ptr->frontier.curChallengeBattleNum == FRONTIER_STAGES_PER_CHALLENGE)
@@ -462,6 +482,12 @@ static void ShowPyramidFloorWindow(void)
 
 static void RemoveExtraStartMenuWindows(void)
 {
+    if (!GetSafariZoneFlag() && CurrentBattlePyramidLocation() == PYRAMID_LOCATION_NONE)
+    {
+        ClearStdWindowAndFrameToTransparent(sVersionWindowId, FALSE);
+        CopyWindowToVram(sVersionWindowId, COPYWIN_GFX);
+        RemoveWindow(sVersionWindowId);
+    }
     if (GetSafariZoneFlag())
     {
         ClearStdWindowAndFrameToTransparent(sSafariBallsWindowId, FALSE);
@@ -526,6 +552,8 @@ static bool32 InitStartMenuStep(void)
         sInitStartMenuData[0]++;
         break;
     case 3:
+        if (!GetSafariZoneFlag() && CurrentBattlePyramidLocation() == PYRAMID_LOCATION_NONE)
+            ShowVersionWindow();
         if (GetSafariZoneFlag())
             ShowSafariBallsWindow();
         if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)

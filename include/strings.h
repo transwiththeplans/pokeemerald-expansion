@@ -2424,4 +2424,7 @@ extern const u8 gText_OakImportantToGetToKnowPokemonThroughly[];
 extern const u8 gText_OakThisIsListOfPokemon[];
 extern const u8 sText_InnateLockedUntilLevel_SwSh[];
 
+// Version
+extern const u8 gText_Version[];
+
 #endif // GUARD_STRINGS_H

@@ -1294,3 +1294,5 @@ const u8 gText_OakThisIsListOfPokemon[] = _("This is a list of your POKéMON,\n{
 
 //New Summary Screen Pages
 const u8 gText_PkmnTraits[] = _("TRAITS");
+
+const u8 gText_Version[] = _("v0.3.4");
